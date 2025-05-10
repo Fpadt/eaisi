@@ -4,8 +4,9 @@ project:
 
 # website:
   # site-url: https://github.com/Fpadt/eaisi/
-website:
-  site-url: https://fpadt.github.io/eaisi/
+# website:
+#   site-url: https://fpadt.github.io/eaisi/
+#   open-graph: true
   
 date:        last-modified
 date-format: long
@@ -65,12 +66,14 @@ execute:
 editor: source
 
 book:
+  site-url: https://fpadt.github.io/eaisi/
   title: "Pythia's Advice"
   favicon: images/favicon.ico
   repo-url: https://github.com/Fpadt/eaisi/
   repo-actions: [source, issue]
   downloads: [pdf] 
   sharing: [twitter, facebook, linkedin]
+  open-graph: true  
   page-navigation: true # Explicit navigation controls
   page-footer:
     left: "© 2025 Floris Padt: Pythia's Advice"
