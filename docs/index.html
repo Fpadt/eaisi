@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-05-10">
 <meta name="description" content="Effective business planning relies heavily on consistent and accurate forecasts across various levels of aggregation, granularity, and time horizons. Generating multiple forecasts for different use cases not only incurs costs that should be justified by the benefits but also introduces the risk of inconsistencies between forecasts. Ideally, a single detailed forecast with a long horizon can be created and then aggregated to meet all business needs, maintaining consistency but potentially sacrificing forecast accuracy This raises the question of which approach delivers the highest net benefit.To create an internal benchmark and understand the cost-benefit relationship without disrupting normal business operations, we built a separate forecasting lab environment in parallel to our production forecasting system, leveraging state-of-the-art open-source software available free of charge. We begin with simple models using raw historical sales data and gradually increase complexity by automating data cleaning and incorporating more advanced methods that utilize factors such as price, promotions, stock-outs, and other external influences.While statistical forecasting methods are known for their robustness and explainability, incorporating exogenous variables such as price and promotions is often difficult. In an increasingly promotion-driven business environment, recent machine learning models—such as Random Forest, neural networks, and conformal prediction—might deliver a higher net benefit despite the additional data handling costs and reduced explainability.In assessing the effectiveness of various forecasting methods, we face the challenge of directly quantifying the value each forecast brings to the business. Due to the complexity of isolating a forecast’s impact on business performance, we adopt forecast accuracy as a proxy for forecast value. This approach allows us to evaluate and compare the methods based on their predictive precision, under the premise that more accurate forecasts are likely to result in better-informed business decisions and, consequently, greater operational benefits.In this paper, we aim to strike the right balance between enhancing forecast accuracy and managing the costs associated with additional resources like hardware, software, data, and human effort. Our research will explore the optimal combination of forecasting methods to achieve higher accuracy while ensuring efficient resource utilization. Furthermore, given the extensive range of products (SKUs) and their varying levels of importance, we explore strategies for effectively allocating human resources. By prioritizing efforts on key products and automating processes for less critical items, we aim to optimize resource utilization and enhance overall forecasting efficiency.">
 
 <title>Pythia’s Advice</title>
@@ -394,7 +393,7 @@ horizons.">
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 10, 2025</p>
+        <p class="date">last-modified</p>
       </div>
     </div>
     
@@ -606,6 +605,7 @@ horizons.">
 
 
 
+<p><img src="images/logo_transp.png" title="Pythia's Advice" class="quarto-cover-image nolightbox img-fluid" alt="Pythia's Advice ...   "></p>
 <div style="page-break-after: always;"></div>
 <p><a href="#def-RMSE" class="quarto-xref">def&nbsp;<span>7.19</span></a></p>
 <p><a href="#def-OOD" class="quarto-xref">def&nbsp;<span>7.3</span></a></p>
@@ -685,7 +685,7 @@ Our logo, featuring a tree integrated with the <em>Pythia</em> through conductiv
 <section id="business-understanding" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Business Understanding</h1>
 <p>where the business process is mapped and when the main indicators are identified, as well as when the business objectives are defined What is the business’s need?</p>
-<div id="fig-bu-why" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-width="15cm" alt="Why is forecasting important? It drives the business" data-fig-align="left">
+<div id="fig-bu-why" class="figure quarto-float quarto-figure quarto-figure-left anchored" alt="Why is forecasting important? It drives the business" data-fig-width="15cm" data-fig-align="left">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-bu-why-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/bu_why.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2.1: Why forecasting? The forecast drives the business!"><img src="images/bu_why.png" class="img-fluid quarto-figure quarto-figure-left figure-img" data-fig-width="15cm" alt="Why is forecasting important? It drives the business"></a>
