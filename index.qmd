@@ -8,12 +8,9 @@ format:
 ::: {.cover-container}
 ![](images/logo_transp.png){width=150% fig-align="center" .cover-image}
 
-# Pythia's Advice {.book-title}
-
 ## Trust - is al you need {.book-subtitle}
 
 ### Floris Padt {.author-name}
 
-#### EAISI Academy - TU Eindhoven {.institution}
+#### [EAISI Academy - TU Eindhoven](https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai) {.institution}
 :::
-```

@@ -62,6 +62,7 @@ editor: source
 book:
   site-url: https://fpadt.github.io/eaisi/
   title: "Pythia's Advice"
+  subtitle: "Trust is all you need"
   favicon: images/favicon.ico
   image: images/logo_transp.png
   # cover-image: images/logo_transp.png
