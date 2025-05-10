@@ -164,8 +164,8 @@ format:
     colorlinks:         true
     highlight-style:    github
     theme:
-      light: [flatly, custom-light.scss]
-      dark:  [darkly, custom-dark.scss]
+      light: [flatly] #, custom-light.scss]
+      dark:  [darkly] #, custom-dark.scss]
     respect-user-color-scheme: false    
     fontsize:           "10"
     crossrefs-hover:    true 

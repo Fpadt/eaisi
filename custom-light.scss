@@ -14,14 +14,3 @@ $navbar-fg: #ffffff;
   color: #E2A348;
 }
 
-/* Highlight the current section in the index */
-.sidebar .active,
-.sidebar .active a {
-  background-color: #ffffff;  /* Accent color */
-  color: #E2A348;              /* Text color */
-  font-weight: bold;
-}
-
-.sidebar .active a:hover {
-  background-color: #e2a348;  /* Slightly darker accent */
-}
