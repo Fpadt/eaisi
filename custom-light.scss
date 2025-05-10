@@ -13,8 +13,35 @@
 //.navbar-title {
 //  color: #E2A348;
 
-a, .text-success, .badge-success {
-  color: #e2a348 !important;
-}  
+//a, .text-success, .badge-success {
+//  color: #e2a348 !important;
+//}  
 //}
+
+/* Highlight color for the active item in the index (left sidebar) */
+.sidebar .active,
+.sidebar .active a {
+  background-color: #ffffff;   /* White background */
+  color: #e2a348 !important;   /* Orange text */
+  font-weight: bold;
+}
+
+/* Hover effect for the active item in the index */
+.sidebar .active a:hover {
+  background-color: #f0f0f0;   /* Light gray */
+  color: #e2a348;
+}
+
+/* Highlight color for the current content section (right side) */
+body .active-section {
+  background-color: #ffffff;
+  color: #e2a348;
+  font-weight: bold;
+}
+
+/* Ensure link colors remain consistent */
+body a,
+body a:hover {
+  color: #e2a348;
+}
 
