@@ -67,9 +67,6 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-35e947280e577f6ab41874e730e99e78.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-756bed6e8174a06a1bfb8c030ebdac33.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-35e947280e577f6ab41874e730e99e78.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -445,7 +442,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nb/00_pythias_advice_rev.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Pythia’s Advice</span></a>
+  <a href="./nb/00_pythias_advice_rev.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Overview</span></a>
   </div>
 </li>
       </ul>
@@ -560,11 +557,11 @@ div.csl-indent {
 
 
 <div class="cover-container">
-<p><a href="images/logo_transp.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/logo_transp.png" class="cover-image img-fluid"></a></p>
+<p><img src="images/logo_transp.png" class="img-fluid">{{width=150% fig-align=“center” .cover-image}</p>
 <section id="pythias-advice" class="level1 book-title">
 <h1 class="book-title">Pythia’s Advice</h1>
-<section id="a-data-science-methodology" class="level2 book-subtitle">
-<h2 class="book-subtitle anchored" data-anchor-id="a-data-science-methodology">A Data Science Methodology</h2>
+<section id="trust---is-al-you-need" class="level2 book-subtitle">
+<h2 class="book-subtitle anchored" data-anchor-id="trust---is-al-you-need">Trust - is al you need</h2>
 <section id="floris-padt" class="level3 author-name">
 <h3 class="author-name anchored" data-anchor-id="floris-padt">Floris Padt</h3>
 <section id="eaisi-academy---tu-eindhoven" class="level4 institution">
@@ -1106,38 +1103,6 @@ Nixtla/hierarchicalforecast: Probabilistic hierarchical forecasting 👑 with st
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

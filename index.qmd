@@ -6,11 +6,11 @@ format:
 ---
 
 ::: {.cover-container}
-![](images/logo_transp.png){.cover-image}
+![](images/logo_transp.png){{width=150% fig-align="center" .cover-image}
 
 # Pythia's Advice {.book-title}
 
-## A Data Science Methodology {.book-subtitle}
+## Trust - is al you need {.book-subtitle}
 
 ### Floris Padt {.author-name}
 

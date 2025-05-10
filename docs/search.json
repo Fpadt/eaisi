@@ -10,11 +10,11 @@
     ]
   },
   {
-    "objectID": "index.html#a-data-science-methodology",
-    "href": "index.html#a-data-science-methodology",
+    "objectID": "index.html#trust---is-al-you-need",
+    "href": "index.html#trust---is-al-you-need",
     "title": "Pythia’s Advice",
-    "section": "A Data Science Methodology",
-    "text": "A Data Science Methodology\n\nFloris Padt\n\nEAISI Academy - TU Eindhoven",
+    "section": "Trust - is al you need",
+    "text": "Trust - is al you need\n\nFloris Padt\n\nEAISI Academy - TU Eindhoven",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Pythia's Advice</span>"
     ]
@@ -113,23 +113,23 @@
   {
     "objectID": "nb/00_pythias_advice_rev.html",
     "href": "nb/00_pythias_advice_rev.html",
-    "title": "Pythia’s Advice",
+    "title": "Overview",
     "section": "",
     "text": "Introduction\nIn an increasingly complex market environment, accurate demand forecasting is critical for ensuring the operational efficiency of supply chains, particularly in industries like wholesale, where products are perishable and sales are affected by seasonality and promotions. This research focuses on a wholesale company that buys, produces, and distributes biodiversity food to retailers, Out-Of-Home, discounters and E-commerce. To make informed decisions regarding production, buying, and negotiation with customers, accurate sales forecasts are required at different aggregation levels, depending on each use case.\nWhile the company employs robust but dated statistical methods, such as moving averages and exponential smoothing, these techniques struggle to handle promotional impacts, capture complex sales patterns, and provide prediction intervals. Currently, a combination of bottom-up and top-down forecasting approaches is used, largely determined by the judgment of individual demand planners. However, the lack of clear guidance on which approach to apply in different scenarios has resulted in inconsistent and subjective forecasting outcomes. Furthermore, various use cases have distinct aggregation and time horizon requirements, adding complexity to maintaining consistent and accurate forecasts across the system.\nThe primary objective of this research is to determine the best way to generate a forecast, which methods to use and on what levels of granularity, enabling consistent, accurate forecasts that can be aggregated or dis-aggregated as required for different business needs. Specifically, the study aims to address the following key questions:\nUltimately, this research will provide an objective, data-driven strategy to improve forecast accuracy, reduce reliance on individual intuition, and ensure that forecasts are robust, consistent, and scalable across multiple aggregation levels, thereby enhancing overall decision-making efficiency.",
     "crumbs": [
       "Foundations",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Pythia's Advice</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Overview</span>"
     ]
   },
   {
     "objectID": "nb/00_pythias_advice_rev.html#methodology",
     "href": "nb/00_pythias_advice_rev.html#methodology",
-    "title": "Pythia’s Advice",
+    "title": "Overview",
     "section": "Methodology",
     "text": "Methodology\nThis research follows the CRISP-ML methodology, (Costa, 2022) as the guiding framework.\nCRISP-ML is an acronym for “Cross-Industry Standard Process for Machine Learning.” It is a systematic framework for organizing and executing machine learning projects. The methodology includes six key steps:\n\nunderstanding the problem\npreparing the data\nselecting and tuning models\nevaluating performance\ndeploying the solution\nmonitoring and maintaining the model.\n\nThis thesis focuses on the first 4 steps, the results will be taken as advice to be implemented in the current way of working.",
     "crumbs": [
       "Foundations",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Pythia's Advice</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Overview</span>"
     ]
   },
   {
