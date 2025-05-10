@@ -2,9 +2,11 @@ project:
   type: book
   output-dir: docs
 
+# website:
+  # site-url: https://github.com/Fpadt/eaisi/
 website:
-  site-url: https://github.com/Fpadt/eaisi/
-
+  site-url: https://fpadt.github.io/eaisi/
+  
 date:        last-modified
 date-format: long
 
@@ -53,7 +55,8 @@ crossref:
   def-title:  def
     
 execute:
-  freeze:  false
+  freeze:  auto
+  cache:   true
   echo:    false
   output:  true
   include: false
