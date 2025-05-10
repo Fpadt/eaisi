@@ -69,6 +69,7 @@ book:
   site-url: https://fpadt.github.io/eaisi/
   title: "Pythia's Advice"
   favicon: images/favicon.ico
+  image: "/docs/images/logo_transp.png"
   repo-url: https://github.com/Fpadt/eaisi/
   repo-actions: [source, issue]
   downloads: [pdf] 
