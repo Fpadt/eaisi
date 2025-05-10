@@ -50,32 +50,5 @@ description: |
 
 plain-language-summary: |
   Balance the benefits of higher forecast accuracy with the cost of additional resources ...
-funding: "The author(s) received no specific funding for this work."
-categories:
-  - Time Series Forecasting
-  - Data Science
-  - Hierarchical Forecasting (HTS)
-  - Error-Trend-Season (ETS)
-  - Supply Chain Management
-key-points:
-  - A RFC-connection was established with the SAP systems leveraging the SAP netweaver software development kit to extract and update the data needed. 
-  - Forecast were generated on different levels of aggregation taking the promotional effect into account.
-  - A comparison has been made between the differnt forecasts engines in terms of forecast accuracy measures and has been visualized
-  - rules of thumb have been developed indicating what to use when
-thanks: 'Mentor: {{<var mentor >}} - EAISI Academy, MASTERING DATA & AI, Technical University Eindhoven'
-bibliography:      EAISI-PYTHIA.bib
-csl:               data-science-journal.csl
-# cite-method:       biblatex
-# biblio-style:      nature
-citation:
-  container-title: Pythia's Advice
-license: "CC BY"
-copyright: 
-  holder:          Smart-R
-  year:            2025
-appendix-style:    default
-lang: en-us
-engine: knitr
-nocite: |
-  @*
+engine: knitr  
 ---

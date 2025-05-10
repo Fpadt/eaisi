@@ -1,12 +1,6 @@
 project:
   type: book
   output-dir: docs
-
-# website:
-  # site-url: https://github.com/Fpadt/eaisi/
-# website:
-#   site-url: https://fpadt.github.io/eaisi/
-#   open-graph: true
   
 date:        last-modified
 date-format: long
@@ -86,13 +80,13 @@ book:
 
   chapters:
     - index.qmd           # Introduction
-    - how-to-read.qmd     # Reader's guide
-    - the_myth.qmd        # The myth of Pythia
     - acknowledgments.qmd # Acknowledgments
+    - how-to-read.qmd     # Reader's guide
     - part: "Foundations"
       chapters:
-        - nb/00_pythias_advice_rev.qmd
+        - inspiration.qmd        # The myth of Pythia      
         # - notebooks/intro-crisp-dm.qmd
+        - nb/00_pythias_advice_rev.qmd
     - part: "Project Phases"
       chapters:
         - nb/01_business_understanding_rev.qmd
@@ -124,6 +118,34 @@ resources:
   - video/whitebox.mp4
   - video/blackbox.mp4
   - pptx/PAF_s03.pptx
+
+funding: "The author(s) received no specific funding for this work."
+categories:
+  - Time Series Forecasting
+  - Data Science
+  - Hierarchical Forecasting (HTS)
+  - Error-Trend-Season (ETS)
+  - Supply Chain Management
+key-points:
+  - A RFC-connection was established with the SAP systems leveraging the SAP netweaver software development kit to extract and update the data needed. 
+  - Forecast were generated on different levels of aggregation taking the promotional effect into account.
+  - A comparison has been made between the differnt forecasts engines in terms of forecast accuracy measures and has been visualized
+  - rules of thumb have been developed indicating what to use when
+thanks: 'Mentor: {{<var mentor >}} - EAISI Academy, MASTERING DATA & AI, Technical University Eindhoven'
+bibliography:      EAISI-PYTHIA.bib
+csl:               data-science-journal.csl
+# cite-method:       biblatex
+# biblio-style:      nature
+citation:
+  container-title: Pythia's Advice
+license: "CC BY"
+copyright: 
+  holder:          Smart-R
+  year:            2025
+appendix-style:    default
+lang: en-us
+nocite: |
+  @*
 
 format:
   html:
@@ -212,3 +234,4 @@ format:
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:type" content="image/png" />  
+        

@@ -4,44 +4,6 @@ library(magrittr)
 library(fs)
 library(stringr) 
  
-# notebooks <- data.table(
-#   notebooks = lst <- list.files(
-#     path = "notebooks",
-#     pattern = "^0.*\\.qmd$",
-#     full.names = FALSE
-#   ) 
-# ) %>%
-#   .[, id:= substr(notebooks, 1, 2)] %>%
-#   .[, target:= fs::path_ext_remove(notebooks) %>% 
-#       fs::path_file() %>%
-#       paste("def.qmd", sep = '_' )]
-# 
-# 
-# 
-# f_create_locl_def <- 
-#   function(dt){
-#     PN <- "notebooks"
-#     src_defs <- "09_definitions.qmd"
-# 
-#     # read the master definitions
-#     lines <- readLines(file.path(PN , src_defs), warn = FALSE)
-#     
-#     new_lines <- gsub(
-#       pattern     = "#def-",
-#       replacement = paste0("#def-", dt$id, "-"),
-#       x           = lines,
-#       perl        = TRUE
-#     )    
-#     
-#     # write the per-notebook copy
-#     writeLines(new_lines, file.path(PN, dt$target))
-#     message("Wrote: ", dt$target)
-#   }
-# 
-# for (n in 1:nrow(notebooks) ) {
-#   f_create_locl_def(dt[n])
-# }
-
 # 1) Define a function that does the work for one notebook
 rev_notebook <- function(
     nb_path, 
