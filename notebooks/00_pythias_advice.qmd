@@ -81,7 +81,7 @@ This thesis focuses on the first 4 steps, the results will be taken as advice to
 where the business process is mapped and when the main indicators are identified, as well as when the business objectives are defined What is the business's need?
 
 ::: {#fig-bu-why .figure}
-![](images/bu_why.png){fig-alt="Why is forecasting important? It drives the business" fig-align="left" fig-width="15cm"}\]
+![](../images/bu_why.png){fig-alt="Why is forecasting important? It drives the business" fig-align="left" fig-width="15cm"}\]
 
 Why forecasting?\
 The forecast drives the business!

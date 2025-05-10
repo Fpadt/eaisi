@@ -65,7 +65,7 @@ book:
   subtitle: "Trust is all you need"
   favicon: images/favicon.ico
   image: images/logo_transp.png
-  cover-image: images/pythia_logo_with_text.png
+  # cover-image: images/pythia_logo_with_text.png
   # cover-image-alt: |
   #   Pythia's Advice ...  
   repo-url: https://github.com/Fpadt/eaisi/
@@ -154,7 +154,7 @@ format:
     title-block-style: default
     # Custom banner color
     title-block-banner-color: "#FFFFFF"
-    background-color: "#004D40"
+    # background-color: "#004D40"
     toc:                true
     code-fold:          true  
     lightbox:           true

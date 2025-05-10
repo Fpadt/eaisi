@@ -58,7 +58,7 @@ format:
 ---
 
 ::: {.cover-container}
-![](images/logo_transp.png){width=30% fig-align="center" .cover-image}
+![](images/pythia_logo_with_text.png){width=30% fig-align="center" .cover-image}
 :::
 
 ## Acknowledgments {.appendix .unnumbered}

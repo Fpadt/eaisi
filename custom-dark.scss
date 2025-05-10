@@ -1,24 +1,24 @@
 /*-- scss:defaults --*/
 // Base document colors
-$primary: #FDB54D;
+$primary: #E2A348;
 $body-bg: #333333;
 $body-color: #ffffff;
-$link-color: #FDB54D;
+$link-color: #E2A348;
 $navbar-bg: #0f5e3c;
 $navbar-fg: #333333;
 
 /*-- scss:rules --*/
 // Add any custom CSS rules here
 .navbar-title {
-  color: #FDB54D;
+  color: #E2A348;
 }
 
 
 /* Highlight the current section in the index */
 .sidebar .active,
 .sidebar .active a {
-  background-color: #FDB54D;  /* Accent color */
-  color: #ffffff;              /* Text color */
+  background-color: #333333;  /* Accent color */
+  color: #E2A348;              /* Text color */
   font-weight: bold;
 }
 
