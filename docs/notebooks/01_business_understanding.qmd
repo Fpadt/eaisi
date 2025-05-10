@@ -5,6 +5,7 @@ description: |
   - Definition of the business objectives
   - business process mapping 
   - identification of stakeholders and main indicators.
+number-sections:    true
 editor: source  
 ---
 
