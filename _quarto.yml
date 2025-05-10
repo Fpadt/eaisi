@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  site-url: https://github.com/Fpadt/eaisi_paper/
+  site-url: https://github.com/Fpadt/eaisi/
 
 date:        last-modified
 date-format: long
@@ -64,7 +64,7 @@ editor: source
 book:
   title: "Pythia's Advice"
   favicon: images/favicon.ico
-  repo-url: https://github.com/Fpadt/eaisi_paper/
+  repo-url: https://github.com/Fpadt/eaisi/
   repo-actions: [source, issue]
   downloads: [pdf] 
   sharing: [twitter, facebook, linkedin]
