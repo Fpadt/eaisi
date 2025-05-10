@@ -103,6 +103,9 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-17bd57a6d29cc1345fc2dd485cdfb244.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-756bed6e8174a06a1bfb8c030ebdac33.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-17bd57a6d29cc1345fc2dd485cdfb244.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -607,9 +610,15 @@ div.csl-indent {
 
 
 
-
+<div class="cover-container">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/pythia_logo_with_text.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/pythia_logo_with_text.png" class="cover-image img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></a></p>
+</figure>
+</div>
+</div>
 <section id="acknowledgments" class="level2 appendix unnumbered">
-<h2 class="appendix unnumbered anchored" data-anchor-id="acknowledgments">Acknowledgments</h2><p><img src="https://pythia.smart-r.nl/images/pythia_logo_with_text.png" title="Pythia's Advice" class="quarto-cover-image nolightbox img-fluid"></p>
+<h2 class="appendix unnumbered anchored" data-anchor-id="acknowledgments">Acknowledgments</h2>
 <p>I am grateful for the insightful comments offered by Ieke le Blanc. These have improved this study in innumerable ways and saved me from many errors; those that inevitably remain are entirely my own responsibility.</p>
 </section>
 <section id="how-to-read-this-book" class="level2">
@@ -1207,6 +1216,38 @@ Nixtla/hierarchicalforecast: Probabilistic hierarchical forecasting 👑 with st
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
