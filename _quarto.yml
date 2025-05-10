@@ -87,7 +87,6 @@ book:
   chapters:
     - part: "Foundations"
       chapters:
-        - about.qmd
         - index.qmd
         # - notebooks/intro-crisp-dm.qmd
     - part: "Project Phases"
@@ -133,7 +132,7 @@ format:
     code-fold:          true  
     lightbox:           true
     comments:
-      hypothesis:       false
+      hypothesis:       true
     number-sections:    true
     colorlinks:         true
     highlight-style:    github
