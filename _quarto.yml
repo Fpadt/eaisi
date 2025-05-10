@@ -81,9 +81,6 @@ book:
 
   chapters:
     - index.qmd
-    - abstract.qmd                             # Introduction
-    - acknowledgments.qmd                      # Acknowledgments
-    - how-to-read.qmd                          # Reader's guide
     - part: "Foundations"
       chapters:
         - inspiration.qmd                      # The myth of Pythia      
