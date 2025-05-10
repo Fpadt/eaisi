@@ -65,7 +65,7 @@ book:
   subtitle: "Trust is all you need"
   favicon: images/favicon.ico
   image: images/logo_transp.png
-  # cover-image: images/logo_transp.png
+  cover-image: images/pythia_logo_with_text.png
   # cover-image-alt: |
   #   Pythia's Advice ...  
   repo-url: https://github.com/Fpadt/eaisi/
