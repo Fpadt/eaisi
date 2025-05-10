@@ -57,7 +57,7 @@ format:
 ---
 
 ::: {.cover-container}
-![](images/logo_transp.png){width=20% fig-align="right" .cover-image}
+![](images/logo_transp.png){width=30% fig-align="center" .cover-image}
 :::
 
 ## Acknowledgments {.appendix .unnumbered}
