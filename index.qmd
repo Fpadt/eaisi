@@ -1,48 +1,6 @@
 ---
-title:       Pythia's Advice
+title:       Abstract
 subtitle:    TRUST - is all you need!
-subject:     Wholesale Sales Forecasting
-date:        last-modified
-date-format: long
-authors:
-  - name:    Floris Padt
-    orcid:   0009-0006-4729-1783
-    corresponding: true
-    email: floris@smart-r.nl
-    url: https://www.linkedin.com/in/florispadt    
-    roles:
-      - Conceptualization
-      - Data curation
-      - Formal analysis
-      - Investigation
-      - Methodology
-      - Software
-      - Validation
-      - Visualization
-      - Writing     
-    degrees: 
-      - MSc.
-    affiliations: 
-      - name:         EAISI - Technical University Eindhoven
-        city:         Eindhoven
-        country:      The Netherlands
-        department:   EAISI Academy
-        group:        Professional education
-        url:          https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai
-  - name:   Ieke Le Blanc
-    url: https://www.tue.nl/en/education/professional-education/current-programs/eaisi-academy/lecturers/dr-ieke-le-blanc
-    roles:
-      - Supervisor
-      - Mentor     
-    degrees: 
-      - Dr.
-    affiliations: 
-      - name:         EAISI - Technical University Eindhoven
-        city:         Eindhoven
-        country:      The Netherlands
-        department:   EAISI Academy
-        group:        Professional education
-        url:          https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai      
 description: |
   Effective business planning relies heavily on consistent and accurate 
   forecasts across various levels of aggregation, granularity, and time 
@@ -102,7 +60,7 @@ categories:
 key-points:
   - A RFC-connection was established with the SAP systems leveraging the SAP netweaver software development kit to extract and update the data needed. 
   - Forecast were generated on different levels of aggregation taking the promotional effect into account.
-  - A comparison has been made between the differnt forecasts engines in terms of foerecast accuracy measures and has been visualized
+  - A comparison has been made between the differnt forecasts engines in terms of forecast accuracy measures and has been visualized
   - rules of thumb have been developed indicating what to use when
 thanks: 'Mentor: {{<var mentor >}} - EAISI Academy, MASTERING DATA & AI, Technical University Eindhoven'
 bibliography:      EAISI-PYTHIA.bib

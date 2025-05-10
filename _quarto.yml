@@ -137,7 +137,7 @@ format:
     lightbox:           true
     comments:
       hypothesis:       true
-    number-sections:    true
+    number-sections:    false
     colorlinks:         true
     highlight-style:    github
     theme:

@@ -2,19 +2,19 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Pythia’s Advice",
+    "title": "Abstract",
     "section": "",
     "text": "Barrett, T, Dowle, M, Srinivasan, A, Gorecki, J, Chirico, M, Hocking, T, Schwendinger, B, Stetsenko, P, Short, T, Lianoglou, S, Antonyan, E, Bonsch, M, Parsonage, H, Ritchie, S, Ren, K, Tan, X, Saporta, R, Seiskari, O, Dong, X, Lang, M, Iwasaki, W, Wenchel, S, Broman, K, Schmidt, T, Arenburg, D, Smith, E, Cocquemas, F, Gomez, M, Chataignon, P, Blaser, N, Selivanov, D, Riabushenko, A, Lee, C, Groves, D, Possenriede, D, Parages, F, Toth, D, Yaramaz-David, M, Perumal, A, Sams, J, Morgan, M, Quinn, M, @javrucebo, @marc-outins, Storey, R, Saraswat, M, Jacob, M, Schubmehl, M, Vaughan, D, Silvestri, L, Hester, J, Damico, A, Freundt, S, Simons, D, Andrade, E S de, Miller, C, Meldgaard, J P, Tlapak, V, Ushey, K, Eddelbuettel, D, Fischetti, T, Shilon, O, Khotilovich, V, Wickham, H, Becker, B, Haynes, K, Kamgang, B C, Delmarcell, O, O’Brien, J, Mezquita, D de, Czekanski, M, Shemetov, D, Jha, N, Wu, J, Giné-Vázquez, I, Chetia, A, Amoakohene, D, and Krylov, I 2024 Data.table: Extension of ’data.frame’. Available at https://cran.r-project.org/web/packages/data.table/index.html [Last accessed 13 October 2024].\n\n\nBLOKDYK, G 2019 SCOR MODEL A COMPLETE GUIDE - 2020 EDITION. [S.l.]: 5STARCOOKS.\n\n\nCore Team}, {R 2024 R: A Language and Environment for Statistical Computing. Available at https://www.R-project.org/\n\n\nCosta, R 2022 The CRISP-ML Methodology: A Step-by-Step Approach to Real-World Machine Learning Projects. Independently published.\n\n\nDeBruine, L 2023 Glossary: Glossaries for Markdown and Quarto Documents. Available at https://cran.r-project.org/web/packages/glossary/ [Last accessed 13 October 2024].\n\n\nGuja, A and Siwiak, M 2025 Generative AI for Data Analytics. Manning Publications Co. LLC 2025.\n\n\nHartshorn, S 2017 Machine Learning With Boosting: A Beginner’s Guide.\n\n\nHyndman [aut, R, cre, cph, Athanasopoulos, G, Bergmeir, C, Caceres, G, Chhay, L, Kuroptev, K, O’Hara-Wild, M, Petropoulos, F, Razbash, S, Wang, E, Yasmeen, F, Garza, F, Girolimetto, D, Ihaka, R, R Core Team, Reid, D, Shaub, D, Tang, Y, Wang, X, and Zhou, Z 2024a Forecast: Forecasting functions for time series and linear models. Available at https://cran.r-project.org/web/packages/forecast/index.html\n\n\nHyndman [aut, R, cre, cph, Athanasopoulos, G, O’Hara-Wild, M, Palihawadana, N, Wickramasuriya, S, and RStudio 2024b fpp3: Data for \"Forecasting: Principles and Practice\" (3rd Edition). Available at https://cran.r-project.org/web/packages/fpp3/index.html [Last accessed 13 October 2024].\n\n\nHyndman, R J and Athanasopoulos, G 2021 Forecasting: Principles and Practice (3rd ed). Available at https://otexts.com/fpp3/ [Last accessed 5 October 2024].\n\n\nKunapuli, G 2023 Ensemble methods for machine learning. Shelter Island, NY: Manning.\n\n\nManokhin, V 2023 Practical guide to applied conformal prediction in Python: Learn and apply the best uncertainty frameworks to your industry applications. Birmingham Mumbai: &lt;packt&gt;.\n\n\nMatthes, E 2019b Python crash course: A hands-on, project-based introduction to programming. 2nd edition. San Francisco, CA: No Starch Press.\n\n\nMatthes, E 2019a Python crash course: A hands-on, project-based introduction to programming. 2nd edition. San Francisco, CA: No Starch Press.\n\n\nMolnar, C 2023 Introduction to conformal prediction with Python: A short guide for quantifying uncertainty of machine learning models. First edition. München, Germany: Chistoph Molnar c/o MUCBOOK, Heidi Seibold. Available at https://christophmolnar.com/books/conformal-prediction/\n\n\nNixtla/hierarchicalforecast: Probabilistic hierarchical forecasting 👑 with statistical and econometric methods. n.d. Available at https://github.com/Nixtla/hierarchicalforecast\n\n\nNixtla/mlforecast 2024. Nixtla. Available at https://github.com/Nixtla/mlforecast\n\n\nNixtla/statsforecast 2024. Nixtla. Available at https://github.com/Nixtla/statsforecast\n\n\nNixtla/tsfeatures 2024. Nixtla. Available at https://github.com/Nixtla/tsfeatures\n\n\nO’Hara-Wild, M, Hyndman, R, Wang, E, Cook, D, features), T T (Correlation, and method), L C (Guerrero’s 2024a Feasts: Feature extraction and statistics for time series. Available at https://cran.r-project.org/web/packages/feasts/index.html\n\n\nO’Hara-Wild, M, Hyndman, R, Wang, E, implementation), G C (NNETAR, Bergmeir, C, Hensel, T-G, and Hyndman, T 2024b Fable: Forecasting models for tidy time series. Available at https://cran.r-project.org/web/packages/fable/index.html\n\n\nO’Sullivan, C 2024 SHAP with Python. SHAP with Python. Available at https://adataodyssey.com/course/\n\n\nO’Sullivan, C 2023 Introduction to SHAP with Python. Introduction to SHAP with Python. Available at https://towardsdatascience.com/introduction-to-shap-with-python-d27edc23c454\n\n\nPorter, L and Zingaro, D 2024 Learn AI-assisted Python programming: With GitHub Copilot and ChatGPT. Shelter Island, NY: Manning.\n\n\nSilver, E A, Pyke, D F, and Thomas, D J 2021 Inventory and production management in supply chains. Fourth edition, first issued in paperback. Boca Raton, FL London New York, NY: CRC Press, Taylor & Francis Group.\n\n\nVandeput, N 2023 Demand forecasting best practices. Shelter Island, NY: Manning Publications Co.\n\n\nVandeput, N 2021 Data science for supply chain forecasting. Second edition. Berlin ; Boston: De Gruyter.\n\n\nVandeput, N 2020 Inventory optimization: Models and simulations. Berlin ; Boston: De Gruyter.\n\n\nWickham, H n.d. R for data science (2e). Available at https://r4ds.hadley.nz/\n\n\nWickham, H, Chang, W, Henry, L, Pedersen, T L, Takahashi, K, Wilke, C, Woo, K, Yutani, H, Dunnington, D, Brand, T van den, Posit, and PBC 2024 ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics. Available at https://cran.r-project.org/web/packages/ggplot2/index.html [Last accessed 13 October 2024].",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Pythia's Advice</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Abstract</span>"
     ]
   },
   {
     "objectID": "how-to-read.html",
     "href": "how-to-read.html",
-    "title": "2  How to Read This Book",
+    "title": "How to Read This Book",
     "section": "",
-    "text": "2.1 Book Structure\nThis guide will help you navigate through this book and make the most of its features.\nThis book is organized into the following main sections:",
+    "text": "Book Structure\nThis guide will help you navigate through this book and make the most of its features.\nThis book is organized into the following main sections:",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>How to Read This Book</span>"
     ]
@@ -22,7 +22,7 @@
   {
     "objectID": "how-to-read.html#book-structure",
     "href": "how-to-read.html#book-structure",
-    "title": "2  How to Read This Book",
+    "title": "How to Read This Book",
     "section": "",
     "text": "Foundations: Core concepts and background information\nProject Phases: Detailed exploration of each phase of the methodology\nConclusions & Next Steps: Summary of key takeaways and future directions\nAppendix: Additional resources, references, and supplementary materials",
     "crumbs": [
@@ -32,9 +32,9 @@
   {
     "objectID": "how-to-read.html#navigation-features",
     "href": "how-to-read.html#navigation-features",
-    "title": "2  How to Read This Book",
-    "section": "2.2 Navigation Features",
-    "text": "2.2 Navigation Features\nThis book includes several features to enhance your reading experience:\n\n2.2.1 Table of Contents\nThe sidebar on the left provides a full table of contents. Click on any section to navigate directly to it.\n\n\n2.2.2 Search Function\nUse the search icon (🔍) in the top navigation bar to search for specific terms throughout the book.\n\n\n2.2.3 Code Blocks\n# Example code\nprint(\"Hello, world!\")\n\nCode blocks have a copy button (📋) in the top-right corner\nSome code blocks can be expanded to show more details\nYou can also toggle between code and output views\n\n\n\n2.2.4 Cross-References\nThis book contains cross-references to figures, tables, and sections that appear as links like Figure 1.2 or Chapter 3.\n\n\n2.2.5 Interactive Elements\nSome sections contain interactive elements: - Click on images to enlarge them - Interactive visualizations allow you to explore data - Collapsible sections can be expanded for additional details",
+    "title": "How to Read This Book",
+    "section": "Navigation Features",
+    "text": "Navigation Features\nThis book includes several features to enhance your reading experience:\n\nTable of Contents\nThe sidebar on the left provides a full table of contents. Click on any section to navigate directly to it.\n\n\nSearch Function\nUse the search icon (🔍) in the top navigation bar to search for specific terms throughout the book.\n\n\nCode Blocks\n# Example code\nprint(\"Hello, world!\")\n\nCode blocks have a copy button (📋) in the top-right corner\nSome code blocks can be expanded to show more details\nYou can also toggle between code and output views\n\n\n\nCross-References\nThis book contains cross-references to figures, tables, and sections that appear as links like Figure 1.2 or Chapter 3.\n\n\nInteractive Elements\nSome sections contain interactive elements: - Click on images to enlarge them - Interactive visualizations allow you to explore data - Collapsible sections can be expanded for additional details",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>How to Read This Book</span>"
     ]
@@ -42,9 +42,9 @@
   {
     "objectID": "how-to-read.html#reading-pathways",
     "href": "how-to-read.html#reading-pathways",
-    "title": "2  How to Read This Book",
-    "section": "2.3 Reading Pathways",
-    "text": "2.3 Reading Pathways\nThere are multiple ways to approach this book:\n\nSequential Reading: Follow the chapters in order for a comprehensive understanding\nTopic-Based: Use the search function to find specific topics of interest\nReference Use: Bookmark key sections for future reference",
+    "title": "How to Read This Book",
+    "section": "Reading Pathways",
+    "text": "Reading Pathways\nThere are multiple ways to approach this book:\n\nSequential Reading: Follow the chapters in order for a comprehensive understanding\nTopic-Based: Use the search function to find specific topics of interest\nReference Use: Bookmark key sections for future reference",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>How to Read This Book</span>"
     ]
@@ -52,9 +52,9 @@
   {
     "objectID": "how-to-read.html#best-viewing-experience",
     "href": "how-to-read.html#best-viewing-experience",
-    "title": "2  How to Read This Book",
-    "section": "2.4 Best Viewing Experience",
-    "text": "2.4 Best Viewing Experience\nFor the optimal experience: - Use a modern web browser (Chrome, Firefox, Safari, or Edge) - Enable JavaScript for interactive features - Use the dark/light mode toggle for your preferred reading environment",
+    "title": "How to Read This Book",
+    "section": "Best Viewing Experience",
+    "text": "Best Viewing Experience\nFor the optimal experience: - Use a modern web browser (Chrome, Firefox, Safari, or Edge) - Enable JavaScript for interactive features - Use the dark/light mode toggle for your preferred reading environment",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>How to Read This Book</span>"
     ]
@@ -62,9 +62,9 @@
   {
     "objectID": "how-to-read.html#downloading-and-sharing",
     "href": "how-to-read.html#downloading-and-sharing",
-    "title": "2  How to Read This Book",
-    "section": "2.5 Downloading and Sharing",
-    "text": "2.5 Downloading and Sharing\n\nClick the download icon (⬇️) to download a PDF or EPUB version\nUse the share buttons to share specific chapters on social media",
+    "title": "How to Read This Book",
+    "section": "Downloading and Sharing",
+    "text": "Downloading and Sharing\n\nClick the download icon (⬇️) to download a PDF or EPUB version\nUse the share buttons to share specific chapters on social media",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>How to Read This Book</span>"
     ]
@@ -72,7 +72,7 @@
   {
     "objectID": "the_myth.html",
     "href": "the_myth.html",
-    "title": "3  The Myth Inspiring Pythia’s Advice",
+    "title": "The Myth Inspiring Pythia’s Advice",
     "section": "",
     "text": "Your browser does not support the audio element.\n\nFrom Prophecy to Prediction: The Myth Inspiring Pythia’s Advice\nThe Pythia’s Advice project is dedicated to the art of sales forecasting. Drawing inspiration from the ancient myth of the Oracle of Delphi, where the Pythia—the high priestess—delivered cryptic prophecies, we harness the power of Data Science—our modern-day Pythia—to foresee future trends. Just as the Pythia’s prophecies required careful interpretation, our statistical and machine learning techniques produce Advice that requires human expertise for effective application. By embodying this union of technology and human insight, we aptly named our project Pythia’s Advice. This synergy ensures well-informed, data-driven decision-making and enhances the operational efficiency of the supply chain.\nAccording to ancient myth, the Pythia inhaled vapors emanating from the remnants of the Python slain by Apollo—the Olympian god of the sun, music, and prophecy. These vapors induced a trance-like state that allowed her to channel his prophetic insights, revealing future events. Similarly, our project ‘inhales’ vast amounts of data—our ‘Python’s Vapors’—which, when processed with complex algorithms, enable us to decipher hidden patterns and unveil valuable foresight. However, these predictive insights must be carefully interpreted to avoid missteps—much like when King Croesus misread the Pythia’s prophecy that ‘a great empire will fall.’ He waged war and, in doing so, opened Pandora’s Box—leading to the downfall of his own great empire—the Kingdom of Lydia.\nFurthermore, Pythia’s Advice emphasizes the crucial bond between humans and nature. By focusing on the sales forecast of food for biodiversity—products that support ecological diversity—we aim to benefit human health and promote planetary well-being. This harmonious relationship mirrors the Pythia’s sacred connection with the divine, symbolizing a balance between technological capabilities and the natural world.\n\n\n\n\n\n\n\n\nOur logo, featuring a tree integrated with the Pythia through conductive traces against an enlightening sunset that symbolizes guidance and inspiration, beautifully encapsulates this synergy. This imagery symbolizes the fusion of natural wisdom and technological innovation. It reminds us that while we rely on cutting-edge technology to predict the future, our roots remain deeply intertwined with nature.\nThrough Pythia’s Advice, we honor the legacy of the Oracle of Delphi, blending ancient wisdom with modern technology to illuminate the path forward.",
     "crumbs": [
@@ -82,7 +82,7 @@
   {
     "objectID": "acknowledgments.html",
     "href": "acknowledgments.html",
-    "title": "4  Acknowledgments",
+    "title": "Acknowledgments",
     "section": "",
     "text": "Acknowledgments\nI am grateful for the insightful comments offered by Ieke le Blanc. These have improved this study in innumerable ways and saved me from many errors; those that inevitably remain are entirely my own responsibility.",
     "crumbs": [
@@ -92,9 +92,9 @@
   {
     "objectID": "nb/00_pythias_advice_rev.html",
     "href": "nb/00_pythias_advice_rev.html",
-    "title": "5  Pythia’s Advice",
+    "title": "Pythia’s Advice",
     "section": "",
-    "text": "6 Introduction\nIn an increasingly complex market environment, accurate demand forecasting is critical for ensuring the operational efficiency of supply chains, particularly in industries like wholesale, where products are perishable and sales are affected by seasonality and promotions. This research focuses on a wholesale company that buys, produces, and distributes biodiversity food to retailers, Out-Of-Home, discounters and E-commerce. To make informed decisions regarding production, buying, and negotiation with customers, accurate sales forecasts are required at different aggregation levels, depending on each use case.\nWhile the company employs robust but dated statistical methods, such as moving averages and exponential smoothing, these techniques struggle to handle promotional impacts, capture complex sales patterns, and provide prediction intervals. Currently, a combination of bottom-up and top-down forecasting approaches is used, largely determined by the judgment of individual demand planners. However, the lack of clear guidance on which approach to apply in different scenarios has resulted in inconsistent and subjective forecasting outcomes. Furthermore, various use cases have distinct aggregation and time horizon requirements, adding complexity to maintaining consistent and accurate forecasts across the system.\nThe primary objective of this research is to determine the best way to generate a forecast, which methods to use and on what levels of granularity, enabling consistent, accurate forecasts that can be aggregated or dis-aggregated as required for different business needs. Specifically, the study aims to address the following key questions:\nUltimately, this research will provide an objective, data-driven strategy to improve forecast accuracy, reduce reliance on individual intuition, and ensure that forecasts are robust, consistent, and scalable across multiple aggregation levels, thereby enhancing overall decision-making efficiency.",
+    "text": "Introduction\nIn an increasingly complex market environment, accurate demand forecasting is critical for ensuring the operational efficiency of supply chains, particularly in industries like wholesale, where products are perishable and sales are affected by seasonality and promotions. This research focuses on a wholesale company that buys, produces, and distributes biodiversity food to retailers, Out-Of-Home, discounters and E-commerce. To make informed decisions regarding production, buying, and negotiation with customers, accurate sales forecasts are required at different aggregation levels, depending on each use case.\nWhile the company employs robust but dated statistical methods, such as moving averages and exponential smoothing, these techniques struggle to handle promotional impacts, capture complex sales patterns, and provide prediction intervals. Currently, a combination of bottom-up and top-down forecasting approaches is used, largely determined by the judgment of individual demand planners. However, the lack of clear guidance on which approach to apply in different scenarios has resulted in inconsistent and subjective forecasting outcomes. Furthermore, various use cases have distinct aggregation and time horizon requirements, adding complexity to maintaining consistent and accurate forecasts across the system.\nThe primary objective of this research is to determine the best way to generate a forecast, which methods to use and on what levels of granularity, enabling consistent, accurate forecasts that can be aggregated or dis-aggregated as required for different business needs. Specifically, the study aims to address the following key questions:\nUltimately, this research will provide an objective, data-driven strategy to improve forecast accuracy, reduce reliance on individual intuition, and ensure that forecasts are robust, consistent, and scalable across multiple aggregation levels, thereby enhancing overall decision-making efficiency.",
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Pythia's Advice</span>"
@@ -103,9 +103,9 @@
   {
     "objectID": "nb/00_pythias_advice_rev.html#methodology",
     "href": "nb/00_pythias_advice_rev.html#methodology",
-    "title": "5  Pythia’s Advice",
-    "section": "6.1 Methodology",
-    "text": "6.1 Methodology\nThis research follows the CRISP-ML methodology, [@costa_crisp-ml_2022] as the guiding framework.\nCRISP-ML is an acronym for “Cross-Industry Standard Process for Machine Learning.” It is a systematic framework for organizing and executing machine learning projects. The methodology includes six key steps:\n\nunderstanding the problem\npreparing the data\nselecting and tuning models\nevaluating performance\ndeploying the solution\nmonitoring and maintaining the model.\n\nThis thesis focuses on the first 4 steps, the results will be taken as advice to be implemented in the current way of working.",
+    "title": "Pythia’s Advice",
+    "section": "Methodology",
+    "text": "Methodology\nThis research follows the CRISP-ML methodology, [@costa_crisp-ml_2022] as the guiding framework.\nCRISP-ML is an acronym for “Cross-Industry Standard Process for Machine Learning.” It is a systematic framework for organizing and executing machine learning projects. The methodology includes six key steps:\n\nunderstanding the problem\npreparing the data\nselecting and tuning models\nevaluating performance\ndeploying the solution\nmonitoring and maintaining the model.\n\nThis thesis focuses on the first 4 steps, the results will be taken as advice to be implemented in the current way of working.",
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Pythia's Advice</span>"
@@ -114,9 +114,9 @@
   {
     "objectID": "nb/01_business_understanding_rev.html",
     "href": "nb/01_business_understanding_rev.html",
-    "title": "6  Business Understanding",
+    "title": "Business Understanding",
     "section": "",
-    "text": "6.1 Defining the Scope of the ML Application\ndef 6.1\nSee Figure Figure 9.1 for the thumbnail overview.\n##Success Criteria - Business Success purpose and success criteria (reduction OOS&OOD) and other factors like customer & employee satisfaction - ML Success FA% and BIAS% - Economic Success impact of the project on the companies financial performance DAPS ## Feasibility availability, size, and quality of the training sample",
+    "text": "Defining the Scope of the ML Application\ndef 6.1\nSee Figure Figure 9.1 for the thumbnail overview.\n##Success Criteria - Business Success purpose and success criteria (reduction OOS&OOD) and other factors like customer & employee satisfaction - ML Success FA% and BIAS% - Economic Success impact of the project on the companies financial performance DAPS ## Feasibility availability, size, and quality of the training sample",
     "crumbs": [
       "Project Phases",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Business Understanding</span>"
@@ -125,9 +125,9 @@
   {
     "objectID": "nb/01_business_understanding_rev.html#defining-the-scope-of-the-ml-application",
     "href": "nb/01_business_understanding_rev.html#defining-the-scope-of-the-ml-application",
-    "title": "6  Business Understanding",
+    "title": "Business Understanding",
     "section": "",
-    "text": "6.1.1 Background\nThe company’s forecasting requirements vary significantly across several key use cases, among others:\n\n\n\n\n\n\n\nsupply chain network (sample)\n\n\n\nBuying and Production: Requires forecasts at the material level and warehouse, aggregated weekly, with a forecast horizon of 12 weeks.\nSetting Safety Stock Profiles: Requires forecasts at the material level and warehouse, aggregated weekly, with a forecast horizon of 26-52 weeks, to determine safety stock profiles based on realized forecast accuracy.\nNegotiation with Customers: Requires forecasts at a monthly level, aggregated by material categories and customer groups, with a horizon of 6 months.\nProduction Cost Calculation: Requires forecasts at a quarterly level, aggregated by material, with a horizon of 6 quarters, grouped into annual time buckets.\n\nThe primary forecasting challenge is determining the optimal aggregation level and methods to use for generating forecasts that can meet the desired forecast accuracy of these different use cases while ensuring consistency and accuracy.\nThis inconsistency stems from a lack of objective criteria for selecting between forecasting methods—bottom-up, top-down, or middle-out—resulting in decisions that rely on the subjective judgment of demand planners, leading to variable performance and inefficiencies.\n\n\n6.1.2 Business Objectives\nThe primary objective is to enhance operational efficiency by improving forecast accuracy across all key use cases. This will be achieved through the application of robust forecasting methods that can handle seasonality, promotions, and efficiently allocate scarce resources. Ultimately, these improvements will contribute to improved stock levels and a higher level of customer satisfaction, both key strategic goals for the company.\n\n\n6.1.3 Business Success Criteria\nSuccess will be measured by the following criteria:\n\nImproved Forecast Accuracy:\n\nTailored Forecasts for Each Use Case: Enhanced accuracy across areas such as buying, production, safety stock settings, and customer negotiations, using methods that account for seasonality, promotions, and varying aggregation levels.\nReduced Forecast Errors and Bias: Measurable reductions in key error metrics like RMSE , MAPE , and BIAS will lead to better alignment between forecasted and actual sales. Increased accuracy will also foster trust among supply planners, reducing the need for excessive safety margins.\nConsistency Across Aggregation Levels: Forecasts will remain consistent across different levels of aggregation, ensuring that detailed and aggregated forecasts are aligned.\n\nInformed Decision-Making for Forecasting System Functionality:\n\nSelecting the Right Forecasting Methods: This research will guide the selection of optimal forecasting methods (statistical, machine learning, or hybrid) to improve performance across various use cases.\nEfficient Resource Allocation: A product classification scheme (e.g., ABC-XYZ) will be developed to help demand planners focus on high-impact products, while low-impact products will be managed more efficiently through automated forecasts.\n\nOperational Benefits:\n\nImproved Inventory Management: More accurate forecasts will drive better purchasing and production decisions, leading to:\n\nReduced Out-of-Stock (OOS) Incidents: Ensuring product availability to meet customer demand and reduce penalties from stock-outs.\nReduced Out-of-Date (OOD) Incidents: Minimizing waste and ensuring the freshness of perishable goods, leading to lower storage costs and better inventory turnover.\n\nOptimized Safety Stock Levels: Accurate forecasts will allow for better safety stock settings, reducing both overstocking and stock-outs.\nCost Optimization: Improved demand alignment will lower excess inventory and warehousing costs, minimize spoilage, and reduce costs associated with last-minute adjustments and overproduction.\n\nEnhanced Supply Chain Efficiency and Decision-Making:\n\nStrategic Decision Support: Consistent and accurate forecasts will improve decision-making across production planning, sales target setting, capacity management, and workforce optimization. These improvements will also support better customer negotiations and more precise COGS (Cost of Goods Sold) calculations, resulting in a more efficient supply chain.\nIncreased Customer Satisfaction: Improved product availability, fewer stock-outs, and fresher goods will not only reduce operational costs but will also enhance customer satisfaction and loyalty—a core strategic objective of the company.\n\n\nBy achieving these objectives, the company will see significant improvements in operational efficiency, cost-effectiveness, and most importantly, a higher level of customer satisfaction, which will ultimately drive long-term business success.\nsee upper part of the flow-down graph, (Section 14.1).\n\n\n6.1.4 Inventory of Resources Requirements\n\n6.1.4.1 Data sources:\nThe available data includes historical sales, promotional data, stock quantities, and previous forecasts. Stock-out periods will be adjusted for by inflating sales to reflect demand that would have occurred had stock been available.\n\n\n\n\n\n\n\n\nData Type\nDetails\nTime Span\n\n\n\n\nSales\nCustomer Orders, Inter-company, Returns, Free-of-Charge and Missed\n&gt; 2020\n\n\nPromotions\nPromotions per material and customer\n&gt; 2020\n\n\nStock\nDaily stock level per material and distribution center\n&gt; 2020\n\n\nForecasts\ngenerated forecast before- and after Demand Review\n&gt; Aug. 2023\n\n\nMaster data\nMaterial, Customer and Organization, including hierarchy’s\nN.A.\n\n\n\n\n\n\n6.1.4.2 Scoping\nThe scope of the project consist of two Marketing & Sales Organizations (MSO), with a focus on 6 brands, representing 5 out of the 6 categories, see Table 6.1. These materials are made-to-stock (MTS), requirements are planned on a weekly level, which represents 97% of the business.\nThis leaves us with about 1.000 materials out of 9.000 to focus on, making the assumption that these are representative for the rest of the products.\n\n\n\nTable 6.1: Brands and Categories\n\n\n\n\n\nBrand\nCategory\n\n\n\n\nBjorg\nDairy\n\n\nClipper\nTea / Coffee\n\n\nNaturela\nTea / Coffee\n\n\nTanoshi\nMeals\n\n\nAlter Eco\nSweets\n\n\nZonnatura\nBreakfast Cereals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6.1.5 Data Mining Goals\nPredictive Model based on Correlations: Forecast Future Sales + Promotion effects\nsee lower part of the flow-down graph, (Section 14.1).\n\nData and Forecasting Methods\nWe will employ a combination of statistical methods and machine learning techniques to improve the forecasting process:\n\nCurrent Methods: The company’s current forecasting system uses moving averages, exponential smoothing and Box-Jenkins, which face challenges with Seasonality, Stationarity and promotional effects. Forecasts are often inadequate in handling the impacts of promotions.\nProposed Methods:\n\nETS (Error, Trend, Seasonal): To replace exponential smoothing with a model that provides prediction intervals and better captures trends and seasonality.\nHTS (Hierarchical Time Series): To handle multiple aggregation levels, ensuring forecast consistency when forecasts are disaggregated or aggregated across levels.\nXGBoost: A machine learning technique capable of handling promotional impacts and even identifying cannibalization effects of promotions between products.\nconformal prediction: A method that provides prediction intervals and calibrated forecasts, ensuring that the forecasted values are within a certain confidence level.\nCatBoost and SHAP: These will be used for feature analysis, determining which features (e.g., promotions, stock-outs) have the highest impact on forecast accuracy. This approach helps in choosing relevant input features to improve forecasts.\n\n\n\n\nConsistency and Validation\nOne key requirement is ensuring that forecasts remain consistent across different levels of aggregation. This is where HTS will play a crucial role, reconciling forecasts generated at different aggregation levels to ensure that top-level forecasts align with aggregated lower-level forecasts. This will address the known issue of discrepancies between aggregated forecasts and directly forecasted aggregated levels.\n\n\n6.1.5.1 Human Resources Allocation\nThe team consists of X demand planners working across Y MSOs. Currently, planners are involved in manually indicating promotional impacts and adjusting forecasts based on intuition, without systematic data cleaning for stock-outs or model tuning.\nTo optimize resource allocation, we plan to implement a classification system for the company’s 9K SKUs, utilizing an:\nABC-XYZ classification scheme:\n\nABC Classification: Based on sales volume—focusing more resources on high-value items (A-class) and minimizing attention to low-volume items (C-class).\nXYZ Classification: Based on sales variability, indicating which products have stable demand versus those with erratic patterns.\nCombined Classification: These classifications will guide planners in determining where their efforts can have the most impact, focusing primarily on high-priority items while relying more on automated processes for low-priority ones.\n\n\n\n\n6.1.6 Data Mining Success Criteria\nThe fiinal result will show an estimated relationship between forecast accuracy and the cost of resources required for the agreed scope. The cost of resources result from hardware, software and human resources needed for cleansing data, transforming data, model tuning and other manual activities needed.\nTo assess forecast accuracy, we will use a range of evaluation metrics tailored to each use case.\nThese metrics will help evaluate how well each approach performs against the unique requirements of each use case, ultimately guiding method selection and refinement.\n\nRMSE (Root Mean Squared Error, def 6.2 ): The primary metric for measuring forecast accuracy, particularly useful for penalizing large errors.\nMAPE (Mean Absolute Percentage Error): To align with existing company metrics.\nMAE (Mean Absolute Error) and MASE (Mean Absolute Scaled Error): Additional metrics to provide a broader evaluation, addressing different aspects of forecast performance and comparing models to naïve baselines.\n\n\n\n6.1.7 Project Plan\nsee Section 13.7\n\n6.1.7.1 Initial Assessment of Tools and Techniques\nsee Literature review (Section 13.1)\n\n\n\n\n\n\n\n\n\n\ndef 6.1 OOD:\nOut of Date\n\n\ndef 6.2 RMSE:\nRoot Mean Squared Error\nRMSE = \\(\\sqrt{mean(e^2_t)}\\)\nA Scale-dependent error, to compare forecast performances between data sets with the same unit.",
+    "text": "Background\nThe company’s forecasting requirements vary significantly across several key use cases, among others:\n\n\n\n\n\n\n\nsupply chain network (sample)\n\n\n\nBuying and Production: Requires forecasts at the material level and warehouse, aggregated weekly, with a forecast horizon of 12 weeks.\nSetting Safety Stock Profiles: Requires forecasts at the material level and warehouse, aggregated weekly, with a forecast horizon of 26-52 weeks, to determine safety stock profiles based on realized forecast accuracy.\nNegotiation with Customers: Requires forecasts at a monthly level, aggregated by material categories and customer groups, with a horizon of 6 months.\nProduction Cost Calculation: Requires forecasts at a quarterly level, aggregated by material, with a horizon of 6 quarters, grouped into annual time buckets.\n\nThe primary forecasting challenge is determining the optimal aggregation level and methods to use for generating forecasts that can meet the desired forecast accuracy of these different use cases while ensuring consistency and accuracy.\nThis inconsistency stems from a lack of objective criteria for selecting between forecasting methods—bottom-up, top-down, or middle-out—resulting in decisions that rely on the subjective judgment of demand planners, leading to variable performance and inefficiencies.\n\n\nBusiness Objectives\nThe primary objective is to enhance operational efficiency by improving forecast accuracy across all key use cases. This will be achieved through the application of robust forecasting methods that can handle seasonality, promotions, and efficiently allocate scarce resources. Ultimately, these improvements will contribute to improved stock levels and a higher level of customer satisfaction, both key strategic goals for the company.\n\n\nBusiness Success Criteria\nSuccess will be measured by the following criteria:\n\nImproved Forecast Accuracy:\n\nTailored Forecasts for Each Use Case: Enhanced accuracy across areas such as buying, production, safety stock settings, and customer negotiations, using methods that account for seasonality, promotions, and varying aggregation levels.\nReduced Forecast Errors and Bias: Measurable reductions in key error metrics like RMSE , MAPE , and BIAS will lead to better alignment between forecasted and actual sales. Increased accuracy will also foster trust among supply planners, reducing the need for excessive safety margins.\nConsistency Across Aggregation Levels: Forecasts will remain consistent across different levels of aggregation, ensuring that detailed and aggregated forecasts are aligned.\n\nInformed Decision-Making for Forecasting System Functionality:\n\nSelecting the Right Forecasting Methods: This research will guide the selection of optimal forecasting methods (statistical, machine learning, or hybrid) to improve performance across various use cases.\nEfficient Resource Allocation: A product classification scheme (e.g., ABC-XYZ) will be developed to help demand planners focus on high-impact products, while low-impact products will be managed more efficiently through automated forecasts.\n\nOperational Benefits:\n\nImproved Inventory Management: More accurate forecasts will drive better purchasing and production decisions, leading to:\n\nReduced Out-of-Stock (OOS) Incidents: Ensuring product availability to meet customer demand and reduce penalties from stock-outs.\nReduced Out-of-Date (OOD) Incidents: Minimizing waste and ensuring the freshness of perishable goods, leading to lower storage costs and better inventory turnover.\n\nOptimized Safety Stock Levels: Accurate forecasts will allow for better safety stock settings, reducing both overstocking and stock-outs.\nCost Optimization: Improved demand alignment will lower excess inventory and warehousing costs, minimize spoilage, and reduce costs associated with last-minute adjustments and overproduction.\n\nEnhanced Supply Chain Efficiency and Decision-Making:\n\nStrategic Decision Support: Consistent and accurate forecasts will improve decision-making across production planning, sales target setting, capacity management, and workforce optimization. These improvements will also support better customer negotiations and more precise COGS (Cost of Goods Sold) calculations, resulting in a more efficient supply chain.\nIncreased Customer Satisfaction: Improved product availability, fewer stock-outs, and fresher goods will not only reduce operational costs but will also enhance customer satisfaction and loyalty—a core strategic objective of the company.\n\n\nBy achieving these objectives, the company will see significant improvements in operational efficiency, cost-effectiveness, and most importantly, a higher level of customer satisfaction, which will ultimately drive long-term business success.\nsee upper part of the flow-down graph, (Flow-down).\n\n\nInventory of Resources Requirements\n\nData sources:\nThe available data includes historical sales, promotional data, stock quantities, and previous forecasts. Stock-out periods will be adjusted for by inflating sales to reflect demand that would have occurred had stock been available.\n\n\n\n\n\n\n\n\nData Type\nDetails\nTime Span\n\n\n\n\nSales\nCustomer Orders, Inter-company, Returns, Free-of-Charge and Missed\n&gt; 2020\n\n\nPromotions\nPromotions per material and customer\n&gt; 2020\n\n\nStock\nDaily stock level per material and distribution center\n&gt; 2020\n\n\nForecasts\ngenerated forecast before- and after Demand Review\n&gt; Aug. 2023\n\n\nMaster data\nMaterial, Customer and Organization, including hierarchy’s\nN.A.\n\n\n\n\n\n\nScoping\nThe scope of the project consist of two Marketing & Sales Organizations (MSO), with a focus on 6 brands, representing 5 out of the 6 categories, see Table 6.1. These materials are made-to-stock (MTS), requirements are planned on a weekly level, which represents 97% of the business.\nThis leaves us with about 1.000 materials out of 9.000 to focus on, making the assumption that these are representative for the rest of the products.\n\n\n\nTable 6.1: Brands and Categories\n\n\n\n\n\nBrand\nCategory\n\n\n\n\nBjorg\nDairy\n\n\nClipper\nTea / Coffee\n\n\nNaturela\nTea / Coffee\n\n\nTanoshi\nMeals\n\n\nAlter Eco\nSweets\n\n\nZonnatura\nBreakfast Cereals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Mining Goals\nPredictive Model based on Correlations: Forecast Future Sales + Promotion effects\nsee lower part of the flow-down graph, (Flow-down).\n\nData and Forecasting Methods\nWe will employ a combination of statistical methods and machine learning techniques to improve the forecasting process:\n\nCurrent Methods: The company’s current forecasting system uses moving averages, exponential smoothing and Box-Jenkins, which face challenges with Seasonality, Stationarity and promotional effects. Forecasts are often inadequate in handling the impacts of promotions.\nProposed Methods:\n\nETS (Error, Trend, Seasonal): To replace exponential smoothing with a model that provides prediction intervals and better captures trends and seasonality.\nHTS (Hierarchical Time Series): To handle multiple aggregation levels, ensuring forecast consistency when forecasts are disaggregated or aggregated across levels.\nXGBoost: A machine learning technique capable of handling promotional impacts and even identifying cannibalization effects of promotions between products.\nconformal prediction: A method that provides prediction intervals and calibrated forecasts, ensuring that the forecasted values are within a certain confidence level.\nCatBoost and SHAP: These will be used for feature analysis, determining which features (e.g., promotions, stock-outs) have the highest impact on forecast accuracy. This approach helps in choosing relevant input features to improve forecasts.\n\n\n\n\nConsistency and Validation\nOne key requirement is ensuring that forecasts remain consistent across different levels of aggregation. This is where HTS will play a crucial role, reconciling forecasts generated at different aggregation levels to ensure that top-level forecasts align with aggregated lower-level forecasts. This will address the known issue of discrepancies between aggregated forecasts and directly forecasted aggregated levels.\n\n\nHuman Resources Allocation\nThe team consists of X demand planners working across Y MSOs. Currently, planners are involved in manually indicating promotional impacts and adjusting forecasts based on intuition, without systematic data cleaning for stock-outs or model tuning.\nTo optimize resource allocation, we plan to implement a classification system for the company’s 9K SKUs, utilizing an:\nABC-XYZ classification scheme:\n\nABC Classification: Based on sales volume—focusing more resources on high-value items (A-class) and minimizing attention to low-volume items (C-class).\nXYZ Classification: Based on sales variability, indicating which products have stable demand versus those with erratic patterns.\nCombined Classification: These classifications will guide planners in determining where their efforts can have the most impact, focusing primarily on high-priority items while relying more on automated processes for low-priority ones.\n\n\n\n\nData Mining Success Criteria\nThe fiinal result will show an estimated relationship between forecast accuracy and the cost of resources required for the agreed scope. The cost of resources result from hardware, software and human resources needed for cleansing data, transforming data, model tuning and other manual activities needed.\nTo assess forecast accuracy, we will use a range of evaluation metrics tailored to each use case.\nThese metrics will help evaluate how well each approach performs against the unique requirements of each use case, ultimately guiding method selection and refinement.\n\nRMSE (Root Mean Squared Error, def 6.2 ): The primary metric for measuring forecast accuracy, particularly useful for penalizing large errors.\nMAPE (Mean Absolute Percentage Error): To align with existing company metrics.\nMAE (Mean Absolute Error) and MASE (Mean Absolute Scaled Error): Additional metrics to provide a broader evaluation, addressing different aspects of forecast performance and comparing models to naïve baselines.\n\n\n\nProject Plan\nsee Project Plan\n\nInitial Assessment of Tools and Techniques\nsee Literature review (Literature)\n\n\n\n\n\n\n\n\n\n\ndef 6.1 OOD:\nOut of Date\n\n\ndef 6.2 RMSE:\nRoot Mean Squared Error\nRMSE = \\(\\sqrt{mean(e^2_t)}\\)\nA Scale-dependent error, to compare forecast performances between data sets with the same unit.",
     "crumbs": [
       "Project Phases",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Business Understanding</span>"
@@ -136,9 +136,9 @@
   {
     "objectID": "nb/02_data_understanding_rev.html",
     "href": "nb/02_data_understanding_rev.html",
-    "title": "7  Data Understanding",
+    "title": "Data Understanding",
     "section": "",
-    "text": "7.1 Data Collection Report",
+    "text": "Data Collection Report",
     "crumbs": [
       "Project Phases",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data Understanding</span>"
@@ -147,9 +147,9 @@
   {
     "objectID": "nb/02_data_understanding_rev.html#data-description-report",
     "href": "nb/02_data_understanding_rev.html#data-description-report",
-    "title": "7  Data Understanding",
-    "section": "7.2 Data Description Report",
-    "text": "7.2 Data Description Report",
+    "title": "Data Understanding",
+    "section": "Data Description Report",
+    "text": "Data Description Report",
     "crumbs": [
       "Project Phases",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data Understanding</span>"
@@ -158,9 +158,9 @@
   {
     "objectID": "nb/02_data_understanding_rev.html#data-exploration-report",
     "href": "nb/02_data_understanding_rev.html#data-exploration-report",
-    "title": "7  Data Understanding",
-    "section": "7.3 Data Exploration Report",
-    "text": "7.3 Data Exploration Report",
+    "title": "Data Understanding",
+    "section": "Data Exploration Report",
+    "text": "Data Exploration Report",
     "crumbs": [
       "Project Phases",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data Understanding</span>"
@@ -169,9 +169,9 @@
   {
     "objectID": "nb/02_data_understanding_rev.html#data-quality-report",
     "href": "nb/02_data_understanding_rev.html#data-quality-report",
-    "title": "7  Data Understanding",
-    "section": "7.4 Data Quality Report",
-    "text": "7.4 Data Quality Report",
+    "title": "Data Understanding",
+    "section": "Data Quality Report",
+    "text": "Data Quality Report",
     "crumbs": [
       "Project Phases",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data Understanding</span>"
@@ -180,9 +180,9 @@
   {
     "objectID": "nb/02_data_understanding_rev.html#identification-of-data-sources",
     "href": "nb/02_data_understanding_rev.html#identification-of-data-sources",
-    "title": "7  Data Understanding",
-    "section": "7.5 Identification of Data Sources",
-    "text": "7.5 Identification of Data Sources",
+    "title": "Data Understanding",
+    "section": "Identification of Data Sources",
+    "text": "Identification of Data Sources",
     "crumbs": [
       "Project Phases",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data Understanding</span>"
@@ -191,9 +191,9 @@
   {
     "objectID": "nb/02_data_understanding_rev.html#data-quality-assessment",
     "href": "nb/02_data_understanding_rev.html#data-quality-assessment",
-    "title": "7  Data Understanding",
-    "section": "7.6 Data Quality Assessment",
-    "text": "7.6 Data Quality Assessment\nassessing the - completeness: impute missing data - accuracy: = consistency:\n\n7.6.1 Data Description\nA descriptive exploratory analysis describes the data by its statistical properties and metadata.\noutliers?\n\n\n7.6.2 Data Verification",
+    "title": "Data Understanding",
+    "section": "Data Quality Assessment",
+    "text": "Data Quality Assessment\nassessing the - completeness: impute missing data - accuracy: = consistency:\n\nData Description\nA descriptive exploratory analysis describes the data by its statistical properties and metadata.\noutliers?\n\n\nData Verification",
     "crumbs": [
       "Project Phases",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data Understanding</span>"
@@ -202,9 +202,9 @@
   {
     "objectID": "nb/02_data_understanding_rev.html#sdmfrcac-fa",
     "href": "nb/02_data_understanding_rev.html#sdmfrcac-fa",
-    "title": "7  Data Understanding",
-    "section": "8.1 SDMFRCAC FA",
-    "text": "8.1 SDMFRCAC FA",
+    "title": "Data Understanding",
+    "section": "SDMFRCAC FA",
+    "text": "SDMFRCAC FA",
     "crumbs": [
       "Project Phases",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data Understanding</span>"
@@ -213,9 +213,9 @@
   {
     "objectID": "nb/03_data_preparation_rev.html",
     "href": "nb/03_data_preparation_rev.html",
-    "title": "8  Data Preparation",
+    "title": "Data Preparation",
     "section": "",
-    "text": "9 Data Pipelines\nSee Figure Figure 9.1 for the thumbnail overview.",
+    "text": "Data Pipelines\nSee Figure Figure 9.1 for the thumbnail overview.",
     "crumbs": [
       "Project Phases",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Preparation</span>"
@@ -224,9 +224,9 @@
   {
     "objectID": "nb/03_data_preparation_rev.html#work-flow-architecture",
     "href": "nb/03_data_preparation_rev.html#work-flow-architecture",
-    "title": "8  Data Preparation",
-    "section": "10.1 Work Flow & Architecture :",
-    "text": "10.1 Work Flow & Architecture :\nNeed for a a robust, scalable and future-proof architecture with the flexibility to adapt as the data sets evolves, all while maintaining excellent performance and usability.\n\nNeed for fast startup and in-memory processing.\nScalable for future growth\nMinimal in complexity, leveraging familiar tools and lightweight components.\n\nVertically Scalable: The architecture leverages your node’s 24 GB of memory effectively, with room for growth by upgrading hardware (e.g., adding more RAM or CPU cores).\nLow Complexity Overhead:\nDuckDB introduces minimal complexity since it integrates seamlessly with both R and Python. SQL provides a familiar and powerful tool for managing data subsets, making the workflow easy to maintain. Prepared for Growth:\nThe combination of Feather and DuckDB ensures you can handle current and moderate future data sizes efficiently. For substantial growth, DuckDB can work with Parquet files or other scalable formats with minimal changes. Optimized for Performance:\nFeather ensures fast data access at startup. DuckDB allows efficient on-disk querying to reduce memory overhead, ensuring smooth performance even as datasets grow.\n\n10.1.1 \nThis workflow is ideal when working with datasets that are manageable in size and can be fully loaded into memory for analysis. Incorporating DuckDB adds the flexibility of SQL querying, which can be advantageous for preprocessing data before intensive computations. The use of Feather format ensures fast data loading, which is important for applications where user wait time during startup should be minimized.\nIf your dataset grows or your scalability needs change, you might need to adjust the workflow accordingly, possibly by switching to Parquet files and leveraging DuckDB’s capabilities to handle larger datasets more efficiently.\nArchitecture\nScalability:\n\nadjust your SQL queries to limit the data loaded into memory, ensuring your application remains performant.\nscale vertically with increased RAM and CPU cores to manage larger Feather files and more complex algorithms without architectural changes.\n\nPerformance:\n\nFeather enables fast reads for smaller datasets during startup.\nDuckDB efficiently handles larger datasets by querying on disk and loading only the necessary data into memory.\n\n\n\n10.1.2 Data Stageing\n\nD00: contains the BW OpenHub Export, CSV - same as AL11\n\n\n\n10.1.3 Data Ingestion:\nOccurs once a month, converting CSV to Parquet (or another format). header is added and stored in D01\n\n\n10.1.4 Data Access and Querying:\n\nData is imported into R data.table objects via DuckDB, which reads the stored files.\nQueries are often simple SQL SELECT statements on one table or basic INNER JOINs.\nThe same SQL queries are used to import data into Python using Polars via DuckDB.\n\n\n\n10.1.5 Data Manipulation:\n\nFurther data manipulation in R is done using data.table.\nIn Python, data manipulation is performed using Polars.\n\nEvaluation of Your Proposed Workflow\nGiven your familiarity with SQL and DuckDB, and your need for scalability, your proposed workflow is sound and aligns well with your goals.\n\n\n10.1.6 Advantages of Your Workflow\n\nScalability\n\nEfficient Data Storage: Parquet files are columnar, compressed, and optimized for performance, which is beneficial for large datasets.\nQuery Optimization: DuckDB is designed for efficient analytical queries, even on large datasets.\n\nFlexibility\n\nLanguage Agnostic: DuckDB can be used within R and Python, allowing seamless transition between languages.\nSQL Familiarity: Your proficiency in SQL means you can leverage DuckDB’s SQL interface effectively.\n\nPerformance\n\n\nFast Query Execution: DuckDB is optimized for OLAP workloads and can execute complex queries quickly.\nDirect Parquet Support: DuckDB can read Parquet files directly without the need to load the entire dataset into memory.\n\n\nIntegration with R and Python\n\n\nR Data.Tables: You can fetch query results from DuckDB into R data.tables, integrating with your existing R codebase.\nPython Polars: Similarly, you can read data into Polars DataFrames in Python, which is efficient for data manipulation.\n\n\nSimplified Data Pipeline\n\n\nUnified Data Source: Using DuckDB on top of Parquet files centralizes your data access, simplifying data management.\n\n\n\n10.1.7 Potential Disadvantages\n\nAdditional Complexity\n\n\nLibrary Dependencies: Requires installation and management of additional libraries (DuckDB, Parquet support in R and Python).\nLearning Curve for Integration: Even though you’re familiar with DuckDB, integrating it into R and Python workflows may require some setup and testing.\n\n\nOverhead of Data Conversion\n\nInitial Conversion: Migrating CSV files to Parquet adds an extra step in your data ingestion pipeline.\nData Updates: If your CSV data updates frequently, you’ll need to automate the conversion process.\n\nResource Usage\n\n\nDisk Space: Maintaining both CSV and Parquet files (if not deleting the original CSVs) may consume additional storage.\n\n\nRecommendations and Best Practices\nGiven your requirements and skills, your proposed workflow is suitable and offers several benefits in terms of scalability and flexibility. Here are some recommendations to optimize your workflow:\n### 1. Automate the CSV to Parquet Conversion\n\nUse Batch Processing:\nCreate scripts in R or Python to automate the conversion of CSV files to Parquet.\nLeverage DuckDB for Conversion:\n\nDuckDB can read CSV files and write Parquet files, allowing you to perform the conversion within DuckDB.\n\n\nCOPY (SELECT * FROM 'your_data.csv') TO 'your_data.parquet' (FORMAT PARQUET);\n\n\n10.1.8 2. Optimize DuckDB Usage\n\nIndexing and Partitioning:\n\nWhile Parquet files do not support traditional indexing, consider partitioning your data to improve query performance.\n\nSQL Query Optimization:\n\nUse DuckDB’s advanced SQL features to optimize queries (e.g., window functions, common table expressions).\n\n\n\n\n10.1.9 3. Efficient Data Retrieval into R and Python\n\nIn R:\n\nUse the duckdb package to execute SQL queries and fetch results into data.tables.\n\nlibrary(duckdb)\ncon &lt;- dbConnect(duckdb::duckdb())\n\n# Query data\nresult &lt;- dbGetQuery(con, \"SELECT * FROM 'your_data.parquet' WHERE conditions\")\n\n# Convert to data.table\nlibrary(data.table)\ndt_result &lt;- as.data.table(result)\nIn Python with Polars:\n\nUse DuckDB’s Python API or integrate with Polars for efficient data handling.\n\n\nimport duckdb\nimport polars as pl\n\n# Execute query and fetch result as Polars DataFrame\ndf = duckdb.query(\"SELECT * FROM 'your_data.parquet' WHERE conditions\").to_df()\npl_df = pl.from_pandas(df)\n\n\n10.1.10 4. Consider Data Volume and Hardware Resources\n\nMemory Management:\n\nDuckDB processes data efficiently, but ensure your hardware resources are adequate for your data size.\n\nDisk I/O:\n\nUsing Parquet files reduces disk I/O due to compression, but be mindful of the storage subsystem performance.\n\n\n\n\n10.1.11 5. Keep Libraries Updated\n\nStay Current:\n\nEnsure that you are using the latest versions of DuckDB, R packages, and Python libraries to benefit from performance improvements and bug fixes.\n\n\n\n\n10.1.12 6. Handle Updates and Data Versioning\n\nIncremental Updates:\n\nIf your data updates incrementally, design your pipeline to handle partial updates rather than reprocessing entire datasets.\n\nData Version Control:\n\nImplement versioning for your Parquet files to track changes over time.\n\n\n\n\n10.1.13 7. Monitor Performance and Adjust\n\nBenchmarking:\n\nRegularly benchmark query performance to identify bottlenecks.\n\nAdjust Strategy:\n\nBased on performance metrics, adjust partitioning schemes, query strategies, or hardware resources as needed.\n\n\n\nConclusion\nYour proposed workflow of migrating CSV files to Parquet, using DuckDB for querying, and integrating with R and Python is a robust solution that addresses your needs for scalability and flexibility. Given your familiarity with SQL and DuckDB, and the fact that you possess the necessary skills to manage the additional complexity, this approach is well-suited to your situation.\nBenefits of Your Workflow:\n\nScalable Data Processing:\nEfficient handling of large datasets through Parquet and DuckDB.\nFlexibility Across Languages:\n\nSeamless data access in both R and Python without data format conversion issues.\n\nPerformance Optimization:\n\nFaster query execution and data retrieval due to optimized storage and processing.\n\n\nKey Actions Moving Forward:\n\nSet Up Automated Data Pipelines:\n\n\nAutomate the conversion from CSV to Parquet to ensure consistency and save time.\n\n\nOptimize Queries:\n\n\nUtilize DuckDB’s full SQL capabilities to write efficient queries for your analysis.\n\n\nIntegrate Smoothly with R and Python:\n\nEstablish standard functions or scripts in both environments to interact with DuckDB, minimizing repetitive code.\n\nMonitor and Iterate:\n\nKeep an eye on performance metrics and be ready to adjust your approach as your dataset grows or changes.\n\n\n\nAdditional Considerations\n\nCommunity and Support:\n\nDuckDB is actively developed, and there is a growing community. Utilize resources like documentation and forums when needed.\n\nTesting and Validation:\n\nAs with any data pipeline, thoroughly test each component to ensure data integrity and correctness.\n\nSecurity and Access Control:\n\nIf working in a multi-user environment, consider how data access and permissions are managed.\n\n\n\nFinal Thoughts\nYour willingness to embrace additional complexity due to your skill set positions you well to benefit from this workflow. By combining the strengths of Parquet’s efficient data storage and DuckDB’s powerful query engine, you can achieve a scalable and flexible data analysis environment.\nShould you need further assistance or have more questions as you implement this workflow, feel free to reach out. I’m here to help ensure your data processing is as efficient and effective as possible.",
+    "title": "Data Preparation",
+    "section": "Work Flow & Architecture :",
+    "text": "Work Flow & Architecture :\nNeed for a a robust, scalable and future-proof architecture with the flexibility to adapt as the data sets evolves, all while maintaining excellent performance and usability.\n\nNeed for fast startup and in-memory processing.\nScalable for future growth\nMinimal in complexity, leveraging familiar tools and lightweight components.\n\nVertically Scalable: The architecture leverages your node’s 24 GB of memory effectively, with room for growth by upgrading hardware (e.g., adding more RAM or CPU cores).\nLow Complexity Overhead:\nDuckDB introduces minimal complexity since it integrates seamlessly with both R and Python. SQL provides a familiar and powerful tool for managing data subsets, making the workflow easy to maintain. Prepared for Growth:\nThe combination of Feather and DuckDB ensures you can handle current and moderate future data sizes efficiently. For substantial growth, DuckDB can work with Parquet files or other scalable formats with minimal changes. Optimized for Performance:\nFeather ensures fast data access at startup. DuckDB allows efficient on-disk querying to reduce memory overhead, ensuring smooth performance even as datasets grow.\n\n\nThis workflow is ideal when working with datasets that are manageable in size and can be fully loaded into memory for analysis. Incorporating DuckDB adds the flexibility of SQL querying, which can be advantageous for preprocessing data before intensive computations. The use of Feather format ensures fast data loading, which is important for applications where user wait time during startup should be minimized.\nIf your dataset grows or your scalability needs change, you might need to adjust the workflow accordingly, possibly by switching to Parquet files and leveraging DuckDB’s capabilities to handle larger datasets more efficiently.\nArchitecture\nScalability:\n\nadjust your SQL queries to limit the data loaded into memory, ensuring your application remains performant.\nscale vertically with increased RAM and CPU cores to manage larger Feather files and more complex algorithms without architectural changes.\n\nPerformance:\n\nFeather enables fast reads for smaller datasets during startup.\nDuckDB efficiently handles larger datasets by querying on disk and loading only the necessary data into memory.\n\n\n\nData Stageing\n\nD00: contains the BW OpenHub Export, CSV - same as AL11\n\n\n\nData Ingestion:\nOccurs once a month, converting CSV to Parquet (or another format). header is added and stored in D01\n\n\nData Access and Querying:\n\nData is imported into R data.table objects via DuckDB, which reads the stored files.\nQueries are often simple SQL SELECT statements on one table or basic INNER JOINs.\nThe same SQL queries are used to import data into Python using Polars via DuckDB.\n\n\n\nData Manipulation:\n\nFurther data manipulation in R is done using data.table.\nIn Python, data manipulation is performed using Polars.\n\nEvaluation of Your Proposed Workflow\nGiven your familiarity with SQL and DuckDB, and your need for scalability, your proposed workflow is sound and aligns well with your goals.\n\n\nAdvantages of Your Workflow\n\nScalability\n\nEfficient Data Storage: Parquet files are columnar, compressed, and optimized for performance, which is beneficial for large datasets.\nQuery Optimization: DuckDB is designed for efficient analytical queries, even on large datasets.\n\nFlexibility\n\nLanguage Agnostic: DuckDB can be used within R and Python, allowing seamless transition between languages.\nSQL Familiarity: Your proficiency in SQL means you can leverage DuckDB’s SQL interface effectively.\n\nPerformance\n\n\nFast Query Execution: DuckDB is optimized for OLAP workloads and can execute complex queries quickly.\nDirect Parquet Support: DuckDB can read Parquet files directly without the need to load the entire dataset into memory.\n\n\nIntegration with R and Python\n\n\nR Data.Tables: You can fetch query results from DuckDB into R data.tables, integrating with your existing R codebase.\nPython Polars: Similarly, you can read data into Polars DataFrames in Python, which is efficient for data manipulation.\n\n\nSimplified Data Pipeline\n\n\nUnified Data Source: Using DuckDB on top of Parquet files centralizes your data access, simplifying data management.\n\n\n\nPotential Disadvantages\n\nAdditional Complexity\n\n\nLibrary Dependencies: Requires installation and management of additional libraries (DuckDB, Parquet support in R and Python).\nLearning Curve for Integration: Even though you’re familiar with DuckDB, integrating it into R and Python workflows may require some setup and testing.\n\n\nOverhead of Data Conversion\n\nInitial Conversion: Migrating CSV files to Parquet adds an extra step in your data ingestion pipeline.\nData Updates: If your CSV data updates frequently, you’ll need to automate the conversion process.\n\nResource Usage\n\n\nDisk Space: Maintaining both CSV and Parquet files (if not deleting the original CSVs) may consume additional storage.\n\n\nRecommendations and Best Practices\nGiven your requirements and skills, your proposed workflow is suitable and offers several benefits in terms of scalability and flexibility. Here are some recommendations to optimize your workflow:\n### 1. Automate the CSV to Parquet Conversion\n\nUse Batch Processing:\nCreate scripts in R or Python to automate the conversion of CSV files to Parquet.\nLeverage DuckDB for Conversion:\n\nDuckDB can read CSV files and write Parquet files, allowing you to perform the conversion within DuckDB.\n\n\nCOPY (SELECT * FROM 'your_data.csv') TO 'your_data.parquet' (FORMAT PARQUET);\n\n\n2. Optimize DuckDB Usage\n\nIndexing and Partitioning:\n\nWhile Parquet files do not support traditional indexing, consider partitioning your data to improve query performance.\n\nSQL Query Optimization:\n\nUse DuckDB’s advanced SQL features to optimize queries (e.g., window functions, common table expressions).\n\n\n\n\n3. Efficient Data Retrieval into R and Python\n\nIn R:\n\nUse the duckdb package to execute SQL queries and fetch results into data.tables.\n\nlibrary(duckdb)\ncon &lt;- dbConnect(duckdb::duckdb())\n\n# Query data\nresult &lt;- dbGetQuery(con, \"SELECT * FROM 'your_data.parquet' WHERE conditions\")\n\n# Convert to data.table\nlibrary(data.table)\ndt_result &lt;- as.data.table(result)\nIn Python with Polars:\n\nUse DuckDB’s Python API or integrate with Polars for efficient data handling.\n\n\nimport duckdb\nimport polars as pl\n\n# Execute query and fetch result as Polars DataFrame\ndf = duckdb.query(\"SELECT * FROM 'your_data.parquet' WHERE conditions\").to_df()\npl_df = pl.from_pandas(df)\n\n\n4. Consider Data Volume and Hardware Resources\n\nMemory Management:\n\nDuckDB processes data efficiently, but ensure your hardware resources are adequate for your data size.\n\nDisk I/O:\n\nUsing Parquet files reduces disk I/O due to compression, but be mindful of the storage subsystem performance.\n\n\n\n\n5. Keep Libraries Updated\n\nStay Current:\n\nEnsure that you are using the latest versions of DuckDB, R packages, and Python libraries to benefit from performance improvements and bug fixes.\n\n\n\n\n6. Handle Updates and Data Versioning\n\nIncremental Updates:\n\nIf your data updates incrementally, design your pipeline to handle partial updates rather than reprocessing entire datasets.\n\nData Version Control:\n\nImplement versioning for your Parquet files to track changes over time.\n\n\n\n\n7. Monitor Performance and Adjust\n\nBenchmarking:\n\nRegularly benchmark query performance to identify bottlenecks.\n\nAdjust Strategy:\n\nBased on performance metrics, adjust partitioning schemes, query strategies, or hardware resources as needed.\n\n\n\nConclusion\nYour proposed workflow of migrating CSV files to Parquet, using DuckDB for querying, and integrating with R and Python is a robust solution that addresses your needs for scalability and flexibility. Given your familiarity with SQL and DuckDB, and the fact that you possess the necessary skills to manage the additional complexity, this approach is well-suited to your situation.\nBenefits of Your Workflow:\n\nScalable Data Processing:\nEfficient handling of large datasets through Parquet and DuckDB.\nFlexibility Across Languages:\n\nSeamless data access in both R and Python without data format conversion issues.\n\nPerformance Optimization:\n\nFaster query execution and data retrieval due to optimized storage and processing.\n\n\nKey Actions Moving Forward:\n\nSet Up Automated Data Pipelines:\n\n\nAutomate the conversion from CSV to Parquet to ensure consistency and save time.\n\n\nOptimize Queries:\n\n\nUtilize DuckDB’s full SQL capabilities to write efficient queries for your analysis.\n\n\nIntegrate Smoothly with R and Python:\n\nEstablish standard functions or scripts in both environments to interact with DuckDB, minimizing repetitive code.\n\nMonitor and Iterate:\n\nKeep an eye on performance metrics and be ready to adjust your approach as your dataset grows or changes.\n\n\n\nAdditional Considerations\n\nCommunity and Support:\n\nDuckDB is actively developed, and there is a growing community. Utilize resources like documentation and forums when needed.\n\nTesting and Validation:\n\nAs with any data pipeline, thoroughly test each component to ensure data integrity and correctness.\n\nSecurity and Access Control:\n\nIf working in a multi-user environment, consider how data access and permissions are managed.\n\n\n\nFinal Thoughts\nYour willingness to embrace additional complexity due to your skill set positions you well to benefit from this workflow. By combining the strengths of Parquet’s efficient data storage and DuckDB’s powerful query engine, you can achieve a scalable and flexible data analysis environment.\nShould you need further assistance or have more questions as you implement this workflow, feel free to reach out. I’m here to help ensure your data processing is as efficient and effective as possible.",
     "crumbs": [
       "Project Phases",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Preparation</span>"
@@ -235,9 +235,9 @@
   {
     "objectID": "nb/04_modelling_rev.html",
     "href": "nb/04_modelling_rev.html",
-    "title": "9  Modelling",
+    "title": "Modelling",
     "section": "",
-    "text": "9.1 blackbox models\nSee Figure Figure 9.1 for the thumbnail overview.",
+    "text": "blackbox models\nSee Figure Figure 9.1 for the thumbnail overview.",
     "crumbs": [
       "Project Phases",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Modelling</span>"
@@ -246,9 +246,9 @@
   {
     "objectID": "nb/04_modelling_rev.html#whitebox-models",
     "href": "nb/04_modelling_rev.html#whitebox-models",
-    "title": "9  Modelling",
-    "section": "9.2 whitebox models",
-    "text": "9.2 whitebox models\n\n\n\n\n6.1. Literature Review / Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)\n\n9.2.1 Model Selection\ndifferent models have different strengths and weaknesses and are suitable for different types of data and problems. achieve the best possible performance and maximize the impact\navoid overfitting a trade-off between the simplicity and flexibility (robustness)\nmodel performance - only article hierarchy - article and customer hierarchy\nCross-validation is a method for evaluating the performance of a model on a validation dataset. This involves dividing the data into k folds, training the model on k-1 folds, and evaluating the performance on the remaining fold. This process is repeated k times, with each fold serving as the validation set once, and the results are averaged to obtain a final performance score. This method provides a more reliable estimate of the model’s performance, as it uses all of the data for training and evaluation.\nalgorithm - handle teh specific characteristics of teh data - balance performance and interpretability - memory and processing power\n\nvalidity -&gt; fa & prediction intervals\nrobustness -&gt;\ntransparency -&gt;",
+    "title": "Modelling",
+    "section": "whitebox models",
+    "text": "whitebox models\n\n\n\n\n6.1. Literature Review / Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)\n\nModel Selection\ndifferent models have different strengths and weaknesses and are suitable for different types of data and problems. achieve the best possible performance and maximize the impact\navoid overfitting a trade-off between the simplicity and flexibility (robustness)\nmodel performance - only article hierarchy - article and customer hierarchy\nCross-validation is a method for evaluating the performance of a model on a validation dataset. This involves dividing the data into k folds, training the model on k-1 folds, and evaluating the performance on the remaining fold. This process is repeated k times, with each fold serving as the validation set once, and the results are averaged to obtain a final performance score. This method provides a more reliable estimate of the model’s performance, as it uses all of the data for training and evaluation.\nalgorithm - handle teh specific characteristics of teh data - balance performance and interpretability - memory and processing power\n\nvalidity -&gt; fa & prediction intervals\nrobustness -&gt;\ntransparency -&gt;",
     "crumbs": [
       "Project Phases",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Modelling</span>"
@@ -257,9 +257,9 @@
   {
     "objectID": "nb/05_evaluation_rev.html",
     "href": "nb/05_evaluation_rev.html",
-    "title": "10  Evaluation",
+    "title": "Evaluation",
     "section": "",
-    "text": "10.1 Evaluate Results",
+    "text": "Evaluate Results",
     "crumbs": [
       "Project Phases",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Evaluation</span>"
@@ -268,9 +268,9 @@
   {
     "objectID": "nb/05_evaluation_rev.html#evaluate-results",
     "href": "nb/05_evaluation_rev.html#evaluate-results",
-    "title": "10  Evaluation",
+    "title": "Evaluation",
     "section": "",
-    "text": "explainability\n\n\n10.1.1 Assessment of Data Mining Results w.r.t. Business Success Criteria\n\nhow well does the model work on new data?\nFor whom does the model not work well?\n\n\n\n10.1.2 Approved Models\n\n\n10.1.3 Review Process\n\n\n10.1.4 Review of Process\n\n\n10.1.5 Determine Next Steps\n\n\n10.1.6 List of Possible Actions\n\n\n10.1.7 Decision",
+    "text": "explainability\n\n\nAssessment of Data Mining Results w.r.t. Business Success Criteria\n\nhow well does the model work on new data?\nFor whom does the model not work well?\n\n\n\nApproved Models\n\n\nReview Process\n\n\nReview of Process\n\n\nDetermine Next Steps\n\n\nList of Possible Actions\n\n\nDecision",
     "crumbs": [
       "Project Phases",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Evaluation</span>"
@@ -279,9 +279,9 @@
   {
     "objectID": "nb/06_deployment_rev.html",
     "href": "nb/06_deployment_rev.html",
-    "title": "11  Deployment",
+    "title": "Deployment",
     "section": "",
-    "text": "scalability - distributed techniques - maintenance & updating the model - monitoring the model - debugging the model\n\n12 model management\n\nmodel versioning GIT\ncontinuous integration/continuous deployment (CI/CD) pipelines.\n\n\n\nAppendix",
+    "text": "scalability - distributed techniques - maintenance & updating the model - monitoring the model - debugging the model\n\nmodel management\n\nmodel versioning GIT\ncontinuous integration/continuous deployment (CI/CD) pipelines.\n\n\n\nAppendix",
     "crumbs": [
       "Project Phases",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Deployment</span>"
@@ -290,7 +290,7 @@
   {
     "objectID": "nb/08_appendix_rev.html",
     "href": "nb/08_appendix_rev.html",
-    "title": "13  Other",
+    "title": "Other",
     "section": "",
     "text": "other",
     "crumbs": [
@@ -301,9 +301,9 @@
   {
     "objectID": "nb/08_appendix_rev.html#sec-literature_review",
     "href": "nb/08_appendix_rev.html#sec-literature_review",
-    "title": "13  Other",
-    "section": "13.1 Literature",
-    "text": "13.1 Literature\nThe literature review focuses on the intersection of three fields, according to the now-ubiquitous Data Science Venn Diagram of Drew Conway.",
+    "title": "Other",
+    "section": "Literature",
+    "text": "Literature\nThe literature review focuses on the intersection of three fields, according to the now-ubiquitous Data Science Venn Diagram of Drew Conway.",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Other</span>"
@@ -312,9 +312,9 @@
   {
     "objectID": "nb/08_appendix_rev.html#business-process",
     "href": "nb/08_appendix_rev.html#business-process",
-    "title": "13  Other",
-    "section": "13.2 Business Process",
-    "text": "13.2 Business Process\n\nSCOR MODEL A COMPLETE GUIDE - 2020 EDITION, [@blokdyk_scor_2019]\nInventory and production management in supply chains, [@silver_inventory_2021]",
+    "title": "Other",
+    "section": "Business Process",
+    "text": "Business Process\n\nSCOR MODEL A COMPLETE GUIDE - 2020 EDITION, [@blokdyk_scor_2019]\nInventory and production management in supply chains, [@silver_inventory_2021]",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Other</span>"
@@ -323,9 +323,9 @@
   {
     "objectID": "nb/08_appendix_rev.html#math-statistics",
     "href": "nb/08_appendix_rev.html#math-statistics",
-    "title": "13  Other",
-    "section": "13.3 Math & Statistics",
-    "text": "13.3 Math & Statistics\n\nForecasting: Principles and Practice (3rd ed), [@hyndman_forecasting_2021]\nDemand forecasting best practices, [@vandeput_demand_2023]\nData science for supply chain forecasting, [@vandeput_data_2021]\nInventory optimization: models and simulations, [@vandeput_inventory_2020]\nMachine Learning With Boosting: A Beginner’s Guide, [@hartshorn_machine_2017]\nIntroduction to conformal prediction with Python, [@molnar_introduction_2023]\nPractical guide to applied conformal prediction in Python, [@manokhin_practical_2023]\nSHAP with Python, [@osullivan_shap_2024]\nIntroduction to SHAP with Python, [@osullivan_introduction_2023]\nEnsemble methods for machine learning, [@kunapuli_ensemble_2023]",
+    "title": "Other",
+    "section": "Math & Statistics",
+    "text": "Math & Statistics\n\nForecasting: Principles and Practice (3rd ed), [@hyndman_forecasting_2021]\nDemand forecasting best practices, [@vandeput_demand_2023]\nData science for supply chain forecasting, [@vandeput_data_2021]\nInventory optimization: models and simulations, [@vandeput_inventory_2020]\nMachine Learning With Boosting: A Beginner’s Guide, [@hartshorn_machine_2017]\nIntroduction to conformal prediction with Python, [@molnar_introduction_2023]\nPractical guide to applied conformal prediction in Python, [@manokhin_practical_2023]\nSHAP with Python, [@osullivan_shap_2024]\nIntroduction to SHAP with Python, [@osullivan_introduction_2023]\nEnsemble methods for machine learning, [@kunapuli_ensemble_2023]",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Other</span>"
@@ -334,9 +334,9 @@
   {
     "objectID": "nb/08_appendix_rev.html#programming",
     "href": "nb/08_appendix_rev.html#programming",
-    "title": "13  Other",
-    "section": "13.4 Programming",
-    "text": "13.4 Programming\n\n13.4.1 Python\n\nPython Crash Course, [@matthes2019]\nLightning fast forecasting with statistical and econometric models, [@nixtla/s2024]\nScalable Machine Learning for Time Series Forecasting, [@nixtla/m2024]\nProbabilistic hierarchical forecasting with statistical and econometric methods, [@nixtla/h]\nTS Features, calculates various features from time series data, [@nixtla/t2024]\n\n\n\n13.4.2 R\n\nR for Data Science, [@wickham]\nR forecasting package, [@hyndmanaut2024]\nR feasts package, [@ohara-wild2024a]\nR fable package, [@ohara-wild2024]",
+    "title": "Other",
+    "section": "Programming",
+    "text": "Programming\n\nPython\n\nPython Crash Course, [@matthes2019]\nLightning fast forecasting with statistical and econometric models, [@nixtla/s2024]\nScalable Machine Learning for Time Series Forecasting, [@nixtla/m2024]\nProbabilistic hierarchical forecasting with statistical and econometric methods, [@nixtla/h]\nTS Features, calculates various features from time series data, [@nixtla/t2024]\n\n\n\nR\n\nR for Data Science, [@wickham]\nR forecasting package, [@hyndmanaut2024]\nR feasts package, [@ohara-wild2024a]\nR fable package, [@ohara-wild2024]",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Other</span>"
@@ -345,9 +345,9 @@
   {
     "objectID": "nb/08_appendix_rev.html#sec-forecast-use-cases",
     "href": "nb/08_appendix_rev.html#sec-forecast-use-cases",
-    "title": "13  Other",
-    "section": "13.5 Forecast Use Cases",
-    "text": "13.5 Forecast Use Cases\n\n\n\n\n\n\n\nForecast Use Cases",
+    "title": "Other",
+    "section": "Forecast Use Cases",
+    "text": "Forecast Use Cases\n\n\n\n\n\n\n\nForecast Use Cases",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Other</span>"
@@ -356,9 +356,9 @@
   {
     "objectID": "nb/08_appendix_rev.html#sec-project-charter",
     "href": "nb/08_appendix_rev.html#sec-project-charter",
-    "title": "13  Other",
-    "section": "13.6 Project Charter",
-    "text": "13.6 Project Charter\n\n\n\n\n\n\n\nProject Charter",
+    "title": "Other",
+    "section": "Project Charter",
+    "text": "Project Charter\n\n\n\n\n\n\n\nProject Charter",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Other</span>"
@@ -367,9 +367,9 @@
   {
     "objectID": "nb/08_appendix_rev.html#sec-project-plan",
     "href": "nb/08_appendix_rev.html#sec-project-plan",
-    "title": "13  Other",
-    "section": "13.7 Project Plan",
-    "text": "13.7 Project Plan\n\n\n\n\n\n\n\nProject Plan\n\n\n\n\n\n\n\n\n\n\nProject Plan",
+    "title": "Other",
+    "section": "Project Plan",
+    "text": "Project Plan\n\n\n\n\n\n\n\nProject Plan\n\n\n\n\n\n\n\n\n\n\nProject Plan",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Other</span>"
@@ -378,9 +378,9 @@
   {
     "objectID": "nb/08_appendix_rev.html#sec-eaisi",
     "href": "nb/08_appendix_rev.html#sec-eaisi",
-    "title": "13  Other",
-    "section": "13.8 EAISI",
-    "text": "13.8 EAISI\n\n13.8.1 Deliverables & requirements\n\nClear description of the need / problem / opportunity\nClear description of the long-term ambition\nClear focus on what part of this long-term ambition will be taken on in the project\nDescription of the data science project with the help of a flowdown chart and project charter\nClear description of how the model outcome / analysis results will be used (e.g. who, at what time, in which process, in what way, will use the model outcome / analysis results to make a better decision about what?) and how this translates into improved KPIs as outlined in the flowdown chart\nSubstantiated choice for a ‘performance metric’ (i.e. what should the model be good at)\nClear description of a business case / cost-benefit (no cost!!) analysis\nRealistic plan / timeline for how to execute the consecutive CRISP-DM phases",
+    "title": "Other",
+    "section": "EAISI",
+    "text": "EAISI\n\nDeliverables & requirements\n\nClear description of the need / problem / opportunity\nClear description of the long-term ambition\nClear focus on what part of this long-term ambition will be taken on in the project\nDescription of the data science project with the help of a flowdown chart and project charter\nClear description of how the model outcome / analysis results will be used (e.g. who, at what time, in which process, in what way, will use the model outcome / analysis results to make a better decision about what?) and how this translates into improved KPIs as outlined in the flowdown chart\nSubstantiated choice for a ‘performance metric’ (i.e. what should the model be good at)\nClear description of a business case / cost-benefit (no cost!!) analysis\nRealistic plan / timeline for how to execute the consecutive CRISP-DM phases",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Other</span>"
@@ -389,9 +389,9 @@
   {
     "objectID": "nb/16_flow_down_rev.html",
     "href": "nb/16_flow_down_rev.html",
-    "title": "14  Flow Down",
+    "title": "Flow Down",
     "section": "",
-    "text": "14.1 Flow-down",
+    "text": "Flow-down",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Flow Down</span>"
@@ -400,7 +400,7 @@
   {
     "objectID": "nb/16_flow_down_rev.html#sec-flowdown",
     "href": "nb/16_flow_down_rev.html#sec-flowdown",
-    "title": "14  Flow Down",
+    "title": "Flow Down",
     "section": "",
     "text": "Flowdown Graph",
     "crumbs": [
@@ -411,9 +411,9 @@
   {
     "objectID": "nb/17_crisp-dm_rev.html",
     "href": "nb/17_crisp-dm_rev.html",
-    "title": "15  CRISP-DM",
+    "title": "CRISP-DM",
     "section": "",
-    "text": "15.1 CRISP-DM",
+    "text": "CRISP-DM",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>CRISP-DM</span>"
@@ -422,7 +422,7 @@
   {
     "objectID": "nb/17_crisp-dm_rev.html#sec-crisp-dm",
     "href": "nb/17_crisp-dm_rev.html#sec-crisp-dm",
-    "title": "15  CRISP-DM",
+    "title": "CRISP-DM",
     "section": "",
     "text": "Project Plan",
     "crumbs": [
@@ -433,7 +433,7 @@
   {
     "objectID": "nb/18_references_rev.html",
     "href": "nb/18_references_rev.html",
-    "title": "16  References",
+    "title": "References",
     "section": "",
     "text": "References\n\n\nBarrett, T, Dowle,\nM, Srinivasan, A,\nGorecki, J, Chirico,\nM, Hocking, T,\nSchwendinger, B,\nStetsenko, P, Short,\nT, Lianoglou, S,\nAntonyan, E, Bonsch,\nM, Parsonage, H,\nRitchie, S, Ren,\nK, Tan, X,\nSaporta, R, Seiskari,\nO, Dong, X,\nLang, M, Iwasaki,\nW, Wenchel, S,\nBroman, K, Schmidt,\nT, Arenburg, D,\nSmith, E, Cocquemas,\nF, Gomez, M,\nChataignon, P,\nBlaser, N, Selivanov,\nD, Riabushenko, A,\nLee, C, Groves,\nD, Possenriede, D,\nParages, F, Toth,\nD, Yaramaz-David, M,\nPerumal, A, Sams,\nJ, Morgan, M,\nQuinn, M, @javrucebo,\n@marc-outins, Storey,\nR, Saraswat, M,\nJacob, M, Schubmehl,\nM, Vaughan, D,\nSilvestri, L, Hester,\nJ, Damico, A,\nFreundt, S, Simons,\nD, Andrade, E S de,\nMiller, C, Meldgaard,\nJ P, Tlapak, V,\nUshey, K,\nEddelbuettel, D,\nFischetti, T, Shilon,\nO, Khotilovich, V,\nWickham, H, Becker,\nB, Haynes, K,\nKamgang, B C,\nDelmarcell, O,\nO’Brien, J, Mezquita,\nD de, Czekanski, M,\nShemetov, D, Jha,\nN, Wu, J,\nGiné-Vázquez, I,\nChetia, A,\nAmoakohene, D, and\nKrylov, I 2024 Data.table:\nExtension of ’data.frame’. Available at https://cran.r-project.org/web/packages/data.table/index.html\n[Last accessed 13 October 2024].\n\n\nBLOKDYK, G 2019 SCOR\nMODEL A COMPLETE\nGUIDE - 2020 EDITION. [S.l.]: 5STARCOOKS.\n\n\nCore Team}, {R 2024 R: A\nLanguage and Environment for\nStatistical Computing. Available at https://www.R-project.org/\n\n\nCosta, R 2022 The\nCRISP-ML Methodology:\nA Step-by-Step\nApproach to Real-World\nMachine Learning Projects.\nIndependently published.\n\n\nDeBruine, L 2023 Glossary:\nGlossaries for Markdown and\nQuarto Documents. Available at https://cran.r-project.org/web/packages/glossary/\n[Last accessed 13 October 2024].\n\n\nGuja, A and Siwiak,\nM 2025 Generative AI for\nData Analytics. Manning Publications Co.\nLLC 2025.\n\n\nHartshorn, S 2017 Machine\nLearning With Boosting:\nA Beginner’s Guide.\n\n\nHyndman [aut, R, cre,\ncph, Athanasopoulos,\nG, Bergmeir, C,\nCaceres, G, Chhay,\nL, Kuroptev, K,\nO’Hara-Wild, M,\nPetropoulos, F,\nRazbash, S, Wang,\nE, Yasmeen, F,\nGarza, F,\nGirolimetto, D,\nIhaka, R, R Core\nTeam, Reid, D,\nShaub, D, Tang,\nY, Wang, X, and\nZhou, Z 2024a Forecast:\nForecasting functions for time series and linear models. Available\nat https://cran.r-project.org/web/packages/forecast/index.html\n\n\nHyndman [aut, R, cre,\ncph, Athanasopoulos,\nG, O’Hara-Wild, M,\nPalihawadana, N,\nWickramasuriya, S, and\nRStudio 2024b fpp3: Data for\n\"Forecasting: Principles and\nPractice\" (3rd Edition). Available at https://cran.r-project.org/web/packages/fpp3/index.html\n[Last accessed 13 October 2024].\n\n\nHyndman, R J and\nAthanasopoulos, G 2021\nForecasting: Principles and Practice (3rd\ned). Available at https://otexts.com/fpp3/ [Last\naccessed 5 October 2024].\n\n\nKunapuli, G 2023 Ensemble methods\nfor machine learning. Shelter Island, NY: Manning.\n\n\nManokhin, V 2023 Practical guide\nto applied conformal prediction in Python: Learn and apply\nthe best uncertainty frameworks to your industry applications.\nBirmingham Mumbai: &lt;packt&gt;.\n\n\nMatthes, E 2019b Python crash\ncourse: A hands-on, project-based introduction to programming. 2nd\nedition. San Francisco, CA: No Starch Press.\n\n\nMatthes, E 2019a Python crash\ncourse: A hands-on, project-based introduction to programming. 2nd\nedition. San Francisco, CA: No Starch Press.\n\n\nMolnar, C 2023 Introduction to\nconformal prediction with Python: A short guide for\nquantifying uncertainty of machine learning models. First edition.\nMünchen, Germany: Chistoph Molnar c/o MUCBOOK, Heidi Seibold. Available\nat https://christophmolnar.com/books/conformal-prediction/\n\n\nNixtla/hierarchicalforecast: Probabilistic hierarchical forecasting 👑\nwith statistical and econometric methods. n.d. Available at https://github.com/Nixtla/hierarchicalforecast\n\n\nNixtla/mlforecast 2024. Nixtla. Available at https://github.com/Nixtla/mlforecast\n\n\nNixtla/statsforecast 2024. Nixtla. Available at https://github.com/Nixtla/statsforecast\n\n\nNixtla/tsfeatures 2024. Nixtla. Available at https://github.com/Nixtla/tsfeatures\n\n\nO’Hara-Wild, M,\nHyndman, R, Wang,\nE, Cook, D,\nfeatures), T T (Correlation, and\nmethod), L C (Guerrero’s 2024a\nFeasts: Feature extraction and statistics for time series.\nAvailable at https://cran.r-project.org/web/packages/feasts/index.html\n\n\nO’Hara-Wild, M,\nHyndman, R, Wang,\nE, implementation), G C\n(NNETAR, Bergmeir, C,\nHensel, T-G, and\nHyndman, T 2024b Fable:\nForecasting models for tidy time series. Available at https://cran.r-project.org/web/packages/fable/index.html\n\n\nO’Sullivan, C 2024 SHAP\nwith Python. SHAP with Python. Available at https://adataodyssey.com/course/\n\n\nO’Sullivan, C 2023 Introduction to\nSHAP with Python. Introduction to SHAP\nwith Python. Available at https://towardsdatascience.com/introduction-to-shap-with-python-d27edc23c454\n\n\nPorter, L and\nZingaro, D 2024 Learn\nAI-assisted Python programming: With\nGitHub Copilot and ChatGPT.\nShelter Island, NY: Manning.\n\n\nSilver, E A, Pyke,\nD F, and Thomas, D J\n2021 Inventory and production management in supply chains.\nFourth edition, first issued in paperback. Boca Raton, FL London New\nYork, NY: CRC Press, Taylor & Francis Group.\n\n\nVandeput, N 2023 Demand\nforecasting best practices. Shelter Island, NY: Manning\nPublications Co.\n\n\nVandeput, N 2021 Data science for\nsupply chain forecasting. Second edition. Berlin ; Boston: De\nGruyter.\n\n\nVandeput, N 2020 Inventory\noptimization: Models and simulations. Berlin ; Boston: De Gruyter.\n\n\nWickham, H n.d. R for data science\n(2e). Available at https://r4ds.hadley.nz/\n\n\nWickham, H, Chang,\nW, Henry, L,\nPedersen, T L,\nTakahashi, K, Wilke,\nC, Woo, K,\nYutani, H,\nDunnington, D, Brand,\nT van den, Posit, and\nPBC 2024 ggplot2: Create\nElegant Data Visualisations\nUsing the Grammar of Graphics.\nAvailable at https://cran.r-project.org/web/packages/ggplot2/index.html\n[Last accessed 13 October 2024].",
     "crumbs": [
@@ -444,7 +444,7 @@
   {
     "objectID": "nb/19_resources_rev.html",
     "href": "nb/19_resources_rev.html",
-    "title": "17  Resources",
+    "title": "Resources",
     "section": "",
     "text": "Resources\n\nDownload the Business Understanding notebook (QMD) 💾\nDownload the Data Understanding notebook (QMD) 💾\nDownload EAISI Graduation Presentation (PPTX) 💾\nDownload all notebooks (ZIP) 💾",
     "crumbs": [
