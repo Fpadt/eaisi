@@ -86,7 +86,7 @@ book:
         - inspiration.qmd                      # The myth of Pythia      
         # - notebooks/intro-crisp-dm.qmd
         - nb/00_pythias_advice_rev.qmd
-    - part: "Project Phases"
+    - part: "CRISP-DM Phases"
       chapters:
         - nb/01_business_understanding_rev.qmd
         - nb/02_data_understanding_rev.qmd
@@ -96,7 +96,9 @@ book:
         - nb/06_deployment_rev.qmd
     - part: "Conclusions & Next Steps"
       chapters:
-        - nb/07_conclusions_rev.qmd
+        - nb/07_results_rev.qmd
+        - nb/07_insights_rev.qmd
+        - nb/07_further_research_rev.qmd
     - part: "Appendix"
       chapters:
         - nb/08_appendix_rev.qmd
@@ -162,8 +164,8 @@ format:
     colorlinks:         true
     highlight-style:    github
     theme:
-      light:            [flatly]
-      dark:             [darkly]
+      light: [flatly, custom-light.scss]
+      dark:  [darkly, custom-dark.scss]
     respect-user-color-scheme: false    
     fontsize:           "10"
     crossrefs-hover:    true 
