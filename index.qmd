@@ -1,5 +1,7 @@
 ---
-title: ""  # Empty title
+title: Cover Page
+toc: false               # Exclude from table of contents
+number-sections: false   # Don't number this section
 format:
   html:
     css: cover-styles.css
