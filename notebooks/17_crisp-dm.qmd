@@ -1,0 +1,8 @@
+---
+title: "CRISP-DM"
+author: "F.J. Padt"
+---
+
+## CRISP-DM {#sec-crisp-dm}
+
+![Project Plan](../images/crisp-dm.png){width="70%" fig-align="center"}

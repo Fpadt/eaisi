@@ -1,0 +1,21 @@
+---
+title: "Resources"
+author: "F.J. Padt"
+engine: knitr  
+editor: source
+---
+
+# Resources {.unnumbered}
+
+```{bash}
+#| eval: false
+#| echo: false
+# Remove any old ZIP and create a fresh one in PowerShell
+powershell.exe -NoProfile -Command "if (Test-Path notebooks.zip) { Remove-Item notebooks.zip }; Compress-Archive -Path notebooks\* -DestinationPath notebooks.zip -Force"
+
+```
+
+-   [Download the Business Understanding notebook (QMD) 💾](../notebooks/01_business_understanding.qmd){.btn}
+-   [Download the Data Understanding notebook (QMD) 💾](../notebooks/02_data_understanding.qmd){.btn}
+-   [Download EAISI Graduation Presentation (PPTX) 💾](../pptx/PAF+s03.pptx){.btn}
+-   [Download all notebooks (ZIP) 💾](notebooks.zip){.btn}

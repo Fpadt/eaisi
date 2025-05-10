@@ -1,0 +1,340 @@
+---
+title:       Data Preparation
+subtitle:    Data Preparation subtitle
+description: |
+  - scope
+  - extracts and ingest
+  - transformations
+editor: source
+---
+
+::: {#fig-bu-why .figure}
+![](../images/bu_why.png){fig-alt="Why is forecasting important? It drives the business" fig-align="left" fig-width="15cm"}\]
+
+Why forecasting?\
+The forecast drives the business!
+:::
+
+See Figure @fig-bu-why for the thumbnail overview.
+
+# Data Pipelines
+
+
+```{r}
+#| label: load-packages
+#| include: false
+
+library(data.table)
+library(ggplot2)
+```
+
+```{r}
+#| label: xxx
+#| warning: false
+#| echo: false
+
+# ggplot(penguins, 
+#        aes(x = flipper_length_mm, y = bill_length_mm)) +
+#   geom_point(aes(color = species, shape = species)) +
+#   scale_color_manual(values = c("darkorange","purple","cyan4")) +
+#   labs(
+#     title = "Flipper and bill length",
+#     subtitle = "Dimensions for penguins at Palmer Station LTER",
+#     x = "Flipper length (mm)", y = "Bill length (mm)",
+#     color = "Penguin species", shape = "Penguin species"
+#   ) +
+#   theme_minimal()
+```
+
+# scenario:
+
+Dataset Size:
+
+-   400 MB in CSV format.
+-   15 MB in Parquet format.
+
+Data Access and Querying:
+
+Happens once when the application starts. Needs to be quick to minimize user wait time. No data is written to disk during application use; data is only saved when the application exits. Data Manipulation:
+
+Performed in-memory using R and Python. Requires fast execution. Consideration:
+
+You like the idea of using Feather for its fast data loading. You're considering incorporating DuckDB to make the solution more scalable, despite minimal immediate benefits. Acknowledge that adding DuckDB introduces additional complexity.
+
+Architecture: Architecture is about the design and setup, provides the framework and tools. This refers to the high-level structure of your system. It encompasses the selection of components, technologies, formats, and how they are organized and interact with each other. Architecture lays the foundation for your system's capabilities, scalability, and performance.
+
+Workflow: Workflow is about the execution and processes, defines the processes and procedures using those tools. This pertains to the sequence of operations or processes that are carried out using the architectural components. It describes the specific steps taken to achieve your objectives, detailing how data and tasks flow through the system.
+
+## Work Flow & Architecture :
+
+Need for a a robust, scalable and future-proof architecture with the flexibility to adapt as the data sets evolves, all while maintaining excellent performance and usability.
+
+-   Need for fast startup and in-memory processing.
+-   Scalable for future growth
+-   Minimal in complexity, leveraging familiar tools and lightweight components.
+
+Vertically Scalable: The architecture leverages your node’s 24 GB of memory effectively, with room for growth by upgrading hardware (e.g., adding more RAM or CPU cores).
+
+Low Complexity Overhead:
+
+DuckDB introduces minimal complexity since it integrates seamlessly with both R and Python. SQL provides a familiar and powerful tool for managing data subsets, making the workflow easy to maintain. Prepared for Growth:
+
+The combination of Feather and DuckDB ensures you can handle current and moderate future data sizes efficiently. For substantial growth, DuckDB can work with Parquet files or other scalable formats with minimal changes. Optimized for Performance:
+
+Feather ensures fast data access at startup. DuckDB allows efficient on-disk querying to reduce memory overhead, ensuring smooth performance even as datasets grow.
+
+### 
+
+This workflow is ideal when working with datasets that are manageable in size and can be fully loaded into memory for analysis. Incorporating DuckDB adds the flexibility of SQL querying, which can be advantageous for preprocessing data before intensive computations. The use of Feather format ensures fast data loading, which is important for applications where user wait time during startup should be minimized.
+
+If your dataset grows or your scalability needs change, you might need to adjust the workflow accordingly, possibly by switching to Parquet files and leveraging DuckDB's capabilities to handle larger datasets more efficiently.
+
+Architecture
+
+Scalability:
+
+1.  adjust your SQL queries to limit the data loaded into memory, ensuring your application remains performant.
+
+2.  scale vertically with increased RAM and CPU cores to manage larger Feather files and more complex algorithms without architectural changes.
+
+Performance:
+
+-   Feather enables fast reads for smaller datasets during startup.
+-   DuckDB efficiently handles larger datasets by querying on disk and loading only the necessary data into memory.
+
+### Data Stageing
+
+1.  D00: contains the BW OpenHub Export, CSV - same as AL11
+
+### Data Ingestion:
+
+Occurs once a month, converting CSV to Parquet (or another format). header is added and stored in D01
+
+### Data Access and Querying:
+
+-   Data is imported into R data.table objects via DuckDB, which reads the stored files.
+-   Queries are often simple SQL SELECT statements on one table or basic INNER JOINs.
+-   The same SQL queries are used to import data into Python using Polars via DuckDB.
+
+### Data Manipulation:
+
+-   Further data manipulation in R is done using data.table.
+-   In Python, data manipulation is performed using Polars.
+
+**Evaluation of Your Proposed Workflow**
+
+Given your familiarity with SQL and DuckDB, and your need for scalability, your proposed workflow is sound and aligns well with your goals.
+
+### **Advantages of Your Workflow**
+
+1.  **Scalability**
+
+    -   **Efficient Data Storage:** Parquet files are columnar, compressed, and optimized for performance, which is beneficial for large datasets.
+    -   **Query Optimization:** DuckDB is designed for efficient analytical queries, even on large datasets.
+
+2.  **Flexibility**
+
+    -   **Language Agnostic:** DuckDB can be used within R and Python, allowing seamless transition between languages.
+    -   **SQL Familiarity:** Your proficiency in SQL means you can leverage DuckDB's SQL interface effectively.
+
+3.  **Performance**
+
+-   **Fast Query Execution:** DuckDB is optimized for OLAP workloads and can execute complex queries quickly.
+-   **Direct Parquet Support:** DuckDB can read Parquet files directly without the need to load the entire dataset into memory.
+
+4.  **Integration with R and Python**
+
+-   **R Data.Tables:** You can fetch query results from DuckDB into R data.tables, integrating with your existing R codebase.
+-   **Python Polars:** Similarly, you can read data into Polars DataFrames in Python, which is efficient for data manipulation.
+
+5.  **Simplified Data Pipeline**
+
+-   **Unified Data Source:** Using DuckDB on top of Parquet files centralizes your data access, simplifying data management.
+
+### **Potential Disadvantages**
+
+1.  **Additional Complexity**
+
+-   **Library Dependencies:** Requires installation and management of additional libraries (DuckDB, Parquet support in R and Python).
+-   **Learning Curve for Integration:** Even though you're familiar with DuckDB, integrating it into R and Python workflows may require some setup and testing.
+
+2.  **Overhead of Data Conversion**
+
+    -   **Initial Conversion:** Migrating CSV files to Parquet adds an extra step in your data ingestion pipeline.
+    -   **Data Updates:** If your CSV data updates frequently, you'll need to automate the conversion process.
+
+3.  **Resource Usage**
+
+-   **Disk Space:** Maintaining both CSV and Parquet files (if not deleting the original CSVs) may consume additional storage.
+
+------------------------------------------------------------------------
+
+**Recommendations and Best Practices**
+
+Given your requirements and skills, your proposed workflow is suitable and offers several benefits in terms of scalability and flexibility. Here are some recommendations to optimize your workflow:
+
+\### **1. Automate the CSV to Parquet Conversion**
+
+-   **Use Batch Processing:**
+
+-   Create scripts in R or Python to automate the conversion of CSV files to Parquet.
+
+-   **Leverage DuckDB for Conversion:**
+
+    -   DuckDB can read CSV files and write Parquet files, allowing you to perform the conversion within DuckDB.
+
+``` sql
+COPY (SELECT * FROM 'your_data.csv') TO 'your_data.parquet' (FORMAT PARQUET);
+```
+
+### **2. Optimize DuckDB Usage**
+
+-   **Indexing and Partitioning:**
+
+    -   While Parquet files do not support traditional indexing, consider partitioning your data to improve query performance.
+
+-   **SQL Query Optimization:**
+
+    -   Use DuckDB's advanced SQL features to optimize queries (e.g., window functions, common table expressions).
+
+### **3. Efficient Data Retrieval into R and Python**
+
+-   **In R:**
+
+    -   Use the `duckdb` package to execute SQL queries and fetch results into data.tables.
+
+    ``` r
+    library(duckdb)
+    con <- dbConnect(duckdb::duckdb())
+
+    # Query data
+    result <- dbGetQuery(con, "SELECT * FROM 'your_data.parquet' WHERE conditions")
+
+    # Convert to data.table
+    library(data.table)
+    dt_result <- as.data.table(result)
+    ```
+
+-   **In Python with Polars:**
+
+    -   Use DuckDB's Python API or integrate with Polars for efficient data handling.
+
+``` python
+import duckdb
+import polars as pl
+
+# Execute query and fetch result as Polars DataFrame
+df = duckdb.query("SELECT * FROM 'your_data.parquet' WHERE conditions").to_df()
+pl_df = pl.from_pandas(df)
+```
+
+### **4. Consider Data Volume and Hardware Resources**
+
+-   **Memory Management:**
+
+    -   DuckDB processes data efficiently, but ensure your hardware resources are adequate for your data size.
+
+-   **Disk I/O:**
+
+    -   Using Parquet files reduces disk I/O due to compression, but be mindful of the storage subsystem performance.
+
+### **5. Keep Libraries Updated**
+
+-   **Stay Current:**
+
+    -   Ensure that you are using the latest versions of DuckDB, R packages, and Python libraries to benefit from performance improvements and bug fixes.
+
+### **6. Handle Updates and Data Versioning**
+
+-   **Incremental Updates:**
+
+    -   If your data updates incrementally, design your pipeline to handle partial updates rather than reprocessing entire datasets.
+
+-   **Data Version Control:**
+
+    -   Implement versioning for your Parquet files to track changes over time.
+
+### **7. Monitor Performance and Adjust**
+
+-   **Benchmarking:**
+
+    -   Regularly benchmark query performance to identify bottlenecks.
+
+-   **Adjust Strategy:**
+
+    -   Based on performance metrics, adjust partitioning schemes, query strategies, or hardware resources as needed.
+
+------------------------------------------------------------------------
+
+**Conclusion**
+
+Your proposed workflow of migrating CSV files to Parquet, using DuckDB for querying, and integrating with R and Python is a robust solution that addresses your needs for scalability and flexibility. Given your familiarity with SQL and DuckDB, and the fact that you possess the necessary skills to manage the additional complexity, this approach is well-suited to your situation.
+
+**Benefits of Your Workflow:**
+
+-   **Scalable Data Processing:**
+
+-   Efficient handling of large datasets through Parquet and DuckDB.
+
+-   **Flexibility Across Languages:**
+
+    -   Seamless data access in both R and Python without data format conversion issues.
+
+-   **Performance Optimization:**
+
+    -   Faster query execution and data retrieval due to optimized storage and processing.
+
+**Key Actions Moving Forward:**
+
+1.  **Set Up Automated Data Pipelines:**
+
+-   Automate the conversion from CSV to Parquet to ensure consistency and save time.
+
+2.  **Optimize Queries:**
+
+-   Utilize DuckDB's full SQL capabilities to write efficient queries for your analysis.
+
+3.  **Integrate Smoothly with R and Python:**
+
+    -   Establish standard functions or scripts in both environments to interact with DuckDB, minimizing repetitive code.
+
+4.  **Monitor and Iterate:**
+
+    -   Keep an eye on performance metrics and be ready to adjust your approach as your dataset grows or changes.
+
+------------------------------------------------------------------------
+
+**Additional Considerations**
+
+-   **Community and Support:**
+
+    -   DuckDB is actively developed, and there is a growing community. Utilize resources like documentation and forums when needed.
+
+-   **Testing and Validation:**
+
+    -   As with any data pipeline, thoroughly test each component to ensure data integrity and correctness.
+
+-   **Security and Access Control:**
+
+    -   If working in a multi-user environment, consider how data access and permissions are managed.
+
+------------------------------------------------------------------------
+
+**Final Thoughts**
+
+Your willingness to embrace additional complexity due to your skill set positions you well to benefit from this workflow. By combining the strengths of Parquet's efficient data storage and DuckDB's powerful query engine, you can achieve a scalable and flexible data analysis environment.
+
+Should you need further assistance or have more questions as you implement this workflow, feel free to reach out. I'm here to help ensure your data processing is as efficient and effective as possible.
+
+# Data Stageing
+
+data lake design pattern: Bronze-Silver-Gold structure data according to its level of processing and readiness for use.
+
+Bronze Layer (Raw Data): Contains raw data as it was ingested from the source systems. This data is typically in its original format and unprocessed.
+
+Silver Layer (Cleaned and Conformed Data): Contains data that has been cleansed, filtered, and possibly enriched. This data is ready for further processing or analysis but is not yet aggregated or modeled.
+
+Gold Layer (Curated Data): Contains data that has been transformed into business-level aggregates, models, or reports. This is the data used by analysts, data scientists, or applications for decision-making.
+
+
+{{< include 03_data_preparation_def.qmd >}}

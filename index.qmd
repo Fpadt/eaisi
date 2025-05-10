@@ -1,0 +1,284 @@
+---
+title:       Pythia's Advice
+subtitle:    TRUST - is all you need!
+subject:     Wholesale Sales Forecasting
+date:        last-modified
+date-format: long
+authors:
+  - name:    Floris Padt
+    orcid:   0009-0006-4729-1783
+    corresponding: true
+    email: floris@smart-r.nl
+    url: https://www.linkedin.com/in/florispadt    
+    roles:
+      - Conceptualization
+      - Data curation
+      - Formal analysis
+      - Investigation
+      - Methodology
+      - Software
+      - Validation
+      - Visualization
+      - Writing     
+    degrees: 
+      - MSc.
+    affiliations: 
+      - name:         EAISI - Technical University Eindhoven
+        city:         Eindhoven
+        country:      The Netherlands
+        department:   EAISI Academy
+        group:        Professional education
+        url:          https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai
+  - name:   Ieke Le Blanc
+    url: https://www.tue.nl/en/education/professional-education/current-programs/eaisi-academy/lecturers/dr-ieke-le-blanc
+    roles:
+      - Supervisor
+      - Mentor     
+    degrees: 
+      - Dr.
+    affiliations: 
+      - name:         EAISI - Technical University Eindhoven
+        city:         Eindhoven
+        country:      The Netherlands
+        department:   EAISI Academy
+        group:        Professional education
+        url:          https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai      
+description: |
+  Effective business planning relies heavily on consistent and accurate 
+  forecasts across various levels of aggregation, granularity, and time 
+  horizons. Generating multiple forecasts for different use cases not only 
+  incurs costs that should be justified by the benefits but also introduces 
+  the risk of inconsistencies between forecasts. Ideally, a single detailed 
+  forecast with a long horizon can be created and then aggregated to meet all 
+  business needs, maintaining consistency but potentially sacrificing forecast 
+  accuracy This raises the question of which approach delivers the highest 
+  net benefit.
+
+  To create an internal benchmark and understand the cost-benefit relationship 
+  without disrupting normal business operations, we built a separate 
+  forecasting lab environment in parallel to our production forecasting system, 
+  leveraging state-of-the-art open-source software available free of charge. 
+  We begin with simple models using raw historical sales data and gradually 
+  increase complexity by automating data cleaning and incorporating more 
+  advanced methods that utilize factors such as price, promotions, stock-outs, 
+  and other external influences.
+
+  While statistical forecasting methods are known for their robustness and 
+  explainability, incorporating exogenous variables such as price and 
+  promotions is often difficult. In an increasingly promotion-driven business 
+  environment, recent machine learning models—such as Random Forest, neural 
+  networks, and conformal prediction—might deliver a higher net benefit despite 
+  the additional data handling costs and reduced explainability.
+
+  In assessing the effectiveness of various forecasting methods, we face the 
+  challenge of directly quantifying the value each forecast brings to the 
+  business. Due to the complexity of isolating a forecast's impact on business 
+  performance, we adopt forecast accuracy as a proxy for forecast value. 
+  This approach allows us to evaluate and compare the methods based on their 
+  predictive precision, under the premise that more accurate forecasts are 
+  likely to result in better-informed business decisions and, consequently, 
+  greater operational benefits.
+
+  In this paper, we aim to strike the right balance between enhancing forecast 
+  accuracy and managing the costs associated with additional resources like 
+  hardware, software, data, and human effort. Our research will explore the 
+  optimal combination of forecasting methods to achieve higher accuracy while 
+  ensuring efficient resource utilization. Furthermore, given the extensive 
+  range of products (SKUs) and their varying levels of importance, we explore 
+  strategies for effectively allocating human resources. By prioritizing 
+  efforts on key products and automating processes for less critical items, 
+  we aim to optimize resource utilization and enhance overall 
+  forecasting efficiency.
+
+plain-language-summary: |
+  Balance the benefits of higher forecast accuracy with the cost of additional resources ...
+funding: "The author(s) received no specific funding for this work."
+categories:
+  - Time Series Forecasting
+  - Data Science
+  - Hierarchical Forecasting (HTS)
+  - Error-Trend-Season (ETS)
+  - Supply Chain Management
+key-points:
+  - A RFC-connection was established with the SAP systems leveraging the SAP netweaver software development kit to extract and update the data needed. 
+  - Forecast were generated on different levels of aggregation taking the promotional effect into account.
+  - A comparison has been made between the differnt forecasts engines in terms of foerecast accuracy measures and has been visualized
+  - rules of thumb have been developed indicating what to use when
+thanks: 'Mentor: {{<var mentor >}} - EAISI Academy, MASTERING DATA & AI, Technical University Eindhoven'
+bibliography:      EAISI-PYTHIA.bib
+csl:               data-science-journal.csl
+# cite-method:       biblatex
+# biblio-style:      nature
+citation:
+  container-title: Pythia's Advice
+license: "CC BY"
+copyright: 
+  holder:          Smart-R
+  year:            2025
+appendix-style:    default
+lang: en-us
+engine: knitr
+nocite: |
+  @*
+---
+
+{{< pagebreak >}}
+
+@def-RMSE
+
+@def-OOD
+
+```{=html}
+<audio controls>
+  <source src="audio/pythia_history.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+```
+
+**From Prophecy to Prediction: The Myth Inspiring Pythia's Advice**
+
+The *Pythia's Advice* project is dedicated to the art of sales forecasting. Drawing inspiration from the ancient myth of the Oracle of Delphi, where the *Pythia*—the high priestess—delivered cryptic prophecies, we harness the power of Data Science—our modern-day Pythia—to foresee future trends. Just as the Pythia's prophecies required careful interpretation, our statistical and machine learning techniques produce *Advice* that requires human expertise for effective application. By embodying this union of technology and human insight, we aptly named our project *Pythia's Advice*. This synergy ensures well-informed, data-driven decision-making and enhances the operational efficiency of the supply chain.
+
+According to ancient myth, the Pythia inhaled vapors emanating from the remnants of the Python slain by Apollo—the Olympian god of the sun, music, and prophecy. These vapors induced a trance-like state that allowed her to channel his prophetic insights, revealing future events. Similarly, our project 'inhales' vast amounts of data—our 'Python's Vapors'—which, when processed with complex algorithms, enable us to decipher hidden patterns and unveil valuable foresight. However, these predictive insights must be carefully interpreted to avoid missteps—much like when King Croesus misread the Pythia's prophecy that *'a great empire will fall.'* He waged war and, in doing so, opened Pandora's Box—leading to the downfall of his own *great empire*—the Kingdom of Lydia.
+
+Furthermore, *Pythia's Advice* emphasizes the crucial bond between humans and nature. By focusing on the sales forecast of *food for biodiversity*—products that support ecological diversity—we aim to benefit human health and promote planetary well-being. This harmonious relationship mirrors the Pythia's sacred connection with the divine, symbolizing a balance between technological capabilities and the natural world.
+
+\
+
+![](images/pythia_logo.png){fig-align="center" width="6cm" height="6.8cm"}
+
+\
+Our logo, featuring a tree integrated with the *Pythia* through conductive traces against an enlightening sunset that symbolizes guidance and inspiration, beautifully encapsulates this synergy. This imagery symbolizes the fusion of natural wisdom and technological innovation. It reminds us that while we rely on cutting-edge technology to predict the future, our roots remain deeply intertwined with nature.
+
+Through *Pythia's Advice*, we honor the legacy of the Oracle of Delphi, blending ancient wisdom with modern technology to illuminate the path forward.
+
+{{< pagebreak >}}
+
+<!-- {{< pagebreak >}} -->
+
+# Acknowledgments {.appendix .unnumbered}
+
+I am grateful for the insightful comments offered by {{<var mentor >}}. These have improved this study in innumerable ways and saved me from many errors; those that inevitably remain are entirely my own responsibility.
+
+{{< pagebreak >}}
+
+# Introduction
+
+In an increasingly complex market environment, accurate demand forecasting is critical for ensuring the operational efficiency of supply chains, particularly in industries like wholesale, where products are perishable and sales are affected by seasonality and promotions. This research focuses on a wholesale company that buys, produces, and distributes biodiversity food to retailers, Out-Of-Home, discounters and E-commerce. To make informed decisions regarding production, buying, and negotiation with customers, accurate sales forecasts are required at different aggregation levels, depending on each use case.
+
+While the company employs robust but dated statistical methods, such as moving averages and exponential smoothing, these techniques struggle to handle promotional impacts, capture complex sales patterns, and provide prediction intervals. Currently, a combination of bottom-up and top-down forecasting approaches is used, largely determined by the judgment of individual demand planners. However, the lack of clear guidance on which approach to apply in different scenarios has resulted in inconsistent and subjective forecasting outcomes. Furthermore, various use cases have distinct aggregation and time horizon requirements, adding complexity to maintaining consistent and accurate forecasts across the system.
+
+The primary objective of this research is to determine the best way to generate a forecast, which methods to use and on what levels of granularity, enabling consistent, accurate forecasts that can be aggregated or dis-aggregated as required for different business needs. Specifically, the study aims to address the following key questions:
+
+1.  Which robust forecasting methods—statistical or data science techniques—should be used to meet the needs of each use case?
+2.  Which levels of aggregation provides the most accurate forecast for different use cases, and what when is an additional level justified by increased forecast accuracy.
+3.  What forecast accuracy improvements can be achieved through the integration of additional data, and what are the trade-offs or costs associated with these enhancements?
+4.  How should human resources be allocated effectively, given the large number of products (SKUs) and varying levels of importance across these products?
+
+Ultimately, this research will provide an objective, data-driven strategy to improve forecast accuracy, reduce reliance on individual intuition, and ensure that forecasts are robust, consistent, and scalable across multiple aggregation levels, thereby enhancing overall decision-making efficiency.
+
+## **Methodology**
+
+This research follows the **CRISP-ML methodology**, [@costa_crisp-ml_2022] as the guiding framework.
+
+CRISP-ML is an acronym for "Cross-Industry Standard Process for Machine Learning." It is a systematic framework for organizing and executing machine learning projects. The methodology includes six key steps:
+
+1.  understanding the problem
+2.  preparing the data
+3.  selecting and tuning models
+4.  evaluating performance
+5.  deploying the solution
+6.  monitoring and maintaining the model.
+
+This thesis focuses on the first 4 steps, the results will be taken as advice to be implemented in the current way of working.
+
+<!-- -   Promotions -->
+
+<!--     -   dip before/after promotion -->
+
+<!--     -   cannibalization, halo effect -->
+
+<!--     -   BOM, display -->
+
+<!-- -   Customer -->
+
+<!--     -   (de)-listings -->
+
+<!--     -   hierarchy -->
+
+<!-- -   Product Life Cycle Management -->
+
+<!--     -   NPI/NPD (cannibalization) -->
+
+<!--     -   end of Life -->
+
+<!-- -   Seasonality, Chinese new year -->
+
+<!-- Problem Statement -->
+
+<!-- -   which level/group -\> top-down, middle-out, bottom up -->
+
+<!--     -   HTS, -->
+
+<!-- -   which technique/method statistical, regression ... -->
+
+<!--     -   Statisticical: Exponential smoothing, Mov, navieve, ETS, ArimA, -->
+
+<!--     -   Data Science: regression (Boost) & conformal prediction -->
+
+<!-- -   Classification: which focus for the highest impact) (cleaning, promotions etc), e.g. -->
+
+<!--     -   ABC/XYZ -->
+
+<!--     -   other features 0-count, CV, promotion impact etc -->
+
+<!--     -   (forecast current accuracy based on features) -->
+
+# Business Understanding
+
+where the business process is mapped and when the main indicators are identified, as well as when the business objectives are defined What is the business's need?
+
+::: {#fig-bu-why .figure}
+![](images/bu_why.png){fig-alt="Why is forecasting important? It drives the business" fig-align="left" fig-width="15cm"}\]
+
+Why forecasting?\
+The forecast drives the business!
+:::
+
+See Figure @fig-bu-why for the thumbnail overview.
+
+# Data Undestanding
+
+# Modeling
+
+# Evaluation
+
+{{<var version>}}\
+{{<var email_info >}}\
+{{< meta subtitle >}}
+
+::: callout-note
+Note that there are five types of callouts, including: `note`, `warning`, `important`, `tip`, and `caution`.
+:::
+
+::: callout-tip
+## Tip with Title
+
+This is an example of a callout with a title.
+:::
+
+::: {.callout-caution collapse="true"}
+## Expand To Learn About Collapse
+
+This is an example of a 'folded' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
+:::
+
+# Deployment
+
+# Conclusion
+
+# Glossary {.unnumbered}
+
+::: html
+{{< include notebooks/09_definitions.qmd >}}
+:::

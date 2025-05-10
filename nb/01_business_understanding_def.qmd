@@ -1,0 +1,16 @@
+::: {#def-01-OOD}
+**OOD:**
+
+Out of Date
+:::
+
+::: {#def-01-RMSE}
+**RMSE:**
+
+Root Mean Squared Error
+
+RMSE = $\sqrt{mean(e^2_t)}$
+
+A [Scale-dependent error](https://otexts.com/fpp3/accuracy.html#scale-dependent-errors), to compare forecast performances between data sets with the same unit.
+:::
+

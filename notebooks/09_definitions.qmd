@@ -1,0 +1,155 @@
+
+What does this acronym mean??
+  
+# Business {.unnumbered}
+
+
+## Terminology {.unnumbered}
+
+::: {#def-BBD}
+**BBD:**
+
+Best Before Date
+:::
+
+::: {#def-GSL}
+**GSL:**
+
+Guaranteed Shelf Life
+:::
+
+::: {#def-OOD}
+**OOD:**
+
+Out of Date
+:::
+
+::: {#def-OOS}
+**OOS:**
+
+Out of Stock
+:::
+
+::: {#def-SKU}
+**SKU:**
+
+Stock Keeping Unit
+:::
+
+## Entities {.unnumbered}
+
+::: {#def-MSO}
+**MSO:**
+
+Marketing & Sales Organization
+:::
+
+::: {#def-HFS}
+**HFS:**
+
+Health Food Store
+:::
+
+::: {#def-OOH}
+**OOH:**
+
+Out of Home
+:::
+
+# Data {.unnumbered}
+
+::: {#def-ABC}
+**ABC:**
+
+Classification Pareto
+:::
+
+# Modeling {.unnumbered}
+
+::: {#def-ARIMA}
+**ARIMA:**
+
+AutoRegressive Integrated Moving Average
+:::
+
+::: {#def-BOX-JENKINS}
+**Box-Jenkins Method:**
+
+Box-Jenkins Method Method\](https://en.wikipedia.org/wiki/Box%E2%80%93Jenkins_method)
+:::
+
+::: {#def-ETS}
+**ETS:**
+
+Error, Trend, Seasonal
+:::
+
+::: {#def-HTS}
+**HTS:**
+
+Hierarchical Time Series
+:::
+
+# Evaluation {.unnumbered}
+
+::: {#def-BIAS}
+**BIAS:**
+
+Bias Error
+:::
+
+::: {#def-FVA}
+**FVA:**
+
+Forecast Value Added
+:::
+
+::: {#def-MAE}
+**MAE:**
+
+Mean Absolute Error
+
+MAE = $mean(|e_t|)$
+
+A [Scale-dependent error](https://otexts.com/fpp3/accuracy.html#scale-dependent-errors), to compare forecast performances between data sets with the same unit.
+:::
+
+::: {#def-MAPE}
+**MAPE:**
+
+Mean Absolute Percentage Error
+
+$p_t = 100 \times \frac{e_t}{y_t}$
+
+MAPE = $mean(|p_t|)$
+
+unit-free, to compare forecast performances between data sets.
+:::
+
+::: {#def-MASE}
+**MASE:**
+
+Mean Absolute Scaled Error\*\*
+:::
+
+::: {#def-RMSE}
+**RMSE:**
+
+Root Mean Squared Error
+
+RMSE = $\sqrt{mean(e^2_t)}$
+
+A [Scale-dependent error](https://otexts.com/fpp3/accuracy.html#scale-dependent-errors), to compare forecast performances between data sets with the same unit.
+:::
+
+::: {#def-TSCV}
+**TSCV:**
+
+Time Series Cross Validation
+:::
+
+# Deployment {.unnumbered}
+
+::: {#def-GAME}
+Gamification
+:::

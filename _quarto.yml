@@ -1,0 +1,191 @@
+project:
+  type: book
+  output-dir: docs
+
+website:
+  site-url: https://github.com/Fpadt/eaisi_paper/
+
+date:        last-modified
+date-format: long
+
+authors:
+  - name:    Floris Padt
+    orcid:   0009-0006-4729-1783
+    corresponding: true
+    email: floris@smart-r.nl
+    url: https://www.linkedin.com/in/florispadt    
+    roles:
+      - Conceptualization
+      - Data curation
+      - Formal analysis
+      - Investigation
+      - Methodology
+      - Software
+      - Validation
+      - Visualization
+      - Writing     
+    degrees: 
+      - MSc.
+    affiliations: 
+      - name:         EAISI - Technical University Eindhoven
+        city:         Eindhoven
+        country:      The Netherlands
+        department:   EAISI Academy
+        group:        Professional education
+        url:          https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai
+  - name:   Ieke Le Blanc
+    url: https://www.tue.nl/en/education/professional-education/current-programs/eaisi-academy/lecturers/dr-ieke-le-blanc
+    roles:
+      - Supervisor
+      - Mentor     
+    degrees: 
+      - Dr.
+    affiliations: 
+      - name:         EAISI - Technical University Eindhoven
+        city:         Eindhoven
+        country:      The Netherlands
+        department:   EAISI Academy
+        group:        Professional education
+        url:          https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai 
+
+crossref:
+  def-prefix: def
+  def-title:  def
+    
+execute:
+  freeze:  false
+  echo:    false
+  output:  true
+  include: false
+  warning: false
+
+editor: source
+
+book:
+  title: "Pythia's Advice"
+  favicon: images/favicon.ico
+  repo-url: https://github.com/Fpadt/eaisi_paper/
+  repo-actions: [source, issue]
+  downloads: [pdf] 
+  sharing: [twitter, facebook, linkedin]
+  page-navigation: true # Explicit navigation controls
+  page-footer:
+    left: "© 2025 Floris Padt: Pythia's Advice"
+    # center: ""
+    right: "[EAISI](https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai)"
+
+  chapters:
+    - part: "Foundations"
+      chapters:
+        - index.qmd
+        # - notebooks/intro-crisp-dm.qmd
+    - part: "Project Phases"
+      chapters:
+        - nb/01_business_understanding_rev.qmd
+        - nb/02_data_understanding_rev.qmd
+        - nb/03_data_preparation_rev.qmd
+        - nb/04_modelling_rev.qmd
+        - nb/05_evaluation_rev.qmd
+        - nb/06_deployment_rev.qmd
+    - part: "Conclusions & Next Steps"
+      chapters:
+      - notebooks/07_conclusions.qmd
+    - part: "Appendix"
+      chapters:
+        - nb/08_appendix_rev.qmd
+        # - nb/12_data_understanding_rev.qmd
+        # - nb/13_data_preparation_rev.qmd
+        # - nb/14_modelling_rev.qmd
+        # - nb/15_evaluation_rev.qmd        
+        - nb/16_flow_down_rev.qmd
+        - nb/17_crisp-dm_rev.qmd
+        - nb/18_references_rev.qmd
+        - nb/19_resources_rev.qmd
+
+resources:
+  - notebooks/01_business_understanding.qmd  
+  - notebooks/02_data_understanding.qmd
+  - notebooks.zip
+  - audio/pythia_history.mp3
+  - video/whitebox.mp4
+  - video/blackbox.mp4
+  - pptx/PAF_s03.pptx
+
+format:
+  html:
+    title-block-banner: true
+    title-block-style: default
+    # Custom banner color
+    title-block-banner-color: "#FFFFFF"
+    background-color: "#004D40"
+    toc:                true
+    code-fold:          true  
+    lightbox:           true
+    comments:
+      hypothesis:       false
+    number-sections:    true
+    colorlinks:         true
+    highlight-style:    github
+    theme:
+      light:            [flatly]
+      dark:             [darkly]
+    respect-user-color-scheme: false    
+    fontsize:           "10"
+    crossrefs-hover:    true 
+
+  # docx:
+  #   reference-doc:      pythia-reference-doc.docx
+  #   page-width:         8.27 
+  #   toc:                true
+  #   toc-depth:          1
+  #   toc-title:          'Table of Contents' 
+  #   number-sections:    true
+  #   number-depth:       2    
+  #   number-offset:      0
+  #   highlight-style:    github
+  # jats: default
+    # documentclass: scrartcl
+    # papersize: A4    
+
+  # pdf: #arxiv-pdf:
+  #   keep-tex:           false
+  #   documentclass:      book #scrbook
+  #   papersize:          a4
+  #   geometry:
+  #     - a4paper
+  #     - left=2cm
+  #     - right=2cm
+  #     - top=2cm
+  #     - bottom=2cm
+  #   margin:
+  #     x: 1cm
+  #     y: 1cm
+  #   include-in-header:
+  #     text: |
+  #       \usepackage{typearea}
+  #   toc:                true
+  #   toc-depth:          1
+  #   toc-title:          'Table of Contents'
+  #   lof:                false
+  #   lot:                false
+  #   number-sections:    true
+  #   number-depth:       2
+  #   number-offset:      0
+  #   # mainfont:
+  #   # fontfamily: libertinus
+  #   # biblio-title:       References
+  #   # cite-method:        natbib
+  #   fontsize:           "10"
+  #   # fontfamily:         Passion One
+  #   # sansfont:           Passion One
+  #   reference-location: document
+  #   citation-location:  document
+  #   cap-location:       bottom
+  #   fig-cap-location:   top
+  #   tbl-cap-location:   top
+  #   colorlinks:         true
+  #   output-file:        pythias_advice.pdf
+  #   linenumbers:        false # Add (continuous) line numbers?
+  #   doublespacing:      false # Double space the PDF output?
+  #   runninghead:        "Pyhtia's Advice" # The text on the top of each page of the output
+  #   authorcols:         false # Should authors be listed in a single column (false)

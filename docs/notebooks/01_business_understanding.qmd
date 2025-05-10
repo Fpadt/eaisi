@@ -1,0 +1,217 @@
+---
+title:    "Business Understanding"
+subtitle: What is the business need?
+description: |
+  - Definition of the business objectives
+  - business process mapping 
+  - identification of stakeholders and main indicators.
+editor: source  
+---
+
+@def-OOD
+
+::: {#fig-bu-why .figure}
+![](../images/bu_why.png){fig-alt="Why is forecasting important? It drives the business" fig-align="left" fig-width="15cm"}\]
+
+Why forecasting?\
+The forecast drives the business!
+:::
+
+See Figure @fig-bu-why for the thumbnail overview.
+
+## Defining the Scope of the ML Application
+
+##Success Criteria - Business Success purpose and success criteria (reduction OOS&OOD) and other factors like customer & employee satisfaction - ML Success FA% and BIAS% - Economic Success impact of the project on the companies financial performance DAPS \## Feasibility availability, size, and quality of the training sample
+
+### Background
+
+The company's forecasting requirements vary significantly across several key use cases, among others:
+
+```{r convert‐diagram, include=FALSE}
+# make sure you have installed: install.packages("rsvg")
+rsvg::rsvg_png(
+  svg  = "../images/scn.svg",
+  file   = "../images/scn.png",
+  width  = 800     # adjust width / height or res as needed
+)
+```
+
+::: {.content-visible when-format="html"}
+![supply chain network (sample)](../images/scn.svg){fig-alt="Supply Chain Network" fig-align="center" fig-width="15cm"}
+:::
+
+
+::: {.content-visible when-format="pdf"}
+![supply chain network (sample)](../images/scn.png){fig-alt="Supply Chain Network" fig-align="center" fig-width="5cm"}
+:::
+
+
+1.  **Buying and Production**: Requires forecasts at the **material level** and **warehouse**, aggregated weekly, with a forecast horizon of **12 weeks**.
+
+2.  **Setting Safety Stock Profiles**: Requires forecasts at the **material level** and **warehouse**, aggregated weekly, with a forecast horizon of **26-52 weeks**, to determine safety stock profiles based on realized forecast accuracy.
+
+3.  **Negotiation with Customers**: Requires forecasts at a **monthly level**, aggregated by **material categories** and **customer groups**, with a horizon of **6 months**.
+
+4.  **Production Cost Calculation**: Requires forecasts at a **quarterly level**, aggregated by material, with a horizon of **6 quarters**, grouped into annual time buckets.
+
+The primary forecasting challenge is determining the optimal aggregation level and methods to use for generating forecasts that can meet the desired forecast accuracy of these different use cases while ensuring **consistency** and **accuracy**.
+
+This inconsistency stems from a lack of objective criteria for selecting between forecasting methods—**bottom-up**, **top-down**, or **middle-out**—resulting in decisions that rely on the subjective judgment of demand planners, leading to variable performance and inefficiencies.
+
+### Business Objectives
+
+The primary objective is to enhance operational efficiency by improving forecast accuracy across all key use cases. This will be achieved through the application of robust forecasting methods that can handle seasonality, promotions, and efficiently allocate scarce resources. Ultimately, these improvements will contribute to improved stock levels and a higher level of customer satisfaction, both key strategic goals for the company.
+
+### Business Success Criteria
+
+Success will be measured by the following criteria:
+
+1.  **Improved Forecast Accuracy**:
+    -   **Tailored Forecasts for Each Use Case**: Enhanced accuracy across areas such as buying, production, safety stock settings, and customer negotiations, using methods that account for seasonality, promotions, and varying aggregation levels.
+    -   **Reduced Forecast Errors and Bias**: Measurable reductions in key error metrics like RMSE , MAPE , and BIAS will lead to better alignment between forecasted and actual sales. Increased accuracy will also foster trust among supply planners, reducing the need for excessive safety margins.
+    -   **Consistency Across Aggregation Levels**: Forecasts will remain consistent across different levels of aggregation, ensuring that detailed and aggregated forecasts are aligned.
+2.  **Informed Decision-Making for Forecasting System Functionality**:
+    -   **Selecting the Right Forecasting Methods**: This research will guide the selection of optimal forecasting methods (statistical, machine learning, or hybrid) to improve performance across various use cases.
+    -   **Efficient Resource Allocation**: A product classification scheme (e.g., ABC-XYZ) will be developed to help demand planners focus on high-impact products, while low-impact products will be managed more efficiently through automated forecasts.
+3.  **Operational Benefits**:
+    -   **Improved Inventory Management**: More accurate forecasts will drive better purchasing and production decisions, leading to:
+        -   **Reduced Out-of-Stock (OOS) Incidents**: Ensuring product availability to meet customer demand and reduce penalties from stock-outs.
+        -   **Reduced Out-of-Date (OOD) Incidents**: Minimizing waste and ensuring the freshness of perishable goods, leading to lower storage costs and better inventory turnover.
+    -   **Optimized Safety Stock Levels**: Accurate forecasts will allow for better safety stock settings, reducing both overstocking and stock-outs.
+    -   **Cost Optimization**: Improved demand alignment will lower excess inventory and warehousing costs, minimize spoilage, and reduce costs associated with last-minute adjustments and overproduction.
+4.  **Enhanced Supply Chain Efficiency and Decision-Making**:
+    -   **Strategic Decision Support**: Consistent and accurate forecasts will improve decision-making across production planning, sales target setting, capacity management, and workforce optimization. These improvements will also support better customer negotiations and more precise COGS (Cost of Goods Sold) calculations, resulting in a more efficient supply chain.
+    -   **Increased Customer Satisfaction**: Improved product availability, fewer stock-outs, and fresher goods will not only reduce operational costs but will also enhance customer satisfaction and loyalty—a core strategic objective of the company.
+
+By achieving these objectives, the company will see significant improvements in operational efficiency, cost-effectiveness, and most importantly, a higher level of customer satisfaction, which will ultimately drive long-term business success.
+
+see upper part of the flow-down graph, (@sec-flowdown).
+
+### Inventory of Resources Requirements
+
+#### Data sources:
+
+The available data includes **historical sales**, **promotional data**, **stock quantities**, and **previous forecasts**. Stock-out periods will be adjusted for by inflating sales to reflect demand that would have occurred had stock been available.
+
+| Data Type | Details | Time Span |
+|------------------------|------------------------|:-----------------------|
+| Sales | Customer Orders, Inter-company, Returns, Free-of-Charge and Missed | \> 2020 |
+| Promotions | Promotions per material and customer | \> 2020 |
+| Stock | Daily stock level per material and distribution center | \> 2020 |
+| Forecasts | generated forecast before- and after Demand Review | \> Aug. 2023 |
+| Master data | Material, Customer and Organization, including hierarchy's | *N.A.* |
+
+<!-- : (see, data_sources for details) -->
+
+#### Scoping
+
+The scope of the project consist of two Marketing & Sales Organizations (MSO), with a focus on 6 brands, representing 5 out of the 6 categories, see @tbl-material-scope. These materials are made-to-stock (MTS), requirements are planned on a weekly level, which represents 97% of the business.
+
+This leaves us with about 1.000 materials out of 9.000 to focus on, making the assumption that these are representative for the rest of the products.
+
+| Brand     | Category          |
+|:----------|:------------------|
+| Bjorg     | Dairy             |
+| Clipper   | Tea / Coffee      |
+| Naturela  | Tea / Coffee      |
+| Tanoshi   | Meals             |
+| Alter Eco | Sweets            |
+| Zonnatura | Breakfast Cereals |
+
+: Brands and Categories {#tbl-material-scope}
+
+<!-- see @sec-project-charter -->
+
+<!-- #### Risks and Contingencies -->
+
+<!-- see @sec-project-charter -->
+
+<!-- #### Terminology -->
+
+<!-- #### Costs and Benefits -->
+
+<!-- Business Case? -->
+
+### Data Mining Goals
+
+Predictive Model based on Correlations: Forecast Future Sales + Promotion effects
+
+see lower part of the flow-down graph, (@sec-flowdown).
+
+#### Data and Forecasting Methods {.unnumbered}
+
+We will employ a combination of **statistical methods** and **machine learning techniques** to improve the forecasting process:
+
+-   **Current Methods**: The company’s current forecasting system uses **moving averages**, **exponential smoothing** and **Box-Jenkins**, which face challenges with **Seasonality**, **Stationarity** and **promotional effects**. Forecasts are often inadequate in handling the impacts of promotions.
+
+-   **Proposed Methods**:
+
+    -   **ETS (Error, Trend, Seasonal)**: To replace exponential smoothing with a model that provides **prediction intervals** and better captures trends and seasonality.
+
+    -   **HTS (Hierarchical Time Series)**: To handle multiple aggregation levels, ensuring **forecast consistency** when forecasts are disaggregated or aggregated across levels.
+
+    -   **XGBoost**: A machine learning technique capable of handling **promotional impacts** and even identifying **cannibalization effects** of promotions between products.
+
+    -   **conformal prediction**: A method that provides **prediction intervals** and **calibrated forecasts**, ensuring that the forecasted values are within a certain confidence level.
+
+    -   **CatBoost and SHAP**: These will be used for feature analysis, determining which features (e.g., promotions, stock-outs) have the highest impact on forecast accuracy. This approach helps in choosing relevant input features to improve forecasts.
+
+#### Consistency and Validation {.unnumbered}
+
+One key requirement is ensuring that forecasts remain consistent across different levels of aggregation. This is where **HTS** will play a crucial role, reconciling forecasts generated at different aggregation levels to ensure that top-level forecasts align with aggregated lower-level forecasts. This will address the known issue of discrepancies between aggregated forecasts and directly forecasted aggregated levels.
+
+#### **Human Resources Allocation**
+
+The team consists of **X demand planners** working across **Y MSOs**. Currently, planners are involved in manually indicating promotional impacts and adjusting forecasts based on intuition, without systematic data cleaning for stock-outs or model tuning.
+
+To optimize resource allocation, we plan to implement a **classification system** for the company's **9K SKUs**, utilizing an:
+
+**ABC-XYZ classification** scheme:
+
+-   **ABC Classification**: Based on **sales volume**—focusing more resources on high-value items (A-class) and minimizing attention to low-volume items (C-class).
+-   **XYZ Classification**: Based on **sales variability**, indicating which products have stable demand versus those with erratic patterns.
+-   **Combined Classification**: These classifications will guide planners in determining where their efforts can have the most impact, focusing primarily on high-priority items while relying more on automated processes for low-priority ones.
+
+### Data Mining Success Criteria
+
+The fiinal result will show an estimated relationship between forecast accuracy and the cost of resources required for the agreed scope. The cost of resources result from hardware, software and human resources needed for cleansing data, transforming data, model tuning and other manual activities needed.
+
+To assess forecast accuracy, we will use a range of evaluation metrics tailored to each use case.
+
+These metrics will help evaluate how well each approach performs against the unique requirements of each use case, ultimately guiding method selection and refinement.
+
+-   **RMSE (Root Mean Squared Error, @def-RMSE )**: The primary metric for measuring forecast accuracy, particularly useful for penalizing large errors.
+
+-   **MAPE (Mean Absolute Percentage Error)**: To align with existing company metrics.
+
+-   **MAE (Mean Absolute Error)** and **MASE (Mean Absolute Scaled Error)**: Additional metrics to provide a broader evaluation, addressing different aspects of forecast performance and comparing models to naïve baselines.
+
+### Project Plan
+
+see @sec-project-plan
+
+#### Initial Assessment of Tools and Techniques
+
+see Literature review (@sec-literature_review)
+
+<!-- ## Data Understanding -->
+
+<!-- ### Collect Initial Data -->
+
+<!-- #### Initial Data Collection Report -->
+
+<!-- ### Describe Data -->
+
+<!-- #### Data Description Report -->
+
+<!-- ### Explore Data Data -->
+
+<!-- #### Exploration Report -->
+
+<!-- ### Verify Data Quality -->
+
+<!-- #### Data Quality Report -->
+
+
+{{< include 01_business_understanding_def.qmd >}}
+

@@ -1,0 +1,7 @@
+# References {.unnumbered}
+
+Here you can include your references or bibliography.
+
+```{=html}
+<div id="refs"></div>
+```

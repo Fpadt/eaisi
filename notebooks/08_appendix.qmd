@@ -1,0 +1,92 @@
+---
+title:       Other
+subtitle:    Other sub
+description: | 
+  other.
+engine: knitr  
+editor: source
+---
+
+
+# other {.unnumbered}
+
+## Literature {#sec-literature_review}
+
+The literature review focuses on the intersection of three fields, according to the now-ubiquitous Data Science Venn Diagram of [Drew Conway](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram).
+
+## Business Process
+
+-   SCOR MODEL A COMPLETE GUIDE - 2020 EDITION, [@blokdyk_scor_2019]
+-   Inventory and production management in supply chains, [@silver_inventory_2021]
+
+## Math & Statistics
+
+-   Forecasting: Principles and Practice (3rd ed), [@hyndman_forecasting_2021]
+-   Demand forecasting best practices, [@vandeput_demand_2023]
+-   Data science for supply chain forecasting, [@vandeput_data_2021]
+-   Inventory optimization: models and simulations, [@vandeput_inventory_2020]
+-   Machine Learning With Boosting: A Beginner's Guide, [@hartshorn_machine_2017]
+-   Introduction to conformal prediction with Python, [@molnar_introduction_2023]
+-   Practical guide to applied conformal prediction in Python, [@manokhin_practical_2023]
+-   SHAP with Python, [@osullivan_shap_2024]
+-   Introduction to SHAP with Python, [@osullivan_introduction_2023]
+-   Ensemble methods for machine learning, [@kunapuli_ensemble_2023]
+
+## Programming
+
+### Python
+
+-   Python Crash Course, [@matthes2019]
+-   Lightning fast forecasting with statistical and econometric models, [@nixtla/s2024]
+-   Scalable Machine Learning for Time Series Forecasting, [@nixtla/m2024]
+-   Probabilistic hierarchical forecasting with statistical and econometric methods, [@nixtla/h]
+-   TS Features, calculates various features from time series data, [@nixtla/t2024]
+
+### R
+
+-   R for Data Science, [@wickham]
+-   R forecasting package, [@hyndmanaut2024]
+-   R feasts package, [@ohara-wild2024a]
+-   R fable package, [@ohara-wild2024]
+
+::: landscape
+## Forecast Use Cases {#sec-forecast-use-cases}
+
+![Forecast Use Cases](../images\forecast_use_cases.png){width="100%" fig-align="center"}
+
+
+## Project Charter {#sec-project-charter}
+
+![Project Charter](../images\project_charter.png){width="100%" fig-align="center"}
+
+## Project Plan {#sec-project-plan}
+
+![Project Plan](../images/project_plan.png){width="100%" fig-align="center"}
+
+
+{{< pagebreak >}}
+
+![Project Plan](../images/approach.png){width="80%" fig-align="center"}
+
+{{< pagebreak >}}
+:::
+
+## EAISI {#sec-eaisi}
+
+### [Deliverables & requirements](https://academy.eaisi.nl/l/41851394)
+
+-   Clear description of the need / problem / opportunity
+-   Clear description of the long-term ambition
+-   Clear focus on what part of this long-term ambition will be taken on in the project
+-   Description of the data science project with the help of a flowdown chart and project charter
+-   Clear description of how the model outcome / analysis results will be used (e.g. who, at what time, in which process, in what way, will use the model outcome / analysis results to make a better decision about what?) and how this translates into improved KPIs as outlined in the flowdown chart
+-   Substantiated choice for a ‘performance metric’ (i.e. what should the model be good at)
+-   Clear description of a business case / cost-benefit (no cost!!) analysis
+-   Realistic plan / timeline for how to execute the consecutive CRISP-DM phases
+
+
+
+
+
+
+{{< include 08_appendix_def.qmd >}}

@@ -1,0 +1,24 @@
+---
+title:       Deployment
+subtitle:    Deployment subtitle
+description: |
+  - scalability - distributed techniques 
+  - maintenance & updating the model 
+  - monitoring the model 
+  - debugging the model
+  - model versioning GIT
+  -   continuous integration/continuous deployment 
+  (CI/CD) pipelines.
+editor: source
+---
+
+scalability - distributed techniques - maintenance & updating the model - monitoring the model - debugging the model
+
+# model management
+
+-   model versioning GIT
+-   continuous integration/continuous deployment (CI/CD) pipelines.
+
+# Appendix {.unnumbered}
+
+{{< include 06_deployment_def.qmd >}}

@@ -1,0 +1,34 @@
+---
+title:       Evaluation
+subtitle:    Evaluation subtitle
+description: |
+  asses performance of the model using clear and concise
+  evaluation metrics, based upon goals and objectives.
+editor: source
+---
+
+## Evaluate Results
+
+-   explainability
+
+### Assessment of Data Mining Results w.r.t. Business Success Criteria
+
+-   how well does the model work on new data?
+
+-   For whom does the model not work well?
+
+### Approved Models
+
+### Review Process
+
+### Review of Process
+
+### Determine Next Steps
+
+### List of Possible Actions
+
+### Decision
+
+# Appendix {.unnumbered}
+
+{{< include 05_evaluation_def.qmd >}}

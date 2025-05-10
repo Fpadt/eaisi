@@ -1,0 +1,375 @@
+---
+title:       Data Understanding
+subtitle:    Data Understanding subtitle
+description: |
+  - understanding of data structure, content & quality
+  - initial exploratory data analysis (EDA) to identify patterns, trends, and relationships within the data.
+editor: source  
+---
+
+## Data Collection Report
+
+## Data Description Report
+
+## Data Exploration Report
+
+## Data Quality Report
+
+## Identification of Data Sources
+
+## Data Quality Assessment
+
+assessing the - completeness: impute missing data - accuracy: = consistency:
+
+### Data Description
+
+A descriptive exploratory analysis describes the data by its statistical properties and metadata.
+
+outliers?
+
+### Data Verification
+
+# Data Preparation
+
+preparing the data for further analysis and modeling. This might involve cleaning and preprocessing the data, as well as transforming it into a format that is suitable for use in a machine-learning model.
+
+5.1. Handling Missing Data
+
+-   imputing missing values, Imputation methods involve replacing missing values with estimated values.
+
+-   scaling numeric features
+
+-   encoding categorical features
+
+-   selecting a subset of the data to use in the model.
+
+
+```{r}
+#| label: load-packages
+#| include: false
+#| echo: false
+
+library(tidyverse)
+library(palmerpenguins)
+library(ggplot2)
+```
+
+```{r}
+#| label: fig-plot-penguins
+#| echo: false
+#| warning: false
+#| include: true
+#| fig-cap: "Bill length vs. depth for Palmer Penguins"
+#| fig-alt: "Scatterplot of penguin bill length against bill depth"
+#| fig-align: "center"
+#| fig-lightbox: true
+
+ggplot(penguins, 
+       aes(x = flipper_length_mm, y = bill_length_mm)) +
+  geom_point(aes(color = species, shape = species)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(
+    title = "Flipper and bill length",
+    subtitle = "Dimensions for penguins at Palmer Station LTER",
+    x = "Flipper length (mm)", y = "Bill length (mm)",
+    color = "Penguin species", shape = "Penguin species"
+  ) +
+  theme_minimal()
+```
+
+```{r}
+#| label: fig-product-hierarchy
+#| eval: true
+#| echo: false
+#| warning: false
+#| include: true
+
+library(data.table)
+
+# your 10×4 hierarchy
+library(data.table)
+
+# 1) Your 10×4 hierarchy
+tbl <- data.table(
+  Level1 = c("Electronics","Electronics","Electronics","Electronics",
+             "Home","Home","Home","Garden","Garden","Garden"),
+  Level2 = c("Computers","Computers","Computers","TVs",
+             "Kitchen","Kitchen","Furniture","Plants","Plants","Tools"),
+  Level3 = c("Laptops","Desktops","Tablets","LED",
+             "Appliances","Cookware","Chairs","Flowers","Trees","PowerTools"),
+  Level4 = c("Ultrabooks","Gaming","iPads","Samsung",
+             "Ovens","Pots","OfficeChairs","Roses","Oaks","Drills")
+)
+
+# 2) Build a simple id lookup for every unique label
+labels   <- unique(unlist(tbl))
+id_lookup <- setNames(seq_along(labels), labels)
+
+# 3) Annotate each level in tbl with its numeric ID
+dt <- copy(tbl)
+for (lvl in 1:4) {
+  col <- paste0("Level", lvl)
+  dt[, paste0(col, "_id") := id_lookup[get(col)] ]
+}
+
+# 4) For each level 1–4, pull out the UID and indented text,
+#    then rbind them together and dedupe
+out <- rbindlist(lapply(1:4, function(lvl) {
+  id_cols   <- paste0("Level", 1:lvl, "_id")
+  label_col <- paste0("Level", lvl)
+  dt[,
+     .(
+       uid  = do.call(paste, c(.SD, sep = ".")),
+       text = paste0(strrep("  ", lvl - 1), get(label_col))
+     ),
+     .SDcols = id_cols
+  ][, unique(.SD)]
+}))
+
+# 5) Sort by the UID so the outline is in the right order
+setorder(out, uid)
+
+out[, cnt:= .N, by = substr(uid, 1, 1)]
+
+# 6) Here’s your final two-column data.table:
+print(out)
+
+
+
+```
+
+
+```{r}
+#| label:   setup
+#| eval:    false
+
+library(ggplot2)
+library(data.table)
+library(lubridate)
+library(magrittr)
+library(stringr)
+library(openxlsx)
+
+library(tidyverse)
+
+LP0 <- 
+  function(x, width){
+    # like CONVERSION_EXIT_MATN1_INPUT
+    # only add leading zero's in case it is a number
+    is_num <- grepl("^[0-9]+$", x)
+    ifelse(
+      is_num, 
+      stringr::str_pad(string = x, width = width, side = "left", pad = "0"),
+      x
+    )
+  }
+
+fOpen_as_xlsx <- 
+  function(pDT, pPath = "./Results", pFN, pasTable = TRUE){
+    
+    if (!dir.exists(pPath)) {
+      dir.create(pPath)
+    }
+    
+    if (missing(pFN) == TRUE) {
+      pFN <- paste0("~", format(now(), "%Y%m%d-%H%M%S"), ".xlsx")
+    }
+    
+    FFN <- file.path(pPath, pFN)
+    write.xlsx(x = pDT, file = FFN, asTable = pasTable, tableStyle = "TableStyleMedium4") 
+    openXL(FFN)
+    
+  }
+# PDAT <- file.path("C:", "PW", "OneDrive", "ET", "pythia", "dat")
+
+PDAT <- 
+  switch(Sys.info()["nodename"],
+         'TREX-TOAD' = file.path("U:", "floris"),
+                       file.path("C:", "PW")
+  ) %>% 
+  file.path("OneDrive", "ET", "pythia", "dat")
+
+ET_CG <- "#0f5e3c"
+ET_FG <- "#089b35"
+
+MAT <- '000000000003036397'
+MAN <- FALSE & substr(PDAT, 1,1) != "U"
+
+BRNDS <- 
+  fread(text = "
+  PRDH1, NAME
+  07   , ALTER ECO
+  08   , BJORG
+  10   , CLIPPER (CUPPER)
+  15   , ZONNATURA
+  53   , TANOSHI
+  65   , NATURELA"
+  ) %>%
+  .[, PRDH1:= str_pad(PRDH1, 2, pad = "0")]
+
+```
+
+## SDMFRCAC FA
+
+```{r}
+#| label:  'load_scope'
+#| eval:   false
+
+B4_SDMFRCAC2_A <- 
+  readRDS(file = file.path(PDAT, "B4_SDMFRCAC2_A.rds"))              %>%
+  .[PLANT %chin% c("FR30", "NL60", "NL63")]
+
+B4_MATERIAL_P  <- 
+  readRDS(file = file.path(PDAT, "B4_MATERIAL_P.rds"))               %>%
+  .[MATL_TYPE %chin% c("FERT", "HALB")]
+
+dtFA <- 
+  BRNDS[B4_MATERIAL_P[MATL_TYPE %chin% c("FERT", "HALB")], 
+        on = .(PRDH1 = PRDH1), nomatch = 0]                          %>%
+  .[B4_SDMFRCAC2_A, on = .(SYSTID, CLIENT, MATERIAL), nomatch = 0]   %>%
+  .[, .(
+    ACT = sum(DEMND_QTY),
+    FM1 = sum(DEMQTYM1)
+  ), by = .(PRDH1, PLANT, MATERIAL, CALMONTH)
+  ]                                                                  %>%
+  .[, {
+    E   = ACT - FM1
+    E2  = E ^ 2
+    AE  = abs(E)
+    APE = 100 * (1 - AE / ACT)
+    ECO = 100 * (1 - AE / FM1)
+    .(
+      PRDH1, PLANT, MATERIAL, CALMONTH, 
+      ACT  , FM1  , E, E2, AE, APE, ECO
+      )
+  }  ] 
+
+dtFA <- 
+  dtFA[
+    !is.nan(APE) & 
+    !is.nan(ECO) &   
+    !is.infinite(APE) &
+    !is.infinite(ECO) &  
+    APE > -100 &
+    ECO > -100  ]
+```
+
+```{r}
+#| label:  'load_material_data'
+#| eval:   false
+
+PYT <- file.path("C:", "PW", "OneDrive", "ET", "pythia", "upg", "data")
+
+MATS <- 
+  fread(file.path(PYT, "MD_MATERIAL_SALES_ORG.CSV")) %>%
+  .[, MATERIAL := LP0(V1, 18)] 
+
+TST <- 
+  MATS[V2 == 'NL10', .(MATERIAL, PLANT = 'NL60', PROMO = V17)][
+    B4_SDMFRCAC2_A, on = .(MATERIAL, PLANT), nomatch = NA] %>%
+  .[PLANT != 'FR30']
+```
+
+```{r}
+#| label:  'Actual_sales'
+#| eval:   false
+
+MAT <- LP0('10023', 18)
+
+ggplot(
+  data = dtFA[
+    MATERIAL == MAT
+    ], aes(x = CALMONTH, y = ACT)) +
+  geom_col(fill = ET_CG) +
+  theme_minimal()
+```
+
+```{r}
+#| label:  'APE vs ECO'
+#| eval:   false
+
+ggplot(
+  data = dtFA[
+    CALMONTH >='202401' 
+    & APE > -50
+    # & MATERIAL == MAT
+  ], 
+  aes(x = APE, y = ECO)
+) +
+  geom_point() +
+  geom_abline(intercept = 0, slope = 1) +
+  # geom_label(aes(label = round(PE, 1))) +
+  # facet_wrap(~ PLANT + MATERIAL, scales = "free_y") +
+  # scale_color_manual(values=c(ET_CG, ET_FG))+
+  theme_minimal()
+```
+
+```{r}
+#| label:  'SC-113B_1'
+#| eval:   false
+
+dtFA_melt  <- 
+  copy(dtFA) %>%
+  melt.data.table(
+    measure.vars  = c("APE", "ECO"),
+    variable.name = "PE_TYPE",
+    value.name    = "PE"
+    ) %T>% setorder(CALMONTH)
+
+ggplot(
+  data = dtFA_melt[CALMONTH >='202401' & MATERIAL == MAT], 
+  aes(x = CALMONTH, y = PE, group = PE_TYPE, color = PE_TYPE)
+  ) +
+  geom_line(linewidth = 2) +
+  geom_point() +
+  geom_label(aes(label = round(PE, 1))) +
+  # facet_wrap(~ PLANT + MATERIAL, scales = "free_y") +
+  scale_color_manual(values=c(ET_CG, ET_FG))+
+  theme_minimal()
+
+# if(MAN){
+#   if(rstudioapi::showQuestion(
+#     title   = "SAC", 
+#     message = "Do you want to open SC-113B?"
+#   ) == TRUE) {
+#     browseURL(url = "https://wessanen.eu10.sapanalytics.cloud/link/SC113B")
+#   }
+# }
+```
+
+```{r}
+#| label:  'SC-113B_2'
+#| eval:   false
+
+dtFA_melt  <- 
+  copy(dtFA) %>%
+  melt.data.table(
+    measure.vars  = c("APE", "ECO"),
+    variable.name = "PE_TYPE",
+    value.name    = "PE"
+    )                                         %T>% 
+  setorder(PLANT, MATERIAL, CALMONTH)
+
+ggplot(
+  data = dtFA_melt[CALMONTH >='202401' & MATERIAL == MAT], 
+  aes(x = CALMONTH, y = PE, group = PE_TYPE, color = PE_TYPE)
+  ) +
+  geom_line(linewidth = 2) +
+  geom_point() +
+  geom_label(aes(label = round(PE, 1))) +
+  # facet_wrap(~ PLANT + MATERIAL, scales = "free_y") +
+  scale_color_manual(values=c(ET_CG, ET_FG))+
+  theme_minimal()
+
+# if(MAN){
+#   if(rstudioapi::showQuestion(
+#     title   = "SAC", 
+#     message = "Do you want to open SC-113B?"
+#   ) == TRUE) {
+#     browseURL(url = "https://wessanen.eu10.sapanalytics.cloud/link/SC113B")
+#   }
+# }
+```
+
+
+{{< include 02_data_understanding_def.qmd >}}
