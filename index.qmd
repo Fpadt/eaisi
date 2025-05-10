@@ -49,8 +49,11 @@ description: |
 plain-language-summary: |
   Balance the benefits of higher forecast accuracy with the cost of additional resources ...
 
-cover-image: "https://pythia.smart-r.nl/images/pythia_logo_with_text.png?v=2"
-cover-image-path: "https://pythia.smart-r.nl/images/pythia_logo_with_text.png?v=2"
+cover-image: "https://pythia.smart-r.nl/images/pythia_logo_with_text.png"
+cover-image-path: "https://pythia.smart-r.nl/images/pythia_logo_with_text.png"
+cover-image-width: "600px"   # Adjust size
+cover-image-height: "auto"   # Maintain aspect ratio
+cover-image-position: "center"  # Center the image
   
 engine: knitr 
 format:
