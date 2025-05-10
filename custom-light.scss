@@ -1,16 +1,20 @@
 
 /*-- scss:defaults --*/
 // Base document colors
-$primary: #E2A348;
-$body-bg: #ffffff;
-$body-color: #333333;
-$link-color: #E2A348;
-$navbar-bg: #0f5e3c; 
-$navbar-fg: #ffffff;
+//$primary: #E2A348;
+//$body-bg: #ffffff;
+//$body-color: #333333;
+//$link-color: #E2A348;
+//$navbar-bg: #0f5e3c; 
+//$navbar-fg: #ffffff;
 
 /*-- scss:rules --*/
 // Add any custom CSS rules here
-.navbar-title {
-  color: #E2A348;
+//.navbar-title {
+//  color: #E2A348;
+
+a, .text-success, .badge-success {
+  color: #e2a348 !important;
+}  
 }
 

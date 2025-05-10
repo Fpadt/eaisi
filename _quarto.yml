@@ -159,7 +159,7 @@ format:
     code-fold:          true  
     lightbox:           true
     comments:
-      hypothesis:       true
+      hypothesis:       false
     number-sections:    false
     colorlinks:         true
     highlight-style:    github
