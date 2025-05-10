@@ -69,7 +69,10 @@ book:
   site-url: https://fpadt.github.io/eaisi/
   title: "Pythia's Advice"
   favicon: images/favicon.ico
-  image: "/docs/images/logo_transp.png"
+  image: images/logo_transp.png
+  cover-image: images/logo_transp.png
+  cover-image-alt: |
+    Pythia's Advice ...  
   repo-url: https://github.com/Fpadt/eaisi/
   repo-actions: [source, issue]
   downloads: [pdf] 
@@ -84,6 +87,7 @@ book:
   chapters:
     - part: "Foundations"
       chapters:
+        - about.qmd
         - index.qmd
         # - notebooks/intro-crisp-dm.qmd
     - part: "Project Phases"
