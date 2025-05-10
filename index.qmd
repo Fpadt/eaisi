@@ -6,7 +6,7 @@ format:
 ---
 
 ::: {.cover-container}
-![](images/logo_transp.png){{width=150% fig-align="center" .cover-image}
+![](images/logo_transp.png){width=150% fig-align="center" .cover-image}
 
 # Pythia's Advice {.book-title}
 
