@@ -64,9 +64,9 @@ book:
   title: "Pythia's Advice"
   favicon: images/favicon.ico
   image: images/logo_transp.png
-  cover-image: images/logo_transp.png
-  cover-image-alt: |
-    Pythia's Advice ...  
+  # cover-image: images/logo_transp.png
+  # cover-image-alt: |
+  #   Pythia's Advice ...  
   repo-url: https://github.com/Fpadt/eaisi/
   repo-actions: [source, issue]
   downloads: [pdf] 
@@ -79,12 +79,13 @@ book:
     right: "[EAISI](https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai)"
 
   chapters:
-    - index.qmd           # Introduction
-    - acknowledgments.qmd # Acknowledgments
-    - how-to-read.qmd     # Reader's guide
+    - index.qmd
+    - abstract.qmd                             # Introduction
+    - acknowledgments.qmd                      # Acknowledgments
+    - how-to-read.qmd                          # Reader's guide
     - part: "Foundations"
       chapters:
-        - inspiration.qmd        # The myth of Pythia      
+        - inspiration.qmd                      # The myth of Pythia      
         # - notebooks/intro-crisp-dm.qmd
         - nb/00_pythias_advice_rev.qmd
     - part: "Project Phases"
@@ -97,7 +98,7 @@ book:
         - nb/06_deployment_rev.qmd
     - part: "Conclusions & Next Steps"
       chapters:
-      - notebooks/07_conclusions.qmd
+        - nb/07_conclusions_rev.qmd
     - part: "Appendix"
       chapters:
         - nb/08_appendix_rev.qmd

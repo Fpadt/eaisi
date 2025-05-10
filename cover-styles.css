@@ -1,0 +1,51 @@
+```css
+/* Cover page styling */
+.cover-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 90vh;
+  padding: 2rem;
+}
+
+.cover-image {
+  max-width: 60%;  /* Adjust size as needed */
+  height: auto;
+  margin-bottom: 3rem;
+}
+
+.book-title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #004D40;  /* Using your book's color scheme */
+}
+
+.book-subtitle {
+  font-size: 1.8rem;
+  font-weight: normal;
+  margin-bottom: 3rem;
+  color: #00796B;
+}
+
+.author-name {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: normal;
+}
+
+.institution {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #555;
+}
+
+/* Hide unnecessary page elements on the cover */
+.cover-container .navbar,
+.cover-container .sidebar,
+.cover-container .page-navigation,
+.cover-container .footer {
+  display: none !important;
+}
+```

@@ -2,7 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://fpadt.github.io/eaisi/index.html</loc>
-    <lastmod>2025-05-10T11:58:18.181Z</lastmod>
+    <lastmod>2025-05-10T12:24:12.590Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fpadt.github.io/eaisi/abstract.html</loc>
+    <lastmod>2025-05-10T12:02:09.880Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/acknowledgments.html</loc>
@@ -45,8 +49,8 @@
     <lastmod>2025-05-10T11:58:22.098Z</lastmod>
   </url>
   <url>
-    <loc>https://fpadt.github.io/eaisi/notebooks/07_conclusions.html</loc>
-    <lastmod>2025-05-10T09:58:23.568Z</lastmod>
+    <loc>https://fpadt.github.io/eaisi/nb/07_conclusions_rev.html</loc>
+    <lastmod>2025-05-10T11:58:22.172Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/nb/08_appendix_rev.html</loc>

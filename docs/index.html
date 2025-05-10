@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2025-05-10">
-<meta name="description" content="Effective business planning relies heavily on consistent and accurate forecasts across various levels of aggregation, granularity, and time horizons. Generating multiple forecasts for different use cases not only incurs costs that should be justified by the benefits but also introduces the risk of inconsistencies between forecasts. Ideally, a single detailed forecast with a long horizon can be created and then aggregated to meet all business needs, maintaining consistency but potentially sacrificing forecast accuracy This raises the question of which approach delivers the highest net benefit.To create an internal benchmark and understand the cost-benefit relationship without disrupting normal business operations, we built a separate forecasting lab environment in parallel to our production forecasting system, leveraging state-of-the-art open-source software available free of charge. We begin with simple models using raw historical sales data and gradually increase complexity by automating data cleaning and incorporating more advanced methods that utilize factors such as price, promotions, stock-outs, and other external influences.While statistical forecasting methods are known for their robustness and explainability, incorporating exogenous variables such as price and promotions is often difficult. In an increasingly promotion-driven business environment, recent machine learning models—such as Random Forest, neural networks, and conformal prediction—might deliver a higher net benefit despite the additional data handling costs and reduced explainability.In assessing the effectiveness of various forecasting methods, we face the challenge of directly quantifying the value each forecast brings to the business. Due to the complexity of isolating a forecast’s impact on business performance, we adopt forecast accuracy as a proxy for forecast value. This approach allows us to evaluate and compare the methods based on their predictive precision, under the premise that more accurate forecasts are likely to result in better-informed business decisions and, consequently, greater operational benefits.In this paper, we aim to strike the right balance between enhancing forecast accuracy and managing the costs associated with additional resources like hardware, software, data, and human effort. Our research will explore the optimal combination of forecasting methods to achieve higher accuracy while ensuring efficient resource utilization. Furthermore, given the extensive range of products (SKUs) and their varying levels of importance, we explore strategies for effectively allocating human resources. By prioritizing efforts on key products and automating processes for less critical items, we aim to optimize resource utilization and enhance overall forecasting efficiency.">
 
-<title>Abstract</title>
+<title>Pythia’s Advice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -52,7 +51,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./acknowledgments.html" rel="next">
+<link href="./abstract.html" rel="next">
 <link href="./images/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -68,6 +67,9 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-35e947280e577f6ab41874e730e99e78.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-756bed6e8174a06a1bfb8c030ebdac33.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-35e947280e577f6ab41874e730e99e78.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -124,10 +126,9 @@ div.csl-indent {
 <meta property="og:image:type" content="image/png">
 
 
+<link rel="stylesheet" href="cover-styles.css">
 <meta property="og:title" content="Pythia’s Advice">
-<meta property="og:description" content="Effective business planning relies heavily on consistent and accurate
-forecasts across various levels of aggregation, granularity, and time
-horizons.">
+<meta property="og:description" content="">
 <meta property="og:image" content="https://fpadt.github.io/eaisi/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==">
 <meta property="og:site_name" content="Pythia's Advice">
 </head>
@@ -301,7 +302,7 @@ horizons.">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Abstract</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Pythia’s Advice</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -314,18 +315,8 @@ horizons.">
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Abstract</h1>
-            <p class="subtitle lead">TRUST - is all you need!</p>
-                  <div>
-        <div class="description">
-          <p>Effective business planning relies heavily on consistent and accurate forecasts across various levels of aggregation, granularity, and time horizons. Generating multiple forecasts for different use cases not only incurs costs that should be justified by the benefits but also introduces the risk of inconsistencies between forecasts. Ideally, a single detailed forecast with a long horizon can be created and then aggregated to meet all business needs, maintaining consistency but potentially sacrificing forecast accuracy This raises the question of which approach delivers the highest net benefit.</p>
-          <p>To create an internal benchmark and understand the cost-benefit relationship without disrupting normal business operations, we built a separate forecasting lab environment in parallel to our production forecasting system, leveraging state-of-the-art open-source software available free of charge. We begin with simple models using raw historical sales data and gradually increase complexity by automating data cleaning and incorporating more advanced methods that utilize factors such as price, promotions, stock-outs, and other external influences.</p>
-          <p>While statistical forecasting methods are known for their robustness and explainability, incorporating exogenous variables such as price and promotions is often difficult. In an increasingly promotion-driven business environment, recent machine learning models—such as Random Forest, neural networks, and conformal prediction—might deliver a higher net benefit despite the additional data handling costs and reduced explainability.</p>
-          <p>In assessing the effectiveness of various forecasting methods, we face the challenge of directly quantifying the value each forecast brings to the business. Due to the complexity of isolating a forecast’s impact on business performance, we adopt forecast accuracy as a proxy for forecast value. This approach allows us to evaluate and compare the methods based on their predictive precision, under the premise that more accurate forecasts are likely to result in better-informed business decisions and, consequently, greater operational benefits.</p>
-          <p>In this paper, we aim to strike the right balance between enhancing forecast accuracy and managing the costs associated with additional resources like hardware, software, data, and human effort. Our research will explore the optimal combination of forecasting methods to achieve higher accuracy while ensuring efficient resource utilization. Furthermore, given the extensive range of products (SKUs) and their varying levels of importance, we explore strategies for effectively allocating human resources. By prioritizing efforts on key products and automating processes for less critical items, we aim to optimize resource utilization and enhance overall forecasting efficiency.</p>
-        </div>
-      </div>
-                          <div class="quarto-categories">
+      <h1 class="title">Pythia’s Advice</h1>
+                                <div class="quarto-categories">
                 <div class="quarto-category">Time Series Forecasting</div>
                 <div class="quarto-category">Data Science</div>
                 <div class="quarto-category">Hierarchical Forecasting (HTS)</div>
@@ -420,7 +411,12 @@ horizons.">
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Abstract</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Pythia’s Advice</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./abstract.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Abstract</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -506,7 +502,7 @@ horizons.">
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/07_conclusions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Conclusions</span></a>
+  <a href="./nb/07_conclusions_rev.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Conclusions</span></a>
   </div>
 </li>
       </ul>
@@ -563,7 +559,22 @@ horizons.">
 
 
 
-<p><img src="images/logo_transp.png" title="Pythia's Advice" class="quarto-cover-image nolightbox img-fluid" alt="Pythia's Advice ...   "></p>
+<div class="cover-container">
+<p><a href="images/logo_transp.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/logo_transp.png" class="cover-image img-fluid"></a></p>
+<section id="pythias-advice" class="level1 book-title">
+<h1 class="book-title">Pythia’s Advice</h1>
+<section id="a-data-science-methodology" class="level2 book-subtitle">
+<h2 class="book-subtitle anchored" data-anchor-id="a-data-science-methodology">A Data Science Methodology</h2>
+<section id="floris-padt" class="level3 author-name">
+<h3 class="author-name anchored" data-anchor-id="floris-padt">Floris Padt</h3>
+<section id="eaisi-academy---tu-eindhoven" class="level4 institution">
+<h4 class="institution anchored" data-anchor-id="eaisi-academy---tu-eindhoven">EAISI Academy - TU Eindhoven</h4>
+</section>
+</section>
+</section>
+</section>
+</div>
+<p>```</p>
 
 
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
@@ -1076,8 +1087,8 @@ Nixtla/hierarchicalforecast: Probabilistic hierarchical forecasting 👑 with st
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./acknowledgments.html" class="pagination-link" aria-label="Acknowledgments">
-        <span class="nav-page-text"><span class="chapter-title">Acknowledgments</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./abstract.html" class="pagination-link" aria-label="Abstract">
+        <span class="nav-page-text"><span class="chapter-title">Abstract</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1095,6 +1106,38 @@ Nixtla/hierarchicalforecast: Probabilistic hierarchical forecasting 👑 with st
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
