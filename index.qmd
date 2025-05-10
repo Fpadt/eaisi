@@ -1,6 +1,4 @@
 ---
-title: Introduction
-
 description: |
   Effective business planning relies heavily on consistent and accurate 
   forecasts across various levels of aggregation, granularity, and time 
@@ -50,11 +48,29 @@ description: |
 
 plain-language-summary: |
   Balance the benefits of higher forecast accuracy with the cost of additional resources ...
+
+cover-image: "https://pythia.smart-r.nl/images/pythia_logo_with_text.png?v=2"
+cover-image-path: "https://pythia.smart-r.nl/images/pythia_logo_with_text.png?v=2"
   
 engine: knitr 
 format:
   html:
     css: cover-styles.css
+
+# Add enhanced Open Graph tags for WhatsApp
+include-in-header:
+  text: |
+    <!-- Open Graph Tags for WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Pythia - Forecasting and Analysis" />
+    <meta property="og:description" content="Explore advanced forecasting techniques with Pythia." />
+    <meta property="og:url" content="https://pythia.smart-r.nl/" />
+    <meta property="og:image" content="https://pythia.smart-r.nl/images/pythia_logo_with_text.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:secure_url" content="https://pythia.smart-r.nl/images/pythia_logo_with_text.png?v=1" />        
+        
 ---
 
 ::: {.cover-container}
