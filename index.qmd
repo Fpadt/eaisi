@@ -6,7 +6,7 @@ format:
 ---
 
 ::: {.cover-container}
-![](images/logo_transp.png){width=100% fig-align="center" .cover-image}
+![](images/logo_transp.png){width=50% fig-align="center" .cover-image}
 
 ### Floris Padt {.author-name}
 
