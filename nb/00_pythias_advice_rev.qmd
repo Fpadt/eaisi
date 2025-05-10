@@ -1,0 +1,126 @@
+---
+title: "Pythia's Advice"
+subtitle:    TRUST - is all you need!
+---
+
+
+# Introduction
+
+In an increasingly complex market environment, accurate demand forecasting is critical for ensuring the operational efficiency of supply chains, particularly in industries like wholesale, where products are perishable and sales are affected by seasonality and promotions. This research focuses on a wholesale company that buys, produces, and distributes biodiversity food to retailers, Out-Of-Home, discounters and E-commerce. To make informed decisions regarding production, buying, and negotiation with customers, accurate sales forecasts are required at different aggregation levels, depending on each use case.
+
+While the company employs robust but dated statistical methods, such as moving averages and exponential smoothing, these techniques struggle to handle promotional impacts, capture complex sales patterns, and provide prediction intervals. Currently, a combination of bottom-up and top-down forecasting approaches is used, largely determined by the judgment of individual demand planners. However, the lack of clear guidance on which approach to apply in different scenarios has resulted in inconsistent and subjective forecasting outcomes. Furthermore, various use cases have distinct aggregation and time horizon requirements, adding complexity to maintaining consistent and accurate forecasts across the system.
+
+The primary objective of this research is to determine the best way to generate a forecast, which methods to use and on what levels of granularity, enabling consistent, accurate forecasts that can be aggregated or dis-aggregated as required for different business needs. Specifically, the study aims to address the following key questions:
+
+1.  Which robust forecasting methods—statistical or data science techniques—should be used to meet the needs of each use case?
+2.  Which levels of aggregation provides the most accurate forecast for different use cases, and what when is an additional level justified by increased forecast accuracy.
+3.  What forecast accuracy improvements can be achieved through the integration of additional data, and what are the trade-offs or costs associated with these enhancements?
+4.  How should human resources be allocated effectively, given the large number of products (SKUs) and varying levels of importance across these products?
+
+Ultimately, this research will provide an objective, data-driven strategy to improve forecast accuracy, reduce reliance on individual intuition, and ensure that forecasts are robust, consistent, and scalable across multiple aggregation levels, thereby enhancing overall decision-making efficiency.
+
+## **Methodology**
+
+This research follows the **CRISP-ML methodology**, [@costa_crisp-ml_2022] as the guiding framework.
+
+CRISP-ML is an acronym for "Cross-Industry Standard Process for Machine Learning." It is a systematic framework for organizing and executing machine learning projects. The methodology includes six key steps:
+
+1.  understanding the problem
+2.  preparing the data
+3.  selecting and tuning models
+4.  evaluating performance
+5.  deploying the solution
+6.  monitoring and maintaining the model.
+
+This thesis focuses on the first 4 steps, the results will be taken as advice to be implemented in the current way of working.
+
+<!-- -   Promotions -->
+
+<!--     -   dip before/after promotion -->
+
+<!--     -   cannibalization, halo effect -->
+
+<!--     -   BOM, display -->
+
+<!-- -   Customer -->
+
+<!--     -   (de)-listings -->
+
+<!--     -   hierarchy -->
+
+<!-- -   Product Life Cycle Management -->
+
+<!--     -   NPI/NPD (cannibalization) -->
+
+<!--     -   end of Life -->
+
+<!-- -   Seasonality, Chinese new year -->
+
+<!-- Problem Statement -->
+
+<!-- -   which level/group -\> top-down, middle-out, bottom up -->
+
+<!--     -   HTS, -->
+
+<!-- -   which technique/method statistical, regression ... -->
+
+<!--     -   Statisticical: Exponential smoothing, Mov, navieve, ETS, ArimA, -->
+
+<!--     -   Data Science: regression (Boost) & conformal prediction -->
+
+<!-- -   Classification: which focus for the highest impact) (cleaning, promotions etc), e.g. -->
+
+<!--     -   ABC/XYZ -->
+
+<!--     -   other features 0-count, CV, promotion impact etc -->
+
+<!--     -   (forecast current accuracy based on features) -->
+
+# Business Understanding
+
+where the business process is mapped and when the main indicators are identified, as well as when the business objectives are defined What is the business's need?
+
+::: {#fig-bu-why .figure}
+![](images/bu_why.png){fig-alt="Why is forecasting important? It drives the business" fig-align="left" fig-width="15cm"}\]
+
+Why forecasting?\
+The forecast drives the business!
+:::
+
+See Figure @fig-bu-why for the thumbnail overview.
+
+# Data Undestanding
+
+# Modeling
+
+# Evaluation
+
+{{<var version>}}\
+{{<var email_info >}}\
+{{< meta subtitle >}}
+
+::: callout-note
+Note that there are five types of callouts, including: `note`, `warning`, `important`, `tip`, and `caution`.
+:::
+
+::: callout-tip
+## Tip with Title
+
+This is an example of a callout with a title.
+:::
+
+::: {.callout-caution collapse="true"}
+## Expand To Learn About Collapse
+
+This is an example of a 'folded' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
+:::
+
+# Deployment
+
+# Conclusion
+
+# Glossary {.unnumbered}
+
+::: html
+{{< include 00_pythias_advice_def.qmd >}}
+:::

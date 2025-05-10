@@ -85,9 +85,13 @@ book:
     right: "[EAISI](https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai)"
 
   chapters:
+    - index.qmd           # Introduction
+    - how-to-read.qmd     # Reader's guide
+    - the_myth.qmd        # The myth of Pythia
+    - acknowledgments.qmd # Acknowledgments
     - part: "Foundations"
       chapters:
-        - index.qmd
+        - nb/00_pythias_advice_rev.qmd
         # - notebooks/intro-crisp-dm.qmd
     - part: "Project Phases"
       chapters:

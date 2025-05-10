@@ -1,0 +1,7 @@
+---
+title: "Acknowledgments"
+---
+
+# Acknowledgments {.appendix .unnumbered}
+
+I am grateful for the insightful comments offered by {{<var mentor >}}. These have improved this study in innumerable ways and saved me from many errors; those that inevitably remain are entirely my own responsibility.

@@ -2,7 +2,7 @@
 library(data.table)
 library(magrittr)
 library(fs)
-library(stringr)
+library(stringr) 
  
 # notebooks <- data.table(
 #   notebooks = lst <- list.files(

@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2025-05-10">
-<meta name="description" content="scopeextracts and ingesttransformations">
 
-<title>8&nbsp; Data Preparation – Pythia's Advice</title>
+<title>3&nbsp; The Myth Inspiring Pythia’s Advice – Pythia's Advice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,71 +21,36 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../nb/04_modelling_rev.html" rel="next">
-<link href="../nb/02_data_understanding_rev.html" rel="prev">
-<link href="../images/favicon.ico" rel="icon">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-1100dc645a9806080dc50effd6ccb0f7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-5977e214c05d9207a6b9ecdb11453a52.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-1100dc645a9806080dc50effd6ccb0f7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-35e947280e577f6ab41874e730e99e78.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-756bed6e8174a06a1bfb8c030ebdac33.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-35e947280e577f6ab41874e730e99e78.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./acknowledgments.html" rel="next">
+<link href="./how-to-read.html" rel="prev">
+<link href="./images/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-1100dc645a9806080dc50effd6ccb0f7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-5977e214c05d9207a6b9ecdb11453a52.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-1100dc645a9806080dc50effd6ccb0f7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-35e947280e577f6ab41874e730e99e78.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-756bed6e8174a06a1bfb8c030ebdac33.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-35e947280e577f6ab41874e730e99e78.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -143,9 +107,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:image:type" content="image/png">
 
 
-<meta property="og:title" content="8&nbsp; Data Preparation – Pythia’s Advice">
-<meta property="og:description" content="- scope - extracts and ingest - transformations">
-<meta property="og:image" content="https://fpadt.github.io/eaisi/nb/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==">
+<meta property="og:title" content="3&nbsp; The Myth Inspiring Pythia’s Advice – Pythia’s Advice">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://fpadt.github.io/eaisi/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==">
 <meta property="og:site_name" content="Pythia's Advice">
 </head>
 
@@ -318,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../nb/01_business_understanding_rev.html">Project Phases</a></li><li class="breadcrumb-item"><a href="../nb/03_data_preparation_rev.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Preparation</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./the_myth.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Myth Inspiring Pythia’s Advice</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -330,19 +294,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../nb/01_business_understanding_rev.html">Project Phases</a></li><li class="breadcrumb-item"><a href="../nb/03_data_preparation_rev.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Preparation</span></a></li></ol></nav>
-      <h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Preparation</span></h1>
-            <p class="subtitle lead">Data Preparation subtitle</p>
-                  <div>
-        <div class="description">
-          <ul>
-          <li>scope</li>
-          <li>extracts and ingest</li>
-          <li>transformations</li>
-          </ul>
-        </div>
-      </div>
-                </div>
+    <div class="quarto-title column-body">
+      <h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Myth Inspiring Pythia’s Advice</span></h1>
+                      </div>
   </div>
     
   <div class="quarto-title-meta-author">
@@ -390,10 +344,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Pythia’s Advice</a> 
+      <a href="./">Pythia’s Advice</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/Fpadt/eaisi/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <a href="../Pythia-s-Advice.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="./Pythia-s-Advice.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
     <div class="dropdown">
       <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -430,25 +384,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Pythia’s Advice</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../how-to-read.html" class="sidebar-item-text sidebar-link">
+  <a href="./how-to-read.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">How to Read This Book</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../the_myth.html" class="sidebar-item-text sidebar-link">
+  <a href="./the_myth.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Myth Inspiring Pythia’s Advice</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../acknowledgments.html" class="sidebar-item-text sidebar-link">
+  <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Acknowledgments</span></span></a>
   </div>
 </li>
@@ -463,7 +417,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nb/00_pythias_advice_rev.html" class="sidebar-item-text sidebar-link">
+  <a href="./nb/00_pythias_advice_rev.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Pythia’s Advice</span></span></a>
   </div>
 </li>
@@ -480,37 +434,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nb/01_business_understanding_rev.html" class="sidebar-item-text sidebar-link">
+  <a href="./nb/01_business_understanding_rev.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Business Understanding</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nb/02_data_understanding_rev.html" class="sidebar-item-text sidebar-link">
+  <a href="./nb/02_data_understanding_rev.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Understanding</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nb/03_data_preparation_rev.html" class="sidebar-item-text sidebar-link active">
+  <a href="./nb/03_data_preparation_rev.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Preparation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nb/04_modelling_rev.html" class="sidebar-item-text sidebar-link">
+  <a href="./nb/04_modelling_rev.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Modelling</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nb/05_evaluation_rev.html" class="sidebar-item-text sidebar-link">
+  <a href="./nb/05_evaluation_rev.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Evaluation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nb/06_deployment_rev.html" class="sidebar-item-text sidebar-link">
+  <a href="./nb/06_deployment_rev.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Deployment</span></span></a>
   </div>
 </li>
@@ -527,7 +481,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/07_conclusions.html" class="sidebar-item-text sidebar-link">
+  <a href="./notebooks/07_conclusions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Conclusions</span></span></a>
   </div>
 </li>
@@ -544,31 +498,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nb/08_appendix_rev.html" class="sidebar-item-text sidebar-link">
+  <a href="./nb/08_appendix_rev.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Other</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nb/16_flow_down_rev.html" class="sidebar-item-text sidebar-link">
+  <a href="./nb/16_flow_down_rev.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Flow Down</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nb/17_crisp-dm_rev.html" class="sidebar-item-text sidebar-link">
+  <a href="./nb/17_crisp-dm_rev.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">CRISP-DM</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nb/18_references_rev.html" class="sidebar-item-text sidebar-link">
+  <a href="./nb/18_references_rev.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nb/19_resources_rev.html" class="sidebar-item-text sidebar-link">
+  <a href="./nb/19_resources_rev.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
   </div>
 </li>
@@ -579,34 +533,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#data-pipelines" id="toc-data-pipelines" class="nav-link active" data-scroll-target="#data-pipelines"><span class="header-section-number">9</span> Data Pipelines</a></li>
-  <li><a href="#scenario" id="toc-scenario" class="nav-link" data-scroll-target="#scenario"><span class="header-section-number">10</span> scenario:</a>
-  <ul class="collapse">
-  <li><a href="#work-flow-architecture" id="toc-work-flow-architecture" class="nav-link" data-scroll-target="#work-flow-architecture"><span class="header-section-number">10.1</span> Work Flow &amp; Architecture :</a>
-  <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">10.1.1</span> </a></li>
-  <li><a href="#data-stageing" id="toc-data-stageing" class="nav-link" data-scroll-target="#data-stageing"><span class="header-section-number">10.1.2</span> Data Stageing</a></li>
-  <li><a href="#data-ingestion" id="toc-data-ingestion" class="nav-link" data-scroll-target="#data-ingestion"><span class="header-section-number">10.1.3</span> Data Ingestion:</a></li>
-  <li><a href="#data-access-and-querying" id="toc-data-access-and-querying" class="nav-link" data-scroll-target="#data-access-and-querying"><span class="header-section-number">10.1.4</span> Data Access and Querying:</a></li>
-  <li><a href="#data-manipulation" id="toc-data-manipulation" class="nav-link" data-scroll-target="#data-manipulation"><span class="header-section-number">10.1.5</span> Data Manipulation:</a></li>
-  <li><a href="#advantages-of-your-workflow" id="toc-advantages-of-your-workflow" class="nav-link" data-scroll-target="#advantages-of-your-workflow"><span class="header-section-number">10.1.6</span> <strong>Advantages of Your Workflow</strong></a></li>
-  <li><a href="#potential-disadvantages" id="toc-potential-disadvantages" class="nav-link" data-scroll-target="#potential-disadvantages"><span class="header-section-number">10.1.7</span> <strong>Potential Disadvantages</strong></a></li>
-  <li><a href="#optimize-duckdb-usage" id="toc-optimize-duckdb-usage" class="nav-link" data-scroll-target="#optimize-duckdb-usage"><span class="header-section-number">10.1.8</span> <strong>2. Optimize DuckDB Usage</strong></a></li>
-  <li><a href="#efficient-data-retrieval-into-r-and-python" id="toc-efficient-data-retrieval-into-r-and-python" class="nav-link" data-scroll-target="#efficient-data-retrieval-into-r-and-python"><span class="header-section-number">10.1.9</span> <strong>3. Efficient Data Retrieval into R and Python</strong></a></li>
-  <li><a href="#consider-data-volume-and-hardware-resources" id="toc-consider-data-volume-and-hardware-resources" class="nav-link" data-scroll-target="#consider-data-volume-and-hardware-resources"><span class="header-section-number">10.1.10</span> <strong>4. Consider Data Volume and Hardware Resources</strong></a></li>
-  <li><a href="#keep-libraries-updated" id="toc-keep-libraries-updated" class="nav-link" data-scroll-target="#keep-libraries-updated"><span class="header-section-number">10.1.11</span> <strong>5. Keep Libraries Updated</strong></a></li>
-  <li><a href="#handle-updates-and-data-versioning" id="toc-handle-updates-and-data-versioning" class="nav-link" data-scroll-target="#handle-updates-and-data-versioning"><span class="header-section-number">10.1.12</span> <strong>6. Handle Updates and Data Versioning</strong></a></li>
-  <li><a href="#monitor-performance-and-adjust" id="toc-monitor-performance-and-adjust" class="nav-link" data-scroll-target="#monitor-performance-and-adjust"><span class="header-section-number">10.1.13</span> <strong>7. Monitor Performance and Adjust</strong></a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#data-stageing-1" id="toc-data-stageing-1" class="nav-link" data-scroll-target="#data-stageing-1"><span class="header-section-number">11</span> Data Stageing</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/nb/03_data_preparation_rev.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -616,316 +544,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div id="fig-bu-why" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Why is forecasting important? It drives the business" data-fig-width="15cm">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-bu-why-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/bu_why.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;8.1: Why forecasting? The forecast drives the business!"><img src="../images/bu_why.png" class="img-fluid quarto-figure quarto-figure-left figure-img" data-fig-width="15cm" alt="Why is forecasting important? It drives the business"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bu-why-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8.1: Why forecasting?<br>
-The forecast drives the business!
-</figcaption>
+<audio controls="">
+  <source src="audio/pythia_history.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<p><strong>From Prophecy to Prediction: The Myth Inspiring Pythia’s Advice</strong></p>
+<p>The <em>Pythia’s Advice</em> project is dedicated to the art of sales forecasting. Drawing inspiration from the ancient myth of the Oracle of Delphi, where the <em>Pythia</em>—the high priestess—delivered cryptic prophecies, we harness the power of Data Science—our modern-day Pythia—to foresee future trends. Just as the Pythia’s prophecies required careful interpretation, our statistical and machine learning techniques produce <em>Advice</em> that requires human expertise for effective application. By embodying this union of technology and human insight, we aptly named our project <em>Pythia’s Advice</em>. This synergy ensures well-informed, data-driven decision-making and enhances the operational efficiency of the supply chain.</p>
+<p>According to ancient myth, the Pythia inhaled vapors emanating from the remnants of the Python slain by Apollo—the Olympian god of the sun, music, and prophecy. These vapors induced a trance-like state that allowed her to channel his prophetic insights, revealing future events. Similarly, our project ‘inhales’ vast amounts of data—our ‘Python’s Vapors’—which, when processed with complex algorithms, enable us to decipher hidden patterns and unveil valuable foresight. However, these predictive insights must be carefully interpreted to avoid missteps—much like when King Croesus misread the Pythia’s prophecy that <em>‘a great empire will fall.’</em> He waged war and, in doing so, opened Pandora’s Box—leading to the downfall of his own <em>great empire</em>—the Kingdom of Lydia.</p>
+<p>Furthermore, <em>Pythia’s Advice</em> emphasizes the crucial bond between humans and nature. By focusing on the sales forecast of <em>food for biodiversity</em>—products that support ecological diversity—we aim to benefit human health and promote planetary well-being. This harmonious relationship mirrors the Pythia’s sacred connection with the divine, symbolizing a balance between technological capabilities and the natural world.</p>
+<p><br>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/pythia_logo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/pythia_logo.png" class="quarto-figure quarto-figure-center figure-img" style="width:6cm;height:6.8cm"></a></p>
 </figure>
 </div>
-<p>See Figure <a href="04_modelling_rev.html#fig-bu-why" class="quarto-xref">Figure&nbsp;<span>9.1</span></a> for the thumbnail overview.</p>
-<section id="data-pipelines" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Data Pipelines</h1>
-</section>
-<section id="scenario" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> scenario:</h1>
-<p>Dataset Size:</p>
-<ul>
-<li>400 MB in CSV format.</li>
-<li>15 MB in Parquet format.</li>
-</ul>
-<p>Data Access and Querying:</p>
-<p>Happens once when the application starts. Needs to be quick to minimize user wait time. No data is written to disk during application use; data is only saved when the application exits. Data Manipulation:</p>
-<p>Performed in-memory using R and Python. Requires fast execution. Consideration:</p>
-<p>You like the idea of using Feather for its fast data loading. You’re considering incorporating DuckDB to make the solution more scalable, despite minimal immediate benefits. Acknowledge that adding DuckDB introduces additional complexity.</p>
-<p>Architecture: Architecture is about the design and setup, provides the framework and tools. This refers to the high-level structure of your system. It encompasses the selection of components, technologies, formats, and how they are organized and interact with each other. Architecture lays the foundation for your system’s capabilities, scalability, and performance.</p>
-<p>Workflow: Workflow is about the execution and processes, defines the processes and procedures using those tools. This pertains to the sequence of operations or processes that are carried out using the architectural components. It describes the specific steps taken to achieve your objectives, detailing how data and tasks flow through the system.</p>
-<section id="work-flow-architecture" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="work-flow-architecture"><span class="header-section-number">10.1</span> Work Flow &amp; Architecture :</h2>
-<p>Need for a a robust, scalable and future-proof architecture with the flexibility to adapt as the data sets evolves, all while maintaining excellent performance and usability.</p>
-<ul>
-<li>Need for fast startup and in-memory processing.</li>
-<li>Scalable for future growth</li>
-<li>Minimal in complexity, leveraging familiar tools and lightweight components.</li>
-</ul>
-<p>Vertically Scalable: The architecture leverages your node’s 24 GB of memory effectively, with room for growth by upgrading hardware (e.g., adding more RAM or CPU cores).</p>
-<p>Low Complexity Overhead:</p>
-<p>DuckDB introduces minimal complexity since it integrates seamlessly with both R and Python. SQL provides a familiar and powerful tool for managing data subsets, making the workflow easy to maintain. Prepared for Growth:</p>
-<p>The combination of Feather and DuckDB ensures you can handle current and moderate future data sizes efficiently. For substantial growth, DuckDB can work with Parquet files or other scalable formats with minimal changes. Optimized for Performance:</p>
-<p>Feather ensures fast data access at startup. DuckDB allows efficient on-disk querying to reduce memory overhead, ensuring smooth performance even as datasets grow.</p>
-<section id="section" class="level3" data-number="10.1.1">
-<h3 data-number="10.1.1" class="anchored" data-anchor-id="section"><span class="header-section-number">10.1.1</span> </h3>
-<p>This workflow is ideal when working with datasets that are manageable in size and can be fully loaded into memory for analysis. Incorporating DuckDB adds the flexibility of SQL querying, which can be advantageous for preprocessing data before intensive computations. The use of Feather format ensures fast data loading, which is important for applications where user wait time during startup should be minimized.</p>
-<p>If your dataset grows or your scalability needs change, you might need to adjust the workflow accordingly, possibly by switching to Parquet files and leveraging DuckDB’s capabilities to handle larger datasets more efficiently.</p>
-<p>Architecture</p>
-<p>Scalability:</p>
-<ol type="1">
-<li><p>adjust your SQL queries to limit the data loaded into memory, ensuring your application remains performant.</p></li>
-<li><p>scale vertically with increased RAM and CPU cores to manage larger Feather files and more complex algorithms without architectural changes.</p></li>
-</ol>
-<p>Performance:</p>
-<ul>
-<li>Feather enables fast reads for smaller datasets during startup.</li>
-<li>DuckDB efficiently handles larger datasets by querying on disk and loading only the necessary data into memory.</li>
-</ul>
-</section>
-<section id="data-stageing" class="level3" data-number="10.1.2">
-<h3 data-number="10.1.2" class="anchored" data-anchor-id="data-stageing"><span class="header-section-number">10.1.2</span> Data Stageing</h3>
-<ol type="1">
-<li>D00: contains the BW OpenHub Export, CSV - same as AL11</li>
-</ol>
-</section>
-<section id="data-ingestion" class="level3" data-number="10.1.3">
-<h3 data-number="10.1.3" class="anchored" data-anchor-id="data-ingestion"><span class="header-section-number">10.1.3</span> Data Ingestion:</h3>
-<p>Occurs once a month, converting CSV to Parquet (or another format). header is added and stored in D01</p>
-</section>
-<section id="data-access-and-querying" class="level3" data-number="10.1.4">
-<h3 data-number="10.1.4" class="anchored" data-anchor-id="data-access-and-querying"><span class="header-section-number">10.1.4</span> Data Access and Querying:</h3>
-<ul>
-<li>Data is imported into R data.table objects via DuckDB, which reads the stored files.</li>
-<li>Queries are often simple SQL SELECT statements on one table or basic INNER JOINs.</li>
-<li>The same SQL queries are used to import data into Python using Polars via DuckDB.</li>
-</ul>
-</section>
-<section id="data-manipulation" class="level3" data-number="10.1.5">
-<h3 data-number="10.1.5" class="anchored" data-anchor-id="data-manipulation"><span class="header-section-number">10.1.5</span> Data Manipulation:</h3>
-<ul>
-<li>Further data manipulation in R is done using data.table.</li>
-<li>In Python, data manipulation is performed using Polars.</li>
-</ul>
-<p><strong>Evaluation of Your Proposed Workflow</strong></p>
-<p>Given your familiarity with SQL and DuckDB, and your need for scalability, your proposed workflow is sound and aligns well with your goals.</p>
-</section>
-<section id="advantages-of-your-workflow" class="level3" data-number="10.1.6">
-<h3 data-number="10.1.6" class="anchored" data-anchor-id="advantages-of-your-workflow"><span class="header-section-number">10.1.6</span> <strong>Advantages of Your Workflow</strong></h3>
-<ol type="1">
-<li><p><strong>Scalability</strong></p>
-<ul>
-<li><strong>Efficient Data Storage:</strong> Parquet files are columnar, compressed, and optimized for performance, which is beneficial for large datasets.</li>
-<li><strong>Query Optimization:</strong> DuckDB is designed for efficient analytical queries, even on large datasets.</li>
-</ul></li>
-<li><p><strong>Flexibility</strong></p>
-<ul>
-<li><strong>Language Agnostic:</strong> DuckDB can be used within R and Python, allowing seamless transition between languages.</li>
-<li><strong>SQL Familiarity:</strong> Your proficiency in SQL means you can leverage DuckDB’s SQL interface effectively.</li>
-</ul></li>
-<li><p><strong>Performance</strong></p></li>
-</ol>
-<ul>
-<li><strong>Fast Query Execution:</strong> DuckDB is optimized for OLAP workloads and can execute complex queries quickly.</li>
-<li><strong>Direct Parquet Support:</strong> DuckDB can read Parquet files directly without the need to load the entire dataset into memory.</li>
-</ul>
-<ol start="4" type="1">
-<li><strong>Integration with R and Python</strong></li>
-</ol>
-<ul>
-<li><strong>R Data.Tables:</strong> You can fetch query results from DuckDB into R data.tables, integrating with your existing R codebase.</li>
-<li><strong>Python Polars:</strong> Similarly, you can read data into Polars DataFrames in Python, which is efficient for data manipulation.</li>
-</ul>
-<ol start="5" type="1">
-<li><strong>Simplified Data Pipeline</strong></li>
-</ol>
-<ul>
-<li><strong>Unified Data Source:</strong> Using DuckDB on top of Parquet files centralizes your data access, simplifying data management.</li>
-</ul>
-</section>
-<section id="potential-disadvantages" class="level3" data-number="10.1.7">
-<h3 data-number="10.1.7" class="anchored" data-anchor-id="potential-disadvantages"><span class="header-section-number">10.1.7</span> <strong>Potential Disadvantages</strong></h3>
-<ol type="1">
-<li><strong>Additional Complexity</strong></li>
-</ol>
-<ul>
-<li><strong>Library Dependencies:</strong> Requires installation and management of additional libraries (DuckDB, Parquet support in R and Python).</li>
-<li><strong>Learning Curve for Integration:</strong> Even though you’re familiar with DuckDB, integrating it into R and Python workflows may require some setup and testing.</li>
-</ul>
-<ol start="2" type="1">
-<li><p><strong>Overhead of Data Conversion</strong></p>
-<ul>
-<li><strong>Initial Conversion:</strong> Migrating CSV files to Parquet adds an extra step in your data ingestion pipeline.</li>
-<li><strong>Data Updates:</strong> If your CSV data updates frequently, you’ll need to automate the conversion process.</li>
-</ul></li>
-<li><p><strong>Resource Usage</strong></p></li>
-</ol>
-<ul>
-<li><strong>Disk Space:</strong> Maintaining both CSV and Parquet files (if not deleting the original CSVs) may consume additional storage.</li>
-</ul>
-<hr>
-<p><strong>Recommendations and Best Practices</strong></p>
-<p>Given your requirements and skills, your proposed workflow is suitable and offers several benefits in terms of scalability and flexibility. Here are some recommendations to optimize your workflow:</p>
-<p>### <strong>1. Automate the CSV to Parquet Conversion</strong></p>
-<ul>
-<li><p><strong>Use Batch Processing:</strong></p></li>
-<li><p>Create scripts in R or Python to automate the conversion of CSV files to Parquet.</p></li>
-<li><p><strong>Leverage DuckDB for Conversion:</strong></p>
-<ul>
-<li>DuckDB can read CSV files and write Parquet files, allowing you to perform the conversion within DuckDB.</li>
-</ul></li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">COPY</span> (<span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> <span class="st">'your_data.csv'</span>) <span class="kw">TO</span> <span class="st">'your_data.parquet'</span> (FORMAT PARQUET);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="optimize-duckdb-usage" class="level3" data-number="10.1.8">
-<h3 data-number="10.1.8" class="anchored" data-anchor-id="optimize-duckdb-usage"><span class="header-section-number">10.1.8</span> <strong>2. Optimize DuckDB Usage</strong></h3>
-<ul>
-<li><p><strong>Indexing and Partitioning:</strong></p>
-<ul>
-<li>While Parquet files do not support traditional indexing, consider partitioning your data to improve query performance.</li>
-</ul></li>
-<li><p><strong>SQL Query Optimization:</strong></p>
-<ul>
-<li>Use DuckDB’s advanced SQL features to optimize queries (e.g., window functions, common table expressions).</li>
-</ul></li>
-</ul>
-</section>
-<section id="efficient-data-retrieval-into-r-and-python" class="level3" data-number="10.1.9">
-<h3 data-number="10.1.9" class="anchored" data-anchor-id="efficient-data-retrieval-into-r-and-python"><span class="header-section-number">10.1.9</span> <strong>3. Efficient Data Retrieval into R and Python</strong></h3>
-<ul>
-<li><p><strong>In R:</strong></p>
-<ul>
-<li>Use the <code>duckdb</code> package to execute SQL queries and fetch results into data.tables.</li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(duckdb)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(duckdb<span class="sc">::</span><span class="fu">duckdb</span>())</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Query data</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(con, <span class="st">"SELECT * FROM 'your_data.parquet' WHERE conditions"</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to data.table</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>dt_result <span class="ot">&lt;-</span> <span class="fu">as.data.table</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>In Python with Polars:</strong></p>
-<ul>
-<li>Use DuckDB’s Python API or integrate with Polars for efficient data handling.</li>
-</ul></li>
-</ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> duckdb</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Execute query and fetch result as Polars DataFrame</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> duckdb.query(<span class="st">"SELECT * FROM 'your_data.parquet' WHERE conditions"</span>).to_df()</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>pl_df <span class="op">=</span> pl.from_pandas(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="consider-data-volume-and-hardware-resources" class="level3" data-number="10.1.10">
-<h3 data-number="10.1.10" class="anchored" data-anchor-id="consider-data-volume-and-hardware-resources"><span class="header-section-number">10.1.10</span> <strong>4. Consider Data Volume and Hardware Resources</strong></h3>
-<ul>
-<li><p><strong>Memory Management:</strong></p>
-<ul>
-<li>DuckDB processes data efficiently, but ensure your hardware resources are adequate for your data size.</li>
-</ul></li>
-<li><p><strong>Disk I/O:</strong></p>
-<ul>
-<li>Using Parquet files reduces disk I/O due to compression, but be mindful of the storage subsystem performance.</li>
-</ul></li>
-</ul>
-</section>
-<section id="keep-libraries-updated" class="level3" data-number="10.1.11">
-<h3 data-number="10.1.11" class="anchored" data-anchor-id="keep-libraries-updated"><span class="header-section-number">10.1.11</span> <strong>5. Keep Libraries Updated</strong></h3>
-<ul>
-<li><p><strong>Stay Current:</strong></p>
-<ul>
-<li>Ensure that you are using the latest versions of DuckDB, R packages, and Python libraries to benefit from performance improvements and bug fixes.</li>
-</ul></li>
-</ul>
-</section>
-<section id="handle-updates-and-data-versioning" class="level3" data-number="10.1.12">
-<h3 data-number="10.1.12" class="anchored" data-anchor-id="handle-updates-and-data-versioning"><span class="header-section-number">10.1.12</span> <strong>6. Handle Updates and Data Versioning</strong></h3>
-<ul>
-<li><p><strong>Incremental Updates:</strong></p>
-<ul>
-<li>If your data updates incrementally, design your pipeline to handle partial updates rather than reprocessing entire datasets.</li>
-</ul></li>
-<li><p><strong>Data Version Control:</strong></p>
-<ul>
-<li>Implement versioning for your Parquet files to track changes over time.</li>
-</ul></li>
-</ul>
-</section>
-<section id="monitor-performance-and-adjust" class="level3" data-number="10.1.13">
-<h3 data-number="10.1.13" class="anchored" data-anchor-id="monitor-performance-and-adjust"><span class="header-section-number">10.1.13</span> <strong>7. Monitor Performance and Adjust</strong></h3>
-<ul>
-<li><p><strong>Benchmarking:</strong></p>
-<ul>
-<li>Regularly benchmark query performance to identify bottlenecks.</li>
-</ul></li>
-<li><p><strong>Adjust Strategy:</strong></p>
-<ul>
-<li>Based on performance metrics, adjust partitioning schemes, query strategies, or hardware resources as needed.</li>
-</ul></li>
-</ul>
-<hr>
-<p><strong>Conclusion</strong></p>
-<p>Your proposed workflow of migrating CSV files to Parquet, using DuckDB for querying, and integrating with R and Python is a robust solution that addresses your needs for scalability and flexibility. Given your familiarity with SQL and DuckDB, and the fact that you possess the necessary skills to manage the additional complexity, this approach is well-suited to your situation.</p>
-<p><strong>Benefits of Your Workflow:</strong></p>
-<ul>
-<li><p><strong>Scalable Data Processing:</strong></p></li>
-<li><p>Efficient handling of large datasets through Parquet and DuckDB.</p></li>
-<li><p><strong>Flexibility Across Languages:</strong></p>
-<ul>
-<li>Seamless data access in both R and Python without data format conversion issues.</li>
-</ul></li>
-<li><p><strong>Performance Optimization:</strong></p>
-<ul>
-<li>Faster query execution and data retrieval due to optimized storage and processing.</li>
-</ul></li>
-</ul>
-<p><strong>Key Actions Moving Forward:</strong></p>
-<ol type="1">
-<li><strong>Set Up Automated Data Pipelines:</strong></li>
-</ol>
-<ul>
-<li>Automate the conversion from CSV to Parquet to ensure consistency and save time.</li>
-</ul>
-<ol start="2" type="1">
-<li><strong>Optimize Queries:</strong></li>
-</ol>
-<ul>
-<li>Utilize DuckDB’s full SQL capabilities to write efficient queries for your analysis.</li>
-</ul>
-<ol start="3" type="1">
-<li><p><strong>Integrate Smoothly with R and Python:</strong></p>
-<ul>
-<li>Establish standard functions or scripts in both environments to interact with DuckDB, minimizing repetitive code.</li>
-</ul></li>
-<li><p><strong>Monitor and Iterate:</strong></p>
-<ul>
-<li>Keep an eye on performance metrics and be ready to adjust your approach as your dataset grows or changes.</li>
-</ul></li>
-</ol>
-<hr>
-<p><strong>Additional Considerations</strong></p>
-<ul>
-<li><p><strong>Community and Support:</strong></p>
-<ul>
-<li>DuckDB is actively developed, and there is a growing community. Utilize resources like documentation and forums when needed.</li>
-</ul></li>
-<li><p><strong>Testing and Validation:</strong></p>
-<ul>
-<li>As with any data pipeline, thoroughly test each component to ensure data integrity and correctness.</li>
-</ul></li>
-<li><p><strong>Security and Access Control:</strong></p>
-<ul>
-<li>If working in a multi-user environment, consider how data access and permissions are managed.</li>
-</ul></li>
-</ul>
-<hr>
-<p><strong>Final Thoughts</strong></p>
-<p>Your willingness to embrace additional complexity due to your skill set positions you well to benefit from this workflow. By combining the strengths of Parquet’s efficient data storage and DuckDB’s powerful query engine, you can achieve a scalable and flexible data analysis environment.</p>
-<p>Should you need further assistance or have more questions as you implement this workflow, feel free to reach out. I’m here to help ensure your data processing is as efficient and effective as possible.</p>
-</section>
-</section>
-</section>
-<section id="data-stageing-1" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> Data Stageing</h1>
-<p>data lake design pattern: Bronze-Silver-Gold structure data according to its level of processing and readiness for use.</p>
-<p>Bronze Layer (Raw Data): Contains raw data as it was ingested from the source systems. This data is typically in its original format and unprocessed.</p>
-<p>Silver Layer (Cleaned and Conformed Data): Contains data that has been cleansed, filtered, and possibly enriched. This data is ready for further processing or analysis but is not yet aggregated or modeled.</p>
-<p>Gold Layer (Curated Data): Contains data that has been transformed into business-level aggregates, models, or reports. This is the data used by analysts, data scientists, or applications for decision-making.</p>
+<p><br>
+Our logo, featuring a tree integrated with the <em>Pythia</em> through conductive traces against an enlightening sunset that symbolizes guidance and inspiration, beautifully encapsulates this synergy. This imagery symbolizes the fusion of natural wisdom and technological innovation. It reminds us that while we rely on cutting-edge technology to predict the future, our roots remain deeply intertwined with nature.</p>
+<p>Through <em>Pythia’s Advice</em>, we honor the legacy of the Oracle of Delphi, blending ancient wisdom with modern technology to illuminate the path forward.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1342,13 +980,13 @@ The forecast drives the business!
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../nb/02_data_understanding_rev.html" class="pagination-link" aria-label="Data Understanding">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Understanding</span></span>
+      <a href="./how-to-read.html" class="pagination-link" aria-label="How to Read This Book">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">How to Read This Book</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../nb/04_modelling_rev.html" class="pagination-link" aria-label="Modelling">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Modelling</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./acknowledgments.html" class="pagination-link" aria-label="Acknowledgments">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Acknowledgments</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1360,7 +998,7 @@ The forecast drives the business!
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/nb/03_data_preparation_rev.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/the_myth.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p><a href="https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai">EAISI</a></p>
 </div>

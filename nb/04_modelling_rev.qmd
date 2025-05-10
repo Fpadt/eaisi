@@ -83,4 +83,4 @@ algorithm - handle teh specific characteristics of teh data - balance performanc
 
 # Appendix {.unnumbered}
 
-<!-- {{< include 04_modelling_def.qmd >}} -->
+{{< include 04_modelling_def.qmd >}}
