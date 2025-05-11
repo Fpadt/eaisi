@@ -41,8 +41,8 @@ This guide will help you navigate through this book and make the most of its fea
 This book is organized into the following main sections:
 
 - **Preface**: Acknowledgments and how to read this book
-- **Main Research**: Detailed exploration of each phase of the CRISP-DM methodology. The Research overview can be found here: @sec-00-introduction @sec-research-analysis
-- **Appendix**: Detailed project phases with coding, additional resources, references, and supplementary materials
+- **Main Research**: Exploration of each phase of the CRISP-DM methodology in the [Research Analysis](nb/00_pythias_advice_rev.html) 
+- **Appendix**: Detailed CRISP-DM phases with coding, additional resources, references, and supplementary materials
 
 ### Navigation Features
 
@@ -55,10 +55,12 @@ The sidebar on the left provides a full table of contents. Click on any section 
 Use the search icon (🔍) in the top navigation bar to search for specific terms throughout the book.
 
 #### Code Blocks
-```python
+
+```r
 ## Example code
 print("Hello, world!")
 ```
+
 - Code blocks have a copy button (📋) in the top-right corner
 - Some code blocks can be expanded to show more details
 - You can also toggle between code and output views

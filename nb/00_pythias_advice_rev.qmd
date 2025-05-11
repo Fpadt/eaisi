@@ -1,7 +1,6 @@
 ---
 title:    Research Analysis
 subtitle: TRUST - is all you need!
-id:       sec-research-analysis
 
 description: |
   Effective business planning relies heavily on consistent and accurate 
@@ -64,7 +63,6 @@ suppress-bibliography: true
 <!--  Modelling – Forecasting models and techniques used. -->
 <!--  Evaluation – Analysis of model performance and key findings. -->
 <!--  Deployment – Implications for practical application. -->
-
 
 
 # Introduction {#sec-00-introduction}

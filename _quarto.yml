@@ -89,37 +89,37 @@ book:
     - part: "Main Research"
       chapters:
         # The myth of Pythia
-        - inspiration.qmd
+        # - inspiration.qmd
         # White Paper: Research Analysis
         - nb/00_pythias_advice_rev.qmd 
         # Conclusions – Synthesis of findings, key takeaways, and their significance.
         # Recommendations – Suggested actions or further research directions.
-        - nb/07_conclusions_recommendations_rev.qmd
+        # - nb/07_conclusions_recommendations_rev.qmd
 
       # Detailed Analysis and Supplementary Materials
     - part: "Appendix"
       chapters:
         # CRISP-DM: Detailed Process Flow – Deeper dive into each phase with coding snippets.
-        - nb/17_crisp-dm_rev.qmd
+        # - nb/17_crisp-dm_rev.qmd
         # Business Understanding: Analytical Frameworks
         - nb/01_business_understanding_rev.qmd
         # Data Understanding: Data Dictionary and Descriptive Statistics        
-        - nb/02_data_understanding_rev.qmd
+        # - nb/02_data_understanding_rev.qmd
         # Data Preparation: Preprocessing Code and Examples
-        - nb/03_data_preparation_rev.qmd
+        # - nb/03_data_preparation_rev.qmd
         # Modelling: Detailed Implementation and Algorithms
-        - nb/04_modelling_rev.qmd
+        # - nb/04_modelling_rev.qmd
         # Evaluation: Performance Metrics and Additional Analysis        
-        - nb/05_evaluation_rev.qmd
-        - nb/06_deployment_rev.qmd  
+        # - nb/05_evaluation_rev.qmd
+        # - nb/06_deployment_rev.qmd  
         # Methodology & Framework: Technical Details and Coding      
-        - nb/08_appendix_rev.qmd        
+        # - nb/08_appendix_rev.qmd        
         # DAPS and Flow Down
-        - nb/16_flow_down_rev.qmd
+        # - nb/16_flow_down_rev.qmd
         # References – Academic references, data sources, and research citations.        
-        - nb/18_references_rev.qmd
+        # - nb/18_references_rev.qmd
         # Resources – Tools, libraries, and datasets used, with links and explanations.        
-        - nb/19_resources_rev.qmd
+        # - nb/19_resources_rev.qmd
 
 resources:
   - notebooks/01_business_understanding.qmd  
@@ -171,7 +171,7 @@ format:
     lightbox:           true
     comments:
       hypothesis:       false
-    number-sections:    true
+    number-sections:    false
     link-citations:     true    
     colorlinks:         true
     highlight-style:    github
