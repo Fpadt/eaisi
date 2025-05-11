@@ -84,11 +84,12 @@ Some sections contain interactive elements:
 
 ### Reading Pathways
 
-There are multiple ways to approach this book:
+The [Research Analysis](nb/00_pythias_advice_rev.html) section is designed to be read in a linear fashion and follows the CRISP-DM phases. 
 
-1. **Sequential Reading**: Follow the chapters in order for a comprehensive understanding
-2. **Topic-Based**: Use the search function to find specific topics of interest
-3. **Reference Use**: Bookmark key sections for future reference
+Details on each phase with related coding can
+be found in the appendix, each phase has it's own page, e.g. [Business Understanding](nb/01_business_understanding_rev.html)
+
+The appendix provides additional resources and coding examples that can be referenced as needed.
 
 ### Best Viewing Experience
 
