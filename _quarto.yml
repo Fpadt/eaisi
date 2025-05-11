@@ -61,27 +61,31 @@ execute:
 editor: source
 
 book:
-  site-url: https://fpadt.github.io/eaisi/
   title: "Pythia's Advice"
-  subtitle: "Trust is all you need"
-  favicon: images/favicon.ico
-  image: images/logo_transp.png
- 
-  repo-url: https://github.com/Fpadt/eaisi/
-  repo-actions: [source, issue]
-  downloads: [pdf] 
-  sharing: [twitter, facebook, linkedin]
-  open-graph: false  
+  reader-mode: true
 
-  page-navigation: true # Explicit navigation controls
   page-footer:
     left: "© 2025 Floris Padt: Pythia's Advice"
     # center: ""
     right: "[EAISI](https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai)"
 
+  favicon: images/favicon.ico  
+  site-url: https://fpadt.github.io/eaisi/
+  repo-url: https://github.com/Fpadt/eaisi/
+  repo-actions: [source, issue]
+  
+  # image: images/logo_transp.png
+ 
+  downloads: [pdf] 
+  sharing: [twitter, facebook, linkedin]
+  open-graph: false  
+
+  page-navigation: true # Explicit navigation controls
+
   chapters:
     # cover + preface
     - index.qmd
+    
     #  focus on analysis and findings.
     - part: "Main Research"
       chapters:
@@ -92,11 +96,10 @@ book:
         # Conclusions – Synthesis of findings, key takeaways, and their significance.
         # Recommendations – Suggested actions or further research directions.
         - nb/07_conclusions_recommendations_rev.qmd
+
       # Detailed Analysis and Supplementary Materials
     - part: "Appendix"
       chapters:
-        # Methodology & Framework: Technical Details and Coding      
-        - nb/08_appendix_rev.qmd
         # CRISP-DM: Detailed Process Flow – Deeper dive into each phase with coding snippets.
         - nb/17_crisp-dm_rev.qmd
         # Business Understanding: Analytical Frameworks
@@ -109,7 +112,9 @@ book:
         - nb/04_modelling_rev.qmd
         # Evaluation: Performance Metrics and Additional Analysis        
         - nb/05_evaluation_rev.qmd
-        - nb/06_deployment_rev.qmd         
+        - nb/06_deployment_rev.qmd  
+        # Methodology & Framework: Technical Details and Coding      
+        - nb/08_appendix_rev.qmd        
         # DAPS and Flow Down
         - nb/16_flow_down_rev.qmd
         # References – Academic references, data sources, and research citations.        
