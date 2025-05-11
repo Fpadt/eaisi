@@ -1,30 +1,30 @@
-
 /*-- scss:defaults --*/
 // Base document colors
-//$primary: #E2A348;
-//$body-bg: #ffffff;
-//$body-color: #333333;
-//$link-color: #E2A348;
-//$navbar-bg: #0f5e3c; 
-//$navbar-fg: #ffffff;
+$primary: #E2A348;
+$body-bg: #ffffff;
+$body-color: #333333;
+$link-color: #E2A348;
+$navbar-bg: #0f5e3c; 
+$navbar-fg: #ffffff;
 
 /*-- scss:rules --*/
-// Add any custom CSS rules here
+
+// Navbar title
 .navbar-title {
-  color: #FFFFFF;
+  color: #ffffff !important;
 }  
 
 /* Change Hamburger Menu Color on Mobile */
-.navbar-toggler {
-  color: #FFFFFF !important;  /* Force white color */
+.navbar-toggler,
+.navbar-toggler-icon {
+  color: #ffffff !important;  /* Force white color */
   background-color: transparent !important; /* Transparent background */
   border: none !important; /* Remove border */
 }
 
 .navbar-toggler:hover,
 .navbar-toggler:focus {
-  color: #FFFFFF !important;  /* Hover and focus color */
-  background-color: #0f5e3c !important;  /* Optional: Background on hover */
+  background-color: #0f5e3c !important;  /* Background on hover */
 }
 
 .navbar-toggler-icon {
@@ -34,7 +34,7 @@
 .navbar-toggler-icon::before,
 .navbar-toggler-icon::after,
 .navbar-toggler-icon span {
-  background-color: #FFFFFF !important;  /* Set icon lines to white */
+  background-color: #ffffff !important;  /* Set icon lines to white */
   display: block;
   width: 24px;
   height: 2px;
@@ -42,8 +42,7 @@
   content: "";
 }
 
-
-/* Highlight color for the active item in the index (left sidebar) */
+/* Active item in the index (left sidebar) */
 .sidebar .active,
 .sidebar .active a {
   background-color: #ffffff;   /* White background */
@@ -51,22 +50,13 @@
   font-weight: bold;
 }
 
-/* Hover effect for the active item in the index */
 .sidebar .active a:hover {
   background-color: #f0f0f0;   /* Light gray */
   color: #e2a348;
 }
 
-/* Highlight color for the current content section (right side) */
-//body .active-section {
-//  background-color: #ffffff;
-//  color: #e2a348;
-//  font-weight: bold;
-//}
-
 /* Ensure link colors remain consistent */
-//body a,
-//body a:hover {
-//  color: #e2a348;
-//}
-
+body a,
+body a:hover {
+  color: #e2a348 !important;
+}
