@@ -10,13 +10,20 @@
 
 /*-- scss:rules --*/
 // Add any custom CSS rules here
-//.navbar-title {
-//  color: #E2A348;
+.navbar-title {
+  color: #E2A348;
+}  
 
-//a, .text-success, .badge-success {
-//  color: #e2a348 !important;
-//}  
-//}
+/* Change Hamburger Menu Color on Mobile */
+.quarto-navbar-toggler {
+  color: #E2A348; /* Set to your desired color */
+  background-color: transparent; /* Optional: Adjust background */
+  border: none;
+}
+
+.quarto-navbar-toggler:hover {
+  color: #d19030; /* Hover color */
+}
 
 /* Highlight color for the active item in the index (left sidebar) */
 .sidebar .active,
