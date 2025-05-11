@@ -80,7 +80,8 @@ book:
 
   chapters:
     # cover + preface
-    - index.qmd                                
+    - index.qmd
+    #  focus on analysis and findings.
     - part: "Main Research"
       chapters:
         # The myth of Pythia
