@@ -55,7 +55,7 @@ execute:
   echo:    true
   output:  true
   include: true
-  warning: true
+  warning: false
 
 editor: source
 

@@ -64,7 +64,8 @@ Use the search icon (🔍) in the top navigation bar to search for specific term
 #| code-fold: true
 #| code-summary: "Click to Show R Code"
 
-print("This is a collapsible R code block")
+print("This is a collapsible R code block")  # code line 1
+print("it improves reading of the document") # code line 2)
 ```
 
 - Code blocks have a copy button (📋) in the top-right corner
