@@ -65,7 +65,7 @@ Use the search icon (🔍) in the top navigation bar to search for specific term
 #| code-summary: "Click to Show R Code"
 
 print("This is a collapsible R code block")   # code line 1
-x <- 42 # it improves reading of the document # code line 2)
+
 ```
 
 
