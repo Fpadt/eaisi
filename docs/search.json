@@ -90,7 +90,7 @@
     "href": "nb/08_appendix_rev.html#business-process",
     "title": "Other",
     "section": "Business Process",
-    "text": "Business Process\n\nSCOR MODEL A COMPLETE GUIDE - 2020 EDITION, (BLOKDYK, 2019)\nInventory and production management in supply chains, (Silver et al, 2021)",
+    "text": "Business Process\n\nSCOR MODEL A COMPLETE GUIDE - 2020 EDITION, (BLOKDYK, 2019)\nInventory and production management in supply chains, (Silver et al., 2021)",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Other</span>"
@@ -101,7 +101,7 @@
     "href": "nb/08_appendix_rev.html#math-statistics",
     "title": "Other",
     "section": "Math & Statistics",
-    "text": "Math & Statistics\n\nForecasting: Principles and Practice (3rd ed), (Hyndman and Athanasopoulos, 2021)\nDemand forecasting best practices, (Vandeput, 2023)\nData science for supply chain forecasting, (Vandeput, 2021)\nInventory optimization: models and simulations, (Vandeput, 2020)\nMachine Learning With Boosting: A Beginner’s Guide, (Hartshorn, 2017)\nIntroduction to conformal prediction with Python, (Molnar, 2023)\nPractical guide to applied conformal prediction in Python, (Manokhin, 2023)\nSHAP with Python, (O’Sullivan, 2024)\nIntroduction to SHAP with Python, (O’Sullivan, 2023)\nEnsemble methods for machine learning, (Kunapuli, 2023)",
+    "text": "Math & Statistics\n\nForecasting: Principles and Practice (3rd ed), (Hyndman & Athanasopoulos, 2021)\nDemand forecasting best practices, (Vandeput, 2023)\nData science for supply chain forecasting, (Vandeput, 2021)\nInventory optimization: models and simulations, (Vandeput, 2020)\nMachine Learning With Boosting: A Beginner’s Guide, (Hartshorn, 2017)\nIntroduction to conformal prediction with Python, (Molnar, 2023)\nPractical guide to applied conformal prediction in Python, (Manokhin, 2023)\nSHAP with Python, (O’Sullivan, 2024)\nIntroduction to SHAP with Python, (O’Sullivan, 2023)\nEnsemble methods for machine learning, (Kunapuli, 2023)",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Other</span>"
@@ -112,7 +112,7 @@
     "href": "nb/08_appendix_rev.html#programming",
     "title": "Other",
     "section": "Programming",
-    "text": "Programming\n\nPython\n\nPython Crash Course, (Matthes, 2019a)\nLightning fast forecasting with statistical and econometric models, (Nixtla/statsforecast, 2024)\nScalable Machine Learning for Time Series Forecasting, (Nixtla/mlforecast, 2024)\nProbabilistic hierarchical forecasting with statistical and econometric methods, (Nixtla/hierarchicalforecast, n.d.)\nTS Features, calculates various features from time series data, (Nixtla/tsfeatures, 2024)\n\n\n\nR\n\nR for Data Science, (Wickham, n.d.)\nR forecasting package, (Hyndman [aut et al, 2024a)\nR feasts package, (O’Hara-Wild et al, 2024a)\nR fable package, (O’Hara-Wild et al, 2024b)",
+    "text": "Programming\n\nPython\n\nPython Crash Course, (Matthes, 2019a)\nLightning fast forecasting with statistical and econometric models, (Nixtla/statsforecast, 2024)\nScalable Machine Learning for Time Series Forecasting, (Nixtla/mlforecast, 2024)\nProbabilistic hierarchical forecasting with statistical and econometric methods, (Nixtla/hierarchicalforecast, n.d.)\nTS Features, calculates various features from time series data, (Nixtla/tsfeatures, 2024)\n\n\n\nR\n\nR for Data Science, (Wickham, n.d.)\nR forecasting package, (Hyndman [aut, cre, cph, Athanasopoulos, Bergmeir, et al., 2024)\nR feasts package, (O’Hara-Wild, Hyndman, Wang, Cook, et al., 2024)\nR fable package, (O’Hara-Wild, Hyndman, Wang, implementation), et al., 2024)",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Other</span>"

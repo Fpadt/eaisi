@@ -2,6 +2,7 @@ project:
   type: book
   output-dir: docs
   
+  
 date:        last-modified
 date-format: long
 
@@ -50,6 +51,7 @@ crossref:
   def-title:  def
     
 execute:
+  before-body: update_def.R
   freeze:  auto
   cache:   true
   echo:    false
@@ -139,16 +141,16 @@ key-points:
   - rules of thumb have been developed indicating what to use when
 thanks: 'Mentor: {{<var mentor >}} - EAISI Academy, MASTERING DATA & AI, Technical University Eindhoven'
 bibliography:      EAISI-PYTHIA.bib
-csl:               data-science-journal.csl
+csl:               apa.csl # data-science-journal.csl #apa.csl
 # cite-method:       biblatex
 # biblio-style:      nature
+appendix-style:    default
 citation:
   container-title: Pythia's Advice
 license: "CC BY"
 copyright: 
   holder:          Smart-R
   year:            2025
-appendix-style:    default
 lang: en-us
 nocite: |
   @*
@@ -161,6 +163,7 @@ format:
     title-block-banner-color: "#FFFFFF"
     # background-color: "#004D40"
     toc:                true
+    toc-depth:          3
     code-fold:          true  
     lightbox:           true
     comments:
@@ -179,7 +182,7 @@ format:
   #   reference-doc:      pythia-reference-doc.docx
   #   page-width:         8.27 
   #   toc:                true
-  #   toc-depth:          1
+  #   toc-depth:          3
   #   toc-title:          'Table of Contents' 
   #   number-sections:    true
   #   number-depth:       2    
