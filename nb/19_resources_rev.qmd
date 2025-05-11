@@ -6,7 +6,7 @@ engine:                knitr
 editor:                source
 ---
 
-# Resources {.unnumbered}
+# Resources {#sec-resources .unnumbered}
 
 ```{bash}
 #| eval: false
