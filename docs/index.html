@@ -543,6 +543,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[1] "it improves reading of the document"</code></pre>
 </div>
 </div>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to Show the Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Sample R Code</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">print</span>(<span class="st">"Hello, Quarto!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Hello, Quarto!"</code></pre>
+</div>
+</div>
 <ul>
 <li>Code blocks have a copy button (📋) in the top-right corner</li>
 <li>Some code blocks can be expanded to show more details</li>
@@ -1057,108 +1067,119 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">---</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="an">title:</span><span class="co"> Preface</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="an">engine:</span><span class="co"> knitr</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="an">suppress-bibliography:</span><span class="co"> true</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a></span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="an">format:</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="co">  html:</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="co">    css: cover-styles.css</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a></span>
-<span id="cb5-10"><a href="#cb5-10"></a><span class="co"># Add enhanced Open Graph tags for WhatsApp</span></span>
-<span id="cb5-11"><a href="#cb5-11"></a><span class="an">include-in-header:</span></span>
-<span id="cb5-12"><a href="#cb5-12"></a><span class="co">  text: |</span></span>
-<span id="cb5-13"><a href="#cb5-13"></a><span class="co">    &lt;!-- Open Graph Tags for WhatsApp --&gt;</span></span>
-<span id="cb5-14"><a href="#cb5-14"></a><span class="co">    &lt;meta property="og:type" content="website" /&gt;</span></span>
-<span id="cb5-15"><a href="#cb5-15"></a><span class="co">    &lt;meta property="og:title" content="Pythia - Forecasting and Analysis" /&gt;</span></span>
-<span id="cb5-16"><a href="#cb5-16"></a><span class="co">    &lt;meta property="og:description" content= "Effective business planning relies heavily on consistent and accurate forecasts across various levels of aggregation, granularity, and time horizons.." /&gt;</span></span>
-<span id="cb5-17"><a href="#cb5-17"></a><span class="co">    &lt;meta property="og:url" content="https://pythia.smart-r.nl/" /&gt;</span></span>
-<span id="cb5-18"><a href="#cb5-18"></a><span class="co">    &lt;meta property="og:image" content="https://pythia.smart-r.nl/images/pythia_logo_cover.png" /&gt;</span></span>
-<span id="cb5-19"><a href="#cb5-19"></a><span class="co">    &lt;meta property="og:image:width" content="1000" /&gt;</span></span>
-<span id="cb5-20"><a href="#cb5-20"></a><span class="co">    &lt;meta property="og:image:height" content="530" /&gt;</span></span>
-<span id="cb5-21"><a href="#cb5-21"></a><span class="co">    &lt;meta property="og:image:type" content="image/png" /&gt;</span></span>
-<span id="cb5-22"><a href="#cb5-22"></a><span class="co">    &lt;meta property="og:image:secure_url" content="https://pythia.smart-r.nl/images/pythia_logo_cover.png" /&gt;        </span></span>
-<span id="cb5-23"><a href="#cb5-23"></a><span class="co">        </span></span>
-<span id="cb5-24"><a href="#cb5-24"></a><span class="co">---</span></span>
-<span id="cb5-25"><a href="#cb5-25"></a></span>
-<span id="cb5-26"><a href="#cb5-26"></a>::: {.cover-container}</span>
-<span id="cb5-27"><a href="#cb5-27"></a><span class="al">![](images/pythia_logo_cover.png)</span>{width=50% fig-align="center" .cover-image}</span>
-<span id="cb5-28"><a href="#cb5-28"></a>:::</span>
-<span id="cb5-29"><a href="#cb5-29"></a></span>
-<span id="cb5-30"><a href="#cb5-30"></a></span>
-<span id="cb5-31"><a href="#cb5-31"></a><span class="fu">## Acknowledgments {.appendix .unnumbered}</span></span>
-<span id="cb5-32"><a href="#cb5-32"></a></span>
-<span id="cb5-33"><a href="#cb5-33"></a>I am grateful for the insightful comments offered by {{<span class="dt">&lt;</span><span class="kw">var</span><span class="ot"> mentor </span><span class="dt">&gt;</span>}}. These have improved this study in innumerable ways and saved me from many errors; those that inevitably remain are entirely my own responsibility.</span>
-<span id="cb5-34"><a href="#cb5-34"></a></span>
-<span id="cb5-35"><a href="#cb5-35"></a><span class="fu">## How to Read This Book</span></span>
-<span id="cb5-36"><a href="#cb5-36"></a></span>
-<span id="cb5-37"><a href="#cb5-37"></a>This guide will help you navigate through this book and make the most of its features.</span>
-<span id="cb5-38"><a href="#cb5-38"></a></span>
-<span id="cb5-39"><a href="#cb5-39"></a><span class="fu">### Book Structure</span></span>
-<span id="cb5-40"><a href="#cb5-40"></a></span>
-<span id="cb5-41"><a href="#cb5-41"></a>This book is organized into the following main sections:</span>
-<span id="cb5-42"><a href="#cb5-42"></a></span>
-<span id="cb5-43"><a href="#cb5-43"></a><span class="ss">- </span>**Preface**: Acknowledgments and how to read this book</span>
-<span id="cb5-44"><a href="#cb5-44"></a><span class="ss">- </span>**Main Research**: Exploration of each phase of the CRISP-DM methodology in the <span class="co">[</span><span class="ot">Research Analysis</span><span class="co">](nb/00_pythias_advice_rev.html)</span> </span>
-<span id="cb5-45"><a href="#cb5-45"></a><span class="ss">- </span>**Appendix**: Detailed CRISP-DM phases with coding, additional resources, references, and supplementary materials</span>
-<span id="cb5-46"><a href="#cb5-46"></a></span>
-<span id="cb5-47"><a href="#cb5-47"></a><span class="fu">### Navigation Features</span></span>
-<span id="cb5-48"><a href="#cb5-48"></a></span>
-<span id="cb5-49"><a href="#cb5-49"></a>This book includes several features to enhance your reading experience:</span>
-<span id="cb5-50"><a href="#cb5-50"></a></span>
-<span id="cb5-51"><a href="#cb5-51"></a><span class="fu">#### Table of Contents</span></span>
-<span id="cb5-52"><a href="#cb5-52"></a>The sidebar on the left provides a full table of contents. Click on any section to navigate directly to it.</span>
-<span id="cb5-53"><a href="#cb5-53"></a></span>
-<span id="cb5-54"><a href="#cb5-54"></a><span class="fu">#### Search Function</span></span>
-<span id="cb5-55"><a href="#cb5-55"></a>Use the search icon (🔍) in the top navigation bar to search for specific terms throughout the book.</span>
-<span id="cb5-56"><a href="#cb5-56"></a></span>
-<span id="cb5-57"><a href="#cb5-57"></a><span class="fu">#### Code Blocks</span></span>
-<span id="cb5-58"><a href="#cb5-58"></a></span>
-<span id="cb5-61"><a href="#cb5-61"></a><span class="in">```{r}</span></span>
-<span id="cb5-62"><a href="#cb5-62"></a><span class="co">#| echo:      true</span></span>
-<span id="cb5-63"><a href="#cb5-63"></a><span class="co">#| output:    true</span></span>
-<span id="cb5-64"><a href="#cb5-64"></a><span class="co">#| include:   true</span></span>
-<span id="cb5-65"><a href="#cb5-65"></a><span class="co">#| warning:   true</span></span>
-<span id="cb5-66"><a href="#cb5-66"></a><span class="co">#| code-fold: true</span></span>
-<span id="cb5-67"><a href="#cb5-67"></a><span class="co">#| code-summary: "Click to Show R Code"</span></span>
-<span id="cb5-68"><a href="#cb5-68"></a></span>
-<span id="cb5-69"><a href="#cb5-69"></a><span class="fu">print</span>(<span class="st">"This is a collapsible R code block"</span>)  <span class="co"># code line 1</span></span>
-<span id="cb5-70"><a href="#cb5-70"></a><span class="fu">print</span>(<span class="st">"it improves reading of the document"</span>) <span class="co"># code line 2)</span></span>
-<span id="cb5-71"><a href="#cb5-71"></a><span class="in">```</span></span>
-<span id="cb5-72"><a href="#cb5-72"></a></span>
-<span id="cb5-73"><a href="#cb5-73"></a><span class="ss">- </span>Code blocks have a copy button (📋) in the top-right corner</span>
-<span id="cb5-74"><a href="#cb5-74"></a><span class="ss">- </span>Some code blocks can be expanded to show more details</span>
-<span id="cb5-75"><a href="#cb5-75"></a><span class="ss">- </span>You can also toggle between code and output views</span>
-<span id="cb5-76"><a href="#cb5-76"></a></span>
-<span id="cb5-77"><a href="#cb5-77"></a><span class="fu">#### Cross-References</span></span>
-<span id="cb5-78"><a href="#cb5-78"></a>This book contains cross-references to figures, tables, and sections that appear as links like <span class="co">[</span><span class="ot">Figure 1.2</span><span class="co">](#)</span> or <span class="co">[</span><span class="ot">Chapter 3</span><span class="co">](#)</span>.</span>
-<span id="cb5-79"><a href="#cb5-79"></a></span>
-<span id="cb5-80"><a href="#cb5-80"></a><span class="fu">#### Interactive Elements</span></span>
-<span id="cb5-81"><a href="#cb5-81"></a>Some sections contain interactive elements:</span>
-<span id="cb5-82"><a href="#cb5-82"></a><span class="ss">- </span>Click on images to enlarge them</span>
-<span id="cb5-83"><a href="#cb5-83"></a><span class="ss">- </span>Interactive visualizations allow you to explore data</span>
-<span id="cb5-84"><a href="#cb5-84"></a><span class="ss">- </span>Collapsible sections can be expanded for additional details</span>
-<span id="cb5-85"><a href="#cb5-85"></a></span>
-<span id="cb5-86"><a href="#cb5-86"></a><span class="fu">### Reading Pathways</span></span>
-<span id="cb5-87"><a href="#cb5-87"></a></span>
-<span id="cb5-88"><a href="#cb5-88"></a>There are multiple ways to approach this book:</span>
-<span id="cb5-89"><a href="#cb5-89"></a></span>
-<span id="cb5-90"><a href="#cb5-90"></a><span class="ss">1. </span>**Sequential Reading**: Follow the chapters in order for a comprehensive understanding</span>
-<span id="cb5-91"><a href="#cb5-91"></a><span class="ss">2. </span>**Topic-Based**: Use the search function to find specific topics of interest</span>
-<span id="cb5-92"><a href="#cb5-92"></a><span class="ss">3. </span>**Reference Use**: Bookmark key sections for future reference</span>
-<span id="cb5-93"><a href="#cb5-93"></a></span>
-<span id="cb5-94"><a href="#cb5-94"></a><span class="fu">### Best Viewing Experience</span></span>
-<span id="cb5-95"><a href="#cb5-95"></a></span>
-<span id="cb5-96"><a href="#cb5-96"></a>For the optimal experience:</span>
-<span id="cb5-97"><a href="#cb5-97"></a><span class="ss">- </span>Use a modern web browser (Chrome, Firefox, Safari, or Edge)</span>
-<span id="cb5-98"><a href="#cb5-98"></a><span class="ss">- </span>Enable JavaScript for interactive features</span>
-<span id="cb5-99"><a href="#cb5-99"></a><span class="ss">- </span>Use the dark/light mode toggle for your preferred reading environment</span>
-<span id="cb5-100"><a href="#cb5-100"></a></span>
-<span id="cb5-101"><a href="#cb5-101"></a><span class="fu">### Downloading and Sharing</span></span>
-<span id="cb5-102"><a href="#cb5-102"></a></span>
-<span id="cb5-103"><a href="#cb5-103"></a><span class="ss">- </span>Click the download icon (⬇️) to download a PDF or EPUB version</span>
-<span id="cb5-104"><a href="#cb5-104"></a><span class="ss">- </span>Use the share buttons to share specific chapters on social media</span>
+<div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="an">title:</span><span class="co"> Preface</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="an">engine:</span><span class="co"> knitr</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="an">suppress-bibliography:</span><span class="co"> true</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="an">format:</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="co">  html:</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="co">    css: cover-styles.css</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a></span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="co"># Add enhanced Open Graph tags for WhatsApp</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="an">include-in-header:</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="co">  text: |</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="co">    &lt;!-- Open Graph Tags for WhatsApp --&gt;</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a><span class="co">    &lt;meta property="og:type" content="website" /&gt;</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a><span class="co">    &lt;meta property="og:title" content="Pythia - Forecasting and Analysis" /&gt;</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a><span class="co">    &lt;meta property="og:description" content= "Effective business planning relies heavily on consistent and accurate forecasts across various levels of aggregation, granularity, and time horizons.." /&gt;</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a><span class="co">    &lt;meta property="og:url" content="https://pythia.smart-r.nl/" /&gt;</span></span>
+<span id="cb7-18"><a href="#cb7-18"></a><span class="co">    &lt;meta property="og:image" content="https://pythia.smart-r.nl/images/pythia_logo_cover.png" /&gt;</span></span>
+<span id="cb7-19"><a href="#cb7-19"></a><span class="co">    &lt;meta property="og:image:width" content="1000" /&gt;</span></span>
+<span id="cb7-20"><a href="#cb7-20"></a><span class="co">    &lt;meta property="og:image:height" content="530" /&gt;</span></span>
+<span id="cb7-21"><a href="#cb7-21"></a><span class="co">    &lt;meta property="og:image:type" content="image/png" /&gt;</span></span>
+<span id="cb7-22"><a href="#cb7-22"></a><span class="co">    &lt;meta property="og:image:secure_url" content="https://pythia.smart-r.nl/images/pythia_logo_cover.png" /&gt;        </span></span>
+<span id="cb7-23"><a href="#cb7-23"></a><span class="co">        </span></span>
+<span id="cb7-24"><a href="#cb7-24"></a><span class="co">---</span></span>
+<span id="cb7-25"><a href="#cb7-25"></a></span>
+<span id="cb7-26"><a href="#cb7-26"></a>::: {.cover-container}</span>
+<span id="cb7-27"><a href="#cb7-27"></a><span class="al">![](images/pythia_logo_cover.png)</span>{width=50% fig-align="center" .cover-image}</span>
+<span id="cb7-28"><a href="#cb7-28"></a>:::</span>
+<span id="cb7-29"><a href="#cb7-29"></a></span>
+<span id="cb7-30"><a href="#cb7-30"></a></span>
+<span id="cb7-31"><a href="#cb7-31"></a><span class="fu">## Acknowledgments {.appendix .unnumbered}</span></span>
+<span id="cb7-32"><a href="#cb7-32"></a></span>
+<span id="cb7-33"><a href="#cb7-33"></a>I am grateful for the insightful comments offered by {{<span class="dt">&lt;</span><span class="kw">var</span><span class="ot"> mentor </span><span class="dt">&gt;</span>}}. These have improved this study in innumerable ways and saved me from many errors; those that inevitably remain are entirely my own responsibility.</span>
+<span id="cb7-34"><a href="#cb7-34"></a></span>
+<span id="cb7-35"><a href="#cb7-35"></a><span class="fu">## How to Read This Book</span></span>
+<span id="cb7-36"><a href="#cb7-36"></a></span>
+<span id="cb7-37"><a href="#cb7-37"></a>This guide will help you navigate through this book and make the most of its features.</span>
+<span id="cb7-38"><a href="#cb7-38"></a></span>
+<span id="cb7-39"><a href="#cb7-39"></a><span class="fu">### Book Structure</span></span>
+<span id="cb7-40"><a href="#cb7-40"></a></span>
+<span id="cb7-41"><a href="#cb7-41"></a>This book is organized into the following main sections:</span>
+<span id="cb7-42"><a href="#cb7-42"></a></span>
+<span id="cb7-43"><a href="#cb7-43"></a><span class="ss">- </span>**Preface**: Acknowledgments and how to read this book</span>
+<span id="cb7-44"><a href="#cb7-44"></a><span class="ss">- </span>**Main Research**: Exploration of each phase of the CRISP-DM methodology in the <span class="co">[</span><span class="ot">Research Analysis</span><span class="co">](nb/00_pythias_advice_rev.html)</span> </span>
+<span id="cb7-45"><a href="#cb7-45"></a><span class="ss">- </span>**Appendix**: Detailed CRISP-DM phases with coding, additional resources, references, and supplementary materials</span>
+<span id="cb7-46"><a href="#cb7-46"></a></span>
+<span id="cb7-47"><a href="#cb7-47"></a><span class="fu">### Navigation Features</span></span>
+<span id="cb7-48"><a href="#cb7-48"></a></span>
+<span id="cb7-49"><a href="#cb7-49"></a>This book includes several features to enhance your reading experience:</span>
+<span id="cb7-50"><a href="#cb7-50"></a></span>
+<span id="cb7-51"><a href="#cb7-51"></a><span class="fu">#### Table of Contents</span></span>
+<span id="cb7-52"><a href="#cb7-52"></a>The sidebar on the left provides a full table of contents. Click on any section to navigate directly to it.</span>
+<span id="cb7-53"><a href="#cb7-53"></a></span>
+<span id="cb7-54"><a href="#cb7-54"></a><span class="fu">#### Search Function</span></span>
+<span id="cb7-55"><a href="#cb7-55"></a>Use the search icon (🔍) in the top navigation bar to search for specific terms throughout the book.</span>
+<span id="cb7-56"><a href="#cb7-56"></a></span>
+<span id="cb7-57"><a href="#cb7-57"></a><span class="fu">#### Code Blocks</span></span>
+<span id="cb7-58"><a href="#cb7-58"></a></span>
+<span id="cb7-61"><a href="#cb7-61"></a><span class="in">```{r}</span></span>
+<span id="cb7-62"><a href="#cb7-62"></a><span class="co">#| echo:      true</span></span>
+<span id="cb7-63"><a href="#cb7-63"></a><span class="co">#| output:    true</span></span>
+<span id="cb7-64"><a href="#cb7-64"></a><span class="co">#| include:   true</span></span>
+<span id="cb7-65"><a href="#cb7-65"></a><span class="co">#| warning:   true</span></span>
+<span id="cb7-66"><a href="#cb7-66"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb7-67"><a href="#cb7-67"></a><span class="co">#| code-summary: "Click to Show R Code"</span></span>
+<span id="cb7-68"><a href="#cb7-68"></a></span>
+<span id="cb7-69"><a href="#cb7-69"></a><span class="fu">print</span>(<span class="st">"This is a collapsible R code block"</span>)  <span class="co"># code line 1</span></span>
+<span id="cb7-70"><a href="#cb7-70"></a><span class="fu">print</span>(<span class="st">"it improves reading of the document"</span>) <span class="co"># code line 2)</span></span>
+<span id="cb7-71"><a href="#cb7-71"></a><span class="in">```</span></span>
+<span id="cb7-72"><a href="#cb7-72"></a></span>
+<span id="cb7-73"><a href="#cb7-73"></a></span>
+<span id="cb7-76"><a href="#cb7-76"></a><span class="in">```{r}</span></span>
+<span id="cb7-77"><a href="#cb7-77"></a><span class="co">#| echo: true</span></span>
+<span id="cb7-78"><a href="#cb7-78"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb7-79"><a href="#cb7-79"></a><span class="co">#| code-summary: "Click to Show the Code"</span></span>
+<span id="cb7-80"><a href="#cb7-80"></a></span>
+<span id="cb7-81"><a href="#cb7-81"></a><span class="co"># Sample R Code</span></span>
+<span id="cb7-82"><a href="#cb7-82"></a><span class="fu">print</span>(<span class="st">"Hello, Quarto!"</span>)</span>
+<span id="cb7-83"><a href="#cb7-83"></a></span>
+<span id="cb7-84"><a href="#cb7-84"></a><span class="in">```</span></span>
+<span id="cb7-85"><a href="#cb7-85"></a></span>
+<span id="cb7-86"><a href="#cb7-86"></a><span class="ss">- </span>Code blocks have a copy button (📋) in the top-right corner</span>
+<span id="cb7-87"><a href="#cb7-87"></a><span class="ss">- </span>Some code blocks can be expanded to show more details</span>
+<span id="cb7-88"><a href="#cb7-88"></a><span class="ss">- </span>You can also toggle between code and output views</span>
+<span id="cb7-89"><a href="#cb7-89"></a></span>
+<span id="cb7-90"><a href="#cb7-90"></a><span class="fu">#### Cross-References</span></span>
+<span id="cb7-91"><a href="#cb7-91"></a>This book contains cross-references to figures, tables, and sections that appear as links like <span class="co">[</span><span class="ot">Figure 1.2</span><span class="co">](#)</span> or <span class="co">[</span><span class="ot">Chapter 3</span><span class="co">](#)</span>.</span>
+<span id="cb7-92"><a href="#cb7-92"></a></span>
+<span id="cb7-93"><a href="#cb7-93"></a><span class="fu">#### Interactive Elements</span></span>
+<span id="cb7-94"><a href="#cb7-94"></a>Some sections contain interactive elements:</span>
+<span id="cb7-95"><a href="#cb7-95"></a><span class="ss">- </span>Click on images to enlarge them</span>
+<span id="cb7-96"><a href="#cb7-96"></a><span class="ss">- </span>Interactive visualizations allow you to explore data</span>
+<span id="cb7-97"><a href="#cb7-97"></a><span class="ss">- </span>Collapsible sections can be expanded for additional details</span>
+<span id="cb7-98"><a href="#cb7-98"></a></span>
+<span id="cb7-99"><a href="#cb7-99"></a><span class="fu">### Reading Pathways</span></span>
+<span id="cb7-100"><a href="#cb7-100"></a></span>
+<span id="cb7-101"><a href="#cb7-101"></a>There are multiple ways to approach this book:</span>
+<span id="cb7-102"><a href="#cb7-102"></a></span>
+<span id="cb7-103"><a href="#cb7-103"></a><span class="ss">1. </span>**Sequential Reading**: Follow the chapters in order for a comprehensive understanding</span>
+<span id="cb7-104"><a href="#cb7-104"></a><span class="ss">2. </span>**Topic-Based**: Use the search function to find specific topics of interest</span>
+<span id="cb7-105"><a href="#cb7-105"></a><span class="ss">3. </span>**Reference Use**: Bookmark key sections for future reference</span>
+<span id="cb7-106"><a href="#cb7-106"></a></span>
+<span id="cb7-107"><a href="#cb7-107"></a><span class="fu">### Best Viewing Experience</span></span>
+<span id="cb7-108"><a href="#cb7-108"></a></span>
+<span id="cb7-109"><a href="#cb7-109"></a>For the optimal experience:</span>
+<span id="cb7-110"><a href="#cb7-110"></a><span class="ss">- </span>Use a modern web browser (Chrome, Firefox, Safari, or Edge)</span>
+<span id="cb7-111"><a href="#cb7-111"></a><span class="ss">- </span>Enable JavaScript for interactive features</span>
+<span id="cb7-112"><a href="#cb7-112"></a><span class="ss">- </span>Use the dark/light mode toggle for your preferred reading environment</span>
+<span id="cb7-113"><a href="#cb7-113"></a></span>
+<span id="cb7-114"><a href="#cb7-114"></a><span class="fu">### Downloading and Sharing</span></span>
+<span id="cb7-115"><a href="#cb7-115"></a></span>
+<span id="cb7-116"><a href="#cb7-116"></a><span class="ss">- </span>Click the download icon (⬇️) to download a PDF or EPUB version</span>
+<span id="cb7-117"><a href="#cb7-117"></a><span class="ss">- </span>Use the share buttons to share specific chapters on social media</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
