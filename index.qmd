@@ -30,7 +30,8 @@ include-in-header:
 
 ## Acknowledgments {.appendix .unnumbered}
 
-I am grateful for the insightful comments offered by {{<var mentor >}}. These have improved this study in innumerable ways and saved me from many errors; those that inevitably remain are entirely my own responsibility.
+I am grateful for the insightful comments offered by ** {{<var mentor >}} **. 
+These have improved this study in innumerable ways and saved me from many errors; those that inevitably remain are entirely my own responsibility.
 
 ## How to Read This Book
 
@@ -81,9 +82,9 @@ Hovering over the link will give a sneak peek of the content.
 #### Interactive Elements
 Some sections contain interactive elements:  
 
-- Click on images to enlarge them
-- Interactive visualizations allow you to explore data
-- Collapsible sections can be expanded for additional details
+- Click on images to enlarge them  
+- Interactive visualizations allow you to explore data  
+- Collapsible sections can be expanded for additional details  
 
 ### Reading Pathways
 
@@ -97,9 +98,10 @@ The appendix provides additional resources and coding examples that can be refer
 ### Best Viewing Experience
 
 For the optimal experience:  
-- Use a modern web browser (Chrome, Firefox, Safari, or Edge)
-- Enable JavaScript for interactive features
-- Use the dark/light mode toggle for your preferred reading environment
+
+- Use a modern web browser (Chrome, Firefox, Safari, or Edge)  
+- Enable JavaScript for interactive features  
+- Use the dark/light mode toggle for your preferred reading environment  
 
 ### Downloading and Sharing
 
