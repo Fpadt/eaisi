@@ -4,7 +4,8 @@ subtitle:    Data Understanding subtitle
 description: |
   - understanding of data structure, content & quality
   - initial exploratory data analysis (EDA) to identify patterns, trends, and relationships within the data.
-number-sections:    true  
+suppress-bibliography: true
+number-sections:       true  
 editor: source  
 ---
 

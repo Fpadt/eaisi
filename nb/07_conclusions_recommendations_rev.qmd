@@ -2,9 +2,10 @@
 title:       Conclusions
 subtitle:    Conclusions subtitle
 description: |
-  concluding a  3% difference.
+  - Conclusions – Synthesis of findings, key takeaways, and their significance.
+  - Recommendations – Suggested actions or further research directions.
+suppress-bibliography: true  
 editor: source
 ---
 
-Conclusions – Synthesis of findings, key takeaways, and their significance.
-Recommendations – Suggested actions or further research directions.
+3%

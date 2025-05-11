@@ -5,6 +5,7 @@ description: |
   other.
 engine: knitr  
 editor: source
+suppress-bibliography: true
 ---
 
 

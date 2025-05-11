@@ -1,9 +1,9 @@
 ---
-title: "Resources"
-author: "F.J. Padt"
+title:                 Resources
+author:                F.J. Padt
 suppress-bibliography: true
-engine: knitr  
-editor: source
+engine:                knitr  
+editor:                source
 ---
 
 # Resources {.unnumbered}

@@ -3,7 +3,8 @@ title:       Modelling
 subtitle:    Modelling subtitle
 description: |
   - model selection
-number-sections:    true  
+suppress-bibliography: true  
+number-sections:       true  
 editor: source
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "CRISP-DM"
 author: "F.J. Padt"
+suppress-bibliography: true
 ---
 
 ## CRISP-DM {#sec-crisp-dm}
