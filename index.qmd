@@ -64,20 +64,10 @@ Use the search icon (🔍) in the top navigation bar to search for specific term
 #| code-fold: true
 #| code-summary: "Click to Show R Code"
 
-print("This is a collapsible R code block")  # code line 1
-print("it improves reading of the document") # code line 2)
+print("This is a collapsible R code block")   # code line 1
+x <- 42 # it improves reading of the document # code line 2)
 ```
 
-
-```{r}
-#| echo: true
-#| code-fold: true
-#| code-summary: "Click to Show the Code"
-
-# Sample R Code
-print("Hello, Quarto!")
-
-```
 
 - Code blocks have a copy button (📋) in the top-right corner
 - Some code blocks can be expanded to show more details

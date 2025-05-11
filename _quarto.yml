@@ -167,8 +167,8 @@ format:
     # background-color: "#004D40"
     toc:                true
     toc-depth:          3
-    code-tools: 
-      toggle: true             # Enable toggle button
+    # code-tools: 
+      # toggle: true             # Enable toggle button
     code-line-numbers:  true   # Show line numbers
     code-fold:          true   # Enable code folding
     code-fold-default:  hide
