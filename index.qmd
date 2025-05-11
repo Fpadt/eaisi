@@ -99,6 +99,7 @@ For the optimal experience:
 
 ### Downloading and Sharing
 
-- Click the download icon (⬇️) to download a PDF or EPUB version
-- use the save button(💾) to save resources from @sec-resources
-- Use the share buttons to share specific chapters on social media
+- Access the source code and data in GitHub with the github icon. 
+- The pdf icon will open the book as a PDF.
+- In section @sec-resources the pptx and other resources can be locally saved(💾).
+- Use the share buttons to share specific chapters on social media.
