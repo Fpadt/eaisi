@@ -66,6 +66,8 @@ Use the search icon (🔍) in the top navigation bar to search for specific term
 
 print("This is a collapsible R code block")   # code line 1
 
+# test
+x <- 42
 ```
 
 
@@ -74,7 +76,7 @@ print("This is a collapsible R code block")   # code line 1
 - You can also toggle between code and output views
 
 #### Cross-References
-This book contains cross-references to figures, tables, and sections that appear as links like [Figure 1.2](#) or [Chapter 3](#).
+This book contains cross-references to figures, tables, and sections that appear as links like @fig-bu-why or [Research Analysis](nb/00_pythias_advice_rev.html).
 
 #### Interactive Elements
 Some sections contain interactive elements:
