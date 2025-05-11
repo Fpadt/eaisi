@@ -1,9 +1,3 @@
-::: {#def-01-OOD}
-**OOD:**
-
-Out of Date
-:::
-
 ::: {#def-01-RMSE}
 **RMSE:**
 

@@ -10,7 +10,6 @@ suppress-bibliography: true
 editor: source  
 ---
 
-@def-01-OOD
 
 ::: {#fig-bu-why .figure}
 ![](../images/bu_why.png){fig-alt="Why is forecasting important? It drives the business" fig-align="left" fig-width="15cm"}\]

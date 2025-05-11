@@ -74,7 +74,9 @@ x <- 42   # code line 2
 - You can also toggle between code and output views
 
 #### Cross-References
-This book contains cross-references to figures, tables, and sections that appear as links like @fig-bu-why or [Research Analysis](nb/00_pythias_advice_rev.html).
+This book contains cross-references to figures (@fig-bu-why), definitions (@def-RSME), 
+and sections ([Research Analysis](nb/00_pythias_advice_rev.html)).
+Hovering over the link will give a sneak peek of the content.
 
 #### Interactive Elements
 Some sections contain interactive elements:  
