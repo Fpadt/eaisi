@@ -57,7 +57,10 @@ Use the search icon (🔍) in the top navigation bar to search for specific term
 #### Code Blocks
 
 ```{r}
-#| echo: true
+#| echo:      true
+#| output:    true
+#| include:   true
+#| warning:   true
 #| code-fold: true
 #| code-summary: "Click to Show R Code"
 
