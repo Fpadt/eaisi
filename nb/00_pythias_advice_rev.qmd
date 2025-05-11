@@ -52,7 +52,7 @@ description: |
 plain-language-summary: |
   Balance the benefits of higher forecast accuracy with the cost of additional resources ...
 
-
+suppress-bibliography: true
 ---
 
 <!-- White Paper: Research Analysis -->

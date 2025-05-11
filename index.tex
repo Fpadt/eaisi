@@ -636,7 +636,7 @@ See Figure Figure~\ref{fig-bu-why} for the thumbnail overview.
 floris@smart-r.nl\\
 \textbf{?meta:subtitle}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colback=white, colframe=quarto-callout-note-color-frame, opacityback=0, bottomrule=.15mm, titlerule=0mm, leftrule=.75mm, left=2mm, rightrule=.15mm, bottomtitle=1mm, coltitle=black, toptitle=1mm, opacitybacktitle=0.6, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, opacityback=0, colframe=quarto-callout-note-color-frame, rightrule=.15mm, breakable, left=2mm, bottomtitle=1mm, colback=white, toptitle=1mm, arc=.35mm]
 
 Note that there are five types of callouts, including: \texttt{note},
 \texttt{warning}, \texttt{important}, \texttt{tip}, and
@@ -644,13 +644,13 @@ Note that there are five types of callouts, including: \texttt{note},
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip with Title}, colback=white, colframe=quarto-callout-tip-color-frame, opacityback=0, bottomrule=.15mm, titlerule=0mm, leftrule=.75mm, left=2mm, rightrule=.15mm, bottomtitle=1mm, coltitle=black, toptitle=1mm, opacitybacktitle=0.6, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip with Title}, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, opacityback=0, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, breakable, left=2mm, bottomtitle=1mm, colback=white, toptitle=1mm, arc=.35mm]
 
 This is an example of a callout with a title.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, colbacktitle=quarto-callout-caution-color!10!white, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Expand To Learn About Collapse}, colback=white, colframe=quarto-callout-caution-color-frame, opacityback=0, bottomrule=.15mm, titlerule=0mm, leftrule=.75mm, left=2mm, rightrule=.15mm, bottomtitle=1mm, coltitle=black, toptitle=1mm, opacitybacktitle=0.6, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, colbacktitle=quarto-callout-caution-color!10!white, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Expand To Learn About Collapse}, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, bottomrule=.15mm, opacityback=0, colframe=quarto-callout-caution-color-frame, rightrule=.15mm, breakable, left=2mm, bottomtitle=1mm, colback=white, toptitle=1mm, arc=.35mm]
 
 This is an example of a `folded' caution callout that can be expanded by
 the user. You can use \texttt{collapse="true"} to collapse it by default
@@ -2231,7 +2231,7 @@ Conway}.
 \item
   SCOR MODEL A COMPLETE GUIDE - 2020 EDITION, (BLOKDYK, 2019)
 \item
-  Inventory and production management in supply chains, (Silver et al.,
+  Inventory and production management in supply chains, (Silver et al,
   2021)
 \end{itemize}
 
@@ -2240,7 +2240,7 @@ Conway}.
 \begin{itemize}
 \tightlist
 \item
-  Forecasting: Principles and Practice (3rd ed), (Hyndman \&
+  Forecasting: Principles and Practice (3rd ed), (Hyndman and
   Athanasopoulos, 2021)
 \item
   Demand forecasting best practices, (Vandeput, 2023)
@@ -2279,7 +2279,7 @@ Conway}.
   (\emph{Nixtla/mlforecast}, 2024)
 \item
   Probabilistic hierarchical forecasting with statistical and
-  econometric methods, (\emph{Nixtla/hierarchicalforecast}, n.d.)
+  econometric methods, (Nixtla/hierarchicalforecast, n.d.)
 \item
   TS Features, calculates various features from time series data,
   (\emph{Nixtla/tsfeatures}, 2024)
@@ -2292,13 +2292,11 @@ Conway}.
 \item
   R for Data Science, (Wickham, n.d.)
 \item
-  R forecasting package, (Hyndman {[}aut, cre, cph, Athanasopoulos,
-  Bergmeir, et al., 2024)
+  R forecasting package, (Hyndman {[}aut et al, 2024a)
 \item
-  R feasts package, (O'Hara-Wild, Hyndman, Wang, Cook, et al., 2024)
+  R feasts package, (O'Hara-Wild et al, 2024a)
 \item
-  R fable package, (O'Hara-Wild, Hyndman, Wang, implementation), et al.,
-  2024)
+  R fable package, (O'Hara-Wild et al, 2024b)
 \end{itemize}
 
 \begin{landscape}
@@ -2412,155 +2410,212 @@ requirements}}{Deliverables \& requirements}}\label{deliverables-requirements}
 \markboth{References}{References}
 
 \phantomsection\label{refs}
-\begin{CSLReferences}{1}{0}
+\begin{CSLReferences}{0}{0}
 \bibitem[\citeproctext]{ref-barrett_datatable_2024}
-Barrett, T., Dowle, M., Srinivasan, A., Gorecki, J., Chirico, M.,
-Hocking, T., Schwendinger, B., Stetsenko, P., Short, T., Lianoglou, S.,
-Antonyan, E., Bonsch, M., Parsonage, H., Ritchie, S., Ren, K., Tan, X.,
-Saporta, R., Seiskari, O., Dong, X., \ldots{} Krylov, I. (2024).
-\emph{Data.table: {Extension} of 'data.frame'}.
+\textbf{Barrett}, \textbf{T}, \textbf{Dowle}, \textbf{M},
+\textbf{Srinivasan}, \textbf{A}, \textbf{Gorecki}, \textbf{J},
+\textbf{Chirico}, \textbf{M}, \textbf{Hocking}, \textbf{T},
+\textbf{Schwendinger}, \textbf{B}, \textbf{Stetsenko}, \textbf{P},
+\textbf{Short}, \textbf{T}, \textbf{Lianoglou}, \textbf{S},
+\textbf{Antonyan}, \textbf{E}, \textbf{Bonsch}, \textbf{M},
+\textbf{Parsonage}, \textbf{H}, \textbf{Ritchie}, \textbf{S},
+\textbf{Ren}, \textbf{K}, \textbf{Tan}, \textbf{X}, \textbf{Saporta},
+\textbf{R}, \textbf{Seiskari}, \textbf{O}, \textbf{Dong}, \textbf{X},
+\textbf{Lang}, \textbf{M}, \textbf{Iwasaki}, \textbf{W},
+\textbf{Wenchel}, \textbf{S}, \textbf{Broman}, \textbf{K},
+\textbf{Schmidt}, \textbf{T}, \textbf{Arenburg}, \textbf{D},
+\textbf{Smith}, \textbf{E}, \textbf{Cocquemas}, \textbf{F},
+\textbf{Gomez}, \textbf{M}, \textbf{Chataignon}, \textbf{P},
+\textbf{Blaser}, \textbf{N}, \textbf{Selivanov}, \textbf{D},
+\textbf{Riabushenko}, \textbf{A}, \textbf{Lee}, \textbf{C},
+\textbf{Groves}, \textbf{D}, \textbf{Possenriede}, \textbf{D},
+\textbf{Parages}, \textbf{F}, \textbf{Toth}, \textbf{D},
+\textbf{Yaramaz-David}, \textbf{M}, \textbf{Perumal}, \textbf{A},
+\textbf{Sams}, \textbf{J}, \textbf{Morgan}, \textbf{M}, \textbf{Quinn},
+\textbf{M}, \textbf{@javrucebo}, \textbf{@marc-outins}, \textbf{Storey},
+\textbf{R}, \textbf{Saraswat}, \textbf{M}, \textbf{Jacob}, \textbf{M},
+\textbf{Schubmehl}, \textbf{M}, \textbf{Vaughan}, \textbf{D},
+\textbf{Silvestri}, \textbf{L}, \textbf{Hester}, \textbf{J},
+\textbf{Damico}, \textbf{A}, \textbf{Freundt}, \textbf{S},
+\textbf{Simons}, \textbf{D}, \textbf{Andrade}, \textbf{E S de},
+\textbf{Miller}, \textbf{C}, \textbf{Meldgaard}, \textbf{J P},
+\textbf{Tlapak}, \textbf{V}, \textbf{Ushey}, \textbf{K},
+\textbf{Eddelbuettel}, \textbf{D}, \textbf{Fischetti}, \textbf{T},
+\textbf{Shilon}, \textbf{O}, \textbf{Khotilovich}, \textbf{V},
+\textbf{Wickham}, \textbf{H}, \textbf{Becker}, \textbf{B},
+\textbf{Haynes}, \textbf{K}, \textbf{Kamgang}, \textbf{B C},
+\textbf{Delmarcell}, \textbf{O}, \textbf{O'Brien}, \textbf{J},
+\textbf{Mezquita}, \textbf{D de}, \textbf{Czekanski}, \textbf{M},
+\textbf{Shemetov}, \textbf{D}, \textbf{Jha}, \textbf{N}, \textbf{Wu},
+\textbf{J}, \textbf{Giné-Vázquez}, \textbf{I}, \textbf{Chetia},
+\textbf{A}, \textbf{Amoakohene}, \textbf{D}, and \textbf{Krylov},
+\textbf{I} 2024 Data.table: {Extension} of 'data.frame'. Available at
 \url{https://cran.r-project.org/web/packages/data.table/index.html}
+{[}Last accessed 13 October 2024{]}.
 
 \bibitem[\citeproctext]{ref-blokdyk_scor_2019}
-BLOKDYK, G. (2019). \emph{{SCOR} {MODEL} {A} {COMPLETE} {GUIDE} - 2020
-{EDITION}}. 5STARCOOKS.
+\textbf{BLOKDYK}, \textbf{G} 2019 \emph{{SCOR} {MODEL} {A} {COMPLETE}
+{GUIDE} - 2020 {EDITION}}. {[}S.l.{]}: 5STARCOOKS.
 
 \bibitem[\citeproctext]{ref-r_core_team_r_2024}
-Core Team\}, \{R. (2024). \emph{R: {A} {Language} and {Environment} for
-{Statistical} {Computing}}. R Foundation for Statistical Computing.
+\textbf{Core Team\}}, \textbf{\{R} 2024 R: {A} {Language} and
+{Environment} for {Statistical} {Computing}. Available at
 \url{https://www.R-project.org/}
 
 \bibitem[\citeproctext]{ref-costa_crisp-ml_2022}
-Costa, R. (2022). \emph{The {CRISP}-{ML} {Methodology}: {A}
-{Step}-by-{Step} {Approach} to {Real}-{World} {Machine} {Learning}
+\textbf{Costa}, \textbf{R} 2022 \emph{The {CRISP}-{ML} {Methodology}:
+{A} {Step}-by-{Step} {Approach} to {Real}-{World} {Machine} {Learning}
 {Projects}}. Independently published.
 
 \bibitem[\citeproctext]{ref-debruine_glossary_2023}
-DeBruine, L. (2023). \emph{Glossary: {Glossaries} for {Markdown} and
-{Quarto} {Documents}}.
-\url{https://cran.r-project.org/web/packages/glossary/}
+\textbf{DeBruine}, \textbf{L} 2023 Glossary: {Glossaries} for {Markdown}
+and {Quarto} {Documents}. Available at
+\url{https://cran.r-project.org/web/packages/glossary/} {[}Last accessed
+13 October 2024{]}.
 
 \bibitem[\citeproctext]{ref-guja_generative_2025}
-Guja, A., \& Siwiak, M. (2025). \emph{Generative {AI} for {Data}
-{Analytics}.} Manning Publications Co. LLC 2025.
+\textbf{Guja}, \textbf{A} and \textbf{Siwiak}, \textbf{M} 2025
+\emph{Generative {AI} for {Data} {Analytics}.} Manning Publications Co.
+LLC 2025.
 
 \bibitem[\citeproctext]{ref-hartshorn_machine_2017}
-Hartshorn, S. (2017). \emph{Machine {Learning} {With} {Boosting}: {A}
-{Beginner}'s {Guide}}.
+\textbf{Hartshorn}, \textbf{S} 2017 \emph{Machine {Learning} {With}
+{Boosting}: {A} {Beginner}'s {Guide}}.
 
 \bibitem[\citeproctext]{ref-hyndmanaut2024}
-Hyndman {[}aut, R., cre, cph, Athanasopoulos, G., Bergmeir, C., Caceres,
-G., Chhay, L., Kuroptev, K., O'Hara-Wild, M., Petropoulos, F., Razbash,
-S., Wang, E., Yasmeen, F., Garza, F., Girolimetto, D., Ihaka, R., R Core
-Team, Reid, D., Shaub, D., \ldots{} Zhou, Z. (2024). \emph{Forecast:
-Forecasting functions for time series and linear models}.
+\textbf{Hyndman {[}aut}, \textbf{R}, \textbf{cre}, \textbf{cph},
+\textbf{Athanasopoulos}, \textbf{G}, \textbf{Bergmeir}, \textbf{C},
+\textbf{Caceres}, \textbf{G}, \textbf{Chhay}, \textbf{L},
+\textbf{Kuroptev}, \textbf{K}, \textbf{O'Hara-Wild}, \textbf{M},
+\textbf{Petropoulos}, \textbf{F}, \textbf{Razbash}, \textbf{S},
+\textbf{Wang}, \textbf{E}, \textbf{Yasmeen}, \textbf{F}, \textbf{Garza},
+\textbf{F}, \textbf{Girolimetto}, \textbf{D}, \textbf{Ihaka},
+\textbf{R}, \textbf{R Core Team}, \textbf{Reid}, \textbf{D},
+\textbf{Shaub}, \textbf{D}, \textbf{Tang}, \textbf{Y}, \textbf{Wang},
+\textbf{X}, and \textbf{Zhou}, \textbf{Z} 2024a \emph{Forecast:
+Forecasting functions for time series and linear models}. Available at
 \url{https://cran.r-project.org/web/packages/forecast/index.html}
 
 \bibitem[\citeproctext]{ref-hyndman__aut_fpp3_2024}
-Hyndman {[}aut, R., cre, cph, Athanasopoulos, G., O'Hara-Wild, M.,
-Palihawadana, N., Wickramasuriya, S., \& RStudio. (2024). \emph{fpp3:
-{Data} for "{Forecasting}: {Principles} and {Practice}" (3rd
-{Edition})}.
-\url{https://cran.r-project.org/web/packages/fpp3/index.html}
+\textbf{Hyndman {[}aut}, \textbf{R}, \textbf{cre}, \textbf{cph},
+\textbf{Athanasopoulos}, \textbf{G}, \textbf{O'Hara-Wild}, \textbf{M},
+\textbf{Palihawadana}, \textbf{N}, \textbf{Wickramasuriya}, \textbf{S},
+and \textbf{RStudio} 2024b fpp3: {Data} for "{Forecasting}: {Principles}
+and {Practice}" (3rd {Edition}). Available at
+\url{https://cran.r-project.org/web/packages/fpp3/index.html} {[}Last
+accessed 13 October 2024{]}.
 
 \bibitem[\citeproctext]{ref-hyndman_forecasting_2021}
-Hyndman, R. J., \& Athanasopoulos, G. (2021). \emph{Forecasting:
-{Principles} and {Practice} (3rd ed)}. \url{https://otexts.com/fpp3/}
+\textbf{Hyndman}, \textbf{R J} and \textbf{Athanasopoulos}, \textbf{G}
+2021 \emph{Forecasting: {Principles} and {Practice} (3rd ed)}. Available
+at \url{https://otexts.com/fpp3/} {[}Last accessed 5 October 2024{]}.
 
 \bibitem[\citeproctext]{ref-kunapuli_ensemble_2023}
-Kunapuli, G. (2023). \emph{Ensemble methods for machine learning}.
-Manning.
+\textbf{Kunapuli}, \textbf{G} 2023 \emph{Ensemble methods for machine
+learning}. Shelter Island, NY: Manning.
 
 \bibitem[\citeproctext]{ref-manokhin_practical_2023}
-Manokhin, V. (2023). \emph{Practical guide to applied conformal
-prediction in {Python}: Learn and apply the best uncertainty frameworks
-to your industry applications}. {\textless{}}packt{\textgreater{}}.
+\textbf{Manokhin}, \textbf{V} 2023 \emph{Practical guide to applied
+conformal prediction in {Python}: Learn and apply the best uncertainty
+frameworks to your industry applications}. Birmingham Mumbai:
+{\textless{}}packt{\textgreater{}}.
 
 \bibitem[\citeproctext]{ref-matthes_python_2019}
-Matthes, E. (2019b). \emph{Python crash course: A hands-on,
-project-based introduction to programming} (2nd edition). No Starch
-Press.
+\textbf{Matthes}, \textbf{E} 2019b \emph{Python crash course: A
+hands-on, project-based introduction to programming}. 2nd edition. San
+Francisco, CA: No Starch Press.
 
 \bibitem[\citeproctext]{ref-matthes2019}
-Matthes, E. (2019a). \emph{Python crash course: A hands-on,
-project-based introduction to programming} (2nd edition). No Starch
-Press.
+\textbf{Matthes}, \textbf{E} 2019a \emph{Python crash course: A
+hands-on, project-based introduction to programming}. 2nd edition. San
+Francisco, CA: No Starch Press.
 
 \bibitem[\citeproctext]{ref-molnar_introduction_2023}
-Molnar, C. (2023). \emph{Introduction to conformal prediction with
-{Python}: A short guide for quantifying uncertainty of machine learning
-models} (First edition). Chistoph Molnar c/o MUCBOOK, Heidi Seibold.
+\textbf{Molnar}, \textbf{C} 2023 \emph{Introduction to conformal
+prediction with {Python}: A short guide for quantifying uncertainty of
+machine learning models}. First edition. München, Germany: Chistoph
+Molnar c/o MUCBOOK, Heidi Seibold. Available at
 \url{https://christophmolnar.com/books/conformal-prediction/}
 
 \bibitem[\citeproctext]{ref-nixtlaux2fh}
-\emph{Nixtla/hierarchicalforecast: Probabilistic hierarchical
-forecasting 👑 with statistical and econometric methods.} (n.d.).
+Nixtla/hierarchicalforecast: Probabilistic hierarchical forecasting 👑
+with statistical and econometric methods. n.d. Available at
 \url{https://github.com/Nixtla/hierarchicalforecast}
 
 \bibitem[\citeproctext]{ref-nixtlaux2fm2024}
-\emph{Nixtla/mlforecast}. (2024). Nixtla.
+\emph{Nixtla/mlforecast} 2024. Nixtla. Available at
 \url{https://github.com/Nixtla/mlforecast}
 
 \bibitem[\citeproctext]{ref-nixtlaux2fs2024}
-\emph{Nixtla/statsforecast}. (2024). Nixtla.
+\emph{Nixtla/statsforecast} 2024. Nixtla. Available at
 \url{https://github.com/Nixtla/statsforecast}
 
 \bibitem[\citeproctext]{ref-nixtlaux2ft2024}
-\emph{Nixtla/tsfeatures}. (2024). Nixtla.
+\emph{Nixtla/tsfeatures} 2024. Nixtla. Available at
 \url{https://github.com/Nixtla/tsfeatures}
 
 \bibitem[\citeproctext]{ref-ohara-wild2024a}
-O'Hara-Wild, M., Hyndman, R., Wang, E., Cook, D., features), T. T.
-(Correlation., \& method), L. C. (Guerrero's. (2024). \emph{Feasts:
-Feature extraction and statistics for time series}.
+\textbf{O'Hara-Wild}, \textbf{M}, \textbf{Hyndman}, \textbf{R},
+\textbf{Wang}, \textbf{E}, \textbf{Cook}, \textbf{D},
+\textbf{features)}, \textbf{T T (Correlation}, and \textbf{method)},
+\textbf{L C (Guerrero's} 2024a \emph{Feasts: Feature extraction and
+statistics for time series}. Available at
 \url{https://cran.r-project.org/web/packages/feasts/index.html}
 
 \bibitem[\citeproctext]{ref-ohara-wild2024}
-O'Hara-Wild, M., Hyndman, R., Wang, E., implementation), G. C. (NNETAR.,
-Bergmeir, C., Hensel, T.-G., \& Hyndman, T. (2024). \emph{Fable:
-Forecasting models for tidy time series}.
+\textbf{O'Hara-Wild}, \textbf{M}, \textbf{Hyndman}, \textbf{R},
+\textbf{Wang}, \textbf{E}, \textbf{implementation)}, \textbf{G C
+(NNETAR}, \textbf{Bergmeir}, \textbf{C}, \textbf{Hensel}, \textbf{T-G},
+and \textbf{Hyndman}, \textbf{T} 2024b \emph{Fable: Forecasting models
+for tidy time series}. Available at
 \url{https://cran.r-project.org/web/packages/fable/index.html}
 
+\bibitem[\citeproctext]{ref-osullivan_shap_2024}
+\textbf{O'Sullivan}, \textbf{C} 2024 {SHAP} with {Python}. \emph{SHAP
+with Python}. Available at \url{https://adataodyssey.com/course/}
+
 \bibitem[\citeproctext]{ref-osullivan_introduction_2023}
-O'Sullivan, C. (2023). Introduction to {SHAP} with {Python}. In
-\emph{Introduction to SHAP with Python}.
+\textbf{O'Sullivan}, \textbf{C} 2023 Introduction to {SHAP} with
+{Python}. \emph{Introduction to SHAP with Python}. Available at
 \url{https://towardsdatascience.com/introduction-to-shap-with-python-d27edc23c454}
 
-\bibitem[\citeproctext]{ref-osullivan_shap_2024}
-O'Sullivan, C. (2024). {SHAP} with {Python} {[}Course{]}. In \emph{SHAP
-with Python}. \url{https://adataodyssey.com/course/}
-
 \bibitem[\citeproctext]{ref-porter_learn_2024}
-Porter, L., \& Zingaro, D. (2024). \emph{Learn {AI}-assisted {Python}
-programming: With {GitHub} {Copilot} and {ChatGPT}}. Manning.
+\textbf{Porter}, \textbf{L} and \textbf{Zingaro}, \textbf{D} 2024
+\emph{Learn {AI}-assisted {Python} programming: With {GitHub} {Copilot}
+and {ChatGPT}}. Shelter Island, NY: Manning.
 
 \bibitem[\citeproctext]{ref-silver_inventory_2021}
-Silver, E. A., Pyke, D. F., \& Thomas, D. J. (2021). \emph{Inventory and
-production management in supply chains} (Fourth edition, first issued in
-paperback). CRC Press, Taylor \& Francis Group.
-
-\bibitem[\citeproctext]{ref-vandeput_inventory_2020}
-Vandeput, N. (2020). \emph{Inventory optimization: Models and
-simulations}. De Gruyter.
-
-\bibitem[\citeproctext]{ref-vandeput_data_2021}
-Vandeput, N. (2021). \emph{Data science for supply chain forecasting}
-(Second edition). De Gruyter.
+\textbf{Silver}, \textbf{E A}, \textbf{Pyke}, \textbf{D F}, and
+\textbf{Thomas}, \textbf{D J} 2021 \emph{Inventory and production
+management in supply chains}. Fourth edition, first issued in paperback.
+Boca Raton, FL London New York, NY: CRC Press, Taylor \& Francis Group.
 
 \bibitem[\citeproctext]{ref-vandeput_demand_2023}
-Vandeput, N. (2023). \emph{Demand forecasting best practices}. Manning
-Publications Co.
+\textbf{Vandeput}, \textbf{N} 2023 \emph{Demand forecasting best
+practices}. Shelter Island, NY: Manning Publications Co.
+
+\bibitem[\citeproctext]{ref-vandeput_data_2021}
+\textbf{Vandeput}, \textbf{N} 2021 \emph{Data science for supply chain
+forecasting}. Second edition. Berlin ; Boston: De Gruyter.
+
+\bibitem[\citeproctext]{ref-vandeput_inventory_2020}
+\textbf{Vandeput}, \textbf{N} 2020 \emph{Inventory optimization: Models
+and simulations}. Berlin ; Boston: De Gruyter.
 
 \bibitem[\citeproctext]{ref-wickham}
-Wickham, H. (n.d.). \emph{R for data science (2e)}.
+\textbf{Wickham}, \textbf{H} n.d. R for data science (2e). Available at
 \url{https://r4ds.hadley.nz/}
 
 \bibitem[\citeproctext]{ref-wickham_ggplot2_2024}
-Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K.,
-Wilke, C., Woo, K., Yutani, H., Dunnington, D., Brand, T. van den,
-Posit, \& PBC. (2024). \emph{ggplot2: {Create} {Elegant} {Data}
-{Visualisations} {Using} the {Grammar} of {Graphics}}.
-\url{https://cran.r-project.org/web/packages/ggplot2/index.html}
+\textbf{Wickham}, \textbf{H}, \textbf{Chang}, \textbf{W},
+\textbf{Henry}, \textbf{L}, \textbf{Pedersen}, \textbf{T L},
+\textbf{Takahashi}, \textbf{K}, \textbf{Wilke}, \textbf{C},
+\textbf{Woo}, \textbf{K}, \textbf{Yutani}, \textbf{H},
+\textbf{Dunnington}, \textbf{D}, \textbf{Brand}, \textbf{T van den},
+\textbf{Posit}, and \textbf{PBC} 2024 ggplot2: {Create} {Elegant} {Data}
+{Visualisations} {Using} the {Grammar} of {Graphics}. Available at
+\url{https://cran.r-project.org/web/packages/ggplot2/index.html} {[}Last
+accessed 13 October 2024{]}.
 
 \end{CSLReferences}
 
