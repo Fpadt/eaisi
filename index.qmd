@@ -44,7 +44,7 @@ This book is organized into the following main sections:
 
 - **Preface**: acknowledgments and how-to read this book
 - **Main Research**: exploration of each phase of the CRISP-DM methodology in the [Research Analysis](nb/00_pythias_advice_rev.html) 
-- **Appendix**: coding, additional resources, references, and supplementary materials on each CRISP-DM phase.
+- **Appendix**: coding, references, and supplementary materials on each CRISP-DM phase.
 
 ### Navigation Features
 
