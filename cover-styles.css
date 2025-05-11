@@ -19,14 +19,14 @@
 .book-title {
   font-size: 3rem;
   margin-bottom: 0.5rem;
-  color: #004D40;  /* Using your book's color scheme */
+//  color: #004D40;  /* Using your book's color scheme */
 }
 
 .book-subtitle {
   font-size: 1.8rem;
   font-weight: normal;
   margin-bottom: 3rem;
-  color: #00796B;
+//  color: #00796B;
 }
 
 .author-name {
@@ -38,7 +38,7 @@
 .institution {
   font-size: 1.2rem;
   font-weight: normal;
-  color: #555;
+//  color: #555;
 }
 
 /* Hide unnecessary page elements on the cover */

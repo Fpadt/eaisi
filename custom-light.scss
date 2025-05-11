@@ -23,9 +23,25 @@
 
 .navbar-toggler:hover,
 .navbar-toggler:focus {
-  color: #e2a348 !important;  /* Hover and focus color */
+  color: #FFFFFF !important;  /* Hover and focus color */
   background-color: #0f5e3c !important;  /* Optional: Background on hover */
 }
+
+.navbar-toggler-icon {
+  background-image: none !important;  /* Remove default Bootstrap icon */
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon span {
+  background-color: #FFFFFF !important;  /* Set icon lines to white */
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 4px auto;
+  content: "";
+}
+
 
 /* Highlight color for the active item in the index (left sidebar) */
 .sidebar .active,
