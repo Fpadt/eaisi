@@ -4,7 +4,7 @@ engine: knitr
 
 format:
   html:
-    # include-in-header: meta.html
+    include-in-header: meta.html
     css: cover-styles.css
 ---
 

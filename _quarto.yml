@@ -205,6 +205,9 @@ format:
   pdf: #arxiv-pdf:
     keep-tex:           false
     documentclass:      book #scrbook
+    include-in-header:
+      text: |
+        \documentclass[oneside]{book}    
     papersize:          a4
     geometry:
       - a4paper
