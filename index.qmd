@@ -42,9 +42,9 @@ This guide will help you navigate through this book and make the most of its fea
 
 This book is organized into the following main sections:
 
-- **Preface**: Acknowledgments and how to read this book
-- **Main Research**: Exploration of each phase of the CRISP-DM methodology in the [Research Analysis](nb/00_pythias_advice_rev.html) 
-- **Appendix**: Detailed CRISP-DM phases with coding, additional resources, references, and supplementary materials
+- **Preface**: acknowledgments and how-to read this book
+- **Main Research**: exploration of each phase of the CRISP-DM methodology in the [Research Analysis](nb/00_pythias_advice_rev.html) 
+- **Appendix**: coding, additional resources, references, and supplementary materials on each CRISP-DM phase.
 
 ### Navigation Features
 
@@ -91,12 +91,10 @@ Some sections contain interactive elements:
 
 ### Reading Pathways
 
-The [Research Analysis](nb/00_pythias_advice_rev.html) section is designed to be read in a linear fashion and follows the CRISP-DM phases. 
+Start with the [Research Analysis](nb/00_pythias_advice_rev.html) section which
+is designed to be read in a linear fashion following the CRISP-DM phases. 
 
-Details on each phase with related coding can
-be found in the appendix, each phase has it's own page, e.g. [Business Understanding](nb/01_business_understanding_rev.html)
-
-The appendix provides additional resources and coding examples that can be referenced as needed.
+In the Appendix the related coding and detailed analysis can be found on each phase of CRISP-DM, e.g. [Business Understanding](nb/01_business_understanding_rev.html)
 
 ### Best Viewing Experience
 

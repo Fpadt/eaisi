@@ -119,7 +119,7 @@ book:
         # References – Academic references, data sources, and research citations.        
         # - nb/18_references_rev.qmd
         # Resources – Tools, libraries, and datasets used, with links and explanations.        
-        # - nb/19_resources_rev.qmd
+        - nb/19_resources_rev.qmd
 
 resources:
   - notebooks/01_business_understanding.qmd  
