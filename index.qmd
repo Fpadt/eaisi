@@ -2,25 +2,10 @@
 title: Preface
 engine: knitr
 
-
 format:
   html:
+    # include-in-header: meta.html
     css: cover-styles.css
-
-# Add enhanced Open Graph tags for WhatsApp
-include-in-header:
-  text: |
-    <!-- Open Graph Tags for WhatsApp -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Pythia - Forecasting and Analysis" />
-    <meta property="og:description" content= "Effective business planning relies heavily on consistent and accurate forecasts across various levels of aggregation, granularity, and time horizons.." />
-    <meta property="og:url" content="https://pythia.smart-r.nl/" />
-    <meta property="og:image" content="https://pythia.smart-r.nl/images/pythia_logo_cover.png" />
-    <meta property="og:image:width" content="1000" />
-    <meta property="og:image:height" content="530" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:secure_url" content="https://pythia.smart-r.nl/images/pythia_logo_cover.png" />        
-        
 ---
 
 ::: {.cover-container}
