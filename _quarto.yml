@@ -50,12 +50,12 @@ crossref:
   def-title:  def
     
 execute:
-  freeze:  auto
-  cache:   true
-  echo:    false
+  freeze:  false
+  cache:   false
+  echo:    true
   output:  true
-  include: false
-  warning: false
+  include: true
+  warning: true
 
 editor: source
 
@@ -168,6 +168,9 @@ format:
     toc:                true
     toc-depth:          3
     code-fold:          true  
+    # code-overflow:      wrap
+    code-highlighting:  pygments  # Options: pygments, highlight.js, default  
+    # code-fold-default:  show      # Show code blocks by default      
     lightbox:           true
     comments:
       hypothesis:       false
