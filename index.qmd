@@ -94,7 +94,7 @@ The appendix provides additional resources and coding examples that can be refer
 
 ### Best Viewing Experience
 
-For the optimal experience:
+For the optimal experience:  
 - Use a modern web browser (Chrome, Firefox, Safari, or Edge)
 - Enable JavaScript for interactive features
 - Use the dark/light mode toggle for your preferred reading environment
