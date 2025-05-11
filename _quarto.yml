@@ -2,7 +2,6 @@ project:
   type: book
   output-dir: docs
   
-  
 date:        last-modified
 date-format: long
 
@@ -51,6 +50,7 @@ crossref:
   def-title:  def
     
 execute:
+  before-build: "Rscript update_def.R"
   freeze:  auto
   cache:   true
   echo:    false
@@ -113,7 +113,7 @@ book:
         # DAPS and Flow Down
         - nb/16_flow_down_rev.qmd
         # References – Academic references, data sources, and research citations.        
-        # - nb/18_references_rev.qmd
+        - nb/18_references_rev.qmd
         # Resources – Tools, libraries, and datasets used, with links and explanations.        
         - nb/19_resources_rev.qmd
 
@@ -140,10 +140,10 @@ key-points:
   - rules of thumb have been developed indicating what to use when
 thanks: 'Mentor: {{<var mentor >}} - EAISI Academy, MASTERING DATA & AI, Technical University Eindhoven'
 bibliography:      EAISI-PYTHIA.bib
-csl:               data-science-journal.csl #apa.csl
+csl:               apa.csl # data-science-journal.csl #apa.csl
 # cite-method:       biblatex
 # biblio-style:      nature
-appendix-style:    plain
+appendix-style:    default
 citation:
   container-title: Pythia's Advice
 license: "CC BY"

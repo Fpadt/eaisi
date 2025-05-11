@@ -90,7 +90,7 @@
     "href": "nb/08_appendix_rev.html#business-process",
     "title": "Other",
     "section": "Business Process",
-    "text": "Business Process\n\nSCOR MODEL A COMPLETE GUIDE - 2020 EDITION, (BLOKDYK, 2019)\nInventory and production management in supply chains, (Silver et al, 2021)",
+    "text": "Business Process\n\nSCOR MODEL A COMPLETE GUIDE - 2020 EDITION, (BLOKDYK, 2019)\nInventory and production management in supply chains, (Silver et al., 2021)",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Other</span>"
@@ -101,7 +101,7 @@
     "href": "nb/08_appendix_rev.html#math-statistics",
     "title": "Other",
     "section": "Math & Statistics",
-    "text": "Math & Statistics\n\nForecasting: Principles and Practice (3rd ed), (Hyndman and Athanasopoulos, 2021)\nDemand forecasting best practices, (Vandeput, 2023)\nData science for supply chain forecasting, (Vandeput, 2021)\nInventory optimization: models and simulations, (Vandeput, 2020)\nMachine Learning With Boosting: A Beginner’s Guide, (Hartshorn, 2017)\nIntroduction to conformal prediction with Python, (Molnar, 2023)\nPractical guide to applied conformal prediction in Python, (Manokhin, 2023)\nSHAP with Python, (O’Sullivan, 2024)\nIntroduction to SHAP with Python, (O’Sullivan, 2023)\nEnsemble methods for machine learning, (Kunapuli, 2023)",
+    "text": "Math & Statistics\n\nForecasting: Principles and Practice (3rd ed), (Hyndman & Athanasopoulos, 2021)\nDemand forecasting best practices, (Vandeput, 2023)\nData science for supply chain forecasting, (Vandeput, 2021)\nInventory optimization: models and simulations, (Vandeput, 2020)\nMachine Learning With Boosting: A Beginner’s Guide, (Hartshorn, 2017)\nIntroduction to conformal prediction with Python, (Molnar, 2023)\nPractical guide to applied conformal prediction in Python, (Manokhin, 2023)\nSHAP with Python, (O’Sullivan, 2024)\nIntroduction to SHAP with Python, (O’Sullivan, 2023)\nEnsemble methods for machine learning, (Kunapuli, 2023)",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Other</span>"
@@ -112,7 +112,7 @@
     "href": "nb/08_appendix_rev.html#programming",
     "title": "Other",
     "section": "Programming",
-    "text": "Programming\n\nPython\n\nPython Crash Course, (Matthes, 2019a)\nLightning fast forecasting with statistical and econometric models, (Nixtla/statsforecast, 2024)\nScalable Machine Learning for Time Series Forecasting, (Nixtla/mlforecast, 2024)\nProbabilistic hierarchical forecasting with statistical and econometric methods, (Nixtla/hierarchicalforecast, n.d.)\nTS Features, calculates various features from time series data, (Nixtla/tsfeatures, 2024)\n\n\n\nR\n\nR for Data Science, (Wickham, n.d.)\nR forecasting package, (Hyndman [aut et al, 2024a)\nR feasts package, (O’Hara-Wild et al, 2024a)\nR fable package, (O’Hara-Wild et al, 2024b)",
+    "text": "Programming\n\nPython\n\nPython Crash Course, (Matthes, 2019a)\nLightning fast forecasting with statistical and econometric models, (Nixtla/statsforecast, 2024)\nScalable Machine Learning for Time Series Forecasting, (Nixtla/mlforecast, 2024)\nProbabilistic hierarchical forecasting with statistical and econometric methods, (Nixtla/hierarchicalforecast, n.d.)\nTS Features, calculates various features from time series data, (Nixtla/tsfeatures, 2024)\n\n\n\nR\n\nR for Data Science, (Wickham, n.d.)\nR forecasting package, (Hyndman [aut, cre, cph, Athanasopoulos, Bergmeir, et al., 2024)\nR feasts package, (O’Hara-Wild, Hyndman, Wang, Cook, et al., 2024)\nR fable package, (O’Hara-Wild, Hyndman, Wang, implementation), et al., 2024)",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Other</span>"
@@ -383,6 +383,17 @@
     ]
   },
   {
+    "objectID": "nb/18_references_rev.html",
+    "href": "nb/18_references_rev.html",
+    "title": "References",
+    "section": "",
+    "text": "References\n\n\nBarrett, T., Dowle, M., Srinivasan, A., Gorecki, J., Chirico, M.,\nHocking, T., Schwendinger, B., Stetsenko, P., Short, T., Lianoglou, S.,\nAntonyan, E., Bonsch, M., Parsonage, H., Ritchie, S., Ren, K., Tan, X.,\nSaporta, R., Seiskari, O., Dong, X., … Krylov, I. (2024).\nData.table: Extension of ’data.frame’. https://cran.r-project.org/web/packages/data.table/index.html\n\n\nBLOKDYK, G. (2019). SCOR MODEL\nA COMPLETE GUIDE - 2020\nEDITION. 5STARCOOKS.\n\n\nCore Team}, {R. (2024). R: A Language and\nEnvironment for Statistical\nComputing. R Foundation for Statistical Computing. https://www.R-project.org/\n\n\nCosta, R. (2022). The CRISP-ML\nMethodology: A\nStep-by-Step Approach to\nReal-World Machine\nLearning Projects. Independently\npublished.\n\n\nDeBruine, L. (2023). Glossary: Glossaries for\nMarkdown and Quarto\nDocuments. https://cran.r-project.org/web/packages/glossary/\n\n\nGuja, A., & Siwiak, M. (2025). Generative AI for\nData Analytics. Manning Publications Co.\nLLC 2025.\n\n\nHartshorn, S. (2017). Machine Learning\nWith Boosting: A\nBeginner’s Guide.\n\n\nHyndman [aut, R., cre, cph, Athanasopoulos, G., Bergmeir, C., Caceres,\nG., Chhay, L., Kuroptev, K., O’Hara-Wild, M., Petropoulos, F., Razbash,\nS., Wang, E., Yasmeen, F., Garza, F., Girolimetto, D., Ihaka, R., R Core\nTeam, Reid, D., Shaub, D., … Zhou, Z. (2024). Forecast: Forecasting\nfunctions for time series and linear models. https://cran.r-project.org/web/packages/forecast/index.html\n\n\nHyndman [aut, R., cre, cph, Athanasopoulos, G., O’Hara-Wild, M.,\nPalihawadana, N., Wickramasuriya, S., & RStudio. (2024). fpp3:\nData for \"Forecasting: Principles\nand Practice\" (3rd Edition). https://cran.r-project.org/web/packages/fpp3/index.html\n\n\nHyndman, R. J., & Athanasopoulos, G. (2021). Forecasting:\nPrinciples and Practice (3rd ed). https://otexts.com/fpp3/\n\n\nKunapuli, G. (2023). Ensemble methods for machine learning.\nManning.\n\n\nManokhin, V. (2023). Practical guide to applied conformal prediction\nin Python: Learn and apply the best uncertainty frameworks\nto your industry applications.\n&lt;packt&gt;.\n\n\nMatthes, E. (2019b). Python crash course: A hands-on, project-based\nintroduction to programming (2nd edition). No Starch Press.\n\n\nMatthes, E. (2019a). Python crash course: A hands-on, project-based\nintroduction to programming (2nd edition). No Starch Press.\n\n\nMolnar, C. (2023). Introduction to conformal prediction with\nPython: A short guide for quantifying uncertainty of\nmachine learning models (First edition). Chistoph Molnar c/o\nMUCBOOK, Heidi Seibold. https://christophmolnar.com/books/conformal-prediction/\n\n\nNixtla/hierarchicalforecast: Probabilistic hierarchical forecasting\n👑 with statistical and econometric methods. (n.d.). https://github.com/Nixtla/hierarchicalforecast\n\n\nNixtla/mlforecast. (2024). Nixtla. https://github.com/Nixtla/mlforecast\n\n\nNixtla/statsforecast. (2024). Nixtla. https://github.com/Nixtla/statsforecast\n\n\nNixtla/tsfeatures. (2024). Nixtla. https://github.com/Nixtla/tsfeatures\n\n\nO’Hara-Wild, M., Hyndman, R., Wang, E., Cook, D., features), T. T.\n(Correlation., & method), L. C. (Guerrero’s. (2024). Feasts:\nFeature extraction and statistics for time series. https://cran.r-project.org/web/packages/feasts/index.html\n\n\nO’Hara-Wild, M., Hyndman, R., Wang, E., implementation), G. C. (NNETAR.,\nBergmeir, C., Hensel, T.-G., & Hyndman, T. (2024). Fable:\nForecasting models for tidy time series. https://cran.r-project.org/web/packages/fable/index.html\n\n\nO’Sullivan, C. (2023). Introduction to SHAP with\nPython. In Introduction to SHAP with Python. https://towardsdatascience.com/introduction-to-shap-with-python-d27edc23c454\n\n\nO’Sullivan, C. (2024). SHAP with Python\n[Course]. In SHAP with Python. https://adataodyssey.com/course/\n\n\nPorter, L., & Zingaro, D. (2024). Learn AI-assisted\nPython programming: With GitHub\nCopilot and ChatGPT. Manning.\n\n\nSilver, E. A., Pyke, D. F., & Thomas, D. J. (2021). Inventory\nand production management in supply chains (Fourth edition, first\nissued in paperback). CRC Press, Taylor & Francis Group.\n\n\nVandeput, N. (2020). Inventory optimization: Models and\nsimulations. De Gruyter.\n\n\nVandeput, N. (2021). Data science for supply chain forecasting\n(Second edition). De Gruyter.\n\n\nVandeput, N. (2023). Demand forecasting best practices. Manning\nPublications Co.\n\n\nWickham, H. (n.d.). R for data science (2e). https://r4ds.hadley.nz/\n\n\nWickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K.,\nWilke, C., Woo, K., Yutani, H., Dunnington, D., Brand, T. van den,\nPosit, & PBC. (2024). ggplot2: Create\nElegant Data Visualisations\nUsing the Grammar of\nGraphics. https://cran.r-project.org/web/packages/ggplot2/index.html",
+    "crumbs": [
+      "Appendix",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>References</span>"
+    ]
+  },
+  {
     "objectID": "nb/19_resources_rev.html",
     "href": "nb/19_resources_rev.html",
     "title": "Resources",
@@ -390,7 +401,7 @@
     "text": "Resources\n\nDownload the Business Understanding notebook (QMD) 💾\nDownload the Data Understanding notebook (QMD) 💾\nDownload EAISI Graduation Presentation (PPTX) 💾\nDownload all notebooks (ZIP) 💾",
     "crumbs": [
       "Appendix",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Resources</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Resources</span>"
     ]
   }
 ]
