@@ -77,7 +77,8 @@ x <- 42   # code line 2
 This book contains cross-references to figures, tables, and sections that appear as links like @fig-bu-why or [Research Analysis](nb/00_pythias_advice_rev.html).
 
 #### Interactive Elements
-Some sections contain interactive elements:
+Some sections contain interactive elements:  
+
 - Click on images to enlarge them
 - Interactive visualizations allow you to explore data
 - Collapsible sections can be expanded for additional details
