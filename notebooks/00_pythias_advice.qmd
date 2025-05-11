@@ -1,8 +1,16 @@
 ---
-title:       Overview
+title:       Research Analysis
 subtitle:    TRUST - is all you need!
 ---
 
+<!-- White Paper: Research Analysis -->
+<!--  Introduction – Define the research question, objectives, and structure. -->
+<!--  Business Understanding – Contextualize the business problem and its forecasting relevance. -->
+<!--  Data Understanding – Dataset description, data sources, and key variables. -->
+<!--  Data Preparation – Data preprocessing and transformation steps. -->
+<!--  Modelling – Forecasting models and techniques used. -->
+<!--  Evaluation – Analysis of model performance and key findings. -->
+<!--  Deployment – Implications for practical application. -->
 
 # Introduction
 

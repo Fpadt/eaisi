@@ -1,7 +1,0 @@
----
-title:       Insights
-subtitle:    Insights subtitle
-description: |
-  concluding a  3% difference.
-editor: source
----

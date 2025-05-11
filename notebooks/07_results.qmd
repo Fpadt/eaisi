@@ -1,7 +1,0 @@
----
-title:       Conclusions
-subtitle:    Conclusions subtitle
-description: |
-  concluding a  3% difference.
-editor: source
----

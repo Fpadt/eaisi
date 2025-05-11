@@ -65,14 +65,13 @@ book:
   subtitle: "Trust is all you need"
   favicon: images/favicon.ico
   image: images/logo_transp.png
-  # cover-image: images/pythia_logo_with_text.png
-  # cover-image-alt: |
-  #   Pythia's Advice ...  
+ 
   repo-url: https://github.com/Fpadt/eaisi/
   repo-actions: [source, issue]
   downloads: [pdf] 
   sharing: [twitter, facebook, linkedin]
   open-graph: false  
+
   page-navigation: true # Explicit navigation controls
   page-footer:
     left: "© 2025 Floris Padt: Pythia's Advice"
@@ -80,35 +79,40 @@ book:
     right: "[EAISI](https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai)"
 
   chapters:
-    - index.qmd
-    - part: "Foundations"
+    # cover + preface
+    - index.qmd                                
+    - part: "Main Research"
       chapters:
-        - inspiration.qmd                      # The myth of Pythia      
-        # - notebooks/intro-crisp-dm.qmd
-        - nb/00_pythias_advice_rev.qmd
-    - part: "CRISP-DM Phases"
-      chapters:
-        - nb/01_business_understanding_rev.qmd
-        - nb/02_data_understanding_rev.qmd
-        - nb/03_data_preparation_rev.qmd
-        - nb/04_modelling_rev.qmd
-        - nb/05_evaluation_rev.qmd
-        - nb/06_deployment_rev.qmd
-    - part: "Conclusions & Next Steps"
-      chapters:
-        - nb/07_results_rev.qmd
-        - nb/07_insights_rev.qmd
-        - nb/07_further_research_rev.qmd
+        # The myth of Pythia
+        - inspiration.qmd
+        # White Paper: Research Analysis
+        - nb/00_pythias_advice_rev.qmd 
+        # Conclusions – Synthesis of findings, key takeaways, and their significance.
+        # Recommendations – Suggested actions or further research directions.
+        - nb/07_conclusions_recommendations_rev.qmd
+      # Detailed Analysis and Supplementary Materials
     - part: "Appendix"
       chapters:
+        # Methodology & Framework: Technical Details and Coding      
         - nb/08_appendix_rev.qmd
-        # - nb/12_data_understanding_rev.qmd
-        # - nb/13_data_preparation_rev.qmd
-        # - nb/14_modelling_rev.qmd
-        # - nb/15_evaluation_rev.qmd        
-        - nb/16_flow_down_rev.qmd
+        # CRISP-DM: Detailed Process Flow – Deeper dive into each phase with coding snippets.
         - nb/17_crisp-dm_rev.qmd
-        - nb/18_references_rev.qmd
+        # Business Understanding: Analytical Frameworks
+        - nb/01_business_understanding_rev.qmd
+        # Data Understanding: Data Dictionary and Descriptive Statistics        
+        - nb/02_data_understanding_rev.qmd
+        # Data Preparation: Preprocessing Code and Examples
+        - nb/03_data_preparation_rev.qmd
+        # Modelling: Detailed Implementation and Algorithms
+        - nb/04_modelling_rev.qmd
+        # Evaluation: Performance Metrics and Additional Analysis        
+        - nb/05_evaluation_rev.qmd
+        - nb/06_deployment_rev.qmd         
+        # DAPS and Flow Down
+        - nb/16_flow_down_rev.qmd
+        # References – Academic references, data sources, and research citations.        
+        # - nb/18_references_rev.qmd
+        # Resources – Tools, libraries, and datasets used, with links and explanations.        
         - nb/19_resources_rev.qmd
 
 resources:

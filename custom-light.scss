@@ -16,13 +16,13 @@
 
 /* Change Hamburger Menu Color on Mobile */
 .quarto-navbar-toggler {
-  color: #E2A348; /* Set to your desired color */
+  color: #FFBE61; /* Set to your desired color */
   background-color: transparent; /* Optional: Adjust background */
   border: none;
 }
 
 .quarto-navbar-toggler:hover {
-  color: #d19030; /* Hover color */
+  color: #e2a348; /* Hover color */
 }
 
 /* Highlight color for the active item in the index (left sidebar) */
@@ -40,15 +40,15 @@
 }
 
 /* Highlight color for the current content section (right side) */
-body .active-section {
-  background-color: #ffffff;
-  color: #e2a348;
-  font-weight: bold;
-}
+//body .active-section {
+//  background-color: #ffffff;
+//  color: #e2a348;
+//  font-weight: bold;
+//}
 
 /* Ensure link colors remain consistent */
-body a,
-body a:hover {
-  color: #e2a348;
-}
+//body a,
+//body a:hover {
+//  color: #e2a348;
+//}
 

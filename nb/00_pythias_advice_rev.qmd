@@ -1,8 +1,16 @@
 ---
-title:       Overview
+title:       Research Analysis
 subtitle:    TRUST - is all you need!
 ---
 
+<!-- White Paper: Research Analysis -->
+<!--  Introduction – Define the research question, objectives, and structure. -->
+<!--  Business Understanding – Contextualize the business problem and its forecasting relevance. -->
+<!--  Data Understanding – Dataset description, data sources, and key variables. -->
+<!--  Data Preparation – Data preprocessing and transformation steps. -->
+<!--  Modelling – Forecasting models and techniques used. -->
+<!--  Evaluation – Analysis of model performance and key findings. -->
+<!--  Deployment – Implications for practical application. -->
 
 # Introduction
 
@@ -81,7 +89,7 @@ This thesis focuses on the first 4 steps, the results will be taken as advice to
 where the business process is mapped and when the main indicators are identified, as well as when the business objectives are defined What is the business's need?
 
 ::: {#fig-bu-why .figure}
-![](images/bu_why.png){fig-alt="Why is forecasting important? It drives the business" fig-align="left" fig-width="15cm"}\]
+![](../images/bu_why.png){fig-alt="Why is forecasting important? It drives the business" fig-align="left" fig-width="15cm"}\]
 
 Why forecasting?\
 The forecast drives the business!

@@ -4,6 +4,7 @@ subtitle:    Evaluation subtitle
 description: |
   asses performance of the model using clear and concise
   evaluation metrics, based upon goals and objectives.
+number-sections:    true  
 editor: source
 ---
 

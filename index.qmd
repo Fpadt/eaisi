@@ -1,4 +1,7 @@
 ---
+title: Preface
+subtitle: Context & Structure
+
 description: |
   Effective business planning relies heavily on consistent and accurate 
   forecasts across various levels of aggregation, granularity, and time 
@@ -61,10 +64,7 @@ include-in-header:
     <!-- Open Graph Tags for WhatsApp -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Pythia - Forecasting and Analysis" />
-    <meta property="og:description" content= |
-    "Effective business planning relies heavily on consistent and accurate 
-    forecasts across various levels of aggregation, granularity, and time 
-    horizons.." />
+    <meta property="og:description" content= "Effective business planning relies heavily on consistent and accurate forecasts across various levels of aggregation, granularity, and time horizons.." />
     <meta property="og:url" content="https://pythia.smart-r.nl/" />
     <meta property="og:image" content="https://pythia.smart-r.nl/images/pythia_logo_cover.png" />
     <meta property="og:image:width" content="1000" />
@@ -77,6 +77,10 @@ include-in-header:
 ::: {.cover-container}
 ![](images/pythia_logo_cover.png){width=50% fig-align="center" .cover-image}
 :::
+
+<!-- Context and Purpose of the Study -->
+<!-- Scope and Structure of the Document -->
+
 
 ## Acknowledgments {.appendix .unnumbered}
 
