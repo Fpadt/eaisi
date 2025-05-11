@@ -204,7 +204,7 @@ format:
 
   pdf: #arxiv-pdf:
     keep-tex:           false
-    # documentclass:      book #scrbook
+    documentclass:      book #scrbook
     papersize:          a4
     geometry:
       - a4paper
@@ -218,7 +218,6 @@ format:
     include-in-header:
       text: |
         \usepackage{typearea}
-        \documentclass[oneside]{book}   
         \renewcommand{\cleardoublepage}{\clearpage}        
     toc:                true
     toc-depth:          1
