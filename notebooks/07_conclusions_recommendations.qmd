@@ -3,6 +3,7 @@ title:       Conclusions
 subtitle:    Conclusions subtitle
 description: |
   concluding a  3% difference.
+suppress-bibliography: true  
 editor: source
 ---
 

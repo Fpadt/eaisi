@@ -1,8 +1,8 @@
 ---
 title: Prophecy to Prediction
 subtitle: The Myth Inspiring Pythia's Advice
+suppress-bibliography: true
 ---
-
 
 ```{=html}
 <audio controls>
@@ -10,10 +10,9 @@ subtitle: The Myth Inspiring Pythia's Advice
   Your browser does not support the audio element.
 </audio>
 ```
-  
-  
-  
-**From Prophecy to Prediction: The Myth Inspiring Pythia's Advice**
+
+**\
+From Prophecy to Prediction: The Myth Inspiring Pythia's Advice**
 
 The *Pythia's Advice* project is dedicated to the art of sales forecasting. Drawing inspiration from the ancient myth of the Oracle of Delphi, where the *Pythia*—the high priestess—delivered cryptic prophecies, we harness the power of Data Science—our modern-day Pythia—to foresee future trends. Just as the Pythia's prophecies required careful interpretation, our statistical and machine learning techniques produce *Advice* that requires human expertise for effective application. By embodying this union of technology and human insight, we aptly named our project *Pythia's Advice*. This synergy ensures well-informed, data-driven decision-making and enhances the operational efficiency of the supply chain.
 

@@ -1,6 +1,7 @@
 ---
-title:       Research Analysis
-subtitle:    TRUST - is all you need!
+title:                 Research Analysis
+subtitle:              TRUST - is all you need!
+suppress-bibliography: true
 ---
 
 <!-- White Paper: Research Analysis -->
