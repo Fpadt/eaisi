@@ -1,5 +1,5 @@
 ---
-suppress-bibliography: true
+
 ---
 
 What does this acronym mean??

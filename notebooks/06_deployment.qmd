@@ -9,7 +9,7 @@ description: |
   - model versioning GIT
   -   continuous integration/continuous deployment 
   (CI/CD) pipelines.
-suppress-bibliography: true  
+  
 number-sections:       true  
 editor: source
 ---

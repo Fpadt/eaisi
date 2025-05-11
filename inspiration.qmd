@@ -1,7 +1,7 @@
 ---
 title: Prophecy to Prediction
 subtitle: The Myth Inspiring Pythia's Advice
-suppress-bibliography: true
+
 ---
 
 ```{=html}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.5.4)  11 MAY 2025 14:12
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.5.4)  11 MAY 2025 14:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -352,6 +352,8 @@ Package graphics Info: Driver file: xetex.def on input line 106.
 \Gin@req@width=\dimen192
 )
 \pandoc@box=\box65
+\cslhangindent=\skip65
+\csllabelwidth=\skip66
 (c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2025/04/29 v25.8 The multilingual framework for pdfLaTeX, LuaLaTeX and XeLaTeX
 \babel@savecnt=\count327
@@ -382,17 +384,17 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.163 <
+l.196 <
        meta property="og:type" content="website" />
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
  
 Here is how much of TeX's memory you used:
- 13648 strings out of 472204
- 264520 string characters out of 5526095
+ 13660 strings out of 472204
+ 264669 string characters out of 5526095
  789984 words of memory out of 5000000
- 40069 multiletter control sequences out of 15000+600000
+ 40081 multiletter control sequences out of 15000+600000
  626841 words of font info for 42 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  90i,0n,93p,510b,118s stack positions out of 10000i,1000n,20000p,200000b,200000s

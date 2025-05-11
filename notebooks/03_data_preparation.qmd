@@ -5,7 +5,7 @@ description: |
   - scope
   - extracts and ingest
   - transformations
-suppress-bibliography: true  
+  
 number-sections:       true  
 editor: source
 ---

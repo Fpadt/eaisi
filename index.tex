@@ -135,6 +135,39 @@
 \makeatother
 
 
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
@@ -603,7 +636,7 @@ See Figure Figure~\ref{fig-bu-why} for the thumbnail overview.
 floris@smart-r.nl\\
 \textbf{?meta:subtitle}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, rightrule=.15mm, coltitle=black, colback=white, left=2mm, titlerule=0mm, opacityback=0, breakable, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, bottomrule=.15mm, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, toptitle=1mm, titlerule=0mm, leftrule=.75mm, breakable, toprule=.15mm, opacitybacktitle=0.6, rightrule=.15mm, coltitle=black, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, arc=.35mm, colback=white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomrule=.15mm, left=2mm]
 
 Note that there are five types of callouts, including: \texttt{note},
 \texttt{warning}, \texttt{important}, \texttt{tip}, and
@@ -611,13 +644,13 @@ Note that there are five types of callouts, including: \texttt{note},
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, rightrule=.15mm, coltitle=black, colback=white, left=2mm, titlerule=0mm, opacityback=0, breakable, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, bottomrule=.15mm, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip with Title}, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, toptitle=1mm, titlerule=0mm, leftrule=.75mm, breakable, toprule=.15mm, opacitybacktitle=0.6, rightrule=.15mm, coltitle=black, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, arc=.35mm, colback=white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip with Title}, bottomrule=.15mm, left=2mm]
 
 This is an example of a callout with a title.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, rightrule=.15mm, coltitle=black, colback=white, left=2mm, titlerule=0mm, opacityback=0, breakable, colframe=quarto-callout-caution-color-frame, bottomtitle=1mm, bottomrule=.15mm, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Expand To Learn About Collapse}, opacitybacktitle=0.6, colbacktitle=quarto-callout-caution-color!10!white, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, toptitle=1mm, titlerule=0mm, leftrule=.75mm, breakable, toprule=.15mm, opacitybacktitle=0.6, rightrule=.15mm, coltitle=black, bottomtitle=1mm, colbacktitle=quarto-callout-caution-color!10!white, colframe=quarto-callout-caution-color-frame, arc=.35mm, colback=white, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Expand To Learn About Collapse}, bottomrule=.15mm, left=2mm]
 
 This is an example of a `folded' caution callout that can be expanded by
 the user. You can use \texttt{collapse="true"} to collapse it by default
@@ -2379,6 +2412,157 @@ requirements}}{Deliverables \& requirements}}\label{deliverables-requirements}
 \markboth{References}{References}
 
 \phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-barrett_datatable_2024}
+Barrett, T., Dowle, M., Srinivasan, A., Gorecki, J., Chirico, M.,
+Hocking, T., Schwendinger, B., Stetsenko, P., Short, T., Lianoglou, S.,
+Antonyan, E., Bonsch, M., Parsonage, H., Ritchie, S., Ren, K., Tan, X.,
+Saporta, R., Seiskari, O., Dong, X., \ldots{} Krylov, I. (2024).
+\emph{Data.table: {Extension} of 'data.frame'}.
+\url{https://cran.r-project.org/web/packages/data.table/index.html}
+
+\bibitem[\citeproctext]{ref-blokdyk_scor_2019}
+BLOKDYK, G. (2019). \emph{{SCOR} {MODEL} {A} {COMPLETE} {GUIDE} - 2020
+{EDITION}}. 5STARCOOKS.
+
+\bibitem[\citeproctext]{ref-r_core_team_r_2024}
+Core Team\}, \{R. (2024). \emph{R: {A} {Language} and {Environment} for
+{Statistical} {Computing}}. R Foundation for Statistical Computing.
+\url{https://www.R-project.org/}
+
+\bibitem[\citeproctext]{ref-costa_crisp-ml_2022}
+Costa, R. (2022). \emph{The {CRISP}-{ML} {Methodology}: {A}
+{Step}-by-{Step} {Approach} to {Real}-{World} {Machine} {Learning}
+{Projects}}. Independently published.
+
+\bibitem[\citeproctext]{ref-debruine_glossary_2023}
+DeBruine, L. (2023). \emph{Glossary: {Glossaries} for {Markdown} and
+{Quarto} {Documents}}.
+\url{https://cran.r-project.org/web/packages/glossary/}
+
+\bibitem[\citeproctext]{ref-guja_generative_2025}
+Guja, A., \& Siwiak, M. (2025). \emph{Generative {AI} for {Data}
+{Analytics}.} Manning Publications Co. LLC 2025.
+
+\bibitem[\citeproctext]{ref-hartshorn_machine_2017}
+Hartshorn, S. (2017). \emph{Machine {Learning} {With} {Boosting}: {A}
+{Beginner}'s {Guide}}.
+
+\bibitem[\citeproctext]{ref-hyndmanaut2024}
+Hyndman {[}aut, R., cre, cph, Athanasopoulos, G., Bergmeir, C., Caceres,
+G., Chhay, L., Kuroptev, K., O'Hara-Wild, M., Petropoulos, F., Razbash,
+S., Wang, E., Yasmeen, F., Garza, F., Girolimetto, D., Ihaka, R., R Core
+Team, Reid, D., Shaub, D., \ldots{} Zhou, Z. (2024). \emph{Forecast:
+Forecasting functions for time series and linear models}.
+\url{https://cran.r-project.org/web/packages/forecast/index.html}
+
+\bibitem[\citeproctext]{ref-hyndman__aut_fpp3_2024}
+Hyndman {[}aut, R., cre, cph, Athanasopoulos, G., O'Hara-Wild, M.,
+Palihawadana, N., Wickramasuriya, S., \& RStudio. (2024). \emph{fpp3:
+{Data} for "{Forecasting}: {Principles} and {Practice}" (3rd
+{Edition})}.
+\url{https://cran.r-project.org/web/packages/fpp3/index.html}
+
+\bibitem[\citeproctext]{ref-hyndman_forecasting_2021}
+Hyndman, R. J., \& Athanasopoulos, G. (2021). \emph{Forecasting:
+{Principles} and {Practice} (3rd ed)}. \url{https://otexts.com/fpp3/}
+
+\bibitem[\citeproctext]{ref-kunapuli_ensemble_2023}
+Kunapuli, G. (2023). \emph{Ensemble methods for machine learning}.
+Manning.
+
+\bibitem[\citeproctext]{ref-manokhin_practical_2023}
+Manokhin, V. (2023). \emph{Practical guide to applied conformal
+prediction in {Python}: Learn and apply the best uncertainty frameworks
+to your industry applications}. {\textless{}}packt{\textgreater{}}.
+
+\bibitem[\citeproctext]{ref-matthes_python_2019}
+Matthes, E. (2019b). \emph{Python crash course: A hands-on,
+project-based introduction to programming} (2nd edition). No Starch
+Press.
+
+\bibitem[\citeproctext]{ref-matthes2019}
+Matthes, E. (2019a). \emph{Python crash course: A hands-on,
+project-based introduction to programming} (2nd edition). No Starch
+Press.
+
+\bibitem[\citeproctext]{ref-molnar_introduction_2023}
+Molnar, C. (2023). \emph{Introduction to conformal prediction with
+{Python}: A short guide for quantifying uncertainty of machine learning
+models} (First edition). Chistoph Molnar c/o MUCBOOK, Heidi Seibold.
+\url{https://christophmolnar.com/books/conformal-prediction/}
+
+\bibitem[\citeproctext]{ref-nixtlaux2fh}
+\emph{Nixtla/hierarchicalforecast: Probabilistic hierarchical
+forecasting 👑 with statistical and econometric methods.} (n.d.).
+\url{https://github.com/Nixtla/hierarchicalforecast}
+
+\bibitem[\citeproctext]{ref-nixtlaux2fm2024}
+\emph{Nixtla/mlforecast}. (2024). Nixtla.
+\url{https://github.com/Nixtla/mlforecast}
+
+\bibitem[\citeproctext]{ref-nixtlaux2fs2024}
+\emph{Nixtla/statsforecast}. (2024). Nixtla.
+\url{https://github.com/Nixtla/statsforecast}
+
+\bibitem[\citeproctext]{ref-nixtlaux2ft2024}
+\emph{Nixtla/tsfeatures}. (2024). Nixtla.
+\url{https://github.com/Nixtla/tsfeatures}
+
+\bibitem[\citeproctext]{ref-ohara-wild2024a}
+O'Hara-Wild, M., Hyndman, R., Wang, E., Cook, D., features), T. T.
+(Correlation., \& method), L. C. (Guerrero's. (2024). \emph{Feasts:
+Feature extraction and statistics for time series}.
+\url{https://cran.r-project.org/web/packages/feasts/index.html}
+
+\bibitem[\citeproctext]{ref-ohara-wild2024}
+O'Hara-Wild, M., Hyndman, R., Wang, E., implementation), G. C. (NNETAR.,
+Bergmeir, C., Hensel, T.-G., \& Hyndman, T. (2024). \emph{Fable:
+Forecasting models for tidy time series}.
+\url{https://cran.r-project.org/web/packages/fable/index.html}
+
+\bibitem[\citeproctext]{ref-osullivan_introduction_2023}
+O'Sullivan, C. (2023). Introduction to {SHAP} with {Python}. In
+\emph{Introduction to SHAP with Python}.
+\url{https://towardsdatascience.com/introduction-to-shap-with-python-d27edc23c454}
+
+\bibitem[\citeproctext]{ref-osullivan_shap_2024}
+O'Sullivan, C. (2024). {SHAP} with {Python} {[}Course{]}. In \emph{SHAP
+with Python}. \url{https://adataodyssey.com/course/}
+
+\bibitem[\citeproctext]{ref-porter_learn_2024}
+Porter, L., \& Zingaro, D. (2024). \emph{Learn {AI}-assisted {Python}
+programming: With {GitHub} {Copilot} and {ChatGPT}}. Manning.
+
+\bibitem[\citeproctext]{ref-silver_inventory_2021}
+Silver, E. A., Pyke, D. F., \& Thomas, D. J. (2021). \emph{Inventory and
+production management in supply chains} (Fourth edition, first issued in
+paperback). CRC Press, Taylor \& Francis Group.
+
+\bibitem[\citeproctext]{ref-vandeput_inventory_2020}
+Vandeput, N. (2020). \emph{Inventory optimization: Models and
+simulations}. De Gruyter.
+
+\bibitem[\citeproctext]{ref-vandeput_data_2021}
+Vandeput, N. (2021). \emph{Data science for supply chain forecasting}
+(Second edition). De Gruyter.
+
+\bibitem[\citeproctext]{ref-vandeput_demand_2023}
+Vandeput, N. (2023). \emph{Demand forecasting best practices}. Manning
+Publications Co.
+
+\bibitem[\citeproctext]{ref-wickham}
+Wickham, H. (n.d.). \emph{R for data science (2e)}.
+\url{https://r4ds.hadley.nz/}
+
+\bibitem[\citeproctext]{ref-wickham_ggplot2_2024}
+Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K.,
+Wilke, C., Woo, K., Yutani, H., Dunnington, D., Brand, T. van den,
+Posit, \& PBC. (2024). \emph{ggplot2: {Create} {Elegant} {Data}
+{Visualisations} {Using} the {Grammar} of {Graphics}}.
+\url{https://cran.r-project.org/web/packages/ggplot2/index.html}
+
+\end{CSLReferences}
 
 \chapter{Resources}\label{resources}
 
