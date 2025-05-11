@@ -50,7 +50,6 @@ crossref:
   def-title:  def
     
 execute:
-  before-build: "Rscript update_def.R"
   freeze:  auto
   cache:   true
   echo:    false
@@ -172,7 +171,8 @@ format:
     lightbox:           true
     comments:
       hypothesis:       false
-    number-sections:    false
+    number-sections:    true
+    link-citations:     true    
     colorlinks:         true
     highlight-style:    github
     theme:

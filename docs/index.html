@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2025-05-11">
-<meta name="description" content="Effective business planning relies heavily on consistent and accurate forecasts across various levels of aggregation, granularity, and time horizons. Generating multiple forecasts for different use cases not only incurs costs that should be justified by the benefits but also introduces the risk of inconsistencies between forecasts. Ideally, a single detailed forecast with a long horizon can be created and then aggregated to meet all business needs, maintaining consistency but potentially sacrificing forecast accuracy This raises the question of which approach delivers the highest net benefit.To create an internal benchmark and understand the cost-benefit relationship without disrupting normal business operations, we built a separate forecasting lab environment in parallel to our production forecasting system, leveraging state-of-the-art open-source software available free of charge. We begin with simple models using raw historical sales data and gradually increase complexity by automating data cleaning and incorporating more advanced methods that utilize factors such as price, promotions, stock-outs, and other external influences.While statistical forecasting methods are known for their robustness and explainability, incorporating exogenous variables such as price and promotions is often difficult. In an increasingly promotion-driven business environment, recent machine learning models—such as Random Forest, neural networks, and conformal prediction—might deliver a higher net benefit despite the additional data handling costs and reduced explainability.In assessing the effectiveness of various forecasting methods, we face the challenge of directly quantifying the value each forecast brings to the business. Due to the complexity of isolating a forecast’s impact on business performance, we adopt forecast accuracy as a proxy for forecast value. This approach allows us to evaluate and compare the methods based on their predictive precision, under the premise that more accurate forecasts are likely to result in better-informed business decisions and, consequently, greater operational benefits.In this paper, we aim to strike the right balance between enhancing forecast accuracy and managing the costs associated with additional resources like hardware, software, data, and human effort. Our research will explore the optimal combination of forecasting methods to achieve higher accuracy while ensuring efficient resource utilization. Furthermore, given the extensive range of products (SKUs) and their varying levels of importance, we explore strategies for effectively allocating human resources. By prioritizing efforts on key products and automating processes for less critical items, we aim to optimize resource utilization and enhance overall forecasting efficiency.">
 
 <title>Pythia’s Advice</title>
 <style>
@@ -132,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Pythia’s Advice">
-<meta property="og:description" content="Effective business planning relies heavily on consistent and accurate forecasts across various levels of aggregation, granularity, and time horizons..">
+<meta property="og:description" content="">
 <meta property="og:url" content="https://pythia.smart-r.nl/">
 <meta property="og:image" content="https://pythia.smart-r.nl/images/pythia_logo_cover.png">
 <meta property="og:image:width" content="1000">
@@ -313,7 +312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Preface</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -327,17 +326,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Pythia’s Advice</h1>
-            <p class="subtitle lead">Abstract</p>
-                  <div>
-        <div class="description">
-          <p>Effective business planning relies heavily on consistent and accurate forecasts across various levels of aggregation, granularity, and time horizons. Generating multiple forecasts for different use cases not only incurs costs that should be justified by the benefits but also introduces the risk of inconsistencies between forecasts. Ideally, a single detailed forecast with a long horizon can be created and then aggregated to meet all business needs, maintaining consistency but potentially sacrificing forecast accuracy This raises the question of which approach delivers the highest net benefit.</p>
-          <p>To create an internal benchmark and understand the cost-benefit relationship without disrupting normal business operations, we built a separate forecasting lab environment in parallel to our production forecasting system, leveraging state-of-the-art open-source software available free of charge. We begin with simple models using raw historical sales data and gradually increase complexity by automating data cleaning and incorporating more advanced methods that utilize factors such as price, promotions, stock-outs, and other external influences.</p>
-          <p>While statistical forecasting methods are known for their robustness and explainability, incorporating exogenous variables such as price and promotions is often difficult. In an increasingly promotion-driven business environment, recent machine learning models—such as Random Forest, neural networks, and conformal prediction—might deliver a higher net benefit despite the additional data handling costs and reduced explainability.</p>
-          <p>In assessing the effectiveness of various forecasting methods, we face the challenge of directly quantifying the value each forecast brings to the business. Due to the complexity of isolating a forecast’s impact on business performance, we adopt forecast accuracy as a proxy for forecast value. This approach allows us to evaluate and compare the methods based on their predictive precision, under the premise that more accurate forecasts are likely to result in better-informed business decisions and, consequently, greater operational benefits.</p>
-          <p>In this paper, we aim to strike the right balance between enhancing forecast accuracy and managing the costs associated with additional resources like hardware, software, data, and human effort. Our research will explore the optimal combination of forecasting methods to achieve higher accuracy while ensuring efficient resource utilization. Furthermore, given the extensive range of products (SKUs) and their varying levels of importance, we explore strategies for effectively allocating human resources. By prioritizing efforts on key products and automating processes for less critical items, we aim to optimize resource utilization and enhance overall forecasting efficiency.</p>
-        </div>
-      </div>
-                          <div class="quarto-categories">
+                                <div class="quarto-categories">
                 <div class="quarto-category">Time Series Forecasting</div>
                 <div class="quarto-category">Data Science</div>
                 <div class="quarto-category">Hierarchical Forecasting (HTS)</div>
@@ -437,7 +426,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Preface</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -451,17 +441,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./inspiration.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Prophecy to Prediction</span></a>
+  <a href="./inspiration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Prophecy to Prediction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nb/00_pythias_advice_rev.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Research Analysis</span></a>
+  <a href="./nb/00_pythias_advice_rev.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Research Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nb/07_conclusions_recommendations_rev.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Conclusions</span></a>
+  <a href="./nb/07_conclusions_recommendations_rev.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conclusions</span></span></a>
   </div>
 </li>
       </ul>
@@ -477,57 +470,68 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nb/17_crisp-dm_rev.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">CRISP-DM</span></a>
+  <a href="./nb/17_crisp-dm_rev.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">CRISP-DM</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nb/01_business_understanding_rev.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Business Understanding</span></a>
+  <a href="./nb/01_business_understanding_rev.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Business Understanding</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nb/02_data_understanding_rev.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Understanding</span></a>
+  <a href="./nb/02_data_understanding_rev.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Understanding</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nb/03_data_preparation_rev.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Preparation</span></a>
+  <a href="./nb/03_data_preparation_rev.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Preparation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nb/04_modelling_rev.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Modelling</span></a>
+  <a href="./nb/04_modelling_rev.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Modelling</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nb/05_evaluation_rev.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Evaluation</span></a>
+  <a href="./nb/05_evaluation_rev.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Evaluation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nb/06_deployment_rev.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Deployment</span></a>
+  <a href="./nb/06_deployment_rev.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Deployment</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nb/08_appendix_rev.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Other</span></a>
+  <a href="./nb/08_appendix_rev.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Other</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nb/16_flow_down_rev.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Flow Down</span></a>
+  <a href="./nb/16_flow_down_rev.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Flow Down</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nb/18_references_rev.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  <a href="./nb/18_references_rev.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nb/19_resources_rev.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resources</span></a>
+  <a href="./nb/19_resources_rev.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
   </div>
 </li>
       </ul>
@@ -543,13 +547,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link active" data-scroll-target="#acknowledgments">Acknowledgments</a></li>
-  <li><a href="#how-to-read-this-book" id="toc-how-to-read-this-book" class="nav-link" data-scroll-target="#how-to-read-this-book">How to Read This Book</a>
+  <li><a href="#how-to-read-this-book" id="toc-how-to-read-this-book" class="nav-link" data-scroll-target="#how-to-read-this-book"><span class="header-section-number">0.1</span> How to Read This Book</a>
   <ul class="collapse">
-  <li><a href="#book-structure" id="toc-book-structure" class="nav-link" data-scroll-target="#book-structure">Book Structure</a></li>
-  <li><a href="#navigation-features" id="toc-navigation-features" class="nav-link" data-scroll-target="#navigation-features">Navigation Features</a></li>
-  <li><a href="#reading-pathways" id="toc-reading-pathways" class="nav-link" data-scroll-target="#reading-pathways">Reading Pathways</a></li>
-  <li><a href="#best-viewing-experience" id="toc-best-viewing-experience" class="nav-link" data-scroll-target="#best-viewing-experience">Best Viewing Experience</a></li>
-  <li><a href="#downloading-and-sharing" id="toc-downloading-and-sharing" class="nav-link" data-scroll-target="#downloading-and-sharing">Downloading and Sharing</a></li>
+  <li><a href="#book-structure" id="toc-book-structure" class="nav-link" data-scroll-target="#book-structure"><span class="header-section-number">0.1.1</span> Book Structure</a></li>
+  <li><a href="#navigation-features" id="toc-navigation-features" class="nav-link" data-scroll-target="#navigation-features"><span class="header-section-number">0.1.2</span> Navigation Features</a></li>
+  <li><a href="#reading-pathways" id="toc-reading-pathways" class="nav-link" data-scroll-target="#reading-pathways"><span class="header-section-number">0.1.3</span> Reading Pathways</a></li>
+  <li><a href="#best-viewing-experience" id="toc-best-viewing-experience" class="nav-link" data-scroll-target="#best-viewing-experience"><span class="header-section-number">0.1.4</span> Best Viewing Experience</a></li>
+  <li><a href="#downloading-and-sharing" id="toc-downloading-and-sharing" class="nav-link" data-scroll-target="#downloading-and-sharing"><span class="header-section-number">0.1.5</span> Downloading and Sharing</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -569,38 +573,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </div>
-<!-- Context and Purpose of the Study -->
-<!-- Scope and Structure of the Document -->
 <section id="acknowledgments" class="level2 appendix unnumbered">
 <h2 class="appendix unnumbered anchored" data-anchor-id="acknowledgments">Acknowledgments</h2>
 <p>I am grateful for the insightful comments offered by Ieke le Blanc. These have improved this study in innumerable ways and saved me from many errors; those that inevitably remain are entirely my own responsibility.</p>
 </section>
-<section id="how-to-read-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-read-this-book">How to Read This Book</h2>
+<section id="how-to-read-this-book" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="how-to-read-this-book"><span class="header-section-number">0.1</span> How to Read This Book</h2>
 <p>This guide will help you navigate through this book and make the most of its features.</p>
-<section id="book-structure" class="level3">
-<h3 class="anchored" data-anchor-id="book-structure">Book Structure</h3>
+<section id="book-structure" class="level3" data-number="0.1.1">
+<h3 data-number="0.1.1" class="anchored" data-anchor-id="book-structure"><span class="header-section-number">0.1.1</span> Book Structure</h3>
 <p>This book is organized into the following main sections:</p>
 <ul>
-<li><strong>Foundations</strong>: Core concepts and background information</li>
-<li><strong>Project Phases</strong>: Detailed exploration of each phase of the methodology</li>
-<li><strong>Conclusions &amp; Next Steps</strong>: Summary of key takeaways and future directions</li>
-<li><strong>Appendix</strong>: Additional resources, references, and supplementary materials</li>
+<li><strong>Preface</strong>: Acknowledgments and how to read this book</li>
+<li><strong>Main Research</strong>: Detailed exploration of each phase of the CRISP-DM methodology. The Research overview can be found here: <a href="nb/00_pythias_advice_rev.html" class="quarto-xref"><span>Chapter 4</span></a> <span class="quarto-unresolved-ref">?sec-research-analysis</span></li>
+<li><strong>Appendix</strong>: Detailed project phases with coding, additional resources, references, and supplementary materials</li>
 </ul>
 </section>
-<section id="navigation-features" class="level3">
-<h3 class="anchored" data-anchor-id="navigation-features">Navigation Features</h3>
+<section id="navigation-features" class="level3" data-number="0.1.2">
+<h3 data-number="0.1.2" class="anchored" data-anchor-id="navigation-features"><span class="header-section-number">0.1.2</span> Navigation Features</h3>
 <p>This book includes several features to enhance your reading experience:</p>
-<section id="table-of-contents" class="level4">
-<h4 class="anchored" data-anchor-id="table-of-contents">Table of Contents</h4>
+<section id="table-of-contents" class="level4" data-number="0.1.2.1">
+<h4 data-number="0.1.2.1" class="anchored" data-anchor-id="table-of-contents"><span class="header-section-number">0.1.2.1</span> Table of Contents</h4>
 <p>The sidebar on the left provides a full table of contents. Click on any section to navigate directly to it.</p>
 </section>
-<section id="search-function" class="level4">
-<h4 class="anchored" data-anchor-id="search-function">Search Function</h4>
+<section id="search-function" class="level4" data-number="0.1.2.2">
+<h4 data-number="0.1.2.2" class="anchored" data-anchor-id="search-function"><span class="header-section-number">0.1.2.2</span> Search Function</h4>
 <p>Use the search icon (🔍) in the top navigation bar to search for specific terms throughout the book.</p>
 </section>
-<section id="code-blocks" class="level4">
-<h4 class="anchored" data-anchor-id="code-blocks">Code Blocks</h4>
+<section id="code-blocks" class="level4" data-number="0.1.2.3">
+<h4 data-number="0.1.2.3" class="anchored" data-anchor-id="code-blocks"><span class="header-section-number">0.1.2.3</span> Code Blocks</h4>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Example code</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, world!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
@@ -609,17 +610,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>You can also toggle between code and output views</li>
 </ul>
 </section>
-<section id="cross-references" class="level4">
-<h4 class="anchored" data-anchor-id="cross-references">Cross-References</h4>
+<section id="cross-references" class="level4" data-number="0.1.2.4">
+<h4 data-number="0.1.2.4" class="anchored" data-anchor-id="cross-references"><span class="header-section-number">0.1.2.4</span> Cross-References</h4>
 <p>This book contains cross-references to figures, tables, and sections that appear as links like <a href="#">Figure 1.2</a> or <a href="#">Chapter 3</a>.</p>
 </section>
-<section id="interactive-elements" class="level4">
-<h4 class="anchored" data-anchor-id="interactive-elements">Interactive Elements</h4>
+<section id="interactive-elements" class="level4" data-number="0.1.2.5">
+<h4 data-number="0.1.2.5" class="anchored" data-anchor-id="interactive-elements"><span class="header-section-number">0.1.2.5</span> Interactive Elements</h4>
 <p>Some sections contain interactive elements: - Click on images to enlarge them - Interactive visualizations allow you to explore data - Collapsible sections can be expanded for additional details</p>
 </section>
 </section>
-<section id="reading-pathways" class="level3">
-<h3 class="anchored" data-anchor-id="reading-pathways">Reading Pathways</h3>
+<section id="reading-pathways" class="level3" data-number="0.1.3">
+<h3 data-number="0.1.3" class="anchored" data-anchor-id="reading-pathways"><span class="header-section-number">0.1.3</span> Reading Pathways</h3>
 <p>There are multiple ways to approach this book:</p>
 <ol type="1">
 <li><strong>Sequential Reading</strong>: Follow the chapters in order for a comprehensive understanding</li>
@@ -627,12 +628,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Reference Use</strong>: Bookmark key sections for future reference</li>
 </ol>
 </section>
-<section id="best-viewing-experience" class="level3">
-<h3 class="anchored" data-anchor-id="best-viewing-experience">Best Viewing Experience</h3>
+<section id="best-viewing-experience" class="level3" data-number="0.1.4">
+<h3 data-number="0.1.4" class="anchored" data-anchor-id="best-viewing-experience"><span class="header-section-number">0.1.4</span> Best Viewing Experience</h3>
 <p>For the optimal experience: - Use a modern web browser (Chrome, Firefox, Safari, or Edge) - Enable JavaScript for interactive features - Use the dark/light mode toggle for your preferred reading environment</p>
 </section>
-<section id="downloading-and-sharing" class="level3">
-<h3 class="anchored" data-anchor-id="downloading-and-sharing">Downloading and Sharing</h3>
+<section id="downloading-and-sharing" class="level3" data-number="0.1.5">
+<h3 data-number="0.1.5" class="anchored" data-anchor-id="downloading-and-sharing"><span class="header-section-number">0.1.5</span> Downloading and Sharing</h3>
 <ul>
 <li>Click the download icon (⬇️) to download a PDF or EPUB version</li>
 <li>Use the share buttons to share specific chapters on social media</li>
@@ -1060,7 +1061,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   <div class="nav-page nav-page-next">
       <a href="./inspiration.html" class="pagination-link" aria-label="Prophecy to Prediction">
-        <span class="nav-page-text"><span class="chapter-title">Prophecy to Prediction</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Prophecy to Prediction</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
