@@ -75,9 +75,8 @@ x <- 42   # code line 2
 - You can also toggle between code and output views
 
 #### Cross-References
-This book contains cross-references to figures (@fig-bu-why), definitions (@def-RSME), 
+This book contains cross-references to figures (@fig-bu-why), definitions (@def-EX-DEF), 
 and sections ([Research Analysis](nb/00_pythias_advice_rev.html)).
-Hovering over the link will give a sneak peek of the content.
 
 #### Interactive Elements
 Some sections contain interactive elements:  
@@ -109,3 +108,10 @@ For the optimal experience:
 - The pdf icon will open the book as a PDF.
 - In section @sec-resources the pptx and other resources can be locally saved(💾).
 - Use the share buttons to share specific chapters on social media.
+
+::: {#def-EX-DEF}
+**DEF:**
+
+This is an example of a definition
+DEF = $\sqrt{mean(e^2_t)}$
+:::
