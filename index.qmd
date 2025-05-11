@@ -64,10 +64,8 @@ Use the search icon (🔍) in the top navigation bar to search for specific term
 #| code-fold: true
 #| code-summary: "Click to Show R Code"
 
-print("This is a collapsible R code block")   # code line 1
-
-# test
-x <- 42
+x <- 41   # code line 1
+x <- 42   # code line 2
 ```
 
 
