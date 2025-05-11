@@ -204,10 +204,7 @@ format:
 
   pdf: #arxiv-pdf:
     keep-tex:           false
-    documentclass:      book #scrbook
-    include-in-header:
-      text: |
-        \documentclass[oneside]{book}    
+    # documentclass:      book #scrbook
     papersize:          a4
     geometry:
       - a4paper
@@ -215,12 +212,14 @@ format:
       - right=2cm
       - top=2cm
       - bottom=2cm
-    # margin:
-    #   x: 1cm
-    #   y: 1cm
+    margin:
+      x: 1cm
+      y: 1cm
     include-in-header:
       text: |
         \usepackage{typearea}
+        \documentclass[oneside]{book}   
+        \renewcommand{\cleardoublepage}{\clearpage}        
     toc:                true
     toc-depth:          1
     toc-title:          'Table of Contents'
