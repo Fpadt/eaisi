@@ -30,7 +30,8 @@ include-in-header:
 
 ## Acknowledgments {.appendix .unnumbered}
 
-I am grateful for the insightful comments offered by ** {{<var mentor >}} **. 
+I am grateful for the insightful comments offered by **{{<var mentor >}}**. 
+
 These have improved this study in innumerable ways and saved me from many errors; those that inevitably remain are entirely my own responsibility.
 
 ## How to Read This Book
@@ -72,7 +73,7 @@ x <- 42   # code line 2
 
 - Code blocks have a copy button (📋) in the top-right corner
 - Some code blocks can be expanded to show more details
-- You can also toggle between code and output views
+<!-- - You can also toggle between code and output views -->
 
 #### Cross-References
 This book contains cross-references to:
