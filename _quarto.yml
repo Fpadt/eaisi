@@ -215,9 +215,9 @@ format:
       - right=2cm
       - top=2cm
       - bottom=2cm
-    margin:
-      x: 1cm
-      y: 1cm
+    # margin:
+    #   x: 1cm
+    #   y: 1cm
     include-in-header:
       text: |
         \usepackage{typearea}
