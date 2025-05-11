@@ -15,14 +15,16 @@
 }  
 
 /* Change Hamburger Menu Color on Mobile */
-.quarto-navbar-toggler {
-  color: #FFFFFF; /* Set to your desired color */
-  background-color: transparent; /* Optional: Adjust background */
-  border: none;
+.navbar-toggler {
+  color: #FFFFFF !important;  /* Force white color */
+  background-color: transparent !important; /* Transparent background */
+  border: none !important; /* Remove border */
 }
 
-.quarto-navbar-toggler:hover {
-  color: #FFFFFF; /* Hover color */
+.navbar-toggler:hover,
+.navbar-toggler:focus {
+  color: #e2a348 !important;  /* Hover and focus color */
+  background-color: #0f5e3c !important;  /* Optional: Background on hover */
 }
 
 /* Highlight color for the active item in the index (left sidebar) */
