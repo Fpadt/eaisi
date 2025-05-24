@@ -1,5 +1,16 @@
 % header.tex
 
+% 0) set up the page size & margins yourself
+\usepackage[
+  a4paper,
+  left=2cm,
+  right=2cm,
+  top=2cm,
+  bottom=3cm,
+  includehead,    % ← account for your 2.5cm header
+  includefoot     % ← in case you ever add a footer
+]{geometry}
+
 % 1) load graphicx before you use \includegraphics
 \usepackage{graphicx}
 

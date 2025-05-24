@@ -205,14 +205,8 @@ format:
   pdf: #arxiv-pdf:
     keep-tex:           false
     documentclass:      book #scrbook
-    documentclass-options: ["oneside","openany"]
+    # documentclass-options: ["oneside","openany"]
     papersize:          a4
-    geometry:
-      - a4paper
-      - left=2cm
-      - right=2cm
-      - top=2cm
-      - bottom=2cm
     include-in-header: header.tex
     toc:                true
     toc-depth:          1
