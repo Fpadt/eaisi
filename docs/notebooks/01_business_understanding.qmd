@@ -20,6 +20,27 @@ The forecast drives the business!
 
 See Figure @fig-bu-why for the thumbnail overview.
 
+```{r}
+library(gt)
+
+# example gt table
+mtcars[1:6, 1:6] |>
+  gt(rowname_col = "model") |>
+  tab_header(
+    title = md("**First 6 Cars**"),
+    subtitle = "A small gt demo"
+  ) |>
+  data_color(
+    columns = vars(mpg, hp),
+    colors = scales::col_numeric(
+      palette = c("lightblue", "navy"),
+      domain  = NULL
+    )
+  )
+
+```
+
+
 ## Defining the Scope of the ML Application
 
 ##Success Criteria - Business Success purpose and success criteria (reduction OOS&OOD) and other factors like customer & employee satisfaction - ML Success FA% and BIAS% - Economic Success impact of the project on the companies financial performance DAPS \## Feasibility availability, size, and quality of the training sample
