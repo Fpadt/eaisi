@@ -38,6 +38,16 @@ mtcars[1:6, 1:6] |>
     )
   )
 
+
+mtcars[1:8, 1:6] %>%
+  gt(rowname_col = "model") %>%
+  tab_header(
+    title    = md("**My Branded Table**"),
+    subtitle = "With a consistent gt theme"
+  ) %>%
+  gt_theme_pythia()
+
+
 ```
 
 

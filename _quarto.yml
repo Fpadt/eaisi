@@ -215,10 +215,8 @@ format:
     margin:
       x: 1cm
       y: 1cm
-    include-in-header:
-      text: |
-        \usepackage{typearea}
-        \renewcommand{\cleardoublepage}{\clearpage}        
+    includes:
+      in_header: header.tex    
     toc:                true
     toc-depth:          1
     toc-title:          'Table of Contents'
