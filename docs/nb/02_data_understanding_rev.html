@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2025-05-24">
-<meta name="description" content="Effective business planning relies heavily on consistent and accurate forecasts across various levels of aggregation, granularity, and time horizons. Generating multiple forecasts for different use cases not only incurs costs that should be justified by the benefits but also introduces the risk of inconsistencies between forecasts. Ideally, a single detailed forecast with a long horizon can be created and then aggregated to meet all business needs, maintaining consistency but potentially sacrificing forecast accuracy This raises the question of which approach delivers the highest net benefit.To create an internal benchmark and understand the cost-benefit relationship without disrupting normal business operations, we built a separate forecasting lab environment in parallel to our production forecasting system, leveraging state-of-the-art open-source software available free of charge. We begin with simple models using raw historical sales data and gradually increase complexity by automating data cleaning and incorporating more advanced methods that utilize factors such as price, promotions, stock-outs, and other external influences.While statistical forecasting methods are known for their robustness and explainability, incorporating exogenous variables such as price and promotions is often difficult. In an increasingly promotion-driven business environment, recent machine learning models—such as Random Forest, neural networks, and conformal prediction—might deliver a higher net benefit despite the additional data handling costs and reduced explainability.In assessing the effectiveness of various forecasting methods, we face the challenge of directly quantifying the value each forecast brings to the business. Due to the complexity of isolating a forecast’s impact on business performance, we adopt forecast accuracy as a proxy for forecast value. This approach allows us to evaluate and compare the methods based on their predictive precision, under the premise that more accurate forecasts are likely to result in better-informed business decisions and, consequently, greater operational benefits.In this paper, we aim to strike the right balance between enhancing forecast accuracy and managing the costs associated with additional resources like hardware, software, data, and human effort. Our research will explore the optimal combination of forecasting methods to achieve higher accuracy while ensuring efficient resource utilization. Furthermore, given the extensive range of products (SKUs) and their varying levels of importance, we explore strategies for effectively allocating human resources. By prioritizing efforts on key products and automating processes for less critical items, we aim to optimize resource utilization and enhance overall forecasting efficiency.">
+<meta name="description" content="understanding of data structure, content &amp; qualityinitial exploratory data analysis (EDA) to identify patterns, trends, and relationships within the data.">
 
-<title>Research Analysis – Pythia's Advice</title>
+<title>7&nbsp; Data Understanding – Pythia's Advice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -52,8 +87,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../nb/07_conclusions_recommendations_rev.html" rel="next">
-<link href="../inspiration.html" rel="prev">
+<link href="../nb/03_data_preparation_rev.html" rel="next">
+<link href="../nb/01_business_understanding_rev.html" rel="prev">
 <link href="../images/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -288,7 +323,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../inspiration.html">Main Research</a></li><li class="breadcrumb-item"><a href="../nb/00_pythias_advice_rev.html"><span class="chapter-title">Research Analysis</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../nb/17_crisp-dm_rev.html">Appendix</a></li><li class="breadcrumb-item"><a href="../nb/02_data_understanding_rev.html"><span class="chapter-title">Data Understanding</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -300,16 +335,15 @@ div.csl-indent {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../inspiration.html">Main Research</a></li><li class="breadcrumb-item"><a href="../nb/00_pythias_advice_rev.html"><span class="chapter-title">Research Analysis</span></a></li></ol></nav>
-      <h1 class="title"><span class="chapter-title">Research Analysis</span></h1>
-            <p class="subtitle lead">TRUST - is all you need!</p>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../nb/17_crisp-dm_rev.html">Appendix</a></li><li class="breadcrumb-item"><a href="../nb/02_data_understanding_rev.html"><span class="chapter-title">Data Understanding</span></a></li></ol></nav>
+      <h1 class="title"><span class="chapter-title">Data Understanding</span></h1>
+            <p class="subtitle lead">Data Understanding subtitle</p>
                   <div>
         <div class="description">
-          <p>Effective business planning relies heavily on consistent and accurate forecasts across various levels of aggregation, granularity, and time horizons. Generating multiple forecasts for different use cases not only incurs costs that should be justified by the benefits but also introduces the risk of inconsistencies between forecasts. Ideally, a single detailed forecast with a long horizon can be created and then aggregated to meet all business needs, maintaining consistency but potentially sacrificing forecast accuracy This raises the question of which approach delivers the highest net benefit.</p>
-          <p>To create an internal benchmark and understand the cost-benefit relationship without disrupting normal business operations, we built a separate forecasting lab environment in parallel to our production forecasting system, leveraging state-of-the-art open-source software available free of charge. We begin with simple models using raw historical sales data and gradually increase complexity by automating data cleaning and incorporating more advanced methods that utilize factors such as price, promotions, stock-outs, and other external influences.</p>
-          <p>While statistical forecasting methods are known for their robustness and explainability, incorporating exogenous variables such as price and promotions is often difficult. In an increasingly promotion-driven business environment, recent machine learning models—such as Random Forest, neural networks, and conformal prediction—might deliver a higher net benefit despite the additional data handling costs and reduced explainability.</p>
-          <p>In assessing the effectiveness of various forecasting methods, we face the challenge of directly quantifying the value each forecast brings to the business. Due to the complexity of isolating a forecast’s impact on business performance, we adopt forecast accuracy as a proxy for forecast value. This approach allows us to evaluate and compare the methods based on their predictive precision, under the premise that more accurate forecasts are likely to result in better-informed business decisions and, consequently, greater operational benefits.</p>
-          <p>In this paper, we aim to strike the right balance between enhancing forecast accuracy and managing the costs associated with additional resources like hardware, software, data, and human effort. Our research will explore the optimal combination of forecasting methods to achieve higher accuracy while ensuring efficient resource utilization. Furthermore, given the extensive range of products (SKUs) and their varying levels of importance, we explore strategies for effectively allocating human resources. By prioritizing efforts on key products and automating processes for less critical items, we aim to optimize resource utilization and enhance overall forecasting efficiency.</p>
+          <ul>
+          <li>understanding of data structure, content &amp; quality</li>
+          <li>initial exploratory data analysis (EDA) to identify patterns, trends, and relationships within the data.</li>
+          </ul>
         </div>
       </div>
                           <div class="quarto-categories">
@@ -431,7 +465,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nb/00_pythias_advice_rev.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Research Analysis</span></a>
+  <a href="../nb/00_pythias_advice_rev.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Research Analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -462,7 +496,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nb/02_data_understanding_rev.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Understanding</span></a>
+  <a href="../nb/02_data_understanding_rev.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Data Understanding</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -517,19 +551,22 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-00-introduction" id="toc-sec-00-introduction" class="nav-link active" data-scroll-target="#sec-00-introduction">Introduction</a>
+  <li><a href="#data-collection-report" id="toc-data-collection-report" class="nav-link active" data-scroll-target="#data-collection-report"><span class="header-section-number">7.1</span> Data Collection Report</a></li>
+  <li><a href="#data-description-report" id="toc-data-description-report" class="nav-link" data-scroll-target="#data-description-report"><span class="header-section-number">7.2</span> Data Description Report</a></li>
+  <li><a href="#data-exploration-report" id="toc-data-exploration-report" class="nav-link" data-scroll-target="#data-exploration-report"><span class="header-section-number">7.3</span> Data Exploration Report</a></li>
+  <li><a href="#data-quality-report" id="toc-data-quality-report" class="nav-link" data-scroll-target="#data-quality-report"><span class="header-section-number">7.4</span> Data Quality Report</a></li>
+  <li><a href="#identification-of-data-sources" id="toc-identification-of-data-sources" class="nav-link" data-scroll-target="#identification-of-data-sources"><span class="header-section-number">7.5</span> Identification of Data Sources</a></li>
+  <li><a href="#data-quality-assessment" id="toc-data-quality-assessment" class="nav-link" data-scroll-target="#data-quality-assessment"><span class="header-section-number">7.6</span> Data Quality Assessment</a>
   <ul class="collapse">
-  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology"><strong>Methodology</strong></a></li>
+  <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description"><span class="header-section-number">7.6.1</span> Data Description</a></li>
+  <li><a href="#data-verification" id="toc-data-verification" class="nav-link" data-scroll-target="#data-verification"><span class="header-section-number">7.6.2</span> Data Verification</a></li>
   </ul></li>
-  <li><a href="#business-understanding" id="toc-business-understanding" class="nav-link" data-scroll-target="#business-understanding">Business Understanding</a></li>
-  <li><a href="#data-undestanding" id="toc-data-undestanding" class="nav-link" data-scroll-target="#data-undestanding">Data Undestanding</a></li>
-  <li><a href="#modeling" id="toc-modeling" class="nav-link" data-scroll-target="#modeling">Modeling</a></li>
-  <li><a href="#evaluation" id="toc-evaluation" class="nav-link" data-scroll-target="#evaluation">Evaluation</a></li>
-  <li><a href="#deployment" id="toc-deployment" class="nav-link" data-scroll-target="#deployment">Deployment</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary">Glossary</a></li>
+  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation"><span class="header-section-number">8</span> Data Preparation</a>
+  <ul class="collapse">
+  <li><a href="#sdmfrcac-fa" id="toc-sdmfrcac-fa" class="nav-link" data-scroll-target="#sdmfrcac-fa"><span class="header-section-number">8.1</span> SDMFRCAC FA</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/nb/00_pythias_advice_rev.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/nb/02_data_understanding_rev.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -539,144 +576,316 @@ div.csl-indent {
 
 
 
-<!-- White Paper: Research Analysis -->
-<!--  Introduction – Define the research question, objectives, and structure. -->
-<!--  Business Understanding – Contextualize the business problem and its forecasting relevance. -->
-<!--  Data Understanding – Dataset description, data sources, and key variables. -->
-<!--  Data Preparation – Data preprocessing and transformation steps. -->
-<!--  Modelling – Forecasting models and techniques used. -->
-<!--  Evaluation – Analysis of model performance and key findings. -->
-<!--  Deployment – Implications for practical application. -->
-<section id="sec-00-introduction" class="level1">
-<h1>Introduction</h1>
-<!-- Context and Purpose of the Study -->
-<!-- Scope and Structure of the Document -->
-<p>In an increasingly complex market environment, accurate demand forecasting is critical for ensuring the operational efficiency of supply chains, particularly in industries like wholesale, where products are perishable and sales are affected by seasonality and promotions. This research focuses on a wholesale company that buys, produces, and distributes biodiversity food to retailers, Out-Of-Home, discounters and E-commerce. To make informed decisions regarding production, buying, and negotiation with customers, accurate sales forecasts are required at different aggregation levels, depending on each use case.</p>
-<p>While the company employs robust but dated statistical methods, such as moving averages and exponential smoothing, these techniques struggle to handle promotional impacts, capture complex sales patterns, and provide prediction intervals. Currently, a combination of bottom-up and top-down forecasting approaches is used, largely determined by the judgment of individual demand planners. However, the lack of clear guidance on which approach to apply in different scenarios has resulted in inconsistent and subjective forecasting outcomes. Furthermore, various use cases have distinct aggregation and time horizon requirements, adding complexity to maintaining consistent and accurate forecasts across the system.</p>
-<p>The primary objective of this research is to determine the best way to generate a forecast, which methods to use and on what levels of granularity, enabling consistent, accurate forecasts that can be aggregated or dis-aggregated as required for different business needs. Specifically, the study aims to address the following key questions:</p>
-<ol type="1">
-<li>Which robust forecasting methods—statistical or data science techniques—should be used to meet the needs of each use case?</li>
-<li>Which levels of aggregation provides the most accurate forecast for different use cases, and what when is an additional level justified by increased forecast accuracy.</li>
-<li>What forecast accuracy improvements can be achieved through the integration of additional data, and what are the trade-offs or costs associated with these enhancements?</li>
-<li>How should human resources be allocated effectively, given the large number of products (SKUs) and varying levels of importance across these products?</li>
-</ol>
-<p>Ultimately, this research will provide an objective, data-driven strategy to improve forecast accuracy, reduce reliance on individual intuition, and ensure that forecasts are robust, consistent, and scalable across multiple aggregation levels, thereby enhancing overall decision-making efficiency.</p>
-<section id="methodology" class="level2">
-<h2 class="anchored" data-anchor-id="methodology"><strong>Methodology</strong></h2>
-<p>This research follows the <strong>CRISP-ML methodology</strong>, <span class="citation" data-cites="costa_crisp-ml_2022">(<a href="#ref-costa_crisp-ml_2022" role="doc-biblioref">Costa, 2022</a>)</span> as the guiding framework.</p>
-<p>CRISP-ML is an acronym for “Cross-Industry Standard Process for Machine Learning.” It is a systematic framework for organizing and executing machine learning projects. The methodology includes six key steps:</p>
-<ol type="1">
-<li>understanding the problem</li>
-<li>preparing the data</li>
-<li>selecting and tuning models</li>
-<li>evaluating performance</li>
-<li>deploying the solution</li>
-<li>monitoring and maintaining the model.</li>
-</ol>
-<p>This thesis focuses on the first 4 steps, the results will be taken as advice to be implemented in the current way of working.</p>
-<!-- -   Promotions -->
-<!--     -   dip before/after promotion -->
-<!--     -   cannibalization, halo effect -->
-<!--     -   BOM, display -->
-<!-- -   Customer -->
-<!--     -   (de)-listings -->
-<!--     -   hierarchy -->
-<!-- -   Product Life Cycle Management -->
-<!--     -   NPI/NPD (cannibalization) -->
-<!--     -   end of Life -->
-<!-- -   Seasonality, Chinese new year -->
-<!-- Problem Statement -->
-<!-- -   which level/group -\> top-down, middle-out, bottom up -->
-<!--     -   HTS, -->
-<!-- -   which technique/method statistical, regression ... -->
-<!--     -   Statisticical: Exponential smoothing, Mov, navieve, ETS, ArimA, -->
-<!--     -   Data Science: regression (Boost) & conformal prediction -->
-<!-- -   Classification: which focus for the highest impact) (cleaning, promotions etc), e.g. -->
-<!--     -   ABC/XYZ -->
-<!--     -   other features 0-count, CV, promotion impact etc -->
-<!--     -   (forecast current accuracy based on features) -->
+<section id="data-collection-report" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="data-collection-report"><span class="header-section-number">7.1</span> Data Collection Report</h2>
+</section>
+<section id="data-description-report" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="data-description-report"><span class="header-section-number">7.2</span> Data Description Report</h2>
+</section>
+<section id="data-exploration-report" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="data-exploration-report"><span class="header-section-number">7.3</span> Data Exploration Report</h2>
+</section>
+<section id="data-quality-report" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="data-quality-report"><span class="header-section-number">7.4</span> Data Quality Report</h2>
+</section>
+<section id="identification-of-data-sources" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="identification-of-data-sources"><span class="header-section-number">7.5</span> Identification of Data Sources</h2>
+</section>
+<section id="data-quality-assessment" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="data-quality-assessment"><span class="header-section-number">7.6</span> Data Quality Assessment</h2>
+<p>assessing the - completeness: impute missing data - accuracy: = consistency:</p>
+<section id="data-description" class="level3" data-number="7.6.1">
+<h3 data-number="7.6.1" class="anchored" data-anchor-id="data-description"><span class="header-section-number">7.6.1</span> Data Description</h3>
+<p>A descriptive exploratory analysis describes the data by its statistical properties and metadata.</p>
+<p>outliers?</p>
+</section>
+<section id="data-verification" class="level3" data-number="7.6.2">
+<h3 data-number="7.6.2" class="anchored" data-anchor-id="data-verification"><span class="header-section-number">7.6.2</span> Data Verification</h3>
 </section>
 </section>
-<section id="business-understanding" class="level1">
-<h1>Business Understanding</h1>
-<p>where the business process is mapped and when the main indicators are identified, as well as when the business objectives are defined What is the business’s need?</p>
-<div id="fig-bu-why" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Why is forecasting important? It drives the business" data-fig-width="15cm">
+<section id="data-preparation" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Data Preparation</h1>
+<p>preparing the data for further analysis and modeling. This might involve cleaning and preprocessing the data, as well as transforming it into a format that is suitable for use in a machine-learning model.</p>
+<p>5.1. Handling Missing Data</p>
+<ul>
+<li><p>imputing missing values, Imputation methods involve replacing missing values with estimated values.</p></li>
+<li><p>scaling numeric features</p></li>
+<li><p>encoding categorical features</p></li>
+<li><p>selecting a subset of the data to use in the model.</p></li>
+</ul>
+<div class="cell" data-layout-align="center" data-fig-lightbox="true">
+<div class="cell-output-display">
+<div id="fig-plot-penguins" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Scatterplot of penguin bill length against bill depth">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-bu-why-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/bu_why.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;5.1: Why forecasting? The forecast drives the business!"><img src="../images/bu_why.png" class="img-fluid quarto-figure quarto-figure-left figure-img" data-fig-width="15cm" alt="Why is forecasting important? It drives the business"></a>
+<div aria-describedby="fig-plot-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="02_data_understanding_rev_files/figure-html/fig-plot-penguins-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;8.1: Bill length vs.&nbsp;depth for Palmer Penguins"><img src="02_data_understanding_rev_files/figure-html/fig-plot-penguins-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Scatterplot of penguin bill length against bill depth" width="672"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bu-why-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.1: Why forecasting?<br>
-The forecast drives the business!
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.1: Bill length vs.&nbsp;depth for Palmer Penguins
 </figcaption>
 </figure>
 </div>
-<p>See Figure <a href="#fig-bu-why" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-bu-why</span></a> for the thumbnail overview.</p>
-</section>
-<section id="data-undestanding" class="level1">
-<h1>Data Undestanding</h1>
-</section>
-<section id="modeling" class="level1">
-<h1>Modeling</h1>
-</section>
-<section id="evaluation" class="level1">
-<h1>Evaluation</h1>
-<p>1.2<br>
-floris@smart-r.nl<br>
-TRUST - is all you need!</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Note that there are five types of callouts, including: <code>note</code>, <code>warning</code>, <code>important</code>, <code>tip</code>, and <code>caution</code>.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>          uid               text   cnt
+       &lt;char&gt;             &lt;char&gt; &lt;int&gt;
+ 1:         1        Electronics    11
+ 2:       1.4          Computers    11
+ 3:    1.4.10            Laptops    11
+ 4: 1.4.10.20         Ultrabooks    11
+ 5:    1.4.11           Desktops    11
+ 6: 1.4.11.21             Gaming    11
+ 7:    1.4.12            Tablets    11
+ 8: 1.4.12.22              iPads    11
+ 9:       1.5                TVs    11
+10:    1.5.13                LED    11
+11: 1.5.13.23            Samsung    11
+12:         2               Home     9
+13:       2.6            Kitchen     9
+14:    2.6.14         Appliances     9
+15: 2.6.14.24              Ovens     9
+16:    2.6.15           Cookware     9
+17: 2.6.15.25               Pots     9
+18:       2.7          Furniture     9
+19:    2.7.16             Chairs     9
+20: 2.7.16.26       OfficeChairs     9
+21:         3             Garden     9
+22:       3.8             Plants     9
+23:    3.8.17            Flowers     9
+24: 3.8.17.27              Roses     9
+25:    3.8.18              Trees     9
+26: 3.8.18.28               Oaks     9
+27:       3.9              Tools     9
+28:    3.9.19         PowerTools     9
+29: 3.9.19.29             Drills     9
+          uid               text   cnt</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="fu">library</span>(magrittr)</span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-9"><a href="#cb2-9"></a></span>
+<span id="cb2-10"><a href="#cb2-10"></a>LP0 <span class="ot">&lt;-</span> </span>
+<span id="cb2-11"><a href="#cb2-11"></a>  <span class="cf">function</span>(x, width){</span>
+<span id="cb2-12"><a href="#cb2-12"></a>    <span class="co"># like CONVERSION_EXIT_MATN1_INPUT</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a>    <span class="co"># only add leading zero's in case it is a number</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a>    is_num <span class="ot">&lt;-</span> <span class="fu">grepl</span>(<span class="st">"^[0-9]+$"</span>, x)</span>
+<span id="cb2-15"><a href="#cb2-15"></a>    <span class="fu">ifelse</span>(</span>
+<span id="cb2-16"><a href="#cb2-16"></a>      is_num, </span>
+<span id="cb2-17"><a href="#cb2-17"></a>      stringr<span class="sc">::</span><span class="fu">str_pad</span>(<span class="at">string =</span> x, <span class="at">width =</span> width, <span class="at">side =</span> <span class="st">"left"</span>, <span class="at">pad =</span> <span class="st">"0"</span>),</span>
+<span id="cb2-18"><a href="#cb2-18"></a>      x</span>
+<span id="cb2-19"><a href="#cb2-19"></a>    )</span>
+<span id="cb2-20"><a href="#cb2-20"></a>  }</span>
+<span id="cb2-21"><a href="#cb2-21"></a></span>
+<span id="cb2-22"><a href="#cb2-22"></a>fOpen_as_xlsx <span class="ot">&lt;-</span> </span>
+<span id="cb2-23"><a href="#cb2-23"></a>  <span class="cf">function</span>(pDT, <span class="at">pPath =</span> <span class="st">"./Results"</span>, pFN, <span class="at">pasTable =</span> <span class="cn">TRUE</span>){</span>
+<span id="cb2-24"><a href="#cb2-24"></a>    </span>
+<span id="cb2-25"><a href="#cb2-25"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">dir.exists</span>(pPath)) {</span>
+<span id="cb2-26"><a href="#cb2-26"></a>      <span class="fu">dir.create</span>(pPath)</span>
+<span id="cb2-27"><a href="#cb2-27"></a>    }</span>
+<span id="cb2-28"><a href="#cb2-28"></a>    </span>
+<span id="cb2-29"><a href="#cb2-29"></a>    <span class="cf">if</span> (<span class="fu">missing</span>(pFN) <span class="sc">==</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb2-30"><a href="#cb2-30"></a>      pFN <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"~"</span>, <span class="fu">format</span>(<span class="fu">now</span>(), <span class="st">"%Y%m%d-%H%M%S"</span>), <span class="st">".xlsx"</span>)</span>
+<span id="cb2-31"><a href="#cb2-31"></a>    }</span>
+<span id="cb2-32"><a href="#cb2-32"></a>    </span>
+<span id="cb2-33"><a href="#cb2-33"></a>    FFN <span class="ot">&lt;-</span> <span class="fu">file.path</span>(pPath, pFN)</span>
+<span id="cb2-34"><a href="#cb2-34"></a>    <span class="fu">write.xlsx</span>(<span class="at">x =</span> pDT, <span class="at">file =</span> FFN, <span class="at">asTable =</span> pasTable, <span class="at">tableStyle =</span> <span class="st">"TableStyleMedium4"</span>) </span>
+<span id="cb2-35"><a href="#cb2-35"></a>    <span class="fu">openXL</span>(FFN)</span>
+<span id="cb2-36"><a href="#cb2-36"></a>    </span>
+<span id="cb2-37"><a href="#cb2-37"></a>  }</span>
+<span id="cb2-38"><a href="#cb2-38"></a><span class="co"># PDAT &lt;- file.path("C:", "PW", "OneDrive", "ET", "pythia", "dat")</span></span>
+<span id="cb2-39"><a href="#cb2-39"></a></span>
+<span id="cb2-40"><a href="#cb2-40"></a>PDAT <span class="ot">&lt;-</span> </span>
+<span id="cb2-41"><a href="#cb2-41"></a>  <span class="cf">switch</span>(<span class="fu">Sys.info</span>()[<span class="st">"nodename"</span>],</span>
+<span id="cb2-42"><a href="#cb2-42"></a>         <span class="st">'TREX-TOAD'</span> <span class="ot">=</span> <span class="fu">file.path</span>(<span class="st">"U:"</span>, <span class="st">"floris"</span>),</span>
+<span id="cb2-43"><a href="#cb2-43"></a>                       <span class="fu">file.path</span>(<span class="st">"C:"</span>, <span class="st">"PW"</span>)</span>
+<span id="cb2-44"><a href="#cb2-44"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-45"><a href="#cb2-45"></a>  <span class="fu">file.path</span>(<span class="st">"OneDrive"</span>, <span class="st">"ET"</span>, <span class="st">"pythia"</span>, <span class="st">"dat"</span>)</span>
+<span id="cb2-46"><a href="#cb2-46"></a></span>
+<span id="cb2-47"><a href="#cb2-47"></a>ET_CG <span class="ot">&lt;-</span> <span class="st">"#0f5e3c"</span></span>
+<span id="cb2-48"><a href="#cb2-48"></a>ET_FG <span class="ot">&lt;-</span> <span class="st">"#089b35"</span></span>
+<span id="cb2-49"><a href="#cb2-49"></a></span>
+<span id="cb2-50"><a href="#cb2-50"></a>MAT <span class="ot">&lt;-</span> <span class="st">'000000000003036397'</span></span>
+<span id="cb2-51"><a href="#cb2-51"></a>MAN <span class="ot">&lt;-</span> <span class="cn">FALSE</span> <span class="sc">&amp;</span> <span class="fu">substr</span>(PDAT, <span class="dv">1</span>,<span class="dv">1</span>) <span class="sc">!=</span> <span class="st">"U"</span></span>
+<span id="cb2-52"><a href="#cb2-52"></a></span>
+<span id="cb2-53"><a href="#cb2-53"></a>BRNDS <span class="ot">&lt;-</span> </span>
+<span id="cb2-54"><a href="#cb2-54"></a>  <span class="fu">fread</span>(<span class="at">text =</span> <span class="st">"</span></span>
+<span id="cb2-55"><a href="#cb2-55"></a><span class="st">  PRDH1, NAME</span></span>
+<span id="cb2-56"><a href="#cb2-56"></a><span class="st">  07   , ALTER ECO</span></span>
+<span id="cb2-57"><a href="#cb2-57"></a><span class="st">  08   , BJORG</span></span>
+<span id="cb2-58"><a href="#cb2-58"></a><span class="st">  10   , CLIPPER (CUPPER)</span></span>
+<span id="cb2-59"><a href="#cb2-59"></a><span class="st">  15   , ZONNATURA</span></span>
+<span id="cb2-60"><a href="#cb2-60"></a><span class="st">  53   , TANOSHI</span></span>
+<span id="cb2-61"><a href="#cb2-61"></a><span class="st">  65   , NATURELA"</span></span>
+<span id="cb2-62"><a href="#cb2-62"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-63"><a href="#cb2-63"></a>  .[, PRDH1<span class="sc">:</span><span class="er">=</span> <span class="fu">str_pad</span>(PRDH1, <span class="dv">2</span>, <span class="at">pad =</span> <span class="st">"0"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<div class="callout-title-container flex-fill">
-Tip with Title
+<section id="sdmfrcac-fa" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="sdmfrcac-fa"><span class="header-section-number">8.1</span> SDMFRCAC FA</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>B4_SDMFRCAC2_A <span class="ot">&lt;-</span> </span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">readRDS</span>(<span class="at">file =</span> <span class="fu">file.path</span>(PDAT, <span class="st">"B4_SDMFRCAC2_A.rds"</span>))              <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>  .[PLANT <span class="sc">%chin%</span> <span class="fu">c</span>(<span class="st">"FR30"</span>, <span class="st">"NL60"</span>, <span class="st">"NL63"</span>)]</span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a>B4_MATERIAL_P  <span class="ot">&lt;-</span> </span>
+<span id="cb3-6"><a href="#cb3-6"></a>  <span class="fu">readRDS</span>(<span class="at">file =</span> <span class="fu">file.path</span>(PDAT, <span class="st">"B4_MATERIAL_P.rds"</span>))               <span class="sc">%&gt;%</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>  .[MATL_TYPE <span class="sc">%chin%</span> <span class="fu">c</span>(<span class="st">"FERT"</span>, <span class="st">"HALB"</span>)]</span>
+<span id="cb3-8"><a href="#cb3-8"></a></span>
+<span id="cb3-9"><a href="#cb3-9"></a>dtFA <span class="ot">&lt;-</span> </span>
+<span id="cb3-10"><a href="#cb3-10"></a>  BRNDS[B4_MATERIAL_P[MATL_TYPE <span class="sc">%chin%</span> <span class="fu">c</span>(<span class="st">"FERT"</span>, <span class="st">"HALB"</span>)], </span>
+<span id="cb3-11"><a href="#cb3-11"></a>        on <span class="ot">=</span> .(<span class="at">PRDH1 =</span> PRDH1), nomatch <span class="ot">=</span> <span class="dv">0</span>]                          <span class="sc">%&gt;%</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a>  .[B4_SDMFRCAC2_A, on <span class="ot">=</span> .(SYSTID, CLIENT, MATERIAL), nomatch <span class="ot">=</span> <span class="dv">0</span>]   <span class="sc">%&gt;%</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a>  .[, .(</span>
+<span id="cb3-14"><a href="#cb3-14"></a>    <span class="at">ACT =</span> <span class="fu">sum</span>(DEMND_QTY),</span>
+<span id="cb3-15"><a href="#cb3-15"></a>    <span class="at">FM1 =</span> <span class="fu">sum</span>(DEMQTYM1)</span>
+<span id="cb3-16"><a href="#cb3-16"></a>  ), by <span class="ot">=</span> .(PRDH1, PLANT, MATERIAL, CALMONTH)</span>
+<span id="cb3-17"><a href="#cb3-17"></a>  ]                                                                  <span class="sc">%&gt;%</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a>  .[, {</span>
+<span id="cb3-19"><a href="#cb3-19"></a>    E   <span class="ot">=</span> ACT <span class="sc">-</span> FM1</span>
+<span id="cb3-20"><a href="#cb3-20"></a>    E2  <span class="ot">=</span> E <span class="sc">^</span> <span class="dv">2</span></span>
+<span id="cb3-21"><a href="#cb3-21"></a>    AE  <span class="ot">=</span> <span class="fu">abs</span>(E)</span>
+<span id="cb3-22"><a href="#cb3-22"></a>    APE <span class="ot">=</span> <span class="dv">100</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> AE <span class="sc">/</span> ACT)</span>
+<span id="cb3-23"><a href="#cb3-23"></a>    ECO <span class="ot">=</span> <span class="dv">100</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> AE <span class="sc">/</span> FM1)</span>
+<span id="cb3-24"><a href="#cb3-24"></a>    .(</span>
+<span id="cb3-25"><a href="#cb3-25"></a>      PRDH1, PLANT, MATERIAL, CALMONTH, </span>
+<span id="cb3-26"><a href="#cb3-26"></a>      ACT  , FM1  , E, E2, AE, APE, ECO</span>
+<span id="cb3-27"><a href="#cb3-27"></a>      )</span>
+<span id="cb3-28"><a href="#cb3-28"></a>  }  ] </span>
+<span id="cb3-29"><a href="#cb3-29"></a></span>
+<span id="cb3-30"><a href="#cb3-30"></a>dtFA <span class="ot">&lt;-</span> </span>
+<span id="cb3-31"><a href="#cb3-31"></a>  dtFA[</span>
+<span id="cb3-32"><a href="#cb3-32"></a>    <span class="sc">!</span><span class="fu">is.nan</span>(APE) <span class="sc">&amp;</span> </span>
+<span id="cb3-33"><a href="#cb3-33"></a>    <span class="sc">!</span><span class="fu">is.nan</span>(ECO) <span class="sc">&amp;</span>   </span>
+<span id="cb3-34"><a href="#cb3-34"></a>    <span class="sc">!</span><span class="fu">is.infinite</span>(APE) <span class="sc">&amp;</span></span>
+<span id="cb3-35"><a href="#cb3-35"></a>    <span class="sc">!</span><span class="fu">is.infinite</span>(ECO) <span class="sc">&amp;</span>  </span>
+<span id="cb3-36"><a href="#cb3-36"></a>    APE <span class="sc">&gt;</span> <span class="sc">-</span><span class="dv">100</span> <span class="sc">&amp;</span></span>
+<span id="cb3-37"><a href="#cb3-37"></a>    ECO <span class="sc">&gt;</span> <span class="sc">-</span><span class="dv">100</span>  ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>PYT <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="st">"C:"</span>, <span class="st">"PW"</span>, <span class="st">"OneDrive"</span>, <span class="st">"ET"</span>, <span class="st">"pythia"</span>, <span class="st">"upg"</span>, <span class="st">"data"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a>MATS <span class="ot">&lt;-</span> </span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">fread</span>(<span class="fu">file.path</span>(PYT, <span class="st">"MD_MATERIAL_SALES_ORG.CSV"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>  .[, MATERIAL <span class="sc">:</span><span class="er">=</span> <span class="fu">LP0</span>(V1, <span class="dv">18</span>)] </span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a>TST <span class="ot">&lt;-</span> </span>
+<span id="cb4-8"><a href="#cb4-8"></a>  MATS[V2 <span class="sc">==</span> <span class="st">'NL10'</span>, .(MATERIAL, <span class="at">PLANT =</span> <span class="st">'NL60'</span>, <span class="at">PROMO =</span> V17)][</span>
+<span id="cb4-9"><a href="#cb4-9"></a>    B4_SDMFRCAC2_A, on <span class="ot">=</span> .(MATERIAL, PLANT), nomatch <span class="ot">=</span> <span class="cn">NA</span>] <span class="sc">%&gt;%</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>  .[PLANT <span class="sc">!=</span> <span class="st">'FR30'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<div class="callout-body-container callout-body">
-<p>This is an example of a callout with a title.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>MAT <span class="ot">&lt;-</span> <span class="fu">LP0</span>(<span class="st">'10023'</span>, <span class="dv">18</span>)</span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">ggplot</span>(</span>
+<span id="cb5-4"><a href="#cb5-4"></a>  <span class="at">data =</span> dtFA[</span>
+<span id="cb5-5"><a href="#cb5-5"></a>    MATERIAL <span class="sc">==</span> MAT</span>
+<span id="cb5-6"><a href="#cb5-6"></a>    ], <span class="fu">aes</span>(<span class="at">x =</span> CALMONTH, <span class="at">y =</span> ACT)) <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> ET_CG) <span class="sc">+</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="at">data =</span> dtFA[</span>
+<span id="cb6-3"><a href="#cb6-3"></a>    CALMONTH <span class="sc">&gt;=</span><span class="st">'202401'</span> </span>
+<span id="cb6-4"><a href="#cb6-4"></a>    <span class="sc">&amp;</span> APE <span class="sc">&gt;</span> <span class="sc">-</span><span class="dv">50</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>    <span class="co"># &amp; MATERIAL == MAT</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>  ], </span>
+<span id="cb6-7"><a href="#cb6-7"></a>  <span class="fu">aes</span>(<span class="at">x =</span> APE, <span class="at">y =</span> ECO)</span>
+<span id="cb6-8"><a href="#cb6-8"></a>) <span class="sc">+</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">slope =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a>  <span class="co"># geom_label(aes(label = round(PE, 1))) +</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a>  <span class="co"># facet_wrap(~ PLANT + MATERIAL, scales = "free_y") +</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a>  <span class="co"># scale_color_manual(values=c(ET_CG, ET_FG))+</span></span>
+<span id="cb6-14"><a href="#cb6-14"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>dtFA_melt  <span class="ot">&lt;-</span> </span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">copy</span>(dtFA) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">melt.data.table</span>(</span>
+<span id="cb7-4"><a href="#cb7-4"></a>    <span class="at">measure.vars  =</span> <span class="fu">c</span>(<span class="st">"APE"</span>, <span class="st">"ECO"</span>),</span>
+<span id="cb7-5"><a href="#cb7-5"></a>    <span class="at">variable.name =</span> <span class="st">"PE_TYPE"</span>,</span>
+<span id="cb7-6"><a href="#cb7-6"></a>    <span class="at">value.name    =</span> <span class="st">"PE"</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a>    ) <span class="sc">%T&gt;%</span> <span class="fu">setorder</span>(CALMONTH)</span>
+<span id="cb7-8"><a href="#cb7-8"></a></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="fu">ggplot</span>(</span>
+<span id="cb7-10"><a href="#cb7-10"></a>  <span class="at">data =</span> dtFA_melt[CALMONTH <span class="sc">&gt;=</span><span class="st">'202401'</span> <span class="sc">&amp;</span> MATERIAL <span class="sc">==</span> MAT], </span>
+<span id="cb7-11"><a href="#cb7-11"></a>  <span class="fu">aes</span>(<span class="at">x =</span> CALMONTH, <span class="at">y =</span> PE, <span class="at">group =</span> PE_TYPE, <span class="at">color =</span> PE_TYPE)</span>
+<span id="cb7-12"><a href="#cb7-12"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(PE, <span class="dv">1</span>))) <span class="sc">+</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a>  <span class="co"># facet_wrap(~ PLANT + MATERIAL, scales = "free_y") +</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(ET_CG, ET_FG))<span class="sc">+</span></span>
+<span id="cb7-18"><a href="#cb7-18"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb7-19"><a href="#cb7-19"></a></span>
+<span id="cb7-20"><a href="#cb7-20"></a><span class="co"># if(MAN){</span></span>
+<span id="cb7-21"><a href="#cb7-21"></a><span class="co">#   if(rstudioapi::showQuestion(</span></span>
+<span id="cb7-22"><a href="#cb7-22"></a><span class="co">#     title   = "SAC", </span></span>
+<span id="cb7-23"><a href="#cb7-23"></a><span class="co">#     message = "Do you want to open SC-113B?"</span></span>
+<span id="cb7-24"><a href="#cb7-24"></a><span class="co">#   ) == TRUE) {</span></span>
+<span id="cb7-25"><a href="#cb7-25"></a><span class="co">#     browseURL(url = "https://wessanen.eu10.sapanalytics.cloud/link/SC113B")</span></span>
+<span id="cb7-26"><a href="#cb7-26"></a><span class="co">#   }</span></span>
+<span id="cb7-27"><a href="#cb7-27"></a><span class="co"># }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<div class="callout-title-container flex-fill">
-Expand To Learn About Collapse
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>This is an example of a ‘folded’ caution callout that can be expanded by the user. You can use <code>collapse="true"</code> to collapse it by default or <code>collapse="false"</code> to make a collapsible callout that is expanded by default.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="deployment" class="level1">
-<h1>Deployment</h1>
-</section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
-</section>
-<section id="glossary" class="level1 unnumbered">
-<h1 class="unnumbered">Glossary</h1>
-<div class="html">
-
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>dtFA_melt  <span class="ot">&lt;-</span> </span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">copy</span>(dtFA) <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">melt.data.table</span>(</span>
+<span id="cb8-4"><a href="#cb8-4"></a>    <span class="at">measure.vars  =</span> <span class="fu">c</span>(<span class="st">"APE"</span>, <span class="st">"ECO"</span>),</span>
+<span id="cb8-5"><a href="#cb8-5"></a>    <span class="at">variable.name =</span> <span class="st">"PE_TYPE"</span>,</span>
+<span id="cb8-6"><a href="#cb8-6"></a>    <span class="at">value.name    =</span> <span class="st">"PE"</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>    )                                         <span class="sc">%T&gt;%</span> </span>
+<span id="cb8-8"><a href="#cb8-8"></a>  <span class="fu">setorder</span>(PLANT, MATERIAL, CALMONTH)</span>
+<span id="cb8-9"><a href="#cb8-9"></a></span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="fu">ggplot</span>(</span>
+<span id="cb8-11"><a href="#cb8-11"></a>  <span class="at">data =</span> dtFA_melt[CALMONTH <span class="sc">&gt;=</span><span class="st">'202401'</span> <span class="sc">&amp;</span> MATERIAL <span class="sc">==</span> MAT], </span>
+<span id="cb8-12"><a href="#cb8-12"></a>  <span class="fu">aes</span>(<span class="at">x =</span> CALMONTH, <span class="at">y =</span> PE, <span class="at">group =</span> PE_TYPE, <span class="at">color =</span> PE_TYPE)</span>
+<span id="cb8-13"><a href="#cb8-13"></a>  ) <span class="sc">+</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb8-15"><a href="#cb8-15"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb8-16"><a href="#cb8-16"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(PE, <span class="dv">1</span>))) <span class="sc">+</span></span>
+<span id="cb8-17"><a href="#cb8-17"></a>  <span class="co"># facet_wrap(~ PLANT + MATERIAL, scales = "free_y") +</span></span>
+<span id="cb8-18"><a href="#cb8-18"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(ET_CG, ET_FG))<span class="sc">+</span></span>
+<span id="cb8-19"><a href="#cb8-19"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb8-20"><a href="#cb8-20"></a></span>
+<span id="cb8-21"><a href="#cb8-21"></a><span class="co"># if(MAN){</span></span>
+<span id="cb8-22"><a href="#cb8-22"></a><span class="co">#   if(rstudioapi::showQuestion(</span></span>
+<span id="cb8-23"><a href="#cb8-23"></a><span class="co">#     title   = "SAC", </span></span>
+<span id="cb8-24"><a href="#cb8-24"></a><span class="co">#     message = "Do you want to open SC-113B?"</span></span>
+<span id="cb8-25"><a href="#cb8-25"></a><span class="co">#   ) == TRUE) {</span></span>
+<span id="cb8-26"><a href="#cb8-26"></a><span class="co">#     browseURL(url = "https://wessanen.eu10.sapanalytics.cloud/link/SC113B")</span></span>
+<span id="cb8-27"><a href="#cb8-27"></a><span class="co">#   }</span></span>
+<span id="cb8-28"><a href="#cb8-28"></a><span class="co"># }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 
 
@@ -772,6 +981,7 @@ Wickham, H. (n.d.). <em>R for data science (2e)</em>. <a href="https://r4ds.hadl
 Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Woo, K., Yutani, H., Dunnington, D., Brand, T. van den, Posit, &amp; PBC. (2024). <em>ggplot2: <span>Create</span> <span>Elegant</span> <span>Data</span> <span>Visualisations</span> <span>Using</span> the <span>Grammar</span> of <span>Graphics</span></em>. <a href="https://cran.r-project.org/web/packages/ggplot2/index.html">https://cran.r-project.org/web/packages/ggplot2/index.html</a>
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1189,13 +1399,13 @@ Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Wo
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../inspiration.html" class="pagination-link" aria-label="Prophecy to Prediction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Prophecy to Prediction</span></span>
+      <a href="../nb/01_business_understanding_rev.html" class="pagination-link" aria-label="Business Understanding">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Business Understanding</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../nb/07_conclusions_recommendations_rev.html" class="pagination-link" aria-label="Conclusions">
-        <span class="nav-page-text"><span class="chapter-title">Conclusions</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../nb/03_data_preparation_rev.html" class="pagination-link" aria-label="Data Preparation">
+        <span class="nav-page-text"><span class="chapter-title">Data Preparation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1207,7 +1417,7 @@ Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Wo
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/nb/00_pythias_advice_rev.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/nb/02_data_understanding_rev.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p><a href="https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai">EAISI</a></p>
 </div>

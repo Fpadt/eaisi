@@ -44,8 +44,9 @@ mtcars[1:8, 1:6] %>%
   tab_header(
     title    = md("**My Branded Table**"),
     subtitle = "With a consistent gt theme"
-  ) %>%
-  gt_theme_pythia()
+  ) 
+# %>%
+#   gt_theme_pythia()
 
 
 ```
