@@ -205,6 +205,7 @@ format:
   pdf: #arxiv-pdf:
     keep-tex:           false
     documentclass:      book #scrbook
+    documentclass-options: ["oneside","openany"]
     papersize:          a4
     geometry:
       - a4paper
@@ -212,11 +213,7 @@ format:
       - right=2cm
       - top=2cm
       - bottom=2cm
-    margin:
-      x: 1cm
-      y: 1cm
-    includes:
-      in_header: header.tex    
+    include-in-header: header.tex
     toc:                true
     toc-depth:          1
     toc-title:          'Table of Contents'
