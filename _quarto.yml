@@ -1,6 +1,8 @@
 project:
   type: book
   output-dir: docs
+  # pre-render: "_book_functions.R" 
+
   
 date:        last-modified
 date-format: long
@@ -50,14 +52,22 @@ crossref:
   def-title:  def
     
 execute:
-  freeze:  false
+  freeze:  auto
   cache:   false
+  global:  true  
   echo:    true
   output:  true
-  include: true
-  warning: false
+  include: true  
 
 editor: source
+
+knitr:
+  opts_chunk:
+    message: false
+    warning: false
+  opts_knit:
+    root.dir: "."
+    before_chapter_script: "_book_functions.R"  # Remove the "../" 
 
 book:
   title: "Pythia's Advice"
@@ -91,7 +101,7 @@ book:
         # The myth of Pythia
         - inspiration.qmd
         # White Paper: Research Analysis
-        - nb/00_pythias_advice_rev.qmd 
+        - nb/00_pythias_advice_rev.qmd
         # Conclusions – Synthesis of findings, key takeaways, and their significance.
         # Recommendations – Suggested actions or further research directions.
         - nb/07_conclusions_recommendations_rev.qmd
@@ -109,16 +119,16 @@ book:
         - nb/03_data_preparation_rev.qmd
         # Modelling: Detailed Implementation and Algorithms
         - nb/04_modelling_rev.qmd
-        # Evaluation: Performance Metrics and Additional Analysis        
+        # Evaluation: Performance Metrics and Additional Analysis
         - nb/05_evaluation_rev.qmd
         - nb/06_deployment_rev.qmd
-        # Methodology & Framework: Technical Details and Coding      
+        # Methodology & Framework: Technical Details and Coding
         - nb/08_appendix_rev.qmd
         # DAPS and Flow Down
         - nb/16_flow_down_rev.qmd
-        # References – Academic references, data sources, and research citations.        
+        # References – Academic references, data sources, and research citations.
         - nb/18_references_rev.qmd
-        # Resources – Tools, libraries, and datasets used, with links and explanations.        
+        # Resources – Tools, libraries, and datasets used, with links and explanations.
         - nb/19_resources_rev.qmd
 
 resources:
@@ -160,6 +170,8 @@ nocite: |
 
 format:
   html:
+    includes:
+      in-header: "_book_functions.R"
     title-block-banner: true
     title-block-style: default
     # Custom banner color
@@ -203,6 +215,8 @@ format:
     # papersize: A4    
 
   pdf: #arxiv-pdf:
+    includes:
+      in-header: "_book_functions.R"
     keep-tex:           false
     documentclass:      book #scrbook
     # documentclass-options: ["oneside","openany"]

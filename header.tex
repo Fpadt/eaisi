@@ -1,14 +1,34 @@
 % header.tex
 
+% header.tex - Font setup for Unicode characters
+\usepackage{fontspec}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{unicode-math}
+
+% Set main fonts
+\setmainfont{Latin Modern Roman}  
+\setmonofont[Scale=0.9]{JetBrains Mono}
+\newfontfamily\unicodefont{JetBrains Mono}
+
+% \setmonofont[Scale=0.9]{Noto Sans Mono}
+% \newfontfamily\unicodefont{Noto Sans Mono}
+
+% Ensure proper character encoding
+\defaultfontfeatures{Ligatures=TeX}
+
 % 0) set up the page size & margins yourself
 \usepackage[
   a4paper,
-  left=2cm,
-  right=2cm,
-  top=2cm,
+  left=3cm,
+  right=3cm,
+  top=3cm,
   bottom=3cm,
+  marginparwidth=2cm,
   includehead,    % ← account for your 2.5cm header
-  includefoot     % ← in case you ever add a footer
+  includefoot,    % ← in case you ever add a footer
+  footskip=1cm   
 ]{geometry}
 
 % 1) load graphicx before you use \includegraphics
@@ -35,15 +55,3 @@
 \renewcommand{\headrulewidth}{0pt}
 
 
-% \usepackage{fancyhdr}
-% \usepackage{typearea}
-% \renewcommand{\cleardoublepage}{\clearpage} 
-
-% \addtolength{\headheight}{1.0cm}  % make more space for the header
-% \setlength{\headheight}{2.5cm}
-% \pagestyle{fancyplain}            % use fancy for all pages except chapter start
-% \lhead{\includegraphics[height=1cm]{C:/RW/eaisi/images/logo_transp.png}}
-
-% \rhead{\includegraphics[height=2cm]{C:/RW/eaisi/images/logo_transp.png}} % right logo
-
-% \renewcommand{\headrulewidth}{0pt} % remove rule below header 

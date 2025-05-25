@@ -159,7 +159,6 @@ See Figure @fig-bu-why for the thumbnail overview.
 
 {{<var version>}}\
 {{<var email_info >}}\
-{{< meta subtitle >}}
 
 ::: callout-note
 Note that there are five types of callouts, including: `note`, `warning`, `important`, `tip`, and `caution`.

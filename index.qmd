@@ -14,13 +14,12 @@ format:
 
 
 ```{r}
-#| label: functions
-#| eval: true
-#| echo: false
-#| output: false
+#| label:   setup
 #| include: false
-source("C:/RW/eaisi/book_functions.r")
+#| eval:    false
+source("_book_functions.R")
 ```
+
 
 
 ## Acknowledgments {.appendix .unnumbered}

@@ -1,4 +1,4 @@
-#!/bin/bash
+@echo off
 
 rem # Execute the R script before rendering
 echo "Running pre-render script..."
