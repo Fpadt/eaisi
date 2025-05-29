@@ -4,6 +4,7 @@ subtitle: Demand planners' forecasting accuracy doesn't matter, FVA does!
 ---
 
 <!-- – Next Steps video (how to apply the findings in practice) -->
+
 <!-- – Roadmap for deployment, change-management tips, stakeholder guidelines -->
 
 # Insight to Impact {#sec-insight-to-impact}
@@ -13,12 +14,27 @@ subtitle: Demand planners' forecasting accuracy doesn't matter, FVA does!
 </BR>
 
 <figure>
-  {{< video https://www.youtube.com/embed/JMFhghxc6As
-      title="Demand planners' forecasting accuracy doesn't matter, FVA does!"
-  >}}
-   <figcaption>
-     video and insight by <cite>Nicolas Vandeput</cite> 
-     (<a href="https://www.supchains.com">supchains.com</a>)
-   </figcaption>
-</figure>
 
+{{< video https://www.youtube.com/embed/JMFhghxc6As title="Demand planners' forecasting accuracy doesn't matter, FVA does!" >}}
+
+<blockquote>
+
+Do you manage demand planners?\
+If so, I don't think you should reward them or incentivize them on forecasting accuracy.
+
+You see, if you have various demand planners, some of them are working on very smooth stable markets, where some of them are working on more difficult product. Maybe because they are new product, maybe the competition is more fierce, they have a tougher time at making accurate forecast.
+
+So, instead of incentivize them or rewarding them on forecasting accuracy, I think you should do that based on `forecast value added`. Basically, that's how much extra accuracy your demand planner can add on top of your forecasting engine.
+
+So, if they work on a very smooth market they will have to beat the statistical skill engine and to deliver even more accuracy.\
+Now, if they work on more difficult product more difficult market maybe the bar starts from here and they just have to increase accuracy to here to make it better.
+
+That is `forecast value added` and it's a much fairer way to assess the quality of their work.
+
+— Nicolas Vandeput —\
+
+</blockquote>
+
+<figcaption>video and insight by <cite>Nicolas Vandeput</cite> (<a href="https://www.supchains.com">supchains.com</a>)</figcaption>
+
+</figure>

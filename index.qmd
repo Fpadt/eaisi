@@ -113,11 +113,9 @@ Some sections contain interactive elements:
 — are optional. However, it is recommended to explore them before reading 
 @sec-00-the-heart-of-pythia, as they provide essential background and context.
 
-1.  The central chapter, @sec-00-the-heart-of-pythia, forms the core of this book. 
+1.  The central chapter, @sec-00-the-heart-of-pythia, lies at the heart of this book. 
 Structured around the CRISP-DM methodology, it is designed to be read in a 
-linear sequence, following each phase step by step. To support this flow, 
-navigation links to the next and previous pages are provided at the bottom of 
-each chapter.
+linear sequence, guiding the reader through each phase step by step. To enhance readability, this chapter contains no code and functions as a true white paper — concise in text, and supported by clear visuals and informative tables.
 
 1.  The Appendix contains the corresponding code and detailed analysis for each 
 CRISP-DM phase. For example, see @sec-01-business-understanding for the Business 
