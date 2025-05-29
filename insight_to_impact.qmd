@@ -3,7 +3,6 @@ subtitle: Demand planners' forecasting accuracy doesn't matter, FVA does!
 ---
 
 <!-- – Next Steps video (how to apply the findings in practice) -->
-
 <!-- – Roadmap for deployment, change-management tips, stakeholder guidelines -->
 
 # Insight to Impact {#sec-insight-to-impact .unnumbered}
