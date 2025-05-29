@@ -50,17 +50,17 @@ In today’s increasingly complex market environment, accurate demand forecastin
 
 This study focuses on `BioBalance`, a multi-channel food company operating in the Fast-Moving Consumer Goods (FMCG) industry. The company produces its own products and sources finished goods from suppliers, distributing them through various channels including retail, Out-of-Home (OOH), Health & Food Stores (HFS), discounters, and e-commerce. To support business decisions in production, procurement, and negotiations with suppliers and customers, accurate sales forecasts are required at varying levels of aggregation, tailored to each use case.
 
-### Research Objectives
+## Research Objectives
 
 The primary objective of this research is to assess the Forecast Value Added (FVA) by establishing a minimal-resource benchmark for forecast accuracy. FVA is defined as the difference between the accuracy achieved by the business and the accuracy attainable using a robust, low-effort forecasting approach.
 
 As a secondary objective, this study evaluates the accuracy of hierarchical forecasting techniques, which produce consistent forecasts across multiple aggregation levels — a critical requirement for cross-functional decision-making.
 
-### Purpose of the Research
+## Purpose of the Research
 
 The goal of this research is to provide insight into the cost-benefit relationship of deploying additional forecasting resources. The minimal-resource benchmark serves not only as a reference point for evaluating current performance but also as a baseline target for future improvement efforts.
 
-### Scope of the Research
+## Scope of the Research
 
 `BioBalance` offers a diverse product portfolio (SKUs) across multiple geographical markets, with products varying in sales importance. To ensure a focused and meaningful analysis, this study concentrates on the top 20% of products, which together account for 80% of total sales.
 
@@ -68,7 +68,7 @@ While a small portion of the company’s sales (less than 10%) comes from chille
 
 By narrowing the scope to high-impact ambient products, the study enables a practical and scalable analysis, while still yielding insights that are applicable across the broader product range.
 
-### Structure of the Document
+## Structure of the Document
 
 <!-- Structure of the Document, why we chose CRISP-DM, roadmap of the sections to follow -->
 This research adopts the **CRISP-ML methodology** [@costa_crisp-ml_2022] as its guiding framework.
