@@ -66,7 +66,7 @@ knitr:
     message: false
     warning: false
   opts_knit:
-    root.dir: "."
+    # root.dir: "."
     before_chapter_script: "_book_functions.R"  # Remove the "../" 
 
 book:
@@ -98,38 +98,52 @@ book:
     #  focus on analysis and findings.
     - part: "Main Research"
       chapters:
-        # The myth of Pythia
-        - inspiration.qmd
-        # White Paper: Research Analysis
-        - nb/00_pythias_advice_rev.qmd
-        # Conclusions – Synthesis of findings, key takeaways, and their significance.
+        # The myth of Pythia 
+        - prophecy_to_prediction.qmd
+        # Nicolas van deput
+        - setting_the_stage.qmd
+        # White Paper: The Heart of Pythia
+        - notebooks/00_pythias_advice.qmd        
+        # - nb/00_pythias_advice_rev.qmd
         # Recommendations – Suggested actions or further research directions.
-        - nb/07_conclusions_recommendations_rev.qmd
+        - insight_to_impact.qmd
 
       # Detailed Analysis and Supplementary Materials
     - part: "Appendix"
       chapters:
         # CRISP-DM: Detailed Process Flow – Deeper dive into each phase with coding snippets.
-        - nb/17_crisp-dm_rev.qmd
+        - notebooks/17_crisp-dm.qmd
+        # - nb/17_crisp-dm_rev.qmd
         # Business Understanding: Analytical Frameworks
-        - nb/01_business_understanding_rev.qmd
+        - notebooks/01_business_understanding.qmd
+        # - nb/01_business_understanding_rev.qmd
         # Data Understanding: Data Dictionary and Descriptive Statistics        
-        - nb/02_data_understanding_rev.qmd
+        - notebooks/02_data_understanding.qmd
+        # - nb/02_data_understanding_rev.qmd
         # Data Preparation: Preprocessing Code and Examples
-        - nb/03_data_preparation_rev.qmd
+        - notebooks/03_data_preparation.qmd
+        # - nb/03_data_preparation_rev.qmd
         # Modelling: Detailed Implementation and Algorithms
-        - nb/04_modelling_rev.qmd
+        - notebooks/04_modelling.qmd
+        # - nb/04_modelling_rev.qmd
         # Evaluation: Performance Metrics and Additional Analysis
-        - nb/05_evaluation_rev.qmd
-        - nb/06_deployment_rev.qmd
+        - notebooks/05_evaluation.qmd
+        # - nb/05_evaluation_rev.qmd
+        # Deployment: Implementation Strategies and Code Snippets
+        - notebooks/06_deployment.qmd
+        # - nb/06_deployment_rev.qmd
         # Methodology & Framework: Technical Details and Coding
-        - nb/08_appendix_rev.qmd
+        - notebooks/08_appendix.qmd
+        # - nb/08_appendix_rev.qmd
         # DAPS and Flow Down
-        - nb/16_flow_down_rev.qmd
+        - notebooks/16_flow_down.qmd
+        # - nb/16_flow_down_rev.qmd
         # References – Academic references, data sources, and research citations.
-        - nb/18_references_rev.qmd
+        - notebooks/18_references.qmd
+        # - nb/18_references_rev.qmd
         # Resources – Tools, libraries, and datasets used, with links and explanations.
-        - nb/19_resources_rev.qmd
+        - notebooks/19_resources.qmd
+        # - nb/19_resources_rev.qmd
 
 resources:
   - notebooks/01_business_understanding.qmd  
@@ -214,38 +228,38 @@ format:
     # documentclass: scrartcl
     # papersize: A4    
 
-  pdf: #arxiv-pdf:
-    includes:
-      in-header: "_book_functions.R"
-    keep-tex:           false
-    documentclass:      book #scrbook
-    # documentclass-options: ["oneside","openany"]
-    papersize:          a4
-    include-in-header: header.tex
-    toc:                true
-    toc-depth:          1
-    toc-title:          'Table of Contents'
-    lof:                false
-    lot:                false
-    number-sections:    true
-    number-depth:       2
-    number-offset:      0
-    # mainfont:
-    # fontfamily: libertinus
-    # biblio-title:       References
-    # cite-method:        natbib
-    fontsize:           "10"
-    # fontfamily:         Passion One
-    # sansfont:           Passion One
-    reference-location: document
-    citation-location:  document
-    cap-location:       bottom
-    fig-cap-location:   top
-    tbl-cap-location:   top
-    colorlinks:         true
-    output-file:        pythias_advice.pdf
-    linenumbers:        false # Add (continuous) line numbers?
-    doublespacing:      false # Double space the PDF output?
-    runninghead:        "Pyhtia's Advice" # The text on the top of each page of the output
-    authorcols:         false # Should authors be listed in a single column (false)
-
+  # pdf: #arxiv-pdf:
+  #   includes:
+  #     in-header: "_book_functions.R"
+  #   keep-tex:           false
+  #   documentclass:      book #scrbook
+  #   # documentclass-options: ["oneside","openany"]
+  #   papersize:          a4
+  #   include-in-header: header.tex
+  #   toc:                true
+  #   toc-depth:          1
+  #   toc-title:          'Table of Contents'
+  #   lof:                false
+  #   lot:                false
+  #   number-sections:    true
+  #   number-depth:       2
+  #   number-offset:      0
+  #   # mainfont:
+  #   # fontfamily: libertinus
+  #   # biblio-title:       References
+  #   # cite-method:        natbib
+  #   fontsize:           "10"
+  #   # fontfamily:         Passion One
+  #   # sansfont:           Passion One
+  #   reference-location: document
+  #   citation-location:  document
+  #   cap-location:       bottom
+  #   fig-cap-location:   top
+  #   tbl-cap-location:   top
+  #   colorlinks:         true
+  #   output-file:        pythias_advice.pdf
+  #   linenumbers:        false # Add (continuous) line numbers?
+  #   doublespacing:      false # Double space the PDF output?
+  #   runninghead:        "Pyhtia's Advice" # The text on the top of each page of the output
+  #   authorcols:         false # Should authors be listed in a single column (false)
+  # 

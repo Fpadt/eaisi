@@ -8,10 +8,9 @@ format:
     css: cover-styles.css
 ---
 
-::: {.cover-container}
-![](images/pythia_logo_cover.png){width=50% fig-align="center" .cover-image}
+::: cover-container
+![](images/pythia_logo_cover.png){.cover-image width="50%" fig-align="center"}
 :::
-
 
 ```{r}
 #| label:   setup
@@ -19,14 +18,25 @@ format:
 #| eval:    false
 source("_book_functions.R")
 ```
+# Preface {.unnumbered}
 
+## Disclaimer {.appendix .unnumbered}
 
+This research presents a fictional case study of **BioBalance**, 
+a company operating in the food-for-biodiversity sector. 
+The associated brands, locations, and customers are entirely fictional and 
+generated using AI. 
+Although the time series analysis is based on real business data, every effort 
+has been made to anonymize and protect sensitive information. 
+Any resemblance to actual entities — past or present — is purely coincidental.
 
 ## Acknowledgments {.appendix .unnumbered}
 
-I am grateful for the insightful comments offered by **{{<var mentor >}}**. 
+I am deeply grateful to [**{{<var mentor>}}** ](https://www.tue.nl/en/education/professional-education/current-programs/eaisi-academy/lecturers/dr-ieke-le-blanc) for his insightful feedback and valuable guidance throughout this research. His emphasis on the importance of Forecast Value Added (FVA), as opposed to merely evaluating Statistical Forecast Accuracy, profoundly shaped the direction and depth of this book.
 
-These have improved this study in innumerable ways and saved me from many errors; those that inevitably remain are entirely my own responsibility.
+Additionally, he introduced me to [Nicolas Vandeput](https://www.linkedin.com/in/vandeputnicolas/), whose concise yet inspiring YouTube videos sparked key ideas central to the development of the *Pythia’s Advice project*, as can be seen in the chapters @sec-setting-the-stage and @sec-insight-to-impact.
+
+The guidance provided by {{<var mentor >}} significantly enhanced this study, helping me avoid numerous pitfalls. Any remaining errors or oversights are, of course, entirely my own responsibility.
 
 ## How to Read This Book
 
@@ -34,21 +44,36 @@ This guide will help you navigate through this book and make the most of its fea
 
 ### Book Structure
 
-This book is organized into the following main sections:
+This book is organized into three parts, as shown in the sidebar on the left:
 
-- **Preface**: acknowledgments and how-to read this book
-- **Main Research**: exploration of each phase of the CRISP-DM methodology in the [Research Analysis](nb/00_pythias_advice_rev.html) 
-- **Appendix**: coding, references, and supplementary materials on each CRISP-DM phase.
+-   **Preface**: disclaimer, acknowledgments and how-to read this book.
+-   **Main Research**:
+    -   *@sec-prophecy-to-prediction*: the story behind the name *Pythia’s Advice*.
+    -   *@sec-setting-the-stage*: the inspiration behind the project.
+    -   *@sec-00-the-heart-of-pythia*: exploration of each phase of the CRISP-DM methodology. 
+    -   *@sec-insight-to-impact*: how to use the Project's results to create impact.
+-   **Appendix**: coding, references, and supplementary materials on each CRISP-DM phase.
 
 ### Navigation Features
 
 This book includes several features to enhance your reading experience:
 
 #### Table of Contents
-The sidebar on the left provides a full table of contents. Click on any section to navigate directly to it.
+
+- The *left sidebar* displays the full structure of the book. The top level shows 
+the main Parts, with each Chapter listed beneath. The current chapter is 
+highlighted. Click any chapter to navigate directly to it.
+
+- The *right sidebar* shows the table of contents for the current chapter, allowing 
+you to quickly jump to specific sections within it.
 
 #### Search Function
+
 Use the search icon (🔍) in the top navigation bar to search for specific terms throughout the book.
+
+#### Page Navigation
+
+To support a natural, linear reading experience, each chapter includes navigation links at the bottom that take you to the previous or next chapter.
 
 #### Code Blocks
 
@@ -64,50 +89,57 @@ x <- 41   # code line 1
 x <- 42   # code line 2
 ```
 
-
-- Code blocks have a copy button (📋) in the top-right corner
-- Some code blocks can be expanded to show more details
-<!-- - You can also toggle between code and output views -->
+-   Code blocks have a copy button (📋) in the top-right corner
+-   Some code blocks can be expanded to show more details <!-- - You can also toggle between code and output views -->
 
 #### Cross-References
-This book contains cross-references to:
 
-- figures (@fig-bu-why) 
-- definitions (@def-EX-DEF)  
-- sections ([Research Analysis](nb/00_pythias_advice_rev.html))
+This book contains cross-references — hover over them to get a sneak preview:
+
+-   figures (@fig-bu-why)
+-   definitions (@def-EX-DEF)\
+-   chapters (@sec-prophecy-to-prediction)
 
 #### Interactive Elements
-Some sections contain interactive elements:  
 
-- Click on images to enlarge them  
-- Interactive visualizations allow you to explore data  
-- Collapsible sections can be expanded for additional details  
+Some sections contain interactive elements:
+
+-   Click on images to enlarge them\
+<!-- -   Interactive visualizations allow you to explore data\ -->
+-   Collapsible sections can be expanded for additional details
 
 ### Reading Pathways
+1. The chapters in Main Research — with the exception of @sec-00-the-heart-of-pythia
+— are optional. However, it is recommended to explore them before reading 
+@sec-00-the-heart-of-pythia, as they provide essential background and context.
 
-1. Start with the [Research Analysis](nb/00_pythias_advice_rev.html) section which
-is designed to be read in a linear fashion following the CRISP-DM phases. 
+1.  The central chapter, @sec-00-the-heart-of-pythia, forms the core of this book. 
+Structured around the CRISP-DM methodology, it is designed to be read in a 
+linear sequence, following each phase step by step. To support this flow, 
+navigation links to the next and previous pages are provided at the bottom of 
+each chapter.
 
-1. In the Appendix the related coding and detailed analysis can be found on each phase of CRISP-DM, e.g. [Business Understanding](nb/01_business_understanding_rev.html)
+1.  The Appendix contains the corresponding code and detailed analysis for each 
+CRISP-DM phase. For example, see @sec-01-business-understanding for the Business 
+Understanding phase.
 
 ### Best Viewing Experience
 
-For the optimal experience:  
+For the optimal experience:
 
-- Use a modern web browser (Chrome, Firefox, Safari, or Edge)  
-- Enable JavaScript for interactive features  
-- Use the dark/light mode toggle for your preferred reading environment  
+-   Use a modern web browser (Chrome, Firefox, Safari, or Edge)\
+-   Enable JavaScript for interactive features\
+-   Use the dark/light mode toggle for your preferred reading environment
 
 ### Downloading and Sharing
 
-- Access the source code and data in GitHub with the github icon. 
-- The pdf icon will open the book as a PDF.
-- In section @sec-19-resources the pptx and other resources can be locally saved(💾).
-- Use the share buttons to share specific chapters on social media.
+-   Access the source code and data in GitHub with the github icon.
+-   The pdf icon will open the book as a PDF.
+-   In section @sec-19-resources the pptx and other resources can be locally saved(💾).
+-   Use the share buttons to share specific chapters on social media.
 
 ::: {#def-EX-DEF}
 **DEF:**
 
-This is an example of a definition
-DEF = $\sqrt{mean(e^2_t)}$
+This is an example of a definition DEF = $\sqrt{mean(e^2_t)}$
 :::

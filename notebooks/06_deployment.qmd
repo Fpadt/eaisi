@@ -23,4 +23,4 @@ scalability - distributed techniques - maintenance & updating the model - monito
 
 # Appendix {.unnumbered}
 
-{{< include 06_deployment_def.qmd >}}
+<!-- {{< include 06_deployment_def.qmd >}} -->

@@ -18,7 +18,7 @@ editor: source
 # source("../_book_functions.R")
 
 
-source("_book_functions.R")  # Fallback
+source("../_book_functions.R")  # Fallback
 
 ```
 
@@ -1756,6 +1756,24 @@ scn <- fread("C:/Users/flori/OneDrive/ET/pythia/data/scn_pythia.csv") %T>%
 create_flextable_with_images(scn)
 
 ```
+
+## Defining the Scope of the ML Application
+
+##Success Criteria - Business Success purpose and success criteria (reduction OOS&OOD) and other factors like customer & employee satisfaction - ML Success FA% and BIAS% - Economic Success impact of the project on the companies financial performance DAPS \## Feasibility availability, size, and quality of the training sample
+
+### Background
+
+The company's forecasting requirements vary significantly across several key use cases, among others:
+
+```{r convert‐diagram, include=FALSE}
+# make sure you have installed: install.packages("rsvg")
+rsvg::rsvg_png(
+  svg    = "../images/scn.svg",
+  file   = "../images/scn.png",
+  width  = 800     # adjust width / height or res as needed
+)
+```
+
 
 ::: {.content-visible when-format="html"}
 ![supply chain network (sample)](../images/scn.svg){fig-alt="Supply Chain Network" fig-align="center" fig-width="15cm"}

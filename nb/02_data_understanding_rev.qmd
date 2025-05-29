@@ -31,19 +31,7 @@ outliers?
 
 ### Data Verification
 
-# Data Preparation
 
-preparing the data for further analysis and modeling. This might involve cleaning and preprocessing the data, as well as transforming it into a format that is suitable for use in a machine-learning model.
-
-5.1. Handling Missing Data
-
--   imputing missing values, Imputation methods involve replacing missing values with estimated values.
-
--   scaling numeric features
-
--   encoding categorical features
-
--   selecting a subset of the data to use in the model.
 
 
 ```{r}

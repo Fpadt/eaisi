@@ -1,5 +1,5 @@
 ---
-title:    Research Analysis
+title:    The Heart of Pythia
 subtitle: TRUST - is all you need!
 
 description: |
@@ -53,7 +53,7 @@ plain-language-summary: |
   Balance the benefits of higher forecast accuracy with the cost of additional resources ...
 ---
 
-<!-- White Paper: Research Analysis -->
+<!-- White Paper: The Heart of Pythia -->
 <!--  Introduction – Define the research question, objectives, and structure. -->
 <!--  Business Understanding – Contextualize the business problem and its forecasting relevance. -->
 <!--  Data Understanding – Dataset description, data sources, and key variables. -->
@@ -65,6 +65,7 @@ plain-language-summary: |
 
 # Introduction {#sec-00-introduction}
 
+<!-- A very brief orient-in: what this analysis covers, why we chose CRISP-DM, and a roadmap of the sections to follow. -->
 <!-- Context and Purpose of the Study -->
 <!-- Scope and Structure of the Document -->
 
@@ -81,6 +82,12 @@ The primary objective of this research is to determine the best way to generate 
 
 Ultimately, this research will provide an objective, data-driven strategy to improve forecast accuracy, reduce reliance on individual intuition, and ensure that forecasts are robust, consistent, and scalable across multiple aggregation levels, thereby enhancing overall decision-making efficiency.
 
+<!-- ## 2. Analytical Framework   -->
+<!-- – **2.1 CRISP-DM Overview**   -->
+<!--    A paragraph or two on why CRISP-DM and how you’ve tailored it.   -->
+<!-- – **2.2 Scope & Objectives**   -->
+<!--    Restate the business question(s) and success criteria. -->
+   
 ## **Methodology**
 
 This research follows the **CRISP-ML methodology**, [@costa_crisp-ml_2022] as the guiding framework.
@@ -140,6 +147,7 @@ This thesis focuses on the first 4 steps, the results will be taken as advice to
 
 # Business Understanding
 
+<!-- – Detailed statement of the problem, KPIs, constraints, stakeholders. -->
 where the business process is mapped and when the main indicators are identified, as well as when the business objectives are defined What is the business's need?
 
 ::: {#fig-bu-why .figure}
@@ -153,9 +161,27 @@ See Figure @fig-bu-why for the thumbnail overview.
 
 # Data Undestanding
 
+<!-- – Data sources & collection   -->
+<!-- – Exploratory analyses & sanity checks   -->
+<!-- – Initial data quality findings -->
+
+# Data Preparation
+
+<!-- – Cleaning & wrangling steps   -->
+<!-- – Feature engineering   -->
+<!-- – Any sampling or balancing   -->
+
 # Modeling
 
+<!-- – Algorithms tried (with brief rationale)   -->
+<!-- – Hyperparameter approaches   -->
+<!-- – Training/validation split -->
+
 # Evaluation
+
+<!-- – Performance metrics & visualizations   -->
+<!-- – Error analysis   -->
+<!-- – Comparison against baseline -->
 
 {{<var version>}}\
 {{<var email_info >}}\
@@ -178,10 +204,21 @@ This is an example of a 'folded' caution callout that can be expanded by the use
 
 # Deployment
 
+<!-- – Practical steps for integration (tools, APIs, monitoring)   -->
+<!-- – Change-management considerations -->
+
+## 9. Discussion & Key Findings  
+– Interpret results in business terms (“so what?”)  
+– Limitations and potential biases
+
 # Conclusion
+
+<!-- – One-page recap of what you did, what you found, and next steps -->
 
 # Glossary {.unnumbered}
 
+<!-- – Definitions of any jargon, acronyms, or metrics used above
+-->
 ::: html
 {{< include 00_pythias_advice_def.qmd >}}
 :::

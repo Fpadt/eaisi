@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2025-05-29">
 
-<title>Pythia’s Advice</title>
+<title>Insight to Impact – Pythia's Advice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -86,7 +51,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./prophecy_to_prediction.html" rel="next">
+<link href="./notebooks/17_crisp-dm.html" rel="next">
+<link href="./notebooks/00_pythias_advice.html" rel="prev">
 <link href="./images/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -102,9 +68,6 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-94fa406e38a5c78d3de9dca02b1572d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-ba558c2fbb090de1150150c181bbc6a4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-94fa406e38a5c78d3de9dca02b1572d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -148,7 +111,11 @@ div.csl-indent {
         color: #FFFFFF;
       }
 </style>
-</head><body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -308,68 +275,7 @@ div.csl-indent {
     } else {
       toggleColorMode(false);
     }
-  </script># Add enhanced Open Graph tags for WhatsApp
-
-include-in-header:
-
-  text: |
-
-    <!-- Open Graph Tags for WhatsApp -->
-
-    <meta property="og:type" content="website">
-
-    <meta property="og:title" content="Pythia’s Advice">
-
-    <meta property="og:description" content="">
-
-    <meta property="og:url" content="https://pythia.smart-r.nl/">
-
-    <meta property="og:image" content="https://pythia.smart-r.nl/images/pythia_logo_cover.png">
-
-    <meta property="og:image:width" content="1000">
-
-    <meta property="og:image:height" content="530">
-
-    <meta property="og:image:type" content="image/png">
-
-    <meta property="og:image:secure_url" content="https://pythia.smart-r.nl/images/pythia_logo_cover.png">        
-
-        
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="cover-styles.css">
-
-
-
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -378,7 +284,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Preface</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prophecy_to_prediction.html">Main Research</a></li><li class="breadcrumb-item"><a href="./insight_to_impact.html"><span class="chapter-title">Insight to Impact</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -390,8 +296,9 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Pythia’s Advice</h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prophecy_to_prediction.html">Main Research</a></li><li class="breadcrumb-item"><a href="./insight_to_impact.html"><span class="chapter-title">Insight to Impact</span></a></li></ol></nav>
+      <h1 class="title"><span class="chapter-title">Insight to Impact</span></h1>
+            <p class="subtitle lead">Demand planners’ forecasting accuracy doesn’t matter, FVA does!</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Time Series Forecasting</div>
                 <div class="quarto-category">Data Science</div>
@@ -492,7 +399,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Preface</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -521,7 +428,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./insight_to_impact.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Insight to Impact</span></a>
+  <a href="./insight_to_impact.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Insight to Impact</span></a>
   </div>
 </li>
       </ul>
@@ -602,21 +509,9 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
-  <ul class="collapse">
-  <li><a href="#disclaimer" id="toc-disclaimer" class="nav-link" data-scroll-target="#disclaimer">Disclaimer</a></li>
-  <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link" data-scroll-target="#acknowledgments">Acknowledgments</a></li>
-  <li><a href="#how-to-read-this-book" id="toc-how-to-read-this-book" class="nav-link" data-scroll-target="#how-to-read-this-book">How to Read This Book</a>
-  <ul class="collapse">
-  <li><a href="#book-structure" id="toc-book-structure" class="nav-link" data-scroll-target="#book-structure">Book Structure</a></li>
-  <li><a href="#navigation-features" id="toc-navigation-features" class="nav-link" data-scroll-target="#navigation-features">Navigation Features</a></li>
-  <li><a href="#reading-pathways" id="toc-reading-pathways" class="nav-link" data-scroll-target="#reading-pathways">Reading Pathways</a></li>
-  <li><a href="#best-viewing-experience" id="toc-best-viewing-experience" class="nav-link" data-scroll-target="#best-viewing-experience">Best Viewing Experience</a></li>
-  <li><a href="#downloading-and-sharing" id="toc-downloading-and-sharing" class="nav-link" data-scroll-target="#downloading-and-sharing">Downloading and Sharing</a></li>
-  </ul></li>
-  </ul></li>
+  <li><a href="#sec-insight-to-impact" id="toc-sec-insight-to-impact" class="nav-link active" data-scroll-target="#sec-insight-to-impact">Insight to Impact</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/insight_to_impact.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -626,126 +521,20 @@ window.Quarto = {
 
 
 
-<div class="cover-container">
-<div class="quarto-figure quarto-figure-center">
+<!-- – Next Steps video (how to apply the findings in practice) -->
+<!-- – Roadmap for deployment, change-management tips, stakeholder guidelines -->
+<section id="sec-insight-to-impact" class="level1">
+<h1>Insight to Impact</h1>
+<blockquote class="blockquote">
+<p>Demand planners’ forecasting accuracy doesn’t matter, <strong>FVA does!</strong></p>
+</blockquote>
+<p><br></p>
 <figure class="figure">
-<p><a href="images/pythia_logo_cover.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/pythia_logo_cover.png" class="cover-image img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a></p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/JMFhghxc6As" title="Demand planners' forecasting accuracy doesn't matter, FVA does!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<figcaption>
+video and insight by <cite>Nicolas Vandeput</cite> (<a href="https://www.supchains.com">supchains.com</a>)
+</figcaption>
 </figure>
-</div>
-</div>
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<section id="disclaimer" class="level2 appendix unnumbered">
-<h2 class="appendix unnumbered anchored" data-anchor-id="disclaimer">Disclaimer</h2>
-<p>This research presents a fictional case study of <strong>BioBalance</strong>, a company operating in the food-for-biodiversity sector. The associated brands, locations, and customers are entirely fictional and generated using AI. Although the time series analysis is based on real business data, every effort has been made to anonymize and protect sensitive information. Any resemblance to actual entities — past or present — is purely coincidental.</p>
-</section>
-<section id="acknowledgments" class="level2 appendix unnumbered">
-<h2 class="appendix unnumbered anchored" data-anchor-id="acknowledgments">Acknowledgments</h2>
-<p>I am deeply grateful to <a href="https://www.tue.nl/en/education/professional-education/current-programs/eaisi-academy/lecturers/dr-ieke-le-blanc"><strong>Ieke le Blanc</strong></a> for his insightful feedback and valuable guidance throughout this research. His emphasis on the importance of Forecast Value Added (FVA), as opposed to merely evaluating Statistical Forecast Accuracy, profoundly shaped the direction and depth of this book.</p>
-<p>Additionally, he introduced me to <a href="https://www.linkedin.com/in/vandeputnicolas/">Nicolas Vandeput</a>, whose concise yet inspiring YouTube videos sparked key ideas central to the development of the <em>Pythia’s Advice project</em>, as can be seen in the chapters <a href="setting_the_stage.html" class="quarto-xref"><span>Setting the Stage</span></a> and <a href="insight_to_impact.html" class="quarto-xref"><span>Insight to Impact</span></a>.</p>
-<p>The guidance provided by Ieke le Blanc significantly enhanced this study, helping me avoid numerous pitfalls. Any remaining errors or oversights are, of course, entirely my own responsibility.</p>
-</section>
-<section id="how-to-read-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-read-this-book">How to Read This Book</h2>
-<p>This guide will help you navigate through this book and make the most of its features.</p>
-<section id="book-structure" class="level3">
-<h3 class="anchored" data-anchor-id="book-structure">Book Structure</h3>
-<p>This book is organized into three parts, as shown in the sidebar on the left:</p>
-<ul>
-<li><strong>Preface</strong>: disclaimer, acknowledgments and how-to read this book.</li>
-<li><strong>Main Research</strong>:
-<ul>
-<li><em><a href="prophecy_to_prediction.html" class="quarto-xref"><span>Prophecy to Prediction</span></a></em>: the story behind the name <em>Pythia’s Advice</em>.</li>
-<li><em><a href="setting_the_stage.html" class="quarto-xref"><span>Setting the Stage</span></a></em>: the inspiration behind the project.</li>
-<li><em><a href="notebooks/00_pythias_advice.html" class="quarto-xref"><span>The Heart of Pythia</span></a></em>: exploration of each phase of the CRISP-DM methodology.</li>
-<li><em><a href="insight_to_impact.html" class="quarto-xref"><span>Insight to Impact</span></a></em>: how to use the Project’s results to create impact.</li>
-</ul></li>
-<li><strong>Appendix</strong>: coding, references, and supplementary materials on each CRISP-DM phase.</li>
-</ul>
-</section>
-<section id="navigation-features" class="level3">
-<h3 class="anchored" data-anchor-id="navigation-features">Navigation Features</h3>
-<p>This book includes several features to enhance your reading experience:</p>
-<section id="table-of-contents" class="level4">
-<h4 class="anchored" data-anchor-id="table-of-contents">Table of Contents</h4>
-<ul>
-<li><p>The <em>left sidebar</em> displays the full structure of the book. The top level shows the main Parts, with each Chapter listed beneath. The current chapter is highlighted. Click any chapter to navigate directly to it.</p></li>
-<li><p>The <em>right sidebar</em> shows the table of contents for the current chapter, allowing you to quickly jump to specific sections within it.</p></li>
-</ul>
-</section>
-<section id="search-function" class="level4">
-<h4 class="anchored" data-anchor-id="search-function">Search Function</h4>
-<p>Use the search icon (🔍) in the top navigation bar to search for specific terms throughout the book.</p>
-</section>
-<section id="page-navigation" class="level4">
-<h4 class="anchored" data-anchor-id="page-navigation">Page Navigation</h4>
-<p>To support a natural, linear reading experience, each chapter includes navigation links at the bottom that take you to the previous or next chapter.</p>
-</section>
-<section id="code-blocks" class="level4">
-<h4 class="anchored" data-anchor-id="code-blocks">Code Blocks</h4>
-<div class="cell">
-<details class="code-fold">
-<summary>Click to Show R Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>x <span class="ot">&lt;-</span> <span class="dv">41</span>   <span class="co"># code line 1</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>x <span class="ot">&lt;-</span> <span class="dv">42</span>   <span class="co"># code line 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<ul>
-<li>Code blocks have a copy button (📋) in the top-right corner</li>
-<li>Some code blocks can be expanded to show more details <!-- - You can also toggle between code and output views --></li>
-</ul>
-</section>
-<section id="cross-references" class="level4">
-<h4 class="anchored" data-anchor-id="cross-references">Cross-References</h4>
-<p>This book contains cross-references — hover over them to get a sneak preview:</p>
-<ul>
-<li>figures (<a href="notebooks/04_modelling.html#fig-bu-why" class="quarto-xref">Figure&nbsp;<span>10.1</span></a>)</li>
-<li>definitions (<a href="#def-EX-DEF" class="quarto-xref">def&nbsp;<span>1</span></a>)<br>
-</li>
-<li>chapters (<a href="prophecy_to_prediction.html" class="quarto-xref"><span>Prophecy to Prediction</span></a>)</li>
-</ul>
-</section>
-<section id="interactive-elements" class="level4">
-<h4 class="anchored" data-anchor-id="interactive-elements">Interactive Elements</h4>
-<p>Some sections contain interactive elements:</p>
-<ul>
-<li>Click on images to enlarge them<br>
-<!-- -   Interactive visualizations allow you to explore data\ --></li>
-<li>Collapsible sections can be expanded for additional details</li>
-</ul>
-</section>
-</section>
-<section id="reading-pathways" class="level3">
-<h3 class="anchored" data-anchor-id="reading-pathways">Reading Pathways</h3>
-<ol type="1">
-<li><p>The chapters in Main Research — with the exception of <a href="notebooks/00_pythias_advice.html" class="quarto-xref"><span>The Heart of Pythia</span></a> — are optional. However, it is recommended to explore them before reading <a href="notebooks/00_pythias_advice.html" class="quarto-xref"><span>The Heart of Pythia</span></a>, as they provide essential background and context.</p></li>
-<li><p>The central chapter, <a href="notebooks/00_pythias_advice.html" class="quarto-xref"><span>The Heart of Pythia</span></a>, forms the core of this book. Structured around the CRISP-DM methodology, it is designed to be read in a linear sequence, following each phase step by step. To support this flow, navigation links to the next and previous pages are provided at the bottom of each chapter.</p></li>
-<li><p>The Appendix contains the corresponding code and detailed analysis for each CRISP-DM phase. For example, see <a href="notebooks/01_business_understanding.html" class="quarto-xref"><span>Business Understanding</span></a> for the Business Understanding phase.</p></li>
-</ol>
-</section>
-<section id="best-viewing-experience" class="level3">
-<h3 class="anchored" data-anchor-id="best-viewing-experience">Best Viewing Experience</h3>
-<p>For the optimal experience:</p>
-<ul>
-<li>Use a modern web browser (Chrome, Firefox, Safari, or Edge)<br>
-</li>
-<li>Enable JavaScript for interactive features<br>
-</li>
-<li>Use the dark/light mode toggle for your preferred reading environment</li>
-</ul>
-</section>
-<section id="downloading-and-sharing" class="level3">
-<h3 class="anchored" data-anchor-id="downloading-and-sharing">Downloading and Sharing</h3>
-<ul>
-<li>Access the source code and data in GitHub with the github icon.</li>
-<li>The pdf icon will open the book as a PDF.</li>
-<li>In section <a href="notebooks/19_resources.html" class="quarto-xref"><span>Resources</span></a> the pptx and other resources can be locally saved(💾).</li>
-<li>Use the share buttons to share specific chapters on social media.</li>
-</ul>
-<div id="def-EX-DEF" class="theorem definition">
-<p><span class="theorem-title"><strong>def 1</strong></span> <strong>DEF:</strong></p>
-<p>This is an example of a definition DEF = <span class="math inline">\(\sqrt{mean(e^2_t)}\)</span></p>
-</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
@@ -840,8 +629,6 @@ Wickham, H. (n.d.). <em>R for data science (2e)</em>. <a href="https://r4ds.hadl
 Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Woo, K., Yutani, H., Dunnington, D., Brand, T. van den, Posit, &amp; PBC. (2024). <em>ggplot2: <span>Create</span> <span>Elegant</span> <span>Data</span> <span>Visualisations</span> <span>Using</span> the <span>Grammar</span> of <span>Graphics</span></em>. <a href="https://cran.r-project.org/web/packages/ggplot2/index.html">https://cran.r-project.org/web/packages/ggplot2/index.html</a>
 </div>
 </div>
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1259,10 +1046,13 @@ Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Wo
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./notebooks/00_pythias_advice.html" class="pagination-link" aria-label="The Heart of Pythia">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">The Heart of Pythia</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./prophecy_to_prediction.html" class="pagination-link" aria-label="Prophecy to Prediction">
-        <span class="nav-page-text"><span class="chapter-title">Prophecy to Prediction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./notebooks/17_crisp-dm.html" class="pagination-link" aria-label="CRISP-DM">
+        <span class="nav-page-text"><span class="chapter-title">CRISP-DM</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1274,44 +1064,12 @@ Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Wo
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/insight_to_impact.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p><a href="https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai">EAISI</a></p>
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

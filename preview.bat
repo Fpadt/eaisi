@@ -2,7 +2,7 @@
 
 REM # Execute the R script before rendering
 echo "Running pre-render script..."
-Rscript update_def.R
+REM Rscript update_def.R
 
 REM # Render the Quarto project
 echo "Rendering Quarto project..."

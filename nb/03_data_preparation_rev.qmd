@@ -10,14 +10,19 @@ number-sections:       true
 editor: source
 ---
 
-::: {#fig-bu-why .figure}
-![](../images/bu_why.png){fig-alt="Why is forecasting important? It drives the business" fig-align="left" fig-width="15cm"}\]
+# Data Preparation
 
-Why forecasting?\
-The forecast drives the business!
-:::
+preparing the data for further analysis and modeling. This might involve cleaning and pre-processing the data, as well as transforming it into a format that is suitable for use in a machine-learning model.
 
-See Figure @fig-bu-why for the thumbnail overview.
+5.1. Handling Missing Data
+
+-   imputing missing values, Imputation methods involve replacing missing values with estimated values.
+
+-   scaling numeric features
+
+-   encoding categorical features
+
+-   selecting a subset of the data to use in the model.
 
 # Data Pipelines
 

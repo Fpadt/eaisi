@@ -1,0 +1,45 @@
+---
+title:    Setting the Stage
+subtitle: Don't compare your forecasting accuracy to industry benchmarks.
+---
+
+<!-- – Inspiration video (introducing aims, scope & “big picture” questions) -->
+<!-- – Research objectives, key terminology -->
+
+# Setting the Stage {#sec-setting-the-stage}
+
+The following video by Nicolas Vandeput served as the inspiration for *Pythia’s Advice*. It highlights the importance of establishing a statistical benchmark for forecasting accuracy — one that is both transparent and independent of commercial software or human bias.
+
+Building on this idea, *Pythia’s Advice* aims to generate forecasts using free, open-source, state-of-the-art statistical methods from the [`fable`](https://cran.r-project.org/web/packages/fable/index.html) package developed by
+Professor [Rob J Hyndman](https://robjhyndman.com/) of the Monash University in Melbourne.
+
+These forecasts are designed to require minimal effort, cost, and human intervention, providing a robust and objective reference point. By comparing these statistical forecasts to those produced by the business, we can assess the **Forecast Value Added (FVA)** — a measure of how much value, if any, human-driven forecasting processes bring beyond what data alone can achieve.
+
+
+> Don't compare your forecasting accuracy to industry benchmarks. 
+
+</BR>
+
+<figure>
+
+{{< video https://www.youtube.com/embed/0f42bR_JF78 title="Don't compare your forecasting accuracy to industry benchmarks." >}}
+
+<blockquote>
+
+Don't compare your forecasting accuracy to industry benchmarks.\
+They're irrelevant.
+
+Instead, compare your forecasting accuracy against simple statistical benchmarks such as moving averages.\
+Moving averages are a fair benchmark: they will deliver higher (or lower) accuracy depending on the product, period, and market.\
+That's perfect.\
+Also, they're free.
+
+Industry benchmarks are expensive and they don't compare apples to apples.\
+Your competitors are present in different markets, with different clients and product portfolios. So, it's normal if they achieve different levels of accuracy.\
+Moreover, you're unsure of how accuracy is tracked by your competitors (granularity, horizon, and metrics – I hope it's not MAPE).
+
+</blockquote>
+
+<figcaption>text and insight by <cite>Nicolas Vandeput</cite> (<a href="https://www.supchains.com">supchains.com</a>)</figcaption>
+
+</figure>
