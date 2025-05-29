@@ -5,7 +5,8 @@ description: |
   - Definition of the business objectives
   - business process mapping 
   - identification of stakeholders and main indicators.
-number-sections:       true
+unnumbered:      false
+number-sections: false
 
 editor: source  
 ---
@@ -21,6 +22,16 @@ editor: source
 source("../_book_functions.R")  # Fallback
 
 ```
+
+# Business Understanding {#sec-01-business-understanding .unnumbered}
+
+<!-- – Detailed statement of the problem, KPIs, constraints, stakeholders. -->
+<!--  Business Understanding – Contextualize the business problem and its forecasting relevance. -->
+<!-- where the business process is mapped and when the main indicators are identified, as well as when the business objectives are defined What is the business's need? -->
+
+
+
+
 
 ::: {#fig-bu-why .figure}
 ![](../images/bu_why.png){fig-alt="Why is forecasting important? It drives the business" fig-align="left" fig-width="15cm"}\]
@@ -1952,5 +1963,5 @@ see Literature review (@sec-literature_review)
 <!-- #### Data Quality Report -->
 
 
-{{< include 01_business_understanding_def.qmd >}}
+<!-- {{< include 01_business_understanding_def.qmd >}} -->
 

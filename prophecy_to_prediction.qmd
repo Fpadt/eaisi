@@ -1,7 +1,8 @@
 ---
-title: Prophecy to Prediction
-subtitle: The Myth Inspiring Pythia's Advice
-
+title:           Prophecy to Prediction
+subtitle:        The Myth Inspiring Pythia's Advice
+unnumbered:      true
+number-sections: false
 ---
 
 ```{=html}

@@ -9,18 +9,24 @@ description: |
   - model versioning GIT
   -   continuous integration/continuous deployment 
   (CI/CD) pipelines.
-  
-number-sections:       true  
+unnumbered:      false
+number-sections: false
 editor: source
 ---
 
+# Deployment {#sec-06-deployment .unnumbered}
+
+<!--  Deployment – Implications for practical application. -->
+<!-- – Practical steps for integration (tools, APIs, monitoring)   -->
+<!-- – Change-management considerations -->
+
 scalability - distributed techniques - maintenance & updating the model - monitoring the model - debugging the model
 
-# model management
+## model management
 
 -   model versioning GIT
 -   continuous integration/continuous deployment (CI/CD) pipelines.
 
-# Appendix {.unnumbered}
+
 
 <!-- {{< include 06_deployment_def.qmd >}} -->

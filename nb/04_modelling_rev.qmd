@@ -3,19 +3,16 @@ title:       Modelling
 subtitle:    Modelling subtitle
 description: |
   - model selection
-  
-number-sections:       true  
+unnumbered:      false
+number-sections: false
 editor: source
 ---
+# Modelling {#sec-04-modelling .unnumbered}
 
-::: {#fig-bu-why .figure}
-![](../images/bu_why.png){fig-alt="Why is forecasting important? It drives the business" fig-align="left" fig-width="15cm"}\]
-
-Why forecasting?\
-The forecast drives the business!
-:::
-
-See Figure @fig-bu-why for the thumbnail overview.
+<!-- - Modelling – Forecasting models and techniques used. -->
+<!-- – Algorithms tried (with brief rationale)   -->
+<!-- – Hyperparameter approaches   -->
+<!-- – Training/validation split -->
 
 ## blackbox models
 
@@ -85,4 +82,4 @@ algorithm - handle teh specific characteristics of teh data - balance performanc
 
 # Appendix {.unnumbered}
 
-{{< include 04_modelling_def.qmd >}}
+<!-- {{< include 04_modelling_def.qmd >}} -->

@@ -1,7 +1,8 @@
 ---
-title: "CRISP-DM"
-author: "F.J. Padt"
-
+title:           "CRISP-DM"
+author:          "F.J. Padt"
+unnumbered:      true
+number-sections: false
 ---
 
 ## CRISP-DM {#sec-crisp-dm}

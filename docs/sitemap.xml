@@ -2,59 +2,83 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://fpadt.github.io/eaisi/index.html</loc>
-    <lastmod>2025-05-29T11:24:59.920Z</lastmod>
+    <lastmod>2025-05-29T16:26:05.603Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/prophecy_to_prediction.html</loc>
-    <lastmod>2025-05-29T09:49:56.704Z</lastmod>
+    <lastmod>2025-05-29T16:00:27.713Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/setting_the_stage.html</loc>
-    <lastmod>2025-05-29T11:13:14.606Z</lastmod>
+    <lastmod>2025-05-29T16:25:57.248Z</lastmod>
   </url>
   <url>
-    <loc>https://fpadt.github.io/eaisi/notebooks/00_pythias_advice.html</loc>
-    <lastmod>2025-05-29T11:15:19.429Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fpadt.github.io/eaisi/insight_to_impact.html</loc>
-    <lastmod>2025-05-29T11:25:05.284Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fpadt.github.io/eaisi/notebooks/17_crisp-dm.html</loc>
-    <lastmod>2025-05-29T06:29:21.038Z</lastmod>
+    <loc>https://fpadt.github.io/eaisi/notebooks/00_introduction.html</loc>
+    <lastmod>2025-05-29T16:25:25.323Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/notebooks/01_business_understanding.html</loc>
-    <lastmod>2025-05-29T11:25:14.033Z</lastmod>
+    <lastmod>2025-05-29T18:24:14.541Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/notebooks/02_data_understanding.html</loc>
-    <lastmod>2025-05-29T06:28:02.728Z</lastmod>
+    <lastmod>2025-05-29T16:24:25.684Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/notebooks/03_data_preparation.html</loc>
-    <lastmod>2025-05-29T06:28:00.969Z</lastmod>
+    <lastmod>2025-05-29T16:24:38.031Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/notebooks/04_modelling.html</loc>
-    <lastmod>2025-05-29T06:28:20.961Z</lastmod>
+    <lastmod>2025-05-29T16:24:46.939Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/notebooks/05_evaluation.html</loc>
-    <lastmod>2025-05-29T06:28:34.680Z</lastmod>
+    <lastmod>2025-05-29T16:24:55.174Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/notebooks/06_deployment.html</loc>
-    <lastmod>2025-05-29T06:28:44.095Z</lastmod>
+    <lastmod>2025-05-29T16:25:07.156Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fpadt.github.io/eaisi/insight_to_impact.html</loc>
+    <lastmod>2025-05-29T16:00:35.986Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fpadt.github.io/eaisi/notebooks/17_crisp-dm.html</loc>
+    <lastmod>2025-05-29T16:03:56.058Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fpadt.github.io/eaisi/notebooks/11_business_understanding.html</loc>
+    <lastmod>2025-05-29T16:01:27.562Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fpadt.github.io/eaisi/notebooks/12_data_understanding.html</loc>
+    <lastmod>2025-05-29T16:01:45.860Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fpadt.github.io/eaisi/notebooks/13_data_preparation.html</loc>
+    <lastmod>2025-05-29T16:01:59.024Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fpadt.github.io/eaisi/notebooks/14_modelling.html</loc>
+    <lastmod>2025-05-29T16:02:22.688Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fpadt.github.io/eaisi/notebooks/15_evaluation.html</loc>
+    <lastmod>2025-05-29T16:02:39.311Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fpadt.github.io/eaisi/notebooks/16_deployment.html</loc>
+    <lastmod>2025-05-29T16:02:58.575Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/notebooks/08_appendix.html</loc>
-    <lastmod>2025-05-29T06:31:06.995Z</lastmod>
+    <lastmod>2025-05-29T15:51:19.103Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/notebooks/16_flow_down.html</loc>
-    <lastmod>2025-05-11T12:35:26.157Z</lastmod>
+    <lastmod>2025-05-29T16:03:59.491Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/notebooks/18_references.html</loc>
@@ -62,6 +86,6 @@
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/notebooks/19_resources.html</loc>
-    <lastmod>2025-05-29T07:59:50.700Z</lastmod>
+    <lastmod>2025-05-29T15:19:51.688Z</lastmod>
   </url>
 </urlset>

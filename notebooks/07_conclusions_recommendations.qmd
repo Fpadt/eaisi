@@ -4,8 +4,55 @@ subtitle:    Conclusions subtitle
 description: |
   - Conclusions – Synthesis of findings, key takeaways, and their significance.
   - Recommendations – Suggested actions or further research directions.
-  
+unnumbered:      true
+number-sections: false
 editor: source
 ---
+# Conclusions {#sec-07-conclusions}
+
+## Discussion & Key Findings  
+– Interpret results in business terms (“so what?”)  
+– Limitations and potential biases
+
+<!-- -   Promotions -->
+
+<!--     -   dip before/after promotion -->
+
+<!--     -   cannibalization, halo effect -->
+
+<!--     -   BOM, display -->
+
+<!-- -   Customer -->
+
+<!--     -   (de)-listings -->
+
+<!--     -   hierarchy -->
+
+<!-- -   Product Life Cycle Management -->
+
+<!--     -   NPI/NPD (cannibalization) -->
+
+<!--     -   end of Life -->
+
+<!-- -   Seasonality, Chinese new year -->
+
+<!-- Problem Statement -->
+
+<!-- -   which level/group -\> top-down, middle-out, bottom up -->
+
+<!--     -   HTS, -->
+
+<!-- -   which technique/method statistical, regression ... -->
+
+<!--     -   Statisticical: Exponential smoothing, Mov, navieve, ETS, ArimA, -->
+
+<!--     -   Data Science: regression (Boost) & conformal prediction -->
+
+<!-- -   Classification: which focus for the highest impact) (cleaning, promotions etc), e.g. -->
+
+
+## Conclusion
+
+<!-- – One-page recap of what you did, what you found, and next steps -->
 
 3%

@@ -5,12 +5,17 @@ description: |
   - scope
   - extracts and ingest
   - transformations
-  
-number-sections:       true  
+unnumbered:      false
+number-sections: false
 editor: source
 ---
 
-# Data Preparation
+# Data Preparation {#sec-03-data-preparation .unnumbered}
+
+<!--  Data Preparation – Data preprocessing and transformation steps. -->
+<!-- – Cleaning & wrangling steps   -->
+<!-- – Feature engineering   -->
+<!-- – Any sampling or balancing   -->
 
 preparing the data for further analysis and modeling. This might involve cleaning and pre-processing the data, as well as transforming it into a format that is suitable for use in a machine-learning model.
 

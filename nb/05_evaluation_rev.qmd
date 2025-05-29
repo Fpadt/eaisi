@@ -4,10 +4,46 @@ subtitle:    Evaluation subtitle
 description: |
   asses performance of the model using clear and concise
   evaluation metrics, based upon goals and objectives.
-  
-number-sections:       true  
+unnumbered:      false
+number-sections: false
 editor: source
 ---
+# Evaluation {#sec-05-evaluation  .unnumbered}
+
+## Evaluation
+
+
+<!--  Evaluation – Analysis of model performance and key findings. -->
+<!-- – Performance metrics & visualizations   -->
+<!-- – Error analysis   -->
+<!-- – Comparison against baseline -->
+
+{{<var version>}}\
+{{<var email_info >}}\
+
+::: callout-note
+Note that there are five types of callouts, including: `note`, `warning`, `important`, `tip`, and `caution`.
+:::
+
+::: callout-warning
+Note that there are five types of callouts, including: `note`, `warning`, `important`, `tip`, and `caution`.
+:::
+
+::: callout-important
+Note that there are five types of callouts, including: `note`, `warning`, `important`, `tip`, and `caution`.
+:::
+
+::: callout-tip
+### Tip with Title
+
+This is an example of a callout with a title.
+:::
+
+::: {.callout-caution collapse="true"}
+### Expand To Learn About Collapse
+
+This is an example of a 'folded' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
+:::
 
 ## Evaluate Results
 
@@ -33,4 +69,4 @@ editor: source
 
 # Appendix {.unnumbered}
 
-{{< include 05_evaluation_def.qmd >}}
+<!-- {{< include 05_evaluation_def.qmd >}} -->

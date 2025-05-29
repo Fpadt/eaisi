@@ -72,6 +72,9 @@ knitr:
 book:
   title: "Pythia's Advice"
   reader-mode: true
+  sidebar:
+    style: "floating"
+    collapse-level: 1
 
   page-footer:
     left: "© 2025 Floris Padt: Pythia's Advice"
@@ -102,18 +105,9 @@ book:
         - prophecy_to_prediction.qmd
         # Nicolas van deput
         - setting_the_stage.qmd
-        # White Paper: The Heart of Pythia
-        - notebooks/00_pythias_advice.qmd        
-        # - nb/00_pythias_advice_rev.qmd
-        # Recommendations – Suggested actions or further research directions.
-        - insight_to_impact.qmd
-
-      # Detailed Analysis and Supplementary Materials
-    - part: "Appendix"
-      chapters:
-        # CRISP-DM: Detailed Process Flow – Deeper dive into each phase with coding snippets.
-        - notebooks/17_crisp-dm.qmd
-        # - nb/17_crisp-dm_rev.qmd
+        # Introduction
+        - notebooks/00_introduction.qmd        
+        # - nb/00_introduction_rev.qmd
         # Business Understanding: Analytical Frameworks
         - notebooks/01_business_understanding.qmd
         # - nb/01_business_understanding_rev.qmd
@@ -132,6 +126,34 @@ book:
         # Deployment: Implementation Strategies and Code Snippets
         - notebooks/06_deployment.qmd
         # - nb/06_deployment_rev.qmd
+        
+        # Recommendations – Suggested actions or further research directions.
+        - insight_to_impact.qmd
+
+      # Detailed Analysis and Supplementary Materials
+    - part: "Appendix"
+      chapters:
+        # CRISP-DM: Detailed Process Flow – Deeper dive into each phase with coding snippets.
+        - notebooks/17_crisp-dm.qmd
+        # - nb/17_crisp-dm_rev.qmd
+        # Business Understanding: Analytical Frameworks
+        - notebooks/11_business_understanding.qmd
+        # - nb/11_business_understanding_rev.qmd
+        # Data Understanding: Data Dictionary and Descriptive Statistics        
+        - notebooks/12_data_understanding.qmd
+        # - nb/12_data_understanding_rev.qmd
+        # Data Preparation: Preprocessing Code and Examples
+        - notebooks/13_data_preparation.qmd
+        # - nb/13_data_preparation_rev.qmd
+        # Modelling: Detailed Implementation and Algorithms
+        - notebooks/14_modelling.qmd
+        # - nb/14_modelling_rev.qmd
+        # Evaluation: Performance Metrics and Additional Analysis
+        - notebooks/15_evaluation.qmd
+        # - nb/15_evaluation_rev.qmd
+        # Deployment: Implementation Strategies and Code Snippets
+        - notebooks/16_deployment.qmd
+        # - nb/16_deployment_rev.qmd
         # Methodology & Framework: Technical Details and Coding
         - notebooks/08_appendix.qmd
         # - nb/08_appendix_rev.qmd
@@ -192,7 +214,7 @@ format:
     title-block-banner-color: "#FFFFFF"
     # background-color: "#004D40"
     toc:                true
-    # toc-depth:          3
+    toc-depth:          1
     # code-tools: 
       # toggle: true             # Enable toggle button
     code-line-numbers:  true   # Show line numbers
@@ -203,7 +225,7 @@ format:
     lightbox:           true
     comments:
       hypothesis:       false
-    number-sections:    false
+    number-sections:    true
     link-citations:     true    
     colorlinks:         true
     highlight-style:    github

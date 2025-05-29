@@ -1,7 +1,8 @@
 ---
 title: Preface
 engine: knitr
-
+unnumbered:      true
+number-sections: false
 format:
   html:
     include-in-header: meta.html
@@ -50,7 +51,7 @@ This book is organized into three parts, as shown in the sidebar on the left:
 -   **Main Research**:
     -   *@sec-prophecy-to-prediction*: the story behind the name *Pythia’s Advice*.
     -   *@sec-setting-the-stage*: the inspiration behind the project.
-    -   *@sec-00-the-heart-of-pythia*: exploration of each phase of the CRISP-DM methodology. 
+    -   *@sec-00-introduction*: exploration of each phase of the CRISP-DM methodology. 
     -   *@sec-insight-to-impact*: how to use the Project's results to create impact.
 -   **Appendix**: coding, references, and supplementary materials on each CRISP-DM phase.
 
@@ -109,11 +110,11 @@ Some sections contain interactive elements:
 -   Collapsible sections can be expanded for additional details
 
 ### Reading Pathways
-1. The chapters in Main Research — with the exception of @sec-00-the-heart-of-pythia
+1. The chapters in Main Research — with the exception of @sec-00-introduction
 — are optional. However, it is recommended to explore them before reading 
-@sec-00-the-heart-of-pythia, as they provide essential background and context.
+@sec-00-introduction, as they provide essential background and context.
 
-1.  The central chapter, @sec-00-the-heart-of-pythia, lies at the heart of this book. 
+1.  The central chapter, @sec-00-introduction, lies at the heart of this book. 
 Structured around the CRISP-DM methodology, it is designed to be read in a 
 linear sequence, guiding the reader through each phase step by step. To enhance readability, this chapter contains no code and functions as a true white paper — concise in text, and supported by clear visuals and informative tables.
 

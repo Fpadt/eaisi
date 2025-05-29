@@ -1,6 +1,8 @@
 ---
-title:    Setting the Stage
-subtitle: Don't compare your forecasting accuracy to industry benchmarks.
+title:           Setting the Stage
+subtitle:        Don't compare your forecasting accuracy to industry benchmarks.
+unnumbered:      true
+number-sections: false
 ---
 
 <!-- – Inspiration video (introducing aims, scope & “big picture” questions) -->

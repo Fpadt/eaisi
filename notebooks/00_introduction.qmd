@@ -1,0 +1,95 @@
+---
+title:    Introduction
+subtitle: TRUST - is all you need!
+unnumbered:      true
+number-sections: false
+
+description: |
+  Effective business planning depends on accurate and consistent forecasts 
+  across different levels of aggregation, granularity, and time horizons. 
+  Producing such forecasts is inherently complex, requiring a diverse set of 
+  resources — including commercial forecasting engines, high-quality data, 
+  hardware, software, and human expertise.
+
+  A key challenge lies in balancing the benefits of improved forecast accuracy 
+  against the costs of deploying these additional resources. To evaluate this 
+  trade-off, it is essential to first establish the level of accuracy that can 
+  be achieved with minimal input.
+  The Forecast Value Added (FVA) is defined as the difference between the 
+  accuracy achieved by the business and that obtained using a minimal-resource 
+  benchmark. Ideally, the costs invested in enhancing forecast accuracy should 
+  be justified by a proportional gain in FVA.
+
+  To assess this cost-benefit relationship without disrupting day-to-day operations,
+  we developed a parallel forecasting environment — a system of innovation — that 
+  operates alongside the production forecasting system. This environment 
+  uses state-of-the-art, open-source forecasting tools that are freely available, 
+  enabling us to establish an internal benchmark for evaluating both performance 
+  and efficiency.  
+  
+  This system of innovation allows us to explore a wide range of forecasting methods, 
+  from simple statistical models to more advanced hierarchical techniques.
+  Hierarchical forecasting is particularly valuable for generating consistent 
+  forecasts across different levels of aggregation, tailored to specific 
+  business use cases. 
+  
+  In this study, we aim to quantify the Forecast Value Added and assess 
+  the forecast accuracy of various statistical approaches, including 
+  hierarchical methods. Given the wide variety of products (SKUs) and their 
+  differing levels of importance, we scope our analysis to focus on the 
+  top 20% of products, which account for 80% of total sales. 
+  This targeted approach enables us to concentrate on the most impactful items, 
+  while still providing insights that can be generalized to the broader product 
+  portfolio.
+
+plain-language-summary: |
+  Balance the benefits of higher forecast accuracy with the cost of additional resources ...
+---
+
+# Introduction {#sec-00-introduction}
+
+In today’s increasingly complex market environment, accurate demand forecasting is vital to the operational efficiency of supply chains — particularly for perishable food products, which have a limited shelf life and are highly sensitive to seasonality and promotional activities.
+
+This study focuses on `BioBalance`, a multi-channel food company operating in the Fast-Moving Consumer Goods (FMCG) industry. The company produces its own products and sources finished goods from suppliers, distributing them through various channels including retail, Out-of-Home (OOH), Health & Food Stores (HFS), discounters, and e-commerce. To support business decisions in production, procurement, and negotiations with suppliers and customers, accurate sales forecasts are required at varying levels of aggregation, tailored to each use case.
+
+### Research Objectives
+
+The primary objective of this research is to assess the Forecast Value Added (FVA) by establishing a minimal-resource benchmark for forecast accuracy. FVA is defined as the difference between the accuracy achieved by the business and the accuracy attainable using a robust, low-effort forecasting approach.
+
+As a secondary objective, this study evaluates the accuracy of hierarchical forecasting techniques, which produce consistent forecasts across multiple aggregation levels — a critical requirement for cross-functional decision-making.
+
+### Purpose of the Research
+
+The goal of this research is to provide insight into the cost-benefit relationship of deploying additional forecasting resources. The minimal-resource benchmark serves not only as a reference point for evaluating current performance but also as a baseline target for future improvement efforts.
+
+### Scope of the Research
+
+`BioBalance` offers a diverse product portfolio (SKUs) across multiple geographical markets, with products varying in sales importance. To ensure a focused and meaningful analysis, this study concentrates on the top 20% of products, which together account for 80% of total sales.
+
+While a small portion of the company’s sales (less than 10%) comes from chilled products — which have short shelf lives and are forecasted daily — the majority comes from ambient products with an shelf life of $1/2$ to $1$ year. These are forecasted in monthly buckets and form the primary focus of this research.
+
+By narrowing the scope to high-impact ambient products, the study enables a practical and scalable analysis, while still yielding insights that are applicable across the broader product range.
+
+### Structure of the Document
+
+<!-- Structure of the Document, why we chose CRISP-DM, roadmap of the sections to follow -->
+This research adopts the **CRISP-ML methodology** [@costa_crisp-ml_2022] as its guiding framework.
+
+CRISP-ML (Cross-Industry Standard Process for Machine Learning) is a structured approach for designing, implementing, and communicating data science and machine learning projects. It consists of six core phases:
+
+1.  Business Understanding
+1.  Data Understanding
+1.  Data Preparation
+1.  Modelling
+1.  Evaluation
+1.  Deployment
+
+The main body of this document includes a dedicated section for each phase. These chapters are concise, free of code, and supported by visuals and tables to enhance readability and accessibility — particularly for business stakeholders and decision-makers.
+
+For technical readers, the Appendix provides a corresponding chapter for each phase, offering additional context, detailed analysis, and code implementations.
+
+
+
+::: html
+<!-- {{< include 00_pythias_advice_def.qmd >}} -->
+:::
