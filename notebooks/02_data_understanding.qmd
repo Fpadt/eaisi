@@ -1,15 +1,12 @@
 ---
-title:       Data Understanding
 subtitle:    Data Understanding subtitle
 description: |
   - understanding of data structure, content & quality
   - initial exploratory data analysis (EDA) to identify patterns, trends, and relationships within the data.
-unnumbered:      false
 number-sections: false
-editor: source  
 ---
 
-# Data Understanding {#sec-02-data-understanding .unnumbered}
+# Data Understanding {#sec-02-data-understanding}
 
 <!--  Data Understanding – Dataset description, data sources, and key variables. -->
 <!-- – Data sources & collection   -->

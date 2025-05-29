@@ -1,8 +1,5 @@
 ---
-title:           Prophecy to Prediction
 subtitle:        The Myth Inspiring Pythia's Advice
-unnumbered:      true
-number-sections: false
 ---
 
 ```{=html}
@@ -12,7 +9,7 @@ number-sections: false
 </audio>
 ```
 
-# Prophecy to Prediction {#sec-prophecy-to-prediction}
+# Prophecy to Prediction {#sec-prophecy-to-prediction .unnumbered}
 
 ### The Myth Inspiring Pythia's Advice
 

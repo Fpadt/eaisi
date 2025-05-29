@@ -1,5 +1,4 @@
 ---
-title:       Deployment
 subtitle:    Deployment subtitle
 description: |
   - scalability - distributed techniques 
@@ -9,12 +8,10 @@ description: |
   - model versioning GIT
   -   continuous integration/continuous deployment 
   (CI/CD) pipelines.
-unnumbered:      false
 number-sections: false
-editor: source
 ---
 
-# Deployment {#sec-06-deployment .unnumbered}
+# Deployment {#sec-06-deployment}
 
 <!--  Deployment – Implications for practical application. -->
 <!-- – Practical steps for integration (tools, APIs, monitoring)   -->

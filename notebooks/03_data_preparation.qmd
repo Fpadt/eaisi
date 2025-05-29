@@ -1,16 +1,13 @@
 ---
-title:       Data Preparation
 subtitle:    Data Preparation subtitle
 description: |
   - scope
   - extracts and ingest
   - transformations
-unnumbered:      false
 number-sections: false
-editor: source
 ---
 
-# Data Preparation {#sec-03-data-preparation .unnumbered}
+# Data Preparation {#sec-03-data-preparation}
 
 <!--  Data Preparation – Data preprocessing and transformation steps. -->
 <!-- – Cleaning & wrangling steps   -->

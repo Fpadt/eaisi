@@ -1,15 +1,9 @@
----
-title:           Setting the Stage
-subtitle:        Don't compare your forecasting accuracy to industry benchmarks.
-unnumbered:      true
-number-sections: false
----
-
 <!-- – Inspiration video (introducing aims, scope & “big picture” questions) -->
-
 <!-- – Research objectives, key terminology -->
 
-# Setting the Stage {#sec-setting-the-stage}
+# Setting the Stage {#sec-setting-the-stage .unnumbered}
+
+### Don't compare your forecasting accuracy to industry benchmarks.
 
 The following video by Nicolas Vandeput served as the inspiration for *Pythia’s Advice*. It highlights the importance of establishing a statistical benchmark for forecasting accuracy — one that is both transparent and independent of commercial software or human bias.
 

@@ -1,15 +1,13 @@
 ---
-title:    "Business Understanding"
 subtitle: What is the business need?
 description: |
   - Definition of the business objectives
   - business process mapping 
   - identification of stakeholders and main indicators.
-unnumbered:      false
 number-sections: false
-
-editor: source  
 ---
+
+# Business Understanding {#sec-01-business-understanding}
 
 ```{r}
 #| label: setup
@@ -23,7 +21,6 @@ source("../_book_functions.R")  # Fallback
 
 ```
 
-# Business Understanding {#sec-01-business-understanding .unnumbered}
 
 <!-- – Detailed statement of the problem, KPIs, constraints, stakeholders. -->
 <!--  Business Understanding – Contextualize the business problem and its forecasting relevance. -->

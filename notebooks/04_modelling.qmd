@@ -1,13 +1,10 @@
 ---
-title:       Modelling
 subtitle:    Modelling subtitle
 description: |
   - model selection
-unnumbered:      false
 number-sections: false
-editor: source
 ---
-# Modelling {#sec-04-modelling .unnumbered}
+# Modelling {#sec-04-modelling}
 
 <!-- - Modelling – Forecasting models and techniques used. -->
 <!-- – Algorithms tried (with brief rationale)   -->

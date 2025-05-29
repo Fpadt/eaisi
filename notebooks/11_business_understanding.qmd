@@ -1,17 +1,16 @@
 ---
-title:    "Business Understanding"
 subtitle: What is the business need?
 description: |
   - Definition of the business objectives
   - business process mapping 
   - identification of stakeholders and main indicators.
-unnumbered:      true
-number-sections: false
-
-editor: source  
 ---
 
+# Business Understanding {#sec-11-business-understanding}
+
 @def-OOD
+
+Appendix
 
 ::: {#fig-bu-why .figure}
 ![](../images/bu_why.png){fig-alt="Why is forecasting important? It drives the business" fig-align="left" fig-width="15cm"}\]

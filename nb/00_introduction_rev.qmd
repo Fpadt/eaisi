@@ -1,7 +1,5 @@
 ---
-title:    Introduction
 subtitle: TRUST - is all you need!
-unnumbered:      true
 number-sections: false
 
 description: |
@@ -46,7 +44,7 @@ plain-language-summary: |
   Balance the benefits of higher forecast accuracy with the cost of additional resources ...
 ---
 
-# Introduction {#sec-00-introduction}
+# Introduction {#sec-00-introduction .unnumbered}
 
 In today’s increasingly complex market environment, accurate demand forecasting is vital to the operational efficiency of supply chains — particularly for perishable food products, which have a limited shelf life and are highly sensitive to seasonality and promotional activities.
 

@@ -1,13 +1,12 @@
 ---
-title: Preface
 engine: knitr
-unnumbered:      true
-number-sections: false
 format:
   html:
     include-in-header: meta.html
     css: cover-styles.css
 ---
+
+# Preface {.unnumbered}
 
 ::: cover-container
 ![](images/pythia_logo_cover.png){.cover-image width="50%" fig-align="center"}
@@ -19,7 +18,7 @@ format:
 #| eval:    false
 source("_book_functions.R")
 ```
-# Preface {.unnumbered}
+
 
 ## Disclaimer {.appendix .unnumbered}
 
@@ -35,7 +34,7 @@ Any resemblance to actual entities — past or present — is purely coincidenta
 
 I am deeply grateful to [**{{<var mentor>}}** ](https://www.tue.nl/en/education/professional-education/current-programs/eaisi-academy/lecturers/dr-ieke-le-blanc) for his insightful feedback and valuable guidance throughout this research. His emphasis on the importance of Forecast Value Added (FVA), as opposed to merely evaluating Statistical Forecast Accuracy, profoundly shaped the direction and depth of this book.
 
-Additionally, he introduced me to [Nicolas Vandeput](https://www.linkedin.com/in/vandeputnicolas/), whose concise yet inspiring YouTube videos sparked key ideas central to the development of the *Pythia’s Advice project*, as can be seen in the chapters @sec-setting-the-stage and @sec-insight-to-impact.
+Additionally, he introduced me to [Nicolas Vandeput](https://www.linkedin.com/in/vandeputnicolas/), whose concise yet inspiring YouTube videos sparked key ideas central to the development of the *Pythia’s Advice project*, as can be seen in the chapters [Setting the Stage](#sec-setting-the-stage) and [Insight to Impact](#sec-insight-to-impact).
 
 The guidance provided by {{<var mentor >}} significantly enhanced this study, helping me avoid numerous pitfalls. Any remaining errors or oversights are, of course, entirely my own responsibility.
 
@@ -45,14 +44,13 @@ This guide will help you navigate through this book and make the most of its fea
 
 ### Book Structure
 
-This book is organized into three parts, as shown in the sidebar on the left:
+This structre of the book is shown in the sidebar on the left, which can be used for navigation:
 
 -   **Preface**: disclaimer, acknowledgments and how-to read this book.
--   **Main Research**:
-    -   *@sec-prophecy-to-prediction*: the story behind the name *Pythia’s Advice*.
-    -   *@sec-setting-the-stage*: the inspiration behind the project.
-    -   *@sec-00-introduction*: exploration of each phase of the CRISP-DM methodology. 
-    -   *@sec-insight-to-impact*: how to use the Project's results to create impact.
+-   **Prophecy to Prediction**: the story behind the name *Pythia’s Advice*.
+-   **Setting the Stage**: the inspiration behind the project.
+-   **The Heart of Pythia**: the main research with a chapter per CRISP-DM phase.
+-   **Insight to Impact**: how to use the Project's results to create impact.
 -   **Appendix**: coding, references, and supplementary materials on each CRISP-DM phase.
 
 ### Navigation Features
@@ -99,7 +97,7 @@ This book contains cross-references — hover over them to get a sneak preview:
 
 -   figures (@fig-bu-why)
 -   definitions (@def-EX-DEF)\
--   chapters (@sec-prophecy-to-prediction)
+-   chapters (@sec-01-business-understanding)
 
 #### Interactive Elements
 
@@ -110,17 +108,16 @@ Some sections contain interactive elements:
 -   Collapsible sections can be expanded for additional details
 
 ### Reading Pathways
-1. The chapters in Main Research — with the exception of @sec-00-introduction
-— are optional. However, it is recommended to explore them before reading 
-@sec-00-introduction, as they provide essential background and context.
+1. All chapters — with the exception of **The Heart of Pythia**
+— are optional. However, it is recommended to explore them first, as they provide essential background and context.
 
-1.  The central chapter, @sec-00-introduction, lies at the heart of this book. 
+1.  The central chapter: **The Heart of Pythia**, lies at the heart of this book. 
 Structured around the CRISP-DM methodology, it is designed to be read in a 
 linear sequence, guiding the reader through each phase step by step. To enhance readability, this chapter contains no code and functions as a true white paper — concise in text, and supported by clear visuals and informative tables.
 
 1.  The Appendix contains the corresponding code and detailed analysis for each 
-CRISP-DM phase. For example, see @sec-01-business-understanding for the Business 
-Understanding phase.
+CRISP-DM phase, e.g. @sec-11-business-understanding in the appendix for the 
+related coding and details.
 
 ### Best Viewing Experience
 

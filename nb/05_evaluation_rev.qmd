@@ -1,17 +1,12 @@
 ---
-title:       Evaluation
 subtitle:    Evaluation subtitle
 description: |
   asses performance of the model using clear and concise
   evaluation metrics, based upon goals and objectives.
-unnumbered:      false
 number-sections: false
-editor: source
 ---
-# Evaluation {#sec-05-evaluation  .unnumbered}
 
-## Evaluation
-
+# Evaluation {#sec-05-evaluation}
 
 <!--  Evaluation – Analysis of model performance and key findings. -->
 <!-- – Performance metrics & visualizations   -->

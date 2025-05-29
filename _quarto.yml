@@ -2,7 +2,6 @@ project:
   type: book
   output-dir: docs
   # pre-render: "_book_functions.R" 
-
   
 date:        last-modified
 date-format: long
@@ -84,8 +83,8 @@ book:
   favicon: images/favicon.ico  
   site-url: https://fpadt.github.io/eaisi/
   repo-url: https://github.com/Fpadt/eaisi/
+  # repo-branch: main
   repo-actions: [source, issue]
-  
   # image: images/logo_transp.png
  
   downloads: [pdf] 
@@ -97,14 +96,15 @@ book:
   chapters:
     # cover + preface
     - index.qmd
-    
+    # The myth of Pythia 
+    - prophecy_to_prediction.qmd
+    # Nicolas van deput
+    - setting_the_stage.qmd
+        
     #  focus on analysis and findings.
-    - part: "Main Research"
+    - part: "The Heart of Pythia"
       chapters:
-        # The myth of Pythia 
-        - prophecy_to_prediction.qmd
-        # Nicolas van deput
-        - setting_the_stage.qmd
+
         # Introduction
         - notebooks/00_introduction.qmd        
         # - nb/00_introduction_rev.qmd
@@ -127,8 +127,8 @@ book:
         - notebooks/06_deployment.qmd
         # - nb/06_deployment_rev.qmd
         
-        # Recommendations – Suggested actions or further research directions.
-        - insight_to_impact.qmd
+    # Recommendations – Suggested actions or further research directions.
+    - insight_to_impact.qmd
 
       # Detailed Analysis and Supplementary Materials
     - part: "Appendix"

@@ -1,17 +1,14 @@
 ---
-title:           Insight to Impact
-subtitle:        Demand planners' forecasting accuracy doesn't matter, FVA does!
-unnumbered:      true
-number-sections: false
+subtitle: Demand planners' forecasting accuracy doesn't matter, FVA does!
 ---
 
 <!-- – Next Steps video (how to apply the findings in practice) -->
 
 <!-- – Roadmap for deployment, change-management tips, stakeholder guidelines -->
 
-# Insight to Impact {#sec-insight-to-impact}
+# Insight to Impact {#sec-insight-to-impact .unnumbered}
 
-> Demand planners' forecasting accuracy doesn't matter, **FVA does!**
+### Demand planners' forecasting accuracy doesn't matter, FVA does!
 
 </BR>
 
