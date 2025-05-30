@@ -1,41 +1,44 @@
 ---
 subtitle:    Data Understanding subtitle
 description: |
-  - understanding of data structure, content & quality
+  - datasources identified: sales master data
+  - tabular structure
+  - Material and Customer hierarchies have 4 levels
+  - no outliers but missing values
   - initial exploratory data analysis (EDA) to identify patterns, trends, and relationships within the data.
 number-sections: false
 ---
 
 # Data Understanding {#sec-02-data-understanding}
 
-<!--  Data Understanding – Dataset description, data sources, and key variables. -->
-<!-- – Data sources & collection   -->
-<!-- – Exploratory analyses & sanity checks   -->
-<!-- – Initial data quality findings -->
-
-<!--     -   ABC/XYZ -->
-
-<!--     -   other features 0-count, CV, promotion impact etc -->
+## Identification of Data Sources
+<!--  Dataset description, data sources, and key variables. -->
 
 ## Data Collection Report
+<!-- ### Collect Initial Data -->
+<!-- #### Initial Data Collection Report -->
 
 ## Data Description Report
+<!-- ### Describe Data -->
+<!-- #### Data Description Report -->
 
 ## Data Exploration Report
+<!-- ### Explore Data Data -->
+<!-- #### Exploration Report -->
+<!-- – Exploratory analyses & sanity checks   -->
+<!--     -   ABC/XYZ -->
+<!--     -   other features 0-count, CV, promotion impact etc -->
+<!-- A descriptive exploratory analysis describes the data by its statistical properties and metadata. -->
+
+<!-- outliers? -->
 
 ## Data Quality Report
-
-## Identification of Data Sources
+<!-- ### Verify Data Quality -->
+<!-- #### Data Quality Report -->
+<!-- – Initial data quality findings -->
 
 ## Data Quality Assessment
-
-assessing the - completeness: impute missing data - accuracy: = consistency:
-
-### Data Description
-
-A descriptive exploratory analysis describes the data by its statistical properties and metadata.
-
-outliers?
+<!-- assessing the - completeness: impute missing data - accuracy: = consistency: -->
 
 ### Data Verification
 

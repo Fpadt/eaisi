@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-05-29">
+<meta name="dcterms.date" content="2025-05-30">
 <meta name="description" content="Effective business planning depends on accurate and consistent forecasts across different levels of aggregation, granularity, and time horizons. Producing such forecasts is inherently complex, requiring a diverse set of resources — including commercial forecasting engines, high-quality data, hardware, software, and human expertise.A key challenge lies in balancing the benefits of improved forecast accuracy against the costs of deploying these additional resources. To evaluate this trade-off, it is essential to first establish the level of accuracy that can be achieved with minimal input. The Forecast Value Added (FVA) is defined as the difference between the accuracy achieved by the business and that obtained using a minimal-resource benchmark. Ideally, the costs invested in enhancing forecast accuracy should be justified by a proportional gain in FVA.To assess this cost-benefit relationship without disrupting day-to-day operations, we developed a parallel forecasting environment — a system of innovation — that operates alongside the production forecasting system. This environment uses state-of-the-art, open-source forecasting tools that are freely available, enabling us to establish an internal benchmark for evaluating both performance and efficiency.This system of innovation allows us to explore a wide range of forecasting methods, from simple statistical models to more advanced hierarchical techniques. Hierarchical forecasting is particularly valuable for generating consistent forecasts across different levels of aggregation, tailored to specific business use cases.In this study, we aim to quantify the Forecast Value Added and assess the forecast accuracy of various statistical approaches, including hierarchical methods. Given the wide variety of products (SKUs) and their differing levels of importance, we scope our analysis to focus on the top 20% of products, which account for 80% of total sales. This targeted approach enables us to concentrate on the most impactful items, while still providing insights that can be generalized to the broader product portfolio.">
 
 <title>Introduction – Pythia's Advice</title>
@@ -380,7 +380,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 29, 2025</p>
+        <p class="date">May 30, 2025</p>
       </div>
     </div>
     
@@ -620,7 +620,7 @@ window.Quarto = {
 <section id="scope-of-the-research" class="level2">
 <h2 class="anchored" data-anchor-id="scope-of-the-research">Scope of the Research</h2>
 <p><code>BioBalance</code> offers a diverse product portfolio (SKUs) across multiple geographical markets, with products varying in sales importance. To ensure a focused and meaningful analysis, this study concentrates on the top 20% of products, which together account for 80% of total sales.</p>
-<p>While a small portion of the company’s sales (less than 10%) comes from chilled products — which have short shelf lives and are forecasted daily — the majority comes from ambient products with an shelf life of <span class="math inline">\(1/2\)</span> to <span class="math inline">\(1\)</span> year. These are forecasted in monthly buckets and form the primary focus of this research.</p>
+<p>While a small portion of the company’s sales (less than 10%) comes from chilled products — which have short shelf lives and are forecasted weekly — the majority comes from ambient products with an shelf life of <span class="math inline">\(1/2\)</span> to <span class="math inline">\(1\)</span> year. These are forecasted in monthly buckets and form the primary focus of this research.</p>
 <p>By narrowing the scope to high-impact ambient products, the study enables a practical and scalable analysis, while still yielding insights that are applicable across the broader product range.</p>
 </section>
 <section id="structure-of-the-document" class="level2">
@@ -679,6 +679,12 @@ Kunapuli, G. (2023). <em>Ensemble methods for machine learning</em>. Manning.
 </div>
 <div id="ref-manokhin_practical_2023" class="csl-entry" role="listitem">
 Manokhin, V. (2023). <em>Practical guide to applied conformal prediction in <span>Python</span>: Learn and apply the best uncertainty frameworks to your industry applications</em>. <span>&lt;</span>packt<span>&gt;</span>.
+</div>
+<div id="ref-de_mast_daps_2024" class="csl-entry" role="listitem">
+Mast, J. de, &amp; Lokkerbol, J. (2024a). <span>DAPS</span> diagrams for defining <span>Data</span> <span>Science</span> projects. <em>Journal of Big Data</em>, <em>11</em>(1), 50. <a href="https://doi.org/10.1186/s40537-024-00916-7">https://doi.org/10.1186/s40537-024-00916-7</a>
+</div>
+<div id="ref-demast2024" class="csl-entry" role="listitem">
+Mast, J. de, &amp; Lokkerbol, J. (2024b). DAPS diagrams for defining data science projects. <em>Journal of Big Data</em>, <em>11</em>(1), 50. <a href="https://doi.org/10.1186/s40537-024-00916-7">https://doi.org/10.1186/s40537-024-00916-7</a>
 </div>
 <div id="ref-matthes_python_2019" class="csl-entry" role="listitem">
 Matthes, E. (2019b). <em>Python crash course: A hands-on, project-based introduction to programming</em> (2nd edition). No Starch Press.

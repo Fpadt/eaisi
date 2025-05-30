@@ -4,6 +4,7 @@ description: |
   - Definition of the business objectives
   - business process mapping 
   - identification of stakeholders and main indicators.
+number-sections: false
 ---
 
 # Business Understanding {#sec-11-business-understanding}
