@@ -38,6 +38,8 @@ number-sections: false
 
 6.1. Literature Review / Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)
 
+see Literature review (@sec-literature_review)
+
 ### Model Selection
 
 different models have different strengths and weaknesses and are suitable for different types of data and problems. achieve the best possible performance and maximize the impact
