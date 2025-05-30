@@ -64,7 +64,7 @@ The goal of this research is to provide insight into the cost-benefit relationsh
 
 `BioBalance` offers a diverse product portfolio (SKUs) across multiple geographical markets, with products varying in sales importance. To ensure a focused and meaningful analysis, this study concentrates on the top 20% of products, which together account for 80% of total sales.
 
-While a small portion of the company’s sales (less than 10%) comes from chilled products — which have short shelf lives and are forecasted daily — the majority comes from ambient products with an shelf life of $1/2$ to $1$ year. These are forecasted in monthly buckets and form the primary focus of this research.
+While a small portion of the company’s sales (less than 10%) comes from chilled products — which have short shelf lives and are forecasted weekly — the majority comes from ambient products with an shelf life of $1/2$ to $1$ year. These are forecasted in monthly buckets and form the primary focus of this research.
 
 By narrowing the scope to high-impact ambient products, the study enables a practical and scalable analysis, while still yielding insights that are applicable across the broader product range.
 

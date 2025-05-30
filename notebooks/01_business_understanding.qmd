@@ -37,6 +37,22 @@ The forecast drives the business!
 
 See Figure @fig-bu-why for the thumbnail overview.
 
+::: {format="html"}
+<!-- this block only appears in HTML/web output -->
+<video
+  src="../video/bu01.mp4"
+  controls
+  autoplay muted loop
+  width="640"
+  playsinline>
+</video>
+:::
+
+::: {format="pdf"}
+<!-- this block only appears in PDF output -->
+![](../images/bu_why.png){#fig:bu01 caption="Video preview." width="640px"}
+:::
+
 
 
 ## Defining the Scope of the ML Application
