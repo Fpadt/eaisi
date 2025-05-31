@@ -2,9 +2,9 @@
 title:    Business Understanding
 subtitle: Why is forecasting important?
 description: |
-  - Forecasts drive the business.
-  - inform decisions across the entire supply chain
-  - Improve profitability and customer satisfaction.
+  - Forecasts are critical for end-to-end decision-making across sourcing, production, and delivery.
+  - Inaccurate forecasts lead to costly outcomes such as stockouts, waste, and poor service.
+  - Improving forecast accuracy boosts efficiency, customer satisfaction, and profitability.
 number-sections: false
 toc: true         # show page‐TOC (right‐sidebar) on _every_ page
 toc-depth: 3      # include ## and ### in the TOC
