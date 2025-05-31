@@ -433,11 +433,11 @@
     ]
   },
   {
-    "objectID": "notebooks/11_business_understanding.html#tab-forecasting-methods",
-    "href": "notebooks/11_business_understanding.html#tab-forecasting-methods",
+    "objectID": "notebooks/11_business_understanding.html#traditional-statistical-forecasting-methods",
+    "href": "notebooks/11_business_understanding.html#traditional-statistical-forecasting-methods",
     "title": "Business Understanding",
     "section": "traditional statistical forecasting methods",
-    "text": "traditional statistical forecasting methods\n\n\n\n\n\n\n\nMethod\nDescription\n\n\n\n\nMoving Average\nAverages past observations to smooth out short-term fluctuations.\n\n\nExponential Smoothing\nApplies decreasing weights to past observations, emphasizing more recent data.",
+    "text": "traditional statistical forecasting methods\n\n\n\nTraditional statistical forecasting methods\n\n\nMethod\nDescription\n\n\n\n\nMoving Average\nAverages past observations to smooth out short-term fluctuations.\n\n\nExponential Smoothing\nApplies decreasing weights to past observations, emphasizing more recent data.",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Business Understanding</span>"

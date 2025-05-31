@@ -124,12 +124,45 @@ selection and refinement.
         
 
 
-## traditional statistical forecasting methods {#tab-forecasting-methods}
+## traditional statistical forecasting methods 
 
-| Method | Description |
-|:-------|:------------|
-| **Moving Average** | Averages past observations to smooth out short-term fluctuations. |
-| **Exponential Smoothing** | Applies decreasing weights to past observations, emphasizing more recent data. |
+```{r}
+#| label: tab-forecasting-methods
+#| echo: false
+#| include: true
+
+library(data.table)
+library(kableExtra)
+
+# 1) Create a data.table to hold the table data
+dt_methods <- data.table(
+  Method = c(
+    "Moving Average",
+    "Exponential Smoothing"
+  ),
+  Description = c(
+    "Averages past observations to smooth out short-term fluctuations.",
+    "Applies decreasing weights to past observations, emphasizing more recent data."
+  )
+)
+
+# 2) Wrap the Method column in cell_spec(bold = TRUE)
+dt_methods[, Method := cell_spec(Method, bold = TRUE)]
+
+# 3) Render with kableExtra, disabling escaping so the <b> and \textbf{} get through
+dt_methods %>%
+  kbl(
+    caption = "Traditional statistical forecasting methods",
+    booktabs = TRUE,
+    escape = FALSE,
+    format = if (knitr::is_latex_output()) "latex" else "html"
+  ) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "condensed"),
+    latex_options     = c("striped", "hold_position"),
+    full_width        = FALSE
+  )
+```
 
 
 
