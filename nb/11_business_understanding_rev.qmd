@@ -11,21 +11,54 @@ number-sections: false
 
 
 
-::: {#fig-bu-why .figure}
-![](../images/bu_why.png){fig-alt="Why is forecasting important? It drives the business" fig-align="left" fig-width="15cm"}\]
 
-Why forecasting?\
-The forecast drives the business!
+::: {#fig-11-bu-why .figure}
+::: {.content-visible when-format="html"} 
+<video
+  src="../video/bu_why.mp4"
+  controls
+  autoplay muted loop
+  width="640"
+  playsinline> 
+</video> 
+::: 
+::: {.content-visible when-format="pdf"}
+<!-- this block only appears in PDF output -->
+  ![](../images/bu_why.png){caption="Why is forecasting important? It drives the business."
+fig-align="left" fig-width="15cm"} 
 :::
 
-See Figure @fig-bu-why for the thumbnail overview.
+Why forecasting? The forecast drives the business! 
+:::
+
+#### Deliver 
+
+Similar to many other products, *Blossam* tea is sold through different
+channels with distinct **shelf-life expectations:**
+
+-   Premium retailers demand a shelf life of over 180 days, in exchange
+    for higher margins.\
+-   Discount retailers may accept shorter shelf lives (e.g., 60 days),
+    but at the cost of profitability.
+
+Exceeding shelf-life constraints—whether by producing too early or
+misjudging demand—can lead to:
+
+-   **Out-Of-Stocks (OOS)**: causing lost sales, penalties, or even de-listing by key retailers.
+
+-   **Out-Of-Date (OOD)**: leading to product waste from scrapping expired inventory.
+
+
+These challenges are not unique to *Blossam* tea — they reflect broader
+dynamics across the product portfolio. 
+
+
 
 ## Who uses the forecasts? {#sec-11-bu-who}
 <!-- stakeholders. -->
 
 The company's forecasting requirements vary significantly across several
-key use cases. A full overview of use-case-specific requirements by stakeholder 
-group is available in Appendix [@sec-appendix-usecases]:
+key use cases, details in [@sec-appendix-usecases]:
 
 1.  **Buying and Production**: The Central Sourcing team requires forecasts 
     at **article level**, aggregated weekly, with a forecast
@@ -126,6 +159,7 @@ selection and refinement.
 
 ## traditional statistical forecasting methods 
 
+
 ```{r}
 #| label: tab-forecasting-methods
 #| echo: false
@@ -138,11 +172,17 @@ library(kableExtra)
 dt_methods <- data.table(
   Method = c(
     "Moving Average",
-    "Exponential Smoothing"
+    "Simple Exponential Smoothing",
+    "Double Exponential Smoothing",
+    "Triple Exponential Smoothing",
+    "Box-Jenkins (ARIMA/ARMA)"
   ),
-  Description = c(
-    "Averages past observations to smooth out short-term fluctuations.",
-    "Applies decreasing weights to past observations, emphasizing more recent data."
+  Challenge = c(
+    "Seasonality, promotional effects",
+    "Seasonality, promotional effects",
+    "Seasonality, promotional effects",
+    "promotional effects",
+    "Stationary data"
   )
 )
 
@@ -164,6 +204,16 @@ dt_methods %>%
   )
 ```
 
+-   **Proposed Methods**:
+
+    -   **ETS (Error, Trend, Seasonal)**: To enhance exponential
+        smoothing with an automated model which selects the appropriate
+        exponential smoothing model with the right parameters and provides
+        **prediction intervals**.
+
+    -   **HTS (Hierarchical Time Series)**: To handle multiple
+        aggregation levels, ensuring **forecast consistency** when
+        forecasts are disaggregated or aggregated across levels.
 
 
 

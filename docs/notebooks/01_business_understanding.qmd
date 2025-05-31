@@ -1,10 +1,10 @@
 ---
 title:    Business Understanding
-subtitle: What is the business need?
+subtitle: Why is forecasting important?
 description: |
-  - Definition of the business objectives
-  - business process mapping 
-  - identification of stakeholders and main indicators.
+  - Forecasts drive the business.
+  - inform decisions across the entire supply chain
+  - Improve profitability and customer satisfaction.
 number-sections: false
 toc: true         # show page‐TOC (right‐sidebar) on _every_ page
 toc-depth: 3      # include ## and ### in the TOC
@@ -21,30 +21,14 @@ toc-depth: 3      # include ## and ### in the TOC
 # source("../_book_functions.R")
 ```
 
-Accurate forecasting is essential for managing the portfolio of over
-2500 products, each with its own production lead times, sourcing
-constraints, and shelf-life requirements.  
-
-Forecasts inform decisions
-across the entire supply chain—from procurement and production to
-distribution and inventory management.
+Accurate forecasting is essential for managing *BioBalance’s* portfolio of over 
+2.500 products, each with specific shelf-life requirements, sourcing constraints, 
+and production lead times. Forecasts guide decisions across the entire supply chain — from procurement and production to distribution and inventory management.
 
 ### *Blossam* Tea: an illustrative example
 
-The business planning of *Blossam Balance tea* illustrates the many use 
-forecast use-cases, see @fig-01-bu-why:
-
-#### Make 
-
-**Production lead time:** This product must be manufactured at least
-three months in advance, making short-term forecasts vital for
-scheduling production efficiently.\
-
-#### Source
-
-**Sourcing:** The tea leaves used in *Blossam* are secured via
-contracts negotiated up to 12 months ahead, necessitating long-term
-demand forecasts to avoid under- or over-contracting.
+The planning process for *Blossam Balance Tea* illustrates the complexity 
+of forecasting across stages, see @fig-01-bu-why:
 
 ::: {#fig-01-bu-why .figure}
 ::: {.content-visible when-format="html"} 
@@ -65,33 +49,30 @@ fig-align="left" fig-width="15cm"}
 Why forecasting? The forecast drives the business! 
 :::
 
-#### Deliver 
+**Make**: The tea must be produced at least 3 months in advance, requiring 
+short-term accuracy for production scheduling.
 
-Similar to many other products, *Blossam* tea is sold through different
-channels with distinct **shelf-life expectations:**
+**Source**: Tea leaves are procured via contracts negotiated 12 months ahead, 
+depending on long-term demand planning.
 
--   Premium retailers demand a shelf life of over 180 days, in exchange
-    for higher margins.\
--   Discount retailers may accept shorter shelf lives (e.g., 60 days),
-    but at the cost of profitability.
+**Deliver**: Different sales channels impose distinct shelf-life expectations — 
+premium retailers require over 180 days, while discounters accept 60 days 
+but with lower margins. 
 
-Exceeding shelf-life constraints—whether by producing too early or
-misjudging demand—can lead to:
+Failure to meet shelf-life constraints can result in:
 
--   **Out-Of-Stocks (OOS)**: causing lost sales, penalties, or even de-listing by key retailers.
+- Out-Of-Stocks (OOS): Lost sales, penalties, and de-listing.
+- Out-Of-Date (OOD): Product waste and write-offs.
 
--   **Out-Of-Date (OOD)**: leading to product waste from scrapping expired inventory.
+These challenges are not unique to *Blossam*; they apply across the full product 
+range.
 
-
-These challenges are not unique to *Blossam* tea — they reflect broader
-dynamics across the product portfolio. 
 
 ## Stakeholder Use Cases
 <!-- stakeholders. -->
 
 The company's forecasting requirements vary significantly across several
-key use cases. A full overview of use-case-specific requirements by stakeholder 
-group is available in Appendix [@sec-11-bu-who]:
+key use cases. 
 
 ::: {#fig-01-bu-who .figure}
 ::: {.content-visible when-format="html"} 
@@ -105,100 +86,111 @@ group is available in Appendix [@sec-11-bu-who]:
 ::: 
 ::: {.content-visible when-format="pdf"}
 <!-- this block only appears in PDF output -->
-  ![](../images/bu_who.png){caption="Why is forecasting important? "
-fig-align="left" fig-width="15cm"} 
+  ![](../images/bu_who.png){fig-align="left" fig-width="15cm"} 
 :::
 
-who uses the forecasts? many different roles for different use-cases. 
+who uses the forecasts? varying requirements across several key use cases. 
 :::
 
-1.  **Material Requirement Planning**: The MRP system requires forecasts at a 
-    **article * warehouse**, aggregated weekly, with a
-    forecast horizon of **104 weeks**, to generate purchase orders and
-    production orders.
+```{r}
+#| label: tab-forecasting-use-cases
+#| echo: false
+#| include: true
+#| 
+library(data.table)
+library(kableExtra)
 
-2.  **Marketing and Sales strategies**: Category and Brand managers require 
-    forecasts at a **monthly level**, aggregated by **Brand or category**, with a 
-    horizon of **12 months** to plan marketing and sales strategies.
+# Read the data into a data.table 
+dtUC <-  fread(text = "
+  Department       , Use Case                    , Level             , Horizon
+  Central Sourcing , Production planning         , Article           ,  12  weeks
+  Finance	         , Transfer pricing	           , Article           ,   6  quarters
+  Supply Planning  , Safety stock profiling      , Article * WH      ,  52  weeks
+  MRP System	     , Replenishment	             , Article * WH      , 104  weeks
+  Marketing & Sales, Strategic planning	         , Brand/Category    ,   12 months
+  Key Accounts     , Negotiation & target setting, Category * Account, 6–12 months
+")
 
-3.  **Negotiation with Customers**: Key Account Managers require forecasts at a 
-    **monthly level**, aggregated by **categories * key account**, with a 
-    horizon of **6 months**.
+# Create a styled kableExtra table
+dtUC |> 
+  kbl(
+    caption   = "Forecast Use Cases by Department",
+    col.names = c("Department", "Use Case", "Forecast Level", "Horizon"),
+    align     = c("l", "l", "l", "l"),
+    booktabs  = TRUE
+  ) |> 
+  kable_styling(
+    full_width = FALSE,
+    position   = "left",
+    bootstrap_options = c("striped", "hover", "condensed")
+  )
+```
+A detailed overview is available in (@sec-11-bu-who).
 
-4.  **Sales Target Setting**: Sales directors require forecasts at a
-    **monthly level**, aggregated by **Brand/Categories * key account**, with a 
-    horizon of **12 months** to set sales targets for the next year.
     
 ## Problem Statement
 
-Although *BioBalance's* forecasting process is highly flexible, it lacks 
-objective criteria for evaluating manual interventions. Forecasts and 
-aggregation levels are adjusted based on intuition and experience, which can 
-lead to inconsistent practices and uncertain performance outcomes. 
-There is a growing need for a transparent, 
-cost-effective benchmark that can guide planners in deciding which adjustments 
-are truly beneficial. This benchmark must support a wide range of use cases, 
-aggregation levels, and planning horizons while minimizing unnecessary manual effort.
+While BioBalance uses a flexible forecasting platform, its reliance on manual adjustments and subjective decision-making introduces inconsistency. Forecasting methods and aggregation levels are often chosen based on intuition and experience. Research shows, see [@article], that small manual adjustments typically offer no benefit, whereas larger interventions—usually reductions—may significantly improve accuracy.
 
-
+Without an objective benchmark, it is impossible to determine whether these manual interventions improve accuracy or merely increase resource costs.
 
 ## Business Objectives
 <!-- define business objectives, What is the business's need? -->
 
-The ultimate objective is to enhance supply chain responsiveness and profitability,
-by improving forecast accuracy across all key use cases,  
-as illustrated in @fig-01-bu-flowdown, see [@demast2024]. 
+This project aims to improve forecast accuracy and planning efficiency by introducing:
 
-This will be achieved by providing a low-cost statistical benchmark which
-*advises* on the manual adjustment made in such way that only accuracy improving
-adjustments remain and any other adjustment is eliminated.
+- A transparent, low-cost statistical benchmark.
 
-These improvements will contribute to improved stock levels
-and a higher level of customer satisfaction, both key strategic goals
-for the company as shown in @fig-01-bu-flowdown.
+- A decision-support tool to guide value-adding interventions.
 
-1. Optimize safety stocks levels  
-2. Reduce Out-Of-Stock & Out-Of-Date (OOD) inventory  
-3. Improve customer service levels while lowering costs from waste and penalties
-4. Increase customer satisfaction by consistently meeting expectations   
+- A scalable, consistent method applicable across different aggregation levels.
 
-::: {#fig-01-bu-flowdown .figure}
+These objectives align with BioBalance’s strategic priorities, which include:
+
+1. Optimize safety stock levels.
+
+2. Reduce Out-Of-Stock (OOS) and Out-Of-Date (OOD) inventory.
+
+3. Improve customer service levels and reduce waste.
+
+4. Increase customer satisfaction through consistent availability.
+
+And ultimately increase profitability, as illustrated in 
+@fig-01-bu-daps, see [@demast2024]. 
+
+::: {#fig-01-bu-daps .figure}
 ![](../images/flowdown.png){fig-align="left" fig-width="15cm"
-fig-alt="flowdown"}
-flowdown
+fig-alt="DAPS"}
+Data-Analytic Problem Structure (DAPS)
 :::
 
-## Research Objectives
+### Pythia’s Advice: A System of Innovation
 
-Predictive Model to Forecast Future Sales.
+To support these goals, we introduce **Pythia’s Advice** — a parallel forecasting environment that runs alongside the production system. Named after the oracle of Delphi, it serves as a low-cost advisory layer that complements the existing forecasting system.
 
-This model will be developed to provide a statistical benchmark for
-forecasting, which will be used to evaluate the effectiveness of manual
-interventions made by demand planners. The model will be designed to
-handle various use cases, aggregation levels, and planning horizons, while
-minimizing unnecessary manual effort.
+Pythia’s Advice provides:
 
-The model will be based on a combination of statistical methods, including
-**Exponential Smoothing (ETS)** and **Hierarchical Time Series (HTS)**, to
-ensure that forecasts are accurate, consistent, and aligned with business, 
-see lower part of the flow-down graph, (@fig-01-bu-flowdown).
+- A minimal-resource benchmark: A low-cost, automated forecast based on statistical models (e.g., ETS, HTS).
 
-## How are these forecasts currently generated?
+- An internal reference for calculating Forecast Value Added (FVA).
+
+- A scalable, low-cost, open-source infrastructure.
+
+This environment allows BioBalance to explore the cost-effectiveness of forecasting interventions without disrupting operations. This project is intentionally constrained to use only open-source tools and low-cost infrastructure, ensuring that the proposed solutions are affordable, scalable, and vendor-independent.
+**Pythia’s Advice** is represented by the lower part of the Data-Analytic Problem Structure (DAPS), (@fig-01-bu-daps).
+
+## Forecast Process
 <!-- Business process mapping -->
 
-*BioBalance* currently employs a third-party forecasting platform offering a 
-range of traditional statistical forecasting methods.
-A summary of currently supported forecasting methods is included in the Appendix [@tab-forecasting-methods]. 
+*BioBalance* uses a third-party system employing traditional statistical models. Planners:   
 
-The following activities, with an iterative nature, are performed by demand planners:
+1. Prepare data, 
+2. Select aggregation levels
+3. Fine-tune parameters
+4. Simulate results
+5. Adjust or override forecasts manually. 
 
-1. prepare the necessary data, 
-2. select appropriate aggregation levels
-3. fine-tune automatically suggested methods
-4. Simulate the forecast
-5. adjust forecasting parameters, or manually override forecasts when deemed necessary. 
-
-While these interventions often enhance forecast accuracy, they also increase costs and resource demands; however, the precise magnitude of these added costs remains unknown.
+These steps are iterative and resource-intensive, with unclear return on investment.
 
 ::: {#fig-01-bu-proc .figure}
 ::: {.content-visible when-format="html"} 
@@ -219,41 +211,21 @@ fig-align="left" fig-width="15cm"}
 The forecasting process: requiring human expertise. 
 :::
 
-<!-- This inconsistency stems from a lack of objective criteria for selecting -->
-<!-- between forecasting methods—**bottom-up**, **top-down**, or -->
-<!-- **middle-out**—resulting in decisions that rely on the subjective -->
-<!-- judgment of demand planners, leading to variable performance and -->
-<!-- inefficiencies. -->
+## Success Criteria
+The success of this project will be measured by:
 
-## Key Performance Indicators
+- A measurable increase in forecast accuracy (e.g., improved RMSE, reduced bias)
 
-The success of the forecasting process will be evaluated using:
-- Forecast accuracy (e.g., RMSE, MAPE, BIAS)
-- Inventory performance (e.g., OOS, OOD rates)
-- Customer service level
+- Reduced time and effort spent on non-value-adding manual adjustments
 
+- Improved inventory KPIs (lower OOS/OOD rates)
 
+- Consistent forecasts across aggregation levels
 
+- Positive feedback from planners and stakeholders
 
-#### Data and Forecasting Methods {.unnumbered}
+## Summary
 
-We will employ a combination of **statistical methods** to improve the forecasting process:
-
--   **Current Methods**: The company’s current forecasting system uses
-    **moving averages**, **simple, double and triple exponential smoothing**
-    and **Box-Jenkins**, which face challenges with chosing the optimal
-    aggregation level, best forecasting method, and handling 
-    **Seasonality**, **Stationary** and **promotional effects**. 
-
--   **Proposed Methods**:
-
-    -   **ETS (Error, Trend, Seasonal)**: To enhance exponential
-        smoothing with an automated model which selects the appropriate
-        exponential smoothing model with the right parameters and provides
-        **prediction intervals**.
-
-    -   **HTS (Hierarchical Time Series)**: To handle multiple
-        aggregation levels, ensuring **forecast consistency** when
-        forecasts are disaggregated or aggregated across levels.
+In summary, this chapter defined the business context, stakeholders, and objectives that guide the rest of this project. The next phase, Data Understanding, explores the availability, quality, and suitability of the data used to support these forecasting use cases.
 
 <!-- {{< include 01_business_understanding_def.qmd >}} -->
