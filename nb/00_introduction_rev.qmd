@@ -1,5 +1,4 @@
 ---
-title: "Introduction"
 subtitle: TRUST - is all you need!
 number-sections: false
 
@@ -45,7 +44,9 @@ plain-language-summary: |
   Balance the benefits of higher forecast accuracy with the cost of additional resources ...
 ---
 
-## Business Context {#sec-00-introduction .unnumbered}
+# Introduction {#sec-00-introduction .unnumbered}
+
+## Business Context 
 
 In today’s increasingly complex market environment, accurate demand forecasting is essential for maintaining operational efficiency in supply chains—especially within the Fast-Moving Consumer Goods (FMCG) industry, where perishable food products have short shelf lives and demand is highly sensitive to seasonal trends and promotional activities.
 
@@ -61,19 +62,21 @@ The forecasting challenges faced by *BioBalance* are intensified by the perishab
 
 ### Forecasting Challenges
 
-*BioBalance* currently uses a third-party forecasting platform supported by traditional statistical methods. While demand planners can enhance accuracy through manual adjustments and simulations, these efforts require significant time and expertise. However, the added value of such interventions remains unclear—highlighting the need to assess whether they deliver a proportional return on investment.
+*BioBalance* currently uses a third-party forecasting platform that relies on traditional statistical methods. While demand planners can improve forecast accuracy through manual adjustments and simulations, these efforts require significant time and expertise.
+
+However, research shows [@article] that many small adjustments do not lead to improvements and can even reduce accuracy. In contrast, larger adjustments—especially downward revisions—tend to yield more substantial gains. This raises concerns about the effectiveness of manual interventions and highlights the need for a more objective way to assess their impact.
 
 ## Research Objectives
 
-While the current forecasting process allows manual intervention and method customization, it remains unclear whether these added efforts result in proportionally better accuracy. This study aims to establish whether a simpler approach could achieve comparable or even better results.
+While the current forecasting process requires and permits manual intervention and method customization, it remains unclear whether these efforts consistently deliver value. To address this, the study proposes an objective, low-cost statistical benchmark that can serve as a reference point for evaluating the effectiveness of manual adjustments and the overall forecasting process.
 
 ### Primary Objective: Forecast Value Added (FVA)
 
-The primary objective of this research is to quantify the Forecast Value Added (FVA) by establishing a minimal-resource benchmark for forecast accuracy. The FVA measures the improvement achieved by the current business forecasting process over a baseline generated using a simple, robust, and low-resource forecasting approach.
+The primary objective of this research is to quantify the Forecast Value Added (FVA) by establishing a minimal-resource benchmark for forecast accuracy. FVA represents the improvement achieved by the business's current forecasting process compared to a baseline generated using a simple, robust, and low-effort statistical approach.
 
-This minimal-resource benchmark will be developed at low cost by eliminating or automating manual forecasting tasks, employing freely available open-source forecasting tools, and running on low-cost hardware. By clearly defining this benchmark, the study aims to provide a practical and reliable reference point that *BioBalance* can use to evaluate its current forecasting performance.
+This benchmark will be developed at minimal cost by automating or eliminating manual forecasting tasks, using open-source forecasting tools, and deploying them on low-cost hardware. Clearly defining this benchmark provides *BioBalance* with a reliable and transparent reference point to evaluate current forecasting performance.
 
-Quantifying the FVA allows the business to explicitly determine if additional investments in improving forecast accuracy yield proportional benefits. Thus, this benchmark not only serves as a reference for current forecasting quality but also provides a clear, achievable target for future enhancements.
+By quantifying FVA, the company can set objective accuracy targets for the demand planning team. These targets combine the performance of the minimal-resource benchmark with the expected incremental improvements justified by additional effort, cost, or expertise.
 
 ### Secondary Objective: Hierarchical Forecasting Accuracy
 
@@ -96,6 +99,7 @@ By narrowing the scope to high-impact ambient products, the study enables a prac
 ## Structure of the Document
 
 <!-- Structure of the Document, why we chose CRISP-DM, roadmap of the sections to follow -->
+
 This research adopts the **CRISP-ML methodology** [@costa_crisp-ml_2022] as its guiding framework.
 
 CRISP-ML (Cross-Industry Standard Process for Machine Learning) is a structured approach for designing, implementing, and communicating data science and machine learning projects. It consists of six core phases:
@@ -110,8 +114,6 @@ CRISP-ML (Cross-Industry Standard Process for Machine Learning) is a structured 
 The main body of this document includes a dedicated section for each phase. These chapters are concise, free of code, and supported by visuals and tables to enhance readability and accessibility — particularly for business stakeholders and decision-makers.
 
 For technical readers, the Appendix provides a corresponding chapter for each phase, offering additional context, detailed analysis, and code implementations.
-
-
 
 ::: html
 <!-- {{< include 00_pythias_advice_def.qmd >}} -->

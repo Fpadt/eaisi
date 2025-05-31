@@ -14,6 +14,24 @@ number-sections: false
 ## Identification of Data Sources
 <!--  Dataset description, data sources, and key variables. -->
 
+#### Data sources:
+
+The available data includes **historical sales**, **promotional data**,
+**stock quantities**, and **previous forecasts**. Stock-out periods will
+be adjusted for by inflating sales to reflect demand that would have
+occurred had stock been available.
+
+| Data Type | Details | Time Span |
+|------------------------|------------------------|:-----------------------|
+| Sales | Customer Orders, Inter-company, Returns, Free-of-Charge and Missed | \> 2020 |
+| Promotions | Promotions per material and customer | \> 2020 |
+| Stock | Daily stock level per material and distribution center | \> 2020 |
+| Forecasts | generated forecast before- and after Demand Review | \> Aug. 2023 |
+| Master data | Material, Customer and Organization, including hierarchy's | *N.A.* |
+
+<!-- : (see, data_sources for details) -->
+
+
 ## Data Collection Report
 <!-- ### Collect Initial Data -->
 <!-- #### Initial Data Collection Report -->

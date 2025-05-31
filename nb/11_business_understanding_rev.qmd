@@ -20,6 +20,120 @@ The forecast drives the business!
 
 See Figure @fig-bu-why for the thumbnail overview.
 
+## Who uses the forecasts? {#sec-11-bu-who}
+<!-- stakeholders. -->
+
+The company's forecasting requirements vary significantly across several
+key use cases. A full overview of use-case-specific requirements by stakeholder 
+group is available in Appendix [@sec-appendix-usecases]:
+
+1.  **Buying and Production**: The Central Sourcing team requires forecasts 
+    at **article level**, aggregated weekly, with a forecast
+    horizon of **12 weeks** to share with production and external suppliers.
+
+2.  **Production Cost Calculation**: Finance requires forecasts at a 
+    at **article level**, aggregated quarterly, with a forecast
+    horizon of **6 quarters**, grouped into annual time buckets in order to
+    calculate the transfer price of articles produced.
+    
+3.  **Setting Safety Stock Profiles**: The Supply-Planners require forecasts 
+    at the **article * warehouse**, aggregated weekly, with a
+    forecast horizon of **26-52 weeks**, to determine safety stock
+    profiles based on realized forecast accuracy, lead times and delivery
+    performance (On-Time-In-Full).
+
+::: {#fig-11-bu-who .figure}
+::: {.content-visible when-format="html"} 
+<video
+  src="../video/bu_who.mp4"
+  controls
+  autoplay muted loop
+  width="640"
+  playsinline> 
+</video> 
+::: 
+::: {.content-visible when-format="pdf"}
+<!-- this block only appears in PDF output -->
+  ![](../images/bu_who.png){caption="Why is forecasting important? "
+fig-align="left" fig-width="15cm"} 
+:::
+
+who uses the forecasts? many different roles for different use-cases. 
+:::
+
+4.  **Material Requirement Planning**: The MRP system requires forecasts at a 
+    **article * warehouse**, aggregated weekly, with a
+    forecast horizon of **104 weeks**, to generate purchase orders and
+    production orders.
+
+5.  **Marketing and Sales strategies**: Category and Brand managers require 
+    forecasts at a **monthly level**, aggregated by **Brand or category**, with a 
+    horizon of **12 months** to plan marketing and sales strategies.
+
+6.  **Negotiation with Customers**: Key Account Managers require forecasts at a 
+    **monthly level**, aggregated by **categories * key account**, with a 
+    horizon of **6 months**.
+
+7.  **Sales Target Setting**: Sales directors require forecasts at a
+    **monthly level**, aggregated by **Brand/Categories * key account**, with a 
+    horizon of **12 months** to set sales targets for the next year.
+    
+
+
+<!-- main indicators, KPIs, constraints -->
+Success will be measured by the following criteria:
+
+Forecast Accuracy % and Bias %
+
+To assess forecast accuracy, we will use a range of evaluation metrics
+tailored to each use case.
+
+These metrics will help evaluate how well each approach performs against
+the unique requirements of each use case, ultimately guiding method
+selection and refinement.
+
+-   **RMSE (Root Mean Squared Error, @def-11-RMSE )**: The primary metric
+    for measuring forecast accuracy, particularly useful for penalizing
+    large errors.
+
+-   **MAPE (Mean Absolute Percentage Error)**: To align with existing
+    company metrics.
+
+-   **MAE (Mean Absolute Error)** and **MASE (Mean Absolute Scaled
+    Error)**: Additional metrics to provide a broader evaluation,
+    addressing different aspects of forecast performance and comparing
+    models to naïve baselines.
+
+
+1.  **Improved Forecast Accuracy Target**:
+    -   **Tailored Forecasts for Each Use Case**: Enhanced accuracy
+        across areas such as buying, production, safety stock settings,
+        and customer negotiations, using methods that account for
+        seasonality, promotions, and varying aggregation levels.
+    -   **Reduced Forecast Errors and Bias**: Measurable reductions in
+        key error metrics like RMSE , MAPE , and BIAS will lead to
+        better alignment between forecasted and actual sales. Increased
+        accuracy will also foster trust among supply planners, reducing
+        the need for excessive safety margins.
+2.  **Selecting the Right Forecasting Methods**: This research will
+        guide the selection of optimal exponential smoothing methods (simple,
+        double or triple) to improve performance across various use cases.
+3.  **Consistency Across Aggregation Levels**: Forecasts will remain
+        consistent across different levels of aggregation, ensuring that
+        detailed and aggregated forecasts are aligned.
+        
+
+
+## traditional statistical forecasting methods {#tab-forecasting-methods}
+
+| Method | Description |
+|:-------|:------------|
+| **Moving Average** | Averages past observations to smooth out short-term fluctuations. |
+| **Exponential Smoothing** | Applies decreasing weights to past observations, emphasizing more recent data. |
+
+
+
+
 ## Defining the Scope of the ML Application
 
 ##Success Criteria - Business Success purpose and success criteria (reduction OOS&OOD) and other factors like customer & employee satisfaction - ML Success FA% and BIAS% - Economic Success impact of the project on the companies financial performance DAPS \## Feasibility availability, size, and quality of the training sample
