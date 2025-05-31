@@ -1,4 +1,5 @@
 ---
+title: "Introduction"
 subtitle: TRUST - is all you need!
 number-sections: false
 
@@ -44,27 +45,51 @@ plain-language-summary: |
   Balance the benefits of higher forecast accuracy with the cost of additional resources ...
 ---
 
-# Introduction {#sec-00-introduction .unnumbered}
+## Business Context {#sec-00-introduction .unnumbered}
 
-In today’s increasingly complex market environment, accurate demand forecasting is vital to the operational efficiency of supply chains — particularly for perishable food products, which have a limited shelf life and are highly sensitive to seasonality and promotional activities.
+In today’s increasingly complex market environment, accurate demand forecasting is essential for maintaining operational efficiency in supply chains—especially within the Fast-Moving Consumer Goods (FMCG) industry, where perishable food products have short shelf lives and demand is highly sensitive to seasonal trends and promotional activities.
 
-This study focuses on `BioBalance`, a multi-channel food company operating in the Fast-Moving Consumer Goods (FMCG) industry. The company produces its own products and sources finished goods from suppliers, distributing them through various channels including retail, Out-of-Home (OOH), Health & Food Stores (HFS), discounters, and e-commerce. To support business decisions in production, procurement, and negotiations with suppliers and customers, accurate sales forecasts are required at varying levels of aggregation, tailored to each use case.
+### *BioBalance*
+
+This study focuses on *BioBalance*, a multi-channel FMCG food company that both manufactures its own products and sources finished goods from external suppliers. *BioBalance* distributes products through multiple channels, including Retail (RET), Out-of-Home (OOH), Health & Food Stores (HFS), Discounters (DISC), and e-Commerce (eCOM). Effective sales forecasting at various levels of aggregation and granularity is critical to supporting key business decisions related to production planning, procurement, and negotiations with suppliers and customers.
+
+The forecasting challenges faced by *BioBalance* are intensified by the perishable nature of its product portfolio, significant fluctuations in seasonal demand, and frequent promotional activities. Accurate forecasts thus directly influence inventory management, cost-efficiency, customer satisfaction, and overall operational performance.
+
+### Stakeholders
+
+*BioBalance*’s forecasts serve both internal and external stakeholders. Internally, demand forecasts support functions such as production planning, inventory management, and procurement. Externally, these forecasts are shared with suppliers and customers to enable collaborative planning, reinforcing the need for high accuracy and consistency across multiple aggregation levels, granularities, and forecasting horizons.
+
+### Forecasting Challenges
+
+*BioBalance* currently uses a third-party forecasting platform supported by traditional statistical methods. While demand planners can enhance accuracy through manual adjustments and simulations, these efforts require significant time and expertise. However, the added value of such interventions remains unclear—highlighting the need to assess whether they deliver a proportional return on investment.
 
 ## Research Objectives
 
-The primary objective of this research is to assess the Forecast Value Added (FVA) by establishing a minimal-resource benchmark for forecast accuracy. FVA is defined as the difference between the accuracy achieved by the business and the accuracy attainable using a robust, low-effort forecasting approach.
+While the current forecasting process allows manual intervention and method customization, it remains unclear whether these added efforts result in proportionally better accuracy. This study aims to establish whether a simpler approach could achieve comparable or even better results.
 
-As a secondary objective, this study evaluates the accuracy of hierarchical forecasting techniques, which produce consistent forecasts across multiple aggregation levels — a critical requirement for cross-functional decision-making.
+### Primary Objective: Forecast Value Added (FVA)
+
+The primary objective of this research is to quantify the Forecast Value Added (FVA) by establishing a minimal-resource benchmark for forecast accuracy. The FVA measures the improvement achieved by the current business forecasting process over a baseline generated using a simple, robust, and low-resource forecasting approach.
+
+This minimal-resource benchmark will be developed at low cost by eliminating or automating manual forecasting tasks, employing freely available open-source forecasting tools, and running on low-cost hardware. By clearly defining this benchmark, the study aims to provide a practical and reliable reference point that *BioBalance* can use to evaluate its current forecasting performance.
+
+Quantifying the FVA allows the business to explicitly determine if additional investments in improving forecast accuracy yield proportional benefits. Thus, this benchmark not only serves as a reference for current forecasting quality but also provides a clear, achievable target for future enhancements.
+
+### Secondary Objective: Hierarchical Forecasting Accuracy
+
+As a secondary objective, this research evaluates the performance of hierarchical forecasting methods, which produce consistent forecasts across multiple levels of aggregation. Ensuring forecast consistency is crucial for effective cross-functional decision-making, aligning internal operations, and supporting collaborative planning with external stakeholders.
 
 ## Purpose of the Research
 
-The goal of this research is to provide insight into the cost-benefit relationship of deploying additional forecasting resources. The minimal-resource benchmark serves not only as a reference point for evaluating current performance but also as a baseline target for future improvement efforts.
+The purpose of this research is to provide clear insight into the cost-benefit trade-off involved in improving forecast accuracy. By establishing a minimal-resource benchmark, the study defines a baseline level of accuracy that can be achieved with minimal effort and cost. This benchmark serves as both a reference point for evaluating current performance and a foundation for setting future accuracy targets.
+
+Any additional improvements in forecast accuracy—measured as Forecast Value Added (FVA) above this benchmark—should be justified by the resources required to achieve them. In doing so, the research supports more informed decisions on where and how to invest in forecasting capabilities.
 
 ## Scope of the Research
 
-`BioBalance` offers a diverse product portfolio (SKUs) across multiple geographical markets, with products varying in sales importance. To ensure a focused and meaningful analysis, this study concentrates on the top 20% of products, which together account for 80% of total sales.
+*BioBalance* offers a diverse product portfolio (SKUs) across multiple geographical markets, with products varying in sales importance. To ensure a focused and meaningful analysis, this study concentrates on the top 20% of products, which together account for 80% of total sales.
 
-While a small portion of the company’s sales (less than 10%) comes from chilled products — which have short shelf lives and are forecasted weekly — the majority comes from ambient products with an shelf life of $1/2$ to $1$ year. These are forecasted in monthly buckets and form the primary focus of this research.
+While a small portion of the company’s sales (less than 10%) comes from chilled products — which have short shelf lives and are forecasted weekly — the majority comes from ambient products with a shelf life of $1/2$ to $1$ year. These are forecasted in monthly buckets and form the primary focus of this research.
 
 By narrowing the scope to high-impact ambient products, the study enables a practical and scalable analysis, while still yielding insights that are applicable across the broader product range.
 
@@ -76,11 +101,11 @@ This research adopts the **CRISP-ML methodology** [@costa_crisp-ml_2022] as its 
 CRISP-ML (Cross-Industry Standard Process for Machine Learning) is a structured approach for designing, implementing, and communicating data science and machine learning projects. It consists of six core phases:
 
 1.  Business Understanding
-1.  Data Understanding
-1.  Data Preparation
-1.  Modelling
-1.  Evaluation
-1.  Deployment
+2.  Data Understanding
+3.  Data Preparation
+4.  Modelling
+5.  Evaluation
+6.  Deployment
 
 The main body of this document includes a dedicated section for each phase. These chapters are concise, free of code, and supported by visuals and tables to enhance readability and accessibility — particularly for business stakeholders and decision-makers.
 

@@ -10,7 +10,8 @@ toc: true         # show page‐TOC (right‐sidebar) on _every_ page
 toc-depth: 3      # include ## and ### in the TOC
 ---
 
-## Business Understanding {#sec-01-business-understanding}
+## Why is Forecasting Important? {#sec-01-business-understanding}
+<!-- Contextualize the business problem and its forecasting relevance. -->
 
 ```{r}
 #| label: setup
@@ -18,16 +19,7 @@ toc-depth: 3      # include ## and ### in the TOC
 #| eval: true
 #| echo: false
 # source("../_book_functions.R")
-
-
-source("../_book_functions.R")  # Fallback
-
 ```
-
-
-### Why is Forecasting Important?
-
-<!-- Contextualize the business problem and its forecasting relevance. -->
 
 Accurate forecasting is essential for managing the portfolio of over
 2500 products, each with its own production lead times, sourcing
@@ -37,7 +29,7 @@ Forecasts inform decisions
 across the entire supply chain—from procurement and production to
 distribution and inventory management.
 
-#### Blossam Tea: an illustrative example
+### Blossam Tea: an illustrative example
 see @fig-01-bu-why:
 
 -   **Production lead time:** This product must be manufactured at least
@@ -85,27 +77,7 @@ misjudging demand—can lead to:
 These challenges are not unique to Blossam tea — they reflect broader
 dynamics across the product portfolio. 
 
-
-#### Business Objectives
-<!-- define business objectives, What is the business's need? -->
-
-Therefore, robust and accurate forecasting practices are critical to:
-
-- Optimize safety stocks levels  
-- Reduce Out-Of-Stock & Out-Of-Date (OOD) inventory  
-- Improve customer service levels while lowering costs from waste and penalties
-- Increase customer satisfaction by consistently meeting expectations   
-
-These objectives ultimately enhance supply chain responsiveness and profitability,   
-as illustrated in @fig-01-bu-flowdown, see [@demast2024].   
-
-::: {#fig-01-bu-flowdown .figure}
-![](../images/flowdown.png){fig-align="left" fig-width="15cm"
-fig-alt="flowdown"}
-flowdown
-:::
-
-### Stakeholders
+## Who uses the forecasts?
 <!-- stakeholders. -->
 
 ::: {#fig-01-bu-who .figure}
@@ -127,8 +99,39 @@ fig-align="left" fig-width="15cm"}
 who uses the forecasts? many different roles for different use-cases. 
 :::
 
-### Forecasting process
+So, who uses these forecasts?
+Product forecasts start the production in the ERP system.
+
+Category and Brand managers use aggregated forecasts to plan marketing and sales strategies.
+
+ for Customer facing roles, the sales reps and Key account managers use forecasts for negotiations and manage expectations,
+and all have a yearly target originating from forecasts.
+
+
+## Business Objectives
+<!-- define business objectives, What is the business's need? -->
+
+Therefore, robust and accurate forecasting practices are critical to:
+
+- Optimize safety stocks levels  
+- Reduce Out-Of-Stock & Out-Of-Date (OOD) inventory  
+- Improve customer service levels while lowering costs from waste and penalties
+- Increase customer satisfaction by consistently meeting expectations   
+
+These objectives ultimately enhance supply chain responsiveness and profitability,   
+as illustrated in @fig-01-bu-flowdown, see [@demast2024].   
+
+::: {#fig-01-bu-flowdown .figure}
+![](../images/flowdown.png){fig-align="left" fig-width="15cm"
+fig-alt="flowdown"}
+flowdown
+:::
+
+
+### How are these forecasts currently generated?
 <!-- Business process mapping -->
+
+BioBalance currently employs a third-party forecasting platform offering a range of traditional statistical forecasting methods. Demand planners prepare the necessary data, select appropriate aggregation levels, and fine-tune automatically suggested methods. They may also run simulations, adjust forecasting parameters, or manually override forecasts when deemed necessary. While these interventions often enhance forecast accuracy, they also increase costs and resource demands; however, the precise magnitude of these added costs remains unknown.
 
 ::: {#fig-01-bu-proc .figure}
 ::: {.content-visible when-format="html"} 
@@ -153,6 +156,7 @@ The forecasting process: labour intensive.
 ### Problem statement
 
 <!-- Detailed statement of the problem. -->
+the optimal aggregation level and method are unclear… decisions are subjective…
 
 <!-- main indicators, KPIs, constraints -->
 

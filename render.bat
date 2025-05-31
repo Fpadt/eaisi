@@ -12,3 +12,4 @@ rem # Add and commit changes to Git
 git add . 
 git commit -m "pythia latest (script)"
 git push origin main
+git push org-origin main
