@@ -184,6 +184,9 @@ resources:
   - video/bu_why.mp4  
   - video/bu_who.mp4
   - video/bu_proc.mp4
+  - video/mo_method.mp4
+  - video/ev_cv.mp4
+  - video/ev_compare.mp4  
   - pptx/PAF_s03.pptx
 
 funding: "The author(s) received no specific funding for this work."

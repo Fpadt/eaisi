@@ -59,13 +59,10 @@ The planning process for *Blossam Balance Tea* illustrates the complexity of for
 ::::: {#fig-01-bu-why .figure}
 ::: {.content-visible when-format="html"}
 <video src="../video/bu_why.mp4" controls autoplay muted loop width="640" playsinline>
-
 </video>
 :::
 
 ::: {.content-visible when-format="pdf"}
-<!-- this block only appears in PDF output -->
-
 ![](../images/bu_why.png){caption="Why is forecasting important? It drives the business." fig-align="left" fig-width="15cm"}
 :::
 
@@ -145,10 +142,9 @@ that are **MRP-relevant** and planned under a **Make-to-Stock** strategy.
 Products with short shelf lives, requiring chilled storage and daily planning, 
 are excluded due to their distinct planning characteristics.
 
-Instead, the focus is on **ambient** products having a minimum shelf life of 
-60 days, which follow a weekly MRP cycle and are forecasted in **monthly** time 
-buckets. These products represent the bulk of *BioBalance’s* volume and are 
-most aligned with the strategic forecasting use cases discussed in this study.
+The study further focuses on the most commercially significant part of *BioBalance’s* operations: the Market Sales Organization (MSO) with the highest sales volume in 2024. This selection is based on the exploratory analysis presented in @fig-02-eda-geography and ensures that the results are directly applicable to the area with the greatest business impact.
+
+Within this scope, we specifically target ambient products with a minimum shelf life of 60 days. These products are planned in weekly MRP cycles and forecasted using monthly time buckets. They represent the majority of *BioBalance’s* volume and align best with the strategic forecasting use cases addressed in this study.
 
 
 ## Problem Statement

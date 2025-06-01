@@ -18,42 +18,57 @@ source("../_book_functions.R")
 <!-- – Error analysis   -->
 <!-- – Comparison against baseline -->
 
-{{<var version>}}\
-{{<var email_info >}}\
-
-::: callout-note
-Note that there are five types of callouts, including: `note`, `warning`, `important`, `tip`, and `caution`.
-:::
-
-::: callout-warning
-Note that there are five types of callouts, including: `note`, `warning`, `important`, `tip`, and `caution`.
-:::
-
-::: callout-important
-Note that there are five types of callouts, including: `note`, `warning`, `important`, `tip`, and `caution`.
-:::
-
-::: callout-tip
-### Tip with Title
-
-This is an example of a callout with a title.
-:::
-
-::: {.callout-caution collapse="true"}
-### Expand To Learn About Collapse
-
-This is an example of a 'folded' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
-:::
-
 ## Evaluate Results
 
--   explainability
+### Time series Cross-Validation
+
+::::: {#fig-01-bu-why .figure}
+::: {.content-visible when-format="html"}
+<video src="../video/ev_cv.mp4" controls autoplay muted loop width="640" playsinline>
+</video>
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../images/ev_cv.png){caption="time series Cross-Validation" fig-align="left" fig-width="15cm"}
+:::
+
+Time series Cross-Validation (CV), 12 forecasts for each horizon between 1-12 Months.
+:::::
+
+To accurately assess our forecasting capabilities, 
+we use a rolling window approach with a 12-month forecast horizon. 
+
+This method enables us to measure forecast accuracy month-by-month, 
+providing detailed insights into our predictive precision at various future intervals.
+
+Note that we measure both the short-term, 3-month forecast required for production, 
+and the long-term, 12-month forecast needed for sourcing and setting targets.
 
 ### Assessment of Data Mining Results w.r.t. Business Success Criteria
 
 -   how well does the model work on new data?
 
 -   For whom does the model not work well?
+
+We derive the Root Mean Squared Error from 12 measurements per horizon
+forecast errors of our existing forecasting system.
+
+::::: {#fig-01-bu-why .figure}
+::: {.content-visible when-format="html"}
+<video src="../video/ev_compare.mp4" controls autoplay muted loop width="640" playsinline>
+</video>
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../images/bu_why.png){fig-align="left" fig-width="15cm"}
+:::
+
+Comparing the forecast errors of our existing forecasting system with the results of our digital twin, we observe that the RMSE (Root Mean Squared Error) remains consistent across both systems.
+:::::
+
+When we consolidate all data and calculate forecast accuracy as in the original system, 
+we find a Forecast Value Add of 3%.. 
+
 
 ### Approved Models
 
