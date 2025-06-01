@@ -209,13 +209,14 @@ By working within these constraints, **Pythia’s Advice** enables experimentati
 
 <!-- Business process mapping -->
 
-*BioBalance* uses a third-party system employing traditional statistical models. Planners:
+*BioBalance* uses a third-party system employing traditional statistical models. For each foecast to make Planners:
 
 1.  Prepare data,
-2.  Select aggregation levels
+2.  Select one of five predefined aggregation levels. 
 3.  Fine-tune parameters
 4.  Simulate results
 5.  Adjust or override forecasts manually.
+6.  Distribute the forecast Top-Down.
 
 These steps are iterative and resource-intensive, with unclear return on investment.
 

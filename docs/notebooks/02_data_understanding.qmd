@@ -157,20 +157,36 @@ Since forecasts are created both before and after the Demand Review, the dataset
 ## Data Collection Report
 <!-- Summarize how data was obtained and any issues during acquisition: -->
 
-All data is Sourced from *BioBalance* SAP-BI system using the SAP Open Hub Technology.
+### Data Flow
 
-![Data Collection pipelines](../images/dp01.png){#dp01 fig-align="center"}
+The data flow is illustrated in Figure @fig-02-dp01, outlining the steps from data extraction to forecast delivery. The process follows a medallion architecture, 
+where data flows into *Pythia’s Advice* through the Bronze and Silver layers and 
+returns the generated forecasts to SAP via the Gold layer.
 
-###Data Flow
+1. Data is extracted from the **Test** SAP system using Open Hub technology 
+   and stored on OneDrive in the Bronze layer of the staging area, following 
+   the medallion structure.
 
-1. The data is extracted from the Production SAP system, using the Open-Hub
-   technology and stored on One-drive in the Bronze layer of the stageing area, 
-   following the medallion structure.
-2. One-Drive synchronizes the data to get it available for the 
-   System-of-Innovation: Pythia's Advice.    
-3. An in-process duckDB session is used to read the csv-files and convert these to parquet while
-   applying the necessary light transformations. This data is stored in the 
-   Silver layer of the staging area.
+2. OneDrive synchronizes the data, making it accessible to the System of Innovation: 
+   *Pythia’s Advice*.
+
+3. An in-process DuckDB session reads the CSV files, applies light transformations 
+   (e.g., renaming, formatting), and converts them to Parquet format. The output 
+   is stored in the Silver layer.
+
+4. The transformed data is then loaded into *Pythia’s Advice*, where it is prepared 
+   for modeling. Forecasts are generated and exported to the Gold layer as plain CSV 
+   files.
+
+5. Finally, the generated forecasts are written back to the **Test** SAP system, 
+   where they can be compared against the business forecasts in terms of forecast 
+   accuracy.
+
+::: {#fig-02-dp01 .figure}
+![Data Collection pipelines](../images/dp01.png){fig-align="center"}
+:::
+
+
 
 ```{r}
 #| label: tab-02-data-collection
@@ -199,9 +215,13 @@ dtDC %>%
   )
 ```
 
-## Transformations
+### Transformations
 
-Light transformations are applied to the exported CSV files. These include renaming fields, converting data types, formatting date fields, and adding leading zeros where required. Additionally, a new variable is calculated to capture the number of months between the forecast creation date and the forecasted period.
+Light transformations are applied to the exported CSV files, including field renaming, data type conversions, date formatting, and adding leading zeros where needed. Additionally, a new variable is computed to capture the number of months between the forecast creation date and the forecasted period.
+
+The table below lists all transformations applied to each dataset. Use the `SRC` 
+column to filter transformations: `O` indicates original 1:1 mappings, while `C` 
+denotes custom transformations involving additional logic.
 
 <!-- DuckDB tranformations -->
 ```{r}
@@ -293,6 +313,35 @@ dtDD %>%
   )
 ```
 
+```{r}
+#| label: skim-summary
+#| results: 'asis'
+
+pa_md_mat_get(
+  .dataset_name = "material", 
+  .scope_matl = FALSE) %>%
+  skim(.) %>%
+  kable("html", caption = "Variable Description Report") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
+
+```
+<!-- } else { -->
+<!--   dtMATL_sk %>% -->
+<!--     kable("latex", booktabs = TRUE, caption = "Variable Description Report") %>% -->
+<!--     kable_styling(latex_options = c("striped", "hold_position"), full_width = FALSE) -->
+<!-- } -->
+
+## Data Exploration Report
+
+<!-- Exploratory analyses & sanity checks   -->
+<!-- statistical properties and metadata. -->
+<!-- Initial exploration to spot trends, seasonality, outliers, and segmentation patterns. -->
+<!-- Subsections (as needed): -->
+<!-- Sales coverage: distribution over time -->
+<!-- ABC/XYZ, CV, zero-counts, sales length -->
+<!-- Temporal patterns (weekly/monthly seasonality, trend, events) -->
+<!-- Cross-sectional: contribution per customer/product/channel -->
+<!-- exclude units pak and DS   -->
 
 ```{r}
 #| label: tab-02-data-description-hierarchy
@@ -439,33 +488,6 @@ dtCST_tab %>%
 
 ```
 
-
-## Data Exploration Report
-
-<!-- Exploratory analyses & sanity checks   -->
-<!-- statistical properties and metadata. -->
-<!-- Initial exploration to spot trends, seasonality, outliers, and segmentation patterns. -->
-<!-- Subsections (as needed): -->
-<!-- Sales coverage: distribution over time -->
-<!-- ABC/XYZ, CV, zero-counts, sales length -->
-<!-- Temporal patterns (weekly/monthly seasonality, trend, events) -->
-<!-- Cross-sectional: contribution per customer/product/channel -->
-<!-- exclude units pak and DS   -->
-
-```{r}
-#| label: tab-02-data-exploration
-#| echo: false
-#| output: true
-#| eval: false
-
-knitr::kable(
-  summary_dt[, .(level1, mean_val, sd_val, plot_lightbox)],
-  col.names = c("Category", "Mean", "SD", "Trend"),
-  escape = FALSE
-) %>%
-  kableExtra::kable_styling(full_width = FALSE)
-
-```
 
 
 ## Data Quality Report

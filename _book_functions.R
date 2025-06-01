@@ -4,9 +4,12 @@ library(padt)             # custom made library for Pythia's Advice - Data Tooli
 library(scales)
 library(collapsibleTree)  # for collapsible trees
 library(treemapify)       # for treemaps
+library(skimr)             # for skimr)
+library(quarto)
 library(gt)
 library(DT)               # for datatables 
 library(kableExtra)
+# library(ggrepel)         # for ggrepel
 library(openxlsx2)
 library(magrittr)
 library(ggplot2)
