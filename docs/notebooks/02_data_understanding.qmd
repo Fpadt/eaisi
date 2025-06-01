@@ -3,7 +3,7 @@ subtitle:     what data is available and where it comes from
 description: |
   - datasources identified: sales master data
   - tabular structure
-  - Material and Customer hierarchies have 4 levels
+  - Article and Customer hierarchies have 4 levels
   - no outliers but missing values
   - initial exploratory data analysis (EDA) to identify patterns, trends, and relationships within the data.
 number-sections: false
@@ -21,80 +21,159 @@ source("../_book_functions.R")
 ## Identification of Data Sources
 
 <!-- Describe what data is available and where it comes from. -->
+The table below summarizes the data sources used in this project, 
+detailing their type, time span, granularity, system of record (SoR), and content. 
+All data is sourced from SAP BI, which extracts it from the underlying 
+systems of record. 
+The table also lists the specific SAP tables used for each data source.
 
 ```{r}
 #| label: tab-02-data-sources
-#| echo: false
-#| output: true
+#| tbl-cap: "Overview of data sources used in the project"
+#| results: 'asis'
 
 # Read the data into a data.table 
 dtDS <-  fread(text = "
-  Data Source         , Time-Span, Granularity, Origin, Content
-  article master data , > 2020   ,            , SAP S4, article hierachy
-  customer master data, > 2020   ,            , SAP S4, customer hierachy
-  historical sales    , > 2020   , daily      , SAP S4, customer orders + free-of-charge 
-  historical forecasts, > 2023   , monhtly    , QAD   , monthly pre- & post Demand review forecasts
+  Data Source, Type, Time-Span, Granularity, SoR   , Table, Content
+  article    , MD  ,          ,            , SAP S4, MARC , article attr.  & hierachy
+  customer   , MD  ,          ,            , SAP S4, KNVV , customer attr. hierachy
+  sales      , TD  , > 2020   , daily      , SAP S4, LIPS , customer orders + free-of-charge 
+  forecasts  , TD  , > 2023   , monhtly    , QAD   ,      , monthly pre- & post Demand review forecasts
 ")
 
 # Create a styled kableExtra table
-dtDS |> 
+dtDS %>% 
   kbl(
-    caption   = "Data Sources ",
-    col.names = names(dtDS),
-    align     = c("l", "l", "l"),
-    booktabs  = TRUE
-  ) |> 
+    # caption             = "Overview of data sources used in the project",
+    col.names           = names(.),
+    align               = "l",
+    booktabs            = TRUE
+  ) %>% 
   kable_styling(
-    full_width = FALSE,
-    position   = "left",
-    bootstrap_options = c("striped", "hover", "condensed")
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
+  )  %>%
+  add_footnote(
+    label    = "MD = Master Data, TD = Transaction Data",
+    notation = "none"
   )
 ```
 
+<!-- PDF -->
+<!-- %>% -->
+<!--   footnote( -->
+<!--     general           = "MD = Master data, TD = Transaction Data", -->
+<!--     footnote_as_chunk = TRUE, -->
+<!--     threeparttable    = FALSE, -->
+<!--     escape            = FALSE -->
+<!--   ) -->
+
 <!-- Subsections: -->
 
-<!-- ### Materials -->
+### Articles
 
-<!-- Business context of each dataset -->
+The Article Master Data is extracted from `MARC` which contains Plant specific 
+data, this is enhanced with sales organization specific data from `MVKE` and 
+global article data from `MARA`.  
+The following filters are applied:
 
-<!-- ### Customers -->
+```{r}
+#| label: tab-02-data-sources-article-filters
+#| echo: false
+#| caption: "Article Master Data Filters"
 
-<!-- Business context of each dataset -->
+dtAF <-  fread(text = "
+  FIELD      , Filter                        , Reason
+  MARA-MTART , HAWA; FERT; VOLL              , only finished goods
+  MARA-STRGRP, Z1                            , only Make-to-Stock   
+  MVKE-PRAT7 , not 'X'                       , exclude Promotions (fixed planned)
+  MARC-DISMM , ZC; ZD; ZG; ZH; ZI; ZJ; ZN; ZP, only MRP relevant
+  MARC-PERKZ , W                             , only Ambient
+  ")
 
-<!-- ### Sales -->
+# Create a styled kableExtra table
+dtAF %>% 
+  kbl(
+    caption             = "Article Master Data Filters",
+    col.names           = names(.),
+    align               = "l",
+    booktabs            = TRUE
+  ) %>% 
+  kable_styling(
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed"),
+    latex_options       = c("striped", "hold_position")    
+  )
+```
 
-<!-- Business context of each dataset -->
+see @sec-01-bu-scope for reasons for article-filters.
 
-<!-- Time span, granularity (daily/monthly), and key joins (e.g., master data with hierarchies) -->
 
-<!-- ### Forecasts -->
+### Customers
 
-<!-- Business context of each dataset -->
+Customer Master Data is sourced from `KNVV`, which contains sales-organization-specific information, and is enriched with global attributes from `KNA1`. This includes customer classification fields such as type (e.g., internal, external, one-time customer, or employee). Customers flagged as employees are excluded from the analysis.
 
-<!-- Time span, granularity (daily/monthly), and key joins (e.g., master data with hierarchies) -->
+### Sales
+<!-- Data filters applied (Doctype's, Item category, ...) -->
+<!-- exclude Promotion articles --> PRAT7
 
-## Initial Data Collection Report
+Sales data is extracted from `LIPS`, which contains delivery records. Only completed deliveries related to standard sales orders and free-of-charge transactions are included in the analysis.
+The following filters are applied:
 
+```{r}
+#| label: tab-02-data-sources-sales-filters
+#| echo: false
+#| caption: "Sales Data Filters"
+
+dtSF <-  fread(text = "
+  FIELD      , Filter                        , Reason
+
+  ")
+
+# Create a styled kableExtra table
+dtSF %>% 
+  kbl(
+    caption             = "Sales Data Filters",
+    col.names           = names(.),
+    align               = "l",
+    booktabs            = TRUE
+  ) %>% 
+  kable_styling(
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed"),
+    latex_options       = c("striped", "hold_position")    
+  )
+```
+
+### Forecasts
+
+Forecasts are generated monthly for each article–plant–customer combination, with a planning horizon of up to three years. For this research, the focus is on the year 2024, using a forecast horizon of up to 12 months. Consequently, only forecasts generated from 2023 onward are considered.
+
+Since forecasts are created both before and after the Demand Review, the dataset is split into two versions: *pre-Demand Review* and *post-Demand Review*. The pre-Demand Review forecasts are used for the initial analysis, while the post-Demand Review forecasts serve as the basis for final validation.
+
+## Data Collection Report
 <!-- Summarize how data was obtained and any issues during acquisition: -->
 
 All data is Sourced from *BioBalance* SAP-BI system using the SAP Open Hub Technology.
 
-![Data Collection pipelines](/images/dp01.png){#dp01 fig-align="center"}
+![Data Collection pipelines](../images/dp01.png){#dp01 fig-align="center"}
 
-The data is extracted from the underlying tables, joined, filtered and transformed and written to a CSV file.
+###Data Flow
 
-<!-- Data filters applied (Doctype's, Item category, ...) -->
-
-<!-- exclude units pak and DS   -->
-
-BUOM <!-- exclude Promotion articles --> PRAT7 <!-- only master data which is relevant for the analysis -->
-
-<!-- DuckDB tranformations -->
+1. The data is extracted from the Production SAP system, using the Open-Hub
+   technology and stored on One-drive in the Bronze layer of the stageing area, 
+   following the medallion structure.
+2. One-Drive synchronizes the data to get it available for the 
+   System-of-Innovation: Pythia's Advice.    
+3. An in-process duckDB session is used to read the csv-files and convert these to parquet while
+   applying the necessary light transformations. This data is stored in the 
+   Silver layer of the staging area.
 
 ```{r}
 #| label: tab-02-data-collection
-#| echo: false
-#| output: true
 
 # Read the data into a data.table 
 dtDC <-  fread(text = "
@@ -106,19 +185,79 @@ dtDC <-  fread(text = "
 ")
 
 # Create a styled kableExtra table
-dtDC |> 
+dtDC %>% 
   kbl(
-    caption   = "Data Collection ",
-    col.names = names(dtDC),
-    align     = c("l", "l", "l"),
-    booktabs  = TRUE
-  ) |> 
+    caption             = "Data Collection ",
+    col.names           = names(.),
+    align               = "l",
+    booktabs            = TRUE
+  ) %>% 
   kable_styling(
-    full_width = FALSE,
-    position   = "left",
-    bootstrap_options = c("striped", "hover", "condensed")
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
   )
 ```
+
+## Transformations
+
+Light transformations are applied to the exported CSV files. These include renaming fields, converting data types, formatting date fields, and adding leading zeros where required. Additionally, a new variable is calculated to capture the number of months between the forecast creation date and the forecasted period.
+
+<!-- DuckDB tranformations -->
+```{r}
+#| label: tab-02-data-db-transformations
+dtTF <- pa_transformations_get() %>%
+  .[, POSIT:= NULL]
+```
+
+
+::: {.content-visible when-format="html"}
+
+```{r}
+#| label: tab-02-data-transformations-html
+#| 
+datatable(
+  dtTF,
+  options = list(
+    pageLength = 5,
+    lengthMenu = c(5, 10, 25, 50, 100, 2000),
+    autoWidth  = TRUE,
+    scrollX    = TRUE
+  ),
+  rownames     = FALSE,
+  class        = 'stripe hover compact'
+) %>%
+  formatStyle(
+    columns  = names(dtTF),
+    fontSize = '0.8em'          # reduce font size
+  )
+```
+
+:::
+  
+::: {.content-visible when-format="pdf"}
+  
+```{r}
+#| label: tab-02-data-transformations
+
+
+
+dtTF %>% 
+  kbl(
+    caption             = "Data Transformations ",
+    col.names           = names(.),
+    align               = "l",
+    booktabs            = TRUE
+  ) %>% 
+  kable_styling(
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
+  )
+```
+
+:::
+
 
 ## Data Description Report
 
@@ -129,8 +268,6 @@ dtDC |>
 
 ```{r}
 #| label: tab-02-data-description
-#| echo: false
-#| output: true
 
 # Read the data into a data.table 
 dtDD <-  fread(text = "
@@ -142,25 +279,23 @@ dtDD <-  fread(text = "
 ")
 
 # Create a styled kableExtra table
-dtDD |> 
+dtDD %>% 
   kbl(
-    caption   = "Data Description ",
-    col.names = names(dtDD),
-    align     = c("l", "l", "l"),
-    booktabs  = TRUE
-  ) |> 
+    caption             = "Data Description ",
+    col.names           = names(.),
+    align               = "l",
+    booktabs            = TRUE
+  ) %>% 
   kable_styling(
-    full_width = FALSE,
-    position   = "left",
-    bootstrap_options = c("striped", "hover", "condensed")
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
   )
 ```
 
 
 ```{r}
 #| label: tab-02-data-description-hierarchy
-#| echo: false
-#| include: false
 
 OD <- "C:\\Users\\flori\\OneDrive\\ET\\pythia\\data"
 
@@ -175,10 +310,10 @@ dtMAT <- wb_read(
 ) %T>%
   setDT() %T>%
   setnames(
-    c(4, 6, 8), 
-    c("ProdCat", "SubCat", "Family")
+    c(4, 6, 8, 9), 
+    c("ProdCat", "SubCat", "Family", "Article")
   ) %>%
-  .[, .(ProdCat, SubCat, Family, Material)] %>%
+  .[, .(ProdCat, SubCat, Family, Article)] %>%
   unique()
 
 dtCUST <- wb_read(
@@ -216,11 +351,11 @@ dtCST <-
 
 
 ::: {#article_hier .figure}
+
 ::: {.content-visible when-format="html"}
+
 ```{r}
 #| label: tab-02-data-description-hierarchy-plot
-#| echo: false
-#| output: true
 
 collapsibleTree(
   dtMAT,
@@ -232,15 +367,13 @@ collapsibleTree(
   fill        = "#38e56d"
 )
 ```
+
 :::
 
-::: {.content-visible when-format="pdf"}
+::: {.content-visible when-format="pdf"}  
+
 ```{r}
 #| label: tab-02-data-description-hierarchy-article-treemap
-#| echo: false
-#| output: true
-
-library(treemapify)
 
 # Count of Family items per Category&Sub Category combo
 treemap_dt <- 
@@ -254,34 +387,34 @@ ggplot(treemap_dt, aes(area = count, fill = ProdCat, label = SubCat)) +
   geom_treemap_text(colour = "white", place = "centre", grow = TRUE) 
 
 ```
+
 :::
 
-Interactive Article Hierarchy, click on the nodes to expand/collapse
+Interactive Article Hierarchy, **click on the nodes to expand/collapse**
+
 :::
 
 ```{r}
 #| label: tab-02-data-description-hierarchy-article
-#| echo: false
-#| output: true
 
 dtMAT_tab <- dtMAT[, .(
   SubCat_Count   = uniqueN(SubCat),
   Family_Count   = uniqueN(Family),
-  Material_Count = uniqueN(Material)
+  Article_Count = uniqueN(Article)
 ), by = ProdCat][order(ProdCat)]
 
 # Create a styled kableExtra table
-dtMAT_tab |> 
+dtMAT_tab %>% 
   kbl(
-    caption   = "Summary: Article Hierachy",
-    col.names = names(dtMAT),
-    align     = rep("l", ncol(dtMAT_tab)),
-    booktabs  = TRUE
-  ) |> 
+    caption             = "Summary: Article Hierachy",
+    col.names           = names(.),
+    align               = "l",
+    booktabs            = TRUE
+  ) %>% 
   kable_styling(
-    full_width = FALSE,
-    position   = "left",
-    bootstrap_options = c("striped", "hover", "condensed")
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
   )
 
 dtCST_tab <- dtCST[, .(
@@ -291,19 +424,18 @@ dtCST_tab <- dtCST[, .(
   Customer_Count = uniqueN(Customer)
 ), by = Channel][order(Channel)]
 
-dtCST_tab |>
+dtCST_tab %>%
   kbl(
-    caption   = "Summary: Customer Hierachy",
-    col.names = names(dtCST),
-    align     = rep("l", ncol(dtCST)),
-    booktabs  = TRUE
-  ) |> 
+    caption             = "Summary: Customer Hierachy",
+    col.names           = names(.),
+    align               = "l",
+    booktabs            = TRUE
+  ) %>% 
   kable_styling(
-    full_width = FALSE,
-    position   = "left",
-    bootstrap_options = c("striped", "hover", "condensed")
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
   )
-
 
 ```
 
@@ -318,6 +450,7 @@ dtCST_tab |>
 <!-- ABC/XYZ, CV, zero-counts, sales length -->
 <!-- Temporal patterns (weekly/monthly seasonality, trend, events) -->
 <!-- Cross-sectional: contribution per customer/product/channel -->
+<!-- exclude units pak and DS   -->
 
 ```{r}
 #| label: tab-02-data-exploration

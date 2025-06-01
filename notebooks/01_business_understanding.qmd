@@ -26,11 +26,11 @@ We then introduce Pythia’s Advice, a parallel forecasting environment designed
 
 Finally, we outline the current forecasting process and establish criteria to measure the success of this initiative.
 
-## Why is Forecasting Important?
+## Why is Forecasting Important? {#sec-01-bu-why}
 
 <!-- Contextualize the business problem and its forecasting relevance. -->
 
-Accurate forecasting is essential for managing *BioBalance’s* portfolio of over 2.500 products, each with specific shelf-life requirements, sourcing constraints, and production lead times. Forecasts guide decisions across the entire supply chain — from procurement and production to distribution and inventory management.
+Accurate forecasting is essential for managing *BioBalance’s* portfolio of over 2.500 products, each with specific shelf-life requirements, sourcing constraints, and production lead times. Forecasts guide decisions across the entire supply chain — from procurement and production to distribution and inventory management. 
 
 ### Geographic Footprint and Production Model
 
@@ -138,6 +138,19 @@ dtUC |>
 
 A detailed overview is available in (@sec-11-bu-who).
 
+## Scope of the Project {#sec-01-bu-scope}
+
+This research is limited to articles sold to customers (**Finished Goods**) 
+that are **MRP-relevant** and planned under a **Make-to-Stock** strategy. 
+Products with short shelf lives, requiring chilled storage and daily planning, 
+are excluded due to their distinct planning characteristics.
+
+Instead, the focus is on **ambient** products having a minimum shelf life of 
+60 days, which follow a weekly MRP cycle and are forecasted in **monthly** time 
+buckets. These products represent the bulk of *BioBalance’s* volume and are 
+most aligned with the strategic forecasting use cases discussed in this study.
+
+
 ## Problem Statement
 
 While *BioBalance* uses a flexible forecasting platform, its reliance on manual adjustments and subjective decision-making introduces inconsistency. Forecasting methods and aggregation levels are often chosen based on intuition and experience. Research shows, see [@article], that small manual adjustments typically offer no benefit, whereas larger interventions—usually reductions—may significantly improve accuracy.
@@ -178,13 +191,19 @@ To support these goals, we introduce **Pythia’s Advice** — a parallel foreca
 
 Pythia’s Advice provides:
 
--   A minimal-resource benchmark: A low-cost, automated forecast based on statistical models (e.g., ETS, HTS).
+-   A minimal-resource benchmark:  
+    low-cost, automated forecast based on statistical models (e.g., ETS, HTS).
 
 -   An internal reference for calculating Forecast Value Added (FVA).
 
 -   A scalable, low-cost, open-source infrastructure.
 
-This environment allows *BioBalance* to explore the cost-effectiveness of forecasting interventions without disrupting operations. This project is intentionally constrained to use only open-source tools and low-cost infrastructure, ensuring that the proposed solutions are affordable, scalable, and vendor-independent. **Pythia’s Advice** is represented by the lower part of the Data-Analytic Problem Structure (DAPS), (@fig-01-bu-daps).
+This environment was deliberately designed to operate in parallel, with read-only access to the production system. This avoids interference with business-critical forecasting workflows and eliminates the risk of disrupting day-to-day operations.
+
+Additionally, the project was developed under the constraint of limited access to business resources — both in terms of time and geographical availability. Demand planners and analysts needed to prioritize operational continuity, requiring the research to be conducted independently while still aligning with business realities.
+
+By working within these constraints, **Pythia’s Advice** enables experimentation and benchmarking without disrupting operations — providing a safe and scalable way to measure the value of forecast improvements.
+**Pythia’s Advice** is represented by the lower part of the Data-Analytic Problem Structure (DAPS), (@fig-01-bu-daps).
 
 ## Forecast Process
 

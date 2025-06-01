@@ -585,12 +585,13 @@ div.csl-indent {
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#why-is-forecasting-important" id="toc-why-is-forecasting-important" class="nav-link" data-scroll-target="#why-is-forecasting-important">Why is Forecasting Important?</a>
+  <li><a href="#sec-01-bu-why" id="toc-sec-01-bu-why" class="nav-link" data-scroll-target="#sec-01-bu-why">Why is Forecasting Important?</a>
   <ul class="collapse">
   <li><a href="#geographic-footprint-and-production-model" id="toc-geographic-footprint-and-production-model" class="nav-link" data-scroll-target="#geographic-footprint-and-production-model">Geographic Footprint and Production Model</a></li>
   <li><a href="#blossam-tea-an-illustrative-example" id="toc-blossam-tea-an-illustrative-example" class="nav-link" data-scroll-target="#blossam-tea-an-illustrative-example"><em>Blossam</em> Tea: an illustrative example</a></li>
   </ul></li>
   <li><a href="#stakeholder-use-cases" id="toc-stakeholder-use-cases" class="nav-link" data-scroll-target="#stakeholder-use-cases">Stakeholder Use Cases</a></li>
+  <li><a href="#sec-01-bu-scope" id="toc-sec-01-bu-scope" class="nav-link" data-scroll-target="#sec-01-bu-scope">Scope of the Project</a></li>
   <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link" data-scroll-target="#problem-statement">Problem Statement</a></li>
   <li><a href="#business-objectives" id="toc-business-objectives" class="nav-link" data-scroll-target="#business-objectives">Business Objectives</a>
   <ul class="collapse">
@@ -617,8 +618,8 @@ div.csl-indent {
 <p>We then introduce Pythia’s Advice, a parallel forecasting environment designed to quantify Forecast Value Added (FVA) and support more effective decision-making.</p>
 <p>Finally, we outline the current forecasting process and establish criteria to measure the success of this initiative.</p>
 </section>
-<section id="why-is-forecasting-important" class="level2">
-<h2 class="anchored" data-anchor-id="why-is-forecasting-important">Why is Forecasting Important?</h2>
+<section id="sec-01-bu-why" class="level2">
+<h2 class="anchored" data-anchor-id="sec-01-bu-why">Why is Forecasting Important?</h2>
 <!-- Contextualize the business problem and its forecasting relevance. -->
 <p>Accurate forecasting is essential for managing <em>BioBalance’s</em> portfolio of over 2.500 products, each with specific shelf-life requirements, sourcing constraints, and production lead times. Forecasts guide decisions across the entire supply chain — from procurement and production to distribution and inventory management.</p>
 <section id="geographic-footprint-and-production-model" class="level3">
@@ -738,6 +739,11 @@ Figure&nbsp;1.3: who uses the forecasts? varying requirements across several key
 </div>
 <p>A detailed overview is available in (<a href="11_business_understanding.html#sec-11-bu-who" class="quarto-xref"><span>Who uses the forecasts?</span></a>).</p>
 </section>
+<section id="sec-01-bu-scope" class="level2">
+<h2 class="anchored" data-anchor-id="sec-01-bu-scope">Scope of the Project</h2>
+<p>This research is limited to articles sold to customers (<strong>Finished Goods</strong>) that are <strong>MRP-relevant</strong> and planned under a <strong>Make-to-Stock</strong> strategy. Products with short shelf lives, requiring chilled storage and daily planning, are excluded due to their distinct planning characteristics.</p>
+<p>Instead, the focus is on <strong>ambient</strong> products having a minimum shelf life of 60 days, which follow a weekly MRP cycle and are forecasted in <strong>monthly</strong> time buckets. These products represent the bulk of <em>BioBalance’s</em> volume and are most aligned with the strategic forecasting use cases discussed in this study.</p>
+</section>
 <section id="problem-statement" class="level2">
 <h2 class="anchored" data-anchor-id="problem-statement">Problem Statement</h2>
 <p>While <em>BioBalance</em> uses a flexible forecasting platform, its reliance on manual adjustments and subjective decision-making introduces inconsistency. Forecasting methods and aggregation levels are often chosen based on intuition and experience. Research shows, see <span class="citation" data-cites="article">(<a href="18_references.html#ref-article" role="doc-biblioref">Fildes &amp; Goodwin, 2007</a>)</span>, that small manual adjustments typically offer no benefit, whereas larger interventions—usually reductions—may significantly improve accuracy.</p>
@@ -760,7 +766,7 @@ Figure&nbsp;1.3: who uses the forecasts? varying requirements across several key
 <li><p>Increase customer satisfaction through consistent availability.</p></li>
 </ol>
 <p>And ultimately increase profitability, as illustrated in <a href="#fig-01-bu-daps" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>, see <span class="citation" data-cites="demast2024">(<a href="18_references.html#ref-demast2024" role="doc-biblioref">Mast &amp; Lokkerbol, 2024b</a>)</span>.</p>
-<div id="fig-01-bu-daps" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" data-fig-width="15cm" alt="DAPS">
+<div id="fig-01-bu-daps" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="DAPS" data-fig-width="15cm">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-01-bu-daps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="../images/flowdown.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;1.4: "><img src="../images/flowdown.png" class="img-fluid quarto-figure quarto-figure-left figure-img" data-fig-width="15cm" alt="DAPS"></a>
@@ -775,11 +781,14 @@ Figure&nbsp;1.4
 <p>To support these goals, we introduce <strong>Pythia’s Advice</strong> — a parallel forecasting environment that runs alongside the production system. Named after the oracle of Delphi, it serves as a low-cost advisory layer that complements the existing forecasting system.</p>
 <p>Pythia’s Advice provides:</p>
 <ul>
-<li><p>A minimal-resource benchmark: A low-cost, automated forecast based on statistical models (e.g., ETS, HTS).</p></li>
+<li><p>A minimal-resource benchmark:<br>
+low-cost, automated forecast based on statistical models (e.g., ETS, HTS).</p></li>
 <li><p>An internal reference for calculating Forecast Value Added (FVA).</p></li>
 <li><p>A scalable, low-cost, open-source infrastructure.</p></li>
 </ul>
-<p>This environment allows <em>BioBalance</em> to explore the cost-effectiveness of forecasting interventions without disrupting operations. This project is intentionally constrained to use only open-source tools and low-cost infrastructure, ensuring that the proposed solutions are affordable, scalable, and vendor-independent. <strong>Pythia’s Advice</strong> is represented by the lower part of the Data-Analytic Problem Structure (DAPS), (<a href="#fig-01-bu-daps" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>).</p>
+<p>This environment was deliberately designed to operate in parallel, with read-only access to the production system. This avoids interference with business-critical forecasting workflows and eliminates the risk of disrupting day-to-day operations.</p>
+<p>Additionally, the project was developed under the constraint of limited access to business resources — both in terms of time and geographical availability. Demand planners and analysts needed to prioritize operational continuity, requiring the research to be conducted independently while still aligning with business realities.</p>
+<p>By working within these constraints, <strong>Pythia’s Advice</strong> enables experimentation and benchmarking without disrupting operations — providing a safe and scalable way to measure the value of forecast improvements. <strong>Pythia’s Advice</strong> is represented by the lower part of the Data-Analytic Problem Structure (DAPS), (<a href="#fig-01-bu-daps" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>).</p>
 </section>
 </section>
 <section id="forecast-process" class="level2">

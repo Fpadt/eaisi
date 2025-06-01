@@ -2,8 +2,10 @@
 # load required packages
 library(padt)             # custom made library for Pythia's Advice - Data Tooling
 library(scales)
-library(collapsibleTree)
+library(collapsibleTree)  # for collapsible trees
+library(treemapify)       # for treemaps
 library(gt)
+library(DT)               # for datatables 
 library(kableExtra)
 library(openxlsx2)
 library(magrittr)
