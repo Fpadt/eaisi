@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://fpadt.github.io/eaisi/index.html</loc>
-    <lastmod>2025-05-30T22:04:22.066Z</lastmod>
+    <lastmod>2025-06-01T06:13:05.387Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/prophecy_to_prediction.html</loc>
@@ -14,31 +14,35 @@
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/notebooks/00_introduction.html</loc>
-    <lastmod>2025-05-31T15:56:58.672Z</lastmod>
+    <lastmod>2025-06-01T05:54:58.640Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/notebooks/01_business_understanding.html</loc>
-    <lastmod>2025-05-31T17:13:09.504Z</lastmod>
+    <lastmod>2025-06-01T06:47:27.782Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/notebooks/02_data_understanding.html</loc>
-    <lastmod>2025-05-31T18:01:52.889Z</lastmod>
+    <lastmod>2025-06-01T06:48:02.159Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/notebooks/03_data_preparation.html</loc>
-    <lastmod>2025-05-29T20:55:58.766Z</lastmod>
+    <lastmod>2025-06-01T06:14:27.409Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/notebooks/04_modelling.html</loc>
-    <lastmod>2025-05-30T19:16:09.312Z</lastmod>
+    <lastmod>2025-06-01T06:13:09.137Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/notebooks/05_evaluation.html</loc>
-    <lastmod>2025-05-29T20:56:00.832Z</lastmod>
+    <lastmod>2025-06-01T06:13:10.212Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/notebooks/06_deployment.html</loc>
-    <lastmod>2025-05-29T20:55:57.056Z</lastmod>
+    <lastmod>2025-06-01T06:13:12.421Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fpadt.github.io/eaisi/notebooks/07_conclusions_recommendations.html</loc>
+    <lastmod>2025-06-01T05:55:53.459Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/insight_to_impact.html</loc>
@@ -58,7 +62,7 @@
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/notebooks/13_data_preparation.html</loc>
-    <lastmod>2025-05-29T20:56:13.498Z</lastmod>
+    <lastmod>2025-05-31T20:52:21.685Z</lastmod>
   </url>
   <url>
     <loc>https://fpadt.github.io/eaisi/notebooks/14_modelling.html</loc>

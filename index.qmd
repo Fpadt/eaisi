@@ -22,7 +22,7 @@ source("_book_functions.R")
 
 ## Disclaimer {.appendix .unnumbered}
 
-This research presents a fictional case study of **BioBalance**, 
+This research presents a fictional case study of *BioBalance*, 
 a company operating in the food-for-biodiversity sector. 
 The associated brands, locations, and customers are entirely fictional and 
 generated using AI. 

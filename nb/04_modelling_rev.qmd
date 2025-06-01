@@ -6,6 +6,11 @@ number-sections: false
 ---
 # Modelling {#sec-04-modelling}
 
+```{r}
+#| label: setup
+source("../_book_functions.R")
+```
+
 <!-- - Modelling – Forecasting models and techniques used. -->
 <!-- – Algorithms tried (with brief rationale)   -->
 <!-- – Hyperparameter approaches   -->

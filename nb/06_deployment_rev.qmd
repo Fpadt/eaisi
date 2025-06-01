@@ -13,6 +13,11 @@ number-sections: false
 
 # Deployment {#sec-06-deployment}
 
+```{r}
+#| label: setup
+source("../_book_functions.R")
+```
+
 <!--  Deployment – Implications for practical application. -->
 <!-- – Practical steps for integration (tools, APIs, monitoring)   -->
 <!-- – Change-management considerations -->

@@ -1,14 +1,17 @@
 ---
-title:       Conclusions
 subtitle:    Conclusions subtitle
 description: |
   - Conclusions – Synthesis of findings, key takeaways, and their significance.
   - Recommendations – Suggested actions or further research directions.
-unnumbered:      true
 number-sections: false
 editor: source
 ---
-# Conclusions {#sec-07-conclusions}
+# Conclusions {#sec-07-conclusions .unnumbered}
+
+```{r}
+#| label: setup
+source("../_book_functions.R")
+```
 
 ## Discussion & Key Findings  
 – Interpret results in business terms (“so what?”)  

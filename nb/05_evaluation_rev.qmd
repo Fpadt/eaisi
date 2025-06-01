@@ -8,6 +8,11 @@ number-sections: false
 
 # Evaluation {#sec-05-evaluation}
 
+```{r}
+#| label: setup
+source("../_book_functions.R")
+```
+
 <!--  Evaluation – Analysis of model performance and key findings. -->
 <!-- – Performance metrics & visualizations   -->
 <!-- – Error analysis   -->

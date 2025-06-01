@@ -1,5 +1,5 @@
 ---
-subtitle:    Data Understanding subtitle
+subtitle:     what data is available and where it comes from 
 description: |
   - datasources identified: sales master data
   - tabular structure
@@ -7,9 +7,16 @@ description: |
   - no outliers but missing values
   - initial exploratory data analysis (EDA) to identify patterns, trends, and relationships within the data.
 number-sections: false
+toc: true         # show page‐TOC (right‐sidebar) on _every_ page
+toc-depth: 3      # include ## and ### in the TOC
 ---
 
 # Data Understanding {#sec-02-data-understanding}
+
+```{r}
+#| label: setup
+source("../_book_functions.R")
+```
 
 ## Identification of Data Sources
 
@@ -18,19 +25,15 @@ number-sections: false
 ```{r}
 #| label: tab-02-data-sources
 #| echo: false
-#| include: true
-
-
-library(data.table)
-library(kableExtra)
+#| output: true
 
 # Read the data into a data.table 
 dtDS <-  fread(text = "
-  Data Source         , Time-Span, Granularity, Speciality
-  article master data , > 2020 ,            , article hierachy
-  customer master data, > 2020 ,            , customer hierachy
-  historical sales    , > 2020 , daily      , customer orders + free-of-charge 
-  historical forecasts, > 2023 , monhtly    , monthly forecasts for each month in 2024, before- and after demand review
+  Data Source         , Time-Span, Granularity, Origin, Content
+  article master data , > 2020   ,            , SAP S4, article hierachy
+  customer master data, > 2020   ,            , SAP S4, customer hierachy
+  historical sales    , > 2020   , daily      , SAP S4, customer orders + free-of-charge 
+  historical forecasts, > 2023   , monhtly    , QAD   , monthly pre- & post Demand review forecasts
 ")
 
 # Create a styled kableExtra table
@@ -91,11 +94,7 @@ BUOM <!-- exclude Promotion articles --> PRAT7 <!-- only master data which is re
 ```{r}
 #| label: tab-02-data-collection
 #| echo: false
-#| include: true
-
-
-library(data.table)
-library(kableExtra)
+#| output: true
 
 # Read the data into a data.table 
 dtDC <-  fread(text = "
@@ -131,10 +130,7 @@ dtDC |>
 ```{r}
 #| label: tab-02-data-description
 #| echo: false
-#| include: true
-
-library(data.table)
-library(kableExtra)
+#| output: true
 
 # Read the data into a data.table 
 dtDD <-  fread(text = "
@@ -160,17 +156,11 @@ dtDD |>
   )
 ```
 
-<!-- Hierarchies (e.g., 4-level product and customer trees) -->
 
 ```{r}
 #| label: tab-02-data-description-hierarchy
 #| echo: false
-#| include: true
-
-library(ggplot2)
-library(openxlsx2)
-library(data.table)
-library(magrittr)
+#| include: false
 
 OD <- "C:\\Users\\flori\\OneDrive\\ET\\pythia\\data"
 
@@ -184,47 +174,139 @@ dtMAT <- wb_read(
   skip_empty_rows = TRUE
 ) %T>%
   setDT() %T>%
-  setnames(c(2,4,6,8), c("level1", "level2", "level3", "level4")) 
+  setnames(
+    c(4, 6, 8), 
+    c("ProdCat", "SubCat", "Family")
+  ) %>%
+  .[, .(ProdCat, SubCat, Family, Material)] %>%
+  unique()
 
-dt <- copy(dtMAT)
+dtCUST <- wb_read(
+  file      = file.path(OD, "ET2BB.xlsx"),
+  sheet     = "CUST",
+  start_row = 19,
+  start_col = 9,
+  skip_empty_cols = TRUE,
+  skip_empty_rows = TRUE
+) %T>%
+  setDT() %T>%
+  setnames(c(1), c("KEY")  ) 
 
+dtCUST_H1 <- wb_read(
+  file      = file.path(OD, "ET2BB.xlsx"),
+  sheet     = "CUST_H1",
+  start_row = 1,
+  start_col = 1,
+  skip_empty_cols = TRUE,
+  skip_empty_rows = TRUE
+) %T>%
+  setDT() %T>%
+  setnames(c(1), c("KEY")  )
+
+dtCST <- 
+  dtCUST_H1[dtCUST, on = .(KEY), nomatch = 0] %T>%
+  setnames(
+    c(4, 7, 9, 11),
+    c("Channel", "Key_Account", "Account", "SoldTo")
+  ) %>%
+  .[, .(Channel, Key_Account, Account, SoldTo, Customer)] %>%
+  unique()
 ```
 
-::: {# .figure}
-::: {.content-visible when-format="html"} 
+
+
+::: {#article_hier .figure}
+::: {.content-visible when-format="html"}
 ```{r}
-library(collapsibleTree)
+#| label: tab-02-data-description-hierarchy-plot
+#| echo: false
+#| output: true
 
 collapsibleTree(
-  dt,
-  hierarchy = c("level2", "level3", "level4"),
-  root      = "Products",
-  width     = "100%",
-  zoomable  = TRUE
+  dtMAT,
+  hierarchy   = c("ProdCat", "SubCat", "Family"),
+  root        = "Articles",
+  width       = "100%",
+  zoomable    = TRUE,
+  fillByLevel = TRUE,
+  fill        = "#38e56d"
 )
 ```
- 
-::: 
+:::
+
 ::: {.content-visible when-format="pdf"}
 ```{r}
+#| label: tab-02-data-description-hierarchy-article-treemap
+#| echo: false
+#| output: true
+
 library(treemapify)
 
-# Count of level4 items per level1/level2 combo
-treemap_dt <- dt[, .N, by = .(level1, level2, level3, level4)]
-treemap_dt[, count := .N, by = .(level1, level2)]
+# Count of Family items per Category&Sub Category combo
+treemap_dt <- 
+  dtMAT[, .(ProdCat, SubCat, Family)]      %>%
+  unique()                                 %>%
+  .[, count:= .N, by = .(ProdCat, SubCat)]
 
 # Use only level1-level2 for compactness
-ggplot(treemap_dt, aes(area = count, fill = level1, label = level2)) +
+ggplot(treemap_dt, aes(area = count, fill = ProdCat, label = SubCat)) +
   geom_treemap() +
-  geom_treemap_text(colour = "white", place = "centre", grow = TRUE) +
-  theme(legend.position = "none")
+  geom_treemap_text(colour = "white", place = "centre", grow = TRUE) 
+
+```
+:::
+
+Interactive Article Hierarchy, click on the nodes to expand/collapse
+:::
+
+```{r}
+#| label: tab-02-data-description-hierarchy-article
+#| echo: false
+#| output: true
+
+dtMAT_tab <- dtMAT[, .(
+  SubCat_Count   = uniqueN(SubCat),
+  Family_Count   = uniqueN(Family),
+  Material_Count = uniqueN(Material)
+), by = ProdCat][order(ProdCat)]
+
+# Create a styled kableExtra table
+dtMAT_tab |> 
+  kbl(
+    caption   = "Summary: Article Hierachy",
+    col.names = names(dtMAT),
+    align     = rep("l", ncol(dtMAT_tab)),
+    booktabs  = TRUE
+  ) |> 
+  kable_styling(
+    full_width = FALSE,
+    position   = "left",
+    bootstrap_options = c("striped", "hover", "condensed")
+  )
+
+dtCST_tab <- dtCST[, .(
+  KAM_count      = uniqueN(Key_Account),
+  ACC_Count      = uniqueN(Account),
+  SoldTo_Count   = uniqueN(SoldTo),
+  Customer_Count = uniqueN(Customer)
+), by = Channel][order(Channel)]
+
+dtCST_tab |>
+  kbl(
+    caption   = "Summary: Customer Hierachy",
+    col.names = names(dtCST),
+    align     = rep("l", ncol(dtCST)),
+    booktabs  = TRUE
+  ) |> 
+  kable_styling(
+    full_width = FALSE,
+    position   = "left",
+    bootstrap_options = c("striped", "hover", "condensed")
+  )
 
 
 ```
 
-:::
-<figure text>
-:::
 
 ## Data Exploration Report
 
@@ -236,6 +318,22 @@ ggplot(treemap_dt, aes(area = count, fill = level1, label = level2)) +
 <!-- ABC/XYZ, CV, zero-counts, sales length -->
 <!-- Temporal patterns (weekly/monthly seasonality, trend, events) -->
 <!-- Cross-sectional: contribution per customer/product/channel -->
+
+```{r}
+#| label: tab-02-data-exploration
+#| echo: false
+#| output: true
+#| eval: false
+
+knitr::kable(
+  summary_dt[, .(level1, mean_val, sd_val, plot_lightbox)],
+  col.names = c("Category", "Mean", "SD", "Trend"),
+  escape = FALSE
+) %>%
+  kableExtra::kable_styling(full_width = FALSE)
+
+```
+
 
 ## Data Quality Report
 

@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-05-31">
+<meta name="dcterms.date" content="2025-06-01">
 <meta name="description" content="Forecasts are critical for end-to-end decision-making across sourcing, production, and delivery.Inaccurate forecasts lead to costly outcomes such as stockouts, waste, and poor service.Improving forecast accuracy boosts efficiency, customer satisfaction, and profitability.">
 
 <title>Business Understanding – Pythia's Advice</title>
@@ -305,7 +305,7 @@ div.csl-indent {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The Heart of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/01_business_understanding.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Business Understanding</span></a></li></ol></nav>
-      <h1 class="title"><span class="chapter-title">Business Understanding</span></h1>
+      <h1 class="title"><span id="sec-01-business-understanding" class="quarto-section-identifier"><span class="chapter-title">Business Understanding</span></span></h1>
             <p class="subtitle lead">Why is forecasting important?</p>
                   <div>
         <div class="description">
@@ -358,7 +358,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 31, 2025</p>
+        <p class="date">June 1, 2025</p>
       </div>
     </div>
     
@@ -483,6 +483,12 @@ div.csl-indent {
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Deployment</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/07_conclusions_recommendations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conclusions</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -578,8 +584,10 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-01-business-understanding" id="toc-sec-01-business-understanding" class="nav-link active" data-scroll-target="#sec-01-business-understanding">Why is Forecasting Important?</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#why-is-forecasting-important" id="toc-why-is-forecasting-important" class="nav-link" data-scroll-target="#why-is-forecasting-important">Why is Forecasting Important?</a>
   <ul class="collapse">
+  <li><a href="#geographic-footprint-and-production-model" id="toc-geographic-footprint-and-production-model" class="nav-link" data-scroll-target="#geographic-footprint-and-production-model">Geographic Footprint and Production Model</a></li>
   <li><a href="#blossam-tea-an-illustrative-example" id="toc-blossam-tea-an-illustrative-example" class="nav-link" data-scroll-target="#blossam-tea-an-illustrative-example"><em>Blossam</em> Tea: an illustrative example</a></li>
   </ul></li>
   <li><a href="#stakeholder-use-cases" id="toc-stakeholder-use-cases" class="nav-link" data-scroll-target="#stakeholder-use-cases">Stakeholder Use Cases</a></li>
@@ -602,13 +610,42 @@ div.csl-indent {
 
 
 
-<section id="sec-01-business-understanding" class="level2">
-<h2 class="anchored" data-anchor-id="sec-01-business-understanding">Why is Forecasting Important?</h2>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This chapter provides a detailed look into the business context and challenges faced by <em>BioBalance</em>, a multi-channel FMCG company. We begin by illustrating why forecasting matters, using a real-life example (Blossam tea), followed by an overview of stakeholder-specific forecasting needs across departments.</p>
+<p>Next, we define the core business problem — the lack of an objective benchmark to evaluate manual forecast adjustments — and explain how this project aims to address that issue.</p>
+<p>We then introduce Pythia’s Advice, a parallel forecasting environment designed to quantify Forecast Value Added (FVA) and support more effective decision-making.</p>
+<p>Finally, we outline the current forecasting process and establish criteria to measure the success of this initiative.</p>
+</section>
+<section id="why-is-forecasting-important" class="level2">
+<h2 class="anchored" data-anchor-id="why-is-forecasting-important">Why is Forecasting Important?</h2>
 <!-- Contextualize the business problem and its forecasting relevance. -->
 <p>Accurate forecasting is essential for managing <em>BioBalance’s</em> portfolio of over 2.500 products, each with specific shelf-life requirements, sourcing constraints, and production lead times. Forecasts guide decisions across the entire supply chain — from procurement and production to distribution and inventory management.</p>
+<section id="geographic-footprint-and-production-model" class="level3">
+<h3 class="anchored" data-anchor-id="geographic-footprint-and-production-model">Geographic Footprint and Production Model</h3>
+<p><em>BioBalance</em> operates multiple production facilities and distribution centers across Europe, serving customers in various countries through both direct and indirect channels. As shown in <a href="#fig-01-bu-map" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>, these facilities are geographically distributed, and some products are produced in one country but sold in others.</p>
+<p>Due to long production and transportation lead times — combined with short customer order lead times — the company follows a <strong>Make-to-Stock (MTS)</strong> strategy for most of its portfolio. Products must be manufactured and positioned in advance of actual demand.</p>
+<p>As a result, accurate forecasting is essential to:</p>
+<ul>
+<li>Plan production volumes at the right plants</li>
+<li>Allocate stock to the right countries and channels</li>
+<li>Avoid excess inventory or costly stockouts</li>
+</ul>
+<p>This operational model places forecasting at the core of supply chain responsiveness and profitability.</p>
+<div id="fig-01-bu-map" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-01-bu-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../images/bu_map.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1.1: Geographic footprint of BioBalance: production and distribution sites"><img src="../images/bu_map.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:8cm"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-01-bu-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: Geographic footprint of <em>BioBalance</em>: production and distribution sites
+</figcaption>
+</figure>
+</div>
+</section>
 <section id="blossam-tea-an-illustrative-example" class="level3">
 <h3 class="anchored" data-anchor-id="blossam-tea-an-illustrative-example"><em>Blossam</em> Tea: an illustrative example</h3>
-<p>The planning process for <em>Blossam Balance Tea</em> illustrates the complexity of forecasting across stages, see <a href="#fig-01-bu-why" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>:</p>
+<p>The planning process for <em>Blossam Balance Tea</em> illustrates the complexity of forecasting across stages, see <a href="#fig-01-bu-why" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>:</p>
 <div id="fig-01-bu-why" class="figure quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-01-bu-why-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -616,7 +653,7 @@ div.csl-indent {
 </video>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-01-bu-why-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.1: Why forecasting? The forecast drives the business!
+Figure&nbsp;1.2: Why forecasting? The forecast drives the business!
 </figcaption>
 </figure>
 </div>
@@ -642,7 +679,7 @@ Figure&nbsp;1.1: Why forecasting? The forecast drives the business!
 </video>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-01-bu-who-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.2: who uses the forecasts? varying requirements across several key use cases.
+Figure&nbsp;1.3: who uses the forecasts? varying requirements across several key use cases.
 </figcaption>
 </figure>
 </div>
@@ -703,7 +740,7 @@ Figure&nbsp;1.2: who uses the forecasts? varying requirements across several key
 </section>
 <section id="problem-statement" class="level2">
 <h2 class="anchored" data-anchor-id="problem-statement">Problem Statement</h2>
-<p>While BioBalance uses a flexible forecasting platform, its reliance on manual adjustments and subjective decision-making introduces inconsistency. Forecasting methods and aggregation levels are often chosen based on intuition and experience. Research shows, see <span class="citation" data-cites="article">(<a href="18_references.html#ref-article" role="doc-biblioref">Fildes &amp; Goodwin, 2007</a>)</span>, that small manual adjustments typically offer no benefit, whereas larger interventions—usually reductions—may significantly improve accuracy.</p>
+<p>While <em>BioBalance</em> uses a flexible forecasting platform, its reliance on manual adjustments and subjective decision-making introduces inconsistency. Forecasting methods and aggregation levels are often chosen based on intuition and experience. Research shows, see <span class="citation" data-cites="article">(<a href="18_references.html#ref-article" role="doc-biblioref">Fildes &amp; Goodwin, 2007</a>)</span>, that small manual adjustments typically offer no benefit, whereas larger interventions—usually reductions—may significantly improve accuracy.</p>
 <p>Without an objective benchmark, it is impossible to determine whether these manual interventions improve accuracy or merely increase resource costs.</p>
 </section>
 <section id="business-objectives" class="level2">
@@ -715,21 +752,21 @@ Figure&nbsp;1.2: who uses the forecasts? varying requirements across several key
 <li><p>A decision-support tool to guide value-adding interventions.</p></li>
 <li><p>A scalable, consistent method applicable across different aggregation levels.</p></li>
 </ul>
-<p>These objectives align with BioBalance’s strategic priorities, which include:</p>
+<p>These objectives align with <em>BioBalance’s</em> strategic priorities, which include:</p>
 <ol type="1">
 <li><p>Optimize safety stock levels.</p></li>
 <li><p>Reduce Out-Of-Stock (OOS) and Out-Of-Date (OOD) inventory.</p></li>
 <li><p>Improve customer service levels and reduce waste.</p></li>
 <li><p>Increase customer satisfaction through consistent availability.</p></li>
 </ol>
-<p>And ultimately increase profitability, as illustrated in <a href="#fig-01-bu-daps" class="quarto-xref">Figure&nbsp;<span>1.3</span></a>, see <span class="citation" data-cites="demast2024">(<a href="18_references.html#ref-demast2024" role="doc-biblioref">Mast &amp; Lokkerbol, 2024b</a>)</span>.</p>
-<div id="fig-01-bu-daps" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="DAPS" data-fig-width="15cm">
+<p>And ultimately increase profitability, as illustrated in <a href="#fig-01-bu-daps" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>, see <span class="citation" data-cites="demast2024">(<a href="18_references.html#ref-demast2024" role="doc-biblioref">Mast &amp; Lokkerbol, 2024b</a>)</span>.</p>
+<div id="fig-01-bu-daps" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" data-fig-width="15cm" alt="DAPS">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-01-bu-daps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/flowdown.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1.3: "><img src="../images/flowdown.png" class="img-fluid quarto-figure quarto-figure-left figure-img" data-fig-width="15cm" alt="DAPS"></a>
+<a href="../images/flowdown.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;1.4: "><img src="../images/flowdown.png" class="img-fluid quarto-figure quarto-figure-left figure-img" data-fig-width="15cm" alt="DAPS"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-01-bu-daps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.3
+Figure&nbsp;1.4
 </figcaption>
 </figure>
 </div>
@@ -742,7 +779,7 @@ Figure&nbsp;1.3
 <li><p>An internal reference for calculating Forecast Value Added (FVA).</p></li>
 <li><p>A scalable, low-cost, open-source infrastructure.</p></li>
 </ul>
-<p>This environment allows BioBalance to explore the cost-effectiveness of forecasting interventions without disrupting operations. This project is intentionally constrained to use only open-source tools and low-cost infrastructure, ensuring that the proposed solutions are affordable, scalable, and vendor-independent. <strong>Pythia’s Advice</strong> is represented by the lower part of the Data-Analytic Problem Structure (DAPS), (<a href="#fig-01-bu-daps" class="quarto-xref">Figure&nbsp;<span>1.3</span></a>).</p>
+<p>This environment allows <em>BioBalance</em> to explore the cost-effectiveness of forecasting interventions without disrupting operations. This project is intentionally constrained to use only open-source tools and low-cost infrastructure, ensuring that the proposed solutions are affordable, scalable, and vendor-independent. <strong>Pythia’s Advice</strong> is represented by the lower part of the Data-Analytic Problem Structure (DAPS), (<a href="#fig-01-bu-daps" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>).</p>
 </section>
 </section>
 <section id="forecast-process" class="level2">
@@ -764,7 +801,7 @@ Figure&nbsp;1.3
 </video>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-01-bu-proc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.4: The forecasting process: requiring human expertise.
+Figure&nbsp;1.5: The forecasting process: requiring human expertise.
 </figcaption>
 </figure>
 </div>

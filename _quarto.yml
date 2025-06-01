@@ -64,6 +64,10 @@ knitr:
   opts_chunk:
     message: false
     warning: false
+    include: true  # Include code by default
+    eval:    true  # Evaluate code by default
+    echo:    false # Do not show code by default
+    output:  true  # Show output by default
   opts_knit:
     # root.dir: "."
     before_chapter_script: "_book_functions.R"  # Remove the "../" 
@@ -126,6 +130,9 @@ book:
         # Deployment: Implementation Strategies and Code Snippets
         - notebooks/06_deployment.qmd
         # - nb/06_deployment_rev.qmd
+        # Conclusion and Recommendations
+        - notebooks/07_conclusions_recommendations.qmd
+        # - nb/07_conclusions_recommendations_rev.qmd        
         
     # Recommendations – Suggested actions or further research directions.
     - insight_to_impact.qmd
@@ -254,6 +261,7 @@ format:
     # papersize: A4    
 
   # pdf: #arxiv-pdf:
+  #   pdf-engine: pdflatex   # or xelatex, lualatex
   #   includes:
   #     in-header: "_book_functions.R"
   #   keep-tex:           false

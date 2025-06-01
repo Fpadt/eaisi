@@ -1,5 +1,16 @@
+# Functions for the Pythia book
+# load required packages
+library(padt)             # custom made library for Pythia's Advice - Data Tooling
+library(scales)
+library(collapsibleTree)
 library(gt)
-library(scales)    # for color scales if you want them
+library(kableExtra)
+library(openxlsx2)
+library(magrittr)
+library(ggplot2)
+library(data.table)
+
+# for color scales if you want them
 
 assign("FUNCTIONS_LOADED", TRUE, envir = .GlobalEnv)
 # cat("Functions loaded at:", Sys.time(), "\n")

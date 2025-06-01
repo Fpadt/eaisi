@@ -10,43 +10,9 @@ number-sections: false
 editor: source
 ---
 
-::: {#fig-bu-why .figure}
-![](../images/bu_why.png){fig-alt="Why is forecasting important? It drives the business" fig-align="left" fig-width="15cm"}\]
-
-Why forecasting?\
-The forecast drives the business!
-:::
-
-See Figure @fig-bu-why for the thumbnail overview.
-
 # Data Pipelines
 
 
-```{r}
-#| label: load-packages
-#| include: false
-
-library(data.table)
-library(ggplot2)
-```
-
-```{r}
-#| label: xxx
-#| warning: false
-#| echo: false
-
-# ggplot(penguins, 
-#        aes(x = flipper_length_mm, y = bill_length_mm)) +
-#   geom_point(aes(color = species, shape = species)) +
-#   scale_color_manual(values = c("darkorange","purple","cyan4")) +
-#   labs(
-#     title = "Flipper and bill length",
-#     subtitle = "Dimensions for penguins at Palmer Station LTER",
-#     x = "Flipper length (mm)", y = "Bill length (mm)",
-#     color = "Penguin species", shape = "Penguin species"
-#   ) +
-#   theme_minimal()
-```
 
 # scenario:
 
