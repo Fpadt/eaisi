@@ -9,7 +9,10 @@ number-sections: false
 
 # Business Understanding {#sec-11-business-understanding}
 
-
+```{r}
+#| label: setup
+source("../_book_functions.R")
+```
 
 
 ::: {#fig-11-bu-why .figure}
@@ -498,10 +501,6 @@ create_grouped_table <- function(shipments_data) {
 #| eval: true
 #| echo: false
 #| include: true
-
-library(data.table)
-library(gt)
-library(magrittr)
 
 shipments <- fread(SCNGF) %T>%
   setnames(
