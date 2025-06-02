@@ -205,7 +205,10 @@ By working within these constraints, **Pythia’s Advice** enables experimentati
 
 <!-- Business process mapping -->
 
-*BioBalance* uses a third-party system employing traditional statistical models. For each foecast to make Planners:
+*BioBalance* relies on a third-party system using traditional statistical models. 
+Table @tbl-01-demand-planners-activities outlines the forecasting steps performed 
+by demand planners, which often involve multiple iterations. *Pythia’s Advice* 
+aims to eliminate these iterations and enhance both efficiency and forecast accuracy.
 
 ::: {#tbl-01-demand-planners-activities}
 ```{r}
@@ -220,10 +223,10 @@ By working within these constraints, **Pythia’s Advice** enables experimentati
   )                                  %T>%
   setDT()                            %T>%
   setorder(ID)                        %>%
+  .[, !"ID"]                          %>%
   .[, PA:= ifelse(is.na(PA), '', PA)] %>%
   kbl(
-    # caption             = "Data Description",
-    col.names           = c("Id", "Demand planner", "Pythia Advises on"), 
+    col.names           = c("Demand planner", "Pythia Advises on"), 
     align               = "l",
     booktabs            = TRUE
   ) %>%
@@ -234,15 +237,16 @@ By working within these constraints, **Pythia’s Advice** enables experimentati
   )
 ```
 
-Forecasting Process steps needed per forecast, with Pythia's Advice.
+Forecasting steps per forecast, Pythia's Advice to improve efficiency.
 :::
 
-::: callout-information
+::: callout-important
 The initial scope of the project is to share the unadjusted forecast and its resulting accuracy with demand planners as a benchmark. This lets them see the impact of their manual adjustments and provides a foundation for continuous improvement.
 
 Building trust must come first before moving on to subsequent steps.
 
 **TRUST is all you need**
+
 :::
 
 
