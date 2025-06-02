@@ -503,7 +503,7 @@ library(data.table)
 library(gt)
 library(magrittr)
 
-shipments <- fread("C:/Users/flori/OneDrive/ET/pythia/data/scn_pythia.csv") %T>%
+shipments <- fread(SCNGF) %T>%
   setnames(
     c("from"  , "to"         , "N"),
     c("origin", "destination", "items"))
@@ -595,7 +595,7 @@ library(data.table)
 library(gt)
 library(magrittr)
 
-shipments <- fread("C:/Users/flori/OneDrive/ET/pythia/data/scn_pythia.csv") %T>%
+shipments <- fread(SCNGF) %T>%
   setnames(
     c("from"  , "to"         , "N"),
     c("origin", "destination", "items"))
@@ -794,7 +794,7 @@ create_left_grouped_table <- function(shipments_data) {
   return(wide_dt)
 }
 
-shipments <- fread("C:/Users/flori/OneDrive/ET/pythia/data/scn_pythia.csv") %T>%
+shipments <- fread(SCNGF) %T>%
   setnames(
     c("from"  , "to"         , "N"),
     c("origin", "destination", "items"))
@@ -1170,7 +1170,7 @@ create_leadtime_distribution_table <- function(data) {
 }
 
 
-scn <- fread("C:/Users/flori/OneDrive/ET/pythia/data/scn_pythia.csv") %T>%
+scn <- fread(SCNGF) %T>%
   setnames(
     c("PH2_T", "N"),
     c("category", "lead_time"))
@@ -1351,7 +1351,7 @@ create_universal_distribution_table <- function(data) {
 }
 
 
-scn <- fread("C:/Users/flori/OneDrive/ET/pythia/data/scn_pythia.csv") %T>%
+scn <- fread(SCNGF) %T>%
   setnames(
     c("PH2_T", "N"),
     c("category", "lead_time"))
@@ -1626,7 +1626,7 @@ create_png_distribution_table <- function(data, img_dir = "distribution_plots", 
   return(gt_table)
 }
 
-scn <- fread("C:/Users/flori/OneDrive/ET/pythia/data/scn_pythia.csv") %T>%
+scn <- fread(SCNGF) %T>%
   setnames(
     c("PH2_T", "N"),
     c("category", "lead_time"))
@@ -1958,7 +1958,7 @@ darken <- function(color, amount = 0.3) {
   rgb(rgb_vals[1], rgb_vals[2], rgb_vals[3])
 }
 
-scn <- fread("C:/Users/flori/OneDrive/ET/pythia/data/scn_pythia.csv") %T>%
+scn <- fread(SCNGF) %T>%
   setnames(
     c("PH2_T", "N"),
     c("category", "lead_time"))
@@ -2105,7 +2105,7 @@ create_flextable_with_images <- function(data) {
   return(ft)
 }
 
-scn <- fread("C:/Users/flori/OneDrive/ET/pythia/data/scn_pythia.csv") %T>%
+scn <- fread(SCNGF) %T>%
   setnames(
     c("PH2_T", "N"),
     c("category", "lead_time"))

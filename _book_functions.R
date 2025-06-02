@@ -21,7 +21,9 @@ library(data.table)
 odc   <- fs::path_abs(Sys.getenv("OneDriveConsumer"  , "")) #onedrive_consumer
 # onedrive_commercial <- fs::path_abs(Sys.getenv("OneDriveCommercial", ""))
 
-ET2BB <- file.path(odc, "ET", "pythia", "data", "ET2BB.xlsx")
+PDATA <- file.path(odc  , "ET", "pythia", "data")
+ET2BB <- file.path(PDATA, "ET2BB.xlsx")
+SCNGF <- file.path(PDATA, "scn_pythia.csv")
 
 assign("FUNCTIONS_LOADED", TRUE, envir = .GlobalEnv)
 # cat("Functions loaded at:", Sys.time(), "\n")
