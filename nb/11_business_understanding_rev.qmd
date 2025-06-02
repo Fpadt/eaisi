@@ -14,26 +14,6 @@ number-sections: false
 source("../_book_functions.R")
 ```
 
-
-:::: {#fig-11-bu-why .figure}
-::: {.content-visible when-format="html"} 
-<video
-  src="../video/bu_why.mp4"
-  controls
-  autoplay muted loop
-  width="640"
-  playsinline> 
-</video> 
-::: 
-::: {.content-visible when-format="pdf"}
-<!-- this block only appears in PDF output -->
-  ![](../images/bu_why.png){caption="Why is forecasting important? It drives the business."
-fig-align="left" fig-width="15cm"} 
-:::
-
-Why forecasting? The forecast drives the business! 
-::::
-
 #### Deliver 
 
 Similar to many other products, *Blossam* tea is sold through different
@@ -77,26 +57,6 @@ key use cases, details in [@sec-appendix-usecases]:
     forecast horizon of **26-52 weeks**, to determine safety stock
     profiles based on realized forecast accuracy, lead times and delivery
     performance (On-Time-In-Full).
-
-:::: {#fig-11-bu-who .figure}
-::: {.content-visible when-format="html"} 
-<video
-  src="../video/bu_who.mp4"
-  controls
-  autoplay muted loop
-  width="640"
-  playsinline> 
-</video> 
-::: 
-::: {.content-visible when-format="pdf"}
-<!-- this block only appears in PDF output -->
-  ![](../images/bu_who.png){caption="Why is forecasting important? "
-fig-align="left" fig-width="15cm"} 
-:::
-
-who uses the forecasts? many different roles for different use-cases. 
-::::
-
 4.  **Material Requirement Planning**: The MRP system requires forecasts at a 
     **article * warehouse**, aggregated weekly, with a
     forecast horizon of **104 weeks**, to generate purchase orders and
@@ -162,14 +122,10 @@ selection and refinement.
 
 ## traditional statistical forecasting methods 
 
+::: {#tbl-11-stat-methods}
 
 ```{r}
 #| label: tab-forecasting-methods
-#| echo: false
-#| include: true
-
-library(data.table)
-library(kableExtra)
 
 # 1) Create a data.table to hold the table data
 dt_methods <- data.table(
@@ -195,7 +151,6 @@ dt_methods[, Method := cell_spec(Method, bold = TRUE)]
 # 3) Render with kableExtra, disabling escaping so the <b> and \textbf{} get through
 dt_methods %>%
   kbl(
-    caption = "Traditional statistical forecasting methods",
     booktabs = TRUE,
     escape = FALSE,
     format = if (knitr::is_latex_output()) "latex" else "html"
@@ -206,6 +161,8 @@ dt_methods %>%
     full_width        = FALSE
   )
 ```
+Traditional statistical forecasting methods
+:::
 
 -   **Proposed Methods**:
 
