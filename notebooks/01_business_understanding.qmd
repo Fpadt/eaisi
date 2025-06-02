@@ -260,7 +260,7 @@ Forecasting steps per forecast, Pythia's Advice to improve efficiency.
 ::: callout-important
 The initial scope of the project is to share the unadjusted forecast and its resulting accuracy with demand planners as a benchmark. This lets them see the impact of their manual adjustments and provides a foundation for continuous improvement.
 
-*Building trust must come first before moving on to subsequent steps.*
+*Building trust must come first before moving on to subsequent steps.*  \
 **TRUST is all you need**
 
 :::
