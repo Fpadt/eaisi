@@ -673,7 +673,7 @@ ggplot(dt, aes(x = Q)) +
 
 # Read the data into a data.table
 dtMAT <- wb_read(
-  file      = file.path(OD, "ET2BB.xlsx"),
+  file      = ET2BB),
   sheet     = "MASP",
   start_row = 19,
   start_col = 6,
@@ -695,7 +695,7 @@ dtMAT_tab <- dtMAT[, .(
 ), by = ProdCat][order(ProdCat)]
 
 dtCUST <- wb_read(
-  file      = file.path(OD, "ET2BB.xlsx"),
+  file      = ET2BB,
   sheet     = "CUST",
   start_row = 19,
   start_col = 9,
@@ -706,7 +706,7 @@ dtCUST <- wb_read(
   setnames(c(1), c("KEY")  ) 
 
 dtCUST_H1 <- wb_read(
-  file      = file.path(OD, "ET2BB.xlsx"),
+  file      = ET2BB,
   sheet     = "CUST_H1",
   start_row = 1,
   start_col = 1,
