@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-06-02">
-<meta name="description" content="Forecasts are critical for end-to-end decision-making across sourcing, production, and delivery.Inaccurate forecasts lead to costly outcomes such as stockouts, waste, and poor service.Improving forecast accuracy boosts efficiency, customer satisfaction, and profitability.">
+<meta name="author" content="F.J. Padt">
+<meta name="dcterms.date" content="2025-05-30">
 
-<title>Business Understanding – Pythia's Advice</title>
+<title>CRISP-DM – Pythia's Advice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -52,8 +52,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../notebooks/02_data_understanding.html" rel="next">
-<link href="../notebooks/00_introduction.html" rel="prev">
+<link href="../notebooks/11_business_understanding.html" rel="next">
+<link href="../insight_to_impact.html" rel="prev">
 <link href="../images/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -115,10 +115,6 @@ div.csl-indent {
         color: #FFFFFF;
       }
 </style>
-<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
-
-<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-
 
 
 </head>
@@ -292,7 +288,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The Heart of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/01_business_understanding.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Business Understanding</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/17_crisp-dm.html">Appendix</a></li><li class="breadcrumb-item"><a href="../notebooks/17_crisp-dm.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">CRISP-DM</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -304,19 +300,9 @@ div.csl-indent {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The Heart of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/01_business_understanding.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Business Understanding</span></a></li></ol></nav>
-      <h1 class="title"><span id="sec-01-business-understanding" class="quarto-section-identifier"><span class="chapter-title">Business Understanding</span></span></h1>
-            <p class="subtitle lead">Why is forecasting important?</p>
-                  <div>
-        <div class="description">
-          <ul>
-          <li>Forecasts are critical for end-to-end decision-making across sourcing, production, and delivery.</li>
-          <li>Inaccurate forecasts lead to costly outcomes such as stockouts, waste, and poor service.</li>
-          <li>Improving forecast accuracy boosts efficiency, customer satisfaction, and profitability.</li>
-          </ul>
-        </div>
-      </div>
-                          <div class="quarto-categories">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/17_crisp-dm.html">Appendix</a></li><li class="breadcrumb-item"><a href="../notebooks/17_crisp-dm.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">CRISP-DM</span></a></li></ol></nav>
+      <h1 class="title"><span class="chapter-title">CRISP-DM</span></h1>
+                                <div class="quarto-categories">
                 <div class="quarto-category">Time Series Forecasting</div>
                 <div class="quarto-category">Data Science</div>
                 <div class="quarto-category">Hierarchical Forecasting (HTS)</div>
@@ -358,7 +344,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">June 2, 2025</p>
+        <p class="date">May 30, 2025</p>
       </div>
     </div>
     
@@ -434,13 +420,13 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">The Heart of Pythia</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/00_introduction.html" class="sidebar-item-text sidebar-link">
@@ -449,7 +435,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/01_business_understanding.html" class="sidebar-item-text sidebar-link active">
+  <a href="../notebooks/01_business_understanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Business Understanding</span></span></a>
   </div>
 </li>
@@ -499,16 +485,16 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendix</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/17_crisp-dm.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/17_crisp-dm.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">CRISP-DM</span></span></a>
   </div>
 </li>
@@ -579,29 +565,8 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#sec-01-bu-why" id="toc-sec-01-bu-why" class="nav-link" data-scroll-target="#sec-01-bu-why">Why is Forecasting Important?</a>
-  <ul class="collapse">
-  <li><a href="#geographic-footprint-and-production-model" id="toc-geographic-footprint-and-production-model" class="nav-link" data-scroll-target="#geographic-footprint-and-production-model">Geographic Footprint and Production Model</a></li>
-  <li><a href="#blossam-tea-an-illustrative-example" id="toc-blossam-tea-an-illustrative-example" class="nav-link" data-scroll-target="#blossam-tea-an-illustrative-example"><em>Blossam</em> Tea: an illustrative example</a></li>
-  </ul></li>
-  <li><a href="#stakeholder-use-cases" id="toc-stakeholder-use-cases" class="nav-link" data-scroll-target="#stakeholder-use-cases">Stakeholder Use Cases</a></li>
-  <li><a href="#sec-01-bu-scope" id="toc-sec-01-bu-scope" class="nav-link" data-scroll-target="#sec-01-bu-scope">Scope of the Project</a></li>
-  <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link" data-scroll-target="#problem-statement">Problem Statement</a></li>
-  <li><a href="#business-objectives" id="toc-business-objectives" class="nav-link" data-scroll-target="#business-objectives">Business Objectives</a>
-  <ul class="collapse">
-  <li><a href="#pythias-advice-a-system-of-innovation" id="toc-pythias-advice-a-system-of-innovation" class="nav-link" data-scroll-target="#pythias-advice-a-system-of-innovation">Pythia’s Advice: A System of Innovation</a></li>
-  </ul></li>
-  <li><a href="#forecast-process" id="toc-forecast-process" class="nav-link" data-scroll-target="#forecast-process">Forecast Process</a></li>
-  <li><a href="#success-criteria" id="toc-success-criteria" class="nav-link" data-scroll-target="#success-criteria">Success Criteria</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/01_business_understanding.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -611,227 +576,18 @@ div.csl-indent {
 
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>This chapter provides a detailed look into the business context and challenges faced by <em>BioBalance</em>, a multi-channel FMCG company. We begin by illustrating why forecasting matters, using a real-life example (Blossam tea), followed by an overview of stakeholder-specific forecasting needs across departments.</p>
-<p>Next, we define the core business problem — the lack of an objective benchmark to evaluate manual forecast adjustments — and explain how this project aims to address that issue.</p>
-<p>We then introduce Pythia’s Advice, a parallel forecasting environment designed to quantify Forecast Value Added (FVA) and support more effective decision-making.</p>
-<p>Finally, we outline the current forecasting process and establish criteria to measure the success of this initiative.</p>
-</section>
-<section id="sec-01-bu-why" class="level2">
-<h2 class="anchored" data-anchor-id="sec-01-bu-why">Why is Forecasting Important?</h2>
-<!-- Contextualize the business problem and its forecasting relevance. -->
-<p>Accurate forecasting is essential for managing <em>BioBalance’s</em> portfolio of over 2.500 products, each with specific shelf-life requirements, sourcing constraints, and production lead times. Forecasts guide decisions across the entire supply chain — from procurement and production to distribution and inventory management.</p>
-<section id="geographic-footprint-and-production-model" class="level3">
-<h3 class="anchored" data-anchor-id="geographic-footprint-and-production-model">Geographic Footprint and Production Model</h3>
-<p><em>BioBalance</em> operates multiple production facilities and distribution centers across Europe, serving customers in various countries through both direct and indirect channels. As shown in <a href="#fig-01-bu-map" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-01-bu-map</span></a>, these facilities are geographically distributed, and some products are produced in one country but sold in others.</p>
-<p>Due to long production and transportation lead times, combined with short customer order lead times, BioBalance follows a Make-to-Stock (MTS) strategy for most of its portfolio. Products must be manufactured and positioned in the supply chain ahead of actual demand. To support this, the Marketing and Sales Organizations (MSOs) place minimum order quantities (MOQs) in advance to cover expected demand for the upcoming weeks. An illustrative example of these goods flows is shown in Appendix <a href="#fig-11-supplychain-goodsflow" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-11-supplychain-goodsflow</span></a>.</p>
-<p>As a result, accurate forecasting is essential to:</p>
-<ul>
-<li>Plan production volumes at the right plants</li>
-<li>Allocate stock to the right countries and channels</li>
-<li>Avoid excess inventory or costly stockouts</li>
-</ul>
-<p>This operational model places forecasting at the core of supply chain responsiveness and profitability.</p>
-<div id="fig-01-bu-map" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-01-bu-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/bu_map.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1.1: Geographic footprint of BioBalance: production and distribution sites"><img src="../images/bu_map.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:8cm"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-01-bu-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.1: Geographic footprint of <em>BioBalance</em>: production and distribution sites
-</figcaption>
+<section id="sec-crisp-dm" class="level2">
+<h2 class="anchored" data-anchor-id="sec-crisp-dm">CRISP-DM</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/crisp-dm.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Project Plan"><img src="../images/crisp-dm.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Project Plan"></a></p>
 </figure>
 </div>
-</section>
-<section id="blossam-tea-an-illustrative-example" class="level3">
-<h3 class="anchored" data-anchor-id="blossam-tea-an-illustrative-example"><em>Blossam</em> Tea: an illustrative example</h3>
-<p>The planning process for <em>Blossam Balance Tea</em> illustrates the complexity of forecasting across stages, see <a href="#fig-01-bu-why" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-01-bu-why</span></a>:</p>
-<div id="fig-01-bu-why" class="figure quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-01-bu-why-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<video src="../video/bu_why.mp4" controls="" autoplay="" muted="" loop="" width="640" playsinline="">
-</video>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-01-bu-why-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.2: Why forecasting? The forecast drives the business!
-</figcaption>
+<figcaption>Project Plan</figcaption>
 </figure>
 </div>
-<p><strong>Make</strong>: The tea must be produced at least 3 months in advance, requiring short-term accuracy for production scheduling.</p>
-<p><strong>Source</strong>: Tea leaves are procured via contracts negotiated 12 months ahead, depending on long-term demand planning.</p>
-<p><strong>Deliver</strong>: Different sales channels impose distinct shelf-life expectations — premium retailers require over 180 days, while discounters accept 60 days but with lower margins.</p>
-<p>Failure to meet shelf-life constraints can result in:</p>
-<ul>
-<li>Out-Of-Stocks (OOS): Lost sales, penalties, and de-listing.</li>
-<li>Out-Of-Date (OOD): Product waste and write-offs.</li>
-</ul>
-<p>These challenges are not unique to <em>Blossam</em>; they apply across the full product range.</p>
-</section>
-</section>
-<section id="stakeholder-use-cases" class="level2">
-<h2 class="anchored" data-anchor-id="stakeholder-use-cases">Stakeholder Use Cases</h2>
-<!-- stakeholders. -->
-<p>The company’s forecasting requirements vary significantly across several key use cases.</p>
-<div id="fig-01-bu-who" class="figure quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-01-bu-who-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<video src="../video/bu_who.mp4" controls="" autoplay="" muted="" loop="" width="640" playsinline="">
-</video>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-01-bu-who-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.3: who uses the forecasts? varying requirements across several key use cases.
-</figcaption>
-</figure>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
-<caption>Forecast Use Cases by Department</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Department</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Use Case</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Forecast Level</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Horizon</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Central Sourcing</td>
-<td style="text-align: left;">Production planning</td>
-<td style="text-align: left;">Article</td>
-<td style="text-align: left;">12 weeks</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Finance</td>
-<td style="text-align: left;">Transfer pricing</td>
-<td style="text-align: left;">Article</td>
-<td style="text-align: left;">6 quarters</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Supply Planning</td>
-<td style="text-align: left;">Safety stock profiling</td>
-<td style="text-align: left;">Article * WH</td>
-<td style="text-align: left;">52 weeks</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">MRP System</td>
-<td style="text-align: left;">Replenishment</td>
-<td style="text-align: left;">Article * WH</td>
-<td style="text-align: left;">104 weeks</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Marketing &amp; Sales</td>
-<td style="text-align: left;">Strategic planning</td>
-<td style="text-align: left;">Brand/Category</td>
-<td style="text-align: left;">12 months</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Key Accounts</td>
-<td style="text-align: left;">Negotiation &amp; target setting</td>
-<td style="text-align: left;">Category * Account</td>
-<td style="text-align: left;">6–12 months</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>A detailed overview is available in (<a href="#sec-11-bu-who" class="quarto-xref"><span class="quarto-unresolved-ref">sec-11-bu-who</span></a>).</p>
-</section>
-<section id="sec-01-bu-scope" class="level2">
-<h2 class="anchored" data-anchor-id="sec-01-bu-scope">Scope of the Project</h2>
-<p>This research is limited to articles sold to customers (<strong>Finished Goods</strong>) that are <strong>MRP-relevant</strong> and planned under a <strong>Make-to-Stock</strong> strategy. Products with short shelf lives, requiring chilled storage and daily planning, are excluded due to their distinct planning characteristics.</p>
-<p>The study further focuses on the most commercially significant part of <em>BioBalance’s</em> operations: the Market Sales Organization (MSO) with the highest sales volume in 2024. This selection is based on the exploratory analysis presented in <a href="#fig-02-eda-geography" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-02-eda-geography</span></a> and ensures that the results are directly applicable to the area with the greatest business impact.</p>
-<p>Within this scope, we specifically target ambient products with a minimum shelf life of 60 days. These products are planned in weekly MRP cycles and forecasted using monthly time buckets. They represent the majority of <em>BioBalance’s</em> volume and align best with the strategic forecasting use cases addressed in this study.</p>
-</section>
-<section id="problem-statement" class="level2">
-<h2 class="anchored" data-anchor-id="problem-statement">Problem Statement</h2>
-<p>While <em>BioBalance</em> uses a flexible forecasting platform, its reliance on manual adjustments and subjective decision-making introduces inconsistency. Forecasting methods and aggregation levels are often chosen based on intuition and experience. Research shows, see <span class="citation" data-cites="article">(<a href="#ref-article" role="doc-biblioref">Fildes &amp; Goodwin, 2007</a>)</span>, that small manual adjustments typically offer no benefit, whereas larger interventions—usually reductions—may significantly improve accuracy.</p>
-<p>Without an objective benchmark, it is impossible to determine whether these manual interventions improve accuracy or merely increase resource costs.</p>
-</section>
-<section id="business-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="business-objectives">Business Objectives</h2>
-<!-- define business objectives, What is the business's need? -->
-<p>This project aims to improve forecast accuracy and planning efficiency by introducing:</p>
-<ul>
-<li><p>A transparent, low-cost statistical benchmark.</p></li>
-<li><p>A decision-support tool to guide value-adding interventions.</p></li>
-<li><p>A scalable, consistent method applicable across different aggregation levels.</p></li>
-</ul>
-<p>These objectives align with <em>BioBalance’s</em> strategic priorities, which include:</p>
-<ol type="1">
-<li><p>Optimize safety stock levels.</p></li>
-<li><p>Reduce Out-Of-Stock (OOS) and Out-Of-Date (OOD) inventory.</p></li>
-<li><p>Improve customer service levels and reduce waste.</p></li>
-<li><p>Increase customer satisfaction through consistent availability.</p></li>
-</ol>
-<p>And ultimately increase profitability, as illustrated in <a href="#fig-01-bu-daps" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-01-bu-daps</span></a>, see <span class="citation" data-cites="demast2024">(<a href="#ref-demast2024" role="doc-biblioref">Mast &amp; Lokkerbol, 2024b</a>)</span>.</p>
-<div id="fig-01-bu-daps" class="figure quarto-float quarto-figure quarto-figure-left anchored" alt="DAPS" data-fig-align="left" data-fig-width="15cm">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-01-bu-daps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/flowdown.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;1.4: "><img src="../images/flowdown.png" class="img-fluid quarto-figure quarto-figure-left figure-img" data-fig-width="15cm" alt="DAPS"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-01-bu-daps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.4
-</figcaption>
-</figure>
-</div>
-<section id="pythias-advice-a-system-of-innovation" class="level3">
-<h3 class="anchored" data-anchor-id="pythias-advice-a-system-of-innovation">Pythia’s Advice: A System of Innovation</h3>
-<p>To support these goals, we introduce <strong>Pythia’s Advice</strong> — a parallel forecasting environment that runs alongside the production system. Named after the oracle of Delphi, it serves as a low-cost advisory layer that complements the existing forecasting system.</p>
-<p>Pythia’s Advice provides:</p>
-<ul>
-<li><p>A minimal-resource benchmark:<br>
-low-cost, automated forecast based on statistical models (e.g., ETS, HTS).</p></li>
-<li><p>An internal reference for calculating Forecast Value Added (FVA).</p></li>
-<li><p>A scalable, low-cost, open-source infrastructure.</p></li>
-</ul>
-<p>This environment was deliberately designed to operate in parallel, with read-only access to the production system. This avoids interference with business-critical forecasting workflows and eliminates the risk of disrupting day-to-day operations.</p>
-<p>Additionally, the project was developed under the constraint of limited access to business resources — both in terms of time and geographical availability. Demand planners and analysts needed to prioritize operational continuity, requiring the research to be conducted independently while still aligning with business realities.</p>
-<p>By working within these constraints, <strong>Pythia’s Advice</strong> enables experimentation and benchmarking without disrupting operations — providing a safe and scalable way to measure the value of forecast improvements. <strong>Pythia’s Advice</strong> is represented by the lower part of the Data-Analytic Problem Structure (DAPS), (<a href="#fig-01-bu-daps" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-01-bu-daps</span></a>).</p>
-</section>
-</section>
-<section id="forecast-process" class="level2">
-<h2 class="anchored" data-anchor-id="forecast-process">Forecast Process</h2>
-<!-- Business process mapping -->
-<p><em>BioBalance</em> uses a third-party system employing traditional statistical models. For each foecast to make Planners:</p>
-<ol type="1">
-<li>Prepare data,</li>
-<li>Select one of five predefined aggregation levels.</li>
-<li>Fine-tune parameters</li>
-<li>Simulate results</li>
-<li>Adjust or override forecasts manually.</li>
-<li>Distribute the forecast Top-Down.</li>
-</ol>
-<p>These steps are iterative and resource-intensive, with unclear return on investment.</p>
-<div id="fig-01-bu-proc" class="figure quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-01-bu-proc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<video src="../video/bu_proc.mp4" controls="" autoplay="" muted="" loop="" width="640" playsinline="">
-</video>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-01-bu-proc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.5: The forecasting process: requiring human expertise.
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="success-criteria" class="level2">
-<h2 class="anchored" data-anchor-id="success-criteria">Success Criteria</h2>
-<p>The success of this project will be measured by:</p>
-<ul>
-<li><p>A measurable increase in forecast accuracy (e.g., improved RMSE, reduced bias)</p></li>
-<li><p>Reduced time and effort spent on non-value-adding manual adjustments</p></li>
-<li><p>Improved inventory KPIs (lower OOS/OOD rates)</p></li>
-<li><p>Consistent forecasts across aggregation levels</p></li>
-<li><p>Positive feedback from planners and stakeholders</p></li>
-</ul>
-</section>
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>In summary, this chapter defined the business context, stakeholders, and objectives that guide the rest of this project. The next phase, Data Understanding, explores the availability, quality, and suitability of the data used to support these forecasting use cases.</p>
-<!-- {{< include 01_business_understanding_def.qmd >}} -->
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
@@ -1352,13 +1108,13 @@ Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Wo
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notebooks/00_introduction.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      <a href="../insight_to_impact.html" class="pagination-link" aria-label="Insight to Impact">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Insight to Impact</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notebooks/02_data_understanding.html" class="pagination-link" aria-label="Data Understanding">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Understanding</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notebooks/11_business_understanding.html" class="pagination-link" aria-label="Business Understanding">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Business Understanding</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1370,7 +1126,7 @@ Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Wo
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/01_business_understanding.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/17_crisp-dm.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p><a href="https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai">EAISI</a></p>
 </div>
