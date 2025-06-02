@@ -205,10 +205,13 @@ By working within these constraints, **Pythia’s Advice** enables experimentati
 
 <!-- Business process mapping -->
 
-*BioBalance* relies on a third-party system that uses traditional statistical models. 
+*BioBalance* relies on a third-party system that uses traditional statistical models,
+see Appendix @tbl-14-stat-methods. 
 Figure @fig-01-bu-proc illustrates the forecasting steps demand planners perform, 
 which often require multiple iterations. Table @tbl-01-demand-planners-activities 
-lists these steps in detail. Pythia’s Advice aims to eliminate these iterations, 
+lists these steps in detail.  
+
+*Pythia’s Advice* aims to eliminate these iterations, 
 improving both efficiency and forecast accuracy.
 
 :::: {#fig-01-bu-proc .figure}

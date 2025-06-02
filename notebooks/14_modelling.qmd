@@ -59,6 +59,11 @@ algorithm - handle teh specific characteristics of teh data - balance performanc
 | Promotions / External Inputs | ❌                                                     | ❌                              | ✅                                             |
 | Best For                     | Stationary or differenced series with autocorrelation | Seasonal time series           | Time series influenced by external regressors |
 
+::: {#tbl-14-stat-methods}
+<!-- TODO -->
+| Method         | Description                                                                                      |
+
+:::
 
 <!-- #### Modeling Technique -->
 
