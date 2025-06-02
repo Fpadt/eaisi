@@ -251,56 +251,6 @@ By achieving these objectives, the company will see significant improvements in 
 
 see upper part of the flow-down graph, (@sec-flowdown).
 
-### Inventory of Resources Requirements
-
-#### Data sources:
-
-The available data includes **historical sales**, **promotional data**, **stock quantities**, and **previous forecasts**. Stock-out periods will be adjusted for by inflating sales to reflect demand that would have occurred had stock been available.
-
-| Data Type | Details | Time Span |
-|------------------------|------------------------|:-----------------------|
-| Sales | Customer Orders, Inter-company, Returns, Free-of-Charge and Missed | \> 2020 |
-| Promotions | Promotions per material and customer | \> 2020 |
-| Stock | Daily stock level per material and distribution center | \> 2020 |
-| Forecasts | generated forecast before- and after Demand Review | \> Aug. 2023 |
-| Master data | Material, Customer and Organization, including hierarchy's | *N.A.* |
-
-<!-- : (see, data_sources for details) -->
-
-#### Scoping
-
-The scope of the project consist of two Marketing & Sales Organizations (MSO), with a focus on 6 brands, representing 5 out of the 6 categories, see @tbl-material-scope. These materials are made-to-stock (MTS), requirements are planned on a weekly level, which represents 97% of the business.
-
-This leaves us with about 1.000 materials out of 9.000 to focus on, making the assumption that these are representative for the rest of the products.
-
-| Brand     | Category          |
-|:----------|:------------------|
-| Bjorg     | Dairy             |
-| Clipper   | Tea / Coffee      |
-| Naturela  | Tea / Coffee      |
-| Tanoshi   | Meals             |
-| Alter Eco | Sweets            |
-| Zonnatura | Breakfast Cereals |
-
-: Brands and Categories {#tbl-material-scope}
-
-<!-- see @sec-project-charter -->
-
-<!-- #### Risks and Contingencies -->
-
-<!-- see @sec-project-charter -->
-
-<!-- #### Terminology -->
-
-<!-- #### Costs and Benefits -->
-
-<!-- Business Case? -->
-
-### Data Mining Goals
-
-Predictive Model based on Correlations: Forecast Future Sales + Promotion effects
-
-see lower part of the flow-down graph, (@sec-flowdown).
 
 #### Data and Forecasting Methods {.unnumbered}
 
