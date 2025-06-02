@@ -245,7 +245,7 @@ dtTF <- pa_transformations_get() %>%
 
 ```
 
-::: {#tbl-02-data-transformations}
+:::: {#tbl-02-data-transformations}
 ::: {.content-visible when-format="html"}
 
 ```{r}
@@ -304,7 +304,7 @@ dtTF %>%
 
 :::
 DuckDB transformations
-:::
+::::
 
 ## Data Description Report
 
@@ -470,9 +470,9 @@ ACC <-                              #
 <!-- Cross-sectional: contribution per customer/product/channel -->
 <!-- exclude units pak and DS   -->
 
-::: {#fig-02-eda-geography .figure}
-
 ### Geographic Distribution of Sales
+
+::: {#fig-02-eda-geography .figure}
 
 ```{r}
 #| fig-height: 4
@@ -767,13 +767,11 @@ Summary: Article Hierachy
 
 ::: {.content-visible when-format="html"}
 
-### Article Hierachy
-
 The following interactive chart allows to explore the hierarchy by 
 clicking on the nodes to expand or collapse them. 
 :::
 
-::: {#fig-inter_active_article_hier .figure width="15cm"}
+:::: {#fig-inter_active_article_hier .figure width="15cm"}
 
 ::: {.content-visible when-format="html"}
 
@@ -794,7 +792,7 @@ collapsibleTree(
 Interactive Article Hierarchy, click on the nodes to expand or collapse them.
 :::
 
-:::
+::::
 
 
 

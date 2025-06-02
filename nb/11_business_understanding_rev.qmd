@@ -15,7 +15,7 @@ source("../_book_functions.R")
 ```
 
 
-::: {#fig-11-bu-why .figure}
+:::: {#fig-11-bu-why .figure}
 ::: {.content-visible when-format="html"} 
 <video
   src="../video/bu_why.mp4"
@@ -32,7 +32,7 @@ fig-align="left" fig-width="15cm"}
 :::
 
 Why forecasting? The forecast drives the business! 
-:::
+::::
 
 #### Deliver 
 
@@ -78,7 +78,7 @@ key use cases, details in [@sec-appendix-usecases]:
     profiles based on realized forecast accuracy, lead times and delivery
     performance (On-Time-In-Full).
 
-::: {#fig-11-bu-who .figure}
+:::: {#fig-11-bu-who .figure}
 ::: {.content-visible when-format="html"} 
 <video
   src="../video/bu_who.mp4"
@@ -95,7 +95,7 @@ fig-align="left" fig-width="15cm"}
 :::
 
 who uses the forecasts? many different roles for different use-cases. 
-:::
+::::
 
 4.  **Material Requirement Planning**: The MRP system requires forecasts at a 
     **article * warehouse**, aggregated weekly, with a
@@ -237,7 +237,7 @@ rsvg::rsvg_png(
 )
 ```
 
-::: {#fig-11-supplychain-goodsflow .figure}
+:::: {#fig-11-supplychain-goodsflow .figure}
 ::: { .content-visible when-format="html"}
     ![supply chain network (sample)](../images/scn.svg){fig-alt="Supply Chain Network" fig-align="center" fig-width="15cm"}
 :::
@@ -245,7 +245,7 @@ rsvg::rsvg_png(
     ![supply chain network (sample)](../images/scn.png){fig-alt="Supply Chain Network" fig-align="center" fig-width="5cm"}
 :::
 Supply-chain goods flows, illustrative example
-:::
+::::
 
 ::: callout-important
 Some goods-flow use a Sales/order purcchase order flow for intercompany sales. 

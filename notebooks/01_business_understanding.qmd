@@ -56,7 +56,7 @@ Geographic footprint of *BioBalance*: production and distribution sites
 
 The planning process for *Blossam Balance Tea* illustrates the complexity of forecasting across stages, see @fig-01-bu-why:
 
-::::: {#fig-01-bu-why .figure}
+:::: {#fig-01-bu-why .figure}
 ::: {.content-visible when-format="html"}
 <video src="../video/bu_why.mp4" controls autoplay muted loop width="640" playsinline>
 </video>
@@ -67,7 +67,7 @@ The planning process for *Blossam Balance Tea* illustrates the complexity of for
 :::
 
 Why forecasting? The forecast drives the business!
-:::::
+::::
 
 **Make**: The tea must be produced at least 3 months in advance, requiring short-term accuracy for production scheduling.
 
@@ -88,7 +88,7 @@ These challenges are not unique to *Blossam*; they apply across the full product
 
 The company's forecasting requirements vary significantly across several key use cases.
 
-::::: {#fig-01-bu-who .figure}
+:::: {#fig-01-bu-who .figure}
 ::: {.content-visible when-format="html"}
 <video src="../video/bu_who.mp4" controls autoplay muted loop width="640" playsinline>
 
@@ -102,7 +102,7 @@ The company's forecasting requirements vary significantly across several key use
 :::
 
 who uses the forecasts? varying requirements across several key use cases.
-:::::
+::::
 
 ```{r}
 #| label: tab-forecasting-use-cases
@@ -207,16 +207,46 @@ By working within these constraints, **Pythia’s Advice** enables experimentati
 
 *BioBalance* uses a third-party system employing traditional statistical models. For each foecast to make Planners:
 
-1.  Prepare data,
-2.  Select one of five predefined aggregation levels. 
-3.  Fine-tune parameters
-4.  Simulate results
-5.  Adjust or override forecasts manually.
-6.  Distribute the forecast Top-Down.
+::: {#tbl-01-demand-planners-activities}
+```{r}
 
-These steps are iterative and resource-intensive, with unclear return on investment.
+ wb_read(
+    file                = ET2BB,
+    sheet               = "bu_fp",
+    start_row           = 1,
+    start_col           = 1,
+    skip_empty_cols     = TRUE,
+    skip_empty_rows     = TRUE
+  )                                  %T>%
+  setDT()                            %T>%
+  setorder(ID)                        %>%
+  .[, PA:= ifelse(is.na(PA), '', PA)] %>%
+  kbl(
+    # caption             = "Data Description",
+    col.names           = c("Id", "Demand planner", "Pythia Advises on"), 
+    align               = "l",
+    booktabs            = TRUE
+  ) %>%
+  kable_styling(
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
+  )
+```
 
-::::: {#fig-01-bu-proc .figure}
+Forecasting Process steps needed per forecast, with Pythia's Advice.
+:::
+
+::: callout-information
+The initial scope of the project is to share the unadjusted forecast and its resulting accuracy with demand planners as a benchmark. This lets them see the impact of their manual adjustments and provides a foundation for continuous improvement.
+
+Building trust must come first before moving on to subsequent steps.
+
+**TRUST is all you need**
+:::
+
+
+:::: {#fig-01-bu-proc .figure}
 ::: {.content-visible when-format="html"}
 <video src="../video/bu_proc.mp4" controls autoplay muted loop width="640" playsinline>
 
@@ -230,7 +260,7 @@ These steps are iterative and resource-intensive, with unclear return on investm
 :::
 
 The forecasting process: requiring human expertise.
-:::::
+::::
 
 ## Success Criteria
 
