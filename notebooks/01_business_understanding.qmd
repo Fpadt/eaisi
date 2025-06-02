@@ -205,10 +205,28 @@ By working within these constraints, **Pythia’s Advice** enables experimentati
 
 <!-- Business process mapping -->
 
-*BioBalance* relies on a third-party system using traditional statistical models. 
-Table @tbl-01-demand-planners-activities outlines the forecasting steps performed 
-by demand planners, which often involve multiple iterations. *Pythia’s Advice* 
-aims to eliminate these iterations and enhance both efficiency and forecast accuracy.
+*BioBalance* relies on a third-party system that uses traditional statistical models. 
+Figure @fig-01-bu-proc illustrates the forecasting steps demand planners perform, 
+which often require multiple iterations. Table @tbl-01-demand-planners-activities 
+lists these steps in detail. Pythia’s Advice aims to eliminate these iterations, 
+improving both efficiency and forecast accuracy.
+
+:::: {#fig-01-bu-proc .figure}
+::: {.content-visible when-format="html"}
+<video src="../video/bu_proc.mp4" controls autoplay muted loop width="640" playsinline>
+
+</video>
+:::
+
+::: {.content-visible when-format="pdf"}
+<!-- this block only appears in PDF output -->
+
+![](../images/bu_proc.png){caption="Why is forecasting important? " fig-align="left" fig-width="15cm"}
+:::
+
+The forecasting process: requiring human expertise.
+::::
+
 
 ::: {#tbl-01-demand-planners-activities}
 ```{r}
@@ -243,28 +261,11 @@ Forecasting steps per forecast, Pythia's Advice to improve efficiency.
 ::: callout-important
 The initial scope of the project is to share the unadjusted forecast and its resulting accuracy with demand planners as a benchmark. This lets them see the impact of their manual adjustments and provides a foundation for continuous improvement.
 
-Building trust must come first before moving on to subsequent steps.
-
+*Building trust must come first before moving on to subsequent steps.*
 **TRUST is all you need**
 
 :::
 
-
-:::: {#fig-01-bu-proc .figure}
-::: {.content-visible when-format="html"}
-<video src="../video/bu_proc.mp4" controls autoplay muted loop width="640" playsinline>
-
-</video>
-:::
-
-::: {.content-visible when-format="pdf"}
-<!-- this block only appears in PDF output -->
-
-![](../images/bu_proc.png){caption="Why is forecasting important? " fig-align="left" fig-width="15cm"}
-:::
-
-The forecasting process: requiring human expertise.
-::::
 
 ## Success Criteria
 
