@@ -8,15 +8,6 @@ number-sections: false
 editor: source
 ---
 
-::: {#fig-bu-why .figure}
-![](../images/bu_why.png){fig-alt="Why is forecasting important? It drives the business" fig-align="left" fig-width="15cm"}\]
-
-Why forecasting?\
-The forecast drives the business!
-:::
-
-See Figure @fig-bu-why for the thumbnail overview.
-
 ## blackbox models
 
 ::: html
@@ -59,6 +50,15 @@ algorithm - handle teh specific characteristics of teh data - balance performanc
 -   validity -\> fa & prediction intervals
 -   robustness -\>
 -   transparency -\>
+
+| Capability                   | Standard ARIMA                                        | SARIMA                         | ARIMAX                                        |
+| ---------------------------- | ----------------------------------------------------- | ------------------------------ | --------------------------------------------- |
+| Handles Trend                | ✅ (via differencing)                                  | ✅ (with seasonal differencing) | ✅                                             |
+| Damped Trend                 | ❌ (not explicit)                                      | ❌                              | ❌                                             |
+| Seasonality                  | ❌ (needs SARIMA)                                      | ✅                              | ✅                                             |
+| Promotions / External Inputs | ❌                                                     | ❌                              | ✅                                             |
+| Best For                     | Stationary or differenced series with autocorrelation | Seasonal time series           | Time series influenced by external regressors |
+
 
 <!-- #### Modeling Technique -->
 
