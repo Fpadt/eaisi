@@ -36,7 +36,7 @@ Accurate forecasting is essential for managing *BioBalance’s* portfolio of ove
 
 *BioBalance* operates multiple production facilities and distribution centers across Europe, serving customers in various countries through both direct and indirect channels. As shown in @fig-01-bu-map, these facilities are geographically distributed, and some products are produced in one country but sold in others.
 
-Due to long production and transportation lead times — combined with short customer order lead times — the company follows a **Make-to-Stock (MTS)** strategy for most of its portfolio. Products must be manufactured and positioned in advance of actual demand.
+Due to long production and transportation lead times, combined with short customer order lead times, BioBalance follows a Make-to-Stock (MTS) strategy for most of its portfolio. Products must be manufactured and positioned in the supply chain ahead of actual demand. To support this, the Marketing and Sales Organizations (MSOs) place minimum order quantities (MOQs) in advance to cover expected demand for the upcoming weeks. An illustrative example of these goods flows is shown in Appendix @fig-11-supplychain-goodsflow.
 
 As a result, accurate forecasting is essential to:
 

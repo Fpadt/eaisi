@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-06-01">
+<meta name="dcterms.date" content="2025-06-02">
 <meta name="description" content="Effective business planning depends on accurate and consistent forecasts across different levels of aggregation, granularity, and time horizons. Producing such forecasts is inherently complex, requiring a diverse set of resources — including commercial forecasting engines, high-quality data, hardware, software, and human expertise.A key challenge lies in balancing the benefits of improved forecast accuracy against the costs of deploying these additional resources. To evaluate this trade-off, it is essential to first establish the level of accuracy that can be achieved with minimal input. The Forecast Value Added (FVA) is defined as the difference between the accuracy achieved by the business and that obtained using a minimal-resource benchmark. Ideally, the costs invested in enhancing forecast accuracy should be justified by a proportional gain in FVA.To assess this cost-benefit relationship without disrupting day-to-day operations, we developed a parallel forecasting environment — a system of innovation — that operates alongside the production forecasting system. This environment uses state-of-the-art, open-source forecasting tools that are freely available, enabling us to establish an internal benchmark for evaluating both performance and efficiency.This system of innovation allows us to explore a wide range of forecasting methods, from simple statistical models to more advanced hierarchical techniques. Hierarchical forecasting is particularly valuable for generating consistent forecasts across different levels of aggregation, tailored to specific business use cases.In this study, we aim to quantify the Forecast Value Added and assess the forecast accuracy of various statistical approaches, including hierarchical methods. Given the wide variety of products (SKUs) and their differing levels of importance, we scope our analysis to focus on the top 20% of products, which account for 80% of total sales. This targeted approach enables us to concentrate on the most impactful items, while still providing insights that can be generalized to the broader product portfolio.">
 
 <title>Introduction – Pythia's Advice</title>
@@ -380,7 +380,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">June 1, 2025</p>
+        <p class="date">June 2, 2025</p>
       </div>
     </div>
     
@@ -627,7 +627,7 @@ window.Quarto = {
 <section id="forecasting-challenges" class="level3">
 <h3 class="anchored" data-anchor-id="forecasting-challenges">Forecasting Challenges</h3>
 <p><em>BioBalance</em> currently uses a third-party forecasting platform that relies on traditional statistical methods. While demand planners can improve forecast accuracy through manual adjustments and simulations, these efforts require significant time and expertise.</p>
-<p>However, research shows <span class="citation" data-cites="article">(<a href="18_references.html#ref-article" role="doc-biblioref">Fildes &amp; Goodwin, 2007</a>)</span> that many small adjustments do not lead to improvements and can even reduce accuracy. In contrast, larger adjustments—especially downward revisions—tend to yield more substantial gains. This raises concerns about the effectiveness of manual interventions and highlights the need for a more objective way to assess their impact.</p>
+<p>However, research shows <span class="citation" data-cites="article">(<a href="#ref-article" role="doc-biblioref">Fildes &amp; Goodwin, 2007</a>)</span> that many small adjustments do not lead to improvements and can even reduce accuracy. In contrast, larger adjustments—especially downward revisions—tend to yield more substantial gains. This raises concerns about the effectiveness of manual interventions and highlights the need for a more objective way to assess their impact.</p>
 </section>
 </section>
 <section id="research-objectives" class="level2">
@@ -658,7 +658,7 @@ window.Quarto = {
 <section id="structure-of-the-document" class="level2">
 <h2 class="anchored" data-anchor-id="structure-of-the-document">Structure of the Document</h2>
 <!-- Structure of the Document, why we chose CRISP-DM, roadmap of the sections to follow -->
-<p>This research adopts the <strong>CRISP-ML methodology</strong> <span class="citation" data-cites="costa_crisp-ml_2022">(<a href="18_references.html#ref-costa_crisp-ml_2022" role="doc-biblioref">Costa, 2022</a>)</span> as its guiding framework.</p>
+<p>This research adopts the <strong>CRISP-ML methodology</strong> <span class="citation" data-cites="costa_crisp-ml_2022">(<a href="#ref-costa_crisp-ml_2022" role="doc-biblioref">Costa, 2022</a>)</span> as its guiding framework.</p>
 <p>CRISP-ML (Cross-Industry Standard Process for Machine Learning) is a structured approach for designing, implementing, and communicating data science and machine learning projects. It consists of six core phases:</p>
 <ol type="1">
 <li>Business Understanding</li>
@@ -675,7 +675,7 @@ window.Quarto = {
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-barrett_datatable_2024" class="csl-entry" role="listitem">
 Barrett, T., Dowle, M., Srinivasan, A., Gorecki, J., Chirico, M., Hocking, T., Schwendinger, B., Stetsenko, P., Short, T., Lianoglou, S., Antonyan, E., Bonsch, M., Parsonage, H., Ritchie, S., Ren, K., Tan, X., Saporta, R., Seiskari, O., Dong, X., … Krylov, I. (2024). <em>Data.table: <span>Extension</span> of ’data.frame’</em>. <a href="https://cran.r-project.org/web/packages/data.table/index.html">https://cran.r-project.org/web/packages/data.table/index.html</a>
 </div>

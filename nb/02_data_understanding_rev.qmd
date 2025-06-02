@@ -314,6 +314,59 @@ DuckDB transformations
 <!-- Target variable (e.g., sales units, net revenue) -->
 
 ```{r}
+# DT with Filter in Appendix
+ wb_read(
+    file      = ET2BB,
+    sheet     = "DD",
+    start_row = 1,
+    start_col = 1,
+    skip_empty_cols = TRUE,
+    skip_empty_rows = TRUE
+  )  %T>%
+  setDT() %>%
+  .[PYTHIA == 'Y', !"PYTHIA"] %>%
+  # .[is.na(KEY), KEY:= ''] %>%
+  kbl(
+    caption             = "Data Description",
+    col.names           = names(.),
+    align               = "l",
+    booktabs            = TRUE
+  ) %>%
+  kable_styling(
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
+  )
+```
+
+```{r}
+# DT with Filter in Appendix
+# dataLoads
+ wb_read(
+    file      = ET2BB,
+    sheet     = "DATA_LOADS",
+    start_row = 1,
+    start_col = 1,
+    skip_empty_cols = TRUE,
+    skip_empty_rows = TRUE
+  )  %T>%
+  setDT() %>%
+  .[RELEVANT == 'Y', !"RELEVANT"] %>%
+  # .[is.na(KEY), KEY:= ''] %>%
+  kbl(
+    caption             = "Data Loads",
+    col.names           = names(.),
+    align               = "l",
+    booktabs            = TRUE
+  ) %>%
+  kable_styling(
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
+  )
+```
+
+```{r}
 #| label: tab-02-data-description
 
 # Read the data into a data.table 
@@ -362,7 +415,7 @@ ACC <-                              #
 
 
   wb_read(
-    file      = "C:\\Users\\flori\\OneDrive\\ET\\pythia\\data\\ET2BB.xlsx",
+    file      = ET2BB,
     sheet     = "ACC",
     start_row = 1,
     start_col = 1,
@@ -385,7 +438,7 @@ ACC <-                              #
 
 
   wb_read(
-    file      = "C:\\Users\\flori\\OneDrive\\ET\\pythia\\data\\ET2BB.xlsx",
+    file      = ET2BB,
     sheet     = "ACC_TA",
     start_row = 1,
     start_col = 1,
@@ -427,7 +480,7 @@ ACC <-                              #
 #| 
 dtMSO <- 
   wb_read(
-    file      = "C:\\Users\\flori\\OneDrive\\ET\\pythia\\data\\ET2BB.xlsx",
+    file      = ET2BB,
     sheet     = "SORG",
     start_row = 1,
     start_col = 1,
@@ -617,8 +670,6 @@ ggplot(dt, aes(x = Q)) +
 
 ```{r}
 #| label: tab-02-data-description-hierarchy
-
-OD <- "C:\\Users\\flori\\OneDrive\\ET\\pythia\\data"
 
 # Read the data into a data.table
 dtMAT <- wb_read(

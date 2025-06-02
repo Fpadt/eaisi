@@ -17,6 +17,11 @@ library(data.table)
 
 # for color scales if you want them
 
+# Get OneDrive paths from environment variables
+odc   <- fs::path_abs(Sys.getenv("OneDriveConsumer"  , "")) #onedrive_consumer
+# onedrive_commercial <- fs::path_abs(Sys.getenv("OneDriveCommercial", ""))
+
+
 assign("FUNCTIONS_LOADED", TRUE, envir = .GlobalEnv)
 # cat("Functions loaded at:", Sys.time(), "\n")
 

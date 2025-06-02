@@ -234,15 +234,21 @@ rsvg::rsvg_png(
 )
 ```
 
-::: {.content-visible when-format="html"}
-![supply chain network (sample)](../images/scn.svg){fig-alt="Supply Chain Network" fig-align="center" fig-width="15cm"}
+::: {#fig-11-supplychain-goodsflow .figure}
+  ::: { .content-visible when-format="html"}
+    ![supply chain network (sample)](../images/scn.svg){fig-alt="Supply Chain Network" fig-align="center" fig-width="15cm"}
+  :::
+  ::: {.content-visible when-format="pdf"}
+    ![supply chain network (sample)](../images/scn.png){fig-alt="Supply Chain Network" fig-align="center" fig-width="5cm"}
+  :::
+Supply-chain goods flows, illustrative example
 :::
 
-
-::: {.content-visible when-format="pdf"}
-![supply chain network (sample)](../images/scn.png){fig-alt="Supply Chain Network" fig-align="center" fig-width="5cm"}
+::: callout-important
+Some goods-flow use a Sales/order purcchase order flow for intercompany sales. 
+These flows need to be forecasted by teh supplier but are also forecasted by the 
+receiving MSO. This leads to a double counting of the sales, which needs to be adjusted for.
 :::
-
 
 1.  **Buying and Production**: Requires forecasts at the **material level** and **warehouse**, aggregated weekly, with a forecast horizon of **12 weeks**.
 
