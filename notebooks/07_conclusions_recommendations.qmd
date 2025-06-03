@@ -17,7 +17,14 @@ source("../_book_functions.R")
 – Interpret results in business terms (“so what?”)  
 – Limitations and potential biases
 
-<!-- -   Promotions -->
+### Promotion Handling
+
+    -   **XGBoost**: A machine learning technique capable of handling **promotional impacts** and even identifying **cannibalization effects** of promotions between products.
+
+    -   **conformal prediction**: A method that provides **prediction intervals** and **calibrated forecasts**, ensuring that the forecasted values are within a certain confidence level.
+
+    -   **CatBoost and SHAP**: These will be used for feature analysis, determining which features (e.g., promotions, stock-outs) have the highest impact on forecast accuracy. This approach helps in choosing relevant input features to improve forecasts.
+
 
 <!--     -   dip before/after promotion -->
 

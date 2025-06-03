@@ -269,7 +269,7 @@ The initial scope of the project is to share the unadjusted forecast and its res
 
 The success of this project will be measured by:
 
--   A measurable increase in forecast accuracy (e.g., improved RMSE, reduced bias)
+-   A measurable increase in forecast accuracy (RSME and reduced bias)
 
 -   Reduced time and effort spent on non-value-adding manual adjustments
 
