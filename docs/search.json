@@ -536,7 +536,7 @@
     "href": "notebooks/11_business_understanding.html#sec-01-bu-why",
     "title": "Business Understanding",
     "section": "",
-    "text": "Geographic Footprint and Production Model\n\nGoods Flow\n\n\n\n\n\n\n\n\n\n\nsupply chain network (sample)\n\n\n\n\nFigure 8.1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nSome goods-flow use a Sales/order purchase order flow for intercompany sales. These flows need to be forecasted by teh supplier but are also forecasted by the receiving MSO. This leads to a double counting of the sales, which needs to be adjusted for.",
+    "text": "Geographic Footprint and Production Model\n\nGoods Flow\n\n\n\n\n\n\n\n\n\n\nsupply chain network (sample)\n\n\n\n\n\n\n\nFigure 8.1: Supply-chain goods flows, illustrative example\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nSome goods-flow use a Sales/order purchase order flow for intercompany sales. These flows need to be forecasted by teh supplier but are also forecasted by the receiving MSO. This leads to a double counting of the sales, which needs to be adjusted for.",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Business Understanding</span>"
