@@ -84,3 +84,41 @@ gt_theme_pythia <- function(gt_object) {
     # cols_width(everything() ~ px(100))
 }
 
+
+build_summary_matrix_pretty <- function(dt, metrics) {
+  stopifnot(is.list(metrics), all(sapply(metrics, is.function)))
+  
+  # Fixed axes
+  P_vars <- c("P1", "P2", "P3", "P4")
+  C_vars <- c("C1", "C2", "C3", "C4")
+  
+  # Inner summary function
+  build_summary_dt <- function(dt, P_fields, C_fields, metrics) {
+    rbindlist(lapply(P_fields, function(p) {
+      rbindlist(lapply(C_fields, function(c) {
+        tmp <- dt[, .(agg = sum(Q)), by = .(get(p), get(c))]
+        values <- lapply(metrics, function(f) f(tmp$agg))
+        names(values) <- names(metrics)
+        dt_out <- data.table(P_var = p, C_var = c)
+        for (nm in names(values)) {
+          dt_out[[nm]] <- values[[nm]]
+        }
+        dt_out
+      }))
+    }), use.names = TRUE, fill = TRUE)
+  }
+  
+  # Compute long format and format combined cell
+  res_long <- build_summary_dt(dt, P_vars, C_vars, metrics)
+  
+  metric_names <- names(metrics)
+  # Combine values into formatted strings
+  # res_long[, value := sprintf("(%.1f, %.1f)", mean, sd)]
+  res_long[, value := sprintf("(μ=%.1f, σ=%.1f)", mean, sd)]  
+  
+  # Reshape to wide format
+  res_wide <- dcast(res_long, C_var ~ P_var, value.var = "value")
+  
+  return(res_wide)
+}
+
