@@ -159,7 +159,7 @@ The forecaster is provided with multiple forecast adjustment parameters.
 
  wb_read(
     file      = ET2BB,
-    sheet     = "mo_fp",
+    sheet     = "mo_fm",
     start_row = 1,
     start_col = 1,
     skip_empty_cols = TRUE,
