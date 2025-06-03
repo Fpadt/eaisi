@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-05-29">
+<meta name="dcterms.date" content="2025-06-03">
 <meta name="description" content="model selection">
 
 <title>Modelling – Pythia's Advice</title>
@@ -69,9 +69,6 @@ div.csl-indent {
 <link href="../site_libs/bootstrap/bootstrap-94fa406e38a5c78d3de9dca02b1572d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-ba558c2fbb090de1150150c181bbc6a4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-94fa406e38a5c78d3de9dca02b1572d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -352,7 +349,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 29, 2025</p>
+        <p class="date">June 3, 2025</p>
       </div>
     </div>
     
@@ -429,7 +426,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">The Heart of Pythia</span></a>
+ <span class="menu-text">The ♥ of Pythia</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -590,18 +587,6 @@ div.csl-indent {
 
 
 
-<div id="fig-bu-why" class="figure quarto-float quarto-figure quarto-figure-left anchored" alt="Why is forecasting important? It drives the business" data-fig-align="left" data-fig-width="15cm">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-bu-why-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/bu_why.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;11.1: Why forecasting? The forecast drives the business!"><img src="../images/bu_why.png" class="img-fluid quarto-figure quarto-figure-left figure-img" data-fig-width="15cm" alt="Why is forecasting important? It drives the business"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bu-why-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11.1: Why forecasting?<br>
-The forecast drives the business!
-</figcaption>
-</figure>
-</div>
-<p>See Figure <a href="#fig-bu-why" class="quarto-xref">Figure&nbsp;<span>11.1</span></a> for the thumbnail overview.</p>
 <section id="blackbox-models" class="level2">
 <h2 class="anchored" data-anchor-id="blackbox-models">blackbox models</h2>
 <div class="html">
@@ -628,6 +613,54 @@ The forecast drives the business!
 <li>robustness -&gt;</li>
 <li>transparency -&gt;</li>
 </ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 33%">
+<col style="width: 19%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Capability</th>
+<th>Standard ARIMA</th>
+<th>SARIMA</th>
+<th>ARIMAX</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Handles Trend</td>
+<td>✅ (via differencing)</td>
+<td>✅ (with seasonal differencing)</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td>Damped Trend</td>
+<td>❌ (not explicit)</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr class="odd">
+<td>Seasonality</td>
+<td>❌ (needs SARIMA)</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td>Promotions / External Inputs</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr class="odd">
+<td>Best For</td>
+<td>Stationary or differenced series with autocorrelation</td>
+<td>Seasonal time series</td>
+<td>Time series influenced by external regressors</td>
+</tr>
+</tbody>
+</table>
 <!-- #### Modeling Technique -->
 <!-- #### Modeling Assumptions -->
 <!-- ### Generate Test Design -->
@@ -1188,38 +1221,6 @@ Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Wo
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

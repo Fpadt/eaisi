@@ -245,7 +245,7 @@ dtTF <- pa_transformations_get() %>%
 
 ```
 
-::: {#tbl-02-data-transformations}
+:::: {#tbl-02-data-transformations}
 ::: {.content-visible when-format="html"}
 
 ```{r}
@@ -304,7 +304,7 @@ dtTF %>%
 
 :::
 DuckDB transformations
-:::
+::::
 
 ## Data Description Report
 
@@ -312,6 +312,59 @@ DuckDB transformations
 <!-- Variable types (date, categorical, numeric) -->
 <!-- Dimensions (rows × columns) -->
 <!-- Target variable (e.g., sales units, net revenue) -->
+
+```{r}
+# DT with Filter in Appendix
+ wb_read(
+    file      = ET2BB,
+    sheet     = "DD",
+    start_row = 1,
+    start_col = 1,
+    skip_empty_cols = TRUE,
+    skip_empty_rows = TRUE
+  )  %T>%
+  setDT() %>%
+  .[PYTHIA == 'Y', !"PYTHIA"] %>%
+  # .[is.na(KEY), KEY:= ''] %>%
+  kbl(
+    caption             = "Data Description",
+    col.names           = names(.),
+    align               = "l",
+    booktabs            = TRUE
+  ) %>%
+  kable_styling(
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
+  )
+```
+
+```{r}
+# DT with Filter in Appendix
+# dataLoads
+ wb_read(
+    file      = ET2BB,
+    sheet     = "DATA_LOADS",
+    start_row = 1,
+    start_col = 1,
+    skip_empty_cols = TRUE,
+    skip_empty_rows = TRUE
+  )  %T>%
+  setDT() %>%
+  .[RELEVANT == 'Y', !"RELEVANT"] %>%
+  # .[is.na(KEY), KEY:= ''] %>%
+  kbl(
+    caption             = "Data Loads",
+    col.names           = names(.),
+    align               = "l",
+    booktabs            = TRUE
+  ) %>%
+  kable_styling(
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
+  )
+```
 
 ```{r}
 #| label: tab-02-data-description
@@ -362,7 +415,7 @@ ACC <-                              #
 
 
   wb_read(
-    file      = "C:\\Users\\flori\\OneDrive\\ET\\pythia\\data\\ET2BB.xlsx",
+    file      = ET2BB,
     sheet     = "ACC",
     start_row = 1,
     start_col = 1,
@@ -385,7 +438,7 @@ ACC <-                              #
 
 
   wb_read(
-    file      = "C:\\Users\\flori\\OneDrive\\ET\\pythia\\data\\ET2BB.xlsx",
+    file      = ET2BB,
     sheet     = "ACC_TA",
     start_row = 1,
     start_col = 1,
@@ -417,9 +470,9 @@ ACC <-                              #
 <!-- Cross-sectional: contribution per customer/product/channel -->
 <!-- exclude units pak and DS   -->
 
-::: {#fig-02-eda-geography .figure}
-
 ### Geographic Distribution of Sales
+
+::: {#fig-02-eda-geography .figure}
 
 ```{r}
 #| fig-height: 4
@@ -427,7 +480,7 @@ ACC <-                              #
 #| 
 dtMSO <- 
   wb_read(
-    file      = "C:\\Users\\flori\\OneDrive\\ET\\pythia\\data\\ET2BB.xlsx",
+    file      = ET2BB,
     sheet     = "SORG",
     start_row = 1,
     start_col = 1,
@@ -618,11 +671,9 @@ ggplot(dt, aes(x = Q)) +
 ```{r}
 #| label: tab-02-data-description-hierarchy
 
-OD <- "C:\\Users\\flori\\OneDrive\\ET\\pythia\\data"
-
 # Read the data into a data.table
 dtMAT <- wb_read(
-  file      = file.path(OD, "ET2BB.xlsx"),
+  file      = ET2BB,
   sheet     = "MASP",
   start_row = 19,
   start_col = 6,
@@ -644,7 +695,7 @@ dtMAT_tab <- dtMAT[, .(
 ), by = ProdCat][order(ProdCat)]
 
 dtCUST <- wb_read(
-  file      = file.path(OD, "ET2BB.xlsx"),
+  file      = ET2BB,
   sheet     = "CUST",
   start_row = 19,
   start_col = 9,
@@ -655,7 +706,7 @@ dtCUST <- wb_read(
   setnames(c(1), c("KEY")  ) 
 
 dtCUST_H1 <- wb_read(
-  file      = file.path(OD, "ET2BB.xlsx"),
+  file      = ET2BB,
   sheet     = "CUST_H1",
   start_row = 1,
   start_col = 1,
@@ -716,13 +767,11 @@ Summary: Article Hierachy
 
 ::: {.content-visible when-format="html"}
 
-### Article Hierachy
-
 The following interactive chart allows to explore the hierarchy by 
 clicking on the nodes to expand or collapse them. 
 :::
 
-::: {#fig-inter_active_article_hier .figure width="15cm"}
+:::: {#fig-inter_active_article_hier .figure width="15cm"}
 
 ::: {.content-visible when-format="html"}
 
@@ -743,7 +792,7 @@ collapsibleTree(
 Interactive Article Hierarchy, click on the nodes to expand or collapse them.
 :::
 
-:::
+::::
 
 
 
