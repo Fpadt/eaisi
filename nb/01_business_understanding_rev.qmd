@@ -83,7 +83,6 @@ Failure to meet shelf-life constraints can result in:
 These challenges are not unique to *Blossam*; they apply across the full product range.
 
 ## Stakeholder Use Cases
-
 <!-- stakeholders. -->
 
 The company's forecasting requirements vary significantly across several key use cases.
@@ -110,7 +109,7 @@ who uses the forecasts? varying requirements across several key use cases.
 # Read the data into a data.table 
 dtUC <-  fread(text = "
   Department       , Use Case                    , Level             , Horizon
-  Central Sourcing , Production planning         , Article           ,  12  weeks
+  Central Sourcing , Buying & Production         , Article           ,  12  weeks
   Finance	         , Transfer pricing	           , Article           ,   6  quarters
   Supply Planning  , Safety stock profiling      , Article * WH      ,  52  weeks
   MRP System	     , Replenishment	             , Article * WH      , 104  weeks
