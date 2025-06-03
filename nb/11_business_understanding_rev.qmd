@@ -16,11 +16,11 @@ toc-depth: 3      # include ## and ### in the TOC
 source("../_book_functions.R")
 ```
 
-## Why is Forecasting Important? {#sec-01-bu-why}
+## Why is Forecasting Important? {#sec-11-bu-why}
 
-### Geographic Footprint and Production Model
+### Geographic Footprint and Production Model  {#sec-11-geographical}
 
-#### Goods Flow
+#### Goods Flow  {#sec-11-geographical-goodsflow}
 
 ```{r convert‐diagram, include=FALSE}
 # make sure you have installed: install.packages("rsvg")
@@ -52,7 +52,7 @@ also forecasted by the receiving MSO. This leads to a double counting of the
 sales, which needs to be adjusted for.
 :::
 
-## Stakeholder Use Cases {#sec-11-bu-who}
+## Stakeholder Use Cases {#sec-11-stakeholder}
 <!-- stakeholders. -->
 
 The company's forecasting requirements vary significantly across several key use cases::
@@ -98,14 +98,15 @@ The company's forecasting requirements vary significantly across several key use
 4.  **Production Cost Calculation**: Requires forecasts at a **quarterly level**, aggregated by material, with a horizon of **6 quarters**, grouped into annual time buckets.
 
     
-## Scope of the Project {#sec-01-bu-scope}
-## Problem Statement
+## Scope of the Project {#sec-11-bu-scope}
+
+## Problem Statement {#sec-11-problem-statement}
 
 The primary forecasting challenge is determining the optimal aggregation level and methods to use for generating forecasts that can meet the desired forecast accuracy of these different use cases while ensuring **consistency** and **accuracy**.
 
 This inconsistency stems from a lack of objective criteria for selecting between forecasting methods—**bottom-up**, **top-down**, or **middle-out**—resulting in decisions that rely on the subjective judgment of demand planners, leading to variable performance and inefficiencies.
 
-## Business Objectives
+## Business Objectives {#sec-11-business-objectives}
 
 The primary objective is to enhance operational efficiency by improving forecast accuracy across all key use cases. This will be achieved through the application of robust forecasting methods that can handle seasonality, promotions, and efficiently allocate scarce resources. Ultimately, these improvements will contribute to improved stock levels and a higher level of customer satisfaction, both key strategic goals for the company.
 
@@ -127,9 +128,11 @@ The primary objective is to enhance operational efficiency by improving forecast
         detailed and aggregated forecasts are aligned.
 
 
-### Pythia’s Advice: A System of Innovation
-## Forecast Process
-### Traditional statistical forecasting methods 
+### Pythia’s Advice: A System of Innovation {#sec-01-pythia-advice-system}
+
+## Forecast Process {#sec-11-forecast-process}
+
+### Traditional statistical forecasting methods {#sec-01-traditional-methods} 
 
 The forecaster is provided with multiple forecast adjustment parameters. 
 
@@ -196,10 +199,10 @@ Traditional statistical forecasting methods
 -   **XYZ Classification**: Based on **sales variability**, indicating which products have stable demand versus those with erratic patterns.
 -   **Combined Classification**: These classifications will guide planners in determining where their efforts can have the most impact, focusing primarily on high-priority items while relying more on automated processes for low-priority ones.
 
-## Success Criteria
+## Success Criteria {#sec-11-success-criteria}
 <!-- main indicators, KPIs, constraints -->
 
-### Business Success Criteria
+### Business Success Criteria {#sec-11-business-success-criteria}
 Success will be measured by the following criteria:
 
 1.  **Improved Forecast Accuracy**:
@@ -223,6 +226,7 @@ By achieving these objectives, the company will see significant improvements in 
 
 see upper part of the flow-down graph, (@fig-01-bu-daps).
 
+### Research Sucess Criteria {#sec-11-research-success-criteria}
 
 To assess forecast accuracy, we will use a range of evaluation metrics
 tailored to each use case.
