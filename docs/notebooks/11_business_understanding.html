@@ -592,12 +592,13 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#pythias-advice-a-system-of-innovation" id="toc-pythias-advice-a-system-of-innovation" class="nav-link" data-scroll-target="#pythias-advice-a-system-of-innovation">Pythia’s Advice: A System of Innovation</a></li>
   </ul></li>
-  <li><a href="#forecast-process" id="toc-forecast-process" class="nav-link" data-scroll-target="#forecast-process">Forecast Process</a></li>
-  <li><a href="#traditional-statistical-forecasting-methods" id="toc-traditional-statistical-forecasting-methods" class="nav-link" data-scroll-target="#traditional-statistical-forecasting-methods">traditional statistical forecasting methods</a></li>
+  <li><a href="#forecast-process" id="toc-forecast-process" class="nav-link" data-scroll-target="#forecast-process">Forecast Process</a>
+  <ul class="collapse">
+  <li><a href="#traditional-statistical-forecasting-methods" id="toc-traditional-statistical-forecasting-methods" class="nav-link" data-scroll-target="#traditional-statistical-forecasting-methods">Traditional statistical forecasting methods</a></li>
+  </ul></li>
   <li><a href="#success-criteria" id="toc-success-criteria" class="nav-link" data-scroll-target="#success-criteria">Success Criteria</a>
   <ul class="collapse">
   <li><a href="#business-success-criteria" id="toc-business-success-criteria" class="nav-link" data-scroll-target="#business-success-criteria">Business Success Criteria</a></li>
-  <li><a href="#data-mining-goals" id="toc-data-mining-goals" class="nav-link" data-scroll-target="#data-mining-goals">Data Mining Goals</a></li>
   <li><a href="#data-mining-success-criteria" id="toc-data-mining-success-criteria" class="nav-link" data-scroll-target="#data-mining-success-criteria">Data Mining Success Criteria</a></li>
   </ul></li>
   </ul>
@@ -687,9 +688,8 @@ Important
 </section>
 <section id="forecast-process" class="level2">
 <h2 class="anchored" data-anchor-id="forecast-process">Forecast Process</h2>
-</section>
-<section id="traditional-statistical-forecasting-methods" class="level2">
-<h2 class="anchored" data-anchor-id="traditional-statistical-forecasting-methods">traditional statistical forecasting methods</h2>
+<section id="traditional-statistical-forecasting-methods" class="level3">
+<h3 class="anchored" data-anchor-id="traditional-statistical-forecasting-methods">Traditional statistical forecasting methods</h3>
 <div id="tbl-11-stat-methods" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-11-stat-methods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -740,6 +740,37 @@ Table&nbsp;8.1: Traditional statistical forecasting methods
 <li><p><strong>HTS (Hierarchical Time Series)</strong>: To handle multiple aggregation levels, ensuring <strong>forecast consistency</strong> when forecasts are disaggregated or aggregated across levels.</p></li>
 </ul></li>
 </ul>
+<section id="data-and-forecasting-methods" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="data-and-forecasting-methods">Data and Forecasting Methods</h4>
+<p>We will employ a combination of <strong>statistical methods</strong> and <strong>machine learning techniques</strong> to improve the forecasting process:</p>
+<ul>
+<li><p><strong>Current Methods</strong>: The company’s current forecasting system uses <strong>moving averages</strong>, <strong>exponential smoothing</strong> and <strong>Box-Jenkins</strong>, which face challenges with <strong>Seasonality</strong>, <strong>Stationarity</strong> and <strong>promotional effects</strong>. Forecasts are often inadequate in handling the impacts of promotions.</p></li>
+<li><p><strong>Proposed Methods</strong>:</p>
+<ul>
+<li><p><strong>ETS (Error, Trend, Seasonal)</strong>: To replace exponential smoothing with a model that provides <strong>prediction intervals</strong> and better captures trends and seasonality.</p></li>
+<li><p><strong>HTS (Hierarchical Time Series)</strong>: To handle multiple aggregation levels, ensuring <strong>forecast consistency</strong> when forecasts are disaggregated or aggregated across levels.</p></li>
+<li><p><strong>XGBoost</strong>: A machine learning technique capable of handling <strong>promotional impacts</strong> and even identifying <strong>cannibalization effects</strong> of promotions between products.</p></li>
+<li><p><strong>conformal prediction</strong>: A method that provides <strong>prediction intervals</strong> and <strong>calibrated forecasts</strong>, ensuring that the forecasted values are within a certain confidence level.</p></li>
+<li><p><strong>CatBoost and SHAP</strong>: These will be used for feature analysis, determining which features (e.g., promotions, stock-outs) have the highest impact on forecast accuracy. This approach helps in choosing relevant input features to improve forecasts.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="consistency-and-validation" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="consistency-and-validation">Consistency and Validation</h4>
+<p>One key requirement is ensuring that forecasts remain consistent across different levels of aggregation. This is where <strong>HTS</strong> will play a crucial role, reconciling forecasts generated at different aggregation levels to ensure that top-level forecasts align with aggregated lower-level forecasts. This will address the known issue of discrepancies between aggregated forecasts and directly forecasted aggregated levels.</p>
+</section>
+<section id="human-resources-allocation" class="level4">
+<h4 class="anchored" data-anchor-id="human-resources-allocation">Human Resources Allocation</h4>
+<p>The team consists of <strong>X demand planners</strong> working across <strong>Y MSOs</strong>. Currently, planners are involved in manually indicating promotional impacts and adjusting forecasts based on intuition, without systematic data cleaning for stock-outs or model tuning.</p>
+<p>To optimize resource allocation, we plan to implement a <strong>classification system</strong> for the company’s <strong>9K SKUs</strong>, utilizing an:</p>
+<p><strong>ABC-XYZ classification</strong> scheme:</p>
+<ul>
+<li><strong>ABC Classification</strong>: Based on <strong>sales volume</strong>—focusing more resources on high-value items (A-class) and minimizing attention to low-volume items (C-class).</li>
+<li><strong>XYZ Classification</strong>: Based on <strong>sales variability</strong>, indicating which products have stable demand versus those with erratic patterns.</li>
+<li><strong>Combined Classification</strong>: These classifications will guide planners in determining where their efforts can have the most impact, focusing primarily on high-priority items while relying more on automated processes for low-priority ones.</li>
+</ul>
+</section>
+</section>
 </section>
 <section id="success-criteria" class="level2">
 <h2 class="anchored" data-anchor-id="success-criteria">Success Criteria</h2>
@@ -787,51 +818,13 @@ Table&nbsp;8.1: Traditional statistical forecasting methods
 <p>By achieving these objectives, the company will see significant improvements in operational efficiency, cost-effectiveness, and most importantly, a higher level of customer satisfaction, which will ultimately drive long-term business success.</p>
 <p>see upper part of the flow-down graph, (<a href="16_flow_down.html#sec-flowdown" class="quarto-xref"><span>Flow-down</span></a>).</p>
 </section>
-<section id="data-mining-goals" class="level3">
-<h3 class="anchored" data-anchor-id="data-mining-goals">Data Mining Goals</h3>
-<p>Predictive Model based on Correlations: Forecast Future Sales + Promotion effects</p>
-<p>see lower part of the flow-down graph, (<a href="16_flow_down.html#sec-flowdown" class="quarto-xref"><span>Flow-down</span></a>).</p>
-<section id="data-and-forecasting-methods" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="data-and-forecasting-methods">Data and Forecasting Methods</h4>
-<p>We will employ a combination of <strong>statistical methods</strong> and <strong>machine learning techniques</strong> to improve the forecasting process:</p>
-<ul>
-<li><p><strong>Current Methods</strong>: The company’s current forecasting system uses <strong>moving averages</strong>, <strong>exponential smoothing</strong> and <strong>Box-Jenkins</strong>, which face challenges with <strong>Seasonality</strong>, <strong>Stationarity</strong> and <strong>promotional effects</strong>. Forecasts are often inadequate in handling the impacts of promotions.</p></li>
-<li><p><strong>Proposed Methods</strong>:</p>
-<ul>
-<li><p><strong>ETS (Error, Trend, Seasonal)</strong>: To replace exponential smoothing with a model that provides <strong>prediction intervals</strong> and better captures trends and seasonality.</p></li>
-<li><p><strong>HTS (Hierarchical Time Series)</strong>: To handle multiple aggregation levels, ensuring <strong>forecast consistency</strong> when forecasts are disaggregated or aggregated across levels.</p></li>
-<li><p><strong>XGBoost</strong>: A machine learning technique capable of handling <strong>promotional impacts</strong> and even identifying <strong>cannibalization effects</strong> of promotions between products.</p></li>
-<li><p><strong>conformal prediction</strong>: A method that provides <strong>prediction intervals</strong> and <strong>calibrated forecasts</strong>, ensuring that the forecasted values are within a certain confidence level.</p></li>
-<li><p><strong>CatBoost and SHAP</strong>: These will be used for feature analysis, determining which features (e.g., promotions, stock-outs) have the highest impact on forecast accuracy. This approach helps in choosing relevant input features to improve forecasts.</p></li>
-</ul></li>
-</ul>
-</section>
-<section id="consistency-and-validation" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="consistency-and-validation">Consistency and Validation</h4>
-<p>One key requirement is ensuring that forecasts remain consistent across different levels of aggregation. This is where <strong>HTS</strong> will play a crucial role, reconciling forecasts generated at different aggregation levels to ensure that top-level forecasts align with aggregated lower-level forecasts. This will address the known issue of discrepancies between aggregated forecasts and directly forecasted aggregated levels.</p>
-</section>
-<section id="human-resources-allocation" class="level4">
-<h4 class="anchored" data-anchor-id="human-resources-allocation"><strong>Human Resources Allocation</strong></h4>
-<p>The team consists of <strong>X demand planners</strong> working across <strong>Y MSOs</strong>. Currently, planners are involved in manually indicating promotional impacts and adjusting forecasts based on intuition, without systematic data cleaning for stock-outs or model tuning.</p>
-<p>To optimize resource allocation, we plan to implement a <strong>classification system</strong> for the company’s <strong>9K SKUs</strong>, utilizing an:</p>
-<p><strong>ABC-XYZ classification</strong> scheme:</p>
-<ul>
-<li><strong>ABC Classification</strong>: Based on <strong>sales volume</strong>—focusing more resources on high-value items (A-class) and minimizing attention to low-volume items (C-class).</li>
-<li><strong>XYZ Classification</strong>: Based on <strong>sales variability</strong>, indicating which products have stable demand versus those with erratic patterns.</li>
-<li><strong>Combined Classification</strong>: These classifications will guide planners in determining where their efforts can have the most impact, focusing primarily on high-priority items while relying more on automated processes for low-priority ones.</li>
-</ul>
-</section>
-</section>
 <section id="data-mining-success-criteria" class="level3">
 <h3 class="anchored" data-anchor-id="data-mining-success-criteria">Data Mining Success Criteria</h3>
-<p>The fiinal result will show an estimated relationship between forecast accuracy and the cost of resources required for the agreed scope. The cost of resources result from hardware, software and human resources needed for cleansing data, transforming data, model tuning and other manual activities needed.</p>
+<p>The final result will show an estimated relationship between forecast accuracy and the cost of resources required for the agreed scope. The cost of resources result from hardware, software and human resources needed for cleansing data, transforming data, model tuning and other manual activities needed.</p>
 <p>To assess forecast accuracy, we will use a range of evaluation metrics tailored to each use case.</p>
 <p>These metrics will help evaluate how well each approach performs against the unique requirements of each use case, ultimately guiding method selection and refinement.</p>
-<ul>
-<li><p><strong>RMSE (Root Mean Squared Error, <span class="quarto-unresolved-ref">?def-RMSE</span> )</strong>: The primary metric for measuring forecast accuracy, particularly useful for penalizing large errors.</p></li>
-<li><p><strong>MAPE (Mean Absolute Percentage Error)</strong>: To align with existing company metrics.</p></li>
-<li><p><strong>MAE (Mean Absolute Error)</strong> and <strong>MASE (Mean Absolute Scaled Error)</strong>: Additional metrics to provide a broader evaluation, addressing different aspects of forecast performance and comparing models to naïve baselines.</p></li>
-</ul>
+<p>Predictive Model based on Correlations: Forecast Future Sales + Promotion effects</p>
+<p>see lower part of the flow-down graph, (<a href="16_flow_down.html#sec-flowdown" class="quarto-xref"><span>Flow-down</span></a>).</p>
 <!-- {{< include 01_business_understanding_def.qmd >}} -->
 
 

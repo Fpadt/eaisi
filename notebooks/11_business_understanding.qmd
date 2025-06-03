@@ -121,7 +121,7 @@ The primary objective is to enhance operational efficiency by improving forecast
 
 ### Pythia’s Advice: A System of Innovation
 ## Forecast Process
-## traditional statistical forecasting methods 
+### Traditional statistical forecasting methods 
 
 ::: {#tbl-11-stat-methods}
 
@@ -177,6 +177,41 @@ Traditional statistical forecasting methods
         forecasts are disaggregated or aggregated across levels.
 
 
+
+#### Data and Forecasting Methods {.unnumbered}
+
+We will employ a combination of **statistical methods** and **machine learning techniques** to improve the forecasting process:
+
+-   **Current Methods**: The company’s current forecasting system uses **moving averages**, **exponential smoothing** and **Box-Jenkins**, which face challenges with **Seasonality**, **Stationarity** and **promotional effects**. Forecasts are often inadequate in handling the impacts of promotions.
+
+-   **Proposed Methods**:
+
+    -   **ETS (Error, Trend, Seasonal)**: To replace exponential smoothing with a model that provides **prediction intervals** and better captures trends and seasonality.
+
+    -   **HTS (Hierarchical Time Series)**: To handle multiple aggregation levels, ensuring **forecast consistency** when forecasts are disaggregated or aggregated across levels.
+
+    -   **XGBoost**: A machine learning technique capable of handling **promotional impacts** and even identifying **cannibalization effects** of promotions between products.
+
+    -   **conformal prediction**: A method that provides **prediction intervals** and **calibrated forecasts**, ensuring that the forecasted values are within a certain confidence level.
+
+    -   **CatBoost and SHAP**: These will be used for feature analysis, determining which features (e.g., promotions, stock-outs) have the highest impact on forecast accuracy. This approach helps in choosing relevant input features to improve forecasts.
+
+#### Consistency and Validation {.unnumbered}
+
+One key requirement is ensuring that forecasts remain consistent across different levels of aggregation. This is where **HTS** will play a crucial role, reconciling forecasts generated at different aggregation levels to ensure that top-level forecasts align with aggregated lower-level forecasts. This will address the known issue of discrepancies between aggregated forecasts and directly forecasted aggregated levels.
+
+#### Human Resources Allocation
+
+The team consists of **X demand planners** working across **Y MSOs**. Currently, planners are involved in manually indicating promotional impacts and adjusting forecasts based on intuition, without systematic data cleaning for stock-outs or model tuning.
+
+To optimize resource allocation, we plan to implement a **classification system** for the company's **9K SKUs**, utilizing an:
+
+**ABC-XYZ classification** scheme:
+
+-   **ABC Classification**: Based on **sales volume**—focusing more resources on high-value items (A-class) and minimizing attention to low-volume items (C-class).
+-   **XYZ Classification**: Based on **sales variability**, indicating which products have stable demand versus those with erratic patterns.
+-   **Combined Classification**: These classifications will guide planners in determining where their efforts can have the most impact, focusing primarily on high-priority items while relying more on automated processes for low-priority ones.
+
 ## Success Criteria
 <!-- main indicators, KPIs, constraints -->
 Success will be measured by the following criteria:
@@ -201,7 +236,7 @@ selection and refinement.
     Error)**: Additional metrics to provide a broader evaluation,
     addressing different aspects of forecast performance and comparing
     models to naïve baselines.
-
+    
 ### Business Success Criteria
 Success will be measured by the following criteria:
 
@@ -226,60 +261,21 @@ By achieving these objectives, the company will see significant improvements in 
 
 see upper part of the flow-down graph, (@sec-flowdown).
 
-### Data Mining Goals
+### Data Mining Success Criteria
+
+The final result will show an estimated relationship between forecast accuracy and the cost of resources required for the agreed scope. The cost of resources result from hardware, software and human resources needed for cleansing data, transforming data, model tuning and other manual activities needed.
+
+To assess forecast accuracy, we will use a range of evaluation metrics tailored to each use case.
+
+These metrics will help evaluate how well each approach performs against the unique requirements of each use case, ultimately guiding method selection and refinement.
 
 Predictive Model based on Correlations: Forecast Future Sales + Promotion effects
 
 see lower part of the flow-down graph, (@sec-flowdown).
 
 
-#### Data and Forecasting Methods {.unnumbered}
 
-We will employ a combination of **statistical methods** and **machine learning techniques** to improve the forecasting process:
 
--   **Current Methods**: The company’s current forecasting system uses **moving averages**, **exponential smoothing** and **Box-Jenkins**, which face challenges with **Seasonality**, **Stationarity** and **promotional effects**. Forecasts are often inadequate in handling the impacts of promotions.
-
--   **Proposed Methods**:
-
-    -   **ETS (Error, Trend, Seasonal)**: To replace exponential smoothing with a model that provides **prediction intervals** and better captures trends and seasonality.
-
-    -   **HTS (Hierarchical Time Series)**: To handle multiple aggregation levels, ensuring **forecast consistency** when forecasts are disaggregated or aggregated across levels.
-
-    -   **XGBoost**: A machine learning technique capable of handling **promotional impacts** and even identifying **cannibalization effects** of promotions between products.
-
-    -   **conformal prediction**: A method that provides **prediction intervals** and **calibrated forecasts**, ensuring that the forecasted values are within a certain confidence level.
-
-    -   **CatBoost and SHAP**: These will be used for feature analysis, determining which features (e.g., promotions, stock-outs) have the highest impact on forecast accuracy. This approach helps in choosing relevant input features to improve forecasts.
-
-#### Consistency and Validation {.unnumbered}
-
-One key requirement is ensuring that forecasts remain consistent across different levels of aggregation. This is where **HTS** will play a crucial role, reconciling forecasts generated at different aggregation levels to ensure that top-level forecasts align with aggregated lower-level forecasts. This will address the known issue of discrepancies between aggregated forecasts and directly forecasted aggregated levels.
-
-#### **Human Resources Allocation**
-
-The team consists of **X demand planners** working across **Y MSOs**. Currently, planners are involved in manually indicating promotional impacts and adjusting forecasts based on intuition, without systematic data cleaning for stock-outs or model tuning.
-
-To optimize resource allocation, we plan to implement a **classification system** for the company's **9K SKUs**, utilizing an:
-
-**ABC-XYZ classification** scheme:
-
--   **ABC Classification**: Based on **sales volume**—focusing more resources on high-value items (A-class) and minimizing attention to low-volume items (C-class).
--   **XYZ Classification**: Based on **sales variability**, indicating which products have stable demand versus those with erratic patterns.
--   **Combined Classification**: These classifications will guide planners in determining where their efforts can have the most impact, focusing primarily on high-priority items while relying more on automated processes for low-priority ones.
-
-### Data Mining Success Criteria
-
-The fiinal result will show an estimated relationship between forecast accuracy and the cost of resources required for the agreed scope. The cost of resources result from hardware, software and human resources needed for cleansing data, transforming data, model tuning and other manual activities needed.
-
-To assess forecast accuracy, we will use a range of evaluation metrics tailored to each use case.
-
-These metrics will help evaluate how well each approach performs against the unique requirements of each use case, ultimately guiding method selection and refinement.
-
--   **RMSE (Root Mean Squared Error, @def-RMSE )**: The primary metric for measuring forecast accuracy, particularly useful for penalizing large errors.
-
--   **MAPE (Mean Absolute Percentage Error)**: To align with existing company metrics.
-
--   **MAE (Mean Absolute Error)** and **MASE (Mean Absolute Scaled Error)**: Additional metrics to provide a broader evaluation, addressing different aspects of forecast performance and comparing models to naïve baselines.
 
 <!-- {{< include 01_business_understanding_def.qmd >}} -->
 
