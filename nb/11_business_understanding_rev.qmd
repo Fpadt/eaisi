@@ -15,6 +15,7 @@ toc-depth: 3      # include ## and ### in the TOC
 #| label: setup
 source("../_book_functions.R")
 ```
+
 ## Why is Forecasting Important? {#sec-01-bu-why}
 
 ### Geographic Footprint and Production Model
@@ -32,14 +33,13 @@ rsvg::rsvg_png(
 
 ::: {#fig-11-supplychain-goodsflow .figure}
 
-
-    ![supply chain network (sample)](../images/scn.svg){fig-alt="Supply Chain Network" fig-align="center" fig-width="15cm"}
+![supply chain network (sample)](../images/scn.svg){fig-alt="Supply Chain Network" fig-align="center" fig-width="15cm"}
 :::
 
 <!-- ::: { .content-visible when-format="html"} -->
 <!-- ::: {.content-visible when-format="pdf"} -->
 <!--     ![supply chain network (sample)](../images/scn.png){fig-alt="Supply Chain Network" fig-align="center" fig-width="5cm"} -->
-:::
+<!-- ::: -->
 
 <!-- Supply-chain goods flows, illustrative example -->
 

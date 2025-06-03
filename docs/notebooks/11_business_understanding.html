@@ -69,6 +69,9 @@ div.csl-indent {
 <link href="../site_libs/bootstrap/bootstrap-94fa406e38a5c78d3de9dca02b1572d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-ba558c2fbb090de1150150c181bbc6a4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-94fa406e38a5c78d3de9dca02b1572d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -621,7 +624,16 @@ div.csl-indent {
 <div id="fig-11-supplychain-goodsflow" class="figure quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-11-supplychain-goodsflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<pre><code>![supply chain network (sample)](../images/scn.svg){fig-alt="Supply Chain Network" fig-align="center" fig-width="15cm"}</code></pre>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/scn.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="supply chain network (sample)"><img src="../images/scn.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-width="15cm" alt="Supply Chain Network"></a></p>
+</figure>
+</div>
+<figcaption>supply chain network (sample)</figcaption>
+</figure>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-11-supplychain-goodsflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8.1
@@ -631,7 +643,7 @@ Figure&nbsp;8.1
 <!-- ::: { .content-visible when-format="html"} -->
 <!-- ::: {.content-visible when-format="pdf"} -->
 <!--     ![supply chain network (sample)](../images/scn.png){fig-alt="Supply Chain Network" fig-align="center" fig-width="5cm"} -->
-<p>:::</p>
+<!-- ::: -->
 <!-- Supply-chain goods flows, illustrative example -->
 <!-- :::: -->
 <div class="callout callout-style-default callout-important callout-titled">
@@ -1377,6 +1389,38 @@ Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Wo
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
