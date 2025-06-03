@@ -98,7 +98,7 @@ The company's forecasting requirements vary significantly across several key use
 4.  **Production Cost Calculation**: Requires forecasts at a **quarterly level**, aggregated by material, with a horizon of **6 quarters**, grouped into annual time buckets.
 
     
-## Scope of the Project {#sec-11-bu-scope}
+<!-- ## Scope of the Project {#sec-11-bu-scope} -->
 
 ## Problem Statement {#sec-11-problem-statement}
 
@@ -128,7 +128,7 @@ The primary objective is to enhance operational efficiency by improving forecast
         detailed and aggregated forecasts are aligned.
 
 
-### Pythia’s Advice: A System of Innovation {#sec-01-pythia-advice-system}
+<!-- ### Pythia’s Advice: A System of Innovation {#sec-01-pythia-advice-system} -->
 
 ## Forecast Process {#sec-11-forecast-process}
 
