@@ -582,8 +582,7 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#todo-bottom-uptop-down" id="toc-todo-bottom-uptop-down" class="nav-link active" data-scroll-target="#todo-bottom-uptop-down">TODO: Bottom-Up/Top-down</a></li>
-  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a></li>
+  <li><a href="#appendix" id="toc-appendix" class="nav-link active" data-scroll-target="#appendix">Appendix</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/04_modelling.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -617,8 +616,35 @@ div.csl-indent {
 Table&nbsp;4.1: strengths and weaknesses of different modelling approaches
 </figcaption>
 <div aria-describedby="tbl-04-model_summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
-
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Model Type</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Strengths</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Weaknesses</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Statistical Models</td>
+<td style="text-align: left;">High interpretability; Well-understood theoretical foundation</td>
+<td style="text-align: left;">Limited ability to model non-linearity; Weak handling of exogenous variables</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Machine Learning</td>
+<td style="text-align: left;">Handles complex and non-linear patterns; Good with large diverse datasets</td>
+<td style="text-align: left;">Lower interpretability; Requires manual feature engineering</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Deep Learning</td>
+<td style="text-align: left;">Captures long-term dependencies; Automates feature learning</td>
+<td style="text-align: left;">Computationally intensive; Requires large datasets; Low transparency</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </figure>
@@ -630,14 +656,20 @@ Table&nbsp;4.1: strengths and weaknesses of different modelling approaches
 </video>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-04-black_glassbox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.1: Adapted from: <span class="citation" data-cites="james2023">(<a href="18_references.html#ref-james2023" role="doc-biblioref">James et al., 2023</a>)</span>, <strong>FIGURE 2.7</strong>.<br>
+Figure&nbsp;4.1: Adapted from: (<span class="citation" data-cites="james2023">(<a href="18_references.html#ref-james2023" role="doc-biblioref">James et al., 2023</a>)</span>, figure 2.7).<br>
 <em>A representation of the tradeoff between flexibility and interpretability, using different statistical learning methods. In general, as the flexibility of a method increases, its interpretability decreases </em>
 </figcaption>
 </figure>
 </div>
+<div id="tbl-04-black_glassbox" class="table quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-04-black_glassbox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4.2: A representation of the tradeoff between flexibility and interpretability, using different statistical learning methods. In general, as the flexibility of a method increases, its interpretability decreases.
+</figcaption>
+<div aria-describedby="tbl-04-black_glassbox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div id="fig-04-black_glassbox" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-04-black_glassbox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
 <thead>
@@ -694,20 +726,19 @@ Figure&nbsp;4.1: Adapted from: <span class="citation" data-cites="james2023">(<a
 </tbody>
 </table>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-04-black_glassbox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.2
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-04-black_glassbox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a)
 </figcaption>
 </figure>
 </div>
+</div>
+</div>
+</figure>
 </div>
 <section id="literature-review" class="level3">
 <h3 class="anchored" data-anchor-id="literature-review">Literature Review</h3>
 <p>Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)</p>
 <p>see Literature review (<a href="08_appendix.html#sec-literature_review" class="quarto-xref"><span>Literature</span></a>)</p>
-<p>Certainly! Here’s a revised version of your paragraph that clearly states your preference for statistical models to build trust, while acknowledging trade-offs and future potential:</p>
-<blockquote class="blockquote">
-<p>The selection of modelling techniques must balance interpretability, accuracy, data availability, and computational cost. Given <em>Pythia’s Advice</em> aims to build trust and provide transparent, value-added forecasts with minimal resources, <strong>statistical models</strong> were deliberately chosen for their clarity and theoretical grounding. While this choice limits the ability to model promotions and other exogenous factors — potentially reducing accuracy — it supports stakeholder confidence and facilitates adoption. In a future phase, once trust is established, <strong>machine learning</strong> techniques may be explored to further improve forecast performance.</p>
-</blockquote>
 <hr>
 </section>
 </section>
@@ -750,8 +781,8 @@ Figure&nbsp;4.2
 <h2 class="anchored" data-anchor-id="sec-04-summary">Summary and Lessons Learned</h2>
 <p>Summarize findings from the modelling phase and any key takeaways to inform the evaluation phase.</p>
 </section>
-<section id="todo-bottom-uptop-down" class="level1">
-<h1>TODO: Bottom-Up/Top-down</h1>
+<section id="todo-bottom-uptop-down" class="level2">
+<h2 class="anchored" data-anchor-id="todo-bottom-uptop-down">TODO: Bottom-Up/Top-down</h2>
 <p>Creating coherent forecasts across various levels from a single forecast creates challenges, for example:</p>
 <p>The Bottom-up approach, forecasts at detailed levels to be aggregated, however data may be too noisy to identify clear patterns.</p>
 <p>The top-down approach, forecasts at aggregated levels, to be distributed however, Seasonal patterns may neutralize each other and disappear, resulting in poor accuracy.</p>
@@ -774,17 +805,17 @@ Figure&nbsp;4.2
 </video>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-04-mo-method-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.1: Select one of five predefined aggregation levels (L1-L5), HTS forecasts every level for each forecast.
+Figure&nbsp;4.2: Select one of five predefined aggregation levels (L1-L5), HTS forecasts every level for each forecast.
 </figcaption>
 </figure>
 </div>
-<div id="fig-04-mo-method2" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" data-fig-width="15cm">
+<div id="fig-04-mo-method2" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-width="15cm" data-fig-align="left">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-04-mo-method2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/mo_hts.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;5.2: "><img src="../images/mo_hts.png" class="img-fluid quarto-figure quarto-figure-left figure-img" data-fig-width="15cm"></a>
+<a href="../images/mo_hts.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;4.3: "><img src="../images/mo_hts.png" class="img-fluid quarto-figure quarto-figure-left figure-img" data-fig-width="15cm"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-04-mo-method2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.2
+Figure&nbsp;4.3
 </figcaption>
 </figure>
 </div>

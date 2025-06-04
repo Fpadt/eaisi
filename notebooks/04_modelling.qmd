@@ -41,7 +41,7 @@ In today’s data-rich environment, forecasters have access to a wide array of m
 
 ::: {#tbl-04-model_summary .table}
 ```{r}
-model_summary <- fread(text = "
+fread(text = "
   Model Type        , Strengths                                                                , Weaknesses
   Statistical Models, High interpretability; Well-understood theoretical foundation            , Limited ability to model non-linearity; Weak handling of exogenous variables
   Machine Learning  , Handles complex and non-linear patterns; Good with large diverse datasets, Lower interpretability; Requires manual feature engineering
@@ -73,16 +73,15 @@ strengths and weaknesses of different modelling approaches
 ![](../images/glass_blackbox.png){fig-align="left" fig-width="15cm"}
 :::
 
-Adapted from:  [@james2023], **FIGURE 2.7**.  
+Adapted from:  ([@james2023], figure 2.7).  
 *A representation of the tradeoff between flexibility and interpretability, 
 using different statistical learning methods. In general, as the flexibility 
 of a method increases, its interpretability decreases *
 :::::
 
+::: {#tbl-04-black_glassbox .table}
 ```{r}
 #| label: fig-04-black_glassbox
-
-
 
   fread(text="
         Method            , Type            , Flexibility, Interpretability
@@ -106,16 +105,14 @@ of a method increases, its interpretability decreases *
   )
 
 ```
+A representation of the tradeoff between flexibility and interpretability, using different statistical learning methods. In general, as the flexibility of a method increases, its interpretability decreases.
+:::
 
 ### Literature Review 
 
 Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)
 
 see Literature review (@sec-literature_review)
-
-Certainly! Here's a revised version of your paragraph that clearly states your preference for statistical models to build trust, while acknowledging trade-offs and future potential:
-
-> The selection of modelling techniques must balance interpretability, accuracy, data availability, and computational cost. Given *Pythia’s Advice* aims to build trust and provide transparent, value-added forecasts with minimal resources, **statistical models** were deliberately chosen for their clarity and theoretical grounding. While this choice limits the ability to model promotions and other exogenous factors — potentially reducing accuracy — it supports stakeholder confidence and facilitates adoption. In a future phase, once trust is established, **machine learning** techniques may be explored to further improve forecast performance.
 
 ---
 
@@ -169,7 +166,7 @@ Summarize findings from the modelling phase and any key takeaways to inform the 
 
 
 
-# TODO: Bottom-Up/Top-down
+## TODO: Bottom-Up/Top-down
 
 Creating coherent forecasts across various levels from a single forecast creates challenges, for example:
 

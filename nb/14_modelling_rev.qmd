@@ -8,29 +8,7 @@ number-sections: false
 editor: source
 ---
 
-## blackbox models
-
-::: html
-<video 
-  src="../video/blackbox.mp4" 
-  controls 
-  autoplay muted loop 
-  width="640"
-  playsinline>
-</video>
-:::
-
-## whitebox models
-
-::: html
-<video 
-  src="../video/whitebox.mp4" 
-  controls 
-  autoplay muted loop 
-  width="640"
-  playsinline>
-</video>
-:::
+> The selection of modelling techniques must balance interpretability, accuracy, data availability, and computational cost. Given *Pythia’s Advice* aims to build trust and provide transparent, value-added forecasts with minimal resources, **statistical models** were deliberately chosen for their clarity and theoretical grounding. While this choice limits the ability to model promotions and other exogenous factors — potentially reducing accuracy — it supports stakeholder confidence and facilitates adoption. In a future phase, once trust is established, **machine learning** techniques may be explored to further improve forecast performance.
 
 
 6.1. Literature Review / Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)
