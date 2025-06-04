@@ -21,6 +21,48 @@ source("../_book_functions.R")
 
 <!-- – Training/validation split -->
 
+## Overview {#sec-04-overview}
+
+<!-- Briefly describe the modelling phase, its objectives, and how it fits into the broader CRISP-DM process. -->
+
+---
+
+## Selection of Modelling Techniques {#sec-04-techniques}
+
+<!-- Outline the statistical and machine learning techniques considered (e.g., ETS, ARIMA, Prophet, Hierarchical Time Series). -->
+
+In today’s data-rich environment, forecasters have access to a wide array of modelling approaches, ranging from traditional statistical techniques to advanced machine learning and deep learning methods.
+
+**Statistical models** remain the foundation of time series forecasting. They are interpretable, grounded in well-established theory, and help explain how inputs influence outputs. However, they often struggle with capturing non-linear patterns and are limited in handling exogenous factors such as promotions or external events.
+
+**Machine learning models** excel at detecting complex and non-linear relationships in large and diverse datasets. While they often outperform traditional models in terms of predictive accuracy, they come with trade-offs — particularly reduced interpretability and a greater need for careful feature engineering, especially in time-dependent data.
+
+**Deep learning models**, including RNNs, LSTMs, and Transformers, are designed to capture long-term dependencies in time series. They enable automated feature extraction and can model intricate temporal dynamics. However, they are computationally demanding, require substantial data volumes, and offer limited transparency into how forecasts are generated.
+
+::: {#tbl-04-model_summary .table}
+```{r}
+model_summary <- fread(text = "
+  Model Type        , Strengths                                                                , Weaknesses
+  Statistical Models, High interpretability; Well-understood theoretical foundation            , Limited ability to model non-linearity; Weak handling of exogenous variables
+  Machine Learning  , Handles complex and non-linear patterns; Good with large diverse datasets, Lower interpretability; Requires manual feature engineering
+  Deep Learning     , Captures long-term dependencies; Automates feature learning              , Computationally intensive; Requires large datasets; Low transparency
+") %>%
+  kbl(
+    col.names           = names(.),
+    align               = "l",
+    booktabs            = TRUE
+  ) %>% 
+  kable_styling(
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
+  )
+
+```
+strengths and weaknesses of different modelling approaches
+:::
+
+
 ::::: {#fig-04-black_glassbox}
 ::: {.content-visible when-format="html"}
 <video src="../video/glass_blackbox.mp4" controls autoplay muted loop width="640" playsinline>
@@ -31,11 +73,15 @@ source("../_book_functions.R")
 ![](../images/glass_blackbox.png){fig-align="left" fig-width="15cm"}
 :::
 
-A representation of the tradeoff between flexibility and inter pretability, using different statistical learning methods. In general, as the flexibility of a method increases, its interpretability decreases, see [@james2023]
+Adapted from:  [@james2023], **FIGURE 2.7**.  
+*A representation of the tradeoff between flexibility and interpretability, 
+using different statistical learning methods. In general, as the flexibility 
+of a method increases, its interpretability decreases *
 :::::
 
 ```{r}
 #| label: fig-04-black_glassbox
+
 
 
   fread(text="
@@ -61,13 +107,69 @@ A representation of the tradeoff between flexibility and inter pretability, usin
 
 ```
 
+### Literature Review 
 
-
-6.1. Literature Review / Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)
+Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)
 
 see Literature review (@sec-literature_review)
 
-### Bottom-Up/Top-down
+Certainly! Here's a revised version of your paragraph that clearly states your preference for statistical models to build trust, while acknowledging trade-offs and future potential:
+
+> The selection of modelling techniques must balance interpretability, accuracy, data availability, and computational cost. Given *Pythia’s Advice* aims to build trust and provide transparent, value-added forecasts with minimal resources, **statistical models** were deliberately chosen for their clarity and theoretical grounding. While this choice limits the ability to model promotions and other exogenous factors — potentially reducing accuracy — it supports stakeholder confidence and facilitates adoption. In a future phase, once trust is established, **machine learning** techniques may be explored to further improve forecast performance.
+
+---
+
+## Data Preparation for Modelling {#sec-04-data-prep}
+
+Describe how the data was structured for modelling, including train/test split, resampling, lag features, and hierarchical structure.
+
+---
+
+## Modelling Assumptions {#sec-04-assumptions}
+
+List any modelling assumptions (e.g., forecast granularity, univariate/multivariate inputs, independence between nodes).
+
+---
+
+## Model Training and Calibration {#sec-04-training}
+
+Explain the training approach: cross-validation strategy, hyperparameter tuning, recursive vs. direct forecasting.
+
+---
+
+## Forecast Generation {#sec-04-generation}
+
+Describe how forecasts are generated for each technique, including aggregation levels and forecast horizons.
+
+---
+
+## Model Validation and Performance Metrics {#sec-04-validation}
+
+Present the evaluation methodology, error metrics (e.g., RMSE, MAPE, bias), and visualizations.
+
+---
+
+## Model Interpretability and Explainability {#sec-04-explainability}
+
+(Optional) Include techniques for interpreting the forecasts (e.g., SHAP values, residual analysis).
+
+---
+
+## Tools and Frameworks Used {#sec-04-tools}
+
+List packages, libraries, or software used for modelling (e.g., `fable`, `forecast`, `lightgbm`, DuckDB).
+
+---
+
+## Summary and Lessons Learned {#sec-04-summary}
+
+Summarize findings from the modelling phase and any key takeaways to inform the evaluation phase.
+
+
+
+
+
+# TODO: Bottom-Up/Top-down
 
 Creating coherent forecasts across various levels from a single forecast creates challenges, for example:
 

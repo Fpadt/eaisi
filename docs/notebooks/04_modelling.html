@@ -582,7 +582,8 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#appendix" id="toc-appendix" class="nav-link active" data-scroll-target="#appendix">Appendix</a></li>
+  <li><a href="#todo-bottom-uptop-down" id="toc-todo-bottom-uptop-down" class="nav-link active" data-scroll-target="#todo-bottom-uptop-down">TODO: Bottom-Up/Top-down</a></li>
+  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/04_modelling.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -598,6 +599,30 @@ div.csl-indent {
 <!-- – Algorithms tried (with brief rationale)   -->
 <!-- – Hyperparameter approaches   -->
 <!-- – Training/validation split -->
+<section id="sec-04-overview" class="level2">
+<h2 class="anchored" data-anchor-id="sec-04-overview">Overview</h2>
+<!-- Briefly describe the modelling phase, its objectives, and how it fits into the broader CRISP-DM process. -->
+<hr>
+</section>
+<section id="sec-04-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="sec-04-techniques">Selection of Modelling Techniques</h2>
+<!-- Outline the statistical and machine learning techniques considered (e.g., ETS, ARIMA, Prophet, Hierarchical Time Series). -->
+<p>In today’s data-rich environment, forecasters have access to a wide array of modelling approaches, ranging from traditional statistical techniques to advanced machine learning and deep learning methods.</p>
+<p><strong>Statistical models</strong> remain the foundation of time series forecasting. They are interpretable, grounded in well-established theory, and help explain how inputs influence outputs. However, they often struggle with capturing non-linear patterns and are limited in handling exogenous factors such as promotions or external events.</p>
+<p><strong>Machine learning models</strong> excel at detecting complex and non-linear relationships in large and diverse datasets. While they often outperform traditional models in terms of predictive accuracy, they come with trade-offs — particularly reduced interpretability and a greater need for careful feature engineering, especially in time-dependent data.</p>
+<p><strong>Deep learning models</strong>, including RNNs, LSTMs, and Transformers, are designed to capture long-term dependencies in time series. They enable automated feature extraction and can model intricate temporal dynamics. However, they are computationally demanding, require substantial data volumes, and offer limited transparency into how forecasts are generated.</p>
+<div id="tbl-04-model_summary" class="table quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-04-model_summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4.1: strengths and weaknesses of different modelling approaches
+</figcaption>
+<div aria-describedby="tbl-04-model_summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+
+</div>
+</div>
+</figure>
+</div>
 <div id="fig-04-black_glassbox" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-04-black_glassbox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -605,7 +630,8 @@ div.csl-indent {
 </video>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-04-black_glassbox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.1: A representation of the tradeoff between flexibility and inter pretability, using different statistical learning methods. In general, as the flexibility of a method increases, its interpretability decreases, see <span class="citation" data-cites="james2023">(<a href="18_references.html#ref-james2023" role="doc-biblioref">James et al., 2023</a>)</span>
+Figure&nbsp;4.1: Adapted from: <span class="citation" data-cites="james2023">(<a href="18_references.html#ref-james2023" role="doc-biblioref">James et al., 2023</a>)</span>, <strong>FIGURE 2.7</strong>.<br>
+<em>A representation of the tradeoff between flexibility and interpretability, using different statistical learning methods. In general, as the flexibility of a method increases, its interpretability decreases </em>
 </figcaption>
 </figure>
 </div>
@@ -674,14 +700,61 @@ Figure&nbsp;4.2
 </figure>
 </div>
 </div>
-<p>6.1. Literature Review / Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)</p>
+<section id="literature-review" class="level3">
+<h3 class="anchored" data-anchor-id="literature-review">Literature Review</h3>
+<p>Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)</p>
 <p>see Literature review (<a href="08_appendix.html#sec-literature_review" class="quarto-xref"><span>Literature</span></a>)</p>
-<section id="bottom-uptop-down" class="level3">
-<h3 class="anchored" data-anchor-id="bottom-uptop-down">Bottom-Up/Top-down</h3>
+<p>Certainly! Here’s a revised version of your paragraph that clearly states your preference for statistical models to build trust, while acknowledging trade-offs and future potential:</p>
+<blockquote class="blockquote">
+<p>The selection of modelling techniques must balance interpretability, accuracy, data availability, and computational cost. Given <em>Pythia’s Advice</em> aims to build trust and provide transparent, value-added forecasts with minimal resources, <strong>statistical models</strong> were deliberately chosen for their clarity and theoretical grounding. While this choice limits the ability to model promotions and other exogenous factors — potentially reducing accuracy — it supports stakeholder confidence and facilitates adoption. In a future phase, once trust is established, <strong>machine learning</strong> techniques may be explored to further improve forecast performance.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="sec-04-data-prep" class="level2">
+<h2 class="anchored" data-anchor-id="sec-04-data-prep">Data Preparation for Modelling</h2>
+<p>Describe how the data was structured for modelling, including train/test split, resampling, lag features, and hierarchical structure.</p>
+<hr>
+</section>
+<section id="sec-04-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="sec-04-assumptions">Modelling Assumptions</h2>
+<p>List any modelling assumptions (e.g., forecast granularity, univariate/multivariate inputs, independence between nodes).</p>
+<hr>
+</section>
+<section id="sec-04-training" class="level2">
+<h2 class="anchored" data-anchor-id="sec-04-training">Model Training and Calibration</h2>
+<p>Explain the training approach: cross-validation strategy, hyperparameter tuning, recursive vs.&nbsp;direct forecasting.</p>
+<hr>
+</section>
+<section id="sec-04-generation" class="level2">
+<h2 class="anchored" data-anchor-id="sec-04-generation">Forecast Generation</h2>
+<p>Describe how forecasts are generated for each technique, including aggregation levels and forecast horizons.</p>
+<hr>
+</section>
+<section id="sec-04-validation" class="level2">
+<h2 class="anchored" data-anchor-id="sec-04-validation">Model Validation and Performance Metrics</h2>
+<p>Present the evaluation methodology, error metrics (e.g., RMSE, MAPE, bias), and visualizations.</p>
+<hr>
+</section>
+<section id="sec-04-explainability" class="level2">
+<h2 class="anchored" data-anchor-id="sec-04-explainability">Model Interpretability and Explainability</h2>
+<p>(Optional) Include techniques for interpreting the forecasts (e.g., SHAP values, residual analysis).</p>
+<hr>
+</section>
+<section id="sec-04-tools" class="level2">
+<h2 class="anchored" data-anchor-id="sec-04-tools">Tools and Frameworks Used</h2>
+<p>List packages, libraries, or software used for modelling (e.g., <code>fable</code>, <code>forecast</code>, <code>lightgbm</code>, DuckDB).</p>
+<hr>
+</section>
+<section id="sec-04-summary" class="level2">
+<h2 class="anchored" data-anchor-id="sec-04-summary">Summary and Lessons Learned</h2>
+<p>Summarize findings from the modelling phase and any key takeaways to inform the evaluation phase.</p>
+</section>
+<section id="todo-bottom-uptop-down" class="level1">
+<h1>TODO: Bottom-Up/Top-down</h1>
 <p>Creating coherent forecasts across various levels from a single forecast creates challenges, for example:</p>
 <p>The Bottom-up approach, forecasts at detailed levels to be aggregated, however data may be too noisy to identify clear patterns.</p>
 <p>The top-down approach, forecasts at aggregated levels, to be distributed however, Seasonal patterns may neutralize each other and disappear, resulting in poor accuracy.</p>
-</section>
 <section id="model-selection" class="level3">
 <h3 class="anchored" data-anchor-id="model-selection">Model Selection</h3>
 <p>different models have different strengths and weaknesses and are suitable for different types of data and problems. achieve the best possible performance and maximize the impact</p>
@@ -701,17 +774,17 @@ Figure&nbsp;4.2
 </video>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-04-mo-method-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.3: Select one of five predefined aggregation levels (L1-L5), HTS forecasts every level for each forecast.
+Figure&nbsp;5.1: Select one of five predefined aggregation levels (L1-L5), HTS forecasts every level for each forecast.
 </figcaption>
 </figure>
 </div>
 <div id="fig-04-mo-method2" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" data-fig-width="15cm">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-04-mo-method2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/mo_hts.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;4.4: "><img src="../images/mo_hts.png" class="img-fluid quarto-figure quarto-figure-left figure-img" data-fig-width="15cm"></a>
+<a href="../images/mo_hts.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;5.2: "><img src="../images/mo_hts.png" class="img-fluid quarto-figure quarto-figure-left figure-img" data-fig-width="15cm"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-04-mo-method2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.4
+Figure&nbsp;5.2
 </figcaption>
 </figure>
 </div>
@@ -726,6 +799,7 @@ Figure&nbsp;4.4
 <!-- ### Assess Model -->
 <!-- #### Model Assessment -->
 <!-- #### Revised Parameter Settings -->
+</section>
 </section>
 <section id="appendix" class="level1 unnumbered">
 <h1 class="unnumbered">Appendix</h1>
