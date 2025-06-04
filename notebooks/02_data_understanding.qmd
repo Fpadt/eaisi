@@ -161,11 +161,9 @@ Since forecasts are created both before and after the Demand Review, the dataset
 ## Data Collection Report
 <!-- Summarize how data was obtained and any issues during acquisition: -->
 
-### Data Collection
+Table @tbl-02-data-collection summarizes the data collection process, including the data sources, types, extraction dates, record counts, file sizes, and keys used for each data set. The data is collected from the SAP system and stored in a structured format for further processing.
 
-Table @tbl-02-data-collection summarizes the data collection process, including the data sources, types, extraction dates, record counts, file sizes, and keys used for each dataset. The data is collected from the SAP system and stored in a structured format for further processing.
-
-Pre- and post-Demand Review forecasts are stored as separate files, one for each month in which they were created. Each file is named to reflect the extraction date.The key is  essential for linking the datasets during analysis.
+Pre- and post-Demand Review forecasts are stored as separate files, one for each month in which they were created. Each file is named to reflect the extraction date.The key is  essential for linking the data sets during analysis.
 
 ::: {#tbl-02-data-collection}
 ```{r}
@@ -196,115 +194,6 @@ dtDC %>%
 Data Collection
 :::
 
-### Data Collection Process
-
-The data flow is illustrated in Figure @fig-02-dp01, outlining the steps from data extraction to forecast delivery. The process follows a medallion architecture, 
-where data flows into *Pythia’s Advice* through the Bronze and Silver layers and 
-returns the generated forecasts to SAP via the Gold layer.
-
-1. Data is extracted from the **Production** SAP system using Open Hub technology 
-   and stored on OneDrive in the Bronze layer of the staging area, following 
-   the medallion structure.
-
-2. OneDrive synchronizes the data, making it accessible to the System of Innovation: 
-   *Pythia’s Advice*.
-
-3. An in-process DuckDB session reads the CSV files, applies light transformations 
-  (e.g., renaming, formatting), and converts them to Parquet format, reducing file size 
-  by up to 90%. The output is stored in the Silver layer.
-
-4. The transformed data is then loaded into *Pythia’s Advice*, where it is prepared 
-   for modeling. Forecasts are generated and exported to the Gold layer as plain CSV 
-   files.
-
-5. Finally, the generated forecasts are written back to the **Test** SAP system, 
-   where they can be compared against the business forecasts in terms of forecast 
-   accuracy.
-
-::: {#fig-02-dp01 .figure}
-![Data Collection pipelines](../images/dp01.png){fig-align="center"}
-:::
-
-
-
-### Transformations
-
-Light transformations are applied to the exported CSV files, including field renaming, data type conversions, date formatting, and adding leading zeros where needed. Additionally, a new variable is computed to capture the number of months between the forecast creation date and the forecasted period.
-
-Table @tbl-02-data-transformations lists all transformations applied to each 
-dataset. Use the `SRC` column to filter transformations: 
-
-- `O` indicates original 1:1 mappings, 
-- `C` denotes custom transformations involving additional logic, filtered by default.
-
-<!-- DuckDB tranformations -->
-```{r}
-#| label: tab-02-data-db-transformations
-dtTF <- pa_transformations_get() %>%
-  .[, POSIT:= NULL]
-
-```
-
-:::: {#tbl-02-data-transformations}
-::: {.content-visible when-format="html"}
-
-```{r}
-#| label: tab-02-data-transformations-html
-#| 
-datatable(
-  dtTF,
-  options = list(
-    pageLength = 5,
-    lengthMenu = c(5, 10, 25, 50, 100, 2000),
-    autoWidth  = TRUE,
-    scrollX    = TRUE,
-    filter     = "top",  # or "bottom",
-    searchCols = list(
-      NULL,               # No filter on column OHDEST
-      NULL,               # No filter on column DATATYPE
-      NULL,               # No filter on column FLDNM_IN
-      NULL,               # No filter on column FIELDTP      
-      NULL,               # No filter on column TRNSFRM
-      NULL,               # No filter on column FLDNM_OUT      
-      list(search = "C")  # Filter column SRC on value "C"
-      # Add more elements for other columns if needed
-    )
-  ),
-  rownames     = FALSE,
-  class        = 'stripe hover compact'
-) %>%
-  formatStyle(
-    columns  = names(dtTF),
-    fontSize = '0.8em'          # reduce font size
-  )
-```
-
-:::
-  
-::: {.content-visible when-format="pdf"}
-  
-```{r}
-#| label: tab-02-data-transformations
-
-
-
-dtTF %>% 
-  kbl(
-    caption             = "Data Transformations ",
-    col.names           = names(.),
-    align               = "l",
-    booktabs            = TRUE
-  ) %>% 
-  kable_styling(
-    full_width          = FALSE,
-    position            = "left",
-    bootstrap_options   = c("striped", "hover", "condensed")
-  )
-```
-
-:::
-DuckDB transformations
-::::
 
 ## Data Description Report
 
@@ -469,6 +358,11 @@ ACC <-                              #
 <!-- Temporal patterns (weekly/monthly seasonality, trend, events) -->
 <!-- Cross-sectional: contribution per customer/product/channel -->
 <!-- exclude units pak and DS   -->
+
+:::call-out note
+For modeling purposes, the data was scoped to A-class articles based on ABC classification.
+See [@sec-03-abc] for details.
+:::
 
 ### Geographic Distribution of Sales
 
@@ -856,14 +750,6 @@ Using Time series features, categories can be automatically classified
  
 in the upper left corner, Clipper hot again, demonstrating the expected seasonality-strength.
 
-
-### ABC - Analysis on Article
-
-Let's define the scope of the project by identifying the high-impact products.
-
-In 2024, we recorded sales of over 2,500 unique products. 
-I narrowed my focus to the Market Sales Organization, which accounts for 50% of our global revenue, 
-reducing the number to approximately 900 products.
 
 
 ## Data Quality Report
