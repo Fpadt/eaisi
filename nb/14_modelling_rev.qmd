@@ -84,19 +84,19 @@ data.table(R.Version = R.Version()) %>%
     bootstrap_options   = c("striped", "hover", "condensed")
   )
 
-# data.table(RStudio.Version = RStudio.Version()) %>%
-#   kbl(
-#     col.names = names(.),
-#     align     = "l",
-#     booktabs  = TRUE,
-#     escape = FALSE
-#   ) %>%
-#   kable_styling(
-#     full_width          = FALSE          ,
-#     latex_options = c("hold_position"),
-#     position            = "left",
-#     bootstrap_options   = c("striped", "hover", "condensed")
-#   )
+data.table(RStudio.Version = rstudioapi::versionInfo()) %>%
+  kbl(
+    col.names = names(.),
+    align     = "l",
+    booktabs  = TRUE,
+    escape = FALSE
+  ) %>%
+  kable_styling(
+    full_width          = FALSE          ,
+    latex_options = c("hold_position"),
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
+  )
 ```
 
 #### R-Packages
