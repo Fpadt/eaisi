@@ -71,7 +71,8 @@ Present the evaluation methodology, error metrics (e.g., RMSE, MAPE, bias), and 
 
 ```{r}
 #| label: r-version
-data.table(R.version = R.Version()) %>%
+#| 
+data.table(R.Version = R.Version()) %>%
   kbl(
     col.names = names(.),
     align     = "l",

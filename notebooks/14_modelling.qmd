@@ -14,7 +14,10 @@ editor: source
 
 <!-- Briefly describe the modelling phase, its objectives, and how it fits into the broader CRISP-DM process. -->
 
-<!-- --- -->
+```{r}
+#| label: setup
+source("../_book_functions.R")
+```
 
 ### Selection of Modelling Techniques {#sec-14-techniques}
 
@@ -71,7 +74,8 @@ Present the evaluation methodology, error metrics (e.g., RMSE, MAPE, bias), and 
 
 ```{r}
 #| label: r-version
-data.table(R.version = R.Version()) %>%
+#| 
+data.table(R.Version = R.Version()) %>%
   kbl(
     col.names = names(.),
     align     = "l",
