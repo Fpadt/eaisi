@@ -20,46 +20,45 @@ source("../_book_functions.R")
 
 > The selection of modelling techniques must balance interpretability, accuracy, data availability, and computational cost. Given *Pythia’s Advice* aims to build trust and provide transparent, value-added forecasts with minimal resources, **statistical models** were deliberately chosen for their clarity and theoretical grounding. While this choice limits the ability to model promotions and other exogenous factors — potentially reducing accuracy — it supports stakeholder confidence and facilitates adoption. In a future phase, once trust is established, **machine learning** techniques may be explored to further improve forecast performance.
 
-
 6.1. Literature Review / Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)
 
----
+------------------------------------------------------------------------
 
 ### Data Preparation for Modelling {#sec-14-data-prep}
 
 Describe how the data was structured for modelling, including train/test split, resampling, lag features, and hierarchical structure.
 
----
+------------------------------------------------------------------------
 
 ### Modelling Assumptions {#sec-14-assumptions}
 
 List any modelling assumptions (e.g., forecast granularity, univariate/multivariate inputs, independence between nodes).
 
----
+------------------------------------------------------------------------
 
 ### Model Training and Calibration {#sec-14-training}
 
 Explain the training approach: cross-validation strategy, hyperparameter tuning, recursive vs. direct forecasting.
 
----
+------------------------------------------------------------------------
 
 ### Forecast Generation {#sec-14-generation}
 
 Describe how forecasts are generated for each technique, including aggregation levels and forecast horizons.
 
----
+------------------------------------------------------------------------
 
 ### Model Validation and Performance Metrics {#sec-14-validation}
 
 Present the evaluation methodology, error metrics (e.g., RMSE, MAPE, bias), and visualizations.
 
----
+------------------------------------------------------------------------
 
 ### Model Interpretability and Explainability {#sec-14-explainability}
 
 (Optional) Include techniques for interpreting the forecasts (e.g., SHAP values, residual analysis).
 
----
+------------------------------------------------------------------------
 
 ### Tools and Frameworks Used {#sec-14-tools}
 
@@ -67,22 +66,24 @@ Present the evaluation methodology, error metrics (e.g., RMSE, MAPE, bias), and 
 
 #### R & R-Studio tooling
 
+see [@r_core_team_r_2024]
+
 ```{r}
 #| label: r-version
 #| 
- data.table(R.Version = R.Version()) %>%
-   kbl(
-     col.names = names(.),
-     align     = "l",
-     booktabs  = TRUE,
-     escape = FALSE
-   ) %>%
-   kable_styling(
-     full_width          = FALSE          ,
-     latex_options = c("hold_position"),
-     position            = "left",
-     bootstrap_options   = c("striped", "hover", "condensed")
-   )
+ # data.table(R.Version = R.Version()) %>%
+ #   kbl(
+ #     col.names = names(.),
+ #     align     = "l",
+ #     booktabs  = TRUE,
+ #     escape = FALSE
+ #   ) %>%
+ #   kable_styling(
+ #     full_width          = FALSE          ,
+ #     latex_options = c("hold_position"),
+ #     position            = "left",
+ #     bootstrap_options   = c("striped", "hover", "condensed")
+ #   )
  
 info <- sessionInfo()
 
@@ -110,51 +111,45 @@ data.table(
 #### R-Packages
 
 ::: {#tbl-14-packages .table}
-
-| Package        | Purpose                                  | Citation          |
-|----------------|-------------------------------------------|-------------------|
-| padt           | Pythia’s Advice – Data Tooling           | @padt2024         |
-| scales         | Scaling and formatting                   | @scales2024       |
-| collapsibleTree| Collapsible trees                        | @collapsibleTree2024 |
-| crayon         | Colored text output                      | @crayon2024       |
-| treemapify     | Treemaps                                 | @treemapify2024   |
-| skimr          | Data summarization                       | @skimr2024        |
-| quarto         | Rendering the report                     | @quarto2024       |
-| duckDB         | DuckDB database and light transformations| @duckdb2024       |
-| gt             | Creating tables                          | @gt2024           |
-| DT             | Interactive tables                       | @DT2024           |
-| knitr          | Dynamic report generation                | @knitr2024        |
-| kableExtra     | Enhanced tables                          | @kableExtra2024   |
-| ggrepel        | Non-overlapping labels in ggplot2        | @ggrepel2024      |
-| openxlsx2      | Read/write Excel                         | @openxlsx2_2024   |
-| fpp3           | Forecasting and time series              | @fpp3_2024        |
-| feasts         | Time series feature extraction           | @feasts_2024      |
-| tsibble        | Tidy temporal data frames                | @tsibble2024      |
-| magrittr       | Pipe operator                            | @magrittr2024     |
-| glue           | String interpolation                     | @glue2024         |
-| tidyr          | Data tidying                             | @tidyr2024        |
-| tidyverse      | Unified data science tools               | @tidyverse2024    |
-| purrr          | Functional programming                   | @purrr2024        |
-| lubridate      | Date-time manipulation                   | @lubridate2024    |
-| ggplot2        | Data visualization                       | @ggplot2_2024     |
-| data.table     | Fast data manipulation                   | @data.table2024   |
-| dplyr          | Data manipulation                        | @dplyr2024        |
-| fabletools     | Forecasting infrastructure               | @fabletools2024   |
-| fable          | Forecasting models                       | @fable2024        |
-
+| Package | Purpose | Citation |
+|:----------------|:-------------------------------------|:----------------|
+| padt | Pythia’s Advice – Data Tooling | @padt2024 |
+| scales | Scaling and formatting | @scales2024 |
+| collapsibleTree | Collapsible trees | @collapsibleTree2024 |
+| crayon | Colored text output | @crayon2024 |
+| treemapify | Treemaps | @treemapify2024 |
+| skimr | Data summarization | @skimr2024 |
+| quarto | Rendering the report | @quarto2024 |
+| duckDB | DuckDB database and light transformations | @duckdb2024 |
+| gt | Creating tables | @gt2024 |
+| DT | Interactive tables | @DT2024 |
+| knitr | Dynamic report generation | @knitr2024 |
+| kableExtra | Enhanced tables | @kableExtra2024 |
+| ggrepel | Non-overlapping labels in ggplot2 | @ggrepel2024 |
+| openxlsx2 | Read/write Excel | @openxlsx2_2024 |
+| fpp3 | Forecasting and time series | @fpp3_2024 |
+| feasts | Time series feature extraction | @feasts_2024 |
+| tsibble | Tidy temporal data frames | @tsibble2024 |
+| magrittr | Pipe operator | @magrittr2024 |
+| glue | String interpolation | @glue2024 |
+| tidyr | Data tidying | @tidyr2024 |
+| tidyverse | Unified data science tools | @tidyverse2024 |
+| purrr | Functional programming | @purrr2024 |
+| lubridate | Date-time manipulation | @lubridate2024 |
+| ggplot2 | Data visualization | @ggplot2_2024 |
+| data.table | Fast data manipulation | @data.table2024 |
+| dplyr | Data manipulation | @dplyr2024 |
+| fabletools | Forecasting infrastructure | @fabletools2024 |
+| fable | Forecasting models | @fable2024 |
 :::
 
-
-
----
+------------------------------------------------------------------------
 
 ### Summary and Lessons Learned {#sec-14-summary}
 
 Summarize findings from the modelling phase and any key takeaways to inform the evaluation phase.
 
----
-
-
+------------------------------------------------------------------------
 
 ### Model Selection
 
@@ -172,15 +167,13 @@ algorithm - handle teh specific characteristics of teh data - balance performanc
 -   robustness -\>
 -   transparency -\>
 
-| Capability                   | Standard ARIMA                                        | SARIMA                         | ARIMAX                                        |
-| ---------------------------- | ----------------------------------------------------- | ------------------------------ | --------------------------------------------- |
-| Handles Trend                | ✅ (via differencing)                                  | ✅ (with seasonal differencing) | ✅                                             |
-| Damped Trend                 | ❌ (not explicit)                                      | ❌                              | ❌                                             |
-| Seasonality                  | ❌ (needs SARIMA)                                      | ✅                              | ✅                                             |
-| Promotions / External Inputs | ❌                                                     | ❌                              | ✅                                             |
-| Best For                     | Stationary or differenced series with autocorrelation | Seasonal time series           | Time series influenced by external regressors |
-
-
+| Capability | Standard ARIMA | SARIMA | ARIMAX |
+|----------------|----------------------|----------------|-------------------|
+| Handles Trend | ✅ (via differencing) | ✅ (with seasonal differencing) | ✅ |
+| Damped Trend | ❌ (not explicit) | ❌ | ❌ |
+| Seasonality | ❌ (needs SARIMA) | ✅ | ✅ |
+| Promotions / External Inputs | ❌ | ❌ | ✅ |
+| Best For | Stationary or differenced series with autocorrelation | Seasonal time series | Time series influenced by external regressors |
 
 <!-- #### Modeling Technique -->
 
@@ -203,7 +196,6 @@ algorithm - handle teh specific characteristics of teh data - balance performanc
 <!-- #### Model Assessment -->
 
 <!-- #### Revised Parameter Settings -->
-
 
 # Appendix {.unnumbered}
 
