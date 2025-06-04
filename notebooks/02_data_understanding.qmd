@@ -218,7 +218,7 @@ Table @tbl-02-data-description gives a sample of the dataset fields, including n
   )  %T>%
   setDT() %>%
   .[PYTHIA == 'Y', !"PYTHIA"] %>%
-  .[c(1, 12, 23)] %>%
+  .[c(1, 12, 33)] %>%
   kbl(
     caption             = "Data Description",
     col.names           = names(.),
