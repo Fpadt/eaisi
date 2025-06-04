@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-06-02">
-<meta name="description" content="Effective business planning depends on accurate and consistent forecasts across different levels of aggregation, granularity, and time horizons. Producing such forecasts is inherently complex, requiring a diverse set of resources — including commercial forecasting engines, high-quality data, hardware, software, and human expertise.A key challenge lies in balancing the benefits of improved forecast accuracy against the costs of deploying these additional resources. To evaluate this trade-off, it is essential to first establish the level of accuracy that can be achieved with minimal input. The Forecast Value Added (FVA) is defined as the difference between the accuracy achieved by the business and that obtained using a minimal-resource benchmark. Ideally, the costs invested in enhancing forecast accuracy should be justified by a proportional gain in FVA.To assess this cost-benefit relationship without disrupting day-to-day operations, we developed a parallel forecasting environment — a system of innovation — that operates alongside the production forecasting system. This environment uses state-of-the-art, open-source forecasting tools that are freely available, enabling us to establish an internal benchmark for evaluating both performance and efficiency.This system of innovation allows us to explore a wide range of forecasting methods, from simple statistical models to more advanced hierarchical techniques. Hierarchical forecasting is particularly valuable for generating consistent forecasts across different levels of aggregation, tailored to specific business use cases.In this study, we aim to quantify the Forecast Value Added and assess the forecast accuracy of various statistical approaches, including hierarchical methods. Given the wide variety of products (SKUs) and their differing levels of importance, we scope our analysis to focus on the top 20% of products, which account for 80% of total sales. This targeted approach enables us to concentrate on the most impactful items, while still providing insights that can be generalized to the broader product portfolio.">
+<meta name="dcterms.date" content="2025-06-04">
+<meta name="description" content="model selection">
 
-<title>Introduction – Pythia's Advice</title>
+<title>Modelling – Pythia's Advice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -52,8 +52,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../notebooks/01_business_understanding.html" rel="next">
-<link href="../setting_the_stage.html" rel="prev">
+<link href="../notebooks/05_evaluation.html" rel="next">
+<link href="../notebooks/03_data_preparation.html" rel="prev">
 <link href="../images/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -69,6 +69,9 @@ div.csl-indent {
 <link href="../site_libs/bootstrap/bootstrap-94fa406e38a5c78d3de9dca02b1572d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-ba558c2fbb090de1150150c181bbc6a4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-94fa406e38a5c78d3de9dca02b1572d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -112,36 +115,11 @@ div.csl-indent {
         color: #FFFFFF;
       }
 </style>
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
+
 
 </head>
 
@@ -314,7 +292,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The ♥ of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">Introduction</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The ♥ of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/04_modelling.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modelling</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -326,16 +304,14 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The ♥ of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">Introduction</a></li></ol></nav>
-      <h1 class="title"><span id="sec-00-introduction" class="quarto-section-identifier">Introduction</span></h1>
-            <p class="subtitle lead">TRUST - is all you need!</p>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The ♥ of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/04_modelling.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modelling</span></a></li></ol></nav>
+      <h1 class="title"><span id="sec-04-modelling" class="quarto-section-identifier"><span class="chapter-title">Modelling</span></span></h1>
+            <p class="subtitle lead">Modelling subtitle</p>
                   <div>
         <div class="description">
-          <p>Effective business planning depends on accurate and consistent forecasts across different levels of aggregation, granularity, and time horizons. Producing such forecasts is inherently complex, requiring a diverse set of resources — including commercial forecasting engines, high-quality data, hardware, software, and human expertise.</p>
-          <p>A key challenge lies in balancing the benefits of improved forecast accuracy against the costs of deploying these additional resources. To evaluate this trade-off, it is essential to first establish the level of accuracy that can be achieved with minimal input. The Forecast Value Added (FVA) is defined as the difference between the accuracy achieved by the business and that obtained using a minimal-resource benchmark. Ideally, the costs invested in enhancing forecast accuracy should be justified by a proportional gain in FVA.</p>
-          <p>To assess this cost-benefit relationship without disrupting day-to-day operations, we developed a parallel forecasting environment — a system of innovation — that operates alongside the production forecasting system. This environment uses state-of-the-art, open-source forecasting tools that are freely available, enabling us to establish an internal benchmark for evaluating both performance and efficiency.</p>
-          <p>This system of innovation allows us to explore a wide range of forecasting methods, from simple statistical models to more advanced hierarchical techniques. Hierarchical forecasting is particularly valuable for generating consistent forecasts across different levels of aggregation, tailored to specific business use cases.</p>
-          <p>In this study, we aim to quantify the Forecast Value Added and assess the forecast accuracy of various statistical approaches, including hierarchical methods. Given the wide variety of products (SKUs) and their differing levels of importance, we scope our analysis to focus on the top 20% of products, which account for 80% of total sales. This targeted approach enables us to concentrate on the most impactful items, while still providing insights that can be generalized to the broader product portfolio.</p>
+          <ul>
+          <li>model selection</li>
+          </ul>
         </div>
       </div>
                           <div class="quarto-categories">
@@ -380,7 +356,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">June 2, 2025</p>
+        <p class="date">June 4, 2025</p>
       </div>
     </div>
     
@@ -465,7 +441,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/00_introduction.html" class="sidebar-item-text sidebar-link active">
+  <a href="../notebooks/00_introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -489,7 +465,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/04_modelling.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/04_modelling.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modelling</span></span></a>
   </div>
 </li>
@@ -601,8 +577,31 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-04-overview" id="toc-sec-04-overview" class="nav-link active" data-scroll-target="#sec-04-overview">Overview</a></li>
+  <li><a href="#sec-04-techniques" id="toc-sec-04-techniques" class="nav-link" data-scroll-target="#sec-04-techniques">Selection of Modelling Techniques</a></li>
+  <li><a href="#sec-04-tradeoff" id="toc-sec-04-tradeoff" class="nav-link" data-scroll-target="#sec-04-tradeoff">Model Interpretability and Explainability</a>
+  <ul class="collapse">
+  <li><a href="#literature-review" id="toc-literature-review" class="nav-link" data-scroll-target="#literature-review">Literature Review</a></li>
+  </ul></li>
+  <li><a href="#sec-04-data-prep" id="toc-sec-04-data-prep" class="nav-link" data-scroll-target="#sec-04-data-prep">Data Preparation for Modelling</a></li>
+  <li><a href="#sec-04-assumptions" id="toc-sec-04-assumptions" class="nav-link" data-scroll-target="#sec-04-assumptions">Modelling Assumptions</a></li>
+  <li><a href="#sec-04-training" id="toc-sec-04-training" class="nav-link" data-scroll-target="#sec-04-training">Model Training and Calibration</a></li>
+  <li><a href="#sec-04-generation" id="toc-sec-04-generation" class="nav-link" data-scroll-target="#sec-04-generation">Forecast Generation</a>
+  <ul class="collapse">
+  <li><a href="#model-selection" id="toc-model-selection" class="nav-link" data-scroll-target="#model-selection">Model Selection</a></li>
+  <li><a href="#bottom-uptop-down-versus-hierachical" id="toc-bottom-uptop-down-versus-hierachical" class="nav-link" data-scroll-target="#bottom-uptop-down-versus-hierachical">Bottom-Up/Top-down versus Hierachical</a></li>
+  </ul></li>
+  <li><a href="#sec-04-validation" id="toc-sec-04-validation" class="nav-link" data-scroll-target="#sec-04-validation">Model Validation and Performance Metrics</a></li>
+  <li><a href="#sec-04-tools" id="toc-sec-04-tools" class="nav-link" data-scroll-target="#sec-04-tools">Tools and Frameworks Used</a></li>
+  <li><a href="#sec-04-summary" id="toc-sec-04-summary" class="nav-link" data-scroll-target="#sec-04-summary">Summary and Lessons Learned</a></li>
+  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/04_modelling.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -612,67 +611,253 @@ window.Quarto = {
 
 
 
-<section id="business-context" class="level2">
-<h2 class="anchored" data-anchor-id="business-context">Business Context</h2>
-<p>In today’s increasingly complex market environment, accurate demand forecasting is essential for maintaining operational efficiency in supply chains—especially within the Fast-Moving Consumer Goods (FMCG) industry, where perishable food products have short shelf lives and demand is highly sensitive to seasonal trends and promotional activities.</p>
-<section id="biobalance" class="level3">
-<h3 class="anchored" data-anchor-id="biobalance"><em>BioBalance</em></h3>
-<p>This study focuses on <em>BioBalance</em>, a multi-channel FMCG food company that both manufactures its own products and sources finished goods from external suppliers. <em>BioBalance</em> distributes products through multiple channels, including Retail (RET), Out-of-Home (OOH), Health &amp; Food Stores (HFS), Discounters (DISC), and e-Commerce (eCOM). Effective sales forecasting at various levels of aggregation and granularity is critical to supporting key business decisions related to production planning, procurement, and negotiations with suppliers and customers.</p>
-<p>The forecasting challenges faced by <em>BioBalance</em> are intensified by the perishable nature of its product portfolio, significant fluctuations in seasonal demand, and frequent promotional activities. Accurate forecasts thus directly influence inventory management, cost-efficiency, customer satisfaction, and overall operational performance.</p>
+<!-- - Modelling – Forecasting models and techniques used. -->
+<!-- – Algorithms tried (with brief rationale)   -->
+<!-- – Hyperparameter approaches   -->
+<!-- – Training/validation split -->
+<section id="sec-04-overview" class="level2">
+<h2 class="anchored" data-anchor-id="sec-04-overview">Overview</h2>
+<!-- Briefly describe the modelling phase, its objectives, and how it fits into the broader CRISP-DM process. -->
+<hr>
 </section>
-<section id="stakeholders" class="level3">
-<h3 class="anchored" data-anchor-id="stakeholders">Stakeholders</h3>
-<p><em>BioBalance</em>’s forecasts serve both internal and external stakeholders. Internally, demand forecasts support functions such as production planning, inventory management, and procurement. Externally, these forecasts are shared with suppliers and customers to enable collaborative planning, reinforcing the need for high accuracy and consistency across multiple aggregation levels, granularities, and forecasting horizons.</p>
-</section>
-<section id="forecasting-challenges" class="level3">
-<h3 class="anchored" data-anchor-id="forecasting-challenges">Forecasting Challenges</h3>
-<p><em>BioBalance</em> currently uses a third-party forecasting platform that relies on traditional statistical methods. While demand planners can improve forecast accuracy through manual adjustments and simulations, these efforts require significant time and expertise.</p>
-<p>However, research shows <span class="citation" data-cites="article">(<a href="18_references.html#ref-article" role="doc-biblioref">Fildes &amp; Goodwin, 2007</a>)</span> that many small adjustments do not lead to improvements and can even reduce accuracy. In contrast, larger adjustments—especially downward revisions—tend to yield more substantial gains. This raises concerns about the effectiveness of manual interventions and highlights the need for a more objective way to assess their impact.</p>
-</section>
-</section>
-<section id="research-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="research-objectives">Research Objectives</h2>
-<p>While the current forecasting process requires and permits manual intervention and method customization, it remains unclear whether these efforts consistently deliver value. To address this, the study proposes an objective, low-cost statistical benchmark that can serve as a reference point for evaluating the effectiveness of manual adjustments and the overall forecasting process.</p>
-<section id="primary-objective-forecast-value-added-fva" class="level3">
-<h3 class="anchored" data-anchor-id="primary-objective-forecast-value-added-fva">Primary Objective: Forecast Value Added (FVA)</h3>
-<p>The primary objective of this research is to quantify the Forecast Value Added (FVA) by establishing a minimal-resource benchmark for forecast accuracy. FVA represents the improvement achieved by the business’s current forecasting process compared to a baseline generated using a simple, robust, and low-effort statistical approach.</p>
-<p>This benchmark will be developed at minimal cost by automating or eliminating manual forecasting tasks, using open-source forecasting tools, and deploying them on low-cost hardware. Clearly defining this benchmark provides <em>BioBalance</em> with a reliable and transparent reference point to evaluate current forecasting performance.</p>
-<p>By quantifying FVA, the company can set objective accuracy targets for the demand planning team. These targets combine the performance of the minimal-resource benchmark with the expected incremental improvements justified by additional effort, cost, or expertise.</p>
-</section>
-<section id="secondary-objective-hierarchical-forecasting-accuracy" class="level3">
-<h3 class="anchored" data-anchor-id="secondary-objective-hierarchical-forecasting-accuracy">Secondary Objective: Hierarchical Forecasting Accuracy</h3>
-<p>As a secondary objective, this research evaluates the performance of hierarchical forecasting methods, which produce consistent forecasts across multiple levels of aggregation. Ensuring forecast consistency is crucial for effective cross-functional decision-making, aligning internal operations, and supporting collaborative planning with external stakeholders.</p>
-</section>
-</section>
-<section id="purpose-of-the-research" class="level2">
-<h2 class="anchored" data-anchor-id="purpose-of-the-research">Purpose of the Research</h2>
-<p>The purpose of this research is to provide clear insight into the cost-benefit trade-off involved in improving forecast accuracy. By establishing a minimal-resource benchmark, the study defines a baseline level of accuracy that can be achieved with minimal effort and cost. This benchmark serves as both a reference point for evaluating current performance and a foundation for setting future accuracy targets.</p>
-<p>Any additional improvements in forecast accuracy—measured as Forecast Value Added (FVA) above this benchmark—should be justified by the resources required to achieve them. In doing so, the research supports more informed decisions on where and how to invest in forecasting capabilities.</p>
-</section>
-<section id="scope-of-the-research" class="level2">
-<h2 class="anchored" data-anchor-id="scope-of-the-research">Scope of the Research</h2>
-<p><em>BioBalance</em> offers a diverse product portfolio (SKUs) across multiple geographical markets, with products varying in sales importance. To ensure a focused and meaningful analysis, this study concentrates on the top 20% of products, which together account for 80% of total sales.</p>
-<p>While a small portion of the company’s sales (less than 10%) comes from chilled products — which have short shelf lives and are forecasted weekly — the majority comes from ambient products with a shelf life of <span class="math inline">\(1/2\)</span> to <span class="math inline">\(1\)</span> year. These are forecasted in monthly buckets and form the primary focus of this research.</p>
-<p>By narrowing the scope to high-impact ambient products, the study enables a practical and scalable analysis, while still yielding insights that are applicable across the broader product range.</p>
-</section>
-<section id="structure-of-the-document" class="level2">
-<h2 class="anchored" data-anchor-id="structure-of-the-document">Structure of the Document</h2>
-<!-- Structure of the Document, why we chose CRISP-DM, roadmap of the sections to follow -->
-<p>This research adopts the <strong>CRISP-ML methodology</strong> <span class="citation" data-cites="costa_crisp-ml_2022">(<a href="18_references.html#ref-costa_crisp-ml_2022" role="doc-biblioref">Costa, 2022</a>)</span> as its guiding framework.</p>
-<p>CRISP-ML (Cross-Industry Standard Process for Machine Learning) is a structured approach for designing, implementing, and communicating data science and machine learning projects. It consists of six core phases:</p>
-<ol type="1">
-<li>Business Understanding</li>
-<li>Data Understanding</li>
-<li>Data Preparation</li>
-<li>Modelling</li>
-<li>Evaluation</li>
-<li>Deployment</li>
-</ol>
-<p>The main body of this document includes a dedicated section for each phase. These chapters are concise, free of code, and supported by visuals and tables to enhance readability and accessibility — particularly for business stakeholders and decision-makers.</p>
-<p>For technical readers, the Appendix provides a corresponding chapter for each phase, offering additional context, detailed analysis, and code implementations.</p>
-<div class="html">
-<!-- {{< include 00_pythias_advice_def.qmd >}} -->
+<section id="sec-04-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="sec-04-techniques">Selection of Modelling Techniques</h2>
+<!-- Outline the statistical and machine learning techniques considered (e.g., ETS, ARIMA, Prophet, Hierarchical Time Series). -->
+<p>In today’s data-rich environment, forecasters have access to a wide array of modelling approaches, ranging from traditional statistical techniques to advanced machine learning and deep learning methods.</p>
+<p><strong>Statistical models</strong> remain the foundation of time series forecasting. They are interpretable, grounded in well-established theory, and help explain how inputs influence outputs. However, they often struggle with capturing non-linear patterns and are limited in handling exogenous factors such as promotions or external events.</p>
+<p><strong>Machine learning models</strong> excel at detecting complex and non-linear relationships in large and diverse datasets. While they often outperform traditional models in terms of predictive accuracy, they come with trade-offs — particularly reduced interpretability and a greater need for careful feature engineering, especially in time-dependent data.</p>
+<p><strong>Deep learning models</strong>, including RNNs, LSTMs, and Transformers, are designed to capture long-term dependencies in time series. They enable automated feature extraction and can model intricate temporal dynamics. However, they are computationally demanding, require substantial data volumes, and offer limited transparency into how forecasts are generated.</p>
+<div id="tbl-04-model_summary" class="table quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-04-model_summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4.1: strengths and weaknesses of different modelling approaches
+</figcaption>
+<div aria-describedby="tbl-04-model_summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Model Type</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Strengths</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Weaknesses</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Statistical Models</td>
+<td style="text-align: left;">High interpretability; Well-understood theoretical foundation</td>
+<td style="text-align: left;">Limited ability to model non-linearity; Weak handling of exogenous variables</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Machine Learning</td>
+<td style="text-align: left;">Handles complex and non-linear patterns; Good with large diverse datasets</td>
+<td style="text-align: left;">Lower interpretability; Requires manual feature engineering</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Deep Learning</td>
+<td style="text-align: left;">Captures long-term dependencies; Automates feature learning</td>
+<td style="text-align: left;">Computationally intensive; Requires large datasets; Low transparency</td>
+</tr>
+</tbody>
+</table>
 </div>
+</div>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-04-tradeoff" class="level2">
+<h2 class="anchored" data-anchor-id="sec-04-tradeoff">Model Interpretability and Explainability</h2>
+<p>Model selection involves a tradeoff between flexibility and interpretability. <strong>Black-box models</strong> like deep learning offer high flexibility and capture complex patterns, but are opaque.</p>
+<p><strong>Glass-box models</strong>, such as statistical methods, are transparent, showing what is happening inside, and easier to interpret, though less suited to modeling complex effects. <em>In general, as model flexibility increases, interpretability decreases.</em></p>
+<div id="fig-04-black_glassbox" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-04-black_glassbox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<video src="../video/glass_blackbox.mp4" controls="" autoplay="" muted="" loop="" playsinline="">
+</video>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-04-black_glassbox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: Adapted from: [<span class="citation" data-cites="james2023">(<a href="18_references.html#ref-james2023" role="doc-biblioref"><strong>james2023?</strong></a>)</span>, figure 2.7].
+</figcaption>
+</figure>
+</div>
+<div id="tbl-04-black_glassbox" class="table quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-04-black_glassbox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4.2: Flexibility and interpretability of different statistical learning methods.
+</figcaption>
+<div aria-describedby="tbl-04-black_glassbox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div id="fig-04-black_glassbox" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-04-black_glassbox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Method</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Type</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Flexibility</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Interpretability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ETS</td>
+<td style="text-align: left;">Statistical</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ARIMA</td>
+<td style="text-align: left;">Statistical</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Regression</td>
+<td style="text-align: left;">Statistical</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Random Forest</td>
+<td style="text-align: left;">Machine Learning</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">XGBoost/CatBoost</td>
+<td style="text-align: left;">Machine Learning</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LSTM</td>
+<td style="text-align: left;">Deep Learning</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">GPT/LLM</td>
+<td style="text-align: left;">Deep Learning</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-04-black_glassbox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<section id="literature-review" class="level3">
+<h3 class="anchored" data-anchor-id="literature-review">Literature Review</h3>
+<p>Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)</p>
+<p>see Literature review (<a href="08_appendix.html#sec-literature_review" class="quarto-xref"><span>Literature</span></a>)</p>
+<blockquote class="blockquote">
+<p>To build trust and ensure transparency, <em>Pythia’s Advice</em> adopts statistical models, prioritizing interpretability over maximum accuracy. While this limits the ability to capture effects like promotions, it supports confident decision-making. Once trust is established, more advanced machine learning techniques may be considered to enhance performance.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="sec-04-data-prep" class="level2">
+<h2 class="anchored" data-anchor-id="sec-04-data-prep">Data Preparation for Modelling</h2>
+<!-- Describe how the data was structured for modelling, including train/test split,  and hierarchical structure. -->
+<hr>
+</section>
+<section id="sec-04-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="sec-04-assumptions">Modelling Assumptions</h2>
+<!-- List any modelling assumptions (e.g., forecast granularity, univariate/multivariate inputs, independence between nodes). -->
+<hr>
+</section>
+<section id="sec-04-training" class="level2">
+<h2 class="anchored" data-anchor-id="sec-04-training">Model Training and Calibration</h2>
+<!-- Explain the training approach: cross-validation strategy. -->
+<hr>
+</section>
+<section id="sec-04-generation" class="level2">
+<h2 class="anchored" data-anchor-id="sec-04-generation">Forecast Generation</h2>
+<!-- Describe how forecasts are generated for each technique, including aggregation levels and forecast horizons. -->
+<section id="model-selection" class="level3">
+<h3 class="anchored" data-anchor-id="model-selection">Model Selection</h3>
+<p>model performance - only article hierarchy - article and customer hierarchy</p>
+<ul>
+<li>validity -&gt; fa &amp; prediction intervals</li>
+<li>robustness -&gt;</li>
+<li>transparency -&gt;</li>
+</ul>
+</section>
+<section id="bottom-uptop-down-versus-hierachical" class="level3">
+<h3 class="anchored" data-anchor-id="bottom-uptop-down-versus-hierachical">Bottom-Up/Top-down versus Hierachical</h3>
+<p>Creating coherent forecasts across various levels from a single forecast creates challenges, for example:</p>
+<p>The Bottom-up approach, forecasts at detailed levels to be aggregated, however data may be too noisy to identify clear patterns.</p>
+<p>The top-down approach, forecasts at aggregated levels, to be distributed however, Seasonal patterns may neutralize each other and disappear, resulting in poor accuracy.</p>
+<div id="fig-04-mo-method" class="figure quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-04-mo-method-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<video src="../video/mo_method.mp4" controls="" autoplay="" muted="" loop="" width="640" playsinline="">
+</video>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-04-mo-method-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.2: Select one of five predefined aggregation levels (L1-L5), HTS forecasts every level for each forecast.
+</figcaption>
+</figure>
+</div>
+<div id="fig-04-mo-method2" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-width="15cm" data-fig-align="left">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-04-mo-method2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../images/mo_hts.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;4.3: "><img src="../images/mo_hts.png" class="img-fluid quarto-figure quarto-figure-left figure-img" data-fig-width="15cm"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-04-mo-method2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.3
+</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+</section>
+<section id="sec-04-validation" class="level2">
+<h2 class="anchored" data-anchor-id="sec-04-validation">Model Validation and Performance Metrics</h2>
+<!-- Present the evaluation methodology, error metrics (e.g., RMSE, MAPE, bias), and visualizations. -->
+<p>Cross-validation is a method for evaluating the performance of a model on a validation dataset. This involves dividing the data into k folds, training the model on k-1 folds, and evaluating the performance on the remaining fold. This process is repeated k times, with each fold serving as the validation set once, and the results are averaged to obtain a final performance score. This method provides a more reliable estimate of the model’s performance, as it uses all of the data for training and evaluation.</p>
+<!-- --- -->
+<!-- ## Model Interpretability and Explainability {#sec-04-explainability} -->
+<!-- (Optional) Include techniques for interpreting the forecasts (e.g., SHAP values, residual analysis). -->
+<hr>
+</section>
+<section id="sec-04-tools" class="level2">
+<h2 class="anchored" data-anchor-id="sec-04-tools">Tools and Frameworks Used</h2>
+<p>This project is implemented in R using an open-source, local-first setup. Modeling and analysis are developed in RStudio and documented using Quarto.</p>
+<p>Key components: - <strong>Repositories</strong> (hosted on GitHub): - <a href="https://github.com/Fpadt/eaisi">EAISI-PAPER</a>: Project documentation and analysis - <a href="https://github.com/Fpadt/EAISI-Pythia">EAISI-PYTHIA</a>: Core modeling workflows - <a href="https://github.com/Fpadt/EAISI-Padt">EAISI-PADT</a>: <strong>P</strong>ythia’s <strong>A</strong>dvice - <strong>D</strong>ata <strong>T</strong>ooling</p>
+<ul>
+<li><strong>R &amp; Quarto Tooling</strong>:<br>
+A full list of packages and technical configuration is provided in the Appendix (<a href="14_modelling.html#sec-14-tools" class="quarto-xref"><span>Tools and Frameworks Used</span></a>).</li>
+</ul>
+</section>
+<section id="sec-04-summary" class="level2">
+<h2 class="anchored" data-anchor-id="sec-04-summary">Summary and Lessons Learned</h2>
+<p>Summarize findings from the modelling phase and any key takeaways to inform the evaluation phase.</p>
+<!-- #### Modeling Technique -->
+<!-- #### Modeling Assumptions -->
+<!-- ### Generate Test Design -->
+<!-- #### Test Design -->
+<!-- #### Build Model -->
+<!-- ### Parameter Settings -->
+<!-- #### Models -->
+<!-- #### Model Description -->
+<!-- ### Assess Model -->
+<!-- #### Model Assessment -->
+<!-- #### Revised Parameter Settings -->
+</section>
+<section id="appendix" class="level1 unnumbered">
+<h1 class="unnumbered">Appendix</h1>
+<!-- {{< include 04_modelling_def.qmd >}} -->
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
@@ -1271,13 +1456,13 @@ Zhu, H. (2024). <em>kableExtra: Construct complex table with ’kable’ and pip
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../setting_the_stage.html" class="pagination-link" aria-label="Setting the Stage">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Setting the Stage</span>
+      <a href="../notebooks/03_data_preparation.html" class="pagination-link" aria-label="Data Preparation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Preparation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notebooks/01_business_understanding.html" class="pagination-link" aria-label="Business Understanding">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Business Understanding</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notebooks/05_evaluation.html" class="pagination-link" aria-label="Evaluation">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Evaluation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1289,12 +1474,44 @@ Zhu, H. (2024). <em>kableExtra: Construct complex table with ’kable’ and pip
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/00_introduction.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/04_modelling.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p><a href="https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai">EAISI</a></p>
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2025-06-04">
-<meta name="description" content="Forecasts are critical for end-to-end decision-making across sourcing, production, and delivery.Inaccurate forecasts lead to costly outcomes such as stockouts, waste, and poor service.Improving forecast accuracy boosts efficiency, customer satisfaction, and profitability.">
+<meta name="description" content="SAP BI extracts serve as the foundation: article, customer, sales &amp; forecast dataData was scoped to finished goods under Make-to-Stock with ambient storageThe modeling dataset is based on the top-performing MSO and A-class articlesExploratory analysis confirmed temporal seasonality and product hierarchy depthData quality is high overall, with minimal missing values and no major outliers">
 
-<title>Business Understanding – Pythia's Advice</title>
+<title>Data Understanding – Pythia's Advice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -52,8 +52,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../notebooks/02_data_understanding.html" rel="next">
-<link href="../notebooks/00_introduction.html" rel="prev">
+<link href="../notebooks/03_data_preparation.html" rel="next">
+<link href="../notebooks/01_business_understanding.html" rel="prev">
 <link href="../images/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -118,6 +118,32 @@ div.csl-indent {
 <script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
 
 <link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+<link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<link href="../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+
+<script src="../site_libs/datatables-binding-0.33/datatables.js"></script>
+
+<script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+<link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+
+<link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+
+<script src="../site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+
+<link href="../site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="../site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+
+<script src="../site_libs/d3-4.10.2/d3.min.js"></script>
+
+<link href="../site_libs/collapsibleTree-0.1.6/collapsibleTree.css" rel="stylesheet">
+
+<script src="../site_libs/collapsibleTree-binding-0.1.8/collapsibleTree.js"></script>
 
 
 
@@ -292,7 +318,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The ♥ of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/01_business_understanding.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Business Understanding</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The ♥ of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/02_data_understanding.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Understanding</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -304,15 +330,17 @@ div.csl-indent {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The ♥ of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/01_business_understanding.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Business Understanding</span></a></li></ol></nav>
-      <h1 class="title"><span id="sec-01-business-understanding" class="quarto-section-identifier"><span class="chapter-title">Business Understanding</span></span></h1>
-            <p class="subtitle lead">Why is forecasting important?</p>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The ♥ of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/02_data_understanding.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Understanding</span></a></li></ol></nav>
+      <h1 class="title"><span id="sec-02-data-understanding" class="quarto-section-identifier"><span class="chapter-title">Data Understanding</span></span></h1>
+            <p class="subtitle lead">what data is available and where it comes from</p>
                   <div>
         <div class="description">
           <ul>
-          <li>Forecasts are critical for end-to-end decision-making across sourcing, production, and delivery.</li>
-          <li>Inaccurate forecasts lead to costly outcomes such as stockouts, waste, and poor service.</li>
-          <li>Improving forecast accuracy boosts efficiency, customer satisfaction, and profitability.</li>
+          <li>SAP BI extracts serve as the foundation: article, customer, sales &amp; forecast data</li>
+          <li>Data was scoped to finished goods under Make-to-Stock with ambient storage</li>
+          <li>The modeling dataset is based on the top-performing MSO and A-class articles</li>
+          <li>Exploratory analysis confirmed temporal seasonality and product hierarchy depth</li>
+          <li>Data quality is high overall, with minimal missing values and no major outliers</li>
           </ul>
         </div>
       </div>
@@ -449,13 +477,13 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/01_business_understanding.html" class="sidebar-item-text sidebar-link active">
+  <a href="../notebooks/01_business_understanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Business Understanding</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/02_data_understanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/02_data_understanding.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Understanding</span></span></a>
   </div>
 </li>
@@ -584,24 +612,34 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-11-overview" id="toc-sec-11-overview" class="nav-link active" data-scroll-target="#sec-11-overview">Overview</a></li>
-  <li><a href="#sec-01-bu-why" id="toc-sec-01-bu-why" class="nav-link" data-scroll-target="#sec-01-bu-why">Why is Forecasting Important?</a>
+  <li><a href="#sec-02-identification" id="toc-sec-02-identification" class="nav-link active" data-scroll-target="#sec-02-identification">Identification of Data Sources</a>
   <ul class="collapse">
-  <li><a href="#sec-01-geographical" id="toc-sec-01-geographical" class="nav-link" data-scroll-target="#sec-01-geographical">Geographic Footprint and Production Model</a></li>
-  <li><a href="#sec-01-blossam" id="toc-sec-01-blossam" class="nav-link" data-scroll-target="#sec-01-blossam"><em>Blossam</em> Tea: an illustrative example</a></li>
+  <li><a href="#sec-02-articles" id="toc-sec-02-articles" class="nav-link" data-scroll-target="#sec-02-articles">Articles</a></li>
+  <li><a href="#sec-02-customers" id="toc-sec-02-customers" class="nav-link" data-scroll-target="#sec-02-customers">Customers</a></li>
+  <li><a href="#sec-02-sales" id="toc-sec-02-sales" class="nav-link" data-scroll-target="#sec-02-sales">Sales</a></li>
+  <li><a href="#sec-02-forecasts" id="toc-sec-02-forecasts" class="nav-link" data-scroll-target="#sec-02-forecasts">Forecasts</a></li>
   </ul></li>
-  <li><a href="#sec-01-stakeholder" id="toc-sec-01-stakeholder" class="nav-link" data-scroll-target="#sec-01-stakeholder">Stakeholder Use Cases</a></li>
-  <li><a href="#sec-01-bu-scope" id="toc-sec-01-bu-scope" class="nav-link" data-scroll-target="#sec-01-bu-scope">Scope of the Project</a></li>
-  <li><a href="#sec-01-problem-statement" id="toc-sec-01-problem-statement" class="nav-link" data-scroll-target="#sec-01-problem-statement">Problem Statement</a></li>
-  <li><a href="#sec-01-business-objectives" id="toc-sec-01-business-objectives" class="nav-link" data-scroll-target="#sec-01-business-objectives">Business Objectives</a>
+  <li><a href="#sec-02-data-collection" id="toc-sec-02-data-collection" class="nav-link" data-scroll-target="#sec-02-data-collection">Data Collection Report</a></li>
+  <li><a href="#sec-02-data-description" id="toc-sec-02-data-description" class="nav-link" data-scroll-target="#sec-02-data-description">Data Description Report</a>
   <ul class="collapse">
-  <li><a href="#sec-01-pythia-advice-system" id="toc-sec-01-pythia-advice-system" class="nav-link" data-scroll-target="#sec-01-pythia-advice-system">Pythia’s Advice: A System of Innovation</a></li>
+  <li><a href="#sec-02-data-description-metadata" id="toc-sec-02-data-description-metadata" class="nav-link" data-scroll-target="#sec-02-data-description-metadata">Metadata Overview</a></li>
+  <li><a href="#sec-02-data-description-fields" id="toc-sec-02-data-description-fields" class="nav-link" data-scroll-target="#sec-02-data-description-fields">Data fields</a></li>
   </ul></li>
-  <li><a href="#sec-01-forecast-process" id="toc-sec-01-forecast-process" class="nav-link" data-scroll-target="#sec-01-forecast-process">Forecast Process</a></li>
-  <li><a href="#sec-01-success-criteria" id="toc-sec-01-success-criteria" class="nav-link" data-scroll-target="#sec-01-success-criteria">Success Criteria</a></li>
-  <li><a href="#sec-01-summary" id="toc-sec-01-summary" class="nav-link" data-scroll-target="#sec-01-summary">Summary</a></li>
+  <li><a href="#sec-02-data-exploration" id="toc-sec-02-data-exploration" class="nav-link" data-scroll-target="#sec-02-data-exploration">Data Exploration Report</a>
+  <ul class="collapse">
+  <li><a href="#sec-02-eda-geography" id="toc-sec-02-eda-geography" class="nav-link" data-scroll-target="#sec-02-eda-geography">Geographic Distribution of Sales</a></li>
+  <li><a href="#sec-02-data-profiling" id="toc-sec-02-data-profiling" class="nav-link" data-scroll-target="#sec-02-data-profiling">Data Profiling</a></li>
+  <li><a href="#sec-02-data-description-hierarchy" id="toc-sec-02-data-description-hierarchy" class="nav-link" data-scroll-target="#sec-02-data-description-hierarchy">Article Hierachy</a></li>
+  <li><a href="#sec-02-data-description-hierarchy-customer" id="toc-sec-02-data-description-hierarchy-customer" class="nav-link" data-scroll-target="#sec-02-data-description-hierarchy-customer">Customer Hierarchy</a></li>
+  <li><a href="#sec-02-data-exploration-time-series" id="toc-sec-02-data-exploration-time-series" class="nav-link" data-scroll-target="#sec-02-data-exploration-time-series">Time Series Patterns</a></li>
+  </ul></li>
+  <li><a href="#sec-02-data-quality" id="toc-sec-02-data-quality" class="nav-link" data-scroll-target="#sec-02-data-quality">Data Quality Report</a>
+  <ul class="collapse">
+  <li><a href="#sec-02-data-quality-assessment" id="toc-sec-02-data-quality-assessment" class="nav-link" data-scroll-target="#sec-02-data-quality-assessment">Data Quality Assessment</a></li>
+  </ul></li>
+  <li><a href="#sec-02-summary" id="toc-sec-02-summary" class="nav-link" data-scroll-target="#sec-02-summary">Summary of Data Understanding</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/01_business_understanding.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/02_data_understanding.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -611,250 +649,797 @@ div.csl-indent {
 
 
 
-<section id="sec-11-overview" class="level2">
-<h2 class="anchored" data-anchor-id="sec-11-overview">Overview</h2>
-<p>This chapter provides a detailed look into the business context and challenges faced by <em>BioBalance</em>, a multi-channel FMCG company. We begin by illustrating why forecasting matters, using a real-life example (Blossam tea), followed by an overview of stakeholder-specific forecasting needs across departments.</p>
-<p>Next, we define the core business problem — the lack of an objective benchmark to evaluate manual forecast adjustments — and explain how this project aims to address that issue.</p>
-<p>We then introduce Pythia’s Advice, a parallel forecasting environment designed to quantify Forecast Value Added (FVA) and support more effective decision-making.</p>
-<p>Finally, we outline the current forecasting process and establish criteria to measure the success of this initiative.</p>
-</section>
-<section id="sec-01-bu-why" class="level2">
-<h2 class="anchored" data-anchor-id="sec-01-bu-why">Why is Forecasting Important?</h2>
-<!-- Contextualize the business problem and its forecasting relevance. -->
-<p>Accurate forecasting is essential for managing <em>BioBalance’s</em> portfolio of over 2.500 products, each with specific shelf-life requirements, sourcing constraints, and production lead times. Forecasts guide decisions across the entire supply chain — from procurement and production to distribution and inventory management.</p>
-<section id="sec-01-geographical" class="level3">
-<h3 class="anchored" data-anchor-id="sec-01-geographical">Geographic Footprint and Production Model</h3>
-<p><em>BioBalance</em> operates multiple production facilities and distribution centers across Europe, serving customers in various countries through both direct and indirect channels. As shown in <a href="#fig-01-bu-map" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>, these facilities are geographically distributed, and some products are produced in one country but sold in others.</p>
-<p>Due to long production and transportation lead times, combined with short customer order lead times, BioBalance follows a Make-to-Stock (MTS) strategy for most of its portfolio. Products must be manufactured and positioned in the supply chain ahead of actual demand. To support this, the Marketing and Sales Organizations (MSOs) place minimum order quantities (MOQs) in advance to cover expected demand for the upcoming weeks. An illustrative example of these goods flows is shown in Appendix <a href="11_business_understanding.html#fig-11-supplychain-goodsflow" class="quarto-xref">Figure&nbsp;<span>8.1</span></a>.</p>
-<p>As a result, accurate forecasting is essential to:</p>
-<ul>
-<li>Plan &amp; schedule production volumes and resources at the plants</li>
-<li>Balance inventory to avoid excess inventory or costly stockouts</li>
-<li>Strategic planning, create budgets and sales targets</li>
-</ul>
-<p>This operational model places forecasting at the core of supply chain responsiveness and profitability.</p>
-<div id="fig-01-bu-map" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-01-bu-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/bu_map.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1.1: Geographic footprint of BioBalance: production and distribution sites"><img src="../images/bu_map.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:8cm"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-01-bu-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.1: Geographic footprint of <em>BioBalance</em>: production and distribution sites
+<section id="sec-02-identification" class="level2">
+<h2 class="anchored" data-anchor-id="sec-02-identification">Identification of Data Sources</h2>
+<!-- Describe what data is available and where it comes from. -->
+<p>Table <a href="#tbl-02-data-sources" class="quarto-xref">Table&nbsp;<span>2.1</span></a> summarizes the data sources used in this project, detailing their type, time span, granularity, system of record (SoR), and content. All data is sourced from SAP BI, which extracts it from the underlying systems of record. The table also lists the specific SAP tables used for each data source.</p>
+<div id="tbl-02-data-sources" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-sources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.1: Overview of data sources used in the project<br>
+MD = Master Data, TD = Transaction Data
 </figcaption>
-</figure>
-</div>
-</section>
-<section id="sec-01-blossam" class="level3">
-<h3 class="anchored" data-anchor-id="sec-01-blossam"><em>Blossam</em> Tea: an illustrative example</h3>
-<p>The planning process for <em>Blossam Balance Tea</em> illustrates the complexity of forecasting across stages, see <a href="05_evaluation.html#fig-01-bu-why" class="quarto-xref">Figure&nbsp;<span>5.2</span></a>:</p>
-<div id="fig-01-bu-why" class="figure quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-01-bu-why-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<video src="../video/bu_why.mp4" controls="" autoplay="" muted="" loop="" width="640" playsinline="">
-</video>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-01-bu-why-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.2: Why forecasting? The forecast drives the business!
-</figcaption>
-</figure>
-</div>
-<p><strong>Make</strong>: The tea must be produced at least 3 months in advance, requiring short-term accuracy for production scheduling.</p>
-<p><strong>Source</strong>: Tea leaves are procured via contracts negotiated 12 months ahead, depending on long-term demand planning.</p>
-<p><strong>Deliver</strong>: Different sales channels impose distinct shelf-life expectations — premium retailers require over 180 days, while discounters accept 60 days but with lower margins.</p>
-<p>Failure to meet shelf-life constraints can result in:</p>
-<ul>
-<li>Out-Of-Stocks (OOS): Lost sales, penalties, and de-listing.</li>
-<li>Out-Of-Date (OOD): Product waste and write-offs.</li>
-</ul>
-<p>These challenges are not unique to <em>Blossam</em>; they apply across the full product range.</p>
-</section>
-</section>
-<section id="sec-01-stakeholder" class="level2">
-<h2 class="anchored" data-anchor-id="sec-01-stakeholder">Stakeholder Use Cases</h2>
-<!-- stakeholders. -->
-<p>The company’s forecasting requirements vary significantly across several key use cases.</p>
-<div id="fig-01-bu-who" class="figure quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-01-bu-who-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<video src="../video/bu_who.mp4" controls="" autoplay="" muted="" loop="" width="640" playsinline="">
-</video>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-01-bu-who-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.3: who uses the forecasts? varying requirements across several key use cases.
-</figcaption>
-</figure>
-</div>
+<div aria-describedby="tbl-02-data-sources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
-<caption>Forecast Use Cases by Department</caption>
 <thead>
 <tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Department</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Use Case</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Forecast Level</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Horizon</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Data Source</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Type</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Time-Span</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Granularity</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">SoR</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Table</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Content</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Central Sourcing</td>
-<td style="text-align: left;">Buying &amp; Production</td>
-<td style="text-align: left;">Article</td>
-<td style="text-align: left;">12 weeks</td>
+<td style="text-align: left;">article</td>
+<td style="text-align: left;">MD</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">SAP S4</td>
+<td style="text-align: left;">MARC</td>
+<td style="text-align: left;">article attr. &amp; hierachy</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Finance</td>
-<td style="text-align: left;">Transfer pricing</td>
-<td style="text-align: left;">Article</td>
-<td style="text-align: left;">6 quarters</td>
+<td style="text-align: left;">customer</td>
+<td style="text-align: left;">MD</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">SAP S4</td>
+<td style="text-align: left;">KNVV</td>
+<td style="text-align: left;">customer attr. hierachy</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Supply Planning</td>
-<td style="text-align: left;">Safety stock profiling</td>
-<td style="text-align: left;">Article * WH</td>
-<td style="text-align: left;">52 weeks</td>
+<td style="text-align: left;">sales</td>
+<td style="text-align: left;">TD</td>
+<td style="text-align: left;">&gt; 2020</td>
+<td style="text-align: left;">daily</td>
+<td style="text-align: left;">SAP S4</td>
+<td style="text-align: left;">LIPS</td>
+<td style="text-align: left;">customer orders + free-of-charge</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">MRP System</td>
-<td style="text-align: left;">Replenishment</td>
-<td style="text-align: left;">Article * WH</td>
-<td style="text-align: left;">104 weeks</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Marketing &amp; Sales</td>
-<td style="text-align: left;">Strategic planning</td>
-<td style="text-align: left;">Brand/Category</td>
-<td style="text-align: left;">12 months</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Key Accounts</td>
-<td style="text-align: left;">Negotiation &amp; target setting</td>
-<td style="text-align: left;">Category * Account</td>
-<td style="text-align: left;">6–12 months</td>
+<td style="text-align: left;">forecasts</td>
+<td style="text-align: left;">TD</td>
+<td style="text-align: left;">&gt; 2023</td>
+<td style="text-align: left;">monhtly</td>
+<td style="text-align: left;">QAD</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">monthly pre- &amp; post Demand review forecasts</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<p>A detailed overview is available in (<a href="11_business_understanding.html#sec-11-stakeholder" class="quarto-xref"><span>Stakeholder Use Cases</span></a>).</p>
-</section>
-<section id="sec-01-bu-scope" class="level2">
-<h2 class="anchored" data-anchor-id="sec-01-bu-scope">Scope of the Project</h2>
-<p>This research is limited to articles sold to customers (<strong>Finished Goods</strong>) that are <strong>MRP-relevant</strong> and planned under a <strong>Make-to-Stock</strong> strategy. Products with short shelf lives, requiring chilled storage and daily planning, are excluded due to their distinct planning characteristics.</p>
-<p>The study further focuses on the most commercially significant part of <em>BioBalance’s</em> operations: the Market Sales Organization (MSO) with the highest sales volume in 2024. This selection is based on the exploratory analysis presented in <a href="02_data_understanding.html#fig-02-eda-geography" class="quarto-xref">Figure&nbsp;<span>2.1</span></a> and ensures that the results are directly applicable to the area with the greatest business impact.</p>
-<p>Within this scope, we specifically target ambient products with a minimum shelf life of 60 days. These products are planned in weekly MRP cycles and forecasted using monthly time buckets. They represent the majority of <em>BioBalance’s</em> volume and align best with the strategic forecasting use cases addressed in this study.</p>
-</section>
-<section id="sec-01-problem-statement" class="level2">
-<h2 class="anchored" data-anchor-id="sec-01-problem-statement">Problem Statement</h2>
-<p>While <em>BioBalance</em> uses a flexible forecasting platform, its reliance on manual adjustments and subjective decision-making introduces inconsistency. Forecasting methods and aggregation levels are often chosen based on intuition and experience. Research shows, see <span class="citation" data-cites="article">(<a href="18_references.html#ref-article" role="doc-biblioref">Fildes &amp; Goodwin, 2007</a>)</span>, that small manual adjustments typically offer no benefit, whereas larger interventions—usually reductions—may significantly improve accuracy.</p>
-<p>Without an objective benchmark, it is impossible to determine whether these manual interventions improve accuracy or merely increase resource costs.</p>
-</section>
-<section id="sec-01-business-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="sec-01-business-objectives">Business Objectives</h2>
-<!-- define business objectives, What is the business's need? -->
-<p>This project aims to improve forecast accuracy and planning efficiency by introducing:</p>
-<ul>
-<li><p>A transparent, low-cost statistical benchmark.</p></li>
-<li><p>A decision-support tool to guide value-adding interventions.</p></li>
-<li><p>A scalable, consistent method applicable across different aggregation levels.</p></li>
-</ul>
-<p>These objectives align with <em>BioBalance’s</em> strategic priorities, which include:</p>
-<ol type="1">
-<li><p>Optimize safety stock levels.</p></li>
-<li><p>Reduce Out-Of-Stock (OOS) and Out-Of-Date (OOD) inventory.</p></li>
-<li><p>Improve customer service levels and reduce waste.</p></li>
-<li><p>Increase customer satisfaction through consistent availability.</p></li>
-</ol>
-<p>And ultimately increase profitability, as illustrated in <a href="#fig-01-bu-daps" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>, see <span class="citation" data-cites="demast2024">(<a href="18_references.html#ref-demast2024" role="doc-biblioref">Mast &amp; Lokkerbol, 2024</a>)</span>.</p>
-<div id="fig-01-bu-daps" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" data-fig-width="15cm" alt="DAPS">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-01-bu-daps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/flowdown.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;1.4: "><img src="../images/flowdown.png" class="img-fluid quarto-figure quarto-figure-left figure-img" data-fig-width="15cm" alt="DAPS"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-01-bu-daps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.4
-</figcaption>
 </figure>
 </div>
-<section id="sec-01-pythia-advice-system" class="level3">
-<h3 class="anchored" data-anchor-id="sec-01-pythia-advice-system">Pythia’s Advice: A System of Innovation</h3>
-<p>To support these goals, we introduce <strong>Pythia’s Advice</strong> — a parallel forecasting environment that runs alongside the production system. Named after the oracle of Delphi, it serves as a low-cost advisory layer that complements the existing forecasting system.</p>
-<p>Pythia’s Advice provides:</p>
-<ul>
-<li><p>A minimal-resource benchmark:<br>
-low-cost, automated forecast based on statistical models (e.g., ETS, HTS).</p></li>
-<li><p>An internal reference for calculating Forecast Value Added (FVA).</p></li>
-<li><p>A scalable, low-cost, open-source infrastructure.</p></li>
-</ul>
-<p>This environment was deliberately designed to operate in parallel, with read-only access to the production system. This avoids interference with business-critical forecasting workflows and eliminates the risk of disrupting day-to-day operations.</p>
-<p>Additionally, the project was developed under the constraint of limited access to business resources — both in terms of time and geographical availability. Demand planners and analysts needed to prioritize operational continuity, requiring the research to be conducted independently while still aligning with business realities.</p>
-<p>By working within these constraints, <strong>Pythia’s Advice</strong> enables experimentation and benchmarking without disrupting operations — providing a safe and scalable way to measure the value of forecast improvements. <strong>Pythia’s Advice</strong> is represented by the lower part of the Data-Analytic Problem Structure (DAPS), (<a href="#fig-01-bu-daps" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>).</p>
-</section>
-</section>
-<section id="sec-01-forecast-process" class="level2">
-<h2 class="anchored" data-anchor-id="sec-01-forecast-process">Forecast Process</h2>
-<!-- Business process mapping -->
-<p><em>BioBalance</em> relies on a third-party system that uses traditional statistical models (see Appendix <a href="11_business_understanding.html#tbl-11-stat-methods" class="quarto-xref">Table&nbsp;<span>8.1</span></a>). Figure <a href="#fig-01-bu-proc" class="quarto-xref">Figure&nbsp;<span>1.5</span></a> illustrates the forecasting steps demand planners follow. Although presented sequentially, these steps often require multiple iterations. Table <a href="#tbl-01-demand-planners-activities" class="quarto-xref">Table&nbsp;<span>1.1</span></a> provides a detailed breakdown.</p>
-<p><em>Pythia’s Advice</em> seeks to eliminate those iterations, enhancing both efficiency and forecast accuracy.</p>
-<div id="fig-01-bu-proc" class="figure quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-01-bu-proc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<video src="../video/bu_proc.mp4" controls="" autoplay="" muted="" loop="" width="640" playsinline="">
-</video>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-01-bu-proc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.5: The forecasting process: requiring human expertise.
-</figcaption>
-</figure>
-</div>
-<div id="tbl-01-demand-planners-activities" class="quarto-float quarto-figure quarto-figure-center anchored">
+<!-- PDF -->
+<!-- %>% -->
+<!--   footnote( -->
+<!--     general           = "MD = Master data, TD = Transaction Data", -->
+<!--     footnote_as_chunk = TRUE, -->
+<!--     threeparttable    = FALSE, -->
+<!--     escape            = FALSE -->
+<!--   ) -->
+<!-- Subsections: -->
+<section id="sec-02-articles" class="level3">
+<h3 class="anchored" data-anchor-id="sec-02-articles">Articles</h3>
+<p>The Article Master Data is extracted from <code>MARC</code> which contains Plant specific data, this is enhanced with sales organization specific data from <code>MVKE</code> and global article data from <code>MARA</code>, applied filters are shown in Table <a href="#tbl-02-data-sources-article-filters" class="quarto-xref">Table&nbsp;<span>2.2</span></a>.</p>
+<div id="tbl-02-data-sources-article-filters" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-01-demand-planners-activities-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1.1: Forecasting steps per forecast, Pythia’s Advice to improve efficiency.
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-sources-article-filters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.2: Article Master Data Filters<br>
+see <a href="01_business_understanding.html#sec-01-bu-scope" class="quarto-xref"><span>Scope of the Project</span></a> for reasons for article-filters.
 </figcaption>
-<div aria-describedby="tbl-01-demand-planners-activities-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-02-data-sources-article-filters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Article Master Data Filters</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">FIELD</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Filter</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">MARA-MTART</td>
+<td style="text-align: left;">HAWA; FERT; VOLL</td>
+<td style="text-align: left;">only finished goods</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MARA-STRGRP</td>
+<td style="text-align: left;">Z1</td>
+<td style="text-align: left;">only Make-to-Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MARC-DISMM</td>
+<td style="text-align: left;">ZC; ZD; ZG; ZH; ZI; ZJ; ZN; ZP</td>
+<td style="text-align: left;">only MRP relevant</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MARC-PERKZ</td>
+<td style="text-align: left;">W</td>
+<td style="text-align: left;">only Ambient</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-02-customers" class="level3">
+<h3 class="anchored" data-anchor-id="sec-02-customers">Customers</h3>
+<p>Customer Master Data is sourced from <code>KNVV</code>, which contains sales-organization-specific information, and is enriched with global attributes from <code>KNA1</code>. This includes customer classification fields such as type (e.g., internal, external, one-time customer, or employee). Customers flagged as employees are excluded from the analysis.</p>
+</section>
+<section id="sec-02-sales" class="level3">
+<h3 class="anchored" data-anchor-id="sec-02-sales">Sales</h3>
+<!-- Data filters applied (Doctype's, Item category, ...) -->
+<!-- exclude Promotion articles -->
+<p>Sales data is extracted from <code>LIPS</code>, which contains delivery records. Only completed deliveries which are goods-issued are taken into account.</p>
+<p>Table <a href="#tbl-02-data-sources-sales-filters" class="quarto-xref">Table&nbsp;<span>2.3</span></a> shows the applied filters to select standard sales orders and free-of-charge orders.</p>
+<div id="tbl-02-data-sources-sales-filters" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-sources-sales-filters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.3: Sales data filters
+</figcaption>
+<div aria-describedby="tbl-02-data-sources-sales-filters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Sales Data Filters</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Document Type</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Item Category</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">TA</td>
+<td style="text-align: left;">TAN; ZTAQ; YGF1</td>
+<td style="text-align: left;">standard sales orders</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">KB; ZDR</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">standard sales orders</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TA</td>
+<td style="text-align: left;">TANN; ZTNG</td>
+<td style="text-align: left;">free-of-charge orders</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">KL; ZFD</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">free-of-charge orders</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-important callout-titled" title="Fixed Planned Promotions are excluded">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fixed Planned Promotions are excluded
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Articles flagged in the Article Master data as Fixed Planned Promotions are excluded because they aren’t forecasted—instead, they’re delivered by contract and thus always achieve 100 % forecast accuracy.</p>
+</div>
+</div>
+</section>
+<section id="sec-02-forecasts" class="level3">
+<h3 class="anchored" data-anchor-id="sec-02-forecasts">Forecasts</h3>
+<p>Forecasts are generated monthly for each article–plant–customer combination, with a planning horizon of up to three years. For this research, the focus is on the year 2024, using a forecast horizon of up to 12 months. Consequently, only forecasts generated from 2023 onward are considered, see <a href="05_evaluation.html#fig-05-cv" class="quarto-xref">Figure&nbsp;<span>5.1</span></a> for visual illustration.</p>
+<p>Since forecasts are created both before and after the Demand Review, the dataset is split into two versions: <em>pre-Demand Review</em> and <em>post-Demand Review</em>. The pre-Demand Review forecasts are used for the initial analysis, while the post-Demand Review forecasts serve as the basis for final validation.</p>
+</section>
+</section>
+<section id="sec-02-data-collection" class="level2">
+<h2 class="anchored" data-anchor-id="sec-02-data-collection">Data Collection Report</h2>
+<!-- Summarize how data was obtained and any issues during acquisition: -->
+<p>Table <a href="#tbl-02-data-collection" class="quarto-xref">Table&nbsp;<span>2.4</span></a> summarizes the data collection process, including the data sources, types, extraction dates, record counts, file sizes, and keys used for each data set. The data is collected from the SAP system and stored in a structured format for further processing.</p>
+<p>Pre- and post-Demand Review forecasts are stored as separate files, one for each month in which they were created. Each file is named to reflect the extraction date.The key is essential for linking the data sets during analysis.</p>
+<div id="tbl-02-data-collection" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-collection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.4: Data Collection
+</figcaption>
+<div aria-describedby="tbl-02-data-collection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Demand planner</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Pythia Advises on</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Data Source</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Type</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Extract Date</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Records</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Size</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Files</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Key</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Prepares data, cleansing outliers, missed sales, promotions, and shortages.</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">article</td>
+<td style="text-align: left;">MD</td>
+<td style="text-align: left;">21-01-2025</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">1.691 KB</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Article</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Selects an aggregation level [L1-L5]</td>
-<td style="text-align: left;">Which aggregation level [L1–L5] to use</td>
+<td style="text-align: left;">customer</td>
+<td style="text-align: left;">MD</td>
+<td style="text-align: left;">21-01-2025</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">1.345 KB</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Customer</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Determines if time serie has seasonality and/or trend</td>
-<td style="text-align: left;">Strength of seasonality &amp; trend at each aggregation level</td>
+<td style="text-align: left;">sales</td>
+<td style="text-align: left;">TD</td>
+<td style="text-align: left;">21-01-2025</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">1.7 GB</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Date; Article; Plant; Customer</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Selects a forecasting method</td>
-<td style="text-align: left;">Which method of the traditional methods to use at each aggregation level</td>
+<td style="text-align: left;">forecasts</td>
+<td style="text-align: left;">TD</td>
+<td style="text-align: left;">21-01-2025</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">8.99 GB</td>
+<td style="text-align: left;">48</td>
+<td style="text-align: left;">Date; Article; Plant; CustHier3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-02-data-description" class="level2">
+<h2 class="anchored" data-anchor-id="sec-02-data-description">Data Description Report</h2>
+<!-- Descriptive overview of structure and metadata: Open Hub definition -->
+<!-- Variable types (date, categorical, numeric) -->
+<!-- Dimensions (rows × columns) -->
+<!-- Target variable (e.g., sales units, net revenue) -->
+<section id="sec-02-data-description-metadata" class="level3">
+<h3 class="anchored" data-anchor-id="sec-02-data-description-metadata">Metadata Overview</h3>
+<p>Table <span class="quarto-unresolved-ref">?tbl-02-data-description-meta</span> gives a sample of the datasets file name, extension, type of data and date of extraction. A detailed overview of all fields is provided in the appendix, <span class="quarto-unresolved-ref">?tbl-12-data-description-meta</span>.</p>
+<p>::: {tbl-02-data-description-meta .table}</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Data Loads</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">OHDEST</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">FILEEXTERN</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">TYPE</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">DATE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">MD_MATERIAL.CSV</td>
+<td style="text-align: left;">MD</td>
+<td style="text-align: left;">2024-01-10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">MD_SOLD_TO_CUSTOMER.CSV</td>
+<td style="text-align: left;">MD</td>
+<td style="text-align: left;">2024-01-10</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Fine-tunes parameters</td>
-<td style="text-align: left;">Model parameters (α, β, γ, δ) at each aggregation level</td>
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">SDSFRPR1.csv</td>
+<td style="text-align: left;">ACT</td>
+<td style="text-align: left;">2025-01-20</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Simulates results</td>
-<td style="text-align: left;">Impact of manual adjustments by providing an unadjusted forecast</td>
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">SDSFRPR1.csv</td>
+<td style="text-align: left;">ACT</td>
+<td style="text-align: left;">2025-01-19</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>meta data on data extraction :::</p>
+</section>
+<section id="sec-02-data-description-fields" class="level3">
+<h3 class="anchored" data-anchor-id="sec-02-data-description-fields">Data fields</h3>
+<p>Table <a href="#tbl-02-data-description" class="quarto-xref">Table&nbsp;<span>2.5</span></a> gives a sample of the dataset fields, including names, data types, key flags, conversion routines, and hierarchy levels. A detailed overview of all fields is provided in the appendix, <a href="12_data_understanding.html#tbl-12-data-description" class="quarto-xref">Table&nbsp;<span>9.1</span></a>.</p>
+<div id="tbl-02-data-description" class="table quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-description-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.5: sample of overview of all data set fields.
+</figcaption>
+<div aria-describedby="tbl-02-data-description-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Data Description</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">OHDEST</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">POSIT</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">FIELDNM</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">TXTLG</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">KEYFLAG</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">DATATYPE</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">LENG</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">CONVEXIT</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">DECIMALS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0001</td>
+<td style="text-align: left;">CUSTOMER</td>
+<td style="text-align: left;">Customer number</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000010</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0001</td>
+<td style="text-align: left;">MATERIAL</td>
+<td style="text-align: left;">Material</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000018</td>
+<td style="text-align: left;">MATN1</td>
+<td style="text-align: left;">000000</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Adjusts or override forecasts manually</td>
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0004</td>
+<td style="text-align: left;">ACCNT_ASGN_TSH</td>
+<td style="text-align: left;">ACCNT_ASGN_TSH</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000020</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Data Description</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Data Source</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Date</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Categorical</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Numeric</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">article</td>
 <td style="text-align: left;"></td>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Distributes the forecast Top-Down</td>
+<td style="text-align: left;">customer</td>
 <td style="text-align: left;"></td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sales</td>
+<td style="text-align: left;">Day</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">forecasts</td>
+<td style="text-align: left;">Month</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Sales &amp; Forecast metadata</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">FIELD</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">TYPE</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">KEY</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">MEANING</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">SALESORG</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Marketing &amp; Sales Organization</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PLANT</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">Distribution Center</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MATERIAL</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">Article Number</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STEP</td>
+<td style="text-align: left;">NUM</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Months between VERSMON and CALMONTH</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CALMONTH</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">Month ofActuals or Forecast</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">VERSMON</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">Forecast creation Month</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">FTYPE</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Pre- [1] or Post- [2] Demand Review</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">VTYPE</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Indicator Sales [010] or Forecast [060]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Q</td>
+<td style="text-align: left;">NUM</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Quanity Sold in Base Units</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Sales &amp; Forecast Fields, Unique Count and Example</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">FLDNM</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">UCOUNT</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">RATIO</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">EXAMP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Q</td>
+<td style="text-align: left;">255181</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0/0.00499999988824129/0.00800000037997961/0.0120000001043081/0.0140000004321337/0.0209999997168779/0.0219999998807907/0.0240000002086163/0.0280000008642673/0.031000001472421</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">MATERIAL</td>
+<td style="text-align: left;">960</td>
+<td style="text-align: left;">351</td>
+<td style="text-align: left;">000000000000000433/000000000000000434/000000000000001302/000000000000001919/000000000000001920/000000000000002100/000000000000002102/000000000000002108/000000000000010023/000000000000010526</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">VERSMON</td>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">13482</td>
+<td style="text-align: left;">202301/202302/202303/202304/202305/202306/202307/202308/202309/202310</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">CALMONTH</td>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">14654</td>
+<td style="text-align: left;">202302/202303/202304/202305/202306/202307/202308/202309/202310/202311</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">STEP</td>
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">17740</td>
+<td style="text-align: left;">-1/1/2/3/4/5/6/7/8/9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">FTYPE</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">168526</td>
+<td style="text-align: left;">1/2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">VTYPE</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">168526</td>
+<td style="text-align: left;">010/060</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">PLANT</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">337051</td>
+<td style="text-align: left;">FR30</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">SALESORG</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">337051</td>
+<td style="text-align: left;">FR30</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-02-data-exploration" class="level2">
+<h2 class="anchored" data-anchor-id="sec-02-data-exploration">Data Exploration Report</h2>
+<!-- Exploratory analyses & sanity checks   -->
+<!-- statistical properties and metadata. -->
+<!-- Initial exploration to spot trends, seasonality, outliers, and segmentation patterns. -->
+<!-- Subsections (as needed): -->
+<!-- Sales coverage: distribution over time -->
+<!-- ABC/XYZ, CV, zero-counts, sales length -->
+<!-- Temporal patterns (weekly/monthly seasonality, trend, events) -->
+<!-- Cross-sectional: contribution per customer/product/channel -->
+<!-- exclude units pak and DS   -->
+<section id="sec-02-eda-geography" class="level3">
+<h3 class="anchored" data-anchor-id="sec-02-eda-geography">Geographic Distribution of Sales</h3>
+<div id="fig-02-eda-geography" class="figure quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-02-eda-geography-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="02_data_understanding_files/figure-html/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;2.1: Scoping the analysis to Valbio et Compagnie, which accounts for 49.36 % of total sales in 2024."><img src="02_data_understanding_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="576"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-02-eda-geography-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: Scoping the analysis to Valbio et Compagnie, which accounts for 49.36 % of total sales in 2024.
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>For modeling purposes, the data was scoped to A-class articles based on ABC classification.<br>
+See <a href="03_data_preparation.html#sec-03-abc">ABC Analysis and Scope Definition</a> for details.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-02-data-profiling" class="level3">
+<h3 class="anchored" data-anchor-id="sec-02-data-profiling">Data Profiling</h3>
+<section id="sec-02-data-profiling-ca" class="level4">
+<h4 class="anchored" data-anchor-id="sec-02-data-profiling-ca">Character Variables</h4>
+<p>Table <a href="12_data_understanding.html#tbl-02-data-profiling-ca" class="quarto-xref">Table&nbsp;<span>9.2</span></a> shows the data profiling results for the dataset, including the number of missing values, completeness rate, minimum and maximum length for character variables. The profiling helps identify data quality issues and provides insights into the structure of the dataset.</p>
+<div id="tbl-02-data-profiling-ca" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-profiling-ca-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.6: Data Profiling: Character Variables
+</figcaption>
+<div aria-describedby="tbl-02-data-profiling-ca-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">variable</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">n_missing</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">complete_rate</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">min_length</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">max_length</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">empty</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">n_unique</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">whitespace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">SALESORG</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PLANT</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MATERIAL</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">960</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CALMONTH</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">VERSMON</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FTYPE</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">VTYPE</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>This data set is of high quality and doesn’t need any further analysis on the character variables.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-02-data-profiling-nu" class="level4">
+<h4 class="anchored" data-anchor-id="sec-02-data-profiling-nu">Numeric Variables</h4>
+<p>Table <a href="12_data_understanding.html#tbl-02-data-profiling-nu" class="quarto-xref">Table&nbsp;<span>9.3</span></a> shows the data profiling results for the numeric variables in the dataset, including mean, standard deviation, and percentiles. The histogram column provides a visual representation of the distribution of each numeric variable.</p>
+<div id="tbl-02-data-profiling-nu" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-profiling-nu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.7: Data Profiling: Numeric Variables
+</figcaption>
+<div aria-describedby="tbl-02-data-profiling-nu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">variable</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">mean</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">sd</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">p0</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">p25</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">p50</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">p75</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">p100</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">histogram</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STEP</td>
+<td style="text-align: left;">6.977351e+00</td>
+<td style="text-align: left;">4.982611e+00</td>
+<td style="text-align: left;">-1</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">6.000</td>
+<td style="text-align: left;">11.00</td>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">▆▇▆▅▂</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q</td>
+<td style="text-align: left;">1.399937e+05</td>
+<td style="text-align: left;">2.025050e+07</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1560</td>
+<td style="text-align: left;">6838.757</td>
+<td style="text-align: left;">19474.78</td>
+<td style="text-align: left;">3573785444</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
 </tbody>
 </table>
@@ -869,28 +1454,127 @@ Table&nbsp;1.1: Forecasting steps per forecast, Pythia’s Advice to improve eff
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>The initial scope of the project is to share the unadjusted forecast and its resulting accuracy with demand planners as a benchmark. This lets them see the impact of their manual adjustments and provides a foundation for continuous improvement.</p>
-<p><em>Building trust must come first before moving on to subsequent steps.</em><br>
-<strong>TRUST is all you need</strong></p>
+<p>We see that the Quantity (Q) needs some further analysis due to outliers.</p>
 </div>
 </div>
 </div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="02_data_understanding_files/figure-html/unnamed-chunk-11-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="02_data_understanding_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<!-- } else { -->
+<!--   dtMATL_sk %>% -->
+<!--     kable("latex", booktabs = TRUE, caption = "Variable Description Report") %>% -->
+<!--     kable_styling(latex_options = c("striped", "hold_position"), full_width = FALSE) -->
+<!-- } -->
 </section>
-<section id="sec-01-success-criteria" class="level2">
-<h2 class="anchored" data-anchor-id="sec-01-success-criteria">Success Criteria</h2>
-<p>The success of this project will be measured by:</p>
+</section>
+<section id="sec-02-data-description-hierarchy" class="level3">
+<h3 class="anchored" data-anchor-id="sec-02-data-description-hierarchy">Article Hierachy</h3>
+<p>Table <a href="12_data_understanding.html#tbl-02-data-description-hierarchy-article" class="quarto-xref">Table&nbsp;<span>9.4</span></a> summarizes the 4-levels of the article hierarchy by a unique count per level. Roughly,</p>
 <ul>
-<li><p>A measurable increase in forecast accuracy (RSME and reduced bias)</p></li>
-<li><p>Reduced time and effort spent on non-value-adding manual adjustments</p></li>
-<li><p>Improved inventory KPIs (lower OOS/OOD rates)</p></li>
-<li><p>Consistent forecasts across aggregation levels</p></li>
-<li><p>Positive feedback from planners and stakeholders</p></li>
+<li>each Family contains roughly 18 articles.</li>
+<li>each Sub Category contains roughly 4 families.</li>
 </ul>
+<div id="tbl-02-data-description-hierarchy-article" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-description-hierarchy-article-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.8: Summary: Article Hierachy
+</figcaption>
+<div aria-describedby="tbl-02-data-description-hierarchy-article-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-5aeaf563648377a2c284" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-5aeaf563648377a2c284">{"x":{"filter":"none","vertical":false,"data":[["Animal based product","Bread and Bakery","Bread and Biscuit Al","Breakfast Cereals","Dairy Alternatives","Functional Foods","Hot Drinks","Juices and Cold Drin","Meals and Meal compo","Non category specifi","Others","Sweet Spreads, Puree","Sweets in Between"],[4,2,3,1,5,2,3,2,9,4,3,6,4],[22,5,9,6,24,12,14,6,44,4,9,13,16],[145,34,106,152,633,30,821,121,840,25,73,264,448]],"container":"<table class=\"stripe hover compact\">\n  <thead>\n    <tr>\n      <th>ProdCat<\/th>\n      <th>SubCat_Count<\/th>\n      <th>Family_Count<\/th>\n      <th>Article_Count<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"searching":false,"info":false,"ordering":true,"lengthChange":false,"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[1,2,3]},{"name":"ProdCat","targets":0},{"name":"SubCat_Count","targets":1},{"name":"Family_Count","targets":2},{"name":"Article_Count","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p>The following interactive chart allows to explore the hierarchy by clicking on the nodes to expand or collapse them.</p>
+<div id="fig-inter_active_article_hier" class="figure quarto-float quarto-figure quarto-figure-center anchored" width="15cm">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inter_active_article_hier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-85639acbf7bb8ec29fbe" style="width:100%;height:600px;" class="collapsibleTree html-widget"></div>
+<script type="application/json" data-for="htmlwidget-85639acbf7bb8ec29fbe">{"x":{"data":{"name":"Articles","children":[{"name":"Sweets in Between","children":[{"name":"Biscuits","children":[{"name":"Biscuits (Plain)"},{"name":"Biscuits with fruits"},{"name":"Biscuits others"},{"name":"Biscuits with chocol"},{"name":"Pastry"},{"name":"Viennoiserie"},{"name":"Sandwich biscuits"}]},{"name":"Bars","children":[{"name":"Cereal bars"},{"name":"Fruit bars"},{"name":"Seed Bars"},{"name":"Nut bars"},{"name":"Functional bars"}]},{"name":"Chocolate","children":[{"name":"Chocolate bars"}]},{"name":"Cakes","children":[{"name":"Macaroons"},{"name":"Individual Cakes"},{"name":"Sharing Cakes"}]}]},{"name":"Hot Drinks","children":[{"name":"Tea","children":[{"name":"Green tea"},{"name":"Infusion Tea"},{"name":"Other Tea"},{"name":"Loose tea"},{"name":"Black Tea"},{"name":"White Tea"},{"name":"Instant Tea"}]},{"name":"Coffee","children":[{"name":"Instant coffee"},{"name":"Roast and Ground Cof"},{"name":"Coffee beans"},{"name":"Coffee pods"}]},{"name":"Other Hot drinks","children":[{"name":"Powdered milk"},{"name":"Hot Chocolate"},{"name":"Coffee substitutes"}]}]},{"name":"Dairy Alternatives","children":[{"name":"Dairy Alternative Dr","children":[{"name":"Soy drinks"},{"name":"Rice drinks"},{"name":"Oat drinks"},{"name":"Almond drinks"},{"name":"Other dairy alternat"},{"name":"Spelt drinks"},{"name":"Coconut drinks"},{"name":"Millet drinks"},{"name":"Hazelnut drinks"},{"name":"Cashew drinks"}]},{"name":"Dairy Alternative Cu","children":[{"name":"Other culinary aids"},{"name":"Oat culinary aids"},{"name":"Almond culinary aids"},{"name":"Coconut culinary aid"},{"name":"Soy culinary aids"},{"name":"Rice culinary aids"}]},{"name":"Dairy Alternatives D","children":[{"name":"Non dairy desserts"},{"name":"Non dairy ice cream"}]},{"name":"Dairy Alternatives o","children":[{"name":"Vegetable margarine"},{"name":"Non dairy cheese"}]},{"name":"Dairy Alternatives Y","children":[{"name":"Coconut  DA yoghurts"},{"name":"Oat DA yoghurts"},{"name":"Almond DA yoghurts"},{"name":"Other  DA yoghurts"}]}]},{"name":"Breakfast Cereals","children":[{"name":"Breakfast Cereals","children":[{"name":"Crunchy"},{"name":"Muesli"},{"name":"Extruded/puffed cere"},{"name":"Porridge"},{"name":"Flakes"},{"name":"Other breakfast cere"}]}]},{"name":"Bread and Biscuit Al","children":[{"name":"Cereal Cakes","children":[{"name":"Other Cereal Cakes P"},{"name":"Rice Cakes Plain"},{"name":"Rice Cakes Coated"},{"name":"Other Cereal Cakes C"},{"name":"Rice Cakes Flavoured"},{"name":"Other Cereal Cakes F"}]},{"name":"Crispy Breads","children":[{"name":"Toasted bread"}]},{"name":"Other Bread replacer","children":[{"name":"Crackers"},{"name":"Other Bread replacer"}]}]},{"name":"Meals and Meal compo","children":[{"name":"Savoury Spreads","children":[{"name":"Vegetarian pates(yea"},{"name":"Other savoury spread"},{"name":"Vegetarian Lard"},{"name":"Creamy Spreads"},{"name":"Vegetable spreads"},{"name":"Lentil/Protein sprea"},{"name":"Meat alternative spr"},{"name":"Cheese alternative s"},{"name":"Deli salads spreads"}]},{"name":"Soups and bouillons","children":[{"name":"Soups"},{"name":"Instant soup"}]},{"name":"Delicacies","children":[{"name":"Sauces"},{"name":"Chilled dips and spr"},{"name":"Chilled pasta"},{"name":"Chilled Quenelles"},{"name":"Dough (chilled)"},{"name":"Pancakes"},{"name":"Other delicacies"}]},{"name":"Ready Meals","children":[{"name":"Cereal meals"},{"name":"Other Ready meals"}]},{"name":"Pasta, rice and cere","children":[{"name":"Rice"},{"name":"Other cooking cereal"},{"name":"Pasta"},{"name":"Potato flakes"}]},{"name":"Meat analogues","children":[{"name":"Meat like meat subst"},{"name":"Non meat like meat s"}]},{"name":"Cooking sauces","children":[{"name":"Warm cooking sauces"},{"name":"Pasta sauces"},{"name":"Sauce concentrates"}]},{"name":"Canned and Frozen Ve","children":[{"name":"Prepared vegetables"},{"name":"Vegetable (frozen)"}]},{"name":"Cooking aids and mea","children":[{"name":"Other meal component"},{"name":"Stocks"},{"name":"Salt"},{"name":"Cold condiment sauce"},{"name":"Oil"},{"name":"Other cooking aids"},{"name":"Vinegar"},{"name":"Pickles"},{"name":"Mustard"},{"name":"Mayonnaise"},{"name":"Gravies"},{"name":"Seasonings and taste"},{"name":"Specialty cooking ai"}]}]},{"name":"Sweet Spreads, Puree","children":[{"name":"Fruit spreads","children":[{"name":"Fruit spreads"},{"name":"Other sweet spreads"}]},{"name":"Honey","children":[{"name":"Pure Honey"}]},{"name":"Nut spreads","children":[{"name":"Nut spreads"}]},{"name":"Sweeteners","children":[{"name":"Agave syrup"},{"name":"Sugar"},{"name":"Fructose"},{"name":"Other sweeteners"}]},{"name":"Chocolate Spreads","children":[{"name":"Chocolate spreads"}]},{"name":"Compote, Pureees, Sa","children":[{"name":"Purees"},{"name":"Compote"},{"name":"Fruit sauces"},{"name":"Other Prepared fruit"}]}]},{"name":"Functional Foods","children":[{"name":"Food supplements","children":[{"name":"Functional oils"},{"name":"Beer yeast"},{"name":"Other food supplemen"},{"name":"Digestion and transi"},{"name":"Slimming Food Supple"},{"name":"Vitamins and Mineral"},{"name":"Wheat germ"},{"name":"Cardio system care a"},{"name":"Vitality Food Supple"}]},{"name":"Slimming Foods","children":[{"name":"Meal substitutes oth"},{"name":"Hi protein salted po"},{"name":"Slimming Aids others"}]}]},{"name":"Non category specifi","children":[{"name":"Packaging-, producti","children":[{"name":"Packaging-, producti"}]},{"name":"Promotion materials","children":[{"name":"Other promotion mate"}]},{"name":"Byproducts","children":[{"name":"By products"}]},{"name":"Raw materials","children":[{"name":"Raw materials"}]}]},{"name":"Juices and Cold Drin","children":[{"name":"Juices","children":[{"name":"Fruit juice"},{"name":"Vegetable juice"},{"name":"Other juices"},{"name":"Fruit and vegetable"},{"name":"Fruit syrup"}]},{"name":"Cold Drinks","children":[{"name":"Soft drinks"}]}]},{"name":"Bread and Bakery","children":[{"name":"Bread products","children":[{"name":"Specialty Bread"},{"name":"Bread"}]},{"name":"Bakery and dessert p","children":[{"name":"Flour"},{"name":"Cake mix"},{"name":"Cooking Aids for Pas"}]}]},{"name":"Others","children":[{"name":"Savoury In Between","children":[{"name":"Other Savoury In Bet"},{"name":"Salted Snacks"},{"name":"Crisps"},{"name":"Savoury biscuits"}]},{"name":"Alcoholic drinks","children":[{"name":"Other alcoholic drin"}]},{"name":"Dried fruits and see","children":[{"name":"Seeds bags"},{"name":"Dried fruits bags"},{"name":"Nuts bags"},{"name":"Other dried fruits a"}]}]},{"name":"Animal based product","children":[{"name":"Meat products","children":[{"name":"Chicken"},{"name":"Canned meat"},{"name":"Cured meat"},{"name":"Foreign Cured meat"},{"name":"Sausages"}]},{"name":"Dairy products","children":[{"name":"Cream"},{"name":"Butter"},{"name":"Other Cheese"},{"name":"Cow milk"},{"name":"Cheese with cow milk"},{"name":"Cheese with ewe milk"},{"name":"Cheese with goat mil"},{"name":"Yogurt with cow milk"},{"name":"Yogurt with ewe milk"},{"name":"Dairy dessert with c"},{"name":"Dairy dessert with e"}]},{"name":"Seafood","children":[{"name":"Salmon"},{"name":"Canned fish"},{"name":"Other seafood"},{"name":"Smoked fish"}]},{"name":"Eggs","children":[{"name":"Eggs medium (53-63g)"},{"name":"Eggs large (63-73g)"}]}]}]},"options":{"hierarchy":["ProdCat","SubCat","Family"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":true,"zoomable":true,"margin":{"top":20,"bottom":20,"left":65,"right":125},"fill":"#38e56d"}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>Interactive Article Hierarchy, click on the nodes to expand or collapse them.</p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-inter_active_article_hier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2
+</figcaption>
+</figure>
+</div>
 </section>
-<section id="sec-01-summary" class="level2">
-<h2 class="anchored" data-anchor-id="sec-01-summary">Summary</h2>
-<p>In summary, this chapter defined the business context, stakeholders, and objectives that guide the rest of this project. The next phase, Data Understanding, explores the availability, quality, and suitability of the data used to support these forecasting use cases.</p>
-<!-- {{< include 01_business_understanding_def.qmd >}} -->
+<section id="sec-02-data-description-hierarchy-customer" class="level3">
+<h3 class="anchored" data-anchor-id="sec-02-data-description-hierarchy-customer">Customer Hierarchy</h3>
+<p>Table <a href="12_data_understanding.html#tbl-02-data-description-hierarchy-customer" class="quarto-xref">Table&nbsp;<span>9.5</span></a> summarizes the 4-levels of the customer hierarchy by a unique count per level. Roughly:</p>
+<ul>
+<li>each Family contains roughly 5 customers</li>
+<li>each Account contains roughly 2 sold-to parties</li>
+<li>each Key Account contains roughly 3 accounts,</li>
+</ul>
+<div id="tbl-02-data-description-hierarchy-customer" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-description-hierarchy-customer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.9: Summary: Customer Hierachy
+</figcaption>
+<div aria-describedby="tbl-02-data-description-hierarchy-customer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-c220a257212243166acd" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-c220a257212243166acd">{"x":{"filter":"none","vertical":false,"data":[["Discounter","Divers","Export","Grocery","Health &amp; Food Stores","Intercompany","Other","Out Of Home","Retail","Wholesale","e-Commerce"],[11,4,12,53,31,19,28,18,6,4,2],[12,4,60,99,76,25,72,48,35,17,15],[22,4,60,107,142,20,139,79,79,50,15],[76,70,167,171,1723,33,231,172,666,52,21]],"container":"<table class=\"stripe hover compact\">\n  <thead>\n    <tr>\n      <th>Channel<\/th>\n      <th>KAM_count<\/th>\n      <th>ACC_Count<\/th>\n      <th>SoldTo_Count<\/th>\n      <th>Customer_Count<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"searching":false,"info":false,"ordering":true,"lengthChange":false,"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[1,2,3,4]},{"name":"Channel","targets":0},{"name":"KAM_count","targets":1},{"name":"ACC_Count","targets":2},{"name":"SoldTo_Count","targets":3},{"name":"Customer_Count","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-02-data-exploration-time-series" class="level3">
+<h3 class="anchored" data-anchor-id="sec-02-data-exploration-time-series">Time Series Patterns</h3>
+<p>let’s explore the time series patterns per category</p>
+<p>the hot drinks category exhibits strong seasonality, as tea consumption increases during winter.</p>
+<p>Seasonality or trend plot Using Time series features, categories can be automatically classified</p>
+<p>in the upper left corner, Clipper hot again, demonstrating the expected seasonality-strength.</p>
+</section>
+</section>
+<section id="sec-02-data-quality" class="level2">
+<h2 class="anchored" data-anchor-id="sec-02-data-quality">Data Quality Report</h2>
+<!-- Assess data integrity and readiness for modeling. -->
+<!-- Subsections: -->
+<!-- Missing values (which variables, how much, patterns) -->
+<!-- Consistency checks (e.g., units vs revenue) -->
+<!-- Duplicated records -->
+<!-- Outliers: any anomalous spikes or drops? -->
+<section id="sec-02-data-quality-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="sec-02-data-quality-assessment">Data Quality Assessment</h3>
+<!-- Assessment: What issues were found (missing values, outliers, etc.) -->
+<!-- Data Quality Assessment and Remediation -->
+<!-- Summarize actions taken: -->
+<!-- Imputation strategies -->
+<!-- Exclusions (e.g., rare SKUs or obsolete accounts) -->
+<p>all 0 duplicates, zero quantity, unexpected NAs</p>
+<p><strong>Actions taken:</strong> <!-- Any exclusions or imputations --> <!-- Summarize actions taken: --></p>
+</section>
+</section>
+<section id="sec-02-summary" class="level2">
+<h2 class="anchored" data-anchor-id="sec-02-summary">Summary of Data Understanding</h2>
+<ul>
+<li>The dataset combines master and transactional data from SAP BI and QAD systems.</li>
+<li>Sales and forecasts are scoped to a single MSO and A-class finished goods.</li>
+<li>Product and customer hierarchies follow a consistent four-level structure.</li>
+<li>Exploratory analysis confirms sufficient data volume, patterns, and quality.</li>
+<li>The data is now ready for scoping, transformation, and modeling.</li>
+</ul>
+<!-- {{< include 02_data_understanding_def.qmd >}} -->
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
@@ -1489,13 +2173,13 @@ Zhu, H. (2024). <em>kableExtra: Construct complex table with ’kable’ and pip
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notebooks/00_introduction.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      <a href="../notebooks/01_business_understanding.html" class="pagination-link" aria-label="Business Understanding">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Business Understanding</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notebooks/02_data_understanding.html" class="pagination-link" aria-label="Data Understanding">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Understanding</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notebooks/03_data_preparation.html" class="pagination-link" aria-label="Data Preparation">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Preparation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1507,7 +2191,7 @@ Zhu, H. (2024). <em>kableExtra: Construct complex table with ’kable’ and pip
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/01_business_understanding.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/02_data_understanding.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p><a href="https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai">EAISI</a></p>
 </div>

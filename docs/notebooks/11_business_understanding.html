@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-06-02">
-<meta name="description" content="Effective business planning depends on accurate and consistent forecasts across different levels of aggregation, granularity, and time horizons. Producing such forecasts is inherently complex, requiring a diverse set of resources — including commercial forecasting engines, high-quality data, hardware, software, and human expertise.A key challenge lies in balancing the benefits of improved forecast accuracy against the costs of deploying these additional resources. To evaluate this trade-off, it is essential to first establish the level of accuracy that can be achieved with minimal input. The Forecast Value Added (FVA) is defined as the difference between the accuracy achieved by the business and that obtained using a minimal-resource benchmark. Ideally, the costs invested in enhancing forecast accuracy should be justified by a proportional gain in FVA.To assess this cost-benefit relationship without disrupting day-to-day operations, we developed a parallel forecasting environment — a system of innovation — that operates alongside the production forecasting system. This environment uses state-of-the-art, open-source forecasting tools that are freely available, enabling us to establish an internal benchmark for evaluating both performance and efficiency.This system of innovation allows us to explore a wide range of forecasting methods, from simple statistical models to more advanced hierarchical techniques. Hierarchical forecasting is particularly valuable for generating consistent forecasts across different levels of aggregation, tailored to specific business use cases.In this study, we aim to quantify the Forecast Value Added and assess the forecast accuracy of various statistical approaches, including hierarchical methods. Given the wide variety of products (SKUs) and their differing levels of importance, we scope our analysis to focus on the top 20% of products, which account for 80% of total sales. This targeted approach enables us to concentrate on the most impactful items, while still providing insights that can be generalized to the broader product portfolio.">
+<meta name="dcterms.date" content="2025-06-04">
+<meta name="description" content="Forecasts are critical for end-to-end decision-making across sourcing, production, and delivery.Inaccurate forecasts lead to costly outcomes such as stockouts, waste, and poor service.Improving forecast accuracy boosts efficiency, customer satisfaction, and profitability.">
 
-<title>Introduction – Pythia's Advice</title>
+<title>Business Understanding – Pythia's Advice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -52,8 +52,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../notebooks/01_business_understanding.html" rel="next">
-<link href="../setting_the_stage.html" rel="prev">
+<link href="../notebooks/12_data_understanding.html" rel="next">
+<link href="../notebooks/17_crisp-dm.html" rel="prev">
 <link href="../images/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -112,36 +112,11 @@ div.csl-indent {
         color: #FFFFFF;
       }
 </style>
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
+
 
 </head>
 
@@ -314,7 +289,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The ♥ of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">Introduction</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/17_crisp-dm.html">Appendix</a></li><li class="breadcrumb-item"><a href="../notebooks/11_business_understanding.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Business Understanding</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -326,16 +301,16 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The ♥ of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">Introduction</a></li></ol></nav>
-      <h1 class="title"><span id="sec-00-introduction" class="quarto-section-identifier">Introduction</span></h1>
-            <p class="subtitle lead">TRUST - is all you need!</p>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/17_crisp-dm.html">Appendix</a></li><li class="breadcrumb-item"><a href="../notebooks/11_business_understanding.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Business Understanding</span></a></li></ol></nav>
+      <h1 class="title"><span id="sec-11-business-understanding" class="quarto-section-identifier"><span class="chapter-title">Business Understanding</span></span></h1>
+            <p class="subtitle lead">Why is forecasting important?</p>
                   <div>
         <div class="description">
-          <p>Effective business planning depends on accurate and consistent forecasts across different levels of aggregation, granularity, and time horizons. Producing such forecasts is inherently complex, requiring a diverse set of resources — including commercial forecasting engines, high-quality data, hardware, software, and human expertise.</p>
-          <p>A key challenge lies in balancing the benefits of improved forecast accuracy against the costs of deploying these additional resources. To evaluate this trade-off, it is essential to first establish the level of accuracy that can be achieved with minimal input. The Forecast Value Added (FVA) is defined as the difference between the accuracy achieved by the business and that obtained using a minimal-resource benchmark. Ideally, the costs invested in enhancing forecast accuracy should be justified by a proportional gain in FVA.</p>
-          <p>To assess this cost-benefit relationship without disrupting day-to-day operations, we developed a parallel forecasting environment — a system of innovation — that operates alongside the production forecasting system. This environment uses state-of-the-art, open-source forecasting tools that are freely available, enabling us to establish an internal benchmark for evaluating both performance and efficiency.</p>
-          <p>This system of innovation allows us to explore a wide range of forecasting methods, from simple statistical models to more advanced hierarchical techniques. Hierarchical forecasting is particularly valuable for generating consistent forecasts across different levels of aggregation, tailored to specific business use cases.</p>
-          <p>In this study, we aim to quantify the Forecast Value Added and assess the forecast accuracy of various statistical approaches, including hierarchical methods. Given the wide variety of products (SKUs) and their differing levels of importance, we scope our analysis to focus on the top 20% of products, which account for 80% of total sales. This targeted approach enables us to concentrate on the most impactful items, while still providing insights that can be generalized to the broader product portfolio.</p>
+          <ul>
+          <li>Forecasts are critical for end-to-end decision-making across sourcing, production, and delivery.</li>
+          <li>Inaccurate forecasts lead to costly outcomes such as stockouts, waste, and poor service.</li>
+          <li>Improving forecast accuracy boosts efficiency, customer satisfaction, and profitability.</li>
+          </ul>
         </div>
       </div>
                           <div class="quarto-categories">
@@ -380,7 +355,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">June 2, 2025</p>
+        <p class="date">June 4, 2025</p>
       </div>
     </div>
     
@@ -456,16 +431,16 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">The ♥ of Pythia</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/00_introduction.html" class="sidebar-item-text sidebar-link active">
+  <a href="../notebooks/00_introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -521,13 +496,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendix</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/17_crisp-dm.html" class="sidebar-item-text sidebar-link">
@@ -536,7 +511,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/11_business_understanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/11_business_understanding.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Business Understanding</span></span></a>
   </div>
 </li>
@@ -601,8 +576,32 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-11-bu-why" id="toc-sec-11-bu-why" class="nav-link active" data-scroll-target="#sec-11-bu-why">Why is Forecasting Important?</a>
+  <ul class="collapse">
+  <li><a href="#geographic-footprint-and-production-model" id="toc-geographic-footprint-and-production-model" class="nav-link" data-scroll-target="#geographic-footprint-and-production-model">Geographic Footprint and Production Model</a></li>
+  </ul></li>
+  <li><a href="#sec-11-stakeholder" id="toc-sec-11-stakeholder" class="nav-link" data-scroll-target="#sec-11-stakeholder">Stakeholder Use Cases</a></li>
+  <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link" data-scroll-target="#problem-statement">Problem Statement</a></li>
+  <li><a href="#business-objectives" id="toc-business-objectives" class="nav-link" data-scroll-target="#business-objectives">Business Objectives</a>
+  <ul class="collapse">
+  <li><a href="#pythias-advice-a-system-of-innovation" id="toc-pythias-advice-a-system-of-innovation" class="nav-link" data-scroll-target="#pythias-advice-a-system-of-innovation">Pythia’s Advice: A System of Innovation</a></li>
+  </ul></li>
+  <li><a href="#forecast-process" id="toc-forecast-process" class="nav-link" data-scroll-target="#forecast-process">Forecast Process</a>
+  <ul class="collapse">
+  <li><a href="#traditional-statistical-forecasting-methods" id="toc-traditional-statistical-forecasting-methods" class="nav-link" data-scroll-target="#traditional-statistical-forecasting-methods">Traditional statistical forecasting methods</a></li>
+  </ul></li>
+  <li><a href="#success-criteria" id="toc-success-criteria" class="nav-link" data-scroll-target="#success-criteria">Success Criteria</a>
+  <ul class="collapse">
+  <li><a href="#business-success-criteria" id="toc-business-success-criteria" class="nav-link" data-scroll-target="#business-success-criteria">Business Success Criteria</a></li>
+  <li><a href="#data-mining-success-criteria" id="toc-data-mining-success-criteria" class="nav-link" data-scroll-target="#data-mining-success-criteria">Data Mining Success Criteria</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/11_business_understanding.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -612,67 +611,215 @@ window.Quarto = {
 
 
 
-<section id="business-context" class="level2">
-<h2 class="anchored" data-anchor-id="business-context">Business Context</h2>
-<p>In today’s increasingly complex market environment, accurate demand forecasting is essential for maintaining operational efficiency in supply chains—especially within the Fast-Moving Consumer Goods (FMCG) industry, where perishable food products have short shelf lives and demand is highly sensitive to seasonal trends and promotional activities.</p>
-<section id="biobalance" class="level3">
-<h3 class="anchored" data-anchor-id="biobalance"><em>BioBalance</em></h3>
-<p>This study focuses on <em>BioBalance</em>, a multi-channel FMCG food company that both manufactures its own products and sources finished goods from external suppliers. <em>BioBalance</em> distributes products through multiple channels, including Retail (RET), Out-of-Home (OOH), Health &amp; Food Stores (HFS), Discounters (DISC), and e-Commerce (eCOM). Effective sales forecasting at various levels of aggregation and granularity is critical to supporting key business decisions related to production planning, procurement, and negotiations with suppliers and customers.</p>
-<p>The forecasting challenges faced by <em>BioBalance</em> are intensified by the perishable nature of its product portfolio, significant fluctuations in seasonal demand, and frequent promotional activities. Accurate forecasts thus directly influence inventory management, cost-efficiency, customer satisfaction, and overall operational performance.</p>
-</section>
-<section id="stakeholders" class="level3">
-<h3 class="anchored" data-anchor-id="stakeholders">Stakeholders</h3>
-<p><em>BioBalance</em>’s forecasts serve both internal and external stakeholders. Internally, demand forecasts support functions such as production planning, inventory management, and procurement. Externally, these forecasts are shared with suppliers and customers to enable collaborative planning, reinforcing the need for high accuracy and consistency across multiple aggregation levels, granularities, and forecasting horizons.</p>
-</section>
-<section id="forecasting-challenges" class="level3">
-<h3 class="anchored" data-anchor-id="forecasting-challenges">Forecasting Challenges</h3>
-<p><em>BioBalance</em> currently uses a third-party forecasting platform that relies on traditional statistical methods. While demand planners can improve forecast accuracy through manual adjustments and simulations, these efforts require significant time and expertise.</p>
-<p>However, research shows <span class="citation" data-cites="article">(<a href="18_references.html#ref-article" role="doc-biblioref">Fildes &amp; Goodwin, 2007</a>)</span> that many small adjustments do not lead to improvements and can even reduce accuracy. In contrast, larger adjustments—especially downward revisions—tend to yield more substantial gains. This raises concerns about the effectiveness of manual interventions and highlights the need for a more objective way to assess their impact.</p>
-</section>
-</section>
-<section id="research-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="research-objectives">Research Objectives</h2>
-<p>While the current forecasting process requires and permits manual intervention and method customization, it remains unclear whether these efforts consistently deliver value. To address this, the study proposes an objective, low-cost statistical benchmark that can serve as a reference point for evaluating the effectiveness of manual adjustments and the overall forecasting process.</p>
-<section id="primary-objective-forecast-value-added-fva" class="level3">
-<h3 class="anchored" data-anchor-id="primary-objective-forecast-value-added-fva">Primary Objective: Forecast Value Added (FVA)</h3>
-<p>The primary objective of this research is to quantify the Forecast Value Added (FVA) by establishing a minimal-resource benchmark for forecast accuracy. FVA represents the improvement achieved by the business’s current forecasting process compared to a baseline generated using a simple, robust, and low-effort statistical approach.</p>
-<p>This benchmark will be developed at minimal cost by automating or eliminating manual forecasting tasks, using open-source forecasting tools, and deploying them on low-cost hardware. Clearly defining this benchmark provides <em>BioBalance</em> with a reliable and transparent reference point to evaluate current forecasting performance.</p>
-<p>By quantifying FVA, the company can set objective accuracy targets for the demand planning team. These targets combine the performance of the minimal-resource benchmark with the expected incremental improvements justified by additional effort, cost, or expertise.</p>
-</section>
-<section id="secondary-objective-hierarchical-forecasting-accuracy" class="level3">
-<h3 class="anchored" data-anchor-id="secondary-objective-hierarchical-forecasting-accuracy">Secondary Objective: Hierarchical Forecasting Accuracy</h3>
-<p>As a secondary objective, this research evaluates the performance of hierarchical forecasting methods, which produce consistent forecasts across multiple levels of aggregation. Ensuring forecast consistency is crucial for effective cross-functional decision-making, aligning internal operations, and supporting collaborative planning with external stakeholders.</p>
-</section>
-</section>
-<section id="purpose-of-the-research" class="level2">
-<h2 class="anchored" data-anchor-id="purpose-of-the-research">Purpose of the Research</h2>
-<p>The purpose of this research is to provide clear insight into the cost-benefit trade-off involved in improving forecast accuracy. By establishing a minimal-resource benchmark, the study defines a baseline level of accuracy that can be achieved with minimal effort and cost. This benchmark serves as both a reference point for evaluating current performance and a foundation for setting future accuracy targets.</p>
-<p>Any additional improvements in forecast accuracy—measured as Forecast Value Added (FVA) above this benchmark—should be justified by the resources required to achieve them. In doing so, the research supports more informed decisions on where and how to invest in forecasting capabilities.</p>
-</section>
-<section id="scope-of-the-research" class="level2">
-<h2 class="anchored" data-anchor-id="scope-of-the-research">Scope of the Research</h2>
-<p><em>BioBalance</em> offers a diverse product portfolio (SKUs) across multiple geographical markets, with products varying in sales importance. To ensure a focused and meaningful analysis, this study concentrates on the top 20% of products, which together account for 80% of total sales.</p>
-<p>While a small portion of the company’s sales (less than 10%) comes from chilled products — which have short shelf lives and are forecasted weekly — the majority comes from ambient products with a shelf life of <span class="math inline">\(1/2\)</span> to <span class="math inline">\(1\)</span> year. These are forecasted in monthly buckets and form the primary focus of this research.</p>
-<p>By narrowing the scope to high-impact ambient products, the study enables a practical and scalable analysis, while still yielding insights that are applicable across the broader product range.</p>
-</section>
-<section id="structure-of-the-document" class="level2">
-<h2 class="anchored" data-anchor-id="structure-of-the-document">Structure of the Document</h2>
-<!-- Structure of the Document, why we chose CRISP-DM, roadmap of the sections to follow -->
-<p>This research adopts the <strong>CRISP-ML methodology</strong> <span class="citation" data-cites="costa_crisp-ml_2022">(<a href="18_references.html#ref-costa_crisp-ml_2022" role="doc-biblioref">Costa, 2022</a>)</span> as its guiding framework.</p>
-<p>CRISP-ML (Cross-Industry Standard Process for Machine Learning) is a structured approach for designing, implementing, and communicating data science and machine learning projects. It consists of six core phases:</p>
-<ol type="1">
-<li>Business Understanding</li>
-<li>Data Understanding</li>
-<li>Data Preparation</li>
-<li>Modelling</li>
-<li>Evaluation</li>
-<li>Deployment</li>
-</ol>
-<p>The main body of this document includes a dedicated section for each phase. These chapters are concise, free of code, and supported by visuals and tables to enhance readability and accessibility — particularly for business stakeholders and decision-makers.</p>
-<p>For technical readers, the Appendix provides a corresponding chapter for each phase, offering additional context, detailed analysis, and code implementations.</p>
-<div class="html">
-<!-- {{< include 00_pythias_advice_def.qmd >}} -->
+<section id="sec-11-bu-why" class="level2">
+<h2 class="anchored" data-anchor-id="sec-11-bu-why">Why is Forecasting Important?</h2>
+<section id="geographic-footprint-and-production-model" class="level3">
+<h3 class="anchored" data-anchor-id="geographic-footprint-and-production-model">Geographic Footprint and Production Model</h3>
+<section id="goods-flow" class="level4">
+<h4 class="anchored" data-anchor-id="goods-flow">Goods Flow</h4>
+<div id="fig-11-supplychain-goodsflow" class="figure quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-11-supplychain-goodsflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<pre><code>![supply chain network (sample)](../images/scn.svg){fig-alt="Supply Chain Network" fig-align="center" fig-width="15cm"}</code></pre>
 </div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-11-supplychain-goodsflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.1: Supply-chain goods flows, illustrative example
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Some goods-flow use a Sales/order purcchase order flow for intercompany sales. These flows need to be forecasted by teh supplier but are also forecasted by the receiving MSO. This leads to a double counting of the sales, which needs to be adjusted for.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="sec-11-stakeholder" class="level2">
+<h2 class="anchored" data-anchor-id="sec-11-stakeholder">Stakeholder Use Cases</h2>
+<!-- stakeholders. -->
+<p>The company’s forecasting requirements vary significantly across several key use cases::</p>
+<ol type="1">
+<li><p><strong>Buying and Production</strong>: The Central Sourcing team requires forecasts at <strong>article level</strong>, aggregated weekly, with a forecast horizon of <strong>12 weeks</strong> to share with production and external suppliers.</p></li>
+<li><p><strong>Transfer pricing</strong>: Finance requires forecasts at a at <strong>article level</strong>, aggregated quarterly, with a forecast horizon of <strong>6 quarters</strong>, grouped into annual time buckets in order to calculate the transfer price of articles produced.</p></li>
+<li><p><strong>Safety stock profiling</strong>: The Supply-Planners require forecasts at the <strong>article * warehouse</strong>, aggregated weekly, with a forecast horizon of <strong>26-52 weeks</strong>, to determine safety stock profiles based on realized forecast accuracy, lead times and delivery performance (On-Time-In-Full).</p></li>
+<li><p><strong>Replenishment</strong>: The Material Requirement Planning (MRP) system requires forecasts at a <strong>article * warehouse</strong>, aggregated weekly, with a forecast horizon of <strong>104 weeks</strong>, to generate purchase orders and production orders.</p></li>
+<li><p><strong>Strategic planning </strong>: Category and Brand managers require forecasts at a <strong>monthly level</strong>, aggregated by <strong>Brand or category</strong>, with a horizon of <strong>12 months</strong> to plan marketing and sales strategies.</p></li>
+<li><p><strong>Negotiation with Customers</strong>: Key Account Managers require forecasts at a <strong>monthly level</strong>, aggregated by <strong>categories * key account</strong>, with a horizon of <strong>6 months</strong>.</p></li>
+<li><p><strong>Sales Target Setting</strong>: Sales directors require forecasts at a <strong>monthly level</strong>, aggregated by <strong>Brand/Categories * key account</strong>, with a horizon of <strong>12 months</strong> to set sales targets for the next year.</p></li>
+<li><p><strong>Buying and Production</strong>: Requires forecasts at the <strong>material level</strong> and <strong>warehouse</strong>, aggregated weekly, with a forecast horizon of <strong>12 weeks</strong>.</p></li>
+<li><p><strong>Setting Safety Stock Profiles</strong>: Requires forecasts at the <strong>material level</strong> and <strong>warehouse</strong>, aggregated weekly, with a forecast horizon of <strong>26-52 weeks</strong>, to determine safety stock profiles based on realized forecast accuracy.</p></li>
+<li><p><strong>Negotiation with Customers</strong>: Requires forecasts at a <strong>monthly level</strong>, aggregated by <strong>material categories</strong> and <strong>customer groups</strong>, with a horizon of <strong>6 months</strong>.</p></li>
+<li><p><strong>Production Cost Calculation</strong>: Requires forecasts at a <strong>quarterly level</strong>, aggregated by material, with a horizon of <strong>6 quarters</strong>, grouped into annual time buckets.</p></li>
+</ol>
+<!-- ## Scope of the Project {#sec-11-bu-scope} -->
+</section>
+<section id="problem-statement" class="level2">
+<h2 class="anchored" data-anchor-id="problem-statement">Problem Statement</h2>
+<p>The primary forecasting challenge is determining the optimal aggregation level and methods to use for generating forecasts that can meet the desired forecast accuracy of these different use cases while ensuring <strong>consistency</strong> and <strong>accuracy</strong>.</p>
+<p>This inconsistency stems from a lack of objective criteria for selecting between forecasting methods—<strong>bottom-up</strong>, <strong>top-down</strong>, or <strong>middle-out</strong>—resulting in decisions that rely on the subjective judgment of demand planners, leading to variable performance and inefficiencies.</p>
+</section>
+<section id="business-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="business-objectives">Business Objectives</h2>
+<p>The primary objective is to enhance operational efficiency by improving forecast accuracy across all key use cases. This will be achieved through the application of robust forecasting methods that can handle seasonality, promotions, and efficiently allocate scarce resources. Ultimately, these improvements will contribute to improved stock levels and a higher level of customer satisfaction, both key strategic goals for the company.</p>
+<ol type="1">
+<li><strong>Improved Forecast Accuracy Target</strong>:
+<ul>
+<li><strong>Tailored Forecasts for Each Use Case</strong>: Enhanced accuracy across areas such as buying, production, safety stock settings, and customer negotiations, using methods that account for seasonality, promotions, and varying aggregation levels.</li>
+<li><strong>Reduced Forecast Errors and Bias</strong>: Measurable reductions in key error metrics like RMSE , MAPE , and BIAS will lead to better alignment between forecasted and actual sales. Increased accuracy will also foster trust among supply planners, reducing the need for excessive safety margins.</li>
+</ul></li>
+<li><strong>Selecting the Right Forecasting Methods</strong>: This research will guide the selection of optimal exponential smoothing methods (simple, double or triple) to improve performance across various use cases.</li>
+<li><strong>Consistency Across Aggregation Levels</strong>: Forecasts will remain consistent across different levels of aggregation, ensuring that detailed and aggregated forecasts are aligned.</li>
+</ol>
+<section id="pythias-advice-a-system-of-innovation" class="level3">
+<h3 class="anchored" data-anchor-id="pythias-advice-a-system-of-innovation">Pythia’s Advice: A System of Innovation</h3>
+</section>
+</section>
+<section id="forecast-process" class="level2">
+<h2 class="anchored" data-anchor-id="forecast-process">Forecast Process</h2>
+<section id="traditional-statistical-forecasting-methods" class="level3">
+<h3 class="anchored" data-anchor-id="traditional-statistical-forecasting-methods">Traditional statistical forecasting methods</h3>
+<div id="tbl-11-stat-methods" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-11-stat-methods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8.1: Traditional statistical forecasting methods
+</figcaption>
+<div aria-describedby="tbl-11-stat-methods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Method</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Challenge</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span style=" font-weight: bold;    ">Moving Average</span></td>
+<td style="text-align: left;">Seasonality, promotional effects</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span style=" font-weight: bold;    ">Simple Exponential Smoothing</span></td>
+<td style="text-align: left;">Seasonality, promotional effects</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span style=" font-weight: bold;    ">Double Exponential Smoothing</span></td>
+<td style="text-align: left;">Seasonality, promotional effects</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span style=" font-weight: bold;    ">Triple Exponential Smoothing</span></td>
+<td style="text-align: left;">promotional effects</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span style=" font-weight: bold;    ">Box-Jenkins (ARIMA/ARMA)</span></td>
+<td style="text-align: left;">Stationary data</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<ul>
+<li><p><strong>Proposed Methods</strong>:</p>
+<ul>
+<li><p><strong>ETS (Error, Trend, Seasonal)</strong>: To enhance exponential smoothing with an automated model which selects the appropriate exponential smoothing model with the right parameters and provides <strong>prediction intervals</strong>.</p></li>
+<li><p><strong>HTS (Hierarchical Time Series)</strong>: To handle multiple aggregation levels, ensuring <strong>forecast consistency</strong> when forecasts are disaggregated or aggregated across levels.</p></li>
+</ul></li>
+</ul>
+<section id="data-and-forecasting-methods" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="data-and-forecasting-methods">Data and Forecasting Methods</h4>
+<p>We will employ a combination of <strong>statistical methods</strong> and <strong>machine learning techniques</strong> to improve the forecasting process:</p>
+<ul>
+<li><p><strong>Current Methods</strong>: The company’s current forecasting system uses <strong>moving averages</strong>, <strong>exponential smoothing</strong> and <strong>Box-Jenkins</strong>, which face challenges with <strong>Seasonality</strong>, <strong>Stationarity</strong> and <strong>promotional effects</strong>. Forecasts are often inadequate in handling the impacts of promotions.</p></li>
+<li><p><strong>Proposed Methods</strong>:</p>
+<ul>
+<li><p><strong>ETS (Error, Trend, Seasonal)</strong>: To replace exponential smoothing with a model that provides <strong>prediction intervals</strong> and better captures trends and seasonality.</p></li>
+<li><p><strong>HTS (Hierarchical Time Series)</strong>: To handle multiple aggregation levels, ensuring <strong>forecast consistency</strong> when forecasts are disaggregated or aggregated across levels.</p></li>
+<li><p><strong>XGBoost</strong>: A machine learning technique capable of handling <strong>promotional impacts</strong> and even identifying <strong>cannibalization effects</strong> of promotions between products.</p></li>
+<li><p><strong>conformal prediction</strong>: A method that provides <strong>prediction intervals</strong> and <strong>calibrated forecasts</strong>, ensuring that the forecasted values are within a certain confidence level.</p></li>
+<li><p><strong>CatBoost and SHAP</strong>: These will be used for feature analysis, determining which features (e.g., promotions, stock-outs) have the highest impact on forecast accuracy. This approach helps in choosing relevant input features to improve forecasts.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="consistency-and-validation" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="consistency-and-validation">Consistency and Validation</h4>
+<p>One key requirement is ensuring that forecasts remain consistent across different levels of aggregation. This is where <strong>HTS</strong> will play a crucial role, reconciling forecasts generated at different aggregation levels to ensure that top-level forecasts align with aggregated lower-level forecasts. This will address the known issue of discrepancies between aggregated forecasts and directly forecasted aggregated levels.</p>
+</section>
+<section id="human-resources-allocation" class="level4">
+<h4 class="anchored" data-anchor-id="human-resources-allocation">Human Resources Allocation</h4>
+<p>The team consists of <strong>X demand planners</strong> working across <strong>Y MSOs</strong>. Currently, planners are involved in manually indicating promotional impacts and adjusting forecasts based on intuition, without systematic data cleaning for stock-outs or model tuning.</p>
+<p>To optimize resource allocation, we plan to implement a <strong>classification system</strong> for the company’s <strong>9K SKUs</strong>, utilizing an:</p>
+<p><strong>ABC-XYZ classification</strong> scheme:</p>
+<ul>
+<li><strong>ABC Classification</strong>: Based on <strong>sales volume</strong>—focusing more resources on high-value items (A-class) and minimizing attention to low-volume items (C-class).</li>
+<li><strong>XYZ Classification</strong>: Based on <strong>sales variability</strong>, indicating which products have stable demand versus those with erratic patterns.</li>
+<li><strong>Combined Classification</strong>: These classifications will guide planners in determining where their efforts can have the most impact, focusing primarily on high-priority items while relying more on automated processes for low-priority ones.</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="success-criteria" class="level2">
+<h2 class="anchored" data-anchor-id="success-criteria">Success Criteria</h2>
+<!-- main indicators, KPIs, constraints -->
+<p>Success will be measured by the following criteria:</p>
+<p>Forecast Accuracy % and Bias %</p>
+<p>To assess forecast accuracy, we will use a range of evaluation metrics tailored to each use case.</p>
+<p>These metrics will help evaluate how well each approach performs against the unique requirements of each use case, ultimately guiding method selection and refinement.</p>
+<ul>
+<li><p><strong>RMSE (Root Mean Squared Error, <span class="quarto-unresolved-ref">?def-RMSE</span> )</strong>: The primary metric for measuring forecast accuracy, particularly useful for penalizing large errors.</p></li>
+<li><p><strong>MAPE (Mean Absolute Percentage Error)</strong>: To align with existing company metrics.</p></li>
+<li><p><strong>MAE (Mean Absolute Error)</strong> and <strong>MASE (Mean Absolute Scaled Error)</strong>: Additional metrics to provide a broader evaluation, addressing different aspects of forecast performance and comparing models to naïve baselines.</p></li>
+</ul>
+<section id="business-success-criteria" class="level3">
+<h3 class="anchored" data-anchor-id="business-success-criteria">Business Success Criteria</h3>
+<p>Success will be measured by the following criteria:</p>
+<ol type="1">
+<li><strong>Improved Forecast Accuracy</strong>:
+<ul>
+<li><strong>Tailored Forecasts for Each Use Case</strong>: Enhanced accuracy across areas such as buying, production, safety stock settings, and customer negotiations, using methods that account for seasonality, promotions, and varying aggregation levels.</li>
+<li><strong>Reduced Forecast Errors and Bias</strong>: Measurable reductions in key error metrics like RMSE , MAPE , and BIAS will lead to better alignment between forecasted and actual sales. Increased accuracy will also foster trust among supply planners, reducing the need for excessive safety margins.</li>
+<li><strong>Consistency Across Aggregation Levels</strong>: Forecasts will remain consistent across different levels of aggregation, ensuring that detailed and aggregated forecasts are aligned.</li>
+</ul></li>
+<li><strong>Informed Decision-Making for Forecasting System Functionality</strong>:
+<ul>
+<li><strong>Selecting the Right Forecasting Methods</strong>: This research will guide the selection of optimal forecasting methods (statistical, machine learning, or hybrid) to improve performance across various use cases.</li>
+<li><strong>Efficient Resource Allocation</strong>: A product classification scheme (e.g., ABC-XYZ) will be developed to help demand planners focus on high-impact products, while low-impact products will be managed more efficiently through automated forecasts.</li>
+</ul></li>
+<li><strong>Operational Benefits</strong>:
+<ul>
+<li><strong>Improved Inventory Management</strong>: More accurate forecasts will drive better purchasing and production decisions, leading to:
+<ul>
+<li><strong>Reduced Out-of-Stock (OOS) Incidents</strong>: Ensuring product availability to meet customer demand and reduce penalties from stock-outs.</li>
+<li><strong>Reduced Out-of-Date (OOD) Incidents</strong>: Minimizing waste and ensuring the freshness of perishable goods, leading to lower storage costs and better inventory turnover.</li>
+</ul></li>
+<li><strong>Optimized Safety Stock Levels</strong>: Accurate forecasts will allow for better safety stock settings, reducing both overstocking and stock-outs.</li>
+<li><strong>Cost Optimization</strong>: Improved demand alignment will lower excess inventory and warehousing costs, minimize spoilage, and reduce costs associated with last-minute adjustments and overproduction.</li>
+</ul></li>
+<li><strong>Enhanced Supply Chain Efficiency and Decision-Making</strong>:
+<ul>
+<li><strong>Strategic Decision Support</strong>: Consistent and accurate forecasts will improve decision-making across production planning, sales target setting, capacity management, and workforce optimization. These improvements will also support better customer negotiations and more precise COGS (Cost of Goods Sold) calculations, resulting in a more efficient supply chain.</li>
+<li><strong>Increased Customer Satisfaction</strong>: Improved product availability, fewer stock-outs, and fresher goods will not only reduce operational costs but will also enhance customer satisfaction and loyalty—a core strategic objective of the company.</li>
+</ul></li>
+</ol>
+<p>By achieving these objectives, the company will see significant improvements in operational efficiency, cost-effectiveness, and most importantly, a higher level of customer satisfaction, which will ultimately drive long-term business success.</p>
+<p>see upper part of the flow-down graph, (<a href="16_flow_down.html#sec-flowdown" class="quarto-xref"><span>Flow-down</span></a>).</p>
+</section>
+<section id="data-mining-success-criteria" class="level3">
+<h3 class="anchored" data-anchor-id="data-mining-success-criteria">Data Mining Success Criteria</h3>
+<p>The final result will show an estimated relationship between forecast accuracy and the cost of resources required for the agreed scope. The cost of resources result from hardware, software and human resources needed for cleansing data, transforming data, model tuning and other manual activities needed.</p>
+<p>To assess forecast accuracy, we will use a range of evaluation metrics tailored to each use case.</p>
+<p>These metrics will help evaluate how well each approach performs against the unique requirements of each use case, ultimately guiding method selection and refinement.</p>
+<p>Predictive Model based on Correlations: Forecast Future Sales + Promotion effects</p>
+<p>see lower part of the flow-down graph, (<a href="16_flow_down.html#sec-flowdown" class="quarto-xref"><span>Flow-down</span></a>).</p>
+<!-- {{< include 01_business_understanding_def.qmd >}} -->
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
@@ -854,6 +1001,7 @@ Xie, Y. (2024b). <em>Knitr: A general-purpose package for dynamic report generat
 Zhu, H. (2024). <em>kableExtra: Construct complex table with ’kable’ and pipe syntax</em>. <a href="https://cran.r-project.org/package=kableExtra">https://cran.r-project.org/package=kableExtra</a>
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1271,13 +1419,13 @@ Zhu, H. (2024). <em>kableExtra: Construct complex table with ’kable’ and pip
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../setting_the_stage.html" class="pagination-link" aria-label="Setting the Stage">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Setting the Stage</span>
+      <a href="../notebooks/17_crisp-dm.html" class="pagination-link" aria-label="CRISP-DM">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">CRISP-DM</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notebooks/01_business_understanding.html" class="pagination-link" aria-label="Business Understanding">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Business Understanding</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notebooks/12_data_understanding.html" class="pagination-link" aria-label="Data Understanding">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Understanding</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1289,7 +1437,7 @@ Zhu, H. (2024). <em>kableExtra: Construct complex table with ’kable’ and pip
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/00_introduction.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/11_business_understanding.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p><a href="https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai">EAISI</a></p>
 </div>

@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-06-02">
-<meta name="description" content="Effective business planning depends on accurate and consistent forecasts across different levels of aggregation, granularity, and time horizons. Producing such forecasts is inherently complex, requiring a diverse set of resources — including commercial forecasting engines, high-quality data, hardware, software, and human expertise.A key challenge lies in balancing the benefits of improved forecast accuracy against the costs of deploying these additional resources. To evaluate this trade-off, it is essential to first establish the level of accuracy that can be achieved with minimal input. The Forecast Value Added (FVA) is defined as the difference between the accuracy achieved by the business and that obtained using a minimal-resource benchmark. Ideally, the costs invested in enhancing forecast accuracy should be justified by a proportional gain in FVA.To assess this cost-benefit relationship without disrupting day-to-day operations, we developed a parallel forecasting environment — a system of innovation — that operates alongside the production forecasting system. This environment uses state-of-the-art, open-source forecasting tools that are freely available, enabling us to establish an internal benchmark for evaluating both performance and efficiency.This system of innovation allows us to explore a wide range of forecasting methods, from simple statistical models to more advanced hierarchical techniques. Hierarchical forecasting is particularly valuable for generating consistent forecasts across different levels of aggregation, tailored to specific business use cases.In this study, we aim to quantify the Forecast Value Added and assess the forecast accuracy of various statistical approaches, including hierarchical methods. Given the wide variety of products (SKUs) and their differing levels of importance, we scope our analysis to focus on the top 20% of products, which account for 80% of total sales. This targeted approach enables us to concentrate on the most impactful items, while still providing insights that can be generalized to the broader product portfolio.">
+<meta name="author" content="F.J. Padt">
+<meta name="dcterms.date" content="2025-05-30">
 
-<title>Introduction – Pythia's Advice</title>
+<title>17&nbsp; Resources – Pythia's Advice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -52,8 +52,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../notebooks/01_business_understanding.html" rel="next">
-<link href="../setting_the_stage.html" rel="prev">
+<link href="../notebooks/18_references.html" rel="prev">
 <link href="../images/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -113,35 +112,6 @@ div.csl-indent {
       }
 </style>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -314,7 +284,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The ♥ of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">Introduction</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/17_crisp-dm.html">Appendix</a></li><li class="breadcrumb-item"><a href="../notebooks/19_resources.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Resources</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -326,19 +296,9 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The ♥ of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">Introduction</a></li></ol></nav>
-      <h1 class="title"><span id="sec-00-introduction" class="quarto-section-identifier">Introduction</span></h1>
-            <p class="subtitle lead">TRUST - is all you need!</p>
-                  <div>
-        <div class="description">
-          <p>Effective business planning depends on accurate and consistent forecasts across different levels of aggregation, granularity, and time horizons. Producing such forecasts is inherently complex, requiring a diverse set of resources — including commercial forecasting engines, high-quality data, hardware, software, and human expertise.</p>
-          <p>A key challenge lies in balancing the benefits of improved forecast accuracy against the costs of deploying these additional resources. To evaluate this trade-off, it is essential to first establish the level of accuracy that can be achieved with minimal input. The Forecast Value Added (FVA) is defined as the difference between the accuracy achieved by the business and that obtained using a minimal-resource benchmark. Ideally, the costs invested in enhancing forecast accuracy should be justified by a proportional gain in FVA.</p>
-          <p>To assess this cost-benefit relationship without disrupting day-to-day operations, we developed a parallel forecasting environment — a system of innovation — that operates alongside the production forecasting system. This environment uses state-of-the-art, open-source forecasting tools that are freely available, enabling us to establish an internal benchmark for evaluating both performance and efficiency.</p>
-          <p>This system of innovation allows us to explore a wide range of forecasting methods, from simple statistical models to more advanced hierarchical techniques. Hierarchical forecasting is particularly valuable for generating consistent forecasts across different levels of aggregation, tailored to specific business use cases.</p>
-          <p>In this study, we aim to quantify the Forecast Value Added and assess the forecast accuracy of various statistical approaches, including hierarchical methods. Given the wide variety of products (SKUs) and their differing levels of importance, we scope our analysis to focus on the top 20% of products, which account for 80% of total sales. This targeted approach enables us to concentrate on the most impactful items, while still providing insights that can be generalized to the broader product portfolio.</p>
-        </div>
-      </div>
-                          <div class="quarto-categories">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/17_crisp-dm.html">Appendix</a></li><li class="breadcrumb-item"><a href="../notebooks/19_resources.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Resources</span></a></li></ol></nav>
+      <h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Resources</span></h1>
+                                <div class="quarto-categories">
                 <div class="quarto-category">Time Series Forecasting</div>
                 <div class="quarto-category">Data Science</div>
                 <div class="quarto-category">Hierarchical Forecasting (HTS)</div>
@@ -380,7 +340,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">June 2, 2025</p>
+        <p class="date">May 30, 2025</p>
       </div>
     </div>
     
@@ -456,16 +416,16 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">The ♥ of Pythia</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/00_introduction.html" class="sidebar-item-text sidebar-link active">
+  <a href="../notebooks/00_introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -521,13 +481,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendix</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/17_crisp-dm.html" class="sidebar-item-text sidebar-link">
@@ -590,7 +550,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/19_resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/19_resources.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
   </div>
 </li>
@@ -601,8 +561,14 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-19-resources" id="toc-sec-19-resources" class="nav-link active" data-scroll-target="#sec-19-resources"><span class="header-section-number">18</span> Resources</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/19_resources.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -612,67 +578,14 @@ window.Quarto = {
 
 
 
-<section id="business-context" class="level2">
-<h2 class="anchored" data-anchor-id="business-context">Business Context</h2>
-<p>In today’s increasingly complex market environment, accurate demand forecasting is essential for maintaining operational efficiency in supply chains—especially within the Fast-Moving Consumer Goods (FMCG) industry, where perishable food products have short shelf lives and demand is highly sensitive to seasonal trends and promotional activities.</p>
-<section id="biobalance" class="level3">
-<h3 class="anchored" data-anchor-id="biobalance"><em>BioBalance</em></h3>
-<p>This study focuses on <em>BioBalance</em>, a multi-channel FMCG food company that both manufactures its own products and sources finished goods from external suppliers. <em>BioBalance</em> distributes products through multiple channels, including Retail (RET), Out-of-Home (OOH), Health &amp; Food Stores (HFS), Discounters (DISC), and e-Commerce (eCOM). Effective sales forecasting at various levels of aggregation and granularity is critical to supporting key business decisions related to production planning, procurement, and negotiations with suppliers and customers.</p>
-<p>The forecasting challenges faced by <em>BioBalance</em> are intensified by the perishable nature of its product portfolio, significant fluctuations in seasonal demand, and frequent promotional activities. Accurate forecasts thus directly influence inventory management, cost-efficiency, customer satisfaction, and overall operational performance.</p>
-</section>
-<section id="stakeholders" class="level3">
-<h3 class="anchored" data-anchor-id="stakeholders">Stakeholders</h3>
-<p><em>BioBalance</em>’s forecasts serve both internal and external stakeholders. Internally, demand forecasts support functions such as production planning, inventory management, and procurement. Externally, these forecasts are shared with suppliers and customers to enable collaborative planning, reinforcing the need for high accuracy and consistency across multiple aggregation levels, granularities, and forecasting horizons.</p>
-</section>
-<section id="forecasting-challenges" class="level3">
-<h3 class="anchored" data-anchor-id="forecasting-challenges">Forecasting Challenges</h3>
-<p><em>BioBalance</em> currently uses a third-party forecasting platform that relies on traditional statistical methods. While demand planners can improve forecast accuracy through manual adjustments and simulations, these efforts require significant time and expertise.</p>
-<p>However, research shows <span class="citation" data-cites="article">(<a href="18_references.html#ref-article" role="doc-biblioref">Fildes &amp; Goodwin, 2007</a>)</span> that many small adjustments do not lead to improvements and can even reduce accuracy. In contrast, larger adjustments—especially downward revisions—tend to yield more substantial gains. This raises concerns about the effectiveness of manual interventions and highlights the need for a more objective way to assess their impact.</p>
-</section>
-</section>
-<section id="research-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="research-objectives">Research Objectives</h2>
-<p>While the current forecasting process requires and permits manual intervention and method customization, it remains unclear whether these efforts consistently deliver value. To address this, the study proposes an objective, low-cost statistical benchmark that can serve as a reference point for evaluating the effectiveness of manual adjustments and the overall forecasting process.</p>
-<section id="primary-objective-forecast-value-added-fva" class="level3">
-<h3 class="anchored" data-anchor-id="primary-objective-forecast-value-added-fva">Primary Objective: Forecast Value Added (FVA)</h3>
-<p>The primary objective of this research is to quantify the Forecast Value Added (FVA) by establishing a minimal-resource benchmark for forecast accuracy. FVA represents the improvement achieved by the business’s current forecasting process compared to a baseline generated using a simple, robust, and low-effort statistical approach.</p>
-<p>This benchmark will be developed at minimal cost by automating or eliminating manual forecasting tasks, using open-source forecasting tools, and deploying them on low-cost hardware. Clearly defining this benchmark provides <em>BioBalance</em> with a reliable and transparent reference point to evaluate current forecasting performance.</p>
-<p>By quantifying FVA, the company can set objective accuracy targets for the demand planning team. These targets combine the performance of the minimal-resource benchmark with the expected incremental improvements justified by additional effort, cost, or expertise.</p>
-</section>
-<section id="secondary-objective-hierarchical-forecasting-accuracy" class="level3">
-<h3 class="anchored" data-anchor-id="secondary-objective-hierarchical-forecasting-accuracy">Secondary Objective: Hierarchical Forecasting Accuracy</h3>
-<p>As a secondary objective, this research evaluates the performance of hierarchical forecasting methods, which produce consistent forecasts across multiple levels of aggregation. Ensuring forecast consistency is crucial for effective cross-functional decision-making, aligning internal operations, and supporting collaborative planning with external stakeholders.</p>
-</section>
-</section>
-<section id="purpose-of-the-research" class="level2">
-<h2 class="anchored" data-anchor-id="purpose-of-the-research">Purpose of the Research</h2>
-<p>The purpose of this research is to provide clear insight into the cost-benefit trade-off involved in improving forecast accuracy. By establishing a minimal-resource benchmark, the study defines a baseline level of accuracy that can be achieved with minimal effort and cost. This benchmark serves as both a reference point for evaluating current performance and a foundation for setting future accuracy targets.</p>
-<p>Any additional improvements in forecast accuracy—measured as Forecast Value Added (FVA) above this benchmark—should be justified by the resources required to achieve them. In doing so, the research supports more informed decisions on where and how to invest in forecasting capabilities.</p>
-</section>
-<section id="scope-of-the-research" class="level2">
-<h2 class="anchored" data-anchor-id="scope-of-the-research">Scope of the Research</h2>
-<p><em>BioBalance</em> offers a diverse product portfolio (SKUs) across multiple geographical markets, with products varying in sales importance. To ensure a focused and meaningful analysis, this study concentrates on the top 20% of products, which together account for 80% of total sales.</p>
-<p>While a small portion of the company’s sales (less than 10%) comes from chilled products — which have short shelf lives and are forecasted weekly — the majority comes from ambient products with a shelf life of <span class="math inline">\(1/2\)</span> to <span class="math inline">\(1\)</span> year. These are forecasted in monthly buckets and form the primary focus of this research.</p>
-<p>By narrowing the scope to high-impact ambient products, the study enables a practical and scalable analysis, while still yielding insights that are applicable across the broader product range.</p>
-</section>
-<section id="structure-of-the-document" class="level2">
-<h2 class="anchored" data-anchor-id="structure-of-the-document">Structure of the Document</h2>
-<!-- Structure of the Document, why we chose CRISP-DM, roadmap of the sections to follow -->
-<p>This research adopts the <strong>CRISP-ML methodology</strong> <span class="citation" data-cites="costa_crisp-ml_2022">(<a href="18_references.html#ref-costa_crisp-ml_2022" role="doc-biblioref">Costa, 2022</a>)</span> as its guiding framework.</p>
-<p>CRISP-ML (Cross-Industry Standard Process for Machine Learning) is a structured approach for designing, implementing, and communicating data science and machine learning projects. It consists of six core phases:</p>
-<ol type="1">
-<li>Business Understanding</li>
-<li>Data Understanding</li>
-<li>Data Preparation</li>
-<li>Modelling</li>
-<li>Evaluation</li>
-<li>Deployment</li>
-</ol>
-<p>The main body of this document includes a dedicated section for each phase. These chapters are concise, free of code, and supported by visuals and tables to enhance readability and accessibility — particularly for business stakeholders and decision-makers.</p>
-<p>For technical readers, the Appendix provides a corresponding chapter for each phase, offering additional context, detailed analysis, and code implementations.</p>
-<div class="html">
-<!-- {{< include 00_pythias_advice_def.qmd >}} -->
-</div>
+<section id="sec-19-resources" class="level1" data-number="18">
+<h1 data-number="18"><span class="header-section-number">18</span> Resources</h1>
+<ul>
+<li><a href="../notebooks/01_business_understanding.html" class="btn">Download the Business Understanding notebook (QMD) 💾</a></li>
+<li><a href="../notebooks/02_data_understanding.html" class="btn">Download the Data Understanding notebook (QMD) 💾</a></li>
+<li><a href="../pptx/PAF+s03.pptx" class="btn">Download EAISI Graduation Presentation (PPTX) 💾</a></li>
+<li><a href="notebooks.zip" class="btn">Download all notebooks (ZIP) 💾</a></li>
+</ul>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
@@ -1271,14 +1184,11 @@ Zhu, H. (2024). <em>kableExtra: Construct complex table with ’kable’ and pip
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../setting_the_stage.html" class="pagination-link" aria-label="Setting the Stage">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Setting the Stage</span>
+      <a href="../notebooks/18_references.html" class="pagination-link" aria-label="References">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">References</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notebooks/01_business_understanding.html" class="pagination-link" aria-label="Business Understanding">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Business Understanding</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -1289,7 +1199,7 @@ Zhu, H. (2024). <em>kableExtra: Construct complex table with ’kable’ and pip
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/00_introduction.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/19_resources.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p><a href="https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai">EAISI</a></p>
 </div>
