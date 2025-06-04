@@ -179,8 +179,7 @@ resources:
   - notebooks/02_data_understanding.qmd
   - notebooks.zip
   - audio/pythia_history.mp3
-  - video/whitebox.mp4
-  - video/blackbox.mp4
+  - video/glass_blackbox.mp4
   - video/bu_why.mp4  
   - video/bu_who.mp4
   - video/bu_proc.mp4

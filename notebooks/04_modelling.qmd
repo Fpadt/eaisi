@@ -3,7 +3,9 @@ subtitle:    Modelling subtitle
 description: |
   - model selection
 number-sections: false
+bibliography: references.bib
 ---
+
 # Modelling {#sec-04-modelling}
 
 ```{r}
@@ -12,9 +14,25 @@ source("../_book_functions.R")
 ```
 
 <!-- - Modelling – Forecasting models and techniques used. -->
+
 <!-- – Algorithms tried (with brief rationale)   -->
+
 <!-- – Hyperparameter approaches   -->
+
 <!-- – Training/validation split -->
+
+::::: {fig-04-black_glassbox}
+::: {.content-visible when-format="html"}
+<video src="../video/glass_blackbox.mp4" controls autoplay muted loop width="640" playsinline>
+</video>
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../images/glass_blackbox.png){fig-align="left" fig-width="15cm"}
+:::
+
+A representation of the tradeoff between flexibility and inter pretability, using different statistical learning methods. In general, as the flexibil ity of a method increases, its interpretability decreases, see [@james2023]
+:::::
 
 6.1. Literature Review / Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)
 
@@ -22,12 +40,11 @@ see Literature review (@sec-literature_review)
 
 ### Bottom-Up/Top-down
 
-Creating coherent forecasts across various levels from a  single forecast creates challenges, for example:
+Creating coherent forecasts across various levels from a single forecast creates challenges, for example:
 
-The Bottom-up approach, forecasts at detailed levels to be aggregated,  however data may be too noisy to identify clear patterns. 
+The Bottom-up approach, forecasts at detailed levels to be aggregated, however data may be too noisy to identify clear patterns.
 
 The top-down approach, forecasts at aggregated levels, to be distributed however, Seasonal patterns may neutralize each other and disappear, resulting in poor accuracy.
-
 
 ### Model Selection
 
@@ -45,25 +62,24 @@ algorithm - handle teh specific characteristics of the data - balance performanc
 -   robustness -\>
 -   transparency -\>
 
-
 ::::: {#fig-04-mo-method .figure}
 ::: {.content-visible when-format="html"}
 <video src="../video/mo_method.mp4" controls autoplay muted loop width="640" playsinline>
+
 </video>
 :::
 
 ::: {.content-visible when-format="pdf"}
 ![](../images/mo_method.png){fig-align="left" fig-width="15cm"}
 :::
+
 Select one of five predefined aggregation levels (L1-L5), HTS forecasts every level for each forecast.
 :::::
 
 ::: {#fig-04-mo-method2 .figure}
-![](../images/mo_hts.png){fig-align="left" fig-width="15cm"}
-Forecasts are aligned with Ordinary Least Squares (OLS),  
-the most detailed is the final output and is coherent with the aggregated forecasts. 
+![](../images/mo_hts.png){fig-align="left" fig-width="15cm"} Forecasts are aligned with Ordinary Least Squares (OLS),\
+the most detailed is the final output and is coherent with the aggregated forecasts.
 :::
-
 
 <!-- #### Modeling Technique -->
 
@@ -86,7 +102,6 @@ the most detailed is the final output and is coherent with the aggregated foreca
 <!-- #### Model Assessment -->
 
 <!-- #### Revised Parameter Settings -->
-
 
 # Appendix {.unnumbered}
 
