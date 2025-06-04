@@ -16,7 +16,7 @@ toc-depth: 3      # include ## and ### in the TOC
 source("../_book_functions.R")
 ```
 
-## Overview
+## Overview {#sec-11-overview}
 
 This chapter provides a detailed look into the business context and challenges faced by *BioBalance*, a multi-channel FMCG company. We begin by illustrating why forecasting matters, using a real-life example (Blossam tea), followed by an overview of stakeholder-specific forecasting needs across departments.
 
@@ -32,7 +32,7 @@ Finally, we outline the current forecasting process and establish criteria to me
 
 Accurate forecasting is essential for managing *BioBalance’s* portfolio of over 2.500 products, each with specific shelf-life requirements, sourcing constraints, and production lead times. Forecasts guide decisions across the entire supply chain — from procurement and production to distribution and inventory management. 
 
-### Geographic Footprint and Production Model
+### Geographic Footprint and Production Model {#sec-01-geographical}
 
 *BioBalance* operates multiple production facilities and distribution centers across Europe, serving customers in various countries through both direct and indirect channels. As shown in @fig-01-bu-map, these facilities are geographically distributed, and some products are produced in one country but sold in others.
 
@@ -52,7 +52,7 @@ This operational model places forecasting at the core of supply chain responsive
 Geographic footprint of *BioBalance*: production and distribution sites
 :::
 
-### *Blossam* Tea: an illustrative example
+### *Blossam* Tea: an illustrative example {#sec-01-blossam}
 
 The planning process for *Blossam Balance Tea* illustrates the complexity of forecasting across stages, see @fig-01-bu-why:
 
@@ -82,7 +82,7 @@ Failure to meet shelf-life constraints can result in:
 
 These challenges are not unique to *Blossam*; they apply across the full product range.
 
-## Stakeholder Use Cases
+## Stakeholder Use Cases {#sec-01-stakeholder}
 <!-- stakeholders. -->
 
 The company's forecasting requirements vary significantly across several key use cases.
@@ -132,7 +132,7 @@ dtUC |>
   )
 ```
 
-A detailed overview is available in (@sec-11-bu-who).
+A detailed overview is available in (@sec-11-stakeholder).
 
 ## Scope of the Project {#sec-01-bu-scope}
 
@@ -146,13 +146,13 @@ The study further focuses on the most commercially significant part of *BioBalan
 Within this scope, we specifically target ambient products with a minimum shelf life of 60 days. These products are planned in weekly MRP cycles and forecasted using monthly time buckets. They represent the majority of *BioBalance’s* volume and align best with the strategic forecasting use cases addressed in this study.
 
 
-## Problem Statement
+## Problem Statement {#sec-01-problem-statement}
 
 While *BioBalance* uses a flexible forecasting platform, its reliance on manual adjustments and subjective decision-making introduces inconsistency. Forecasting methods and aggregation levels are often chosen based on intuition and experience. Research shows, see [@article], that small manual adjustments typically offer no benefit, whereas larger interventions—usually reductions—may significantly improve accuracy.
 
 Without an objective benchmark, it is impossible to determine whether these manual interventions improve accuracy or merely increase resource costs.
 
-## Business Objectives
+## Business Objectives {#sec-01-business-objectives}
 
 <!-- define business objectives, What is the business's need? -->
 
@@ -180,7 +180,7 @@ And ultimately increase profitability, as illustrated in @fig-01-bu-daps, see [@
 ![](../images/flowdown.png){fig-align="left" fig-width="15cm" fig-alt="DAPS"} Data-Analytic Problem Structure (DAPS)
 :::
 
-### Pythia’s Advice: A System of Innovation
+### Pythia’s Advice: A System of Innovation {#sec-01-pythia-advice-system}
 
 To support these goals, we introduce **Pythia’s Advice** — a parallel forecasting environment that runs alongside the production system. Named after the oracle of Delphi, it serves as a low-cost advisory layer that complements the existing forecasting system.
 
@@ -200,7 +200,7 @@ Additionally, the project was developed under the constraint of limited access t
 By working within these constraints, **Pythia’s Advice** enables experimentation and benchmarking without disrupting operations — providing a safe and scalable way to measure the value of forecast improvements.
 **Pythia’s Advice** is represented by the lower part of the Data-Analytic Problem Structure (DAPS), (@fig-01-bu-daps).
 
-## Forecast Process
+## Forecast Process {#sec-01-forecast-process}
 
 <!-- Business process mapping -->
 
@@ -265,11 +265,11 @@ The initial scope of the project is to share the unadjusted forecast and its res
 :::
 
 
-## Success Criteria
+## Success Criteria {#sec-01-success-criteria}
 
 The success of this project will be measured by:
 
--   A measurable increase in forecast accuracy (e.g., improved RMSE, reduced bias)
+-   A measurable increase in forecast accuracy (RSME and reduced bias)
 
 -   Reduced time and effort spent on non-value-adding manual adjustments
 
@@ -279,7 +279,7 @@ The success of this project will be measured by:
 
 -   Positive feedback from planners and stakeholders
 
-## Summary
+## Summary {#sec-01-summary}
 
 In summary, this chapter defined the business context, stakeholders, and objectives that guide the rest of this project. The next phase, Data Understanding, explores the availability, quality, and suitability of the data used to support these forecasting use cases.
 

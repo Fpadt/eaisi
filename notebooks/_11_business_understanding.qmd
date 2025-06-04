@@ -54,7 +54,7 @@ dynamics across the product portfolio.
 
 
 
-## Who uses the forecasts? {#sec-11-bu-who}
+## Who uses the forecasts? {#sec-11-stakeholder}
 <!-- stakeholders. -->
 
 The company's forecasting requirements vary significantly across several
