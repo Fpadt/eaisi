@@ -1,367 +1,393 @@
 ---
-title:       Data Understanding
-subtitle:    Data Understanding subtitle
+subtitle:     what data is available and where it comes from 
 description: |
-  - understanding of data structure, content & quality
-  - initial exploratory data analysis (EDA) to identify patterns, trends, and relationships within the data.
-unnumbered:      true
-number-sections: false 
-editor: source  
+  - SAP BI extracts serve as the foundation: article, customer, sales & forecast data
+  - Data was scoped to finished goods under Make-to-Stock with ambient storage
+  - The modeling dataset is based on the top-performing MSO and A-class articles
+  - Exploratory analysis confirmed temporal seasonality and product hierarchy depth
+  - Data quality is high overall, with minimal missing values and no major outliers
+number-sections: false
+toc: true         # show page‐TOC (right‐sidebar) on _every_ page
+toc-depth: 3      # include ## and ### in the TOC
 ---
 
-# Data Understanding
+# Data Understanding {#sec-02-data-understanding}
 
-## Data Collection Report
+```{r}
+#| label: setup
+source("../_book_functions.R")
+```
 
-## Data Description Report
+<!-- ## Identification of Data Sources -->
 
-## Data Exploration Report
+
+<!-- ### Articles -->
+
+<!-- ### Customers -->
+
+
+<!-- ### Sales -->
+<!-- Data filters applied (Doctype's, Item category, ...) -->
+<!-- exclude Promotion articles --> 
+
+<!-- ### Forecasts -->
+
+<!-- ## Data Collection Report -->
+<!-- Summarize how data was obtained and any issues during acquisition: -->
+
+
+<!-- ## Data Description Report -->
+
+<!-- Descriptive overview of structure and metadata: Open Hub definition -->
+<!-- Variable types (date, categorical, numeric) -->
+<!-- Dimensions (rows × columns) -->
+<!-- Target variable (e.g., sales units, net revenue) -->
+
+
+
+<!-- ## Data Exploration Report -->
+
+<!-- Exploratory analyses & sanity checks   -->
+<!-- statistical properties and metadata. -->
+<!-- Initial exploration to spot trends, seasonality, outliers, and segmentation patterns. -->
+<!-- Subsections (as needed): -->
+<!-- Sales coverage: distribution over time -->
+<!-- ABC/XYZ, CV, zero-counts, sales length -->
+<!-- Temporal patterns (weekly/monthly seasonality, trend, events) -->
+<!-- Cross-sectional: contribution per customer/product/channel -->
+<!-- exclude units pak and DS   -->
+
+<!-- ### Geographic Distribution of Sales -->
+
+
+### Data Profiling
+
+```{r}
+#| label: skim-summary
+#| results: 'asis'
+
+dtACC_sk <- ACC %>%
+  skim(.) %T>%
+  setDT() %T>%
+  setnames(c(
+    "type",
+    "variable", "n_missing", "complete_rate", 
+    "min_length", "max_length", "empty", "n_unique", "whitespace", 
+    "mean", "sd", "p0", "p25", "p50", "p75", "p100", "histogram"
+  ))
+```
+
+#### Character Variables
+
+Table @tbl-02-data-profiling-ca shows the data profiling results for the dataset,
+including the number of missing values, completeness rate, minimum and maximum length 
+for character variables. The profiling helps identify data quality issues and 
+provides insights into the structure of the dataset.
+
+::: {#tbl-02-data-profiling-ca}
+```{r}
+dtACC_sk[
+  type == 'character', .(
+    variable, 
+    n_missing, complete_rate,
+    min_length, max_length, empty, n_unique, whitespace
+  )] %>% 
+  kbl(
+    # caption             = "Data Profiling: Character Variables",
+    col.names           = names(.),
+    align               = "l",
+    booktabs            = TRUE
+  ) %>% 
+  kable_styling(
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
+  )
+```
+Data Profiling: Character Variables
+:::
+
+::: callout-note
+This data set is of high quality and doesn't need any further analysis on 
+the character variables.
+:::
+
+
+#### Numeric Variables
+
+Table @tbl-02-data-profiling-nu shows the data profiling results for the 
+numeric variables in the dataset, including mean, standard deviation, and 
+percentiles. The histogram column provides a visual representation of 
+the distribution of each numeric variable.
+
+::: {#tbl-02-data-profiling-nu}
+```{r}
+dtACC_sk[
+  type == 'numeric', .(
+    variable, 
+    mean, sd, p0, p25, p50, p75, p100, histogram
+  )]  %>% 
+  kbl(
+    # caption             = "EDA: Numeric Variables",
+    col.names           = names(.),
+    align               = "l",
+    booktabs            = TRUE
+  ) %>% 
+  kable_styling(
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
+  )
+```
+Data Profiling: Numeric Variables
+:::
+
+::: callout-important
+We see that the Quantity (Q) needs some further analysis due to outliers.
+:::
+
+
+```{r}
+
+dt <- ACC[MATERIAL != '000000000003020642' & VTYPE == '010']
+
+ggplot(dt, aes(x = Q)) +
+  # Histogram with density scaling, green fill and border
+  geom_histogram(
+    aes(y     = ..density..),
+    binwidth  = diff(range(dt$Q)) / 100,  # adjust bin width (30 bins here)
+    fill      = "lightgreen",
+    color     = "forestgreen"
+  ) +
+  # Density curve on top
+  geom_density(
+    color     = "forestgreen",
+    linewidth = 1
+  ) +
+  labs(
+    title     = "Histogram of Q with Density Overlay",
+    x         = "Q",
+    y         = "Density"
+  ) +
+  theme_minimal()
+```
+
+
+<!-- } else { -->
+<!--   dtMATL_sk %>% -->
+<!--     kable("latex", booktabs = TRUE, caption = "Variable Description Report") %>% -->
+<!--     kable_styling(latex_options = c("striped", "hold_position"), full_width = FALSE) -->
+<!-- } -->
+
+### Article Hierachy
+
+```{r}
+#| label: tab-02-data-description-hierarchy
+
+# Read the data into a data.table
+dtMAT <- wb_read(
+  file      = ET2BB,
+  sheet     = "MASP",
+  start_row = 19,
+  start_col = 6,
+  skip_empty_cols = TRUE,
+  skip_empty_rows = TRUE
+) %T>%
+  setDT() %T>%
+  setnames(
+    c(4, 6, 8, 9), 
+    c("ProdCat", "SubCat", "Family", "Article")
+  ) %>%
+  .[, .(ProdCat, SubCat, Family, Article)] %>%
+  unique()
+
+dtMAT_tab <- dtMAT[, .(
+  SubCat_Count   = uniqueN(SubCat),
+  Family_Count   = uniqueN(Family),
+  Article_Count = uniqueN(Article)
+), by = ProdCat][order(ProdCat)]
+
+dtCUST <- wb_read(
+  file      = ET2BB,
+  sheet     = "CUST",
+  start_row = 19,
+  start_col = 9,
+  skip_empty_cols = TRUE,
+  skip_empty_rows = TRUE
+) %T>%
+  setDT() %T>%
+  setnames(c(1), c("KEY")  ) 
+
+dtCUST_H1 <- wb_read(
+  file      = ET2BB,
+  sheet     = "CUST_H1",
+  start_row = 1,
+  start_col = 1,
+  skip_empty_cols = TRUE,
+  skip_empty_rows = TRUE
+) %T>%
+  setDT() %T>%
+  setnames(c(1), c("KEY")  )
+
+dtCST <- 
+  dtCUST_H1[dtCUST, on = .(KEY), nomatch = 0] %T>%
+  setnames(
+    c(4, 7, 9, 11),
+    c("Channel", "Key_Account", "Account", "SoldTo")
+  ) %>%
+  .[, .(Channel, Key_Account, Account, SoldTo, Customer)] %>%
+  unique()
+
+dtCST_tab <- dtCST[, .(
+  KAM_count      = uniqueN(Key_Account),
+  ACC_Count      = uniqueN(Account),
+  SoldTo_Count   = uniqueN(SoldTo),
+  Customer_Count = uniqueN(Customer)
+), by = Channel][order(Channel)]
+```
+
+Table @tbl-02-data-description-hierarchy-article summarizes the 4-levels of the article hierarchy by a unique count per level. Roughly,
+
+- each Family contains roughly `r mean(dtMAT_tab$Article_Count/dtMAT_tab$Family_Count) %>% round(0)` articles.
+- each Sub Category contains roughly `r mean(dtMAT_tab$Family_Count/dtMAT_tab$SubCat_Count) %>% round(0)` families.
+
+::: {#tbl-02-data-description-hierarchy-article}  
+```{r}
+
+datatable(
+  dtMAT_tab,
+    options      = list(
+    dom          = 't',          # only the table ("t"); no filter, no pagination controls
+    paging       = FALSE,        # disable pagination
+    searching    = FALSE,        # disable search bar
+    info         = FALSE,        # hide “Showing X of Y” info
+    ordering     = TRUE,         # keep column sorting enabled (default = TRUE)
+    lengthChange = FALSE,        # hide “Show N entries” dropdown
+    columnDefs   = list(
+      list(className = 'dt-left', targets = 0)
+    )  
+    )
+,
+  rownames     = FALSE,
+  class        = 'stripe hover compact'
+) 
+
+
+```
+
+Summary: Article Hierachy
+:::
+
+::: {.content-visible when-format="html"}
+
+The following interactive chart allows to explore the hierarchy by 
+clicking on the nodes to expand or collapse them. 
+:::
+
+:::: {#fig-inter_active_article_hier .figure width="15cm"}
+
+::: {.content-visible when-format="html"}
+
+```{r}
+#| label: tab-02-data-description-hierarchy-plot
+
+collapsibleTree(
+  dtMAT,
+  hierarchy   = c("ProdCat", "SubCat", "Family"),
+  root        = "Articles",
+  width       = "100%",    # now this 100% truly means “fill the parent”
+  height      = "600px",   # you can adjust the height as needed
+  zoomable    = TRUE,
+  fillByLevel = TRUE,
+  fill        = "#38e56d"
+)
+```
+Interactive Article Hierarchy, click on the nodes to expand or collapse them.
+:::
+
+::::
+
+
+
+### Customer Hierarchy
+
+Table @tbl-02-data-description-hierarchy-customer summarizes the 4-levels of the 
+customer hierarchy by a unique count per level. Roughly:
+
+- each Family contains roughly 
+`r mean(dtCST_tab$Customer_Count/dtCST_tab$SoldTo_Count, na.rm =TRUE) %>% round(0)` customers
+- each Account contains roughly
+`r mean(dtCST_tab$SoldTo_Count/dtCST_tab$ACC_Count, na.rm =TRUE) %>% round(0)` sold-to parties
+- each Key Account contains roughly 
+`r mean(dtCST_tab$ACC_Count/dtCST_tab$KAM_count, na.rm =TRUE) %>% round(0)` accounts,
+
+::: {#tbl-02-data-description-hierarchy-customer}
+```{r}
+
+datatable(
+  dtCST_tab,
+  options = list(
+    dom          = 't',          # only the table ("t"); no filter, no pagination controls
+    paging       = FALSE,        # disable pagination
+    searching    = FALSE,        # disable search bar
+    info         = FALSE,        # hide “Showing X of Y” info
+    ordering     = TRUE,         # keep column sorting enabled (default = TRUE)
+    lengthChange = FALSE,       # hide “Show N entries” dropdown
+    columnDefs   = list(
+      list(className = 'dt-left', targets = 0)
+    )
+  ),
+  rownames     = FALSE,
+  class        = 'stripe hover compact'
+) 
+
+# dtCST_tab %>%
+#   kbl(
+#     caption             = "Summary: Customer Hierachy",
+#     col.names           = names(.),
+#     align               = "l",
+#     booktabs            = TRUE
+#   ) %>% 
+#   kable_styling(
+#     full_width          = FALSE,
+#     position            = "left",
+#     bootstrap_options   = c("striped", "hover", "condensed")
+#   )
+
+```
+
+Summary: Customer Hierachy
+:::
+
+<!-- ### Time Series Patterns -->
+
 
 ## Data Quality Report
 
-## Identification of Data Sources
+<!-- Assess data integrity and readiness for modeling. -->
+<!-- Subsections: -->
+<!-- Missing values (which variables, how much, patterns) -->
+<!-- Consistency checks (e.g., units vs revenue) -->
+<!-- Duplicated records -->
+<!-- Outliers: any anomalous spikes or drops? -->
 
 ## Data Quality Assessment
 
-assessing the - completeness: impute missing data - accuracy: = consistency:
+<!-- Data Quality Assessment and Remediation -->
+<!-- Summarize actions taken: -->
+<!-- Imputation strategies -->
+<!-- Exclusions (e.g., rare SKUs or obsolete accounts) -->
 
-### Data Description
+all 0 
+duplicates, zero quantity, unexpected NAs
 
-A descriptive exploratory analysis describes the data by its statistical properties and metadata.
+## Summary of Data Understanding {#sec-02-summary}
 
-outliers?
-
-### Data Verification
-
-
-
-
-```{r}
-#| label: load-packages
-#| include: false
-#| echo: false
-
-library(tidyverse)
-library(palmerpenguins)
-library(ggplot2)
-```
-
-```{r}
-#| label: fig-plot-penguins
-#| echo: false
-#| warning: false
-#| include: true
-#| fig-cap: "Bill length vs. depth for Palmer Penguins"
-#| fig-alt: "Scatterplot of penguin bill length against bill depth"
-#| fig-align: "center"
-#| fig-lightbox: true
-
-ggplot(penguins, 
-       aes(x = flipper_length_mm, y = bill_length_mm)) +
-  geom_point(aes(color = species, shape = species)) +
-  scale_color_manual(values = c("darkorange","purple","cyan4")) +
-  labs(
-    title = "Flipper and bill length",
-    subtitle = "Dimensions for penguins at Palmer Station LTER",
-    x = "Flipper length (mm)", y = "Bill length (mm)",
-    color = "Penguin species", shape = "Penguin species"
-  ) +
-  theme_minimal()
-```
-
-```{r}
-#| label: fig-product-hierarchy
-#| eval: true
-#| echo: false
-#| warning: false
-#| include: true
-
-library(data.table)
-
-# your 10×4 hierarchy
-library(data.table)
-
-# 1) Your 10×4 hierarchy
-tbl <- data.table(
-  Level1 = c("Electronics","Electronics","Electronics","Electronics",
-             "Home","Home","Home","Garden","Garden","Garden"),
-  Level2 = c("Computers","Computers","Computers","TVs",
-             "Kitchen","Kitchen","Furniture","Plants","Plants","Tools"),
-  Level3 = c("Laptops","Desktops","Tablets","LED",
-             "Appliances","Cookware","Chairs","Flowers","Trees","PowerTools"),
-  Level4 = c("Ultrabooks","Gaming","iPads","Samsung",
-             "Ovens","Pots","OfficeChairs","Roses","Oaks","Drills")
-)
-
-# 2) Build a simple id lookup for every unique label
-labels   <- unique(unlist(tbl))
-id_lookup <- setNames(seq_along(labels), labels)
-
-# 3) Annotate each level in tbl with its numeric ID
-dt <- copy(tbl)
-for (lvl in 1:4) {
-  col <- paste0("Level", lvl)
-  dt[, paste0(col, "_id") := id_lookup[get(col)] ]
-}
-
-# 4) For each level 1–4, pull out the UID and indented text,
-#    then rbind them together and dedupe
-out <- rbindlist(lapply(1:4, function(lvl) {
-  id_cols   <- paste0("Level", 1:lvl, "_id")
-  label_col <- paste0("Level", lvl)
-  dt[,
-     .(
-       uid  = do.call(paste, c(.SD, sep = ".")),
-       text = paste0(strrep("  ", lvl - 1), get(label_col))
-     ),
-     .SDcols = id_cols
-  ][, unique(.SD)]
-}))
-
-# 5) Sort by the UID so the outline is in the right order
-setorder(out, uid)
-
-out[, cnt:= .N, by = substr(uid, 1, 1)]
-
-# 6) Here’s your final two-column data.table:
-print(out)
-
-
-
-```
-
-
-```{r}
-#| label:   setup
-#| eval:    false
-
-library(ggplot2)
-library(data.table)
-library(lubridate)
-library(magrittr)
-library(stringr)
-library(openxlsx)
-
-library(tidyverse)
-
-LP0 <- 
-  function(x, width){
-    # like CONVERSION_EXIT_MATN1_INPUT
-    # only add leading zero's in case it is a number
-    is_num <- grepl("^[0-9]+$", x)
-    ifelse(
-      is_num, 
-      stringr::str_pad(string = x, width = width, side = "left", pad = "0"),
-      x
-    )
-  }
-
-fOpen_as_xlsx <- 
-  function(pDT, pPath = "./Results", pFN, pasTable = TRUE){
-    
-    if (!dir.exists(pPath)) {
-      dir.create(pPath)
-    }
-    
-    if (missing(pFN) == TRUE) {
-      pFN <- paste0("~", format(now(), "%Y%m%d-%H%M%S"), ".xlsx")
-    }
-    
-    FFN <- file.path(pPath, pFN)
-    write.xlsx(x = pDT, file = FFN, asTable = pasTable, tableStyle = "TableStyleMedium4") 
-    openXL(FFN)
-    
-  }
-# PDAT <- file.path("C:", "PW", "OneDrive", "ET", "pythia", "dat")
-
-PDAT <- 
-  switch(Sys.info()["nodename"],
-         'TREX-TOAD' = file.path("U:", "floris"),
-                       file.path("C:", "PW")
-  ) %>% 
-  file.path("OneDrive", "ET", "pythia", "dat")
-
-ET_CG <- "#0f5e3c"
-ET_FG <- "#089b35"
-
-MAT <- '000000000003036397'
-MAN <- FALSE & substr(PDAT, 1,1) != "U"
-
-BRNDS <- 
-  fread(text = "
-  PRDH1, NAME
-  07   , ALTER ECO
-  08   , BJORG
-  10   , CLIPPER (CUPPER)
-  15   , ZONNATURA
-  53   , TANOSHI
-  65   , NATURELA"
-  ) %>%
-  .[, PRDH1:= str_pad(PRDH1, 2, pad = "0")]
-
-```
-
-## SDMFRCAC FA
-
-```{r}
-#| label:  'load_scope'
-#| eval:   false
-
-B4_SDMFRCAC2_A <- 
-  readRDS(file = file.path(PDAT, "B4_SDMFRCAC2_A.rds"))              %>%
-  .[PLANT %chin% c("FR30", "NL60", "NL63")]
-
-B4_MATERIAL_P  <- 
-  readRDS(file = file.path(PDAT, "B4_MATERIAL_P.rds"))               %>%
-  .[MATL_TYPE %chin% c("FERT", "HALB")]
-
-dtFA <- 
-  BRNDS[B4_MATERIAL_P[MATL_TYPE %chin% c("FERT", "HALB")], 
-        on = .(PRDH1 = PRDH1), nomatch = 0]                          %>%
-  .[B4_SDMFRCAC2_A, on = .(SYSTID, CLIENT, MATERIAL), nomatch = 0]   %>%
-  .[, .(
-    ACT = sum(DEMND_QTY),
-    FM1 = sum(DEMQTYM1)
-  ), by = .(PRDH1, PLANT, MATERIAL, CALMONTH)
-  ]                                                                  %>%
-  .[, {
-    E   = ACT - FM1
-    E2  = E ^ 2
-    AE  = abs(E)
-    APE = 100 * (1 - AE / ACT)
-    ECO = 100 * (1 - AE / FM1)
-    .(
-      PRDH1, PLANT, MATERIAL, CALMONTH, 
-      ACT  , FM1  , E, E2, AE, APE, ECO
-      )
-  }  ] 
-
-dtFA <- 
-  dtFA[
-    !is.nan(APE) & 
-    !is.nan(ECO) &   
-    !is.infinite(APE) &
-    !is.infinite(ECO) &  
-    APE > -100 &
-    ECO > -100  ]
-```
-
-```{r}
-#| label:  'load_material_data'
-#| eval:   false
-
-PYT <- file.path("C:", "PW", "OneDrive", "ET", "pythia", "upg", "data")
-
-MATS <- 
-  fread(file.path(PYT, "MD_MATERIAL_SALES_ORG.CSV")) %>%
-  .[, MATERIAL := LP0(V1, 18)] 
-
-TST <- 
-  MATS[V2 == 'NL10', .(MATERIAL, PLANT = 'NL60', PROMO = V17)][
-    B4_SDMFRCAC2_A, on = .(MATERIAL, PLANT), nomatch = NA] %>%
-  .[PLANT != 'FR30']
-```
-
-```{r}
-#| label:  'Actual_sales'
-#| eval:   false
-
-MAT <- LP0('10023', 18)
-
-ggplot(
-  data = dtFA[
-    MATERIAL == MAT
-    ], aes(x = CALMONTH, y = ACT)) +
-  geom_col(fill = ET_CG) +
-  theme_minimal()
-```
-
-```{r}
-#| label:  'APE vs ECO'
-#| eval:   false
-
-ggplot(
-  data = dtFA[
-    CALMONTH >='202401' 
-    & APE > -50
-    # & MATERIAL == MAT
-  ], 
-  aes(x = APE, y = ECO)
-) +
-  geom_point() +
-  geom_abline(intercept = 0, slope = 1) +
-  # geom_label(aes(label = round(PE, 1))) +
-  # facet_wrap(~ PLANT + MATERIAL, scales = "free_y") +
-  # scale_color_manual(values=c(ET_CG, ET_FG))+
-  theme_minimal()
-```
-
-```{r}
-#| label:  'SC-113B_1'
-#| eval:   false
-
-dtFA_melt  <- 
-  copy(dtFA) %>%
-  melt.data.table(
-    measure.vars  = c("APE", "ECO"),
-    variable.name = "PE_TYPE",
-    value.name    = "PE"
-    ) %T>% setorder(CALMONTH)
-
-ggplot(
-  data = dtFA_melt[CALMONTH >='202401' & MATERIAL == MAT], 
-  aes(x = CALMONTH, y = PE, group = PE_TYPE, color = PE_TYPE)
-  ) +
-  geom_line(linewidth = 2) +
-  geom_point() +
-  geom_label(aes(label = round(PE, 1))) +
-  # facet_wrap(~ PLANT + MATERIAL, scales = "free_y") +
-  scale_color_manual(values=c(ET_CG, ET_FG))+
-  theme_minimal()
-
-# if(MAN){
-#   if(rstudioapi::showQuestion(
-#     title   = "SAC", 
-#     message = "Do you want to open SC-113B?"
-#   ) == TRUE) {
-#     browseURL(url = "https://wessanen.eu10.sapanalytics.cloud/link/SC113B")
-#   }
-# }
-```
-
-```{r}
-#| label:  'SC-113B_2'
-#| eval:   false
-
-dtFA_melt  <- 
-  copy(dtFA) %>%
-  melt.data.table(
-    measure.vars  = c("APE", "ECO"),
-    variable.name = "PE_TYPE",
-    value.name    = "PE"
-    )                                         %T>% 
-  setorder(PLANT, MATERIAL, CALMONTH)
-
-ggplot(
-  data = dtFA_melt[CALMONTH >='202401' & MATERIAL == MAT], 
-  aes(x = CALMONTH, y = PE, group = PE_TYPE, color = PE_TYPE)
-  ) +
-  geom_line(linewidth = 2) +
-  geom_point() +
-  geom_label(aes(label = round(PE, 1))) +
-  # facet_wrap(~ PLANT + MATERIAL, scales = "free_y") +
-  scale_color_manual(values=c(ET_CG, ET_FG))+
-  theme_minimal()
-
-# if(MAN){
-#   if(rstudioapi::showQuestion(
-#     title   = "SAC", 
-#     message = "Do you want to open SC-113B?"
-#   ) == TRUE) {
-#     browseURL(url = "https://wessanen.eu10.sapanalytics.cloud/link/SC113B")
-#   }
-# }
-```
+- The dataset combines master and transactional data from SAP BI and QAD systems.
+- Sales and forecasts are scoped to a single MSO and A-class finished goods.
+- Product and customer hierarchies follow a consistent four-level structure.
+- Exploratory analysis confirms sufficient data volume, patterns, and quality.
+- The data is now ready for scoping, transformation, and modeling.
 
 
 <!-- {{< include 02_data_understanding_def.qmd >}} -->

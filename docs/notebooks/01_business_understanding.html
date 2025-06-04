@@ -624,8 +624,8 @@ div.csl-indent {
 <p>Accurate forecasting is essential for managing <em>BioBalance’s</em> portfolio of over 2.500 products, each with specific shelf-life requirements, sourcing constraints, and production lead times. Forecasts guide decisions across the entire supply chain — from procurement and production to distribution and inventory management.</p>
 <section id="sec-01-geographical" class="level3">
 <h3 class="anchored" data-anchor-id="sec-01-geographical">Geographic Footprint and Production Model</h3>
-<p><em>BioBalance</em> operates multiple production facilities and distribution centers across Europe, serving customers in various countries through both direct and indirect channels. As shown in <a href="#fig-01-bu-map" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>, these facilities are geographically distributed, and some products are produced in one country but sold in others.</p>
-<p>Due to long production and transportation lead times, combined with short customer order lead times, BioBalance follows a Make-to-Stock (MTS) strategy for most of its portfolio. Products must be manufactured and positioned in the supply chain ahead of actual demand. To support this, the Marketing and Sales Organizations (MSOs) place minimum order quantities (MOQs) in advance to cover expected demand for the upcoming weeks. An illustrative example of these goods flows is shown in Appendix <a href="11_business_understanding.html#fig-11-supplychain-goodsflow" class="quarto-xref">Figure&nbsp;<span>8.1</span></a>.</p>
+<p><em>BioBalance</em> operates multiple production facilities and distribution centers across Europe, serving customers in various countries through both direct and indirect channels. As shown in <a href="#fig-01-bu-map" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-01-bu-map</span></a>, these facilities are geographically distributed, and some products are produced in one country but sold in others.</p>
+<p>Due to long production and transportation lead times, combined with short customer order lead times, BioBalance follows a Make-to-Stock (MTS) strategy for most of its portfolio. Products must be manufactured and positioned in the supply chain ahead of actual demand. To support this, the Marketing and Sales Organizations (MSOs) place minimum order quantities (MOQs) in advance to cover expected demand for the upcoming weeks. An illustrative example of these goods flows is shown in Appendix <a href="#fig-11-supplychain-goodsflow" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-11-supplychain-goodsflow</span></a>.</p>
 <p>As a result, accurate forecasting is essential to:</p>
 <ul>
 <li>Plan &amp; schedule production volumes and resources at the plants</li>
@@ -646,7 +646,7 @@ Figure&nbsp;1.1: Geographic footprint of <em>BioBalance</em>: production and dis
 </section>
 <section id="sec-01-blossam" class="level3">
 <h3 class="anchored" data-anchor-id="sec-01-blossam"><em>Blossam</em> Tea: an illustrative example</h3>
-<p>The planning process for <em>Blossam Balance Tea</em> illustrates the complexity of forecasting across stages, see <a href="05_evaluation.html#fig-01-bu-why" class="quarto-xref">Figure&nbsp;<span>5.2</span></a>:</p>
+<p>The planning process for <em>Blossam Balance Tea</em> illustrates the complexity of forecasting across stages, see <a href="#fig-01-bu-why" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-01-bu-why</span></a>:</p>
 <div id="fig-01-bu-why" class="figure quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-01-bu-why-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -737,17 +737,17 @@ Figure&nbsp;1.3: who uses the forecasts? varying requirements across several key
 </table>
 </div>
 </div>
-<p>A detailed overview is available in (<a href="11_business_understanding.html#sec-11-stakeholder" class="quarto-xref"><span>Stakeholder Use Cases</span></a>).</p>
+<p>A detailed overview is available in (<a href="#sec-11-stakeholder" class="quarto-xref"><span class="quarto-unresolved-ref">sec-11-stakeholder</span></a>).</p>
 </section>
 <section id="sec-01-bu-scope" class="level2">
 <h2 class="anchored" data-anchor-id="sec-01-bu-scope">Scope of the Project</h2>
 <p>This research is limited to articles sold to customers (<strong>Finished Goods</strong>) that are <strong>MRP-relevant</strong> and planned under a <strong>Make-to-Stock</strong> strategy. Products with short shelf lives, requiring chilled storage and daily planning, are excluded due to their distinct planning characteristics.</p>
-<p>The study further focuses on the most commercially significant part of <em>BioBalance’s</em> operations: the Market Sales Organization (MSO) with the highest sales volume in 2024. This selection is based on the exploratory analysis presented in <a href="02_data_understanding.html#fig-02-eda-geography" class="quarto-xref">Figure&nbsp;<span>2.1</span></a> and ensures that the results are directly applicable to the area with the greatest business impact.</p>
+<p>The study further focuses on the most commercially significant part of <em>BioBalance’s</em> operations: the Market Sales Organization (MSO) with the highest sales volume in 2024. This selection is based on the exploratory analysis presented in <a href="#fig-02-eda-geography" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-02-eda-geography</span></a> and ensures that the results are directly applicable to the area with the greatest business impact.</p>
 <p>Within this scope, we specifically target ambient products with a minimum shelf life of 60 days. These products are planned in weekly MRP cycles and forecasted using monthly time buckets. They represent the majority of <em>BioBalance’s</em> volume and align best with the strategic forecasting use cases addressed in this study.</p>
 </section>
 <section id="sec-01-problem-statement" class="level2">
 <h2 class="anchored" data-anchor-id="sec-01-problem-statement">Problem Statement</h2>
-<p>While <em>BioBalance</em> uses a flexible forecasting platform, its reliance on manual adjustments and subjective decision-making introduces inconsistency. Forecasting methods and aggregation levels are often chosen based on intuition and experience. Research shows, see <span class="citation" data-cites="article">(<a href="18_references.html#ref-article" role="doc-biblioref">Fildes &amp; Goodwin, 2007</a>)</span>, that small manual adjustments typically offer no benefit, whereas larger interventions—usually reductions—may significantly improve accuracy.</p>
+<p>While <em>BioBalance</em> uses a flexible forecasting platform, its reliance on manual adjustments and subjective decision-making introduces inconsistency. Forecasting methods and aggregation levels are often chosen based on intuition and experience. Research shows, see <span class="citation" data-cites="article">(<a href="#ref-article" role="doc-biblioref">Fildes &amp; Goodwin, 2007</a>)</span>, that small manual adjustments typically offer no benefit, whereas larger interventions—usually reductions—may significantly improve accuracy.</p>
 <p>Without an objective benchmark, it is impossible to determine whether these manual interventions improve accuracy or merely increase resource costs.</p>
 </section>
 <section id="sec-01-business-objectives" class="level2">
@@ -766,8 +766,8 @@ Figure&nbsp;1.3: who uses the forecasts? varying requirements across several key
 <li><p>Improve customer service levels and reduce waste.</p></li>
 <li><p>Increase customer satisfaction through consistent availability.</p></li>
 </ol>
-<p>And ultimately increase profitability, as illustrated in <a href="#fig-01-bu-daps" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>, see <span class="citation" data-cites="demast2024">(<a href="18_references.html#ref-demast2024" role="doc-biblioref">Mast &amp; Lokkerbol, 2024</a>)</span>.</p>
-<div id="fig-01-bu-daps" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-width="15cm" alt="DAPS" data-fig-align="left">
+<p>And ultimately increase profitability, as illustrated in <a href="#fig-01-bu-daps" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-01-bu-daps</span></a>, see <span class="citation" data-cites="demast2024">(<a href="#ref-demast2024" role="doc-biblioref">Mast &amp; Lokkerbol, 2024</a>)</span>.</p>
+<div id="fig-01-bu-daps" class="figure quarto-float quarto-figure quarto-figure-left anchored" alt="DAPS" data-fig-align="left" data-fig-width="15cm">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-01-bu-daps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="../images/flowdown.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;1.4: "><img src="../images/flowdown.png" class="img-fluid quarto-figure quarto-figure-left figure-img" data-fig-width="15cm" alt="DAPS"></a>
@@ -789,13 +789,13 @@ low-cost, automated forecast based on statistical models (e.g., ETS, HTS).</p></
 </ul>
 <p>This environment was deliberately designed to operate in parallel, with read-only access to the production system. This avoids interference with business-critical forecasting workflows and eliminates the risk of disrupting day-to-day operations.</p>
 <p>Additionally, the project was developed under the constraint of limited access to business resources — both in terms of time and geographical availability. Demand planners and analysts needed to prioritize operational continuity, requiring the research to be conducted independently while still aligning with business realities.</p>
-<p>By working within these constraints, <strong>Pythia’s Advice</strong> enables experimentation and benchmarking without disrupting operations — providing a safe and scalable way to measure the value of forecast improvements. <strong>Pythia’s Advice</strong> is represented by the lower part of the Data-Analytic Problem Structure (DAPS), (<a href="#fig-01-bu-daps" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>).</p>
+<p>By working within these constraints, <strong>Pythia’s Advice</strong> enables experimentation and benchmarking without disrupting operations — providing a safe and scalable way to measure the value of forecast improvements. <strong>Pythia’s Advice</strong> is represented by the lower part of the Data-Analytic Problem Structure (DAPS), (<a href="#fig-01-bu-daps" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-01-bu-daps</span></a>).</p>
 </section>
 </section>
 <section id="sec-01-forecast-process" class="level2">
 <h2 class="anchored" data-anchor-id="sec-01-forecast-process">Forecast Process</h2>
 <!-- Business process mapping -->
-<p><em>BioBalance</em> relies on a third-party system that uses traditional statistical models (see Appendix <a href="11_business_understanding.html#tbl-11-stat-methods" class="quarto-xref">Table&nbsp;<span>8.1</span></a>). Figure <a href="#fig-01-bu-proc" class="quarto-xref">Figure&nbsp;<span>1.5</span></a> illustrates the forecasting steps demand planners follow. Although presented sequentially, these steps often require multiple iterations. Table <a href="#tbl-01-demand-planners-activities" class="quarto-xref">Table&nbsp;<span>1.1</span></a> provides a detailed breakdown.</p>
+<p><em>BioBalance</em> relies on a third-party system that uses traditional statistical models (see Appendix <a href="#tbl-11-stat-methods" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-11-stat-methods</span></a>). Figure <a href="#fig-01-bu-proc" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-01-bu-proc</span></a> illustrates the forecasting steps demand planners follow. Although presented sequentially, these steps often require multiple iterations. Table <a href="#tbl-01-demand-planners-activities" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-01-demand-planners-activities</span></a> provides a detailed breakdown.</p>
 <p><em>Pythia’s Advice</em> seeks to eliminate those iterations, enhancing both efficiency and forecast accuracy.</p>
 <div id="fig-01-bu-proc" class="figure quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -893,7 +893,7 @@ Table&nbsp;1.1: Forecasting steps per forecast, Pythia’s Advice to improve eff
 <!-- {{< include 01_business_understanding_def.qmd >}} -->
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-magrittr2024" class="csl-entry" role="listitem">
 Bache, S. M. (2024). <em>Magrittr: A forward-pipe operator for r</em>. <a href="https://cran.r-project.org/package=magrittr">https://cran.r-project.org/package=magrittr</a>
 </div>

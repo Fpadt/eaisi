@@ -1,11 +1,11 @@
 ---
 subtitle:     what data is available and where it comes from 
 description: |
-  - datasources identified: sales master data
-  - tabular structure
-  - Article and Customer hierarchies have 4 levels
-  - no outliers but missing values
-  - initial exploratory data analysis (EDA) to identify patterns, trends, and relationships within the data.
+  - SAP BI extracts serve as the foundation: article, customer, sales & forecast data
+  - Data was scoped to finished goods under Make-to-Stock with ambient storage
+  - The modeling dataset is based on the top-performing MSO and A-class articles
+  - Exploratory analysis confirmed temporal seasonality and product hierarchy depth
+  - Data quality is high overall, with minimal missing values and no major outliers
 number-sections: false
 toc: true         # show page‐TOC (right‐sidebar) on _every_ page
 toc-depth: 3      # include ## and ### in the TOC
@@ -359,11 +359,6 @@ ACC <-                              #
 <!-- Cross-sectional: contribution per customer/product/channel -->
 <!-- exclude units pak and DS   -->
 
-::: {.callout-note}
-For modeling purposes, the data was scoped to A-class articles based on ABC classification.  
-See [ABC Analysis and Scope Definition](#sec-03-abc) for details.
-:::
-
 ### Geographic Distribution of Sales
 
 ::: {#fig-02-eda-geography .figure}
@@ -439,6 +434,11 @@ ggplot(dtMSO, aes(x = Percent, y = reorder(MSO, Percent))) +
 
 Scoping the analysis to `r dtMSO[1, MSO]`, which accounts for 
 `r paste(round( 100 * dtMSO[1, Percent], 2), '%')` of total sales in 2024.
+:::
+
+::: {.callout-note}
+For modeling purposes, the data was scoped to A-class articles based on ABC classification.  
+See [ABC Analysis and Scope Definition](#sec-03-abc) for details.
 :::
 
 ### Data Profiling
@@ -769,13 +769,15 @@ in the upper left corner, Clipper hot again, demonstrating the expected seasonal
 <!-- Exclusions (e.g., rare SKUs or obsolete accounts) -->
 
 all 0 
+duplicates, zero quantity, unexpected NAs
 
-## Key Findings and Readiness Summary
+## Summary of Data Understanding {#sec-02-summary}
 
-<!-- Short bullets or table summarizing readiness per dataset -->
+- The dataset combines master and transactional data from SAP BI and QAD systems.
+- Sales and forecasts are scoped to a single MSO and A-class finished goods.
+- Product and customer hierarchies follow a consistent four-level structure.
+- Exploratory analysis confirms sufficient data volume, patterns, and quality.
+- The data is now ready for scoping, transformation, and modeling.
 
-<!-- What transformations/prep are needed before modeling -->
-
-<!-- Any data limitations that impact scope -->
 
 <!-- {{< include 02_data_understanding_def.qmd >}} -->
