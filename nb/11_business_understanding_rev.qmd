@@ -15,9 +15,12 @@ toc-depth: 3      # include ## and ### in the TOC
 #| label: setup
 source("../_book_functions.R")
 ```
-## Why is Forecasting Important? {#sec-01-bu-why}
-### Geographic Footprint and Production Model
-#### Goods Flow
+
+## Why is Forecasting Important? {#sec-11-bu-why}
+
+### Geographic Footprint and Production Model  {#sec-11-geographical}
+
+#### Goods Flow  {#sec-11-geographical-goodsflow}
 
 ```{r convert‐diagram, include=FALSE}
 # make sure you have installed: install.packages("rsvg")
@@ -30,21 +33,26 @@ rsvg::rsvg_png(
 
 :::: {#fig-11-supplychain-goodsflow .figure}
 ::: { .content-visible when-format="html"}
-    ![supply chain network (sample)](../images/scn.svg){fig-alt="Supply Chain Network" fig-align="center" fig-width="15cm"}
+![supply chain network (sample)](../images/scn.svg){fig-alt="Supply Chain Network" fig-align="center" fig-width="15cm"}
 :::
+
 ::: {.content-visible when-format="pdf"}
-    ![supply chain network (sample)](../images/scn.png){fig-alt="Supply Chain Network" fig-align="center" fig-width="5cm"}
+![supply chain network (sample)](../images/scn.png){fig-alt="Supply Chain Network" fig-align="center" fig-width="5cm"}
 :::
+
 Supply-chain goods flows, illustrative example
+
 ::::
 
+
 ::: callout-important
-Some goods-flow use a Sales/order purcchase order flow for intercompany sales. 
-These flows need to be forecasted by teh supplier but are also forecasted by the 
-receiving MSO. This leads to a double counting of the sales, which needs to be adjusted for.
+Some goods-flow use a Sales/order purchase order flow for inter-company sales, 
+see the orange box. These flows need to be forecasted by the supplier but are 
+also forecasted by the receiving MSO. This leads to a double counting of the 
+sales, which needs to be adjusted for.
 :::
 
-## Stakeholder Use Cases {#sec-11-bu-who}
+## Stakeholder Use Cases {#sec-11-stakeholder}
 <!-- stakeholders. -->
 
 The company's forecasting requirements vary significantly across several key use cases::
@@ -90,14 +98,15 @@ The company's forecasting requirements vary significantly across several key use
 4.  **Production Cost Calculation**: Requires forecasts at a **quarterly level**, aggregated by material, with a horizon of **6 quarters**, grouped into annual time buckets.
 
     
-## Scope of the Project {#sec-01-bu-scope}
-## Problem Statement
+<!-- ## Scope of the Project {#sec-11-bu-scope} -->
+
+## Problem Statement {#sec-11-problem-statement}
 
 The primary forecasting challenge is determining the optimal aggregation level and methods to use for generating forecasts that can meet the desired forecast accuracy of these different use cases while ensuring **consistency** and **accuracy**.
 
 This inconsistency stems from a lack of objective criteria for selecting between forecasting methods—**bottom-up**, **top-down**, or **middle-out**—resulting in decisions that rely on the subjective judgment of demand planners, leading to variable performance and inefficiencies.
 
-## Business Objectives
+## Business Objectives {#sec-11-business-objectives}
 
 The primary objective is to enhance operational efficiency by improving forecast accuracy across all key use cases. This will be achieved through the application of robust forecasting methods that can handle seasonality, promotions, and efficiently allocate scarce resources. Ultimately, these improvements will contribute to improved stock levels and a higher level of customer satisfaction, both key strategic goals for the company.
 
@@ -119,125 +128,81 @@ The primary objective is to enhance operational efficiency by improving forecast
         detailed and aggregated forecasts are aligned.
 
 
-### Pythia’s Advice: A System of Innovation
-## Forecast Process
-### Traditional statistical forecasting methods 
+<!-- ### Pythia’s Advice: A System of Innovation {#sec-01-pythia-advice-system} -->
+
+## Forecast Process {#sec-11-forecast-process}
+
+### Traditional statistical forecasting methods {#sec-01-traditional-methods} 
+
+The forecaster is provided with multiple forecast adjustment parameters. 
+
+- Upstream of the calculation:  
+    - The forecaster can influence the forecast calculation by redefining 
+    the history size to be considered  
+    - He/she may label certain periods as exceptions using qualitative events  
+    - He/she may change the seasonality coefficients  
+    
+- When reviewing the calculated forecast to establish the final forecast:  
+    - He/she may decide to use a different forecasting method than the one 
+    calculated for the item using the Automatic mode, by forcing the Forecast 
+    method data field.  
+    - He/she may realign the forecast based on actual sales days of the future
+    - He/she may add to or subtract from the calculated forecast future events 
+    already known
+    - He/she may finally force the values of the calculated forecast over 
+    certain periods or a whole cycle
 
 ::: {#tbl-11-stat-methods}
 
 ```{r}
 #| label: tab-forecasting-methods
 
-# 1) Create a data.table to hold the table data
-dt_methods <- data.table(
-  Method = c(
-    "Moving Average",
-    "Simple Exponential Smoothing",
-    "Double Exponential Smoothing",
-    "Triple Exponential Smoothing",
-    "Box-Jenkins (ARIMA/ARMA)"
-  ),
-  Challenge = c(
-    "Seasonality, promotional effects",
-    "Seasonality, promotional effects",
-    "Seasonality, promotional effects",
-    "promotional effects",
-    "Stationary data"
-  )
-)
-
+ wb_read(
+    file      = ET2BB,
+    sheet     = "mo_fm",
+    start_row = 1,
+    start_col = 1,
+    skip_empty_cols = TRUE,
+    skip_empty_rows = TRUE
+  )  %T>%
+  setDT() %>%
 # 2) Wrap the Method column in cell_spec(bold = TRUE)
-dt_methods[, Method := cell_spec(Method, bold = TRUE)]
-
-# 3) Render with kableExtra, disabling escaping so the <b> and \textbf{} get through
-dt_methods %>%
+.[, Method := cell_spec(Method, bold = TRUE)] %>%
   kbl(
-    booktabs = TRUE,
-    escape = FALSE,
-    format = if (knitr::is_latex_output()) "latex" else "html"
+    caption             = "Data Description",
+    col.names           = names(.),
+    align               = "l",
+    booktabs            = TRUE
   ) %>%
   kable_styling(
-    bootstrap_options = c("striped", "condensed"),
-    latex_options     = c("striped", "hold_position"),
-    full_width        = FALSE
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
   )
 ```
 Traditional statistical forecasting methods
 :::
 
--   **Proposed Methods**:
+### Proposed Methods:
 
-    -   **ETS (Error, Trend, Seasonal)**: To enhance exponential
-        smoothing with an automated model which selects the appropriate
-        exponential smoothing model with the right parameters and provides
-        **prediction intervals**.
+    -   **ETS (Error, Trend, Seasonal)**: Innovations state space models 
+        for exponential smoothing, appropriate model will be selected based on
+        Corrected Akaike’s Information Criterion AIC_c instead of the Bayesian 
+        Information Criterion (see [Which measure should we use?](https://otexts.com/fpp3/selecting-predictors.html#which-measure-should-we-use).
+        Additional ETS proveides provides **prediction intervals**.
 
     -   **HTS (Hierarchical Time Series)**: To handle multiple
         aggregation levels, ensuring **forecast consistency** when
-        forecasts are disaggregated or aggregated across levels.
-
-
-
-#### Data and Forecasting Methods {.unnumbered}
-
-We will employ a combination of **statistical methods** and **machine learning techniques** to improve the forecasting process:
-
--   **Current Methods**: The company’s current forecasting system uses **moving averages**, **exponential smoothing** and **Box-Jenkins**, which face challenges with **Seasonality**, **Stationarity** and **promotional effects**. Forecasts are often inadequate in handling the impacts of promotions.
-
--   **Proposed Methods**:
-
-    -   **ETS (Error, Trend, Seasonal)**: To replace exponential smoothing with a model that provides **prediction intervals** and better captures trends and seasonality.
-
-    -   **HTS (Hierarchical Time Series)**: To handle multiple aggregation levels, ensuring **forecast consistency** when forecasts are disaggregated or aggregated across levels.
-
-    -   **XGBoost**: A machine learning technique capable of handling **promotional impacts** and even identifying **cannibalization effects** of promotions between products.
-
-    -   **conformal prediction**: A method that provides **prediction intervals** and **calibrated forecasts**, ensuring that the forecasted values are within a certain confidence level.
-
-    -   **CatBoost and SHAP**: These will be used for feature analysis, determining which features (e.g., promotions, stock-outs) have the highest impact on forecast accuracy. This approach helps in choosing relevant input features to improve forecasts.
-
-#### Consistency and Validation {.unnumbered}
-
-One key requirement is ensuring that forecasts remain consistent across different levels of aggregation. This is where **HTS** will play a crucial role, reconciling forecasts generated at different aggregation levels to ensure that top-level forecasts align with aggregated lower-level forecasts. This will address the known issue of discrepancies between aggregated forecasts and directly forecasted aggregated levels.
-
-#### Human Resources Allocation
-
-The team consists of **X demand planners** working across **Y MSOs**. Currently, planners are involved in manually indicating promotional impacts and adjusting forecasts based on intuition, without systematic data cleaning for stock-outs or model tuning.
-
-To optimize resource allocation, we plan to implement a **classification system** for the company's **9K SKUs**, utilizing an:
-
-**ABC-XYZ classification** scheme:
+        forecasts are dis-aggregated or aggregated across levels.
 
 -   **ABC Classification**: Based on **sales volume**—focusing more resources on high-value items (A-class) and minimizing attention to low-volume items (C-class).
 -   **XYZ Classification**: Based on **sales variability**, indicating which products have stable demand versus those with erratic patterns.
 -   **Combined Classification**: These classifications will guide planners in determining where their efforts can have the most impact, focusing primarily on high-priority items while relying more on automated processes for low-priority ones.
 
-## Success Criteria
+## Success Criteria {#sec-11-success-criteria}
 <!-- main indicators, KPIs, constraints -->
-Success will be measured by the following criteria:
 
-Forecast Accuracy % and Bias %
-
-To assess forecast accuracy, we will use a range of evaluation metrics
-tailored to each use case.
-
-These metrics will help evaluate how well each approach performs against
-the unique requirements of each use case, ultimately guiding method
-selection and refinement.
-
--   **RMSE (Root Mean Squared Error, @def-11-RMSE )**: The primary metric
-    for measuring forecast accuracy, particularly useful for penalizing
-    large errors.
-
--   **MAPE (Mean Absolute Percentage Error)**: To align with existing
-    company metrics.
-
--   **MAE (Mean Absolute Error)** and **MASE (Mean Absolute Scaled
-    Error)**: Additional metrics to provide a broader evaluation,
-    addressing different aspects of forecast performance and comparing
-    models to naïve baselines.
-    
-### Business Success Criteria
+### Business Success Criteria {#sec-11-business-success-criteria}
 Success will be measured by the following criteria:
 
 1.  **Improved Forecast Accuracy**:
@@ -259,22 +224,30 @@ Success will be measured by the following criteria:
 
 By achieving these objectives, the company will see significant improvements in operational efficiency, cost-effectiveness, and most importantly, a higher level of customer satisfaction, which will ultimately drive long-term business success.
 
-see upper part of the flow-down graph, (@sec-flowdown).
+see upper part of the flow-down graph, (@fig-01-bu-daps).
 
-### Data Mining Success Criteria
+### Research Sucess Criteria {#sec-11-research-success-criteria}
 
-The final result will show an estimated relationship between forecast accuracy and the cost of resources required for the agreed scope. The cost of resources result from hardware, software and human resources needed for cleansing data, transforming data, model tuning and other manual activities needed.
+To assess forecast accuracy, we will use a range of evaluation metrics
+tailored to each use case.
 
-To assess forecast accuracy, we will use a range of evaluation metrics tailored to each use case.
+These metrics will help evaluate how well each approach performs against
+the unique requirements of each use case, ultimately guiding method
+selection and refinement.
 
-These metrics will help evaluate how well each approach performs against the unique requirements of each use case, ultimately guiding method selection and refinement.
+-   **RMSE (Root Mean Squared Error, @def-11-RMSE )**: The primary metric
+    for measuring forecast accuracy, particularly useful for penalizing
+    large errors.
 
-Predictive Model based on Correlations: Forecast Future Sales + Promotion effects
+-   **MAPE (Mean Absolute Percentage Error)**: To align with existing
+    company metrics.
 
-see lower part of the flow-down graph, (@sec-flowdown).
-
-
-
+-   **MAE (Mean Absolute Error)** and **MASE (Mean Absolute Scaled
+    Error)**: Additional metrics to provide a broader evaluation,
+    addressing different aspects of forecast performance and comparing
+    models to naïve baselines.
+    
+see lower part of the flow-down graph, (@fig-01-bu-daps).
 
 
 <!-- {{< include 01_business_understanding_def.qmd >}} -->
