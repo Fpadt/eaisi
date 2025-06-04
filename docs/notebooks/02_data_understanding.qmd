@@ -123,6 +123,10 @@ standard sales orders and free-of-charge orders.
 Articles flagged in the Article Master data as Fixed Planned Promotions are excluded because they aren’t forecasted—instead, they’re delivered by contract and thus always achieve 100 % forecast accuracy.
 :::
 
+::: {.callout-tip title="Tip with Title"}
+This is a callout with a title.
+:::
+
 ::: {#tbl-02-data-sources-sales-filters}
 ```{r}
 
@@ -359,7 +363,7 @@ ACC <-                              #
 <!-- Cross-sectional: contribution per customer/product/channel -->
 <!-- exclude units pak and DS   -->
 
-::: {.callout-note title="Scoping to A-Class"}
+::: {.callout-note}
 For modeling purposes, the data was scoped to A-class articles based on ABC classification.
 See [@sec-03-abc] for details.
 :::

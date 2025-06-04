@@ -166,35 +166,25 @@ Bronze-Silver-Gold structure data according to its level of processing and readi
 *Gold Layer* (Curated Data): Contains data that has been transformed into business-level aggregates, models, or reports. This is the data used by analysts, data scientists, or applications for decision-making.
 
 
-## ABC Analysis and Scope Definition
-This is the most important analytical step in your preparation. Cover:
+## ABC Analysis and Scope Definition {#sec-03-abc}
+<!-- ABC - Analysis on Article -->
+
+Let’s define the scope of the project by identifying the high-impact products.
+
+In 2024, we recorded sales of over 2,500 unique products. I narrowed my focus to the Market Sales Organization, which accounts for 50% of our global revenue, reducing the number to approximately 900 products.
 
 Input variable used for classification (e.g., total sales or forecast volume)
-
-Method for classification (Pareto, quantiles, custom thresholds)
-
+Method for classification (Pareto)
 Proportion selected for modeling (e.g., A-class = top 20%)
 
 Resulting number of products in scope
-
-You might include:
 
 A histogram or cumulative contribution chart
 
 A summary table: A/B/C product counts and coverage
 
-ABC - Analysis on Article
-Let’s define the scope of the project by identifying the high-impact products.
 
-In 2024, we recorded sales of over 2,500 unique products. I narrowed my focus to the Market Sales Organization, which accounts for 50% of our global revenue, reducing the number to approximately 900 products.
-
-Let's define the scope of the project by identifying the high-impact products.
-
-In 2024, we recorded sales of over 2,500 unique products. 
-I narrowed my focus to the Market Sales Organization, which accounts for 50% of our global revenue, 
-reducing the number to approximately 900 products.
-
-## Final Dataset Specification
+## Final Dataset Specification  TODO
 Summarize the modeling dataset:
 
 Number of records
