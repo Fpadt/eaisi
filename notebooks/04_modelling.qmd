@@ -37,14 +37,14 @@ A representation of the tradeoff between flexibility and inter pretability, usin
 ```{r}
 #| label: fig-04-black_glassbox
 
-dtGB <- 
-  fread(Text="
+
+  fread(text="
         Method            , Type            , Flexibility, Interpretability
         ETS               , Statistical     , 1          , 5
         ARIMA             , Statistical     , 2          , 5
         Regression        , Statistical     , 2          , 4
         Random Forest     , Machine Learning, 3          , 4
-        XGBoost/CatBoost  , Machine Learning, 3          , 3
+        XGBoost/CatBoost  , Machine Learning, 4          , 2
         LSTM              , Deep Learning   , 5          , 1
         GPT/LLM           , Deep Learning   , 5          , 1
         ") %>%
