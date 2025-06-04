@@ -223,8 +223,9 @@ type of data and date of extraction. A detailed overview of all fields is provid
   setDT() %>%
   .[RELEVANT == 'Y', !"RELEVANT"] %>%
   .[OHDEST %chin% c('DSCP_MATE', 'DSCP_CUST', 'OH_FRPR1')] %>%
-  .[, .(OHDEST, FILEEXTERN, TYPE, DATE)] %>%
-  # .[is.na(KEY), KEY:= ''] %>%
+  .[1:3] %>%
+  .[, .(OHDEST, FILEEXTERN)] %>%  # , TYPE, DATE
+  # .[is.na(KEY), KEY:= '']  %>%
   kbl(
     caption             = "Data Loads",
     col.names           = names(.),

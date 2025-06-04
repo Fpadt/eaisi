@@ -11,7 +11,7 @@ toc: true         # show page‐TOC (right‐sidebar) on _every_ page
 toc-depth: 3      # include ## and ### in the TOC
 ---
 
-# Data Understanding {#sec-02-data-understanding}
+# Data Understanding {#sec-12-data-understanding}
 
 ```{r}
 #| label: setup
@@ -45,10 +45,10 @@ source("../_book_functions.R")
 
 ### Metadata Overview {#sec-12-data-description-metadata}
 
-Table @tbl-02-data-description-meta gives all details of the datasets,
+Table @tbl-12-data-description-meta gives all details of the datasets,
 back sec-02-data-description-metadata 
 
-::: {tbl-12-data-description-meta .table}
+::: {#tbl-12-data-description-meta .table}
 ```{r}
 # DT with Filter in Appendix
 # dataLoads
@@ -166,12 +166,12 @@ dtACC_sk <- ACC %>%
 
 #### Character Variables
 
-Table @tbl-02-data-profiling-ca shows the data profiling results for the dataset,
+Table @tbl-12-data-profiling-ca shows the data profiling results for the dataset,
 including the number of missing values, completeness rate, minimum and maximum length 
 for character variables. The profiling helps identify data quality issues and 
 provides insights into the structure of the dataset.
 
-::: {#tbl-02-data-profiling-ca}
+::: {#tbl-12-data-profiling-ca .table}
 ```{r}
 dtACC_sk[
   type == 'character', .(
@@ -194,7 +194,7 @@ dtACC_sk[
 Data Profiling: Character Variables
 :::
 
-::: callout-note
+::: {.callout-note}
 This data set is of high quality and doesn't need any further analysis on 
 the character variables.
 :::
@@ -202,12 +202,12 @@ the character variables.
 
 #### Numeric Variables
 
-Table @tbl-02-data-profiling-nu shows the data profiling results for the 
+Table @tbl-12-data-profiling-nu shows the data profiling results for the 
 numeric variables in the dataset, including mean, standard deviation, and 
 percentiles. The histogram column provides a visual representation of 
 the distribution of each numeric variable.
 
-::: {#tbl-02-data-profiling-nu}
+::: {#tbl-12-data-profiling-nu  .table}
 ```{r}
 dtACC_sk[
   type == 'numeric', .(
@@ -229,7 +229,7 @@ dtACC_sk[
 Data Profiling: Numeric Variables
 :::
 
-::: callout-important
+::: {.callout-important}
 We see that the Quantity (Q) needs some further analysis due to outliers.
 :::
 
@@ -333,12 +333,12 @@ dtCST_tab <- dtCST[, .(
 ), by = Channel][order(Channel)]
 ```
 
-Table @tbl-02-data-description-hierarchy-article summarizes the 4-levels of the article hierarchy by a unique count per level. Roughly,
+Table @tbl-12-data-description-hierarchy-article summarizes the 4-levels of the article hierarchy by a unique count per level. Roughly,
 
 - each Family contains roughly `r mean(dtMAT_tab$Article_Count/dtMAT_tab$Family_Count) %>% round(0)` articles.
 - each Sub Category contains roughly `r mean(dtMAT_tab$Family_Count/dtMAT_tab$SubCat_Count) %>% round(0)` families.
 
-::: {#tbl-02-data-description-hierarchy-article}  
+::: {#tbl-12-data-description-hierarchy-article}  
 ```{r}
 
 datatable(
@@ -398,7 +398,7 @@ Interactive Article Hierarchy, click on the nodes to expand or collapse them.
 
 ### Customer Hierarchy
 
-Table @tbl-02-data-description-hierarchy-customer summarizes the 4-levels of the 
+Table @tbl-12-data-description-hierarchy-customer summarizes the 4-levels of the 
 customer hierarchy by a unique count per level. Roughly:
 
 - each Family contains roughly 
@@ -408,7 +408,7 @@ customer hierarchy by a unique count per level. Roughly:
 - each Key Account contains roughly 
 `r mean(dtCST_tab$ACC_Count/dtCST_tab$KAM_count, na.rm =TRUE) %>% round(0)` accounts,
 
-::: {#tbl-02-data-description-hierarchy-customer}
+::: {#tbl-12-data-description-hierarchy-customer  .table}
 ```{r}
 
 datatable(
@@ -468,7 +468,7 @@ Summary: Customer Hierachy
 all 0 
 duplicates, zero quantity, unexpected NAs
 
-## Summary of Data Understanding {#sec-02-summary}
+## Summary of Data Understanding {#sec-12-summary}
 
 - The dataset combines master and transactional data from SAP BI and QAD systems.
 - Sales and forecasts are scoped to a single MSO and A-class finished goods.
