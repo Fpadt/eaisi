@@ -1,9 +1,0 @@
----
-title: "References"
-author: "F.J. Padt"
----
-
-# References {.unnumbered}
-
-::: {#refs}
-:::
