@@ -624,8 +624,8 @@ div.csl-indent {
 <p>Accurate forecasting is essential for managing <em>BioBalance’s</em> portfolio of over 2.500 products, each with specific shelf-life requirements, sourcing constraints, and production lead times. Forecasts guide decisions across the entire supply chain — from procurement and production to distribution and inventory management.</p>
 <section id="sec-01-geographical" class="level3">
 <h3 class="anchored" data-anchor-id="sec-01-geographical">Geographic Footprint and Production Model</h3>
-<p><em>BioBalance</em> operates multiple production facilities and distribution centers across Europe, serving customers in various countries through both direct and indirect channels. As shown in <a href="#fig-01-bu-map" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>, these facilities are geographically distributed, and some products are produced in one country but sold in others.</p>
-<p>Due to long production and transportation lead times, combined with short customer order lead times, BioBalance follows a Make-to-Stock (MTS) strategy for most of its portfolio. Products must be manufactured and positioned in the supply chain ahead of actual demand. To support this, the Marketing and Sales Organizations (MSOs) place minimum order quantities (MOQs) in advance to cover expected demand for the upcoming weeks. An illustrative example of these goods flows is shown in Appendix <a href="11_business_understanding.html#fig-11-supplychain-goodsflow" class="quarto-xref">Figure&nbsp;<span>8.1</span></a>.</p>
+<p><em>BioBalance</em> operates multiple production facilities and distribution centers across Europe, serving customers in various countries through both direct and indirect channels. As shown in <a href="#fig-01-bu-map" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-01-bu-map</span></a>, these facilities are geographically distributed, and some products are produced in one country but sold in others.</p>
+<p>Due to long production and transportation lead times, combined with short customer order lead times, BioBalance follows a Make-to-Stock (MTS) strategy for most of its portfolio. Products must be manufactured and positioned in the supply chain ahead of actual demand. To support this, the Marketing and Sales Organizations (MSOs) place minimum order quantities (MOQs) in advance to cover expected demand for the upcoming weeks. An illustrative example of these goods flows is shown in Appendix <a href="#fig-11-supplychain-goodsflow" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-11-supplychain-goodsflow</span></a>.</p>
 <p>As a result, accurate forecasting is essential to:</p>
 <ul>
 <li>Plan &amp; schedule production volumes and resources at the plants</li>
@@ -646,7 +646,7 @@ Figure&nbsp;1.1: Geographic footprint of <em>BioBalance</em>: production and dis
 </section>
 <section id="sec-01-blossam" class="level3">
 <h3 class="anchored" data-anchor-id="sec-01-blossam"><em>Blossam</em> Tea: an illustrative example</h3>
-<p>The planning process for <em>Blossam Balance Tea</em> illustrates the complexity of forecasting across stages, see <a href="05_evaluation.html#fig-01-bu-why" class="quarto-xref">Figure&nbsp;<span>5.2</span></a>:</p>
+<p>The planning process for <em>Blossam Balance Tea</em> illustrates the complexity of forecasting across stages, see <a href="#fig-01-bu-why" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-01-bu-why</span></a>:</p>
 <div id="fig-01-bu-why" class="figure quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-01-bu-why-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -737,17 +737,17 @@ Figure&nbsp;1.3: who uses the forecasts? varying requirements across several key
 </table>
 </div>
 </div>
-<p>A detailed overview is available in (<span class="quarto-unresolved-ref">?sec-11-stakeholder</span>).</p>
+<p>A detailed overview is available in (<a href="#sec-11-stakeholder" class="quarto-xref"><span class="quarto-unresolved-ref">sec-11-stakeholder</span></a>).</p>
 </section>
 <section id="sec-01-bu-scope" class="level2">
 <h2 class="anchored" data-anchor-id="sec-01-bu-scope">Scope of the Project</h2>
 <p>This research is limited to articles sold to customers (<strong>Finished Goods</strong>) that are <strong>MRP-relevant</strong> and planned under a <strong>Make-to-Stock</strong> strategy. Products with short shelf lives, requiring chilled storage and daily planning, are excluded due to their distinct planning characteristics.</p>
-<p>The study further focuses on the most commercially significant part of <em>BioBalance’s</em> operations: the Market Sales Organization (MSO) with the highest sales volume in 2024. This selection is based on the exploratory analysis presented in <a href="02_data_understanding.html#fig-02-eda-geography" class="quarto-xref">Figure&nbsp;<span>2.2</span></a> and ensures that the results are directly applicable to the area with the greatest business impact.</p>
+<p>The study further focuses on the most commercially significant part of <em>BioBalance’s</em> operations: the Market Sales Organization (MSO) with the highest sales volume in 2024. This selection is based on the exploratory analysis presented in <a href="#fig-02-eda-geography" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-02-eda-geography</span></a> and ensures that the results are directly applicable to the area with the greatest business impact.</p>
 <p>Within this scope, we specifically target ambient products with a minimum shelf life of 60 days. These products are planned in weekly MRP cycles and forecasted using monthly time buckets. They represent the majority of <em>BioBalance’s</em> volume and align best with the strategic forecasting use cases addressed in this study.</p>
 </section>
 <section id="sec-01-problem-statement" class="level2">
 <h2 class="anchored" data-anchor-id="sec-01-problem-statement">Problem Statement</h2>
-<p>While <em>BioBalance</em> uses a flexible forecasting platform, its reliance on manual adjustments and subjective decision-making introduces inconsistency. Forecasting methods and aggregation levels are often chosen based on intuition and experience. Research shows, see <span class="citation" data-cites="article">(<a href="18_references.html#ref-article" role="doc-biblioref">Fildes &amp; Goodwin, 2007</a>)</span>, that small manual adjustments typically offer no benefit, whereas larger interventions—usually reductions—may significantly improve accuracy.</p>
+<p>While <em>BioBalance</em> uses a flexible forecasting platform, its reliance on manual adjustments and subjective decision-making introduces inconsistency. Forecasting methods and aggregation levels are often chosen based on intuition and experience. Research shows, see <span class="citation" data-cites="article">(<a href="#ref-article" role="doc-biblioref">Fildes &amp; Goodwin, 2007</a>)</span>, that small manual adjustments typically offer no benefit, whereas larger interventions—usually reductions—may significantly improve accuracy.</p>
 <p>Without an objective benchmark, it is impossible to determine whether these manual interventions improve accuracy or merely increase resource costs.</p>
 </section>
 <section id="sec-01-business-objectives" class="level2">
@@ -766,8 +766,8 @@ Figure&nbsp;1.3: who uses the forecasts? varying requirements across several key
 <li><p>Improve customer service levels and reduce waste.</p></li>
 <li><p>Increase customer satisfaction through consistent availability.</p></li>
 </ol>
-<p>And ultimately increase profitability, as illustrated in <a href="#fig-01-bu-daps" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>, see <span class="citation" data-cites="demast2024">(<a href="18_references.html#ref-demast2024" role="doc-biblioref">Mast &amp; Lokkerbol, 2024b</a>)</span>.</p>
-<div id="fig-01-bu-daps" class="figure quarto-float quarto-figure quarto-figure-left anchored" alt="DAPS" data-fig-width="15cm" data-fig-align="left">
+<p>And ultimately increase profitability, as illustrated in <a href="#fig-01-bu-daps" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-01-bu-daps</span></a>, see <span class="citation" data-cites="demast2024">(<a href="#ref-demast2024" role="doc-biblioref">Mast &amp; Lokkerbol, 2024b</a>)</span>.</p>
+<div id="fig-01-bu-daps" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-width="15cm" alt="DAPS" data-fig-align="left">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-01-bu-daps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="../images/flowdown.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;1.4: "><img src="../images/flowdown.png" class="img-fluid quarto-figure quarto-figure-left figure-img" data-fig-width="15cm" alt="DAPS"></a>
@@ -789,13 +789,13 @@ low-cost, automated forecast based on statistical models (e.g., ETS, HTS).</p></
 </ul>
 <p>This environment was deliberately designed to operate in parallel, with read-only access to the production system. This avoids interference with business-critical forecasting workflows and eliminates the risk of disrupting day-to-day operations.</p>
 <p>Additionally, the project was developed under the constraint of limited access to business resources — both in terms of time and geographical availability. Demand planners and analysts needed to prioritize operational continuity, requiring the research to be conducted independently while still aligning with business realities.</p>
-<p>By working within these constraints, <strong>Pythia’s Advice</strong> enables experimentation and benchmarking without disrupting operations — providing a safe and scalable way to measure the value of forecast improvements. <strong>Pythia’s Advice</strong> is represented by the lower part of the Data-Analytic Problem Structure (DAPS), (<a href="#fig-01-bu-daps" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>).</p>
+<p>By working within these constraints, <strong>Pythia’s Advice</strong> enables experimentation and benchmarking without disrupting operations — providing a safe and scalable way to measure the value of forecast improvements. <strong>Pythia’s Advice</strong> is represented by the lower part of the Data-Analytic Problem Structure (DAPS), (<a href="#fig-01-bu-daps" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-01-bu-daps</span></a>).</p>
 </section>
 </section>
 <section id="sec-01-forecast-process" class="level2">
 <h2 class="anchored" data-anchor-id="sec-01-forecast-process">Forecast Process</h2>
 <!-- Business process mapping -->
-<p><em>BioBalance</em> relies on a third-party system that uses traditional statistical models (see Appendix <a href="11_business_understanding.html#tbl-11-stat-methods" class="quarto-xref">Table&nbsp;<span>8.1</span></a>). Figure <a href="#fig-01-bu-proc" class="quarto-xref">Figure&nbsp;<span>1.5</span></a> illustrates the forecasting steps demand planners follow. Although presented sequentially, these steps often require multiple iterations. Table <a href="#tbl-01-demand-planners-activities" class="quarto-xref">Table&nbsp;<span>1.1</span></a> provides a detailed breakdown.</p>
+<p><em>BioBalance</em> relies on a third-party system that uses traditional statistical models (see Appendix <a href="#tbl-11-stat-methods" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-11-stat-methods</span></a>). Figure <a href="#fig-01-bu-proc" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-01-bu-proc</span></a> illustrates the forecasting steps demand planners follow. Although presented sequentially, these steps often require multiple iterations. Table <a href="#tbl-01-demand-planners-activities" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-01-demand-planners-activities</span></a> provides a detailed breakdown.</p>
 <p><em>Pythia’s Advice</em> seeks to eliminate those iterations, enhancing both efficiency and forecast accuracy.</p>
 <div id="fig-01-bu-proc" class="figure quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -896,7 +896,10 @@ Important
 <!-- {{< include 01_business_understanding_def.qmd >}} -->
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-magrittr2024" class="csl-entry" role="listitem">
+Bache, S. M. (2024). <em>Magrittr: A forward-pipe operator for r</em>. <a href="https://cran.r-project.org/package=magrittr">https://cran.r-project.org/package=magrittr</a>
+</div>
 <div id="ref-barrett_datatable_2024" class="csl-entry" role="listitem">
 Barrett, T., Dowle, M., Srinivasan, A., Gorecki, J., Chirico, M., Hocking, T., Schwendinger, B., Stetsenko, P., Short, T., Lianoglou, S., Antonyan, E., Bonsch, M., Parsonage, H., Ritchie, S., Ren, K., Tan, X., Saporta, R., Seiskari, O., Dong, X., … Krylov, I. (2024). <em>Data.table: <span>Extension</span> of ’data.frame’</em>. <a href="https://cran.r-project.org/web/packages/data.table/index.html">https://cran.r-project.org/web/packages/data.table/index.html</a>
 </div>
@@ -909,17 +912,35 @@ Core Team}, {R. (2024). <em>R: <span>A</span> <span>Language</span> and <span>En
 <div id="ref-costa_crisp-ml_2022" class="csl-entry" role="listitem">
 Costa, R. (2022). <em>The <span>CRISP</span>-<span>ML</span> <span>Methodology</span>: <span>A</span> <span>Step</span>-by-<span>Step</span> <span>Approach</span> to <span>Real</span>-<span>World</span> <span>Machine</span> <span>Learning</span> <span>Projects</span></em>. Independently published.
 </div>
+<div id="ref-crayon2024" class="csl-entry" role="listitem">
+Csárdi, G. (2024). <em>Crayon: Colored terminal output</em>. <a href="https://cran.r-project.org/package=crayon">https://cran.r-project.org/package=crayon</a>
+</div>
 <div id="ref-debruine_glossary_2023" class="csl-entry" role="listitem">
 DeBruine, L. (2023). <em>Glossary: <span>Glossaries</span> for <span>Markdown</span> and <span>Quarto</span> <span>Documents</span></em>. <a href="https://cran.r-project.org/web/packages/glossary/">https://cran.r-project.org/web/packages/glossary/</a>
 </div>
+<div id="ref-data.table2024" class="csl-entry" role="listitem">
+Dowle, M., &amp; Srinivasan, A. (2024). <em>Data.table: Extension of ’data.frame’</em>. <a href="https://cran.r-project.org/package=data.table">https://cran.r-project.org/package=data.table</a>
+</div>
 <div id="ref-article" class="csl-entry" role="listitem">
 Fildes, R., &amp; Goodwin, P. (2007). Good and bad judgment in forecasting: Lessons from four companies. <em>Foresight: The International Journal of Applied Forecasting</em>, <em>8</em>, 5–10. <a href="https://forecasters.org/wp-content/uploads/Good-and-Bad-Judgment-in-Forecasting_Issue8.pdf">https://forecasters.org/wp-content/uploads/Good-and-Bad-Judgment-in-Forecasting_Issue8.pdf</a>
+</div>
+<div id="ref-lubridate2024" class="csl-entry" role="listitem">
+Grolemund, G., &amp; Wickham, H. (2024). <em>Lubridate: Make dealing with dates a little easier</em>. <a href="https://cran.r-project.org/package=lubridate">https://cran.r-project.org/package=lubridate</a>
 </div>
 <div id="ref-guja_generative_2025" class="csl-entry" role="listitem">
 Guja, A., &amp; Siwiak, M. (2025). <em>Generative <span>AI</span> for <span>Data</span> <span>Analytics</span>.</em> Manning Publications Co. LLC 2025.
 </div>
 <div id="ref-hartshorn_machine_2017" class="csl-entry" role="listitem">
 Hartshorn, S. (2017). <em>Machine <span>Learning</span> <span>With</span> <span>Boosting</span>: <span>A</span> <span>Beginner</span>’s <span>Guide</span></em>.
+</div>
+<div id="ref-purrr2024" class="csl-entry" role="listitem">
+Henry, L., &amp; Wickham, H. (2024). <em>Purrr: Functional programming tools</em>. <a href="https://cran.r-project.org/package=purrr">https://cran.r-project.org/package=purrr</a>
+</div>
+<div id="ref-glue2024" class="csl-entry" role="listitem">
+Hester, J. (2024). <em>Glue: Interpreted string literals</em>. <a href="https://cran.r-project.org/package=glue">https://cran.r-project.org/package=glue</a>
+</div>
+<div id="ref-skimr2024" class="csl-entry" role="listitem">
+Hvitfeldt, E., Quinn, M., &amp; Others. (2024). <em>Skimr: Compact and flexible summaries of data</em>. <a href="https://cran.r-project.org/package=skimr">https://cran.r-project.org/package=skimr</a>
 </div>
 <div id="ref-hyndmanaut2024" class="csl-entry" role="listitem">
 Hyndman [aut, R., cre, cph, Athanasopoulos, G., Bergmeir, C., Caceres, G., Chhay, L., Kuroptev, K., O’Hara-Wild, M., Petropoulos, F., Razbash, S., Wang, E., Yasmeen, F., Garza, F., Girolimetto, D., Ihaka, R., R Core Team, Reid, D., Shaub, D., … Zhou, Z. (2024). <em>Forecast: Forecasting functions for time series and linear models</em>. <a href="https://cran.r-project.org/web/packages/forecast/index.html">https://cran.r-project.org/web/packages/forecast/index.html</a>
@@ -930,11 +951,23 @@ Hyndman [aut, R., cre, cph, Athanasopoulos, G., O’Hara-Wild, M., Palihawadana,
 <div id="ref-hyndman_forecasting_2021" class="csl-entry" role="listitem">
 Hyndman, R. J., &amp; Athanasopoulos, G. (2021). <em>Forecasting: <span>Principles</span> and <span>Practice</span> (3rd ed)</em>. <a href="https://otexts.com/fpp3/">https://otexts.com/fpp3/</a>
 </div>
+<div id="ref-fpp3_2024" class="csl-entry" role="listitem">
+Hyndman, Rob J., &amp; Athanasopoulos, G. (2024). <em>fpp3: Forecasting principles and practice</em>. <a href="https://cran.r-project.org/package=fpp3">https://cran.r-project.org/package=fpp3</a>
+</div>
+<div id="ref-gt2024" class="csl-entry" role="listitem">
+Iannone, R., &amp; Contributors. (2024). <em>Gt: Easily create presentation-ready display tables</em>. <a href="https://cran.r-project.org/package=gt">https://cran.r-project.org/package=gt</a>
+</div>
 <div id="ref-james_introduction_2023" class="csl-entry" role="listitem">
 James, G., Witten, D., Hastie, T., Tibshirani, R., &amp; Taylor, J. E. (2023). <em>An introduction to statistical learning: With applications in <span>Python</span></em>. Springer. <a href="https://www.statlearning.com/">https://www.statlearning.com/</a>
 </div>
+<div id="ref-padt2024" class="csl-entry" role="listitem">
+Kapitan, D., &amp; Contributors. (2024). <em>Padt: Pythia’s advice – data tooling</em>. <a href="https://github.com/pythia-advice/padt">https://github.com/pythia-advice/padt</a>
+</div>
 <div id="ref-kunapuli_ensemble_2023" class="csl-entry" role="listitem">
 Kunapuli, G. (2023). <em>Ensemble methods for machine learning</em>. Manning.
+</div>
+<div id="ref-collapsibleTree2024" class="csl-entry" role="listitem">
+Liakhovitski, D. (2024). <em>collapsibleTree: Interactive collapsible tree diagrams</em>. <a href="https://cran.r-project.org/package=collapsibleTree">https://cran.r-project.org/package=collapsibleTree</a>
 </div>
 <div id="ref-manokhin_practical_2023" class="csl-entry" role="listitem">
 Manokhin, V. (2023). <em>Practical guide to applied conformal prediction in <span>Python</span>: Learn and apply the best uncertainty frameworks to your industry applications</em>. <span>&lt;</span>packt<span>&gt;</span>.
@@ -966,6 +999,15 @@ Molnar, C. (2023). <em>Introduction to conformal prediction with <span>Python</s
 <div id="ref-nixtla/t2024" class="csl-entry" role="listitem">
 <em>Nixtla/tsfeatures</em>. (2024). Nixtla. <a href="https://github.com/Nixtla/tsfeatures">https://github.com/Nixtla/tsfeatures</a>
 </div>
+<div id="ref-fable2024" class="csl-entry" role="listitem">
+O’Hara-Wild, M., &amp; Hyndman, R. J. (2024a). <em>Fable: Forecasting models for tidy time series</em>. <a href="https://cran.r-project.org/package=fable">https://cran.r-project.org/package=fable</a>
+</div>
+<div id="ref-fabletools2024" class="csl-entry" role="listitem">
+O’Hara-Wild, M., &amp; Hyndman, R. J. (2024b). <em>Fabletools: Core tools for packages in the ’fable’ framework</em>. <a href="https://cran.r-project.org/package=fabletools">https://cran.r-project.org/package=fabletools</a>
+</div>
+<div id="ref-feasts_2024" class="csl-entry" role="listitem">
+O’Hara-Wild, M., &amp; Hyndman, R. J. (2024c). <em>Feasts: Feature extraction and statistics for time series</em>. <a href="https://cran.r-project.org/package=feasts">https://cran.r-project.org/package=feasts</a>
+</div>
 <div id="ref-ohara-wild2024a" class="csl-entry" role="listitem">
 O’Hara-Wild, M., Hyndman, R., Wang, E., Cook, D., features), T. T. (Correlation., &amp; method), L. C. (Guerrero’s. (2024). <em>Feasts: Feature extraction and statistics for time series</em>. <a href="https://cran.r-project.org/web/packages/feasts/index.html">https://cran.r-project.org/web/packages/feasts/index.html</a>
 </div>
@@ -981,8 +1023,20 @@ O’Sullivan, C. (2024). <span>SHAP</span> with <span>Python</span> [Course]. In
 <div id="ref-porter_learn_2024" class="csl-entry" role="listitem">
 Porter, L., &amp; Zingaro, D. (2024). <em>Learn <span>AI</span>-assisted <span>Python</span> programming: With <span>GitHub</span> <span>Copilot</span> and <span>ChatGPT</span></em>. Manning.
 </div>
+<div id="ref-duckdb2024" class="csl-entry" role="listitem">
+Raasveldt, M., &amp; Mühleisen, H. (2024). <em>Duckdb: In-process SQL OLAP database management system</em>. <a href="https://cran.r-project.org/package=duckdb">https://cran.r-project.org/package=duckdb</a>
+</div>
+<div id="ref-quarto2024" class="csl-entry" role="listitem">
+RStudio, &amp; Team, P. (2024). <em>Quarto: Scientific and technical publishing</em>. <a href="https://quarto.org">https://quarto.org</a>
+</div>
+<div id="ref-openxlsx2_2024" class="csl-entry" role="listitem">
+Schulz, J., &amp; Co. (2024). <em>openxlsx2: Read, write and edit ’xlsx’ files</em>. <a href="https://cran.r-project.org/package=openxlsx2">https://cran.r-project.org/package=openxlsx2</a>
+</div>
 <div id="ref-silver_inventory_2021" class="csl-entry" role="listitem">
 Silver, E. A., Pyke, D. F., &amp; Thomas, D. J. (2021). <em>Inventory and production management in supply chains</em> (Fourth edition, first issued in paperback). CRC Press, Taylor &amp; Francis Group.
+</div>
+<div id="ref-ggrepel2024" class="csl-entry" role="listitem">
+Slowikowski, K. (2024). <em>Ggrepel: Automatically position non-overlapping text labels with ’ggplot2’</em>. <a href="https://cran.r-project.org/package=ggrepel">https://cran.r-project.org/package=ggrepel</a>
 </div>
 <div id="ref-vandeput_inventory_2020" class="csl-entry" role="listitem">
 Vandeput, N. (2020). <em>Inventory optimization: Models and simulations</em>. De Gruyter.
@@ -993,11 +1047,41 @@ Vandeput, N. (2021). <em>Data science for supply chain forecasting</em> (Second 
 <div id="ref-vandeput_demand_2023" class="csl-entry" role="listitem">
 Vandeput, N. (2023). <em>Demand forecasting best practices</em>. Manning Publications Co.
 </div>
+<div id="ref-tsibble2024" class="csl-entry" role="listitem">
+Wang, E., &amp; Hyndman, R. J. (2024). <em>Tsibble: Tidy temporal data frames and tools</em>. <a href="https://cran.r-project.org/package=tsibble">https://cran.r-project.org/package=tsibble</a>
+</div>
 <div id="ref-wickham" class="csl-entry" role="listitem">
 Wickham, H. (n.d.). <em>R for data science (2e)</em>. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>
 </div>
+<div id="ref-ggplot2_2024" class="csl-entry" role="listitem">
+Wickham, H. (2024a). <em>ggplot2: Create elegant data visualisations using the grammar of graphics</em>. <a href="https://cran.r-project.org/package=ggplot2">https://cran.r-project.org/package=ggplot2</a>
+</div>
+<div id="ref-tidyr2024" class="csl-entry" role="listitem">
+Wickham, H. (2024b). <em>Tidyr: Tidy messy data</em>. <a href="https://cran.r-project.org/package=tidyr">https://cran.r-project.org/package=tidyr</a>
+</div>
 <div id="ref-wickham_ggplot2_2024" class="csl-entry" role="listitem">
 Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Woo, K., Yutani, H., Dunnington, D., Brand, T. van den, Posit, &amp; PBC. (2024). <em>ggplot2: <span>Create</span> <span>Elegant</span> <span>Data</span> <span>Visualisations</span> <span>Using</span> the <span>Grammar</span> of <span>Graphics</span></em>. <a href="https://cran.r-project.org/web/packages/ggplot2/index.html">https://cran.r-project.org/web/packages/ggplot2/index.html</a>
+</div>
+<div id="ref-tidyverse2024" class="csl-entry" role="listitem">
+Wickham, H., &amp; Contributors. (2024). <em>Tidyverse: Easily install and load the ’tidyverse’</em>. <a href="https://cran.r-project.org/package=tidyverse">https://cran.r-project.org/package=tidyverse</a>
+</div>
+<div id="ref-dplyr2024" class="csl-entry" role="listitem">
+Wickham, H., &amp; François, R. (2024). <em>Dplyr: A grammar of data manipulation</em>. <a href="https://cran.r-project.org/package=dplyr">https://cran.r-project.org/package=dplyr</a>
+</div>
+<div id="ref-scales2024" class="csl-entry" role="listitem">
+Wickham, H., &amp; Seidel, D. (2024). <em>Scales: Scale functions for visualization</em>. <a href="https://cran.r-project.org/package=scales">https://cran.r-project.org/package=scales</a>
+</div>
+<div id="ref-treemapify2024" class="csl-entry" role="listitem">
+Wilkins, D. (2024). <em>Treemapify: Draw treemaps in ’ggplot2’</em>. <a href="https://cran.r-project.org/package=treemapify">https://cran.r-project.org/package=treemapify</a>
+</div>
+<div id="ref-DT2024" class="csl-entry" role="listitem">
+Xie, Y. (2024a). <em>DT: A wrapper of the JavaScript library ’DataTables’</em>. <a href="https://cran.r-project.org/package=DT">https://cran.r-project.org/package=DT</a>
+</div>
+<div id="ref-knitr2024" class="csl-entry" role="listitem">
+Xie, Y. (2024b). <em>Knitr: A general-purpose package for dynamic report generation</em>. <a href="https://cran.r-project.org/package=knitr">https://cran.r-project.org/package=knitr</a>
+</div>
+<div id="ref-kableExtra2024" class="csl-entry" role="listitem">
+Zhu, H. (2024). <em>kableExtra: Construct complex table with ’kable’ and pipe syntax</em>. <a href="https://cran.r-project.org/package=kableExtra">https://cran.r-project.org/package=kableExtra</a>
 </div>
 </div>
 </section>

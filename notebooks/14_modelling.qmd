@@ -67,21 +67,75 @@ Present the evaluation methodology, error metrics (e.g., RMSE, MAPE, bias), and 
 
 <!-- List packages, libraries, or software used for modelling (e.g., `fable`, `forecast`, `lightgbm`, DuckDB). -->
 
-- padt             # custom made library for Pythia's Advice - Data Tooling
-- scales
-- collapsibleTree  # for collapsible trees
-- treemapify       # for treemaps
-- skimr             # for skimr)
-- quarto
-- duckDB
-- gt
-- DT               # for datatables 
-- kableExtra
-- ggrepel         # for ggrepel
-- openxlsx2
-- magrittr
-- ggplot2
-- data.table
+#### R & R-Studio tooling
+
+```{r}
+#| label: r-version
+R.version()
+RStudio.Version()
+```
+
+#### R-Packages
+
+::: {#tbl-14-packages .table}
+
+```{r}
+library(data.table)
+library(magrittr)
+library(kableExtra)
+
+fread(text = "
+Package        , Purpose                                  , Citation
+padt           , Pythia’s Advice – Data Tooling           , @padt2024
+scales         , Scaling and formatting                   , @scales2024
+collapsibleTree, Collapsible trees                        , @collapsibleTree2024
+crayon         , Colored text output                      , @crayon2024
+treemapify     , Treemaps                                 , @treemapify2024
+skimr          , Data summarization                       , @skimr2024
+quarto         , Rendering the report                     , @quarto2024
+duckDB         , DuckDB database and light transformations, @duckdb2024
+gt             , Creating tables                          , @gt2024
+DT             , Interactive tables                       , @DT2024
+knitr          , Dynamic report generation                , @knitr2024
+kableExtra     , Enhanced tables                          , @kableExtra2024
+ggrepel        , Non-overlapping labels in ggplot2        , @ggrepel2024
+openxlsx2      , Read/write Excel                         , @openxlsx2_2024
+fpp3           , Forecasting and time series              , @fpp3_2024
+feasts         , Time series feature extraction           , @feasts_2024
+tsibble        , Tidy temporal data frames                , @tsibble2024
+magrittr       , Pipe operator                            , @magrittr2024
+glue           , String interpolation                     , @glue2024
+tidyr          , Data tidying                             , @tidyr2024
+tidyverse      , Unified data science tools               , @tidyverse2024
+purrr          , Functional programming                   , @purrr2024
+lubridate      , Date-time manipulation                   , @lubridate2024
+ggplot2        , Data visualization                       , @ggplot2_2024
+data.table     , Fast data manipulation                   , @data.table2024
+dplyr          , Data manipulation                        , @dplyr2024
+fabletools     , Forecasting infrastructure               , @fabletools2024
+fable          , Forecasting models                       , @fable2024
+") %>%
+    kbl(
+,
+    # format = "latex"  ,      
+    col.names           = names(.),
+    align               = "l",
+    booktabs            = TRUE,
+    escape = FALSE
+  ) %>%
+  kable_styling(
+    full_width          = FALSE          ,
+    latex_options = c("hold_position"),
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
+  )
+
+
+```
+
+:::
+
+
 
 ---
 
