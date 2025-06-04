@@ -360,8 +360,8 @@ ACC <-                              #
 <!-- exclude units pak and DS   -->
 
 ::: {.callout-note}
-For modeling purposes, the data was scoped to A-class articles based on ABC classification.
-See [@sec-03-abc] for details.
+For modeling purposes, the data was scoped to A-class articles based on ABC classification.  
+See [ABC Analysis and Scope Definition](#sec-03-abc) for details.
 :::
 
 ### Geographic Distribution of Sales
