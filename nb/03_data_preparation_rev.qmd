@@ -1,0 +1,128 @@
+---
+subtitle: From raw extracts to modeling dataset
+description: |
+  - Filtering, conversions, and structure alignment
+  - ABC classification to define modeling scope
+  - Final dataset specification and readiness
+number-sections: false
+toc: true
+toc-depth: 3
+---
+
+# Data Preparation {#sec-03-data-preparation}
+<!--  Data Preparation – Data preprocessing and transformation steps. -->
+
+```{r}
+#| label: setup
+source("../_book_functions.R")
+```
+
+## Overview
+<!-- Briefly summarize the goals of data preparation in your project: -->
+<!-- – Cleaning & wrangling steps   -->
+
+This chapter outlines the steps taken to prepare the data for modeling, including format conversions, exclusions, basic transformations, and the ABC classification used to scope the final dataset. The emphasis is on minimal intervention, to preserve data integrity and maintain transparency in benchmarking.
+
+<!-- preparing the data for further analysis and modeling. This might involve cleaning and pre-processing the data, as well as transforming it into a format that is suitable for use in a machine-learning model. -->
+
+## Data Loading and Format Conversion
+Source formats (e.g., CSV from SAP, Excel, Snowflake exports)
+
+Conversion tools (e.g., duckdb, arrow, data.table)
+
+Rationale for converting to Parquet (e.g., performance, interoperability)
+
+Folder structure if relevant (e.g., Bronze/Silver/Gold)
+
+
+data lake design pattern: Bronze-Silver-Gold structure data according to its level of processing and readiness for use.
+
+*Bronze Layer* (Raw Data): Contains raw data as it was ingested from the source systems. This data is typically in its original format and unprocessed.
+
+*Silver Layer* (Cleaned and Conformed Data): Contains data that has been cleansed, filtered, and possibly enriched. This data is ready for further processing or analysis but is not yet aggregated or modeled.
+
+*Gold Layer* (Curated Data): Contains data that has been transformed into business-level aggregates, models, or reports. This is the data used by analysts, data scientists, or applications for decision-making.
+
+## Initial Filtering
+Filtered years (e.g., from 2021 onwards)
+
+Removed countries or business units outside scope
+
+Product exclusions (e.g., discontinued SKUs, internal transfers)
+
+Data-specific adjustments (e.g., remove rows with zero quantity)
+
+## Data Cleaning and Standardization
+Since you do not do feature engineering or normalization, keep this light:
+
+Column renaming
+
+Date parsing or time alignment
+
+ID standardization (e.g., customer codes)
+
+Minor recoding or NA handling
+
+Handling Missing Data
+
+-   imputing missing values, Imputation methods involve replacing missing values with estimated values.
+
+
+-   selecting a subset of the data to use in the model.
+
+## ABC Analysis and Scope Definition
+This is the most important analytical step in your preparation. Cover:
+
+Input variable used for classification (e.g., total sales or forecast volume)
+
+Method for classification (Pareto, quantiles, custom thresholds)
+
+Proportion selected for modeling (e.g., A-class = top 20%)
+
+Resulting number of products in scope
+
+You might include:
+
+A histogram or cumulative contribution chart
+
+A summary table: A/B/C product counts and coverage
+
+## Final Dataset Specification
+Summarize the modeling dataset:
+
+Number of records
+
+Granularity (e.g., Article * Week * Channel)
+
+Time span
+
+Missing values still present
+
+Variables included
+
+Output variable: sales quantity, revenue, etc.
+
+Optional: include a str() or glimpse-style summary or a sample of the final dataset.
+
+## Tools and Environment
+R packages used (data.table, arrow, duckdb, etc.)
+
+Local/Cloud setup
+
+Any reproducibility steps (e.g., code repo, project structure)
+
+## Summary of Preparation Steps
+A final recap table is helpful:
+
+Step	Description	Tool / Method
+Load raw CSVs	From SAP extracts	fread()
+Format conversion	CSV → Parquet	arrow::write_parquet
+Filtering	Exclude years < 2021, internal SKUs	data.table::subset
+ABC classification	Based on sales contribution	custom script
+Final dataset export	Modeling-ready dataset	write_parquet()
+
+
+
+
+
+<!-- {{< include 03_data_preparation_def.qmd >}} -->

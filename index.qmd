@@ -95,7 +95,7 @@ x <- 42   # code line 2
 
 This book contains cross-references — hover over them to get a sneak preview:
 
--   figures (@fig-bu-why)
+-   figures (@fig-01-bu-map)
 -   definitions (@def-EX-DEF)\
 -   chapters (@sec-01-business-understanding)
 
