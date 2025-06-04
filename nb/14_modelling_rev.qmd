@@ -70,33 +70,33 @@ Present the evaluation methodology, error metrics (e.g., RMSE, MAPE, bias), and 
 ```{r}
 #| label: r-version
 #| 
-data.table(R.Version = R.Version()) %>%
-  kbl(
-    col.names = names(.),
-    align     = "l",
-    booktabs  = TRUE,
-    escape = FALSE
-  ) %>%
-  kable_styling(
-    full_width          = FALSE          ,
-    latex_options = c("hold_position"),
-    position            = "left",
-    bootstrap_options   = c("striped", "hover", "condensed")
-  )
-
-data.table(RStudio.Version = rstudioapi::versionInfo()) %>%
-  kbl(
-    col.names = names(.),
-    align     = "l",
-    booktabs  = TRUE,
-    escape = FALSE
-  ) %>%
-  kable_styling(
-    full_width          = FALSE          ,
-    latex_options = c("hold_position"),
-    position            = "left",
-    bootstrap_options   = c("striped", "hover", "condensed")
-  )
+# data.table(R.Version = R.Version()) %>%
+#   kbl(
+#     col.names = names(.),
+#     align     = "l",
+#     booktabs  = TRUE,
+#     escape = FALSE
+#   ) %>%
+#   kable_styling(
+#     full_width          = FALSE          ,
+#     latex_options = c("hold_position"),
+#     position            = "left",
+#     bootstrap_options   = c("striped", "hover", "condensed")
+#   )
+# 
+# data.table(RStudio.Version = rstudioapi::versionInfo()) %>%
+#   kbl(
+#     col.names = names(.),
+#     align     = "l",
+#     booktabs  = TRUE,
+#     escape = FALSE
+#   ) %>%
+#   kable_styling(
+#     full_width          = FALSE          ,
+#     latex_options = c("hold_position"),
+#     position            = "left",
+#     bootstrap_options   = c("striped", "hover", "condensed")
+#   )
 ```
 
 #### R-Packages
