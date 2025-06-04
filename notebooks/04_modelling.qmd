@@ -62,6 +62,9 @@ fread(text = "
 strengths and weaknesses of different modelling approaches
 :::
 
+### Interpretability vs. Flexibility Tradeoff {#sec-04-tradeoff}
+
+The choice of modelling technique often involves a tradeoff between flexibility and interpretability. More flexible models, such as deep learning, can capture complex patterns but at the cost of reduced interpretability. Conversely, simpler statistical models are easier to understand but may not perform as well on complex datasets.
 
 ::::: {#fig-04-black_glassbox}
 ::: {.content-visible when-format="html"}
@@ -73,7 +76,7 @@ strengths and weaknesses of different modelling approaches
 ![](../images/glass_blackbox.png){fig-align="left" fig-width="15cm"}
 :::
 
-Adapted from:  ([@james2023], figure 2.7).  
+Adapted from:  [[@james2023], figure 2.7].  
 *A representation of the tradeoff between flexibility and interpretability, 
 using different statistical learning methods. In general, as the flexibility 
 of a method increases, its interpretability decreases *
@@ -105,7 +108,7 @@ of a method increases, its interpretability decreases *
   )
 
 ```
-A representation of the tradeoff between flexibility and interpretability, using different statistical learning methods. In general, as the flexibility of a method increases, its interpretability decreases.
+Flexibility and interpretability of different statistical learning methods.
 :::
 
 ### Literature Review 

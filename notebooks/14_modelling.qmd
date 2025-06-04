@@ -8,10 +8,74 @@ number-sections: false
 editor: source
 ---
 
+# Modelling {#sec-04-modelling}
+
+<!-- ### Overview {#sec-04-overview} -->
+
+<!-- Briefly describe the modelling phase, its objectives, and how it fits into the broader CRISP-DM process. -->
+
+<!-- --- -->
+
+### Selection of Modelling Techniques {#sec-04-techniques}
+
+<!-- Outline the statistical and machine learning techniques considered (e.g., ETS, ARIMA, Prophet, Hierarchical Time Series). -->
+
 > The selection of modelling techniques must balance interpretability, accuracy, data availability, and computational cost. Given *Pythia’s Advice* aims to build trust and provide transparent, value-added forecasts with minimal resources, **statistical models** were deliberately chosen for their clarity and theoretical grounding. While this choice limits the ability to model promotions and other exogenous factors — potentially reducing accuracy — it supports stakeholder confidence and facilitates adoption. In a future phase, once trust is established, **machine learning** techniques may be explored to further improve forecast performance.
 
 
 6.1. Literature Review / Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)
+
+---
+
+### Data Preparation for Modelling {#sec-04-data-prep}
+
+Describe how the data was structured for modelling, including train/test split, resampling, lag features, and hierarchical structure.
+
+---
+
+### Modelling Assumptions {#sec-04-assumptions}
+
+List any modelling assumptions (e.g., forecast granularity, univariate/multivariate inputs, independence between nodes).
+
+---
+
+### Model Training and Calibration {#sec-04-training}
+
+Explain the training approach: cross-validation strategy, hyperparameter tuning, recursive vs. direct forecasting.
+
+---
+
+### Forecast Generation {#sec-04-generation}
+
+Describe how forecasts are generated for each technique, including aggregation levels and forecast horizons.
+
+---
+
+### Model Validation and Performance Metrics {#sec-04-validation}
+
+Present the evaluation methodology, error metrics (e.g., RMSE, MAPE, bias), and visualizations.
+
+---
+
+### Model Interpretability and Explainability {#sec-04-explainability}
+
+(Optional) Include techniques for interpreting the forecasts (e.g., SHAP values, residual analysis).
+
+---
+
+### Tools and Frameworks Used {#sec-04-tools}
+
+List packages, libraries, or software used for modelling (e.g., `fable`, `forecast`, `lightgbm`, DuckDB).
+
+---
+
+### Summary and Lessons Learned {#sec-04-summary}
+
+Summarize findings from the modelling phase and any key takeaways to inform the evaluation phase.
+
+---
+
+
 
 ### Model Selection
 
