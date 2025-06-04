@@ -612,9 +612,12 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#data-profiling" id="toc-data-profiling" class="nav-link active" data-scroll-target="#data-profiling">Data Profiling</a></li>
+  <li><a href="#sec-12-data-description" id="toc-sec-12-data-description" class="nav-link active" data-scroll-target="#sec-12-data-description">Data Description Report</a>
+  <ul class="collapse">
+  <li><a href="#data-profiling" id="toc-data-profiling" class="nav-link" data-scroll-target="#data-profiling">Data Profiling</a></li>
   <li><a href="#article-hierachy" id="toc-article-hierachy" class="nav-link" data-scroll-target="#article-hierachy">Article Hierachy</a></li>
   <li><a href="#customer-hierarchy" id="toc-customer-hierarchy" class="nav-link" data-scroll-target="#customer-hierarchy">Customer Hierarchy</a></li>
+  </ul></li>
   <li><a href="#data-quality-report" id="toc-data-quality-report" class="nav-link" data-scroll-target="#data-quality-report">Data Quality Report</a></li>
   <li><a href="#data-quality-assessment" id="toc-data-quality-assessment" class="nav-link" data-scroll-target="#data-quality-assessment">Data Quality Assessment</a></li>
   <li><a href="#sec-02-summary" id="toc-sec-02-summary" class="nav-link" data-scroll-target="#sec-02-summary">Summary of Data Understanding</a></li>
@@ -638,11 +641,76 @@ div.csl-indent {
 <!-- ### Forecasts -->
 <!-- ## Data Collection Report -->
 <!-- Summarize how data was obtained and any issues during acquisition: -->
-<!-- ## Data Description Report -->
+<section id="sec-12-data-description" class="level2">
+<h2 class="anchored" data-anchor-id="sec-12-data-description">Data Description Report</h2>
 <!-- Descriptive overview of structure and metadata: Open Hub definition -->
 <!-- Variable types (date, categorical, numeric) -->
 <!-- Dimensions (rows × columns) -->
 <!-- Target variable (e.g., sales units, net revenue) -->
+<div id="tbl-12-data-description" class="table quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-12-data-description-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9.1: A detailed overview of all dataset fields, including names, data types, key flags, conversion routines, and hierarchy levels.
+</figcaption>
+<div aria-describedby="tbl-12-data-description-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Data Description</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">OHDEST</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">POSIT</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">FIELDNM</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">TXTLG</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">KEYFLAG</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">DATATYPE</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">LENG</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">CONVEXIT</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">DECIMALS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0001</td>
+<td style="text-align: left;">CUSTOMER</td>
+<td style="text-align: left;">Customer number</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000010</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0001</td>
+<td style="text-align: left;">MATERIAL</td>
+<td style="text-align: left;">Material</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000018</td>
+<td style="text-align: left;">MATN1</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0024</td>
+<td style="text-align: left;">PRDH2_TMD</td>
+<td style="text-align: left;">Main Category TXT</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
 <!-- ## Data Exploration Report -->
 <!-- Exploratory analyses & sanity checks   -->
 <!-- statistical properties and metadata. -->
@@ -658,11 +726,11 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="data-profiling">Data Profiling</h3>
 <section id="character-variables" class="level4">
 <h4 class="anchored" data-anchor-id="character-variables">Character Variables</h4>
-<p>Table <a href="#tbl-02-data-profiling-ca" class="quarto-xref">Table&nbsp;<span>9.1</span></a> shows the data profiling results for the dataset, including the number of missing values, completeness rate, minimum and maximum length for character variables. The profiling helps identify data quality issues and provides insights into the structure of the dataset.</p>
+<p>Table <a href="#tbl-02-data-profiling-ca" class="quarto-xref">Table&nbsp;<span>9.2</span></a> shows the data profiling results for the dataset, including the number of missing values, completeness rate, minimum and maximum length for character variables. The profiling helps identify data quality issues and provides insights into the structure of the dataset.</p>
 <div id="tbl-02-data-profiling-ca" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-profiling-ca-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;9.1: Data Profiling: Character Variables
+Table&nbsp;9.2: Data Profiling: Character Variables
 </figcaption>
 <div aria-describedby="tbl-02-data-profiling-ca-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
@@ -771,11 +839,11 @@ Table&nbsp;9.1: Data Profiling: Character Variables
 </section>
 <section id="numeric-variables" class="level4">
 <h4 class="anchored" data-anchor-id="numeric-variables">Numeric Variables</h4>
-<p>Table <a href="#tbl-02-data-profiling-nu" class="quarto-xref">Table&nbsp;<span>9.2</span></a> shows the data profiling results for the numeric variables in the dataset, including mean, standard deviation, and percentiles. The histogram column provides a visual representation of the distribution of each numeric variable.</p>
+<p>Table <a href="#tbl-02-data-profiling-nu" class="quarto-xref">Table&nbsp;<span>9.3</span></a> shows the data profiling results for the numeric variables in the dataset, including mean, standard deviation, and percentiles. The histogram column provides a visual representation of the distribution of each numeric variable.</p>
 <div id="tbl-02-data-profiling-nu" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-profiling-nu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;9.2: Data Profiling: Numeric Variables
+Table&nbsp;9.3: Data Profiling: Numeric Variables
 </figcaption>
 <div aria-describedby="tbl-02-data-profiling-nu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
@@ -838,7 +906,7 @@ Table&nbsp;9.2: Data Profiling: Numeric Variables
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="12_data_understanding_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="12_data_understanding_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="12_data_understanding_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="12_data_understanding_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -852,7 +920,7 @@ Table&nbsp;9.2: Data Profiling: Numeric Variables
 </section>
 <section id="article-hierachy" class="level3">
 <h3 class="anchored" data-anchor-id="article-hierachy">Article Hierachy</h3>
-<p>Table <a href="#tbl-02-data-description-hierarchy-article" class="quarto-xref">Table&nbsp;<span>9.3</span></a> summarizes the 4-levels of the article hierarchy by a unique count per level. Roughly,</p>
+<p>Table <a href="#tbl-02-data-description-hierarchy-article" class="quarto-xref">Table&nbsp;<span>9.4</span></a> summarizes the 4-levels of the article hierarchy by a unique count per level. Roughly,</p>
 <ul>
 <li>each Family contains roughly 18 articles.</li>
 <li>each Sub Category contains roughly 4 families.</li>
@@ -860,13 +928,13 @@ Table&nbsp;9.2: Data Profiling: Numeric Variables
 <div id="tbl-02-data-description-hierarchy-article" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-description-hierarchy-article-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;9.3: Summary: Article Hierachy
+Table&nbsp;9.4: Summary: Article Hierachy
 </figcaption>
 <div aria-describedby="tbl-02-data-description-hierarchy-article-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-233dcd9fb3a9eac50fc7" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-233dcd9fb3a9eac50fc7">{"x":{"filter":"none","vertical":false,"data":[["Animal based product","Bread and Bakery","Bread and Biscuit Al","Breakfast Cereals","Dairy Alternatives","Functional Foods","Hot Drinks","Juices and Cold Drin","Meals and Meal compo","Non category specifi","Others","Sweet Spreads, Puree","Sweets in Between"],[4,2,3,1,5,2,3,2,9,4,3,6,4],[22,5,9,6,24,12,14,6,44,4,9,13,16],[145,34,106,152,633,30,821,121,840,25,73,264,448]],"container":"<table class=\"stripe hover compact\">\n  <thead>\n    <tr>\n      <th>ProdCat<\/th>\n      <th>SubCat_Count<\/th>\n      <th>Family_Count<\/th>\n      <th>Article_Count<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"searching":false,"info":false,"ordering":true,"lengthChange":false,"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[1,2,3]},{"name":"ProdCat","targets":0},{"name":"SubCat_Count","targets":1},{"name":"Family_Count","targets":2},{"name":"Article_Count","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-1dee0bdaf92b5a81caac" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-1dee0bdaf92b5a81caac">{"x":{"filter":"none","vertical":false,"data":[["Animal based product","Bread and Bakery","Bread and Biscuit Al","Breakfast Cereals","Dairy Alternatives","Functional Foods","Hot Drinks","Juices and Cold Drin","Meals and Meal compo","Non category specifi","Others","Sweet Spreads, Puree","Sweets in Between"],[4,2,3,1,5,2,3,2,9,4,3,6,4],[22,5,9,6,24,12,14,6,44,4,9,13,16],[145,34,106,152,633,30,821,121,840,25,73,264,448]],"container":"<table class=\"stripe hover compact\">\n  <thead>\n    <tr>\n      <th>ProdCat<\/th>\n      <th>SubCat_Count<\/th>\n      <th>Family_Count<\/th>\n      <th>Article_Count<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"searching":false,"info":false,"ordering":true,"lengthChange":false,"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[1,2,3]},{"name":"ProdCat","targets":0},{"name":"SubCat_Count","targets":1},{"name":"Family_Count","targets":2},{"name":"Article_Count","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -878,8 +946,8 @@ Table&nbsp;9.3: Summary: Article Hierachy
 <div aria-describedby="fig-inter_active_article_hier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-a84c855246af6b2e4143" style="width:100%;height:600px;" class="collapsibleTree html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a84c855246af6b2e4143">{"x":{"data":{"name":"Articles","children":[{"name":"Sweets in Between","children":[{"name":"Biscuits","children":[{"name":"Biscuits (Plain)"},{"name":"Biscuits with fruits"},{"name":"Biscuits others"},{"name":"Biscuits with chocol"},{"name":"Pastry"},{"name":"Viennoiserie"},{"name":"Sandwich biscuits"}]},{"name":"Bars","children":[{"name":"Cereal bars"},{"name":"Fruit bars"},{"name":"Seed Bars"},{"name":"Nut bars"},{"name":"Functional bars"}]},{"name":"Chocolate","children":[{"name":"Chocolate bars"}]},{"name":"Cakes","children":[{"name":"Macaroons"},{"name":"Individual Cakes"},{"name":"Sharing Cakes"}]}]},{"name":"Hot Drinks","children":[{"name":"Tea","children":[{"name":"Green tea"},{"name":"Infusion Tea"},{"name":"Other Tea"},{"name":"Loose tea"},{"name":"Black Tea"},{"name":"White Tea"},{"name":"Instant Tea"}]},{"name":"Coffee","children":[{"name":"Instant coffee"},{"name":"Roast and Ground Cof"},{"name":"Coffee beans"},{"name":"Coffee pods"}]},{"name":"Other Hot drinks","children":[{"name":"Powdered milk"},{"name":"Hot Chocolate"},{"name":"Coffee substitutes"}]}]},{"name":"Dairy Alternatives","children":[{"name":"Dairy Alternative Dr","children":[{"name":"Soy drinks"},{"name":"Rice drinks"},{"name":"Oat drinks"},{"name":"Almond drinks"},{"name":"Other dairy alternat"},{"name":"Spelt drinks"},{"name":"Coconut drinks"},{"name":"Millet drinks"},{"name":"Hazelnut drinks"},{"name":"Cashew drinks"}]},{"name":"Dairy Alternative Cu","children":[{"name":"Other culinary aids"},{"name":"Oat culinary aids"},{"name":"Almond culinary aids"},{"name":"Coconut culinary aid"},{"name":"Soy culinary aids"},{"name":"Rice culinary aids"}]},{"name":"Dairy Alternatives D","children":[{"name":"Non dairy desserts"},{"name":"Non dairy ice cream"}]},{"name":"Dairy Alternatives o","children":[{"name":"Vegetable margarine"},{"name":"Non dairy cheese"}]},{"name":"Dairy Alternatives Y","children":[{"name":"Coconut  DA yoghurts"},{"name":"Oat DA yoghurts"},{"name":"Almond DA yoghurts"},{"name":"Other  DA yoghurts"}]}]},{"name":"Breakfast Cereals","children":[{"name":"Breakfast Cereals","children":[{"name":"Crunchy"},{"name":"Muesli"},{"name":"Extruded/puffed cere"},{"name":"Porridge"},{"name":"Flakes"},{"name":"Other breakfast cere"}]}]},{"name":"Bread and Biscuit Al","children":[{"name":"Cereal Cakes","children":[{"name":"Other Cereal Cakes P"},{"name":"Rice Cakes Plain"},{"name":"Rice Cakes Coated"},{"name":"Other Cereal Cakes C"},{"name":"Rice Cakes Flavoured"},{"name":"Other Cereal Cakes F"}]},{"name":"Crispy Breads","children":[{"name":"Toasted bread"}]},{"name":"Other Bread replacer","children":[{"name":"Crackers"},{"name":"Other Bread replacer"}]}]},{"name":"Meals and Meal compo","children":[{"name":"Savoury Spreads","children":[{"name":"Vegetarian pates(yea"},{"name":"Other savoury spread"},{"name":"Vegetarian Lard"},{"name":"Creamy Spreads"},{"name":"Vegetable spreads"},{"name":"Lentil/Protein sprea"},{"name":"Meat alternative spr"},{"name":"Cheese alternative s"},{"name":"Deli salads spreads"}]},{"name":"Soups and bouillons","children":[{"name":"Soups"},{"name":"Instant soup"}]},{"name":"Delicacies","children":[{"name":"Sauces"},{"name":"Chilled dips and spr"},{"name":"Chilled pasta"},{"name":"Chilled Quenelles"},{"name":"Dough (chilled)"},{"name":"Pancakes"},{"name":"Other delicacies"}]},{"name":"Ready Meals","children":[{"name":"Cereal meals"},{"name":"Other Ready meals"}]},{"name":"Pasta, rice and cere","children":[{"name":"Rice"},{"name":"Other cooking cereal"},{"name":"Pasta"},{"name":"Potato flakes"}]},{"name":"Meat analogues","children":[{"name":"Meat like meat subst"},{"name":"Non meat like meat s"}]},{"name":"Cooking sauces","children":[{"name":"Warm cooking sauces"},{"name":"Pasta sauces"},{"name":"Sauce concentrates"}]},{"name":"Canned and Frozen Ve","children":[{"name":"Prepared vegetables"},{"name":"Vegetable (frozen)"}]},{"name":"Cooking aids and mea","children":[{"name":"Other meal component"},{"name":"Stocks"},{"name":"Salt"},{"name":"Cold condiment sauce"},{"name":"Oil"},{"name":"Other cooking aids"},{"name":"Vinegar"},{"name":"Pickles"},{"name":"Mustard"},{"name":"Mayonnaise"},{"name":"Gravies"},{"name":"Seasonings and taste"},{"name":"Specialty cooking ai"}]}]},{"name":"Sweet Spreads, Puree","children":[{"name":"Fruit spreads","children":[{"name":"Fruit spreads"},{"name":"Other sweet spreads"}]},{"name":"Honey","children":[{"name":"Pure Honey"}]},{"name":"Nut spreads","children":[{"name":"Nut spreads"}]},{"name":"Sweeteners","children":[{"name":"Agave syrup"},{"name":"Sugar"},{"name":"Fructose"},{"name":"Other sweeteners"}]},{"name":"Chocolate Spreads","children":[{"name":"Chocolate spreads"}]},{"name":"Compote, Pureees, Sa","children":[{"name":"Purees"},{"name":"Compote"},{"name":"Fruit sauces"},{"name":"Other Prepared fruit"}]}]},{"name":"Functional Foods","children":[{"name":"Food supplements","children":[{"name":"Functional oils"},{"name":"Beer yeast"},{"name":"Other food supplemen"},{"name":"Digestion and transi"},{"name":"Slimming Food Supple"},{"name":"Vitamins and Mineral"},{"name":"Wheat germ"},{"name":"Cardio system care a"},{"name":"Vitality Food Supple"}]},{"name":"Slimming Foods","children":[{"name":"Meal substitutes oth"},{"name":"Hi protein salted po"},{"name":"Slimming Aids others"}]}]},{"name":"Non category specifi","children":[{"name":"Packaging-, producti","children":[{"name":"Packaging-, producti"}]},{"name":"Promotion materials","children":[{"name":"Other promotion mate"}]},{"name":"Byproducts","children":[{"name":"By products"}]},{"name":"Raw materials","children":[{"name":"Raw materials"}]}]},{"name":"Juices and Cold Drin","children":[{"name":"Juices","children":[{"name":"Fruit juice"},{"name":"Vegetable juice"},{"name":"Other juices"},{"name":"Fruit and vegetable"},{"name":"Fruit syrup"}]},{"name":"Cold Drinks","children":[{"name":"Soft drinks"}]}]},{"name":"Bread and Bakery","children":[{"name":"Bread products","children":[{"name":"Specialty Bread"},{"name":"Bread"}]},{"name":"Bakery and dessert p","children":[{"name":"Flour"},{"name":"Cake mix"},{"name":"Cooking Aids for Pas"}]}]},{"name":"Others","children":[{"name":"Savoury In Between","children":[{"name":"Other Savoury In Bet"},{"name":"Salted Snacks"},{"name":"Crisps"},{"name":"Savoury biscuits"}]},{"name":"Alcoholic drinks","children":[{"name":"Other alcoholic drin"}]},{"name":"Dried fruits and see","children":[{"name":"Seeds bags"},{"name":"Dried fruits bags"},{"name":"Nuts bags"},{"name":"Other dried fruits a"}]}]},{"name":"Animal based product","children":[{"name":"Meat products","children":[{"name":"Chicken"},{"name":"Canned meat"},{"name":"Cured meat"},{"name":"Foreign Cured meat"},{"name":"Sausages"}]},{"name":"Dairy products","children":[{"name":"Cream"},{"name":"Butter"},{"name":"Other Cheese"},{"name":"Cow milk"},{"name":"Cheese with cow milk"},{"name":"Cheese with ewe milk"},{"name":"Cheese with goat mil"},{"name":"Yogurt with cow milk"},{"name":"Yogurt with ewe milk"},{"name":"Dairy dessert with c"},{"name":"Dairy dessert with e"}]},{"name":"Seafood","children":[{"name":"Salmon"},{"name":"Canned fish"},{"name":"Other seafood"},{"name":"Smoked fish"}]},{"name":"Eggs","children":[{"name":"Eggs medium (53-63g)"},{"name":"Eggs large (63-73g)"}]}]}]},"options":{"hierarchy":["ProdCat","SubCat","Family"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":true,"zoomable":true,"margin":{"top":20,"bottom":20,"left":65,"right":125},"fill":"#38e56d"}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-7a055c1c30fe23a929b4" style="width:100%;height:600px;" class="collapsibleTree html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7a055c1c30fe23a929b4">{"x":{"data":{"name":"Articles","children":[{"name":"Sweets in Between","children":[{"name":"Biscuits","children":[{"name":"Biscuits (Plain)"},{"name":"Biscuits with fruits"},{"name":"Biscuits others"},{"name":"Biscuits with chocol"},{"name":"Pastry"},{"name":"Viennoiserie"},{"name":"Sandwich biscuits"}]},{"name":"Bars","children":[{"name":"Cereal bars"},{"name":"Fruit bars"},{"name":"Seed Bars"},{"name":"Nut bars"},{"name":"Functional bars"}]},{"name":"Chocolate","children":[{"name":"Chocolate bars"}]},{"name":"Cakes","children":[{"name":"Macaroons"},{"name":"Individual Cakes"},{"name":"Sharing Cakes"}]}]},{"name":"Hot Drinks","children":[{"name":"Tea","children":[{"name":"Green tea"},{"name":"Infusion Tea"},{"name":"Other Tea"},{"name":"Loose tea"},{"name":"Black Tea"},{"name":"White Tea"},{"name":"Instant Tea"}]},{"name":"Coffee","children":[{"name":"Instant coffee"},{"name":"Roast and Ground Cof"},{"name":"Coffee beans"},{"name":"Coffee pods"}]},{"name":"Other Hot drinks","children":[{"name":"Powdered milk"},{"name":"Hot Chocolate"},{"name":"Coffee substitutes"}]}]},{"name":"Dairy Alternatives","children":[{"name":"Dairy Alternative Dr","children":[{"name":"Soy drinks"},{"name":"Rice drinks"},{"name":"Oat drinks"},{"name":"Almond drinks"},{"name":"Other dairy alternat"},{"name":"Spelt drinks"},{"name":"Coconut drinks"},{"name":"Millet drinks"},{"name":"Hazelnut drinks"},{"name":"Cashew drinks"}]},{"name":"Dairy Alternative Cu","children":[{"name":"Other culinary aids"},{"name":"Oat culinary aids"},{"name":"Almond culinary aids"},{"name":"Coconut culinary aid"},{"name":"Soy culinary aids"},{"name":"Rice culinary aids"}]},{"name":"Dairy Alternatives D","children":[{"name":"Non dairy desserts"},{"name":"Non dairy ice cream"}]},{"name":"Dairy Alternatives o","children":[{"name":"Vegetable margarine"},{"name":"Non dairy cheese"}]},{"name":"Dairy Alternatives Y","children":[{"name":"Coconut  DA yoghurts"},{"name":"Oat DA yoghurts"},{"name":"Almond DA yoghurts"},{"name":"Other  DA yoghurts"}]}]},{"name":"Breakfast Cereals","children":[{"name":"Breakfast Cereals","children":[{"name":"Crunchy"},{"name":"Muesli"},{"name":"Extruded/puffed cere"},{"name":"Porridge"},{"name":"Flakes"},{"name":"Other breakfast cere"}]}]},{"name":"Bread and Biscuit Al","children":[{"name":"Cereal Cakes","children":[{"name":"Other Cereal Cakes P"},{"name":"Rice Cakes Plain"},{"name":"Rice Cakes Coated"},{"name":"Other Cereal Cakes C"},{"name":"Rice Cakes Flavoured"},{"name":"Other Cereal Cakes F"}]},{"name":"Crispy Breads","children":[{"name":"Toasted bread"}]},{"name":"Other Bread replacer","children":[{"name":"Crackers"},{"name":"Other Bread replacer"}]}]},{"name":"Meals and Meal compo","children":[{"name":"Savoury Spreads","children":[{"name":"Vegetarian pates(yea"},{"name":"Other savoury spread"},{"name":"Vegetarian Lard"},{"name":"Creamy Spreads"},{"name":"Vegetable spreads"},{"name":"Lentil/Protein sprea"},{"name":"Meat alternative spr"},{"name":"Cheese alternative s"},{"name":"Deli salads spreads"}]},{"name":"Soups and bouillons","children":[{"name":"Soups"},{"name":"Instant soup"}]},{"name":"Delicacies","children":[{"name":"Sauces"},{"name":"Chilled dips and spr"},{"name":"Chilled pasta"},{"name":"Chilled Quenelles"},{"name":"Dough (chilled)"},{"name":"Pancakes"},{"name":"Other delicacies"}]},{"name":"Ready Meals","children":[{"name":"Cereal meals"},{"name":"Other Ready meals"}]},{"name":"Pasta, rice and cere","children":[{"name":"Rice"},{"name":"Other cooking cereal"},{"name":"Pasta"},{"name":"Potato flakes"}]},{"name":"Meat analogues","children":[{"name":"Meat like meat subst"},{"name":"Non meat like meat s"}]},{"name":"Cooking sauces","children":[{"name":"Warm cooking sauces"},{"name":"Pasta sauces"},{"name":"Sauce concentrates"}]},{"name":"Canned and Frozen Ve","children":[{"name":"Prepared vegetables"},{"name":"Vegetable (frozen)"}]},{"name":"Cooking aids and mea","children":[{"name":"Other meal component"},{"name":"Stocks"},{"name":"Salt"},{"name":"Cold condiment sauce"},{"name":"Oil"},{"name":"Other cooking aids"},{"name":"Vinegar"},{"name":"Pickles"},{"name":"Mustard"},{"name":"Mayonnaise"},{"name":"Gravies"},{"name":"Seasonings and taste"},{"name":"Specialty cooking ai"}]}]},{"name":"Sweet Spreads, Puree","children":[{"name":"Fruit spreads","children":[{"name":"Fruit spreads"},{"name":"Other sweet spreads"}]},{"name":"Honey","children":[{"name":"Pure Honey"}]},{"name":"Nut spreads","children":[{"name":"Nut spreads"}]},{"name":"Sweeteners","children":[{"name":"Agave syrup"},{"name":"Sugar"},{"name":"Fructose"},{"name":"Other sweeteners"}]},{"name":"Chocolate Spreads","children":[{"name":"Chocolate spreads"}]},{"name":"Compote, Pureees, Sa","children":[{"name":"Purees"},{"name":"Compote"},{"name":"Fruit sauces"},{"name":"Other Prepared fruit"}]}]},{"name":"Functional Foods","children":[{"name":"Food supplements","children":[{"name":"Functional oils"},{"name":"Beer yeast"},{"name":"Other food supplemen"},{"name":"Digestion and transi"},{"name":"Slimming Food Supple"},{"name":"Vitamins and Mineral"},{"name":"Wheat germ"},{"name":"Cardio system care a"},{"name":"Vitality Food Supple"}]},{"name":"Slimming Foods","children":[{"name":"Meal substitutes oth"},{"name":"Hi protein salted po"},{"name":"Slimming Aids others"}]}]},{"name":"Non category specifi","children":[{"name":"Packaging-, producti","children":[{"name":"Packaging-, producti"}]},{"name":"Promotion materials","children":[{"name":"Other promotion mate"}]},{"name":"Byproducts","children":[{"name":"By products"}]},{"name":"Raw materials","children":[{"name":"Raw materials"}]}]},{"name":"Juices and Cold Drin","children":[{"name":"Juices","children":[{"name":"Fruit juice"},{"name":"Vegetable juice"},{"name":"Other juices"},{"name":"Fruit and vegetable"},{"name":"Fruit syrup"}]},{"name":"Cold Drinks","children":[{"name":"Soft drinks"}]}]},{"name":"Bread and Bakery","children":[{"name":"Bread products","children":[{"name":"Specialty Bread"},{"name":"Bread"}]},{"name":"Bakery and dessert p","children":[{"name":"Flour"},{"name":"Cake mix"},{"name":"Cooking Aids for Pas"}]}]},{"name":"Others","children":[{"name":"Savoury In Between","children":[{"name":"Other Savoury In Bet"},{"name":"Salted Snacks"},{"name":"Crisps"},{"name":"Savoury biscuits"}]},{"name":"Alcoholic drinks","children":[{"name":"Other alcoholic drin"}]},{"name":"Dried fruits and see","children":[{"name":"Seeds bags"},{"name":"Dried fruits bags"},{"name":"Nuts bags"},{"name":"Other dried fruits a"}]}]},{"name":"Animal based product","children":[{"name":"Meat products","children":[{"name":"Chicken"},{"name":"Canned meat"},{"name":"Cured meat"},{"name":"Foreign Cured meat"},{"name":"Sausages"}]},{"name":"Dairy products","children":[{"name":"Cream"},{"name":"Butter"},{"name":"Other Cheese"},{"name":"Cow milk"},{"name":"Cheese with cow milk"},{"name":"Cheese with ewe milk"},{"name":"Cheese with goat mil"},{"name":"Yogurt with cow milk"},{"name":"Yogurt with ewe milk"},{"name":"Dairy dessert with c"},{"name":"Dairy dessert with e"}]},{"name":"Seafood","children":[{"name":"Salmon"},{"name":"Canned fish"},{"name":"Other seafood"},{"name":"Smoked fish"}]},{"name":"Eggs","children":[{"name":"Eggs medium (53-63g)"},{"name":"Eggs large (63-73g)"}]}]}]},"options":{"hierarchy":["ProdCat","SubCat","Family"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":true,"zoomable":true,"margin":{"top":20,"bottom":20,"left":65,"right":125},"fill":"#38e56d"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Interactive Article Hierarchy, click on the nodes to expand or collapse them.</p>
@@ -892,7 +960,7 @@ Figure&nbsp;9.1
 </section>
 <section id="customer-hierarchy" class="level3">
 <h3 class="anchored" data-anchor-id="customer-hierarchy">Customer Hierarchy</h3>
-<p>Table <a href="#tbl-02-data-description-hierarchy-customer" class="quarto-xref">Table&nbsp;<span>9.4</span></a> summarizes the 4-levels of the customer hierarchy by a unique count per level. Roughly:</p>
+<p>Table <a href="#tbl-02-data-description-hierarchy-customer" class="quarto-xref">Table&nbsp;<span>9.5</span></a> summarizes the 4-levels of the customer hierarchy by a unique count per level. Roughly:</p>
 <ul>
 <li>each Family contains roughly 5 customers</li>
 <li>each Account contains roughly 2 sold-to parties</li>
@@ -901,19 +969,20 @@ Figure&nbsp;9.1
 <div id="tbl-02-data-description-hierarchy-customer" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-description-hierarchy-customer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;9.4: Summary: Customer Hierachy
+Table&nbsp;9.5: Summary: Customer Hierachy
 </figcaption>
 <div aria-describedby="tbl-02-data-description-hierarchy-customer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-6b75bf7c205e47a27429" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-6b75bf7c205e47a27429">{"x":{"filter":"none","vertical":false,"data":[["Discounter","Divers","Export","Grocery","Health &amp; Food Stores","Intercompany","Other","Out Of Home","Retail","Wholesale","e-Commerce"],[11,4,12,53,31,19,28,18,6,4,2],[12,4,60,99,76,25,72,48,35,17,15],[22,4,60,107,142,20,139,79,79,50,15],[76,70,167,171,1723,33,231,172,666,52,21]],"container":"<table class=\"stripe hover compact\">\n  <thead>\n    <tr>\n      <th>Channel<\/th>\n      <th>KAM_count<\/th>\n      <th>ACC_Count<\/th>\n      <th>SoldTo_Count<\/th>\n      <th>Customer_Count<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"searching":false,"info":false,"ordering":true,"lengthChange":false,"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[1,2,3,4]},{"name":"Channel","targets":0},{"name":"KAM_count","targets":1},{"name":"ACC_Count","targets":2},{"name":"SoldTo_Count","targets":3},{"name":"Customer_Count","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-7802225dfac2ffc38a0a" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-7802225dfac2ffc38a0a">{"x":{"filter":"none","vertical":false,"data":[["Discounter","Divers","Export","Grocery","Health &amp; Food Stores","Intercompany","Other","Out Of Home","Retail","Wholesale","e-Commerce"],[11,4,12,53,31,19,28,18,6,4,2],[12,4,60,99,76,25,72,48,35,17,15],[22,4,60,107,142,20,139,79,79,50,15],[76,70,167,171,1723,33,231,172,666,52,21]],"container":"<table class=\"stripe hover compact\">\n  <thead>\n    <tr>\n      <th>Channel<\/th>\n      <th>KAM_count<\/th>\n      <th>ACC_Count<\/th>\n      <th>SoldTo_Count<\/th>\n      <th>Customer_Count<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"searching":false,"info":false,"ordering":true,"lengthChange":false,"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[1,2,3,4]},{"name":"Channel","targets":0},{"name":"KAM_count","targets":1},{"name":"ACC_Count","targets":2},{"name":"SoldTo_Count","targets":3},{"name":"Customer_Count","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
 </figure>
 </div>
 <!-- ### Time Series Patterns -->
+</section>
 </section>
 <section id="data-quality-report" class="level2">
 <h2 class="anchored" data-anchor-id="data-quality-report">Data Quality Report</h2>

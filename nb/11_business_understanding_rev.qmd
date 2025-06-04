@@ -226,7 +226,7 @@ These metrics will help evaluate how well each approach performs against
 the unique requirements of each use case, ultimately guiding method
 selection and refinement.
 
--   **RMSE (Root Mean Squared Error, @def-RMSE )**: The primary metric
+-   **RMSE (Root Mean Squared Error, @def-11-RMSE )**: The primary metric
     for measuring forecast accuracy, particularly useful for penalizing
     large errors.
 

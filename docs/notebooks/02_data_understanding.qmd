@@ -18,16 +18,17 @@ toc-depth: 3      # include ## and ### in the TOC
 source("../_book_functions.R")
 ```
 
-## Identification of Data Sources
+## Identification of Data Sources {#sec-02-identification}
 
 <!-- Describe what data is available and where it comes from. -->
 Table @tbl-02-data-sources summarizes the data sources used in this project, 
 detailing their type, time span, granularity, system of record (SoR), and content. 
 All data is sourced from SAP BI, which extracts it from the underlying 
 systems of record. 
-The table also lists the specific SAP tables used for each data source.
+The table also lists the specific SAP tables used for each data source.  
 
 ::: {#tbl-02-data-sources}
+
 ```{r}
 
 # Read the data into a data.table 
@@ -68,7 +69,7 @@ MD = Master Data, TD = Transaction Data
 
 <!-- Subsections: -->
 
-### Articles
+### Articles {#sec-02-articles}
 
 The Article Master Data is extracted from `MARC` which contains Plant specific 
 data, this is enhanced with sales organization specific data from `MVKE` and 
@@ -105,11 +106,11 @@ Article Master Data Filters
 see @sec-01-bu-scope for reasons for article-filters.
 :::
 
-### Customers
+### Customers {#sec-02-customers}
 
 Customer Master Data is sourced from `KNVV`, which contains sales-organization-specific information, and is enriched with global attributes from `KNA1`. This includes customer classification fields such as type (e.g., internal, external, one-time customer, or employee). Customers flagged as employees are excluded from the analysis.
 
-### Sales
+### Sales {#sec-02-sales}
 <!-- Data filters applied (Doctype's, Item category, ...) -->
 <!-- exclude Promotion articles --> 
 
@@ -118,10 +119,6 @@ Only completed deliveries which are goods-issued are taken into account.
 
 Table @tbl-02-data-sources-sales-filters shows the applied filters to select
 standard sales orders and free-of-charge orders. 
-
-::: {.callout-important title="Fixed Planned Promotions are excluded"}
-Articles flagged in the Article Master data as Fixed Planned Promotions are excluded because they aren’t forecasted—instead, they’re delivered by contract and thus always achieve 100 % forecast accuracy.
-:::
 
 ::: {#tbl-02-data-sources-sales-filters}
 ```{r}
@@ -152,13 +149,17 @@ dtSF %>%
 Sales data filters
 :::
 
-### Forecasts
+::: {.callout-important title="Fixed Planned Promotions are excluded"}
+Articles flagged in the Article Master data as Fixed Planned Promotions are excluded because they aren’t forecasted—instead, they’re delivered by contract and thus always achieve 100 % forecast accuracy.
+:::
 
-Forecasts are generated monthly for each article–plant–customer combination, with a planning horizon of up to three years. For this research, the focus is on the year 2024, using a forecast horizon of up to 12 months. Consequently, only forecasts generated from 2023 onward are considered.
+### Forecasts {#sec-02-forecasts}
+
+Forecasts are generated monthly for each article–plant–customer combination, with a planning horizon of up to three years. For this research, the focus is on the year 2024, using a forecast horizon of up to 12 months. Consequently, only forecasts generated from 2023 onward are considered, see @fig-05-cv for visual illustration.
 
 Since forecasts are created both before and after the Demand Review, the dataset is split into two versions: *pre-Demand Review* and *post-Demand Review*. The pre-Demand Review forecasts are used for the initial analysis, while the post-Demand Review forecasts serve as the basis for final validation.
 
-## Data Collection Report
+## Data Collection Report {#sec-02-data-collection}
 <!-- Summarize how data was obtained and any issues during acquisition: -->
 
 Table @tbl-02-data-collection summarizes the data collection process, including the data sources, types, extraction dates, record counts, file sizes, and keys used for each data set. The data is collected from the SAP system and stored in a structured format for further processing.
@@ -195,13 +196,19 @@ Data Collection
 :::
 
 
-## Data Description Report
+## Data Description Report {#sec-02-data-description}
 
 <!-- Descriptive overview of structure and metadata: Open Hub definition -->
 <!-- Variable types (date, categorical, numeric) -->
 <!-- Dimensions (rows × columns) -->
 <!-- Target variable (e.g., sales units, net revenue) -->
 
+A detailed overview of all dataset fields, including names, data types, key flags, conversion routines, and hierarchy levels, is provided in the appendix.
+
+See @tbl-12-data-description for the full variable catalog.
+
+
+::: {#tbl-02-data-description .table}
 ```{r}
 # DT with Filter in Appendix
  wb_read(
@@ -214,7 +221,7 @@ Data Collection
   )  %T>%
   setDT() %>%
   .[PYTHIA == 'Y', !"PYTHIA"] %>%
-  # .[is.na(KEY), KEY:= ''] %>%
+  .[c(1, 12, 23)] %>%
   kbl(
     caption             = "Data Description",
     col.names           = names(.),
@@ -227,6 +234,8 @@ Data Collection
     bootstrap_options   = c("striped", "hover", "condensed")
   )
 ```
+sample of overview of all data set fields, see @tbl-12-data-description for the full variable catalog.
+:::
 
 ```{r}
 # DT with Filter in Appendix
@@ -348,7 +357,7 @@ ACC <-                              #
   )
 ```
 
-## Data Exploration Report
+## Data Exploration Report {#sec-02-data-exploration}
 
 <!-- Exploratory analyses & sanity checks   -->
 <!-- statistical properties and metadata. -->
@@ -360,7 +369,7 @@ ACC <-                              #
 <!-- Cross-sectional: contribution per customer/product/channel -->
 <!-- exclude units pak and DS   -->
 
-### Geographic Distribution of Sales
+### Geographic Distribution of Sales {#sec-02-eda-geography}
 
 ::: {#fig-02-eda-geography .figure}
 
@@ -442,7 +451,7 @@ For modeling purposes, the data was scoped to A-class articles based on ABC clas
 See [ABC Analysis and Scope Definition](#sec-03-abc) for details.
 :::
 
-### Data Profiling
+### Data Profiling {#sec-02-data-profiling}
 
 ```{r}
 #| label: skim-summary
@@ -459,7 +468,7 @@ dtACC_sk <- ACC %>%
   ))
 ```
 
-#### Character Variables
+#### Character Variables {#sec-02-data-profiling-ca}
 
 Table @tbl-02-data-profiling-ca shows the data profiling results for the dataset,
 including the number of missing values, completeness rate, minimum and maximum length 
@@ -495,7 +504,7 @@ the character variables.
 :::
 
 
-#### Numeric Variables
+#### Numeric Variables {#sec-02-data-profiling-nu}
 
 Table @tbl-02-data-profiling-nu shows the data profiling results for the 
 numeric variables in the dataset, including mean, standard deviation, and 
@@ -561,7 +570,7 @@ ggplot(dt, aes(x = Q)) +
 <!--     kable_styling(latex_options = c("striped", "hold_position"), full_width = FALSE) -->
 <!-- } -->
 
-### Article Hierachy
+### Article Hierachy {#sec-02-data-description-hierarchy}
 
 ```{r}
 #| label: tab-02-data-description-hierarchy
@@ -691,7 +700,7 @@ Interactive Article Hierarchy, click on the nodes to expand or collapse them.
 
 
 
-### Customer Hierarchy
+### Customer Hierarchy {#sec-02-data-description-hierarchy-customer}
 
 Table @tbl-02-data-description-hierarchy-customer summarizes the 4-levels of the 
 customer hierarchy by a unique count per level. Roughly:
@@ -741,7 +750,7 @@ datatable(
 Summary: Customer Hierachy
 :::
 
-### Time Series Patterns
+### Time Series Patterns {#sec-02-data-exploration-time-series}
 let’s explore the time series patterns per category
 
 the hot drinks category exhibits strong seasonality, as tea consumption increases during winter. 
@@ -753,7 +762,7 @@ in the upper left corner, Clipper hot again, demonstrating the expected seasonal
 
 
 
-## Data Quality Report
+## Data Quality Report {#sec-02-data-quality}
 
 <!-- Assess data integrity and readiness for modeling. -->
 <!-- Subsections: -->
@@ -762,7 +771,7 @@ in the upper left corner, Clipper hot again, demonstrating the expected seasonal
 <!-- Duplicated records -->
 <!-- Outliers: any anomalous spikes or drops? -->
 
-### Data Quality Assessment
+### Data Quality Assessment {#sec-02-data-quality-assessment}
 <!-- Assessment: What issues were found (missing values, outliers, etc.) -->
 
 <!-- Data Quality Assessment and Remediation -->
@@ -773,7 +782,7 @@ in the upper left corner, Clipper hot again, demonstrating the expected seasonal
 all 0 
 duplicates, zero quantity, unexpected NAs
 
-### Actions taken: 
+**Actions taken:** 
 <!-- Any exclusions or imputations -->
 <!-- Summarize actions taken: -->
 
