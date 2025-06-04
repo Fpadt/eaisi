@@ -284,6 +284,26 @@ dtDD %>%
 
 ```{r}
 
+
+ACC <-                              # 
+  pa_td_dyn_get(
+    .vtype       = c('010', '060')  , # 010 = Actuals, 060 = Forecast
+    .ftype       = c(1, 2)          , # 1 = PreDR, 2 = PostDR 
+    .material    = NULL      , # Optional user-supplied material
+    .salesorg    = 'FR30'    , #'Optional user-supplied salesorg
+    .scope_matl  = TRUE      , # restrict to Pythia Scope
+    .scope_sorg  = TRUE      , # restrict to Pythia Scope
+    .cm_min      = '202101'  , # minimal Cal Month
+    .cm_max      = '202412'  , # maximal Cal Month
+    .step_min    = 1         , # minimal forecast step ahead
+    .step_max    = 18        , # maximal forecast step ahead
+    .lagg_min    = -1        , # minimal diff. between VERSMON & MONTH
+    .lagg_max    = -1        , # maximal diff. between VERSMON & MONTH  
+    .n           = Inf  
+  ) 
+
+
+
   wb_read(
     file      = ET2BB,
     sheet     = "ACC",

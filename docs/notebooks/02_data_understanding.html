@@ -1,0 +1,2918 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-06-04">
+<meta name="description" content="SAP BI extracts serve as the foundation: article, customer, sales &amp; forecast dataData was scoped to finished goods under Make-to-Stock with ambient storageThe modeling dataset is based on the top-performing MSO and A-class articlesExploratory analysis confirmed temporal seasonality and product hierarchy depthData quality is high overall, with minimal missing values and no major outliers">
+
+<title>Data Understanding – Pythia's Advice</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../notebooks/03_data_preparation.html" rel="next">
+<link href="../notebooks/01_business_understanding.html" rel="prev">
+<link href="../images/favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-1100dc645a9806080dc50effd6ccb0f7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-5977e214c05d9207a6b9ecdb11453a52.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-1100dc645a9806080dc50effd6ccb0f7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-94fa406e38a5c78d3de9dca02b1572d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-ba558c2fbb090de1150150c181bbc6a4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-94fa406e38a5c78d3de9dca02b1572d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: #FFFFFF;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: #FFFFFF;
+      }
+</style>
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+<link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<link href="../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+
+<script src="../site_libs/datatables-binding-0.33/datatables.js"></script>
+
+<script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+<link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+
+<link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+
+<script src="../site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+
+<link href="../site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="../site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+
+<script src="../site_libs/d3-4.10.2/d3.min.js"></script>
+
+<link href="../site_libs/collapsibleTree-0.1.6/collapsibleTree.css" rel="stylesheet">
+
+<script src="../site_libs/collapsibleTree-binding-0.1.8/collapsibleTree.js"></script>
+
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    window.setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      window.setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    window.hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(darkModeDefault) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const darkModeDefault = false;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !window.hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+    };
+    // Switch to dark mode if need be
+    if (window.hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The ♥ of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/02_data_understanding.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Understanding</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The ♥ of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/02_data_understanding.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Understanding</span></a></li></ol></nav>
+      <h1 class="title"><span id="sec-02-data-understanding" class="quarto-section-identifier"><span class="chapter-title">Data Understanding</span></span></h1>
+            <p class="subtitle lead">what data is available and where it comes from</p>
+                  <div>
+        <div class="description">
+          <ul>
+          <li>SAP BI extracts serve as the foundation: article, customer, sales &amp; forecast data</li>
+          <li>Data was scoped to finished goods under Make-to-Stock with ambient storage</li>
+          <li>The modeling dataset is based on the top-performing MSO and A-class articles</li>
+          <li>Exploratory analysis confirmed temporal seasonality and product hierarchy depth</li>
+          <li>Data quality is high overall, with minimal missing values and no major outliers</li>
+          </ul>
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Time Series Forecasting</div>
+                <div class="quarto-category">Data Science</div>
+                <div class="quarto-category">Hierarchical Forecasting (HTS)</div>
+                <div class="quarto-category">Error-Trend-Season (ETS)</div>
+                <div class="quarto-category">Supply Chain Management</div>
+              </div>
+                  </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://www.linkedin.com/in/florispadt">Floris Padt, MSc.</a> <a href="mailto:floris@smart-r.nl" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0009-0006-4729-1783" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai">
+              EAISI - Technical University Eindhoven
+              </a>
+            </p>
+        </div>
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://www.tue.nl/en/education/professional-education/current-programs/eaisi-academy/lecturers/dr-ieke-le-blanc">Ieke Le Blanc, Dr.</a> </p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai">
+              EAISI - Technical University Eindhoven
+              </a>
+            </p>
+        </div>
+    </div>
+
+  <div class="quarto-title-meta">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 4, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Pythia’s Advice</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/Fpadt/eaisi/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="../Pythia-s-Advice.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prophecy_to_prediction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prophecy to Prediction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../setting_the_stage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setting the Stage</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">The ♥ of Pythia</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/00_introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/01_business_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Business Understanding</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/02_data_understanding.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Understanding</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/03_data_preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Preparation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/04_modelling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modelling</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/05_evaluation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Evaluation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/06_deployment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Deployment</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/07_conclusions_recommendations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conclusions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../insight_to_impact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Insight to Impact</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendix</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/17_crisp-dm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">CRISP-DM</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/11_business_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Business Understanding</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/12_data_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Understanding</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/13_data_preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Preparation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/14_modelling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Modelling</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/15_evaluation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Evaluation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/16_deployment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Deployment</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/08_appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Other</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/16_flow_down.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Flow Down</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/18_references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/19_resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#identification-of-data-sources" id="toc-identification-of-data-sources" class="nav-link active" data-scroll-target="#identification-of-data-sources">Identification of Data Sources</a>
+  <ul class="collapse">
+  <li><a href="#articles" id="toc-articles" class="nav-link" data-scroll-target="#articles">Articles</a></li>
+  <li><a href="#customers" id="toc-customers" class="nav-link" data-scroll-target="#customers">Customers</a></li>
+  <li><a href="#sales" id="toc-sales" class="nav-link" data-scroll-target="#sales">Sales</a></li>
+  <li><a href="#forecasts" id="toc-forecasts" class="nav-link" data-scroll-target="#forecasts">Forecasts</a></li>
+  </ul></li>
+  <li><a href="#data-collection-report" id="toc-data-collection-report" class="nav-link" data-scroll-target="#data-collection-report">Data Collection Report</a></li>
+  <li><a href="#data-description-report" id="toc-data-description-report" class="nav-link" data-scroll-target="#data-description-report">Data Description Report</a></li>
+  <li><a href="#data-exploration-report" id="toc-data-exploration-report" class="nav-link" data-scroll-target="#data-exploration-report">Data Exploration Report</a>
+  <ul class="collapse">
+  <li><a href="#geographic-distribution-of-sales" id="toc-geographic-distribution-of-sales" class="nav-link" data-scroll-target="#geographic-distribution-of-sales">Geographic Distribution of Sales</a></li>
+  <li><a href="#data-profiling" id="toc-data-profiling" class="nav-link" data-scroll-target="#data-profiling">Data Profiling</a></li>
+  <li><a href="#article-hierachy" id="toc-article-hierachy" class="nav-link" data-scroll-target="#article-hierachy">Article Hierachy</a></li>
+  <li><a href="#customer-hierarchy" id="toc-customer-hierarchy" class="nav-link" data-scroll-target="#customer-hierarchy">Customer Hierarchy</a></li>
+  <li><a href="#time-series-patterns" id="toc-time-series-patterns" class="nav-link" data-scroll-target="#time-series-patterns">Time Series Patterns</a></li>
+  </ul></li>
+  <li><a href="#data-quality-report" id="toc-data-quality-report" class="nav-link" data-scroll-target="#data-quality-report">Data Quality Report</a>
+  <ul class="collapse">
+  <li><a href="#data-quality-assessment" id="toc-data-quality-assessment" class="nav-link" data-scroll-target="#data-quality-assessment">Data Quality Assessment</a></li>
+  <li><a href="#actions-taken" id="toc-actions-taken" class="nav-link" data-scroll-target="#actions-taken">Actions taken:</a></li>
+  </ul></li>
+  <li><a href="#sec-02-summary" id="toc-sec-02-summary" class="nav-link" data-scroll-target="#sec-02-summary">Summary of Data Understanding</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/02_data_understanding.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+
+<section id="identification-of-data-sources" class="level2">
+<h2 class="anchored" data-anchor-id="identification-of-data-sources">Identification of Data Sources</h2>
+<!-- Describe what data is available and where it comes from. -->
+<p>Table <a href="#tbl-02-data-sources" class="quarto-xref">Table&nbsp;<span>2.1</span></a> summarizes the data sources used in this project, detailing their type, time span, granularity, system of record (SoR), and content. All data is sourced from SAP BI, which extracts it from the underlying systems of record. The table also lists the specific SAP tables used for each data source.</p>
+<div id="tbl-02-data-sources" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-sources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.1: Overview of data sources used in the project<br>
+MD = Master Data, TD = Transaction Data
+</figcaption>
+<div aria-describedby="tbl-02-data-sources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Data Source</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Type</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Time-Span</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Granularity</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">SoR</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Table</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">article</td>
+<td style="text-align: left;">MD</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">SAP S4</td>
+<td style="text-align: left;">MARC</td>
+<td style="text-align: left;">article attr. &amp; hierachy</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">customer</td>
+<td style="text-align: left;">MD</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">SAP S4</td>
+<td style="text-align: left;">KNVV</td>
+<td style="text-align: left;">customer attr. hierachy</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sales</td>
+<td style="text-align: left;">TD</td>
+<td style="text-align: left;">&gt; 2020</td>
+<td style="text-align: left;">daily</td>
+<td style="text-align: left;">SAP S4</td>
+<td style="text-align: left;">LIPS</td>
+<td style="text-align: left;">customer orders + free-of-charge</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">forecasts</td>
+<td style="text-align: left;">TD</td>
+<td style="text-align: left;">&gt; 2023</td>
+<td style="text-align: left;">monhtly</td>
+<td style="text-align: left;">QAD</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">monthly pre- &amp; post Demand review forecasts</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<!-- PDF -->
+<!-- %>% -->
+<!--   footnote( -->
+<!--     general           = "MD = Master data, TD = Transaction Data", -->
+<!--     footnote_as_chunk = TRUE, -->
+<!--     threeparttable    = FALSE, -->
+<!--     escape            = FALSE -->
+<!--   ) -->
+<!-- Subsections: -->
+<section id="articles" class="level3">
+<h3 class="anchored" data-anchor-id="articles">Articles</h3>
+<p>The Article Master Data is extracted from <code>MARC</code> which contains Plant specific data, this is enhanced with sales organization specific data from <code>MVKE</code> and global article data from <code>MARA</code>, applied filters are shown in Table <a href="#tbl-02-data-sources-article-filters" class="quarto-xref">Table&nbsp;<span>2.2</span></a>.</p>
+<div id="tbl-02-data-sources-article-filters" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-sources-article-filters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.2: Article Master Data Filters<br>
+see <a href="11_business_understanding.html#sec-01-bu-scope" class="quarto-xref"><span>Scope of the Project</span></a> for reasons for article-filters.
+</figcaption>
+<div aria-describedby="tbl-02-data-sources-article-filters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Article Master Data Filters</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">FIELD</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Filter</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">MARA-MTART</td>
+<td style="text-align: left;">HAWA; FERT; VOLL</td>
+<td style="text-align: left;">only finished goods</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MARA-STRGRP</td>
+<td style="text-align: left;">Z1</td>
+<td style="text-align: left;">only Make-to-Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MARC-DISMM</td>
+<td style="text-align: left;">ZC; ZD; ZG; ZH; ZI; ZJ; ZN; ZP</td>
+<td style="text-align: left;">only MRP relevant</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MARC-PERKZ</td>
+<td style="text-align: left;">W</td>
+<td style="text-align: left;">only Ambient</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</section>
+<section id="customers" class="level3">
+<h3 class="anchored" data-anchor-id="customers">Customers</h3>
+<p>Customer Master Data is sourced from <code>KNVV</code>, which contains sales-organization-specific information, and is enriched with global attributes from <code>KNA1</code>. This includes customer classification fields such as type (e.g., internal, external, one-time customer, or employee). Customers flagged as employees are excluded from the analysis.</p>
+</section>
+<section id="sales" class="level3">
+<h3 class="anchored" data-anchor-id="sales">Sales</h3>
+<!-- Data filters applied (Doctype's, Item category, ...) -->
+<!-- exclude Promotion articles -->
+<p>Sales data is extracted from <code>LIPS</code>, which contains delivery records. Only completed deliveries which are goods-issued are taken into account.</p>
+<p>Table <a href="#tbl-02-data-sources-sales-filters" class="quarto-xref">Table&nbsp;<span>2.3</span></a> shows the applied filters to select standard sales orders and free-of-charge orders.</p>
+<div class="callout callout-style-simple callout-important callout-titled" title="Fixed Planned Promotions are excluded">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fixed Planned Promotions are excluded
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Articles flagged in the Article Master data as Fixed Planned Promotions are excluded because they aren’t forecasted—instead, they’re delivered by contract and thus always achieve 100 % forecast accuracy.</p>
+</div>
+</div>
+<div id="tbl-02-data-sources-sales-filters" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-sources-sales-filters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.3: Sales data filters
+</figcaption>
+<div aria-describedby="tbl-02-data-sources-sales-filters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Sales Data Filters</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Document Type</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Item Category</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">TA</td>
+<td style="text-align: left;">TAN; ZTAQ; YGF1</td>
+<td style="text-align: left;">standard sales orders</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">KB; ZDR</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">standard sales orders</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TA</td>
+<td style="text-align: left;">TANN; ZTNG</td>
+<td style="text-align: left;">free-of-charge orders</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">KL; ZFD</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">free-of-charge orders</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</section>
+<section id="forecasts" class="level3">
+<h3 class="anchored" data-anchor-id="forecasts">Forecasts</h3>
+<p>Forecasts are generated monthly for each article–plant–customer combination, with a planning horizon of up to three years. For this research, the focus is on the year 2024, using a forecast horizon of up to 12 months. Consequently, only forecasts generated from 2023 onward are considered.</p>
+<p>Since forecasts are created both before and after the Demand Review, the dataset is split into two versions: <em>pre-Demand Review</em> and <em>post-Demand Review</em>. The pre-Demand Review forecasts are used for the initial analysis, while the post-Demand Review forecasts serve as the basis for final validation.</p>
+</section>
+</section>
+<section id="data-collection-report" class="level2">
+<h2 class="anchored" data-anchor-id="data-collection-report">Data Collection Report</h2>
+<!-- Summarize how data was obtained and any issues during acquisition: -->
+<p>Table <a href="#tbl-02-data-collection" class="quarto-xref">Table&nbsp;<span>2.4</span></a> summarizes the data collection process, including the data sources, types, extraction dates, record counts, file sizes, and keys used for each data set. The data is collected from the SAP system and stored in a structured format for further processing.</p>
+<p>Pre- and post-Demand Review forecasts are stored as separate files, one for each month in which they were created. Each file is named to reflect the extraction date.The key is essential for linking the data sets during analysis.</p>
+<div id="tbl-02-data-collection" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-collection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.4: Data Collection
+</figcaption>
+<div aria-describedby="tbl-02-data-collection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Data Source</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Type</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Extract Date</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Records</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Size</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Files</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Key</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">article</td>
+<td style="text-align: left;">MD</td>
+<td style="text-align: left;">21-01-2025</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">1.691 KB</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Article</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">customer</td>
+<td style="text-align: left;">MD</td>
+<td style="text-align: left;">21-01-2025</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">1.345 KB</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Customer</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sales</td>
+<td style="text-align: left;">TD</td>
+<td style="text-align: left;">21-01-2025</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">1.7 GB</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Date; Article; Plant; Customer</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">forecasts</td>
+<td style="text-align: left;">TD</td>
+<td style="text-align: left;">21-01-2025</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">8.99 GB</td>
+<td style="text-align: left;">48</td>
+<td style="text-align: left;">Date; Article; Plant; CustHier3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</section>
+<section id="data-description-report" class="level2">
+<h2 class="anchored" data-anchor-id="data-description-report">Data Description Report</h2>
+<!-- Descriptive overview of structure and metadata: Open Hub definition -->
+<!-- Variable types (date, categorical, numeric) -->
+<!-- Dimensions (rows × columns) -->
+<!-- Target variable (e.g., sales units, net revenue) -->
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Data Description</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">OHDEST</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">POSIT</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">FIELDNM</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">TXTLG</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">KEYFLAG</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">DATATYPE</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">LENG</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">CONVEXIT</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">DECIMALS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0001</td>
+<td style="text-align: left;">CUSTOMER</td>
+<td style="text-align: left;">Customer number</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000010</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0002</td>
+<td style="text-align: left;">CUSTOMER_TMD</td>
+<td style="text-align: left;">Customer Text medium</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0003</td>
+<td style="text-align: left;">SALESORG</td>
+<td style="text-align: left;">Sales Organization</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000004</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0004</td>
+<td style="text-align: left;">/BIC/CUSTHIE04</td>
+<td style="text-align: left;">Customer hierarchy level 4</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000010</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0005</td>
+<td style="text-align: left;">CUST_HIE04_TMD</td>
+<td style="text-align: left;">Customer Hierarchy Level 4 Text medium</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0006</td>
+<td style="text-align: left;">CUST_HIE03</td>
+<td style="text-align: left;">Customer Hierarchy Level 3</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000010</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0007</td>
+<td style="text-align: left;">CUST_HIE03_TMD</td>
+<td style="text-align: left;">Customer Hierarchy Level 3 Text medium</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0008</td>
+<td style="text-align: left;">CUST_HIE02</td>
+<td style="text-align: left;">Customer Hierarchy Level 2</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000010</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0009</td>
+<td style="text-align: left;">CUST_HIE02_TMD</td>
+<td style="text-align: left;">Customer Hierarchy Level 2 Text medium</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0010</td>
+<td style="text-align: left;">CUST_HIE01</td>
+<td style="text-align: left;">Customer Hierarchy Level 1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000010</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0011</td>
+<td style="text-align: left;">CUST_HIE01_TMD</td>
+<td style="text-align: left;">Customer Hierarchy Level 1 Text medium</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0001</td>
+<td style="text-align: left;">MATERIAL</td>
+<td style="text-align: left;">Material</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000018</td>
+<td style="text-align: left;">MATN1</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0002</td>
+<td style="text-align: left;">MATERIAL_TMD</td>
+<td style="text-align: left;">Material Text</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0003</td>
+<td style="text-align: left;">MATL_TYPE</td>
+<td style="text-align: left;">Material type</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000004</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0004</td>
+<td style="text-align: left;">MATL_TYPE_TMD</td>
+<td style="text-align: left;">Material type</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0007</td>
+<td style="text-align: left;">BASE_UOM</td>
+<td style="text-align: left;">Base Unit of Measure</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">UNIT</td>
+<td style="text-align: left;">000003</td>
+<td style="text-align: left;">BUNIT</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0008</td>
+<td style="text-align: left;">BASE_UOM_TSH</td>
+<td style="text-align: left;">Base Unit of Measure</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000004</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0019</td>
+<td style="text-align: left;">/BIC/PRDH4</td>
+<td style="text-align: left;">Product Family ID</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000008</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0020</td>
+<td style="text-align: left;">PRDH4_TMD</td>
+<td style="text-align: left;">Product Family TXT</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0021</td>
+<td style="text-align: left;">/BIC/PRDH3</td>
+<td style="text-align: left;">Product Sub Category ID</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000004</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0022</td>
+<td style="text-align: left;">PRDH3_TMD</td>
+<td style="text-align: left;">Product Sub Category TXT</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0023</td>
+<td style="text-align: left;">/BIC/PRDH2</td>
+<td style="text-align: left;">Main Category ID</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000004</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0024</td>
+<td style="text-align: left;">PRDH2_TMD</td>
+<td style="text-align: left;">Main Category TXT</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0025</td>
+<td style="text-align: left;">/BIC/PRDH1</td>
+<td style="text-align: left;">Name of the Brand ID</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000002</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0026</td>
+<td style="text-align: left;">PRDH1_TMD</td>
+<td style="text-align: left;">Name of the Brand TXT</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATP</td>
+<td style="text-align: left;">0001</td>
+<td style="text-align: left;">MAT_PLANT</td>
+<td style="text-align: left;">Material Plant</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000018</td>
+<td style="text-align: left;">MATN1</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATP</td>
+<td style="text-align: left;">0002</td>
+<td style="text-align: left;">PLANT</td>
+<td style="text-align: left;">Plant</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000004</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATP</td>
+<td style="text-align: left;">0009</td>
+<td style="text-align: left;">DISMM</td>
+<td style="text-align: left;">MRP Type</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000002</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATP</td>
+<td style="text-align: left;">0010</td>
+<td style="text-align: left;">/BIC/STGY_GRP</td>
+<td style="text-align: left;">Strategy Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000002</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0001</td>
+<td style="text-align: left;">MATERIAL</td>
+<td style="text-align: left;">Material</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000018</td>
+<td style="text-align: left;">MATN1</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0002</td>
+<td style="text-align: left;">SALESORG</td>
+<td style="text-align: left;">Sales Organization</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000004</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0003</td>
+<td style="text-align: left;">ACCNT_ASGN</td>
+<td style="text-align: left;">Customer Account Assignment Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000002</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0004</td>
+<td style="text-align: left;">ACCNT_ASGN_TSH</td>
+<td style="text-align: left;">ACCNT_ASGN_TSH</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000020</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0005</td>
+<td style="text-align: left;">/BIC/ZDMND_PLN</td>
+<td style="text-align: left;">Demand Planner</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000003</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0006</td>
+<td style="text-align: left;">ZDMND_PLN_TSH</td>
+<td style="text-align: left;">Demand Planner Text short</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000020</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0011</td>
+<td style="text-align: left;">/BIC/PRAT1</td>
+<td style="text-align: left;">Innovative Indicator</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000001</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0012</td>
+<td style="text-align: left;">LOWERDATE</td>
+<td style="text-align: left;">First time ordered</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000010</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0013</td>
+<td style="text-align: left;">ENDDATE</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000010</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0014</td>
+<td style="text-align: left;">SALES_UNIT</td>
+<td style="text-align: left;">Sales unit</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">UNIT</td>
+<td style="text-align: left;">000003</td>
+<td style="text-align: left;">BUNIT</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0017</td>
+<td style="text-align: left;">/BIC/PRAT7</td>
+<td style="text-align: left;">Material trend</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000001</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0001</td>
+<td style="text-align: left;">COMP_CODE</td>
+<td style="text-align: left;">Company code</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000004</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0002</td>
+<td style="text-align: left;">SALESORG</td>
+<td style="text-align: left;">Sales Organization</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000004</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0003</td>
+<td style="text-align: left;">PLANT</td>
+<td style="text-align: left;">Plant</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000004</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0004</td>
+<td style="text-align: left;">MATERIAL</td>
+<td style="text-align: left;">Material</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000018</td>
+<td style="text-align: left;">MATN1</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0005</td>
+<td style="text-align: left;">CUST_HIE03</td>
+<td style="text-align: left;">Customer Hierarchy Level 3</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000010</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0006</td>
+<td style="text-align: left;">CALMONTH</td>
+<td style="text-align: left;">Calendar year/month</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">NUMC</td>
+<td style="text-align: left;">000006</td>
+<td style="text-align: left;">PERI6</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0007</td>
+<td style="text-align: left;">VTYPE</td>
+<td style="text-align: left;">Value Type for Reporting</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">NUMC</td>
+<td style="text-align: left;">000003</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0008</td>
+<td style="text-align: left;">FTYPE</td>
+<td style="text-align: left;">Forecast Type</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000001</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0009</td>
+<td style="text-align: left;">VERSMON</td>
+<td style="text-align: left;">Version Calendar year/month</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000006</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0012</td>
+<td style="text-align: left;">CUST_HIE02</td>
+<td style="text-align: left;">Customer Hierarchy Level 2</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000010</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0013</td>
+<td style="text-align: left;">CUST_HIE01</td>
+<td style="text-align: left;">Customer Hierarchy Level 1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000010</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0014</td>
+<td style="text-align: left;">DEMND_QTY</td>
+<td style="text-align: left;">Demand qty</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000017</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0019</td>
+<td style="text-align: left;">BASE_UOM</td>
+<td style="text-align: left;">Base Unit of Measure</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">UNIT</td>
+<td style="text-align: left;">000003</td>
+<td style="text-align: left;">BUNIT</td>
+<td style="text-align: left;">000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Data Loads</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">SYSTID</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">CLIENT</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">FILEINTERN</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">FILEEXTERN</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">FILEFORMAT</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">APPLI_TR01</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">PATHINTERN</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">DTP</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">OHDEST</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">INFOAREA</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">TYPE</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">TARGET_FILENAME</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">DATE</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">S1B -&gt; S2S</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Column1</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">REPEAT</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">SQL</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Procedure</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">WPB</td>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">Z_DSCP_MATERIAL</td>
+<td style="text-align: left;">MD_MATERIAL.CSV</td>
+<td style="text-align: left;">ASC</td>
+<td style="text-align: left;">BW</td>
+<td style="text-align: left;">Z_DSCP</td>
+<td style="text-align: left;">DTP_006EICO68TUM23UIAL63HHR85</td>
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">RW_DSCP</td>
+<td style="text-align: left;">MD</td>
+<td style="text-align: left;">MD_MATERIAL</td>
+<td style="text-align: left;">2024-01-10</td>
+<td style="text-align: left;">OK</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WPB</td>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">Z_DSCP_MATERIAL_PLANT</td>
+<td style="text-align: left;">MD_MATERIAL_PLANT.CSV</td>
+<td style="text-align: left;">ASC</td>
+<td style="text-align: left;">BW</td>
+<td style="text-align: left;">Z_DSCP</td>
+<td style="text-align: left;">DTP_006EICO68TUM23UIJTLI6X0YD</td>
+<td style="text-align: left;">DSCP_MATP</td>
+<td style="text-align: left;">RW_DSCP</td>
+<td style="text-align: left;">MD</td>
+<td style="text-align: left;">MD_MATERIAL_PLANT</td>
+<td style="text-align: left;">2024-01-10</td>
+<td style="text-align: left;">OK</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WPB</td>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">Z_DSCP_MATERIAL_SALES_ORG</td>
+<td style="text-align: left;">MD_MATERIAL_SALES_ORG.CSV</td>
+<td style="text-align: left;">ASC</td>
+<td style="text-align: left;">BW</td>
+<td style="text-align: left;">Z_DSCP</td>
+<td style="text-align: left;">DTP_006EICO68TUM23UJ62AQO3OYD</td>
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">RW_DSCP</td>
+<td style="text-align: left;">MD</td>
+<td style="text-align: left;">MD_MATERIAL_SALES_ORG</td>
+<td style="text-align: left;">2024-01-10</td>
+<td style="text-align: left;">OK</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WPB</td>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">Z_DSCP_CUST_SALES</td>
+<td style="text-align: left;">MD_SOLD_TO_CUSTOMER.CSV</td>
+<td style="text-align: left;">ASC</td>
+<td style="text-align: left;">BW</td>
+<td style="text-align: left;">Z_DSCP</td>
+<td style="text-align: left;">DTP_006EICO68TUM23WSW0MNFNNDH</td>
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">RW_DSCP</td>
+<td style="text-align: left;">MD</td>
+<td style="text-align: left;">MD_SOLD_TO_CUSTOMER</td>
+<td style="text-align: left;">2024-01-10</td>
+<td style="text-align: left;">OK</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WPB</td>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">Z_PYTHIA_SDSFRPR1</td>
+<td style="text-align: left;">SDSFRPR1.csv</td>
+<td style="text-align: left;">ASC</td>
+<td style="text-align: left;">BW</td>
+<td style="text-align: left;">Z_DSCP</td>
+<td style="text-align: left;">DTP_006EIZGR39XAWVU69IZ8Z9K4B</td>
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">RW_PYTHIA</td>
+<td style="text-align: left;">ACT</td>
+<td style="text-align: left;">SDSFRLV1_202412_2021</td>
+<td style="text-align: left;">2025-01-20</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Last Version</td>
+<td style="text-align: left;">NO</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WPB</td>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">Z_PYTHIA_SDSFRPR2</td>
+<td style="text-align: left;">SDSFRPR2.csv</td>
+<td style="text-align: left;">ASC</td>
+<td style="text-align: left;">BW</td>
+<td style="text-align: left;">Z_DSCP</td>
+<td style="text-align: left;">DTP_006EICO68TUM23V5NXLG5RMS5</td>
+<td style="text-align: left;">OH_FRPR2</td>
+<td style="text-align: left;">RW_PYTHIA</td>
+<td style="text-align: left;">FCT</td>
+<td style="text-align: left;">SDSFRPR2</td>
+<td style="text-align: left;">2025-02-10</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">✔202502</td>
+<td style="text-align: left;">YES</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">1. DTP select current Month for VERSMON, e.g. 2025xx 2. extract 3. AL11 SDSFRPR2.csv 4. Move to folder C:\PW\OneDrive\ET\pythia\data\production\Bronze\sales\SDSFRPR2_20250X.csv</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WPB</td>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">Z_PYTHIA_SDSFRPR1</td>
+<td style="text-align: left;">SDSFRPR1.csv</td>
+<td style="text-align: left;">ASC</td>
+<td style="text-align: left;">BW</td>
+<td style="text-align: left;">Z_DSCP</td>
+<td style="text-align: left;">DTP_006EIZGR39XAWV6JIR8LR989N</td>
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">RW_PYTHIA</td>
+<td style="text-align: left;">ACT</td>
+<td style="text-align: left;">SDSFRPR1_2024XX</td>
+<td style="text-align: left;">2025-01-19</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Init 2024</td>
+<td style="text-align: left;">NO</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WPB</td>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">Z_PYTHIA_SDSFRPR4</td>
+<td style="text-align: left;">SDSFRPR4.csv</td>
+<td style="text-align: left;">ASC</td>
+<td style="text-align: left;">BW</td>
+<td style="text-align: left;">Z_DSCP</td>
+<td style="text-align: left;">DTP_006EIZGR39XAWU1GG1ZXR5JIY</td>
+<td style="text-align: left;">OH_FRPR4</td>
+<td style="text-align: left;">RW_PYTHIA</td>
+<td style="text-align: left;">FCT</td>
+<td style="text-align: left;">SDSFRPR4</td>
+<td style="text-align: left;">2025-02-10</td>
+<td style="text-align: left;">OK</td>
+<td style="text-align: left;">✔202502</td>
+<td style="text-align: left;">YES</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">0. POSTDR FORECAST MADE THIS MONTH (end of the month) 1. DTP select current Month for VERSMON, e.g. 2025xx 2. extract 3. AL11 SDSFRPR4.csv 4. Move to folder C:\PW\OneDrive\ET\pythia\data\production\Bronze\sales\SDSFRPR4_20250X.csv</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Data Description</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Data Source</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Date</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Categorical</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Numeric</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">article</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">customer</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sales</td>
+<td style="text-align: left;">Day</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">forecasts</td>
+<td style="text-align: left;">Month</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Sales &amp; Forecast metadata</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">FIELD</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">TYPE</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">KEY</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">MEANING</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">SALESORG</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Marketing &amp; Sales Organization</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PLANT</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">Distribution Center</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MATERIAL</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">Article Number</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STEP</td>
+<td style="text-align: left;">NUM</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Months between VERSMON and CALMONTH</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CALMONTH</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">Month ofActuals or Forecast</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">VERSMON</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">Forecast creation Month</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">FTYPE</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Pre- [1] or Post- [2] Demand Review</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">VTYPE</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Indicator Sales [010] or Forecast [060]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Q</td>
+<td style="text-align: left;">NUM</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Quanity Sold in Base Units</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Sales &amp; Forecast Fields, Unique Count and Example</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">FLDNM</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">UCOUNT</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">RATIO</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">EXAMP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Q</td>
+<td style="text-align: left;">255181</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0/0.00499999988824129/0.00800000037997961/0.0120000001043081/0.0140000004321337/0.0209999997168779/0.0219999998807907/0.0240000002086163/0.0280000008642673/0.031000001472421</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">MATERIAL</td>
+<td style="text-align: left;">960</td>
+<td style="text-align: left;">351</td>
+<td style="text-align: left;">000000000000000433/000000000000000434/000000000000001302/000000000000001919/000000000000001920/000000000000002100/000000000000002102/000000000000002108/000000000000010023/000000000000010526</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">VERSMON</td>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">13482</td>
+<td style="text-align: left;">202301/202302/202303/202304/202305/202306/202307/202308/202309/202310</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">CALMONTH</td>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">14654</td>
+<td style="text-align: left;">202302/202303/202304/202305/202306/202307/202308/202309/202310/202311</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">STEP</td>
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">17740</td>
+<td style="text-align: left;">-1/1/2/3/4/5/6/7/8/9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">FTYPE</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">168526</td>
+<td style="text-align: left;">1/2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">VTYPE</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">168526</td>
+<td style="text-align: left;">010/060</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">PLANT</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">337051</td>
+<td style="text-align: left;">FR30</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">SALESORG</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">337051</td>
+<td style="text-align: left;">FR30</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="data-exploration-report" class="level2">
+<h2 class="anchored" data-anchor-id="data-exploration-report">Data Exploration Report</h2>
+<!-- Exploratory analyses & sanity checks   -->
+<!-- statistical properties and metadata. -->
+<!-- Initial exploration to spot trends, seasonality, outliers, and segmentation patterns. -->
+<!-- Subsections (as needed): -->
+<!-- Sales coverage: distribution over time -->
+<!-- ABC/XYZ, CV, zero-counts, sales length -->
+<!-- Temporal patterns (weekly/monthly seasonality, trend, events) -->
+<!-- Cross-sectional: contribution per customer/product/channel -->
+<!-- exclude units pak and DS   -->
+<section id="geographic-distribution-of-sales" class="level3">
+<h3 class="anchored" data-anchor-id="geographic-distribution-of-sales">Geographic Distribution of Sales</h3>
+<div id="fig-02-eda-geography" class="figure quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-02-eda-geography-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="02_data_understanding_files/figure-html/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;2.1: Scoping the analysis to Valbio et Compagnie, which accounts for 49.36 % of total sales in 2024."><img src="02_data_understanding_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="576"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-02-eda-geography-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: Scoping the analysis to Valbio et Compagnie, which accounts for 49.36 % of total sales in 2024.
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>For modeling purposes, the data was scoped to A-class articles based on ABC classification.<br>
+See <a href="03_data_preparation.html#sec-03-abc">ABC Analysis and Scope Definition</a> for details.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="data-profiling" class="level3">
+<h3 class="anchored" data-anchor-id="data-profiling">Data Profiling</h3>
+<section id="character-variables" class="level4">
+<h4 class="anchored" data-anchor-id="character-variables">Character Variables</h4>
+<p>Table <a href="12_data_understanding.html#tbl-02-data-profiling-ca" class="quarto-xref">Table&nbsp;<span>9.1</span></a> shows the data profiling results for the dataset, including the number of missing values, completeness rate, minimum and maximum length for character variables. The profiling helps identify data quality issues and provides insights into the structure of the dataset.</p>
+<div id="tbl-02-data-profiling-ca" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-profiling-ca-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.5: Data Profiling: Character Variables
+</figcaption>
+<div aria-describedby="tbl-02-data-profiling-ca-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">variable</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">n_missing</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">complete_rate</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">min_length</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">max_length</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">empty</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">n_unique</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">whitespace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">SALESORG</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PLANT</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MATERIAL</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">960</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CALMONTH</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">VERSMON</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FTYPE</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">VTYPE</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>This data set is of high quality and doesn’t need any further analysis on the character variables.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="numeric-variables" class="level4">
+<h4 class="anchored" data-anchor-id="numeric-variables">Numeric Variables</h4>
+<p>Table <a href="12_data_understanding.html#tbl-02-data-profiling-nu" class="quarto-xref">Table&nbsp;<span>9.2</span></a> shows the data profiling results for the numeric variables in the dataset, including mean, standard deviation, and percentiles. The histogram column provides a visual representation of the distribution of each numeric variable.</p>
+<div id="tbl-02-data-profiling-nu" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-profiling-nu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.6: Data Profiling: Numeric Variables
+</figcaption>
+<div aria-describedby="tbl-02-data-profiling-nu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">variable</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">mean</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">sd</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">p0</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">p25</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">p50</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">p75</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">p100</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">histogram</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STEP</td>
+<td style="text-align: left;">6.977351e+00</td>
+<td style="text-align: left;">4.982611e+00</td>
+<td style="text-align: left;">-1</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">6.000</td>
+<td style="text-align: left;">11.00</td>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">▆▇▆▅▂</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q</td>
+<td style="text-align: left;">1.399937e+05</td>
+<td style="text-align: left;">2.025050e+07</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1560</td>
+<td style="text-align: left;">6838.757</td>
+<td style="text-align: left;">19474.78</td>
+<td style="text-align: left;">3573785444</td>
+<td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>We see that the Quantity (Q) needs some further analysis due to outliers.</p>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="02_data_understanding_files/figure-html/unnamed-chunk-11-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="02_data_understanding_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<!-- } else { -->
+<!--   dtMATL_sk %>% -->
+<!--     kable("latex", booktabs = TRUE, caption = "Variable Description Report") %>% -->
+<!--     kable_styling(latex_options = c("striped", "hold_position"), full_width = FALSE) -->
+<!-- } -->
+</section>
+</section>
+<section id="article-hierachy" class="level3">
+<h3 class="anchored" data-anchor-id="article-hierachy">Article Hierachy</h3>
+<p>Table <a href="12_data_understanding.html#tbl-02-data-description-hierarchy-article" class="quarto-xref">Table&nbsp;<span>9.3</span></a> summarizes the 4-levels of the article hierarchy by a unique count per level. Roughly,</p>
+<ul>
+<li>each Family contains roughly 18 articles.</li>
+<li>each Sub Category contains roughly 4 families.</li>
+</ul>
+<div id="tbl-02-data-description-hierarchy-article" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-description-hierarchy-article-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.7: Summary: Article Hierachy
+</figcaption>
+<div aria-describedby="tbl-02-data-description-hierarchy-article-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-de3f995ca897c9d4cca8" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-de3f995ca897c9d4cca8">{"x":{"filter":"none","vertical":false,"data":[["Animal based product","Bread and Bakery","Bread and Biscuit Al","Breakfast Cereals","Dairy Alternatives","Functional Foods","Hot Drinks","Juices and Cold Drin","Meals and Meal compo","Non category specifi","Others","Sweet Spreads, Puree","Sweets in Between"],[4,2,3,1,5,2,3,2,9,4,3,6,4],[22,5,9,6,24,12,14,6,44,4,9,13,16],[145,34,106,152,633,30,821,121,840,25,73,264,448]],"container":"<table class=\"stripe hover compact\">\n  <thead>\n    <tr>\n      <th>ProdCat<\/th>\n      <th>SubCat_Count<\/th>\n      <th>Family_Count<\/th>\n      <th>Article_Count<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"searching":false,"info":false,"ordering":true,"lengthChange":false,"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[1,2,3]},{"name":"ProdCat","targets":0},{"name":"SubCat_Count","targets":1},{"name":"Family_Count","targets":2},{"name":"Article_Count","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p>The following interactive chart allows to explore the hierarchy by clicking on the nodes to expand or collapse them.</p>
+<div id="fig-inter_active_article_hier" class="figure quarto-float quarto-figure quarto-figure-center anchored" width="15cm">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inter_active_article_hier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-5b23c25764592b8617be" style="width:100%;height:600px;" class="collapsibleTree html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5b23c25764592b8617be">{"x":{"data":{"name":"Articles","children":[{"name":"Sweets in Between","children":[{"name":"Biscuits","children":[{"name":"Biscuits (Plain)"},{"name":"Biscuits with fruits"},{"name":"Biscuits others"},{"name":"Biscuits with chocol"},{"name":"Pastry"},{"name":"Viennoiserie"},{"name":"Sandwich biscuits"}]},{"name":"Bars","children":[{"name":"Cereal bars"},{"name":"Fruit bars"},{"name":"Seed Bars"},{"name":"Nut bars"},{"name":"Functional bars"}]},{"name":"Chocolate","children":[{"name":"Chocolate bars"}]},{"name":"Cakes","children":[{"name":"Macaroons"},{"name":"Individual Cakes"},{"name":"Sharing Cakes"}]}]},{"name":"Hot Drinks","children":[{"name":"Tea","children":[{"name":"Green tea"},{"name":"Infusion Tea"},{"name":"Other Tea"},{"name":"Loose tea"},{"name":"Black Tea"},{"name":"White Tea"},{"name":"Instant Tea"}]},{"name":"Coffee","children":[{"name":"Instant coffee"},{"name":"Roast and Ground Cof"},{"name":"Coffee beans"},{"name":"Coffee pods"}]},{"name":"Other Hot drinks","children":[{"name":"Powdered milk"},{"name":"Hot Chocolate"},{"name":"Coffee substitutes"}]}]},{"name":"Dairy Alternatives","children":[{"name":"Dairy Alternative Dr","children":[{"name":"Soy drinks"},{"name":"Rice drinks"},{"name":"Oat drinks"},{"name":"Almond drinks"},{"name":"Other dairy alternat"},{"name":"Spelt drinks"},{"name":"Coconut drinks"},{"name":"Millet drinks"},{"name":"Hazelnut drinks"},{"name":"Cashew drinks"}]},{"name":"Dairy Alternative Cu","children":[{"name":"Other culinary aids"},{"name":"Oat culinary aids"},{"name":"Almond culinary aids"},{"name":"Coconut culinary aid"},{"name":"Soy culinary aids"},{"name":"Rice culinary aids"}]},{"name":"Dairy Alternatives D","children":[{"name":"Non dairy desserts"},{"name":"Non dairy ice cream"}]},{"name":"Dairy Alternatives o","children":[{"name":"Vegetable margarine"},{"name":"Non dairy cheese"}]},{"name":"Dairy Alternatives Y","children":[{"name":"Coconut  DA yoghurts"},{"name":"Oat DA yoghurts"},{"name":"Almond DA yoghurts"},{"name":"Other  DA yoghurts"}]}]},{"name":"Breakfast Cereals","children":[{"name":"Breakfast Cereals","children":[{"name":"Crunchy"},{"name":"Muesli"},{"name":"Extruded/puffed cere"},{"name":"Porridge"},{"name":"Flakes"},{"name":"Other breakfast cere"}]}]},{"name":"Bread and Biscuit Al","children":[{"name":"Cereal Cakes","children":[{"name":"Other Cereal Cakes P"},{"name":"Rice Cakes Plain"},{"name":"Rice Cakes Coated"},{"name":"Other Cereal Cakes C"},{"name":"Rice Cakes Flavoured"},{"name":"Other Cereal Cakes F"}]},{"name":"Crispy Breads","children":[{"name":"Toasted bread"}]},{"name":"Other Bread replacer","children":[{"name":"Crackers"},{"name":"Other Bread replacer"}]}]},{"name":"Meals and Meal compo","children":[{"name":"Savoury Spreads","children":[{"name":"Vegetarian pates(yea"},{"name":"Other savoury spread"},{"name":"Vegetarian Lard"},{"name":"Creamy Spreads"},{"name":"Vegetable spreads"},{"name":"Lentil/Protein sprea"},{"name":"Meat alternative spr"},{"name":"Cheese alternative s"},{"name":"Deli salads spreads"}]},{"name":"Soups and bouillons","children":[{"name":"Soups"},{"name":"Instant soup"}]},{"name":"Delicacies","children":[{"name":"Sauces"},{"name":"Chilled dips and spr"},{"name":"Chilled pasta"},{"name":"Chilled Quenelles"},{"name":"Dough (chilled)"},{"name":"Pancakes"},{"name":"Other delicacies"}]},{"name":"Ready Meals","children":[{"name":"Cereal meals"},{"name":"Other Ready meals"}]},{"name":"Pasta, rice and cere","children":[{"name":"Rice"},{"name":"Other cooking cereal"},{"name":"Pasta"},{"name":"Potato flakes"}]},{"name":"Meat analogues","children":[{"name":"Meat like meat subst"},{"name":"Non meat like meat s"}]},{"name":"Cooking sauces","children":[{"name":"Warm cooking sauces"},{"name":"Pasta sauces"},{"name":"Sauce concentrates"}]},{"name":"Canned and Frozen Ve","children":[{"name":"Prepared vegetables"},{"name":"Vegetable (frozen)"}]},{"name":"Cooking aids and mea","children":[{"name":"Other meal component"},{"name":"Stocks"},{"name":"Salt"},{"name":"Cold condiment sauce"},{"name":"Oil"},{"name":"Other cooking aids"},{"name":"Vinegar"},{"name":"Pickles"},{"name":"Mustard"},{"name":"Mayonnaise"},{"name":"Gravies"},{"name":"Seasonings and taste"},{"name":"Specialty cooking ai"}]}]},{"name":"Sweet Spreads, Puree","children":[{"name":"Fruit spreads","children":[{"name":"Fruit spreads"},{"name":"Other sweet spreads"}]},{"name":"Honey","children":[{"name":"Pure Honey"}]},{"name":"Nut spreads","children":[{"name":"Nut spreads"}]},{"name":"Sweeteners","children":[{"name":"Agave syrup"},{"name":"Sugar"},{"name":"Fructose"},{"name":"Other sweeteners"}]},{"name":"Chocolate Spreads","children":[{"name":"Chocolate spreads"}]},{"name":"Compote, Pureees, Sa","children":[{"name":"Purees"},{"name":"Compote"},{"name":"Fruit sauces"},{"name":"Other Prepared fruit"}]}]},{"name":"Functional Foods","children":[{"name":"Food supplements","children":[{"name":"Functional oils"},{"name":"Beer yeast"},{"name":"Other food supplemen"},{"name":"Digestion and transi"},{"name":"Slimming Food Supple"},{"name":"Vitamins and Mineral"},{"name":"Wheat germ"},{"name":"Cardio system care a"},{"name":"Vitality Food Supple"}]},{"name":"Slimming Foods","children":[{"name":"Meal substitutes oth"},{"name":"Hi protein salted po"},{"name":"Slimming Aids others"}]}]},{"name":"Non category specifi","children":[{"name":"Packaging-, producti","children":[{"name":"Packaging-, producti"}]},{"name":"Promotion materials","children":[{"name":"Other promotion mate"}]},{"name":"Byproducts","children":[{"name":"By products"}]},{"name":"Raw materials","children":[{"name":"Raw materials"}]}]},{"name":"Juices and Cold Drin","children":[{"name":"Juices","children":[{"name":"Fruit juice"},{"name":"Vegetable juice"},{"name":"Other juices"},{"name":"Fruit and vegetable"},{"name":"Fruit syrup"}]},{"name":"Cold Drinks","children":[{"name":"Soft drinks"}]}]},{"name":"Bread and Bakery","children":[{"name":"Bread products","children":[{"name":"Specialty Bread"},{"name":"Bread"}]},{"name":"Bakery and dessert p","children":[{"name":"Flour"},{"name":"Cake mix"},{"name":"Cooking Aids for Pas"}]}]},{"name":"Others","children":[{"name":"Savoury In Between","children":[{"name":"Other Savoury In Bet"},{"name":"Salted Snacks"},{"name":"Crisps"},{"name":"Savoury biscuits"}]},{"name":"Alcoholic drinks","children":[{"name":"Other alcoholic drin"}]},{"name":"Dried fruits and see","children":[{"name":"Seeds bags"},{"name":"Dried fruits bags"},{"name":"Nuts bags"},{"name":"Other dried fruits a"}]}]},{"name":"Animal based product","children":[{"name":"Meat products","children":[{"name":"Chicken"},{"name":"Canned meat"},{"name":"Cured meat"},{"name":"Foreign Cured meat"},{"name":"Sausages"}]},{"name":"Dairy products","children":[{"name":"Cream"},{"name":"Butter"},{"name":"Other Cheese"},{"name":"Cow milk"},{"name":"Cheese with cow milk"},{"name":"Cheese with ewe milk"},{"name":"Cheese with goat mil"},{"name":"Yogurt with cow milk"},{"name":"Yogurt with ewe milk"},{"name":"Dairy dessert with c"},{"name":"Dairy dessert with e"}]},{"name":"Seafood","children":[{"name":"Salmon"},{"name":"Canned fish"},{"name":"Other seafood"},{"name":"Smoked fish"}]},{"name":"Eggs","children":[{"name":"Eggs medium (53-63g)"},{"name":"Eggs large (63-73g)"}]}]}]},"options":{"hierarchy":["ProdCat","SubCat","Family"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":true,"zoomable":true,"margin":{"top":20,"bottom":20,"left":65,"right":125},"fill":"#38e56d"}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>Interactive Article Hierarchy, click on the nodes to expand or collapse them.</p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-inter_active_article_hier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="customer-hierarchy" class="level3">
+<h3 class="anchored" data-anchor-id="customer-hierarchy">Customer Hierarchy</h3>
+<p>Table <a href="12_data_understanding.html#tbl-02-data-description-hierarchy-customer" class="quarto-xref">Table&nbsp;<span>9.4</span></a> summarizes the 4-levels of the customer hierarchy by a unique count per level. Roughly:</p>
+<ul>
+<li>each Family contains roughly 5 customers</li>
+<li>each Account contains roughly 2 sold-to parties</li>
+<li>each Key Account contains roughly 3 accounts,</li>
+</ul>
+<div id="tbl-02-data-description-hierarchy-customer" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-description-hierarchy-customer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.8: Summary: Customer Hierachy
+</figcaption>
+<div aria-describedby="tbl-02-data-description-hierarchy-customer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-6eea47fbaa478a7106e7" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-6eea47fbaa478a7106e7">{"x":{"filter":"none","vertical":false,"data":[["Discounter","Divers","Export","Grocery","Health &amp; Food Stores","Intercompany","Other","Out Of Home","Retail","Wholesale","e-Commerce"],[11,4,12,53,31,19,28,18,6,4,2],[12,4,60,99,76,25,72,48,35,17,15],[22,4,60,107,142,20,139,79,79,50,15],[76,70,167,171,1723,33,231,172,666,52,21]],"container":"<table class=\"stripe hover compact\">\n  <thead>\n    <tr>\n      <th>Channel<\/th>\n      <th>KAM_count<\/th>\n      <th>ACC_Count<\/th>\n      <th>SoldTo_Count<\/th>\n      <th>Customer_Count<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"searching":false,"info":false,"ordering":true,"lengthChange":false,"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[1,2,3,4]},{"name":"Channel","targets":0},{"name":"KAM_count","targets":1},{"name":"ACC_Count","targets":2},{"name":"SoldTo_Count","targets":3},{"name":"Customer_Count","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</section>
+<section id="time-series-patterns" class="level3">
+<h3 class="anchored" data-anchor-id="time-series-patterns">Time Series Patterns</h3>
+<p>let’s explore the time series patterns per category</p>
+<p>the hot drinks category exhibits strong seasonality, as tea consumption increases during winter.</p>
+<p>Seasonality or trend plot Using Time series features, categories can be automatically classified</p>
+<p>in the upper left corner, Clipper hot again, demonstrating the expected seasonality-strength.</p>
+</section>
+</section>
+<section id="data-quality-report" class="level2">
+<h2 class="anchored" data-anchor-id="data-quality-report">Data Quality Report</h2>
+<!-- Assess data integrity and readiness for modeling. -->
+<!-- Subsections: -->
+<!-- Missing values (which variables, how much, patterns) -->
+<!-- Consistency checks (e.g., units vs revenue) -->
+<!-- Duplicated records -->
+<!-- Outliers: any anomalous spikes or drops? -->
+<section id="data-quality-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="data-quality-assessment">Data Quality Assessment</h3>
+<!-- Assessment: What issues were found (missing values, outliers, etc.) -->
+<!-- Data Quality Assessment and Remediation -->
+<!-- Summarize actions taken: -->
+<!-- Imputation strategies -->
+<!-- Exclusions (e.g., rare SKUs or obsolete accounts) -->
+<p>all 0 duplicates, zero quantity, unexpected NAs</p>
+</section>
+<section id="actions-taken" class="level3">
+<h3 class="anchored" data-anchor-id="actions-taken">Actions taken:</h3>
+<!-- Any exclusions or imputations -->
+<!-- Summarize actions taken: -->
+</section>
+</section>
+<section id="sec-02-summary" class="level2">
+<h2 class="anchored" data-anchor-id="sec-02-summary">Summary of Data Understanding</h2>
+<ul>
+<li>The dataset combines master and transactional data from SAP BI and QAD systems.</li>
+<li>Sales and forecasts are scoped to a single MSO and A-class finished goods.</li>
+<li>Product and customer hierarchies follow a consistent four-level structure.</li>
+<li>Exploratory analysis confirms sufficient data volume, patterns, and quality.</li>
+<li>The data is now ready for scoping, transformation, and modeling.</li>
+</ul>
+<!-- {{< include 02_data_understanding_def.qmd >}} -->
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-magrittr2024" class="csl-entry" role="listitem">
+Bache, S. M. (2024). <em>Magrittr: A forward-pipe operator for r</em>. <a href="https://cran.r-project.org/package=magrittr">https://cran.r-project.org/package=magrittr</a>
+</div>
+<div id="ref-barrett_datatable_2024" class="csl-entry" role="listitem">
+Barrett, T., Dowle, M., Srinivasan, A., Gorecki, J., Chirico, M., Hocking, T., Schwendinger, B., Stetsenko, P., Short, T., Lianoglou, S., Antonyan, E., Bonsch, M., Parsonage, H., Ritchie, S., Ren, K., Tan, X., Saporta, R., Seiskari, O., Dong, X., … Krylov, I. (2024). <em>Data.table: <span>Extension</span> of ’data.frame’</em>. <a href="https://cran.r-project.org/web/packages/data.table/index.html">https://cran.r-project.org/web/packages/data.table/index.html</a>
+</div>
+<div id="ref-blokdyk_scor_2019" class="csl-entry" role="listitem">
+BLOKDYK, G. (2019). <em><span>SCOR</span> <span>MODEL</span> <span>A</span> <span>COMPLETE</span> <span>GUIDE</span> - 2020 <span>EDITION</span></em>. 5STARCOOKS.
+</div>
+<div id="ref-r_core_team_r_2024" class="csl-entry" role="listitem">
+Core Team}, {R. (2024). <em>R: <span>A</span> <span>Language</span> and <span>Environment</span> for <span>Statistical</span> <span>Computing</span></em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>
+</div>
+<div id="ref-costa_crisp-ml_2022" class="csl-entry" role="listitem">
+Costa, R. (2022). <em>The <span>CRISP</span>-<span>ML</span> <span>Methodology</span>: <span>A</span> <span>Step</span>-by-<span>Step</span> <span>Approach</span> to <span>Real</span>-<span>World</span> <span>Machine</span> <span>Learning</span> <span>Projects</span></em>. Independently published.
+</div>
+<div id="ref-crayon2024" class="csl-entry" role="listitem">
+Csárdi, G. (2024). <em>Crayon: Colored terminal output</em>. <a href="https://cran.r-project.org/package=crayon">https://cran.r-project.org/package=crayon</a>
+</div>
+<div id="ref-debruine_glossary_2023" class="csl-entry" role="listitem">
+DeBruine, L. (2023). <em>Glossary: <span>Glossaries</span> for <span>Markdown</span> and <span>Quarto</span> <span>Documents</span></em>. <a href="https://cran.r-project.org/web/packages/glossary/">https://cran.r-project.org/web/packages/glossary/</a>
+</div>
+<div id="ref-data.table2024" class="csl-entry" role="listitem">
+Dowle, M., &amp; Srinivasan, A. (2024). <em>Data.table: Extension of ’data.frame’</em>. <a href="https://cran.r-project.org/package=data.table">https://cran.r-project.org/package=data.table</a>
+</div>
+<div id="ref-article" class="csl-entry" role="listitem">
+Fildes, R., &amp; Goodwin, P. (2007). Good and bad judgment in forecasting: Lessons from four companies. <em>Foresight: The International Journal of Applied Forecasting</em>, <em>8</em>, 5–10. <a href="https://forecasters.org/wp-content/uploads/Good-and-Bad-Judgment-in-Forecasting_Issue8.pdf">https://forecasters.org/wp-content/uploads/Good-and-Bad-Judgment-in-Forecasting_Issue8.pdf</a>
+</div>
+<div id="ref-lubridate2024" class="csl-entry" role="listitem">
+Grolemund, G., &amp; Wickham, H. (2024). <em>Lubridate: Make dealing with dates a little easier</em>. <a href="https://cran.r-project.org/package=lubridate">https://cran.r-project.org/package=lubridate</a>
+</div>
+<div id="ref-guja_generative_2025" class="csl-entry" role="listitem">
+Guja, A., &amp; Siwiak, M. (2025). <em>Generative <span>AI</span> for <span>Data</span> <span>Analytics</span>.</em> Manning Publications Co. LLC 2025.
+</div>
+<div id="ref-hartshorn_machine_2017" class="csl-entry" role="listitem">
+Hartshorn, S. (2017). <em>Machine <span>Learning</span> <span>With</span> <span>Boosting</span>: <span>A</span> <span>Beginner</span>’s <span>Guide</span></em>.
+</div>
+<div id="ref-purrr2024" class="csl-entry" role="listitem">
+Henry, L., &amp; Wickham, H. (2024). <em>Purrr: Functional programming tools</em>. <a href="https://cran.r-project.org/package=purrr">https://cran.r-project.org/package=purrr</a>
+</div>
+<div id="ref-glue2024" class="csl-entry" role="listitem">
+Hester, J. (2024). <em>Glue: Interpreted string literals</em>. <a href="https://cran.r-project.org/package=glue">https://cran.r-project.org/package=glue</a>
+</div>
+<div id="ref-skimr2024" class="csl-entry" role="listitem">
+Hvitfeldt, E., Quinn, M., &amp; Others. (2024). <em>Skimr: Compact and flexible summaries of data</em>. <a href="https://cran.r-project.org/package=skimr">https://cran.r-project.org/package=skimr</a>
+</div>
+<div id="ref-hyndmanaut2024" class="csl-entry" role="listitem">
+Hyndman [aut, R., cre, cph, Athanasopoulos, G., Bergmeir, C., Caceres, G., Chhay, L., Kuroptev, K., O’Hara-Wild, M., Petropoulos, F., Razbash, S., Wang, E., Yasmeen, F., Garza, F., Girolimetto, D., Ihaka, R., R Core Team, Reid, D., Shaub, D., … Zhou, Z. (2024). <em>Forecast: Forecasting functions for time series and linear models</em>. <a href="https://cran.r-project.org/web/packages/forecast/index.html">https://cran.r-project.org/web/packages/forecast/index.html</a>
+</div>
+<div id="ref-hyndman__aut_fpp3_2024" class="csl-entry" role="listitem">
+Hyndman [aut, R., cre, cph, Athanasopoulos, G., O’Hara-Wild, M., Palihawadana, N., Wickramasuriya, S., &amp; RStudio. (2024). <em>fpp3: <span>Data</span> for "<span>Forecasting</span>: <span>Principles</span> and <span>Practice</span>" (3rd <span>Edition</span>)</em>. <a href="https://cran.r-project.org/web/packages/fpp3/index.html">https://cran.r-project.org/web/packages/fpp3/index.html</a>
+</div>
+<div id="ref-hyndman_forecasting_2021" class="csl-entry" role="listitem">
+Hyndman, R. J., &amp; Athanasopoulos, G. (2021). <em>Forecasting: <span>Principles</span> and <span>Practice</span> (3rd ed)</em>. <a href="https://otexts.com/fpp3/">https://otexts.com/fpp3/</a>
+</div>
+<div id="ref-fpp3_2024" class="csl-entry" role="listitem">
+Hyndman, Rob J., &amp; Athanasopoulos, G. (2024). <em>fpp3: Forecasting principles and practice</em>. <a href="https://cran.r-project.org/package=fpp3">https://cran.r-project.org/package=fpp3</a>
+</div>
+<div id="ref-gt2024" class="csl-entry" role="listitem">
+Iannone, R., &amp; Contributors. (2024). <em>Gt: Easily create presentation-ready display tables</em>. <a href="https://cran.r-project.org/package=gt">https://cran.r-project.org/package=gt</a>
+</div>
+<div id="ref-james_introduction_2023" class="csl-entry" role="listitem">
+James, G., Witten, D., Hastie, T., Tibshirani, R., &amp; Taylor, J. E. (2023). <em>An introduction to statistical learning: With applications in <span>Python</span></em>. Springer. <a href="https://www.statlearning.com/">https://www.statlearning.com/</a>
+</div>
+<div id="ref-kunapuli_ensemble_2023" class="csl-entry" role="listitem">
+Kunapuli, G. (2023). <em>Ensemble methods for machine learning</em>. Manning.
+</div>
+<div id="ref-collapsibleTree2024" class="csl-entry" role="listitem">
+Liakhovitski, D. (2024). <em>collapsibleTree: Interactive collapsible tree diagrams</em>. <a href="https://cran.r-project.org/package=collapsibleTree">https://cran.r-project.org/package=collapsibleTree</a>
+</div>
+<div id="ref-manokhin_practical_2023" class="csl-entry" role="listitem">
+Manokhin, V. (2023). <em>Practical guide to applied conformal prediction in <span>Python</span>: Learn and apply the best uncertainty frameworks to your industry applications</em>. <span>&lt;</span>packt<span>&gt;</span>.
+</div>
+<div id="ref-demast2024" class="csl-entry" role="listitem">
+Mast, J. de, &amp; Lokkerbol, J. (2024). DAPS diagrams for defining data science projects. <em>Journal of Big Data</em>, <em>11</em>(1), 50. <a href="https://doi.org/10.1186/s40537-024-00916-7">https://doi.org/10.1186/s40537-024-00916-7</a>
+</div>
+<div id="ref-matthes_python_2019" class="csl-entry" role="listitem">
+Matthes, E. (2019b). <em>Python crash course: A hands-on, project-based introduction to programming</em> (2nd edition). No Starch Press.
+</div>
+<div id="ref-matthes2019" class="csl-entry" role="listitem">
+Matthes, E. (2019a). <em>Python crash course: A hands-on, project-based introduction to programming</em> (2nd edition). No Starch Press.
+</div>
+<div id="ref-molnar_introduction_2023" class="csl-entry" role="listitem">
+Molnar, C. (2023). <em>Introduction to conformal prediction with <span>Python</span>: A short guide for quantifying uncertainty of machine learning models</em> (First edition). Chistoph Molnar c/o MUCBOOK, Heidi Seibold. <a href="https://christophmolnar.com/books/conformal-prediction/">https://christophmolnar.com/books/conformal-prediction/</a>
+</div>
+<div id="ref-nixtla/h" class="csl-entry" role="listitem">
+<em>Nixtla/hierarchicalforecast: Probabilistic hierarchical forecasting 👑 with statistical and econometric methods.</em> (n.d.). <a href="https://github.com/Nixtla/hierarchicalforecast">https://github.com/Nixtla/hierarchicalforecast</a>
+</div>
+<div id="ref-nixtla/m2024" class="csl-entry" role="listitem">
+<em>Nixtla/mlforecast</em>. (2024). Nixtla. <a href="https://github.com/Nixtla/mlforecast">https://github.com/Nixtla/mlforecast</a>
+</div>
+<div id="ref-nixtla/s2024" class="csl-entry" role="listitem">
+<em>Nixtla/statsforecast</em>. (2024). Nixtla. <a href="https://github.com/Nixtla/statsforecast">https://github.com/Nixtla/statsforecast</a>
+</div>
+<div id="ref-nixtla/t2024" class="csl-entry" role="listitem">
+<em>Nixtla/tsfeatures</em>. (2024). Nixtla. <a href="https://github.com/Nixtla/tsfeatures">https://github.com/Nixtla/tsfeatures</a>
+</div>
+<div id="ref-fable2024" class="csl-entry" role="listitem">
+O’Hara-Wild, M., &amp; Hyndman, R. J. (2024a). <em>Fable: Forecasting models for tidy time series</em>. <a href="https://cran.r-project.org/package=fable">https://cran.r-project.org/package=fable</a>
+</div>
+<div id="ref-fabletools2024" class="csl-entry" role="listitem">
+O’Hara-Wild, M., &amp; Hyndman, R. J. (2024b). <em>Fabletools: Core tools for packages in the ’fable’ framework</em>. <a href="https://cran.r-project.org/package=fabletools">https://cran.r-project.org/package=fabletools</a>
+</div>
+<div id="ref-feasts_2024" class="csl-entry" role="listitem">
+O’Hara-Wild, M., &amp; Hyndman, R. J. (2024c). <em>Feasts: Feature extraction and statistics for time series</em>. <a href="https://cran.r-project.org/package=feasts">https://cran.r-project.org/package=feasts</a>
+</div>
+<div id="ref-osullivan_introduction_2023" class="csl-entry" role="listitem">
+O’Sullivan, C. (2023). Introduction to <span>SHAP</span> with <span>Python</span>. In <em>Introduction to SHAP with Python</em>. <a href="https://towardsdatascience.com/introduction-to-shap-with-python-d27edc23c454">https://towardsdatascience.com/introduction-to-shap-with-python-d27edc23c454</a>
+</div>
+<div id="ref-osullivan_shap_2024" class="csl-entry" role="listitem">
+O’Sullivan, C. (2024). <span>SHAP</span> with <span>Python</span> [Course]. In <em>SHAP with Python</em>. <a href="https://adataodyssey.com/course/">https://adataodyssey.com/course/</a>
+</div>
+<div id="ref-padt2024" class="csl-entry" role="listitem">
+Padt, F. (2024). <em>Padt: Pythia’s advice – data tooling</em>. <a href="https://github.com/Fpadt/EAISI-Padt">https://github.com/Fpadt/EAISI-Padt</a>
+</div>
+<div id="ref-porter_learn_2024" class="csl-entry" role="listitem">
+Porter, L., &amp; Zingaro, D. (2024). <em>Learn <span>AI</span>-assisted <span>Python</span> programming: With <span>GitHub</span> <span>Copilot</span> and <span>ChatGPT</span></em>. Manning.
+</div>
+<div id="ref-duckdb2024" class="csl-entry" role="listitem">
+Raasveldt, M., &amp; Mühleisen, H. (2024). <em>Duckdb: In-process SQL OLAP database management system</em>. <a href="https://cran.r-project.org/package=duckdb">https://cran.r-project.org/package=duckdb</a>
+</div>
+<div id="ref-quarto2024" class="csl-entry" role="listitem">
+RStudio, &amp; Team, P. (2024). <em>Quarto: Scientific and technical publishing</em>. <a href="https://quarto.org">https://quarto.org</a>
+</div>
+<div id="ref-openxlsx2_2024" class="csl-entry" role="listitem">
+Schulz, J., &amp; Co. (2024). <em>openxlsx2: Read, write and edit ’xlsx’ files</em>. <a href="https://cran.r-project.org/package=openxlsx2">https://cran.r-project.org/package=openxlsx2</a>
+</div>
+<div id="ref-silver_inventory_2021" class="csl-entry" role="listitem">
+Silver, E. A., Pyke, D. F., &amp; Thomas, D. J. (2021). <em>Inventory and production management in supply chains</em> (Fourth edition, first issued in paperback). CRC Press, Taylor &amp; Francis Group.
+</div>
+<div id="ref-ggrepel2024" class="csl-entry" role="listitem">
+Slowikowski, K. (2024). <em>Ggrepel: Automatically position non-overlapping text labels with ’ggplot2’</em>. <a href="https://cran.r-project.org/package=ggrepel">https://cran.r-project.org/package=ggrepel</a>
+</div>
+<div id="ref-vandeput_inventory_2020" class="csl-entry" role="listitem">
+Vandeput, N. (2020). <em>Inventory optimization: Models and simulations</em>. De Gruyter.
+</div>
+<div id="ref-vandeput_data_2021" class="csl-entry" role="listitem">
+Vandeput, N. (2021). <em>Data science for supply chain forecasting</em> (Second edition). De Gruyter.
+</div>
+<div id="ref-vandeput_demand_2023" class="csl-entry" role="listitem">
+Vandeput, N. (2023). <em>Demand forecasting best practices</em>. Manning Publications Co.
+</div>
+<div id="ref-tsibble2024" class="csl-entry" role="listitem">
+Wang, E., &amp; Hyndman, R. J. (2024). <em>Tsibble: Tidy temporal data frames and tools</em>. <a href="https://cran.r-project.org/package=tsibble">https://cran.r-project.org/package=tsibble</a>
+</div>
+<div id="ref-wickham" class="csl-entry" role="listitem">
+Wickham, H. (n.d.). <em>R for data science (2e)</em>. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>
+</div>
+<div id="ref-ggplot2_2024" class="csl-entry" role="listitem">
+Wickham, H. (2024a). <em>ggplot2: Create elegant data visualisations using the grammar of graphics</em>. <a href="https://cran.r-project.org/package=ggplot2">https://cran.r-project.org/package=ggplot2</a>
+</div>
+<div id="ref-tidyr2024" class="csl-entry" role="listitem">
+Wickham, H. (2024b). <em>Tidyr: Tidy messy data</em>. <a href="https://cran.r-project.org/package=tidyr">https://cran.r-project.org/package=tidyr</a>
+</div>
+<div id="ref-wickham_ggplot2_2024" class="csl-entry" role="listitem">
+Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Woo, K., Yutani, H., Dunnington, D., Brand, T. van den, Posit, &amp; PBC. (2024). <em>ggplot2: <span>Create</span> <span>Elegant</span> <span>Data</span> <span>Visualisations</span> <span>Using</span> the <span>Grammar</span> of <span>Graphics</span></em>. <a href="https://cran.r-project.org/web/packages/ggplot2/index.html">https://cran.r-project.org/web/packages/ggplot2/index.html</a>
+</div>
+<div id="ref-tidyverse2024" class="csl-entry" role="listitem">
+Wickham, H., &amp; Contributors. (2024). <em>Tidyverse: Easily install and load the ’tidyverse’</em>. <a href="https://cran.r-project.org/package=tidyverse">https://cran.r-project.org/package=tidyverse</a>
+</div>
+<div id="ref-dplyr2024" class="csl-entry" role="listitem">
+Wickham, H., &amp; François, R. (2024). <em>Dplyr: A grammar of data manipulation</em>. <a href="https://cran.r-project.org/package=dplyr">https://cran.r-project.org/package=dplyr</a>
+</div>
+<div id="ref-scales2024" class="csl-entry" role="listitem">
+Wickham, H., &amp; Seidel, D. (2024). <em>Scales: Scale functions for visualization</em>. <a href="https://cran.r-project.org/package=scales">https://cran.r-project.org/package=scales</a>
+</div>
+<div id="ref-treemapify2024" class="csl-entry" role="listitem">
+Wilkins, D. (2024). <em>Treemapify: Draw treemaps in ’ggplot2’</em>. <a href="https://cran.r-project.org/package=treemapify">https://cran.r-project.org/package=treemapify</a>
+</div>
+<div id="ref-DT2024" class="csl-entry" role="listitem">
+Xie, Y. (2024a). <em>DT: A wrapper of the JavaScript library ’DataTables’</em>. <a href="https://cran.r-project.org/package=DT">https://cran.r-project.org/package=DT</a>
+</div>
+<div id="ref-knitr2024" class="csl-entry" role="listitem">
+Xie, Y. (2024b). <em>Knitr: A general-purpose package for dynamic report generation</em>. <a href="https://cran.r-project.org/package=knitr">https://cran.r-project.org/package=knitr</a>
+</div>
+<div id="ref-kableExtra2024" class="csl-entry" role="listitem">
+Zhu, H. (2024). <em>kableExtra: Construct complex table with ’kable’ and pipe syntax</em>. <a href="https://cran.r-project.org/package=kableExtra">https://cran.r-project.org/package=kableExtra</a>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    window.setColorSchemeToggle(window.hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/fpadt\.github\.io\/eaisi\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../notebooks/01_business_understanding.html" class="pagination-link" aria-label="Business Understanding">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Business Understanding</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../notebooks/03_data_preparation.html" class="pagination-link" aria-label="Data Preparation">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Preparation</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2025 Floris Padt: Pythia’s Advice</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/02_data_understanding.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p><a href="https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai">EAISI</a></p>
+</div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

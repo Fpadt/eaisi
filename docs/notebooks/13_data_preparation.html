@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-06-04">
-<meta name="description" content="Forecasts are critical for end-to-end decision-making across sourcing, production, and delivery.Inaccurate forecasts lead to costly outcomes such as stockouts, waste, and poor service.Improving forecast accuracy boosts efficiency, customer satisfaction, and profitability.">
+<meta name="dcterms.date" content="2025-06-02">
+<meta name="description" content="scopeextracts and ingesttransformations">
 
-<title>Business Understanding – Pythia's Advice</title>
+<title>Data Preparation – Pythia's Advice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -52,8 +87,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../notebooks/02_data_understanding.html" rel="next">
-<link href="../notebooks/00_introduction.html" rel="prev">
+<link href="../notebooks/14_modelling.html" rel="next">
+<link href="../notebooks/12_data_understanding.html" rel="prev">
 <link href="../images/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -69,9 +104,6 @@ div.csl-indent {
 <link href="../site_libs/bootstrap/bootstrap-94fa406e38a5c78d3de9dca02b1572d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-ba558c2fbb090de1150150c181bbc6a4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-94fa406e38a5c78d3de9dca02b1572d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -115,10 +147,6 @@ div.csl-indent {
         color: #FFFFFF;
       }
 </style>
-<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
-
-<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-
 
 
 </head>
@@ -292,7 +320,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The ♥ of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/01_business_understanding.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Business Understanding</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/17_crisp-dm.html">Appendix</a></li><li class="breadcrumb-item"><a href="../notebooks/13_data_preparation.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Preparation</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -304,15 +332,15 @@ div.csl-indent {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The ♥ of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/01_business_understanding.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Business Understanding</span></a></li></ol></nav>
-      <h1 class="title"><span id="sec-01-business-understanding" class="quarto-section-identifier"><span class="chapter-title">Business Understanding</span></span></h1>
-            <p class="subtitle lead">Why is forecasting important?</p>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/17_crisp-dm.html">Appendix</a></li><li class="breadcrumb-item"><a href="../notebooks/13_data_preparation.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Preparation</span></a></li></ol></nav>
+      <h1 class="title"><span class="chapter-title">Data Preparation</span></h1>
+            <p class="subtitle lead">Data Preparation subtitle</p>
                   <div>
         <div class="description">
           <ul>
-          <li>Forecasts are critical for end-to-end decision-making across sourcing, production, and delivery.</li>
-          <li>Inaccurate forecasts lead to costly outcomes such as stockouts, waste, and poor service.</li>
-          <li>Improving forecast accuracy boosts efficiency, customer satisfaction, and profitability.</li>
+          <li>scope</li>
+          <li>extracts and ingest</li>
+          <li>transformations</li>
           </ul>
         </div>
       </div>
@@ -358,7 +386,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">June 4, 2025</p>
+        <p class="date">June 2, 2025</p>
       </div>
     </div>
     
@@ -434,13 +462,13 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">The ♥ of Pythia</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/00_introduction.html" class="sidebar-item-text sidebar-link">
@@ -449,7 +477,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/01_business_understanding.html" class="sidebar-item-text sidebar-link active">
+  <a href="../notebooks/01_business_understanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Business Understanding</span></span></a>
   </div>
 </li>
@@ -499,13 +527,13 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendix</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/17_crisp-dm.html" class="sidebar-item-text sidebar-link">
@@ -526,7 +554,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/13_data_preparation.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/13_data_preparation.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Preparation</span></span></a>
   </div>
 </li>
@@ -584,24 +612,11 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-11-overview" id="toc-sec-11-overview" class="nav-link active" data-scroll-target="#sec-11-overview">Overview</a></li>
-  <li><a href="#sec-01-bu-why" id="toc-sec-01-bu-why" class="nav-link" data-scroll-target="#sec-01-bu-why">Why is Forecasting Important?</a>
-  <ul class="collapse">
-  <li><a href="#sec-01-geographical" id="toc-sec-01-geographical" class="nav-link" data-scroll-target="#sec-01-geographical">Geographic Footprint and Production Model</a></li>
-  <li><a href="#sec-01-blossam" id="toc-sec-01-blossam" class="nav-link" data-scroll-target="#sec-01-blossam"><em>Blossam</em> Tea: an illustrative example</a></li>
-  </ul></li>
-  <li><a href="#sec-01-stakeholder" id="toc-sec-01-stakeholder" class="nav-link" data-scroll-target="#sec-01-stakeholder">Stakeholder Use Cases</a></li>
-  <li><a href="#sec-01-bu-scope" id="toc-sec-01-bu-scope" class="nav-link" data-scroll-target="#sec-01-bu-scope">Scope of the Project</a></li>
-  <li><a href="#sec-01-problem-statement" id="toc-sec-01-problem-statement" class="nav-link" data-scroll-target="#sec-01-problem-statement">Problem Statement</a></li>
-  <li><a href="#sec-01-business-objectives" id="toc-sec-01-business-objectives" class="nav-link" data-scroll-target="#sec-01-business-objectives">Business Objectives</a>
-  <ul class="collapse">
-  <li><a href="#sec-01-pythia-advice-system" id="toc-sec-01-pythia-advice-system" class="nav-link" data-scroll-target="#sec-01-pythia-advice-system">Pythia’s Advice: A System of Innovation</a></li>
-  </ul></li>
-  <li><a href="#sec-01-forecast-process" id="toc-sec-01-forecast-process" class="nav-link" data-scroll-target="#sec-01-forecast-process">Forecast Process</a></li>
-  <li><a href="#sec-01-success-criteria" id="toc-sec-01-success-criteria" class="nav-link" data-scroll-target="#sec-01-success-criteria">Success Criteria</a></li>
-  <li><a href="#sec-01-summary" id="toc-sec-01-summary" class="nav-link" data-scroll-target="#sec-01-summary">Summary</a></li>
+  <li><a href="#data-pipelines" id="toc-data-pipelines" class="nav-link active" data-scroll-target="#data-pipelines">Data Pipelines</a></li>
+  <li><a href="#scenario" id="toc-scenario" class="nav-link" data-scroll-target="#scenario">scenario:</a></li>
+  <li><a href="#data-stageing-1" id="toc-data-stageing-1" class="nav-link" data-scroll-target="#data-stageing-1">Data Stageing</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/01_business_understanding.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/13_data_preparation.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -611,286 +626,302 @@ div.csl-indent {
 
 
 
-<section id="sec-11-overview" class="level2">
-<h2 class="anchored" data-anchor-id="sec-11-overview">Overview</h2>
-<p>This chapter provides a detailed look into the business context and challenges faced by <em>BioBalance</em>, a multi-channel FMCG company. We begin by illustrating why forecasting matters, using a real-life example (Blossam tea), followed by an overview of stakeholder-specific forecasting needs across departments.</p>
-<p>Next, we define the core business problem — the lack of an objective benchmark to evaluate manual forecast adjustments — and explain how this project aims to address that issue.</p>
-<p>We then introduce Pythia’s Advice, a parallel forecasting environment designed to quantify Forecast Value Added (FVA) and support more effective decision-making.</p>
-<p>Finally, we outline the current forecasting process and establish criteria to measure the success of this initiative.</p>
+<section id="data-pipelines" class="level1">
+<h1>Data Pipelines</h1>
 </section>
-<section id="sec-01-bu-why" class="level2">
-<h2 class="anchored" data-anchor-id="sec-01-bu-why">Why is Forecasting Important?</h2>
-<!-- Contextualize the business problem and its forecasting relevance. -->
-<p>Accurate forecasting is essential for managing <em>BioBalance’s</em> portfolio of over 2.500 products, each with specific shelf-life requirements, sourcing constraints, and production lead times. Forecasts guide decisions across the entire supply chain — from procurement and production to distribution and inventory management.</p>
-<section id="sec-01-geographical" class="level3">
-<h3 class="anchored" data-anchor-id="sec-01-geographical">Geographic Footprint and Production Model</h3>
-<p><em>BioBalance</em> operates multiple production facilities and distribution centers across Europe, serving customers in various countries through both direct and indirect channels. As shown in <a href="#fig-01-bu-map" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>, these facilities are geographically distributed, and some products are produced in one country but sold in others.</p>
-<p>Due to long production and transportation lead times, combined with short customer order lead times, BioBalance follows a Make-to-Stock (MTS) strategy for most of its portfolio. Products must be manufactured and positioned in the supply chain ahead of actual demand. To support this, the Marketing and Sales Organizations (MSOs) place minimum order quantities (MOQs) in advance to cover expected demand for the upcoming weeks. An illustrative example of these goods flows is shown in Appendix <a href="11_business_understanding.html#fig-11-supplychain-goodsflow" class="quarto-xref">Figure&nbsp;<span>8.1</span></a>.</p>
-<p>As a result, accurate forecasting is essential to:</p>
+<section id="scenario" class="level1">
+<h1>scenario:</h1>
+<p>Dataset Size:</p>
 <ul>
-<li>Plan &amp; schedule production volumes and resources at the plants</li>
-<li>Balance inventory to avoid excess inventory or costly stockouts</li>
-<li>Strategic planning, create budgets and sales targets</li>
+<li>400 MB in CSV format.</li>
+<li>15 MB in Parquet format.</li>
 </ul>
-<p>This operational model places forecasting at the core of supply chain responsiveness and profitability.</p>
-<div id="fig-01-bu-map" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-01-bu-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/bu_map.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1.1: Geographic footprint of BioBalance: production and distribution sites"><img src="../images/bu_map.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:8cm"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-01-bu-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.1: Geographic footprint of <em>BioBalance</em>: production and distribution sites
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="sec-01-blossam" class="level3">
-<h3 class="anchored" data-anchor-id="sec-01-blossam"><em>Blossam</em> Tea: an illustrative example</h3>
-<p>The planning process for <em>Blossam Balance Tea</em> illustrates the complexity of forecasting across stages, see <a href="05_evaluation.html#fig-01-bu-why" class="quarto-xref">Figure&nbsp;<span>5.2</span></a>:</p>
-<div id="fig-01-bu-why" class="figure quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-01-bu-why-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<video src="../video/bu_why.mp4" controls="" autoplay="" muted="" loop="" width="640" playsinline="">
-</video>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-01-bu-why-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.2: Why forecasting? The forecast drives the business!
-</figcaption>
-</figure>
-</div>
-<p><strong>Make</strong>: The tea must be produced at least 3 months in advance, requiring short-term accuracy for production scheduling.</p>
-<p><strong>Source</strong>: Tea leaves are procured via contracts negotiated 12 months ahead, depending on long-term demand planning.</p>
-<p><strong>Deliver</strong>: Different sales channels impose distinct shelf-life expectations — premium retailers require over 180 days, while discounters accept 60 days but with lower margins.</p>
-<p>Failure to meet shelf-life constraints can result in:</p>
+<p>Data Access and Querying:</p>
+<p>Happens once when the application starts. Needs to be quick to minimize user wait time. No data is written to disk during application use; data is only saved when the application exits. Data Manipulation:</p>
+<p>Performed in-memory using R and Python. Requires fast execution. Consideration:</p>
+<p>You like the idea of using Feather for its fast data loading. You’re considering incorporating DuckDB to make the solution more scalable, despite minimal immediate benefits. Acknowledge that adding DuckDB introduces additional complexity.</p>
+<p>Architecture: Architecture is about the design and setup, provides the framework and tools. This refers to the high-level structure of your system. It encompasses the selection of components, technologies, formats, and how they are organized and interact with each other. Architecture lays the foundation for your system’s capabilities, scalability, and performance.</p>
+<p>Workflow: Workflow is about the execution and processes, defines the processes and procedures using those tools. This pertains to the sequence of operations or processes that are carried out using the architectural components. It describes the specific steps taken to achieve your objectives, detailing how data and tasks flow through the system.</p>
+<section id="work-flow-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="work-flow-architecture">Work Flow &amp; Architecture :</h2>
+<p>Need for a a robust, scalable and future-proof architecture with the flexibility to adapt as the data sets evolves, all while maintaining excellent performance and usability.</p>
 <ul>
-<li>Out-Of-Stocks (OOS): Lost sales, penalties, and de-listing.</li>
-<li>Out-Of-Date (OOD): Product waste and write-offs.</li>
+<li>Need for fast startup and in-memory processing.</li>
+<li>Scalable for future growth</li>
+<li>Minimal in complexity, leveraging familiar tools and lightweight components.</li>
 </ul>
-<p>These challenges are not unique to <em>Blossam</em>; they apply across the full product range.</p>
-</section>
-</section>
-<section id="sec-01-stakeholder" class="level2">
-<h2 class="anchored" data-anchor-id="sec-01-stakeholder">Stakeholder Use Cases</h2>
-<!-- stakeholders. -->
-<p>The company’s forecasting requirements vary significantly across several key use cases.</p>
-<div id="fig-01-bu-who" class="figure quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-01-bu-who-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<video src="../video/bu_who.mp4" controls="" autoplay="" muted="" loop="" width="640" playsinline="">
-</video>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-01-bu-who-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.3: who uses the forecasts? varying requirements across several key use cases.
-</figcaption>
-</figure>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
-<caption>Forecast Use Cases by Department</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Department</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Use Case</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Forecast Level</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Horizon</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Central Sourcing</td>
-<td style="text-align: left;">Buying &amp; Production</td>
-<td style="text-align: left;">Article</td>
-<td style="text-align: left;">12 weeks</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Finance</td>
-<td style="text-align: left;">Transfer pricing</td>
-<td style="text-align: left;">Article</td>
-<td style="text-align: left;">6 quarters</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Supply Planning</td>
-<td style="text-align: left;">Safety stock profiling</td>
-<td style="text-align: left;">Article * WH</td>
-<td style="text-align: left;">52 weeks</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">MRP System</td>
-<td style="text-align: left;">Replenishment</td>
-<td style="text-align: left;">Article * WH</td>
-<td style="text-align: left;">104 weeks</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Marketing &amp; Sales</td>
-<td style="text-align: left;">Strategic planning</td>
-<td style="text-align: left;">Brand/Category</td>
-<td style="text-align: left;">12 months</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Key Accounts</td>
-<td style="text-align: left;">Negotiation &amp; target setting</td>
-<td style="text-align: left;">Category * Account</td>
-<td style="text-align: left;">6–12 months</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>A detailed overview is available in (<a href="11_business_understanding.html#sec-11-stakeholder" class="quarto-xref"><span>Stakeholder Use Cases</span></a>).</p>
-</section>
-<section id="sec-01-bu-scope" class="level2">
-<h2 class="anchored" data-anchor-id="sec-01-bu-scope">Scope of the Project</h2>
-<p>This research is limited to articles sold to customers (<strong>Finished Goods</strong>) that are <strong>MRP-relevant</strong> and planned under a <strong>Make-to-Stock</strong> strategy. Products with short shelf lives, requiring chilled storage and daily planning, are excluded due to their distinct planning characteristics.</p>
-<p>The study further focuses on the most commercially significant part of <em>BioBalance’s</em> operations: the Market Sales Organization (MSO) with the highest sales volume in 2024. This selection is based on the exploratory analysis presented in <a href="02_data_understanding.html#fig-02-eda-geography" class="quarto-xref">Figure&nbsp;<span>2.1</span></a> and ensures that the results are directly applicable to the area with the greatest business impact.</p>
-<p>Within this scope, we specifically target ambient products with a minimum shelf life of 60 days. These products are planned in weekly MRP cycles and forecasted using monthly time buckets. They represent the majority of <em>BioBalance’s</em> volume and align best with the strategic forecasting use cases addressed in this study.</p>
-</section>
-<section id="sec-01-problem-statement" class="level2">
-<h2 class="anchored" data-anchor-id="sec-01-problem-statement">Problem Statement</h2>
-<p>While <em>BioBalance</em> uses a flexible forecasting platform, its reliance on manual adjustments and subjective decision-making introduces inconsistency. Forecasting methods and aggregation levels are often chosen based on intuition and experience. Research shows, see <span class="citation" data-cites="article">(<a href="18_references.html#ref-article" role="doc-biblioref">Fildes &amp; Goodwin, 2007</a>)</span>, that small manual adjustments typically offer no benefit, whereas larger interventions—usually reductions—may significantly improve accuracy.</p>
-<p>Without an objective benchmark, it is impossible to determine whether these manual interventions improve accuracy or merely increase resource costs.</p>
-</section>
-<section id="sec-01-business-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="sec-01-business-objectives">Business Objectives</h2>
-<!-- define business objectives, What is the business's need? -->
-<p>This project aims to improve forecast accuracy and planning efficiency by introducing:</p>
-<ul>
-<li><p>A transparent, low-cost statistical benchmark.</p></li>
-<li><p>A decision-support tool to guide value-adding interventions.</p></li>
-<li><p>A scalable, consistent method applicable across different aggregation levels.</p></li>
-</ul>
-<p>These objectives align with <em>BioBalance’s</em> strategic priorities, which include:</p>
+<p>Vertically Scalable: The architecture leverages your node’s 24 GB of memory effectively, with room for growth by upgrading hardware (e.g., adding more RAM or CPU cores).</p>
+<p>Low Complexity Overhead:</p>
+<p>DuckDB introduces minimal complexity since it integrates seamlessly with both R and Python. SQL provides a familiar and powerful tool for managing data subsets, making the workflow easy to maintain. Prepared for Growth:</p>
+<p>The combination of Feather and DuckDB ensures you can handle current and moderate future data sizes efficiently. For substantial growth, DuckDB can work with Parquet files or other scalable formats with minimal changes. Optimized for Performance:</p>
+<p>Feather ensures fast data access at startup. DuckDB allows efficient on-disk querying to reduce memory overhead, ensuring smooth performance even as datasets grow.</p>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
+<p>This workflow is ideal when working with datasets that are manageable in size and can be fully loaded into memory for analysis. Incorporating DuckDB adds the flexibility of SQL querying, which can be advantageous for preprocessing data before intensive computations. The use of Feather format ensures fast data loading, which is important for applications where user wait time during startup should be minimized.</p>
+<p>If your dataset grows or your scalability needs change, you might need to adjust the workflow accordingly, possibly by switching to Parquet files and leveraging DuckDB’s capabilities to handle larger datasets more efficiently.</p>
+<p>Architecture</p>
+<p>Scalability:</p>
 <ol type="1">
-<li><p>Optimize safety stock levels.</p></li>
-<li><p>Reduce Out-Of-Stock (OOS) and Out-Of-Date (OOD) inventory.</p></li>
-<li><p>Improve customer service levels and reduce waste.</p></li>
-<li><p>Increase customer satisfaction through consistent availability.</p></li>
+<li><p>adjust your SQL queries to limit the data loaded into memory, ensuring your application remains performant.</p></li>
+<li><p>scale vertically with increased RAM and CPU cores to manage larger Feather files and more complex algorithms without architectural changes.</p></li>
 </ol>
-<p>And ultimately increase profitability, as illustrated in <a href="#fig-01-bu-daps" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>, see <span class="citation" data-cites="demast2024">(<a href="18_references.html#ref-demast2024" role="doc-biblioref">Mast &amp; Lokkerbol, 2024</a>)</span>.</p>
-<div id="fig-01-bu-daps" class="figure quarto-float quarto-figure quarto-figure-left anchored" alt="DAPS" data-fig-align="left" data-fig-width="15cm">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-01-bu-daps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/flowdown.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;1.4: "><img src="../images/flowdown.png" class="img-fluid quarto-figure quarto-figure-left figure-img" data-fig-width="15cm" alt="DAPS"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-01-bu-daps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.4
-</figcaption>
-</figure>
-</div>
-<section id="sec-01-pythia-advice-system" class="level3">
-<h3 class="anchored" data-anchor-id="sec-01-pythia-advice-system">Pythia’s Advice: A System of Innovation</h3>
-<p>To support these goals, we introduce <strong>Pythia’s Advice</strong> — a parallel forecasting environment that runs alongside the production system. Named after the oracle of Delphi, it serves as a low-cost advisory layer that complements the existing forecasting system.</p>
-<p>Pythia’s Advice provides:</p>
+<p>Performance:</p>
 <ul>
-<li><p>A minimal-resource benchmark:<br>
-low-cost, automated forecast based on statistical models (e.g., ETS, HTS).</p></li>
-<li><p>An internal reference for calculating Forecast Value Added (FVA).</p></li>
-<li><p>A scalable, low-cost, open-source infrastructure.</p></li>
-</ul>
-<p>This environment was deliberately designed to operate in parallel, with read-only access to the production system. This avoids interference with business-critical forecasting workflows and eliminates the risk of disrupting day-to-day operations.</p>
-<p>Additionally, the project was developed under the constraint of limited access to business resources — both in terms of time and geographical availability. Demand planners and analysts needed to prioritize operational continuity, requiring the research to be conducted independently while still aligning with business realities.</p>
-<p>By working within these constraints, <strong>Pythia’s Advice</strong> enables experimentation and benchmarking without disrupting operations — providing a safe and scalable way to measure the value of forecast improvements. <strong>Pythia’s Advice</strong> is represented by the lower part of the Data-Analytic Problem Structure (DAPS), (<a href="#fig-01-bu-daps" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>).</p>
-</section>
-</section>
-<section id="sec-01-forecast-process" class="level2">
-<h2 class="anchored" data-anchor-id="sec-01-forecast-process">Forecast Process</h2>
-<!-- Business process mapping -->
-<p><em>BioBalance</em> relies on a third-party system that uses traditional statistical models (see Appendix <a href="11_business_understanding.html#tbl-11-stat-methods" class="quarto-xref">Table&nbsp;<span>8.1</span></a>). Figure <a href="#fig-01-bu-proc" class="quarto-xref">Figure&nbsp;<span>1.5</span></a> illustrates the forecasting steps demand planners follow. Although presented sequentially, these steps often require multiple iterations. Table <a href="#tbl-01-demand-planners-activities" class="quarto-xref">Table&nbsp;<span>1.1</span></a> provides a detailed breakdown.</p>
-<p><em>Pythia’s Advice</em> seeks to eliminate those iterations, enhancing both efficiency and forecast accuracy.</p>
-<div id="fig-01-bu-proc" class="figure quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-01-bu-proc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<video src="../video/bu_proc.mp4" controls="" autoplay="" muted="" loop="" width="640" playsinline="">
-</video>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-01-bu-proc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.5: The forecasting process: requiring human expertise.
-</figcaption>
-</figure>
-</div>
-<div id="tbl-01-demand-planners-activities" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-01-demand-planners-activities-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1.1: Forecasting steps per forecast, Pythia’s Advice to improve efficiency.
-</figcaption>
-<div aria-describedby="tbl-01-demand-planners-activities-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Demand planner</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Pythia Advises on</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Prepares data, cleansing outliers, missed sales, promotions, and shortages.</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Selects an aggregation level [L1-L5]</td>
-<td style="text-align: left;">Which aggregation level [L1–L5] to use</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Determines if time serie has seasonality and/or trend</td>
-<td style="text-align: left;">Strength of seasonality &amp; trend at each aggregation level</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Selects a forecasting method</td>
-<td style="text-align: left;">Which method of the traditional methods to use at each aggregation level</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Fine-tunes parameters</td>
-<td style="text-align: left;">Model parameters (α, β, γ, δ) at each aggregation level</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Simulates results</td>
-<td style="text-align: left;">Impact of manual adjustments by providing an unadjusted forecast</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Adjusts or override forecasts manually</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Distributes the forecast Top-Down</td>
-<td style="text-align: left;"></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</figure>
-</div>
-<div class="callout callout-style-simple callout-important">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>The initial scope of the project is to share the unadjusted forecast and its resulting accuracy with demand planners as a benchmark. This lets them see the impact of their manual adjustments and provides a foundation for continuous improvement.</p>
-<p><em>Building trust must come first before moving on to subsequent steps.</em><br>
-<strong>TRUST is all you need</strong></p>
-</div>
-</div>
-</div>
-</section>
-<section id="sec-01-success-criteria" class="level2">
-<h2 class="anchored" data-anchor-id="sec-01-success-criteria">Success Criteria</h2>
-<p>The success of this project will be measured by:</p>
-<ul>
-<li><p>A measurable increase in forecast accuracy (RSME and reduced bias)</p></li>
-<li><p>Reduced time and effort spent on non-value-adding manual adjustments</p></li>
-<li><p>Improved inventory KPIs (lower OOS/OOD rates)</p></li>
-<li><p>Consistent forecasts across aggregation levels</p></li>
-<li><p>Positive feedback from planners and stakeholders</p></li>
+<li>Feather enables fast reads for smaller datasets during startup.</li>
+<li>DuckDB efficiently handles larger datasets by querying on disk and loading only the necessary data into memory.</li>
 </ul>
 </section>
-<section id="sec-01-summary" class="level2">
-<h2 class="anchored" data-anchor-id="sec-01-summary">Summary</h2>
-<p>In summary, this chapter defined the business context, stakeholders, and objectives that guide the rest of this project. The next phase, Data Understanding, explores the availability, quality, and suitability of the data used to support these forecasting use cases.</p>
-<!-- {{< include 01_business_understanding_def.qmd >}} -->
+<section id="data-stageing" class="level3">
+<h3 class="anchored" data-anchor-id="data-stageing">Data Stageing</h3>
+<ol type="1">
+<li>D00: contains the BW OpenHub Export, CSV - same as AL11</li>
+</ol>
+</section>
+<section id="data-ingestion" class="level3">
+<h3 class="anchored" data-anchor-id="data-ingestion">Data Ingestion:</h3>
+<p>Occurs once a month, converting CSV to Parquet (or another format). header is added and stored in D01</p>
+</section>
+<section id="data-access-and-querying" class="level3">
+<h3 class="anchored" data-anchor-id="data-access-and-querying">Data Access and Querying:</h3>
+<ul>
+<li>Data is imported into R data.table objects via DuckDB, which reads the stored files.</li>
+<li>Queries are often simple SQL SELECT statements on one table or basic INNER JOINs.</li>
+<li>The same SQL queries are used to import data into Python using Polars via DuckDB.</li>
+</ul>
+</section>
+<section id="data-manipulation" class="level3">
+<h3 class="anchored" data-anchor-id="data-manipulation">Data Manipulation:</h3>
+<ul>
+<li>Further data manipulation in R is done using data.table.</li>
+<li>In Python, data manipulation is performed using Polars.</li>
+</ul>
+<p><strong>Evaluation of Your Proposed Workflow</strong></p>
+<p>Given your familiarity with SQL and DuckDB, and your need for scalability, your proposed workflow is sound and aligns well with your goals.</p>
+</section>
+<section id="advantages-of-your-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="advantages-of-your-workflow"><strong>Advantages of Your Workflow</strong></h3>
+<ol type="1">
+<li><p><strong>Scalability</strong></p>
+<ul>
+<li><strong>Efficient Data Storage:</strong> Parquet files are columnar, compressed, and optimized for performance, which is beneficial for large datasets.</li>
+<li><strong>Query Optimization:</strong> DuckDB is designed for efficient analytical queries, even on large datasets.</li>
+</ul></li>
+<li><p><strong>Flexibility</strong></p>
+<ul>
+<li><strong>Language Agnostic:</strong> DuckDB can be used within R and Python, allowing seamless transition between languages.</li>
+<li><strong>SQL Familiarity:</strong> Your proficiency in SQL means you can leverage DuckDB’s SQL interface effectively.</li>
+</ul></li>
+<li><p><strong>Performance</strong></p></li>
+</ol>
+<ul>
+<li><strong>Fast Query Execution:</strong> DuckDB is optimized for OLAP workloads and can execute complex queries quickly.</li>
+<li><strong>Direct Parquet Support:</strong> DuckDB can read Parquet files directly without the need to load the entire dataset into memory.</li>
+</ul>
+<ol start="4" type="1">
+<li><strong>Integration with R and Python</strong></li>
+</ol>
+<ul>
+<li><strong>R Data.Tables:</strong> You can fetch query results from DuckDB into R data.tables, integrating with your existing R codebase.</li>
+<li><strong>Python Polars:</strong> Similarly, you can read data into Polars DataFrames in Python, which is efficient for data manipulation.</li>
+</ul>
+<ol start="5" type="1">
+<li><strong>Simplified Data Pipeline</strong></li>
+</ol>
+<ul>
+<li><strong>Unified Data Source:</strong> Using DuckDB on top of Parquet files centralizes your data access, simplifying data management.</li>
+</ul>
+</section>
+<section id="potential-disadvantages" class="level3">
+<h3 class="anchored" data-anchor-id="potential-disadvantages"><strong>Potential Disadvantages</strong></h3>
+<ol type="1">
+<li><strong>Additional Complexity</strong></li>
+</ol>
+<ul>
+<li><strong>Library Dependencies:</strong> Requires installation and management of additional libraries (DuckDB, Parquet support in R and Python).</li>
+<li><strong>Learning Curve for Integration:</strong> Even though you’re familiar with DuckDB, integrating it into R and Python workflows may require some setup and testing.</li>
+</ul>
+<ol start="2" type="1">
+<li><p><strong>Overhead of Data Conversion</strong></p>
+<ul>
+<li><strong>Initial Conversion:</strong> Migrating CSV files to Parquet adds an extra step in your data ingestion pipeline.</li>
+<li><strong>Data Updates:</strong> If your CSV data updates frequently, you’ll need to automate the conversion process.</li>
+</ul></li>
+<li><p><strong>Resource Usage</strong></p></li>
+</ol>
+<ul>
+<li><strong>Disk Space:</strong> Maintaining both CSV and Parquet files (if not deleting the original CSVs) may consume additional storage.</li>
+</ul>
+<hr>
+<p><strong>Recommendations and Best Practices</strong></p>
+<p>Given your requirements and skills, your proposed workflow is suitable and offers several benefits in terms of scalability and flexibility. Here are some recommendations to optimize your workflow:</p>
+<p>### <strong>1. Automate the CSV to Parquet Conversion</strong></p>
+<ul>
+<li><p><strong>Use Batch Processing:</strong></p></li>
+<li><p>Create scripts in R or Python to automate the conversion of CSV files to Parquet.</p></li>
+<li><p><strong>Leverage DuckDB for Conversion:</strong></p>
+<ul>
+<li>DuckDB can read CSV files and write Parquet files, allowing you to perform the conversion within DuckDB.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">COPY</span> (<span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> <span class="st">'your_data.csv'</span>) <span class="kw">TO</span> <span class="st">'your_data.parquet'</span> (FORMAT PARQUET);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="optimize-duckdb-usage" class="level3">
+<h3 class="anchored" data-anchor-id="optimize-duckdb-usage"><strong>2. Optimize DuckDB Usage</strong></h3>
+<ul>
+<li><p><strong>Indexing and Partitioning:</strong></p>
+<ul>
+<li>While Parquet files do not support traditional indexing, consider partitioning your data to improve query performance.</li>
+</ul></li>
+<li><p><strong>SQL Query Optimization:</strong></p>
+<ul>
+<li>Use DuckDB’s advanced SQL features to optimize queries (e.g., window functions, common table expressions).</li>
+</ul></li>
+</ul>
+</section>
+<section id="efficient-data-retrieval-into-r-and-python" class="level3">
+<h3 class="anchored" data-anchor-id="efficient-data-retrieval-into-r-and-python"><strong>3. Efficient Data Retrieval into R and Python</strong></h3>
+<ul>
+<li><p><strong>In R:</strong></p>
+<ul>
+<li>Use the <code>duckdb</code> package to execute SQL queries and fetch results into data.tables.</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(duckdb)</span>
+<span id="cb2-2"><a href="#cb2-2"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(duckdb<span class="sc">::</span><span class="fu">duckdb</span>())</span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="co"># Query data</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>result <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(con, <span class="st">"SELECT * FROM 'your_data.parquet' WHERE conditions"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6"></a></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="co"># Convert to data.table</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb2-9"><a href="#cb2-9"></a>dt_result <span class="ot">&lt;-</span> <span class="fu">as.data.table</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>In Python with Polars:</strong></p>
+<ul>
+<li>Use DuckDB’s Python API or integrate with Polars for efficient data handling.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> duckdb</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># Execute query and fetch result as Polars DataFrame</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>df <span class="op">=</span> duckdb.query(<span class="st">"SELECT * FROM 'your_data.parquet' WHERE conditions"</span>).to_df()</span>
+<span id="cb3-6"><a href="#cb3-6"></a>pl_df <span class="op">=</span> pl.from_pandas(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="consider-data-volume-and-hardware-resources" class="level3">
+<h3 class="anchored" data-anchor-id="consider-data-volume-and-hardware-resources"><strong>4. Consider Data Volume and Hardware Resources</strong></h3>
+<ul>
+<li><p><strong>Memory Management:</strong></p>
+<ul>
+<li>DuckDB processes data efficiently, but ensure your hardware resources are adequate for your data size.</li>
+</ul></li>
+<li><p><strong>Disk I/O:</strong></p>
+<ul>
+<li>Using Parquet files reduces disk I/O due to compression, but be mindful of the storage subsystem performance.</li>
+</ul></li>
+</ul>
+</section>
+<section id="keep-libraries-updated" class="level3">
+<h3 class="anchored" data-anchor-id="keep-libraries-updated"><strong>5. Keep Libraries Updated</strong></h3>
+<ul>
+<li><p><strong>Stay Current:</strong></p>
+<ul>
+<li>Ensure that you are using the latest versions of DuckDB, R packages, and Python libraries to benefit from performance improvements and bug fixes.</li>
+</ul></li>
+</ul>
+</section>
+<section id="handle-updates-and-data-versioning" class="level3">
+<h3 class="anchored" data-anchor-id="handle-updates-and-data-versioning"><strong>6. Handle Updates and Data Versioning</strong></h3>
+<ul>
+<li><p><strong>Incremental Updates:</strong></p>
+<ul>
+<li>If your data updates incrementally, design your pipeline to handle partial updates rather than reprocessing entire datasets.</li>
+</ul></li>
+<li><p><strong>Data Version Control:</strong></p>
+<ul>
+<li>Implement versioning for your Parquet files to track changes over time.</li>
+</ul></li>
+</ul>
+</section>
+<section id="monitor-performance-and-adjust" class="level3">
+<h3 class="anchored" data-anchor-id="monitor-performance-and-adjust"><strong>7. Monitor Performance and Adjust</strong></h3>
+<ul>
+<li><p><strong>Benchmarking:</strong></p>
+<ul>
+<li>Regularly benchmark query performance to identify bottlenecks.</li>
+</ul></li>
+<li><p><strong>Adjust Strategy:</strong></p>
+<ul>
+<li>Based on performance metrics, adjust partitioning schemes, query strategies, or hardware resources as needed.</li>
+</ul></li>
+</ul>
+<hr>
+<p><strong>Conclusion</strong></p>
+<p>Your proposed workflow of migrating CSV files to Parquet, using DuckDB for querying, and integrating with R and Python is a robust solution that addresses your needs for scalability and flexibility. Given your familiarity with SQL and DuckDB, and the fact that you possess the necessary skills to manage the additional complexity, this approach is well-suited to your situation.</p>
+<p><strong>Benefits of Your Workflow:</strong></p>
+<ul>
+<li><p><strong>Scalable Data Processing:</strong></p></li>
+<li><p>Efficient handling of large datasets through Parquet and DuckDB.</p></li>
+<li><p><strong>Flexibility Across Languages:</strong></p>
+<ul>
+<li>Seamless data access in both R and Python without data format conversion issues.</li>
+</ul></li>
+<li><p><strong>Performance Optimization:</strong></p>
+<ul>
+<li>Faster query execution and data retrieval due to optimized storage and processing.</li>
+</ul></li>
+</ul>
+<p><strong>Key Actions Moving Forward:</strong></p>
+<ol type="1">
+<li><strong>Set Up Automated Data Pipelines:</strong></li>
+</ol>
+<ul>
+<li>Automate the conversion from CSV to Parquet to ensure consistency and save time.</li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Optimize Queries:</strong></li>
+</ol>
+<ul>
+<li>Utilize DuckDB’s full SQL capabilities to write efficient queries for your analysis.</li>
+</ul>
+<ol start="3" type="1">
+<li><p><strong>Integrate Smoothly with R and Python:</strong></p>
+<ul>
+<li>Establish standard functions or scripts in both environments to interact with DuckDB, minimizing repetitive code.</li>
+</ul></li>
+<li><p><strong>Monitor and Iterate:</strong></p>
+<ul>
+<li>Keep an eye on performance metrics and be ready to adjust your approach as your dataset grows or changes.</li>
+</ul></li>
+</ol>
+<hr>
+<p><strong>Additional Considerations</strong></p>
+<ul>
+<li><p><strong>Community and Support:</strong></p>
+<ul>
+<li>DuckDB is actively developed, and there is a growing community. Utilize resources like documentation and forums when needed.</li>
+</ul></li>
+<li><p><strong>Testing and Validation:</strong></p>
+<ul>
+<li>As with any data pipeline, thoroughly test each component to ensure data integrity and correctness.</li>
+</ul></li>
+<li><p><strong>Security and Access Control:</strong></p>
+<ul>
+<li>If working in a multi-user environment, consider how data access and permissions are managed.</li>
+</ul></li>
+</ul>
+<hr>
+<p><strong>Final Thoughts</strong></p>
+<p>Your willingness to embrace additional complexity due to your skill set positions you well to benefit from this workflow. By combining the strengths of Parquet’s efficient data storage and DuckDB’s powerful query engine, you can achieve a scalable and flexible data analysis environment.</p>
+<p>Should you need further assistance or have more questions as you implement this workflow, feel free to reach out. I’m here to help ensure your data processing is as efficient and effective as possible.</p>
+</section>
+</section>
+</section>
+<section id="data-stageing-1" class="level1">
+<h1>Data Stageing</h1>
+<p>data lake design pattern: Bronze-Silver-Gold structure data according to its level of processing and readiness for use.</p>
+<p>Bronze Layer (Raw Data): Contains raw data as it was ingested from the source systems. This data is typically in its original format and unprocessed.</p>
+<p>Silver Layer (Cleaned and Conformed Data): Contains data that has been cleansed, filtered, and possibly enriched. This data is ready for further processing or analysis but is not yet aggregated or modeled.</p>
+<p>Gold Layer (Curated Data): Contains data that has been transformed into business-level aggregates, models, or reports. This is the data used by analysts, data scientists, or applications for decision-making.</p>
+<!-- {{< include 03_data_preparation_def.qmd >}} -->
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
@@ -1489,13 +1520,13 @@ Zhu, H. (2024). <em>kableExtra: Construct complex table with ’kable’ and pip
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notebooks/00_introduction.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      <a href="../notebooks/12_data_understanding.html" class="pagination-link" aria-label="Data Understanding">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Understanding</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notebooks/02_data_understanding.html" class="pagination-link" aria-label="Data Understanding">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Understanding</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notebooks/14_modelling.html" class="pagination-link" aria-label="Modelling">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Modelling</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1507,44 +1538,12 @@ Zhu, H. (2024). <em>kableExtra: Construct complex table with ’kable’ and pip
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/01_business_understanding.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/13_data_preparation.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p><a href="https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai">EAISI</a></p>
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
