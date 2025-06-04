@@ -21,7 +21,7 @@ source("../_book_functions.R")
 
 <!-- – Training/validation split -->
 
-::::: {fig-04-black_glassbox}
+::::: {#fig-04-black_glassbox}
 ::: {.content-visible when-format="html"}
 <video src="../video/glass_blackbox.mp4" controls autoplay muted loop width="640" playsinline>
 </video>
@@ -31,11 +31,10 @@ source("../_book_functions.R")
 ![](../images/glass_blackbox.png){fig-align="left" fig-width="15cm"}
 :::
 
-A representation of the tradeoff between flexibility and inter pretability, using different statistical learning methods. In general, as the flexibil ity of a method increases, its interpretability decreases, see [@james2023]
+A representation of the tradeoff between flexibility and inter pretability, using different statistical learning methods. In general, as the flexibility of a method increases, its interpretability decreases, see [@james2023]
 :::::
 
 ```{r}
-
 #| label: fig-04-black_glassbox
 
 dtGB <- 
@@ -43,6 +42,7 @@ dtGB <-
         Method            , Type            , Flexibility, Interpretability
         ETS               , Statistical     , 1          , 5
         ARIMA             , Statistical     , 2          , 5
+        Regression        , Statistical     , 2          , 4
         Random Forest     , Machine Learning, 3          , 4
         XGBoost/CatBoost  , Machine Learning, 3          , 3
         LSTM              , Deep Learning   , 5          , 1
@@ -61,7 +61,7 @@ dtGB <-
 
 ```
 
-- Statistical Models
+
 
 6.1. Literature Review / Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)
 
