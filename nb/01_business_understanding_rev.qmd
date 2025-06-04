@@ -40,9 +40,9 @@ Due to long production and transportation lead times, combined with short custom
 
 As a result, accurate forecasting is essential to:
 
--   Plan production volumes at the right plants
--   Allocate stock to the right countries and channels
--   Avoid excess inventory or costly stockouts
+-   Plan & schedule production volumes and resources at the  plants
+-   Balance inventory to avoid excess inventory or costly stockouts
+-   Strategic planning, create budgets and sales targets
 
 This operational model places forecasting at the core of supply chain responsiveness and profitability.
 
