@@ -1,18 +1,13 @@
 ---
-title:       Modelling
 subtitle:    Modelling subtitle
 description: |
   - model selection
-unnumbered:      true
-number-sections: false 
-editor: source
+number-sections: false
+toc: true         # show page‐TOC (right‐sidebar) on _every_ page
+toc-depth: 3      # include ## and ### in the TOC
 ---
 
 # Modelling {#sec-14-modelling}
-
-<!-- ### Overview {#sec-14-overview} -->
-
-<!-- Briefly describe the modelling phase, its objectives, and how it fits into the broader CRISP-DM process. -->
 
 ```{r}
 #| label: setup
@@ -89,19 +84,19 @@ data.table(R.Version = R.Version()) %>%
     bootstrap_options   = c("striped", "hover", "condensed")
   )
 
-data.table(RStudio.Version = RStudio.Version()) %>%
-  kbl(
-    col.names = names(.),
-    align     = "l",
-    booktabs  = TRUE,
-    escape = FALSE
-  ) %>%
-  kable_styling(
-    full_width          = FALSE          ,
-    latex_options = c("hold_position"),
-    position            = "left",
-    bootstrap_options   = c("striped", "hover", "condensed")
-  )
+# data.table(RStudio.Version = RStudio.Version()) %>%
+#   kbl(
+#     col.names = names(.),
+#     align     = "l",
+#     booktabs  = TRUE,
+#     escape = FALSE
+#   ) %>%
+#   kable_styling(
+#     full_width          = FALSE          ,
+#     latex_options = c("hold_position"),
+#     position            = "left",
+#     bootstrap_options   = c("striped", "hover", "condensed")
+#   )
 ```
 
 #### R-Packages

@@ -652,7 +652,7 @@ div.csl-indent {
 <section id="identification-of-data-sources" class="level2">
 <h2 class="anchored" data-anchor-id="identification-of-data-sources">Identification of Data Sources</h2>
 <!-- Describe what data is available and where it comes from. -->
-<p>Table <a href="#tbl-02-data-sources" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-02-data-sources</span></a> summarizes the data sources used in this project, detailing their type, time span, granularity, system of record (SoR), and content. All data is sourced from SAP BI, which extracts it from the underlying systems of record. The table also lists the specific SAP tables used for each data source.</p>
+<p>Table <a href="#tbl-02-data-sources" class="quarto-xref">Table&nbsp;<span>2.1</span></a> summarizes the data sources used in this project, detailing their type, time span, granularity, system of record (SoR), and content. All data is sourced from SAP BI, which extracts it from the underlying systems of record. The table also lists the specific SAP tables used for each data source.</p>
 <div id="tbl-02-data-sources" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-sources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -729,12 +729,12 @@ MD = Master Data, TD = Transaction Data
 <!-- Subsections: -->
 <section id="articles" class="level3">
 <h3 class="anchored" data-anchor-id="articles">Articles</h3>
-<p>The Article Master Data is extracted from <code>MARC</code> which contains Plant specific data, this is enhanced with sales organization specific data from <code>MVKE</code> and global article data from <code>MARA</code>, applied filters are shown in Table <a href="#tbl-02-data-sources-article-filters" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-02-data-sources-article-filters</span></a>.</p>
+<p>The Article Master Data is extracted from <code>MARC</code> which contains Plant specific data, this is enhanced with sales organization specific data from <code>MVKE</code> and global article data from <code>MARA</code>, applied filters are shown in Table <a href="#tbl-02-data-sources-article-filters" class="quarto-xref">Table&nbsp;<span>2.2</span></a>.</p>
 <div id="tbl-02-data-sources-article-filters" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-sources-article-filters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;2.2: Article Master Data Filters<br>
-see <a href="#sec-01-bu-scope" class="quarto-xref"><span class="quarto-unresolved-ref">sec-01-bu-scope</span></a> for reasons for article-filters.
+see <a href="11_business_understanding.html#sec-01-bu-scope" class="quarto-xref"><span>Scope of the Project</span></a> for reasons for article-filters.
 </figcaption>
 <div aria-describedby="tbl-02-data-sources-article-filters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
@@ -786,7 +786,7 @@ see <a href="#sec-01-bu-scope" class="quarto-xref"><span class="quarto-unresolve
 <!-- Data filters applied (Doctype's, Item category, ...) -->
 <!-- exclude Promotion articles -->
 <p>Sales data is extracted from <code>LIPS</code>, which contains delivery records. Only completed deliveries which are goods-issued are taken into account.</p>
-<p>Table <a href="#tbl-02-data-sources-sales-filters" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-02-data-sources-sales-filters</span></a> shows the applied filters to select standard sales orders and free-of-charge orders.</p>
+<p>Table <a href="#tbl-02-data-sources-sales-filters" class="quarto-xref">Table&nbsp;<span>2.3</span></a> shows the applied filters to select standard sales orders and free-of-charge orders.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -857,7 +857,7 @@ Table&nbsp;2.3: Sales data filters
 <!-- Summarize how data was obtained and any issues during acquisition: -->
 <section id="data-collection" class="level3">
 <h3 class="anchored" data-anchor-id="data-collection">Data Collection</h3>
-<p>Table <a href="#tbl-02-data-collection" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-02-data-collection</span></a> summarizes the data collection process, including the data sources, types, extraction dates, record counts, file sizes, and keys used for each dataset. The data is collected from the SAP system and stored in a structured format for further processing.</p>
+<p>Table <a href="#tbl-02-data-collection" class="quarto-xref">Table&nbsp;<span>2.4</span></a> summarizes the data collection process, including the data sources, types, extraction dates, record counts, file sizes, and keys used for each dataset. The data is collected from the SAP system and stored in a structured format for further processing.</p>
 <p>Pre- and post-Demand Review forecasts are stored as separate files, one for each month in which they were created. Each file is named to reflect the extraction date.The key is essential for linking the datasets during analysis.</p>
 <div id="tbl-02-data-collection" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -926,7 +926,7 @@ Table&nbsp;2.4: Data Collection
 </section>
 <section id="data-collection-process" class="level3">
 <h3 class="anchored" data-anchor-id="data-collection-process">Data Collection Process</h3>
-<p>The data flow is illustrated in Figure <a href="#fig-02-dp01" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-02-dp01</span></a>, outlining the steps from data extraction to forecast delivery. The process follows a medallion architecture, where data flows into <em>Pythia’s Advice</em> through the Bronze and Silver layers and returns the generated forecasts to SAP via the Gold layer.</p>
+<p>The data flow is illustrated in Figure <a href="#fig-02-dp01" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>, outlining the steps from data extraction to forecast delivery. The process follows a medallion architecture, where data flows into <em>Pythia’s Advice</em> through the Bronze and Silver layers and returns the generated forecasts to SAP via the Gold layer.</p>
 <ol type="1">
 <li><p>Data is extracted from the <strong>Production</strong> SAP system using Open Hub technology and stored on OneDrive in the Bronze layer of the staging area, following the medallion structure.</p></li>
 <li><p>OneDrive synchronizes the data, making it accessible to the System of Innovation: <em>Pythia’s Advice</em>.</p></li>
@@ -957,7 +957,7 @@ Figure&nbsp;2.1
 <section id="transformations" class="level3">
 <h3 class="anchored" data-anchor-id="transformations">Transformations</h3>
 <p>Light transformations are applied to the exported CSV files, including field renaming, data type conversions, date formatting, and adding leading zeros where needed. Additionally, a new variable is computed to capture the number of months between the forecast creation date and the forecasted period.</p>
-<p>Table <a href="#tbl-02-data-transformations" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-02-data-transformations</span></a> lists all transformations applied to each dataset. Use the <code>SRC</code> column to filter transformations:</p>
+<p>Table <a href="#tbl-02-data-transformations" class="quarto-xref">Table&nbsp;<span>2.5</span></a> lists all transformations applied to each dataset. Use the <code>SRC</code> column to filter transformations:</p>
 <ul>
 <li><code>O</code> indicates original 1:1 mappings,</li>
 <li><code>C</code> denotes custom transformations involving additional logic, filtered by default.</li>
@@ -2010,7 +2010,7 @@ Figure&nbsp;2.2: Scoping the analysis to Valbio et Compagnie, which accounts for
 <h3 class="anchored" data-anchor-id="data-profiling">Data Profiling</h3>
 <section id="character-variables" class="level4">
 <h4 class="anchored" data-anchor-id="character-variables">Character Variables</h4>
-<p>Table <a href="#tbl-02-data-profiling-ca" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-02-data-profiling-ca</span></a> shows the data profiling results for the dataset, including the number of missing values, completeness rate, minimum and maximum length for character variables. The profiling helps identify data quality issues and provides insights into the structure of the dataset.</p>
+<p>Table <a href="#tbl-02-data-profiling-ca" class="quarto-xref">Table&nbsp;<span>2.6</span></a> shows the data profiling results for the dataset, including the number of missing values, completeness rate, minimum and maximum length for character variables. The profiling helps identify data quality issues and provides insights into the structure of the dataset.</p>
 <div id="tbl-02-data-profiling-ca" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-profiling-ca-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -2126,7 +2126,7 @@ Note
 </section>
 <section id="numeric-variables" class="level4">
 <h4 class="anchored" data-anchor-id="numeric-variables">Numeric Variables</h4>
-<p>Table <a href="#tbl-02-data-profiling-nu" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-02-data-profiling-nu</span></a> shows the data profiling results for the numeric variables in the dataset, including mean, standard deviation, and percentiles. The histogram column provides a visual representation of the distribution of each numeric variable.</p>
+<p>Table <a href="#tbl-02-data-profiling-nu" class="quarto-xref">Table&nbsp;<span>2.7</span></a> shows the data profiling results for the numeric variables in the dataset, including mean, standard deviation, and percentiles. The histogram column provides a visual representation of the distribution of each numeric variable.</p>
 <div id="tbl-02-data-profiling-nu" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-profiling-nu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -2210,7 +2210,7 @@ Important
 </section>
 <section id="article-hierachy" class="level3">
 <h3 class="anchored" data-anchor-id="article-hierachy">Article Hierachy</h3>
-<p>Table <a href="#tbl-02-data-description-hierarchy-article" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-02-data-description-hierarchy-article</span></a> summarizes the 4-levels of the article hierarchy by a unique count per level. Roughly,</p>
+<p>Table <a href="#tbl-02-data-description-hierarchy-article" class="quarto-xref">Table&nbsp;<span>2.8</span></a> summarizes the 4-levels of the article hierarchy by a unique count per level. Roughly,</p>
 <ul>
 <li>each Family contains roughly 18 articles.</li>
 <li>each Sub Category contains roughly 4 families.</li>
@@ -2250,7 +2250,7 @@ Figure&nbsp;2.3
 </section>
 <section id="customer-hierarchy" class="level3">
 <h3 class="anchored" data-anchor-id="customer-hierarchy">Customer Hierarchy</h3>
-<p>Table <a href="#tbl-02-data-description-hierarchy-customer" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-02-data-description-hierarchy-customer</span></a> summarizes the 4-levels of the customer hierarchy by a unique count per level. Roughly:</p>
+<p>Table <a href="#tbl-02-data-description-hierarchy-customer" class="quarto-xref">Table&nbsp;<span>2.9</span></a> summarizes the 4-levels of the customer hierarchy by a unique count per level. Roughly:</p>
 <ul>
 <li>each Family contains roughly 5 customers</li>
 <li>each Account contains roughly 2 sold-to parties</li>
@@ -2310,7 +2310,7 @@ Table&nbsp;2.9: Summary: Customer Hierachy
 <!-- {{< include 02_data_understanding_def.qmd >}} -->
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
 <div id="ref-magrittr2024" class="csl-entry" role="listitem">
 Bache, S. M. (2024). <em>Magrittr: A forward-pipe operator for r</em>. <a href="https://cran.r-project.org/package=magrittr">https://cran.r-project.org/package=magrittr</a>
 </div>

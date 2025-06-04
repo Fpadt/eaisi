@@ -3,7 +3,8 @@ subtitle:    Modelling subtitle
 description: |
   - model selection
 number-sections: false
-bibliography: references.bib
+toc: true         # show page‐TOC (right‐sidebar) on _every_ page
+toc-depth: 3      # include ## and ### in the TOC
 ---
 
 # Modelling {#sec-04-modelling}
