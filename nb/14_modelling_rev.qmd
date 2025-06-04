@@ -148,7 +148,7 @@ fabletools     , Forecasting infrastructure               , fabletools2024
 fable          , Forecasting models                       , fable2024
 ") %>%
   # Make Citation column Quarto-evaluatable
-  .[, Citation := paste0("`@", Citation, "`")] %>%
+  .[, Citation := paste0("@", Citation)] %>%
     kbl(
 ,
     # format = "latex"  ,      
