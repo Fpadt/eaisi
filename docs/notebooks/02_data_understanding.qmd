@@ -119,12 +119,8 @@ Only completed deliveries which are goods-issued are taken into account.
 Table @tbl-02-data-sources-sales-filters shows the applied filters to select
 standard sales orders and free-of-charge orders. 
 
-::: {.callout-important title="A-Class articles from ABC"}
+::: {.callout-important title="Fixed Planned Promotions are excluded"}
 Articles flagged in the Article Master data as Fixed Planned Promotions are excluded because they aren’t forecasted—instead, they’re delivered by contract and thus always achieve 100 % forecast accuracy.
-:::
-
-::: {.callout-tip title="Tip with Title"}
-This is a callout with a title.
 :::
 
 ::: {#tbl-02-data-sources-sales-filters}

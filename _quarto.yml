@@ -2,6 +2,7 @@ project:
   type: book
   output-dir: docs
   # pre-render: "_book_functions.R" 
+ 
   
 date:        last-modified
 date-format: long
@@ -218,6 +219,7 @@ nocite: |
 
 format:
   html:
+    callout-appearance: simple
     citation-location: document  
     includes:
       in-header: "_book_functions.R"
@@ -264,6 +266,7 @@ format:
     # papersize: A4    
 
   # pdf: #arxiv-pdf:
+  #   callout-appearance: simple
   #   citation-location: document
   #   pdf-engine: pdflatex   # or xelatex, lualatex
   #   includes:
