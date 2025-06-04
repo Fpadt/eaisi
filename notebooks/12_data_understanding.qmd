@@ -43,6 +43,47 @@ source("../_book_functions.R")
 <!-- Dimensions (rows × columns) -->
 <!-- Target variable (e.g., sales units, net revenue) -->
 
+### Metadata Overview {#sec-12-data-description-metadata}
+
+Table @tbl-02-data-description-meta gives all details of the datasets,
+back sec-02-data-description-metadata 
+
+::: {tbl-12-data-description-meta .table}
+```{r}
+# DT with Filter in Appendix
+# dataLoads
+ wb_read(
+    file      = ET2BB,
+    sheet     = "DATA_LOADS",
+    start_row = 1,
+    start_col = 1,
+    skip_empty_cols = TRUE,
+    skip_empty_rows = TRUE
+  )  %T>%
+  setDT() %>%
+  .[RELEVANT == 'Y', !"RELEVANT"] %>%
+  # .[OHDEST %chin% c('DSCP_MATE', 'DSCP_CUST', 'OH_FRPR1')] %>%
+  # .[, .(OHDEST, FILEEXTERN, TYPE, DATE)]
+  # .[is.na(KEY), KEY:= ''] %>%
+  kbl(
+    caption             = "Data Loads",
+    col.names           = names(.),
+    align               = "l",
+    booktabs            = TRUE
+  ) %>%
+  kable_styling(
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
+  )
+```
+meta data on data extraction
+:::
+
+### Data fields {#sec-12-data-description-fields}
+
+A detailed overview of all dataset fields, including names, data types, key flags, conversion routines, and hierarchy levels, back to @sec-02-data-description
+
 ::: {#tbl-12-data-description .table}
 ```{r}
 # DT with Filter in Appendix
@@ -56,7 +97,7 @@ source("../_book_functions.R")
   )  %T>%
   setDT() %>%
   .[PYTHIA == 'Y', !"PYTHIA"] %>%
-  .[c(1, 12, 23)] %>%
+  # .[c(1, 12, 23)] %>%
   kbl(
     caption             = "Data Description",
     col.names           = names(.),
@@ -69,7 +110,7 @@ source("../_book_functions.R")
     bootstrap_options   = c("striped", "hover", "condensed")
   )
 ```
-A detailed overview of all dataset fields, including names, data types, key flags, conversion routines, and hierarchy levels.
+A detailed overview of all dataset fields.
 :::
 
 <!-- ## Data Exploration Report -->

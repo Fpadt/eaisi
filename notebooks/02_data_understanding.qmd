@@ -203,6 +203,45 @@ Data Collection
 <!-- Dimensions (rows × columns) -->
 <!-- Target variable (e.g., sales units, net revenue) -->
 
+### Metadata Overview {#sec-02-data-description-metadata}
+
+Table @tbl-02-data-description-meta gives a sample of the datasets file name, extension, 
+type of data and date of extraction. A detailed overview of all fields is provided in the appendix, @tbl-12-data-description-meta.
+
+::: {tbl-02-data-description-meta .table}
+```{r}
+# DT with Filter in Appendix
+# dataLoads
+ wb_read(
+    file      = ET2BB,
+    sheet     = "DATA_LOADS",
+    start_row = 1,
+    start_col = 1,
+    skip_empty_cols = TRUE,
+    skip_empty_rows = TRUE
+  )  %T>%
+  setDT() %>%
+  .[RELEVANT == 'Y', !"RELEVANT"] %>%
+  .[OHDEST %chin% c('DSCP_MATE', 'DSCP_CUST', 'OH_FRPR1')] %>%
+  .[, .(OHDEST, FILEEXTERN, TYPE, DATE)]
+  # .[is.na(KEY), KEY:= ''] %>%
+  kbl(
+    caption             = "Data Loads",
+    col.names           = names(.),
+    align               = "l",
+    booktabs            = TRUE
+  ) %>%
+  kable_styling(
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
+  )
+```
+meta data on data extraction
+:::
+
+### Data fields {#sec-02-data-description-fields}
+
 Table @tbl-02-data-description gives a sample of the dataset fields, including names, data types, key flags, conversion routines, and hierarchy levels. A detailed overview of all fields is provided in the appendix, @tbl-12-data-description.
 
 ::: {#tbl-02-data-description .table}
@@ -234,32 +273,6 @@ Table @tbl-02-data-description gives a sample of the dataset fields, including n
 sample of overview of all data set fields.
 :::
 
-```{r}
-# DT with Filter in Appendix
-# dataLoads
- wb_read(
-    file      = ET2BB,
-    sheet     = "DATA_LOADS",
-    start_row = 1,
-    start_col = 1,
-    skip_empty_cols = TRUE,
-    skip_empty_rows = TRUE
-  )  %T>%
-  setDT() %>%
-  .[RELEVANT == 'Y', !"RELEVANT"] %>%
-  # .[is.na(KEY), KEY:= ''] %>%
-  kbl(
-    caption             = "Data Loads",
-    col.names           = names(.),
-    align               = "l",
-    booktabs            = TRUE
-  ) %>%
-  kable_styling(
-    full_width          = FALSE,
-    position            = "left",
-    bootstrap_options   = c("striped", "hover", "condensed")
-  )
-```
 
 ```{r}
 #| label: tab-02-data-description
