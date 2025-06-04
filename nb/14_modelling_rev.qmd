@@ -14,7 +14,10 @@ editor: source
 
 <!-- Briefly describe the modelling phase, its objectives, and how it fits into the broader CRISP-DM process. -->
 
-<!-- --- -->
+```{r}
+#| label: setup
+source("../_book_functions.R")
+```
 
 ### Selection of Modelling Techniques {#sec-14-techniques}
 
