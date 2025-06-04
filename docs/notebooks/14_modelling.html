@@ -575,7 +575,7 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-04-modelling" id="toc-sec-04-modelling" class="nav-link active" data-scroll-target="#sec-04-modelling">Modelling</a></li>
+  <li><a href="#sec-14-modelling" id="toc-sec-14-modelling" class="nav-link active" data-scroll-target="#sec-14-modelling">Modelling</a></li>
   <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/14_modelling.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -588,13 +588,13 @@ div.csl-indent {
 
 
 
-<section id="sec-04-modelling" class="level1">
+<section id="sec-14-modelling" class="level1">
 <h1>Modelling</h1>
-<!-- ### Overview {#sec-04-overview} -->
+<!-- ### Overview {#sec-14-overview} -->
 <!-- Briefly describe the modelling phase, its objectives, and how it fits into the broader CRISP-DM process. -->
 <!-- --- -->
-<section id="sec-04-techniques" class="level3">
-<h3 class="anchored" data-anchor-id="sec-04-techniques">Selection of Modelling Techniques</h3>
+<section id="sec-14-techniques" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-techniques">Selection of Modelling Techniques</h3>
 <!-- Outline the statistical and machine learning techniques considered (e.g., ETS, ARIMA, Prophet, Hierarchical Time Series). -->
 <blockquote class="blockquote">
 <p>The selection of modelling techniques must balance interpretability, accuracy, data availability, and computational cost. Given <em>Pythia’s Advice</em> aims to build trust and provide transparent, value-added forecasts with minimal resources, <strong>statistical models</strong> were deliberately chosen for their clarity and theoretical grounding. While this choice limits the ability to model promotions and other exogenous factors — potentially reducing accuracy — it supports stakeholder confidence and facilitates adoption. In a future phase, once trust is established, <strong>machine learning</strong> techniques may be explored to further improve forecast performance.</p>
@@ -602,43 +602,60 @@ div.csl-indent {
 <p>6.1. Literature Review / Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)</p>
 <hr>
 </section>
-<section id="sec-04-data-prep" class="level3">
-<h3 class="anchored" data-anchor-id="sec-04-data-prep">Data Preparation for Modelling</h3>
+<section id="sec-14-data-prep" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-data-prep">Data Preparation for Modelling</h3>
 <p>Describe how the data was structured for modelling, including train/test split, resampling, lag features, and hierarchical structure.</p>
 <hr>
 </section>
-<section id="sec-04-assumptions" class="level3">
-<h3 class="anchored" data-anchor-id="sec-04-assumptions">Modelling Assumptions</h3>
+<section id="sec-14-assumptions" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-assumptions">Modelling Assumptions</h3>
 <p>List any modelling assumptions (e.g., forecast granularity, univariate/multivariate inputs, independence between nodes).</p>
 <hr>
 </section>
-<section id="sec-04-training" class="level3">
-<h3 class="anchored" data-anchor-id="sec-04-training">Model Training and Calibration</h3>
+<section id="sec-14-training" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-training">Model Training and Calibration</h3>
 <p>Explain the training approach: cross-validation strategy, hyperparameter tuning, recursive vs.&nbsp;direct forecasting.</p>
 <hr>
 </section>
-<section id="sec-04-generation" class="level3">
-<h3 class="anchored" data-anchor-id="sec-04-generation">Forecast Generation</h3>
+<section id="sec-14-generation" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-generation">Forecast Generation</h3>
 <p>Describe how forecasts are generated for each technique, including aggregation levels and forecast horizons.</p>
 <hr>
 </section>
-<section id="sec-04-validation" class="level3">
-<h3 class="anchored" data-anchor-id="sec-04-validation">Model Validation and Performance Metrics</h3>
+<section id="sec-14-validation" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-validation">Model Validation and Performance Metrics</h3>
 <p>Present the evaluation methodology, error metrics (e.g., RMSE, MAPE, bias), and visualizations.</p>
 <hr>
 </section>
-<section id="sec-04-explainability" class="level3">
-<h3 class="anchored" data-anchor-id="sec-04-explainability">Model Interpretability and Explainability</h3>
+<section id="sec-14-explainability" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-explainability">Model Interpretability and Explainability</h3>
 <p>(Optional) Include techniques for interpreting the forecasts (e.g., SHAP values, residual analysis).</p>
 <hr>
 </section>
-<section id="sec-04-tools" class="level3">
-<h3 class="anchored" data-anchor-id="sec-04-tools">Tools and Frameworks Used</h3>
-<p>List packages, libraries, or software used for modelling (e.g., <code>fable</code>, <code>forecast</code>, <code>lightgbm</code>, DuckDB).</p>
+<section id="sec-14-tools" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-tools">Tools and Frameworks Used</h3>
+<!-- List packages, libraries, or software used for modelling (e.g., `fable`, `forecast`, `lightgbm`, DuckDB). -->
+<ul>
+<li>padt # custom made library for Pythia’s Advice - Data Tooling</li>
+<li>scales</li>
+<li>collapsibleTree # for collapsible trees</li>
+<li>treemapify # for treemaps</li>
+<li>skimr # for skimr)</li>
+<li>quarto</li>
+<li>duckDB</li>
+<li>gt</li>
+<li>DT # for datatables</li>
+<li>kableExtra</li>
+<li>ggrepel # for ggrepel</li>
+<li>openxlsx2</li>
+<li>magrittr</li>
+<li>ggplot2</li>
+<li>data.table</li>
+</ul>
 <hr>
 </section>
-<section id="sec-04-summary" class="level3">
-<h3 class="anchored" data-anchor-id="sec-04-summary">Summary and Lessons Learned</h3>
+<section id="sec-14-summary" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-summary">Summary and Lessons Learned</h3>
 <p>Summarize findings from the modelling phase and any key takeaways to inform the evaluation phase.</p>
 <hr>
 </section>

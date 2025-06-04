@@ -8,15 +8,15 @@ number-sections: false
 editor: source
 ---
 
-# Modelling {#sec-04-modelling}
+# Modelling {#sec-14-modelling}
 
-<!-- ### Overview {#sec-04-overview} -->
+<!-- ### Overview {#sec-14-overview} -->
 
 <!-- Briefly describe the modelling phase, its objectives, and how it fits into the broader CRISP-DM process. -->
 
 <!-- --- -->
 
-### Selection of Modelling Techniques {#sec-04-techniques}
+### Selection of Modelling Techniques {#sec-14-techniques}
 
 <!-- Outline the statistical and machine learning techniques considered (e.g., ETS, ARIMA, Prophet, Hierarchical Time Series). -->
 
@@ -27,49 +27,65 @@ editor: source
 
 ---
 
-### Data Preparation for Modelling {#sec-04-data-prep}
+### Data Preparation for Modelling {#sec-14-data-prep}
 
 Describe how the data was structured for modelling, including train/test split, resampling, lag features, and hierarchical structure.
 
 ---
 
-### Modelling Assumptions {#sec-04-assumptions}
+### Modelling Assumptions {#sec-14-assumptions}
 
 List any modelling assumptions (e.g., forecast granularity, univariate/multivariate inputs, independence between nodes).
 
 ---
 
-### Model Training and Calibration {#sec-04-training}
+### Model Training and Calibration {#sec-14-training}
 
 Explain the training approach: cross-validation strategy, hyperparameter tuning, recursive vs. direct forecasting.
 
 ---
 
-### Forecast Generation {#sec-04-generation}
+### Forecast Generation {#sec-14-generation}
 
 Describe how forecasts are generated for each technique, including aggregation levels and forecast horizons.
 
 ---
 
-### Model Validation and Performance Metrics {#sec-04-validation}
+### Model Validation and Performance Metrics {#sec-14-validation}
 
 Present the evaluation methodology, error metrics (e.g., RMSE, MAPE, bias), and visualizations.
 
 ---
 
-### Model Interpretability and Explainability {#sec-04-explainability}
+### Model Interpretability and Explainability {#sec-14-explainability}
 
 (Optional) Include techniques for interpreting the forecasts (e.g., SHAP values, residual analysis).
 
 ---
 
-### Tools and Frameworks Used {#sec-04-tools}
+### Tools and Frameworks Used {#sec-14-tools}
 
-List packages, libraries, or software used for modelling (e.g., `fable`, `forecast`, `lightgbm`, DuckDB).
+<!-- List packages, libraries, or software used for modelling (e.g., `fable`, `forecast`, `lightgbm`, DuckDB). -->
+
+- padt             # custom made library for Pythia's Advice - Data Tooling
+- scales
+- collapsibleTree  # for collapsible trees
+- treemapify       # for treemaps
+- skimr             # for skimr)
+- quarto
+- duckDB
+- gt
+- DT               # for datatables 
+- kableExtra
+- ggrepel         # for ggrepel
+- openxlsx2
+- magrittr
+- ggplot2
+- data.table
 
 ---
 
-### Summary and Lessons Learned {#sec-04-summary}
+### Summary and Lessons Learned {#sec-14-summary}
 
 Summarize findings from the modelling phase and any key takeaways to inform the evaluation phase.
 
