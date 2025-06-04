@@ -203,12 +203,12 @@ Data Collection
 <!-- Dimensions (rows × columns) -->
 <!-- Target variable (e.g., sales units, net revenue) -->
 
-### Metadata Overview {#sec-02-data-description-metadata}
+### Metadata {#sec-02-data-description-metadata}
 
 Table @tbl-02-data-description-meta gives a sample of the datasets file name, extension, 
 type of data and date of extraction. A detailed overview of all fields is provided in the appendix, @tbl-12-data-description-meta.
 
-::: {tbl-02-data-description-meta .table}
+::: {#tbl-02-data-description-meta .table}
 ```{r}
 # DT with Filter in Appendix
 # dataLoads

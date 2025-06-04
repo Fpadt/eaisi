@@ -48,7 +48,7 @@ source("../_book_functions.R")
 Table @tbl-02-data-description-meta gives all details of the datasets,
 back sec-02-data-description-metadata 
 
-::: {tbl-12-data-description-meta .table}
+::: {#tbl-12-data-description-meta .table}
 ```{r}
 # DT with Filter in Appendix
 # dataLoads
@@ -171,7 +171,7 @@ including the number of missing values, completeness rate, minimum and maximum l
 for character variables. The profiling helps identify data quality issues and 
 provides insights into the structure of the dataset.
 
-::: {#tbl-02-data-profiling-ca}
+::: {#tbl-02-data-profiling-ca .table}
 ```{r}
 dtACC_sk[
   type == 'character', .(
@@ -194,7 +194,7 @@ dtACC_sk[
 Data Profiling: Character Variables
 :::
 
-::: callout-note
+::: {.callout-note}
 This data set is of high quality and doesn't need any further analysis on 
 the character variables.
 :::
@@ -207,7 +207,7 @@ numeric variables in the dataset, including mean, standard deviation, and
 percentiles. The histogram column provides a visual representation of 
 the distribution of each numeric variable.
 
-::: {#tbl-02-data-profiling-nu}
+::: {#tbl-02-data-profiling-nu  .table}
 ```{r}
 dtACC_sk[
   type == 'numeric', .(
@@ -229,7 +229,7 @@ dtACC_sk[
 Data Profiling: Numeric Variables
 :::
 
-::: callout-important
+::: {.callout-important}
 We see that the Quantity (Q) needs some further analysis due to outliers.
 :::
 
@@ -408,7 +408,7 @@ customer hierarchy by a unique count per level. Roughly:
 - each Key Account contains roughly 
 `r mean(dtCST_tab$ACC_Count/dtCST_tab$KAM_count, na.rm =TRUE) %>% round(0)` accounts,
 
-::: {#tbl-02-data-description-hierarchy-customer}
+::: {#tbl-02-data-description-hierarchy-customer  .table}
 ```{r}
 
 datatable(
