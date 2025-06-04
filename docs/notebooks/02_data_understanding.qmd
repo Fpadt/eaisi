@@ -203,10 +203,7 @@ Data Collection
 <!-- Dimensions (rows × columns) -->
 <!-- Target variable (e.g., sales units, net revenue) -->
 
-A detailed overview of all dataset fields, including names, data types, key flags, conversion routines, and hierarchy levels, is provided in the appendix.
-
-See @tbl-12-data-description for the full variable catalog.
-
+Table @tbl-02-data-description gives a sample of the dataset fields, including names, data types, key flags, conversion routines, and hierarchy levels. A detailed overview of all fields is provided in the appendix, @tbl-12-data-description.
 
 ::: {#tbl-02-data-description .table}
 ```{r}
@@ -234,7 +231,7 @@ See @tbl-12-data-description for the full variable catalog.
     bootstrap_options   = c("striped", "hover", "condensed")
   )
 ```
-sample of overview of all data set fields, see @tbl-12-data-description for the full variable catalog.
+sample of overview of all data set fields.
 :::
 
 ```{r}
