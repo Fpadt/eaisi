@@ -34,6 +34,9 @@ source("../_book_functions.R")
 A representation of the tradeoff between flexibility and inter pretability, using different statistical learning methods. In general, as the flexibil ity of a method increases, its interpretability decreases, see [@james2023]
 :::::
 
+
+- Statistical Models
+
 6.1. Literature Review / Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)
 
 see Literature review (@sec-literature_review)
