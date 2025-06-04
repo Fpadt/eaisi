@@ -116,7 +116,7 @@ library(data.table)
 library(magrittr)
 library(kableExtra)
 
-fread(text = "
+dt <- fread(text = "
 Package        , Purpose                                  , Citation
 padt           , Pythia’s Advice – Data Tooling           , padt2024
 scales         , Scaling and formatting                   , scales2024
@@ -146,7 +146,13 @@ data.table     , Fast data manipulation                   , data.table2024
 dplyr          , Data manipulation                        , dplyr2024
 fabletools     , Forecasting infrastructure               , fabletools2024
 fable          , Forecasting models                       , fable2024
-") %>%
+") 
+
+if (requireNamespace("quarto", quietly = TRUE)) {
+  dt[, Citation := quarto::cite_r(Citation)]
+}
+
+dt %>%
   # Make Citation column Quarto-evaluatable
   .[, Citation := paste0("@", Citation)] %>%
     kbl(

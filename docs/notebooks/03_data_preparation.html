@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-06-02">
+<meta name="dcterms.date" content="2025-06-04">
 <meta name="description" content="Filtering, conversions, and structure alignmentABC classification to define modeling scopeFinal dataset specification and readiness">
 
 <title>Data Preparation – Pythia's Advice</title>
@@ -351,7 +351,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">June 2, 2025</p>
+        <p class="date">June 4, 2025</p>
       </div>
     </div>
     
@@ -577,14 +577,19 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#sec-03-overview" id="toc-sec-03-overview" class="nav-link active" data-scroll-target="#sec-03-overview">Overview</a></li>
+  <li><a href="#sec-03-selection" id="toc-sec-03-selection" class="nav-link" data-scroll-target="#sec-03-selection">Data Selection</a></li>
+  <li><a href="#sec-03-filtering" id="toc-sec-03-filtering" class="nav-link" data-scroll-target="#sec-03-filtering">Data Filtering and Scoping</a></li>
+  <li><a href="#sec-03-integration" id="toc-sec-03-integration" class="nav-link" data-scroll-target="#sec-03-integration">Data Integration</a></li>
+  <li><a href="#sec-03-transformation" id="toc-sec-03-transformation" class="nav-link" data-scroll-target="#sec-03-transformation">Data Transformation</a></li>
+  <li><a href="#sec-03-formatting" id="toc-sec-03-formatting" class="nav-link" data-scroll-target="#sec-03-formatting">Data Formatting and Storage</a></li>
+  <li><a href="#sec-03-flow" id="toc-sec-03-flow" class="nav-link" data-scroll-target="#sec-03-flow">Data Flow Diagram</a></li>
+  <li><a href="#sec-03-summary" id="toc-sec-03-summary" class="nav-link" data-scroll-target="#sec-03-summary">Summary</a></li>
   <li><a href="#data-loading-and-format-conversion" id="toc-data-loading-and-format-conversion" class="nav-link" data-scroll-target="#data-loading-and-format-conversion">Data Loading and Format Conversion</a></li>
   <li><a href="#initial-filtering" id="toc-initial-filtering" class="nav-link" data-scroll-target="#initial-filtering">Initial Filtering</a></li>
   <li><a href="#data-cleaning-and-standardization" id="toc-data-cleaning-and-standardization" class="nav-link" data-scroll-target="#data-cleaning-and-standardization">Data Cleaning and Standardization</a></li>
   <li><a href="#abc-analysis-and-scope-definition" id="toc-abc-analysis-and-scope-definition" class="nav-link" data-scroll-target="#abc-analysis-and-scope-definition">ABC Analysis and Scope Definition</a></li>
   <li><a href="#final-dataset-specification" id="toc-final-dataset-specification" class="nav-link" data-scroll-target="#final-dataset-specification">Final Dataset Specification</a></li>
-  <li><a href="#tools-and-environment" id="toc-tools-and-environment" class="nav-link" data-scroll-target="#tools-and-environment">Tools and Environment</a></li>
-  <li><a href="#summary-of-preparation-steps" id="toc-summary-of-preparation-steps" class="nav-link" data-scroll-target="#summary-of-preparation-steps">Summary of Preparation Steps</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/03_data_preparation.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -597,12 +602,42 @@ div.csl-indent {
 
 
 <!--  Data Preparation – Data preprocessing and transformation steps. -->
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<section id="sec-03-overview" class="level2">
+<h2 class="anchored" data-anchor-id="sec-03-overview">Overview</h2>
+<!-- Briefly introduce what data preparation entails and summarize the steps performed in this project. -->
 <!-- Briefly summarize the goals of data preparation in your project: -->
 <!-- – Cleaning & wrangling steps   -->
 <p>This chapter outlines the steps taken to prepare the data for modeling, including format conversions, exclusions, basic transformations, and the ABC classification used to scope the final dataset. The emphasis is on minimal intervention, to preserve data integrity and maintain transparency in benchmarking.</p>
 <!-- preparing the data for further analysis and modeling. This might involve cleaning and pre-processing the data, as well as transforming it into a format that is suitable for use in a machine-learning model. -->
+</section>
+<section id="sec-03-selection" class="level2">
+<h2 class="anchored" data-anchor-id="sec-03-selection">Data Selection</h2>
+<p>Describe the criteria and rationale for selecting the relevant datasets from the raw data sources.</p>
+</section>
+<section id="sec-03-filtering" class="level2">
+<h2 class="anchored" data-anchor-id="sec-03-filtering">Data Filtering and Scoping</h2>
+<p>Explain any scoping decisions (e.g., product types, MSOs, planning relevance) and the filters applied to narrow the dataset.</p>
+</section>
+<section id="sec-03-integration" class="level2">
+<h2 class="anchored" data-anchor-id="sec-03-integration">Data Integration</h2>
+<p>Detail how multiple datasets (e.g., sales, forecasts, master data) were merged or joined, including key fields used for linkage.</p>
+</section>
+<section id="sec-03-transformation" class="level2">
+<h2 class="anchored" data-anchor-id="sec-03-transformation">Data Transformation</h2>
+<p>Summarize all transformations applied, including renaming, formatting, type conversions, derived variables (e.g., horizon in months), etc.</p>
+</section>
+<section id="sec-03-formatting" class="level2">
+<h2 class="anchored" data-anchor-id="sec-03-formatting">Data Formatting and Storage</h2>
+<p>Describe file conversions (e.g., CSV to Parquet), changes in data layout, and storage in Bronze/Silver layers using the medallion architecture.</p>
+</section>
+<section id="sec-03-flow" class="level2">
+<h2 class="anchored" data-anchor-id="sec-03-flow">Data Flow Diagram</h2>
+<p>Include or reference a diagram showing the end-to-end data flow from extraction to modeling-ready datasets.</p>
+</section>
+<section id="sec-03-summary" class="level2">
+<h2 class="anchored" data-anchor-id="sec-03-summary">Summary</h2>
+<p>Recap the key steps taken in this phase and prepare the reader for the modeling phase that follows.</p>
+<p>Step Description Tool / Method Load raw CSVs From SAP extracts fread() Format conversion CSV → Parquet arrow::write_parquet Filtering Exclude years &lt; 2021, internal SKUs data.table::subset ABC classification Based on sales contribution custom script Final dataset export Modeling-ready dataset write_parquet()</p>
 </section>
 <section id="data-loading-and-format-conversion" class="level2">
 <h2 class="anchored" data-anchor-id="data-loading-and-format-conversion">Data Loading and Format Conversion</h2>
@@ -656,21 +691,10 @@ div.csl-indent {
 <p>Variables included</p>
 <p>Output variable: sales quantity, revenue, etc.</p>
 <p>Optional: include a str() or glimpse-style summary or a sample of the final dataset.</p>
-</section>
-<section id="tools-and-environment" class="level2">
-<h2 class="anchored" data-anchor-id="tools-and-environment">Tools and Environment</h2>
-<p>R packages used (data.table, arrow, duckdb, etc.)</p>
-<p>Local/Cloud setup</p>
-<p>Any reproducibility steps (e.g., code repo, project structure)</p>
-</section>
-<section id="summary-of-preparation-steps" class="level2">
-<h2 class="anchored" data-anchor-id="summary-of-preparation-steps">Summary of Preparation Steps</h2>
-<p>A final recap table is helpful:</p>
-<p>Step Description Tool / Method Load raw CSVs From SAP extracts fread() Format conversion CSV → Parquet arrow::write_parquet Filtering Exclude years &lt; 2021, internal SKUs data.table::subset ABC classification Based on sales contribution custom script Final dataset export Modeling-ready dataset write_parquet()</p>
 <!-- {{< include 03_data_preparation_def.qmd >}} -->
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-magrittr2024" class="csl-entry" role="listitem">
 Bache, S. M. (2024). <em>Magrittr: A forward-pipe operator for r</em>. <a href="https://cran.r-project.org/package=magrittr">https://cran.r-project.org/package=magrittr</a>
 </div>
