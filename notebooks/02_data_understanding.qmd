@@ -120,7 +120,7 @@ Only completed deliveries which are goods-issued are taken into account.
 Table @tbl-02-data-sources-sales-filters shows the applied filters to select
 standard sales orders and free-of-charge orders. 
 
-::: {#tbl-02-data-sources-sales-filters}
+::: {#tbl-02-data-sources-sales-filters .table}
 ```{r}
 
 dtSF <-  fread(text = "
@@ -166,7 +166,7 @@ Table @tbl-02-data-collection summarizes the data collection process, including 
 
 Pre- and post-Demand Review forecasts are stored as separate files, one for each month in which they were created. Each file is named to reflect the extraction date.The key is  essential for linking the data sets during analysis.
 
-::: {#tbl-02-data-collection}
+::: {#tbl-02-data-collection .table}
 ```{r}
 
 # Read the data into a data.table 
@@ -485,7 +485,7 @@ including the number of missing values, completeness rate, minimum and maximum l
 for character variables. The profiling helps identify data quality issues and 
 provides insights into the structure of the dataset.
 
-::: {#tbl-02-data-profiling-ca}
+::: {#tbl-02-data-profiling-ca .table}
 ```{r}
 dtACC_sk[
   type == 'character', .(
@@ -521,7 +521,7 @@ numeric variables in the dataset, including mean, standard deviation, and
 percentiles. The histogram column provides a visual representation of 
 the distribution of each numeric variable.
 
-::: {#tbl-02-data-profiling-nu}
+::: {#tbl-02-data-profiling-nu .table}
 ```{r}
 dtACC_sk[
   type == 'numeric', .(
@@ -652,7 +652,7 @@ Table @tbl-02-data-description-hierarchy-article summarizes the 4-levels of the 
 - each Family contains roughly `r mean(dtMAT_tab$Article_Count/dtMAT_tab$Family_Count) %>% round(0)` articles.
 - each Sub Category contains roughly `r mean(dtMAT_tab$Family_Count/dtMAT_tab$SubCat_Count) %>% round(0)` families.
 
-::: {#tbl-02-data-description-hierarchy-article}  
+::: {#tbl-02-data-description-hierarchy-article .table}  
 ```{r}
 
 datatable(
@@ -722,7 +722,7 @@ customer hierarchy by a unique count per level. Roughly:
 - each Key Account contains roughly 
 `r mean(dtCST_tab$ACC_Count/dtCST_tab$KAM_count, na.rm =TRUE) %>% round(0)` accounts,
 
-::: {#tbl-02-data-description-hierarchy-customer}
+::: {#tbl-02-data-description-hierarchy-customer .table}
 ```{r}
 
 datatable(
