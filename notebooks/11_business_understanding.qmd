@@ -45,7 +45,7 @@ These flows need to be forecasted by teh supplier but are also forecasted by the
 receiving MSO. This leads to a double counting of the sales, which needs to be adjusted for.
 :::
 
-## Stakeholder Use Cases {#sec-11-bu-who}
+## Stakeholder Use Cases {#sec-11-stakeholder}
 <!-- stakeholders. -->
 
 The company's forecasting requirements vary significantly across several key use cases::
