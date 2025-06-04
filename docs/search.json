@@ -416,7 +416,18 @@
     "href": "notebooks/04_modelling.html#sec-04-techniques",
     "title": "Modelling",
     "section": "Selection of Modelling Techniques",
-    "text": "Selection of Modelling Techniques\n\nIn today’s data-rich environment, forecasters have access to a wide array of modelling approaches, ranging from traditional statistical techniques to advanced machine learning and deep learning methods.\nStatistical models remain the foundation of time series forecasting. They are interpretable, grounded in well-established theory, and help explain how inputs influence outputs. However, they often struggle with capturing non-linear patterns and are limited in handling exogenous factors such as promotions or external events.\nMachine learning models excel at detecting complex and non-linear relationships in large and diverse datasets. While they often outperform traditional models in terms of predictive accuracy, they come with trade-offs — particularly reduced interpretability and a greater need for careful feature engineering, especially in time-dependent data.\nDeep learning models, including RNNs, LSTMs, and Transformers, are designed to capture long-term dependencies in time series. They enable automated feature extraction and can model intricate temporal dynamics. However, they are computationally demanding, require substantial data volumes, and offer limited transparency into how forecasts are generated.\n\n\n\nTable 4.1: strengths and weaknesses of different modelling approaches\n\n\n\n\n\n\n\nModel Type\nStrengths\nWeaknesses\n\n\n\n\nStatistical Models\nHigh interpretability; Well-understood theoretical foundation\nLimited ability to model non-linearity; Weak handling of exogenous variables\n\n\nMachine Learning\nHandles complex and non-linear patterns; Good with large diverse datasets\nLower interpretability; Requires manual feature engineering\n\n\nDeep Learning\nCaptures long-term dependencies; Automates feature learning\nComputationally intensive; Requires large datasets; Low transparency\n\n\n\n\n\n\n\n\n\nInterpretability vs. Flexibility Tradeoff\nThe choice of modelling technique often involves a tradeoff between flexibility and interpretability. More flexible models, such as deep learning, can capture complex patterns but at the cost of reduced interpretability. Conversely, simpler statistical models are easier to understand but may not perform as well on complex datasets.\n\n\n\n\n\n\n\nFigure 4.1: Adapted from: [(James et al., 2023), figure 2.7].\nA representation of the tradeoff between flexibility and interpretability, using different statistical learning methods. In general, as the flexibility of a method increases, its interpretability decreases \n\n\n\n\n\n\nTable 4.2: Flexibility and interpretability of different statistical learning methods.\n\n\n\n\n\n\n\n\n\nMethod\nType\nFlexibility\nInterpretability\n\n\n\n\nETS\nStatistical\n1\n5\n\n\nARIMA\nStatistical\n2\n5\n\n\nRegression\nStatistical\n2\n4\n\n\nRandom Forest\nMachine Learning\n3\n4\n\n\nXGBoost/CatBoost\nMachine Learning\n4\n2\n\n\nLSTM\nDeep Learning\n5\n1\n\n\nGPT/LLM\nDeep Learning\n5\n1\n\n\n\n\n\n(a)\n\n\n\n\n\n\n\n\n\nLiterature Review\nSimilar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)\nsee Literature review (Literature)",
+    "text": "Selection of Modelling Techniques\n\nIn today’s data-rich environment, forecasters have access to a wide array of modelling approaches, ranging from traditional statistical techniques to advanced machine learning and deep learning methods.\nStatistical models remain the foundation of time series forecasting. They are interpretable, grounded in well-established theory, and help explain how inputs influence outputs. However, they often struggle with capturing non-linear patterns and are limited in handling exogenous factors such as promotions or external events.\nMachine learning models excel at detecting complex and non-linear relationships in large and diverse datasets. While they often outperform traditional models in terms of predictive accuracy, they come with trade-offs — particularly reduced interpretability and a greater need for careful feature engineering, especially in time-dependent data.\nDeep learning models, including RNNs, LSTMs, and Transformers, are designed to capture long-term dependencies in time series. They enable automated feature extraction and can model intricate temporal dynamics. However, they are computationally demanding, require substantial data volumes, and offer limited transparency into how forecasts are generated.\n\n\n\nTable 4.1: strengths and weaknesses of different modelling approaches\n\n\n\n\n\n\n\nModel Type\nStrengths\nWeaknesses\n\n\n\n\nStatistical Models\nHigh interpretability; Well-understood theoretical foundation\nLimited ability to model non-linearity; Weak handling of exogenous variables\n\n\nMachine Learning\nHandles complex and non-linear patterns; Good with large diverse datasets\nLower interpretability; Requires manual feature engineering\n\n\nDeep Learning\nCaptures long-term dependencies; Automates feature learning\nComputationally intensive; Requires large datasets; Low transparency",
+    "crumbs": [
+      "The ♥ of Pythia",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modelling</span>"
+    ]
+  },
+  {
+    "objectID": "notebooks/04_modelling.html#sec-04-tradeoff",
+    "href": "notebooks/04_modelling.html#sec-04-tradeoff",
+    "title": "Modelling",
+    "section": "Model Interpretability and Explainability",
+    "text": "Model Interpretability and Explainability\nModel selection involves a tradeoff between flexibility and interpretability. Black-box models like deep learning offer high flexibility and capture complex patterns, but are opaque.\nGlass-box models, such as statistical methods, are transparent, showing what is happening inside, and easier to interpret, though less suited to modeling complex effects. In general, as model flexibility increases, interpretability decreases.\n\n\n\n\n\n\n\nFigure 4.1: Adapted from: [(James et al., 2023), figure 2.7].\n\n\n\n\n\n\nTable 4.2: Flexibility and interpretability of different statistical learning methods.\n\n\n\n\n\n\n\n\n\nMethod\nType\nFlexibility\nInterpretability\n\n\n\n\nETS\nStatistical\n1\n5\n\n\nARIMA\nStatistical\n2\n5\n\n\nRegression\nStatistical\n2\n4\n\n\nRandom Forest\nMachine Learning\n3\n4\n\n\nXGBoost/CatBoost\nMachine Learning\n4\n2\n\n\nLSTM\nDeep Learning\n5\n1\n\n\nGPT/LLM\nDeep Learning\n5\n1\n\n\n\n\n\n(a)\n\n\n\n\n\n\n\n\nLiterature Review\nSimilar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)\nsee Literature review (Literature)\n\nTo build trust and ensure transparency, Pythia’s Advice adopts statistical models, prioritizing interpretability over maximum accuracy. While this limits the ability to capture effects like promotions, it supports confident decision-making. Once trust is established, more advanced machine learning techniques may be considered to enhance performance.",
     "crumbs": [
       "The ♥ of Pythia",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modelling</span>"
@@ -427,7 +438,7 @@
     "href": "notebooks/04_modelling.html#sec-04-data-prep",
     "title": "Modelling",
     "section": "Data Preparation for Modelling",
-    "text": "Data Preparation for Modelling\nDescribe how the data was structured for modelling, including train/test split, resampling, lag features, and hierarchical structure.",
+    "text": "Data Preparation for Modelling",
     "crumbs": [
       "The ♥ of Pythia",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modelling</span>"
@@ -438,7 +449,7 @@
     "href": "notebooks/04_modelling.html#sec-04-assumptions",
     "title": "Modelling",
     "section": "Modelling Assumptions",
-    "text": "Modelling Assumptions\nList any modelling assumptions (e.g., forecast granularity, univariate/multivariate inputs, independence between nodes).",
+    "text": "Modelling Assumptions",
     "crumbs": [
       "The ♥ of Pythia",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modelling</span>"
@@ -449,7 +460,7 @@
     "href": "notebooks/04_modelling.html#sec-04-training",
     "title": "Modelling",
     "section": "Model Training and Calibration",
-    "text": "Model Training and Calibration\nExplain the training approach: cross-validation strategy, hyperparameter tuning, recursive vs. direct forecasting.",
+    "text": "Model Training and Calibration",
     "crumbs": [
       "The ♥ of Pythia",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modelling</span>"
@@ -460,7 +471,7 @@
     "href": "notebooks/04_modelling.html#sec-04-generation",
     "title": "Modelling",
     "section": "Forecast Generation",
-    "text": "Forecast Generation\nDescribe how forecasts are generated for each technique, including aggregation levels and forecast horizons.",
+    "text": "Forecast Generation",
     "crumbs": [
       "The ♥ of Pythia",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modelling</span>"
@@ -471,18 +482,7 @@
     "href": "notebooks/04_modelling.html#sec-04-validation",
     "title": "Modelling",
     "section": "Model Validation and Performance Metrics",
-    "text": "Model Validation and Performance Metrics\nPresent the evaluation methodology, error metrics (e.g., RMSE, MAPE, bias), and visualizations.",
-    "crumbs": [
-      "The ♥ of Pythia",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modelling</span>"
-    ]
-  },
-  {
-    "objectID": "notebooks/04_modelling.html#sec-04-explainability",
-    "href": "notebooks/04_modelling.html#sec-04-explainability",
-    "title": "Modelling",
-    "section": "Model Interpretability and Explainability",
-    "text": "Model Interpretability and Explainability\n(Optional) Include techniques for interpreting the forecasts (e.g., SHAP values, residual analysis).",
+    "text": "Model Validation and Performance Metrics",
     "crumbs": [
       "The ♥ of Pythia",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modelling</span>"

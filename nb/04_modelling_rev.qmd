@@ -62,9 +62,14 @@ fread(text = "
 strengths and weaknesses of different modelling approaches
 :::
 
-### Interpretability vs. Flexibility Tradeoff {#sec-04-tradeoff}
+## Model Interpretability and Explainability {#sec-04-tradeoff}
 
-The choice of modelling technique often involves a tradeoff between flexibility and interpretability. More flexible models, such as deep learning, can capture complex patterns but at the cost of reduced interpretability. Conversely, simpler statistical models are easier to understand but may not perform as well on complex datasets.
+Model selection involves a tradeoff between flexibility and interpretability. 
+**Black-box models** like deep learning offer high flexibility and capture complex patterns, but are opaque.  
+
+**Glass-box models**, such as statistical methods, are transparent, showing what is happening inside, and easier to interpret, though less suited to modeling complex effects.
+*In general, as model flexibility increases, interpretability decreases.*
+
 
 ::::: {#fig-04-black_glassbox}
 ::: {.content-visible when-format="html"}
@@ -77,9 +82,6 @@ The choice of modelling technique often involves a tradeoff between flexibility 
 :::
 
 Adapted from:  [[@james2023], figure 2.7].  
-*A representation of the tradeoff between flexibility and interpretability, 
-using different statistical learning methods. In general, as the flexibility 
-of a method increases, its interpretability decreases *
 :::::
 
 ::: {#tbl-04-black_glassbox .table}
@@ -117,41 +119,44 @@ Similar Models - comprehensive overview of the state of the art in machine learn
 
 see Literature review (@sec-literature_review)
 
+
+> To build trust and ensure transparency, *Pythia’s Advice* adopts statistical models, prioritizing interpretability over maximum accuracy. While this limits the ability to capture effects like promotions, it supports confident decision-making. Once trust is established, more advanced machine learning techniques may be considered to enhance performance.
+
 ---
 
 ## Data Preparation for Modelling {#sec-04-data-prep}
 
-Describe how the data was structured for modelling, including train/test split, resampling, lag features, and hierarchical structure.
+<!-- Describe how the data was structured for modelling, including train/test split,  and hierarchical structure. -->
 
 ---
 
 ## Modelling Assumptions {#sec-04-assumptions}
 
-List any modelling assumptions (e.g., forecast granularity, univariate/multivariate inputs, independence between nodes).
+<!-- List any modelling assumptions (e.g., forecast granularity, univariate/multivariate inputs, independence between nodes). -->
 
 ---
 
 ## Model Training and Calibration {#sec-04-training}
 
-Explain the training approach: cross-validation strategy, hyperparameter tuning, recursive vs. direct forecasting.
+<!-- Explain the training approach: cross-validation strategy. -->
 
 ---
 
 ## Forecast Generation {#sec-04-generation}
 
-Describe how forecasts are generated for each technique, including aggregation levels and forecast horizons.
+<!-- Describe how forecasts are generated for each technique, including aggregation levels and forecast horizons. -->
 
 ---
 
 ## Model Validation and Performance Metrics {#sec-04-validation}
 
-Present the evaluation methodology, error metrics (e.g., RMSE, MAPE, bias), and visualizations.
+<!-- Present the evaluation methodology, error metrics (e.g., RMSE, MAPE, bias), and visualizations. -->
 
----
+<!-- --- -->
 
-## Model Interpretability and Explainability {#sec-04-explainability}
+<!-- ## Model Interpretability and Explainability {#sec-04-explainability} -->
 
-(Optional) Include techniques for interpreting the forecasts (e.g., SHAP values, residual analysis).
+<!-- (Optional) Include techniques for interpreting the forecasts (e.g., SHAP values, residual analysis). -->
 
 ---
 

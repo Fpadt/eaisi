@@ -649,9 +649,11 @@ Table&nbsp;4.1: strengths and weaknesses of different modelling approaches
 </div>
 </figure>
 </div>
-<section id="sec-04-tradeoff" class="level3">
-<h3 class="anchored" data-anchor-id="sec-04-tradeoff">Interpretability vs.&nbsp;Flexibility Tradeoff</h3>
-<p>The choice of modelling technique often involves a tradeoff between flexibility and interpretability. More flexible models, such as deep learning, can capture complex patterns but at the cost of reduced interpretability. Conversely, simpler statistical models are easier to understand but may not perform as well on complex datasets.</p>
+</section>
+<section id="sec-04-tradeoff" class="level2">
+<h2 class="anchored" data-anchor-id="sec-04-tradeoff">Model Interpretability and Explainability</h2>
+<p>Model selection involves a tradeoff between flexibility and interpretability. <strong>Black-box models</strong> like deep learning offer high flexibility and capture complex patterns, but are opaque.</p>
+<p><strong>Glass-box models</strong>, such as statistical methods, are transparent, showing what is happening inside, and easier to interpret, though less suited to modeling complex effects. <em>In general, as model flexibility increases, interpretability decreases.</em></p>
 <div id="fig-04-black_glassbox" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-04-black_glassbox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -659,8 +661,7 @@ Table&nbsp;4.1: strengths and weaknesses of different modelling approaches
 </video>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-04-black_glassbox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.1: Adapted from: [<span class="citation" data-cites="james2023">(<a href="18_references.html#ref-james2023" role="doc-biblioref">James et al., 2023</a>)</span>, figure 2.7].<br>
-<em>A representation of the tradeoff between flexibility and interpretability, using different statistical learning methods. In general, as the flexibility of a method increases, its interpretability decreases </em>
+Figure&nbsp;4.1: Adapted from: [<span class="citation" data-cites="james2023">(<a href="18_references.html#ref-james2023" role="doc-biblioref">James et al., 2023</a>)</span>, figure 2.7].
 </figcaption>
 </figure>
 </div>
@@ -738,42 +739,42 @@ Table&nbsp;4.2: Flexibility and interpretability of different statistical learni
 </div>
 </figure>
 </div>
-</section>
 <section id="literature-review" class="level3">
 <h3 class="anchored" data-anchor-id="literature-review">Literature Review</h3>
 <p>Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)</p>
 <p>see Literature review (<a href="08_appendix.html#sec-literature_review" class="quarto-xref"><span>Literature</span></a>)</p>
+<blockquote class="blockquote">
+<p>To build trust and ensure transparency, <em>Pythia’s Advice</em> adopts statistical models, prioritizing interpretability over maximum accuracy. While this limits the ability to capture effects like promotions, it supports confident decision-making. Once trust is established, more advanced machine learning techniques may be considered to enhance performance.</p>
+</blockquote>
 <hr>
 </section>
 </section>
 <section id="sec-04-data-prep" class="level2">
 <h2 class="anchored" data-anchor-id="sec-04-data-prep">Data Preparation for Modelling</h2>
-<p>Describe how the data was structured for modelling, including train/test split, resampling, lag features, and hierarchical structure.</p>
+<!-- Describe how the data was structured for modelling, including train/test split,  and hierarchical structure. -->
 <hr>
 </section>
 <section id="sec-04-assumptions" class="level2">
 <h2 class="anchored" data-anchor-id="sec-04-assumptions">Modelling Assumptions</h2>
-<p>List any modelling assumptions (e.g., forecast granularity, univariate/multivariate inputs, independence between nodes).</p>
+<!-- List any modelling assumptions (e.g., forecast granularity, univariate/multivariate inputs, independence between nodes). -->
 <hr>
 </section>
 <section id="sec-04-training" class="level2">
 <h2 class="anchored" data-anchor-id="sec-04-training">Model Training and Calibration</h2>
-<p>Explain the training approach: cross-validation strategy, hyperparameter tuning, recursive vs.&nbsp;direct forecasting.</p>
+<!-- Explain the training approach: cross-validation strategy. -->
 <hr>
 </section>
 <section id="sec-04-generation" class="level2">
 <h2 class="anchored" data-anchor-id="sec-04-generation">Forecast Generation</h2>
-<p>Describe how forecasts are generated for each technique, including aggregation levels and forecast horizons.</p>
+<!-- Describe how forecasts are generated for each technique, including aggregation levels and forecast horizons. -->
 <hr>
 </section>
 <section id="sec-04-validation" class="level2">
 <h2 class="anchored" data-anchor-id="sec-04-validation">Model Validation and Performance Metrics</h2>
-<p>Present the evaluation methodology, error metrics (e.g., RMSE, MAPE, bias), and visualizations.</p>
-<hr>
-</section>
-<section id="sec-04-explainability" class="level2">
-<h2 class="anchored" data-anchor-id="sec-04-explainability">Model Interpretability and Explainability</h2>
-<p>(Optional) Include techniques for interpreting the forecasts (e.g., SHAP values, residual analysis).</p>
+<!-- Present the evaluation methodology, error metrics (e.g., RMSE, MAPE, bias), and visualizations. -->
+<!-- --- -->
+<!-- ## Model Interpretability and Explainability {#sec-04-explainability} -->
+<!-- (Optional) Include techniques for interpreting the forecasts (e.g., SHAP values, residual analysis). -->
 <hr>
 </section>
 <section id="sec-04-tools" class="level2">
