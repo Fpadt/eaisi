@@ -34,6 +34,32 @@ source("../_book_functions.R")
 A representation of the tradeoff between flexibility and inter pretability, using different statistical learning methods. In general, as the flexibil ity of a method increases, its interpretability decreases, see [@james2023]
 :::::
 
+```{r}
+
+#| label: fig-04-black_glassbox
+
+dtGB <- 
+  fread(Text="
+        Method            , Type            , Flexibility, Interpretability
+        ETS               , Statistical     , 1          , 5
+        ARIMA             , Statistical     , 2          , 5
+        Random Forest     , Machine Learning, 3          , 4
+        XGBoost/CatBoost  , Machine Learning, 3          , 3
+        LSTM              , Deep Learning   , 5          , 1
+        GPT/LLM           , Deep Learning   , 5          , 1
+        ") %>%
+  kbl(
+    col.names           = names(.),
+    align               = "l",
+    booktabs            = TRUE
+  ) %>% 
+  kable_styling(
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
+  )
+
+```
 
 - Statistical Models
 
