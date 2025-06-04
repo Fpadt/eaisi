@@ -84,18 +84,26 @@ Present the evaluation methodology, error metrics (e.g., RMSE, MAPE, bias), and 
      bootstrap_options   = c("striped", "hover", "condensed")
    )
  
-data.table(RStudio.Version = rstudioapi::versionInfo()) %>%
+info <- sessionInfo()
+
+data.table(
+  Component = c("R Version", "Platform", "Running OS"),
+  Value = c(
+    info$R.version$version.string,
+    info$R.version$platform,
+    info$running
+  )
+) %>%
   kbl(
-    col.names = names(.),
-    align     = "l",
-    booktabs  = TRUE,
-    escape = FALSE
+    booktabs = TRUE,
+    escape = FALSE,
+    align = "ll"
   ) %>%
   kable_styling(
-    full_width          = FALSE          ,
-    latex_options = c("hold_position"),
-    position            = "left",
-    bootstrap_options   = c("striped", "hover", "condensed")
+    full_width = FALSE,
+    position = "left",
+    bootstrap_options = c("striped", "hover", "condensed"),
+    latex_options = c("hold_position")
   )
 ```
 

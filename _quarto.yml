@@ -218,6 +218,7 @@ nocite: |
 
 format:
   html:
+    citation-location: document  
     includes:
       in-header: "_book_functions.R"
     title-block-banner: true
@@ -263,6 +264,7 @@ format:
     # papersize: A4    
 
   # pdf: #arxiv-pdf:
+  #   citation-location: document
   #   pdf-engine: pdflatex   # or xelatex, lualatex
   #   includes:
   #     in-header: "_book_functions.R"

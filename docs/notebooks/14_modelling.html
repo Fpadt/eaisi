@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-05-30">
+<meta name="dcterms.date" content="2025-06-04">
+<meta name="description" content="model selection">
 
-<title>Setting the Stage – Pythia's Advice</title>
+<title>Modelling – Pythia's Advice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -44,30 +45,30 @@ div.csl-indent {
 }</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./notebooks/00_introduction.html" rel="next">
-<link href="./prophecy_to_prediction.html" rel="prev">
-<link href="./images/favicon.ico" rel="icon">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-1100dc645a9806080dc50effd6ccb0f7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-5977e214c05d9207a6b9ecdb11453a52.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-1100dc645a9806080dc50effd6ccb0f7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-94fa406e38a5c78d3de9dca02b1572d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-ba558c2fbb090de1150150c181bbc6a4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-94fa406e38a5c78d3de9dca02b1572d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../notebooks/15_evaluation.html" rel="next">
+<link href="../notebooks/13_data_preparation.html" rel="prev">
+<link href="../images/favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-1100dc645a9806080dc50effd6ccb0f7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-5977e214c05d9207a6b9ecdb11453a52.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-1100dc645a9806080dc50effd6ccb0f7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-94fa406e38a5c78d3de9dca02b1572d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-ba558c2fbb090de1150150c181bbc6a4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-94fa406e38a5c78d3de9dca02b1572d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -111,6 +112,10 @@ div.csl-indent {
         color: #FFFFFF;
       }
 </style>
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
 
 </head>
@@ -284,7 +289,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setting_the_stage.html">Setting the Stage</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/17_crisp-dm.html">Appendix</a></li><li class="breadcrumb-item"><a href="../notebooks/14_modelling.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Modelling</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -296,10 +301,17 @@ div.csl-indent {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title"><span id="sec-setting-the-stage" class="quarto-section-identifier">Setting the Stage</span></h1>
-            <p class="subtitle lead">Don’t compare your forecasting accuracy to industry benchmarks.</p>
-                                <div class="quarto-categories">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/17_crisp-dm.html">Appendix</a></li><li class="breadcrumb-item"><a href="../notebooks/14_modelling.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Modelling</span></a></li></ol></nav>
+      <h1 class="title"><span id="sec-14-modelling" class="quarto-section-identifier"><span class="chapter-title">Modelling</span></span></h1>
+            <p class="subtitle lead">Modelling subtitle</p>
+                  <div>
+        <div class="description">
+          <ul>
+          <li>model selection</li>
+          </ul>
+        </div>
+      </div>
+                          <div class="quarto-categories">
                 <div class="quarto-category">Time Series Forecasting</div>
                 <div class="quarto-category">Data Science</div>
                 <div class="quarto-category">Hierarchical Forecasting (HTS)</div>
@@ -341,7 +353,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 30, 2025</p>
+        <p class="date">June 4, 2025</p>
       </div>
     </div>
     
@@ -354,10 +366,10 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Pythia’s Advice</a> 
+      <a href="../">Pythia’s Advice</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/Fpadt/eaisi/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <a href="./Pythia-s-Advice.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="../Pythia-s-Advice.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
     <div class="dropdown">
       <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -399,19 +411,19 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prophecy_to_prediction.html" class="sidebar-item-text sidebar-link">
+  <a href="../prophecy_to_prediction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Prophecy to Prediction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./setting_the_stage.html" class="sidebar-item-text sidebar-link active">
+  <a href="../setting_the_stage.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Setting the Stage</span></a>
   </div>
 </li>
@@ -426,49 +438,49 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/00_introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/00_introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/01_business_understanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/01_business_understanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Business Understanding</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/02_data_understanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/02_data_understanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Understanding</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/03_data_preparation.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/03_data_preparation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Preparation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/04_modelling.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/04_modelling.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modelling</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/05_evaluation.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/05_evaluation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Evaluation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/06_deployment.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/06_deployment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Deployment</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/07_conclusions_recommendations.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/07_conclusions_recommendations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Conclusions</span></a>
   </div>
 </li>
@@ -476,82 +488,82 @@ div.csl-indent {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./insight_to_impact.html" class="sidebar-item-text sidebar-link">
+  <a href="../insight_to_impact.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Insight to Impact</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendix</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/17_crisp-dm.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/17_crisp-dm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">CRISP-DM</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/11_business_understanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/11_business_understanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Business Understanding</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/12_data_understanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/12_data_understanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Understanding</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/13_data_preparation.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/13_data_preparation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Preparation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/14_modelling.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/14_modelling.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Modelling</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/15_evaluation.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/15_evaluation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Evaluation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/16_deployment.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/16_deployment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Deployment</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/08_appendix.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/08_appendix.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Other</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/16_flow_down.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/16_flow_down.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Flow Down</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/18_references.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/18_references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/19_resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/19_resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
   </div>
 </li>
@@ -562,8 +574,24 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-14-techniques" id="toc-sec-14-techniques" class="nav-link active" data-scroll-target="#sec-14-techniques">Selection of Modelling Techniques</a></li>
+  <li><a href="#sec-14-data-prep" id="toc-sec-14-data-prep" class="nav-link" data-scroll-target="#sec-14-data-prep">Data Preparation for Modelling</a></li>
+  <li><a href="#sec-14-assumptions" id="toc-sec-14-assumptions" class="nav-link" data-scroll-target="#sec-14-assumptions">Modelling Assumptions</a></li>
+  <li><a href="#sec-14-training" id="toc-sec-14-training" class="nav-link" data-scroll-target="#sec-14-training">Model Training and Calibration</a></li>
+  <li><a href="#sec-14-generation" id="toc-sec-14-generation" class="nav-link" data-scroll-target="#sec-14-generation">Forecast Generation</a></li>
+  <li><a href="#sec-14-validation" id="toc-sec-14-validation" class="nav-link" data-scroll-target="#sec-14-validation">Model Validation and Performance Metrics</a></li>
+  <li><a href="#sec-14-explainability" id="toc-sec-14-explainability" class="nav-link" data-scroll-target="#sec-14-explainability">Model Interpretability and Explainability</a></li>
+  <li><a href="#sec-14-tools" id="toc-sec-14-tools" class="nav-link" data-scroll-target="#sec-14-tools">Tools and Frameworks Used</a></li>
+  <li><a href="#sec-14-summary" id="toc-sec-14-summary" class="nav-link" data-scroll-target="#sec-14-summary">Summary and Lessons Learned</a></li>
+  <li><a href="#model-selection" id="toc-model-selection" class="nav-link" data-scroll-target="#model-selection">Model Selection</a></li>
+  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/14_modelling.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -573,33 +601,382 @@ div.csl-indent {
 
 
 
-<!-- – Inspiration video (introducing aims, scope & “big picture” questions) -->
-<!-- – Research objectives, key terminology -->
-<section id="dont-compare-your-forecasting-accuracy-to-industry-benchmarks." class="level3">
-<h3 class="anchored" data-anchor-id="dont-compare-your-forecasting-accuracy-to-industry-benchmarks.">Don’t compare your forecasting accuracy to industry benchmarks.</h3>
-<p>The following video by Nicolas Vandeput served as the inspiration for <em>Pythia’s Advice</em>. It highlights the importance of establishing a statistical benchmark for forecasting accuracy — one that is both transparent and independent of commercial software or human bias.</p>
-<p>Building on this idea, <em>Pythia’s Advice</em> aims to generate forecasts using free, open-source, state-of-the-art statistical methods from the <a href="https://cran.r-project.org/web/packages/fable/index.html"><code>fable</code></a> package developed by Professor <a href="https://robjhyndman.com/">Rob J Hyndman</a> <em>et al</em>. of the Monash University in Melbourne.</p>
-<p>These forecasts are designed to require minimal effort, cost, and human intervention, providing a robust and objective reference point. By comparing these statistical forecasts to those produced by the business, we can assess the <strong>Forecast Value Added (FVA)</strong> — a measure of how much value, if any, human-driven forecasting processes bring beyond what data alone can achieve.</p>
-<p><br></p>
-<figure class="figure">
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/0f42bR_JF78" title="Don't compare your forecasting accuracy to industry benchmarks." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="sec-14-techniques" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-techniques">Selection of Modelling Techniques</h3>
+<!-- Outline the statistical and machine learning techniques considered (e.g., ETS, ARIMA, Prophet, Hierarchical Time Series). -->
 <blockquote class="blockquote">
-<p>Many supply chain leaders are contacting me and ask:<br>
-<code>how is my forecast accuracy doing compared to my peers?</code></p>
-<p>I don’t think it’s the right question. The right question should be:<br>
-<code>how well is my demand planning team doing compared to a statistical Benchmark?</code></p>
-<p>I think comparing yourself to your players doesn’t make so much sense because every single company has a different set of products, different set of markets, and maybe a different strategy.<br>
-So it means that, maybe simply because you have fewer products than your competitors, it means you’re going to have a better or worse forecasting accuracy, that’s normal. On top of that, it’s extremely expensive and difficult to get the forecasting accuracy of different competitors.</p>
-<p>If you want to assess if your team is doing a great or a poor job there is a very easy and simple way to do that:<br>
-<code>you just have to compare the accuracy achieved by your team to a statistical Benchmark</code>,<br>
-such as a moving average. It’s very easy to do and you can do it for free.<br>
-So I would not hesitate I would simply stick to that.</p>
-<p>— Nicolas Vandeput —</p>
+<p>The selection of modelling techniques must balance interpretability, accuracy, data availability, and computational cost. Given <em>Pythia’s Advice</em> aims to build trust and provide transparent, value-added forecasts with minimal resources, <strong>statistical models</strong> were deliberately chosen for their clarity and theoretical grounding. While this choice limits the ability to model promotions and other exogenous factors — potentially reducing accuracy — it supports stakeholder confidence and facilitates adoption. In a future phase, once trust is established, <strong>machine learning</strong> techniques may be explored to further improve forecast performance.</p>
 </blockquote>
-<figcaption>
-video and insight by <cite>Nicolas Vandeput</cite> (<a href="https://www.supchains.com">supchains.com</a>)
+<p>6.1. Literature Review / Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)</p>
+<hr>
+</section>
+<section id="sec-14-data-prep" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-data-prep">Data Preparation for Modelling</h3>
+<p>Describe how the data was structured for modelling, including train/test split, resampling, lag features, and hierarchical structure.</p>
+<hr>
+</section>
+<section id="sec-14-assumptions" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-assumptions">Modelling Assumptions</h3>
+<p>List any modelling assumptions (e.g., forecast granularity, univariate/multivariate inputs, independence between nodes).</p>
+<hr>
+</section>
+<section id="sec-14-training" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-training">Model Training and Calibration</h3>
+<p>Explain the training approach: cross-validation strategy, hyperparameter tuning, recursive vs.&nbsp;direct forecasting.</p>
+<hr>
+</section>
+<section id="sec-14-generation" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-generation">Forecast Generation</h3>
+<p>Describe how forecasts are generated for each technique, including aggregation levels and forecast horizons.</p>
+<hr>
+</section>
+<section id="sec-14-validation" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-validation">Model Validation and Performance Metrics</h3>
+<p>Present the evaluation methodology, error metrics (e.g., RMSE, MAPE, bias), and visualizations.</p>
+<hr>
+</section>
+<section id="sec-14-explainability" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-explainability">Model Interpretability and Explainability</h3>
+<p>(Optional) Include techniques for interpreting the forecasts (e.g., SHAP values, residual analysis).</p>
+<hr>
+</section>
+<section id="sec-14-tools" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-tools">Tools and Frameworks Used</h3>
+<!-- List packages, libraries, or software used for modelling (e.g., `fable`, `forecast`, `lightgbm`, DuckDB). -->
+<section id="r-r-studio-tooling" class="level4">
+<h4 class="anchored" data-anchor-id="r-r-studio-tooling">R &amp; R-Studio tooling</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">R.Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">x86_64-w64-mingw32</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">x86_64</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">mingw32</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ucrt</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">x86_64, mingw32</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">04</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">88135</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">R</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">R version 4.5.0 (2025-04-11 ucrt)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">How About a Twenty-Six</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Component</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">R Version</td>
+<td style="text-align: left;">R version 4.5.0 (2025-04-11 ucrt)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Platform</td>
+<td style="text-align: left;">x86_64-w64-mingw32</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Running OS</td>
+<td style="text-align: left;">Windows 10 x64 (build 19045)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="r-packages" class="level4">
+<h4 class="anchored" data-anchor-id="r-packages">R-Packages</h4>
+<div id="tbl-14-packages" class="table quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-14-packages-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;11.1
 </figcaption>
+<div aria-describedby="tbl-14-packages-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Package</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Purpose</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Citation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">padt</td>
+<td style="text-align: left;">Pythia’s Advice – Data Tooling</td>
+<td style="text-align: left;">@padt2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">scales</td>
+<td style="text-align: left;">Scaling and formatting</td>
+<td style="text-align: left;">@scales2024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">collapsibleTree</td>
+<td style="text-align: left;">Collapsible trees</td>
+<td style="text-align: left;">@collapsibleTree2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">crayon</td>
+<td style="text-align: left;">Colored text output</td>
+<td style="text-align: left;">@crayon2024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">treemapify</td>
+<td style="text-align: left;">Treemaps</td>
+<td style="text-align: left;">@treemapify2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">skimr</td>
+<td style="text-align: left;">Data summarization</td>
+<td style="text-align: left;">@skimr2024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">quarto</td>
+<td style="text-align: left;">Rendering the report</td>
+<td style="text-align: left;">@quarto2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">duckDB</td>
+<td style="text-align: left;">DuckDB database and light transformations</td>
+<td style="text-align: left;">@duckdb2024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">gt</td>
+<td style="text-align: left;">Creating tables</td>
+<td style="text-align: left;">@gt2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DT</td>
+<td style="text-align: left;">Interactive tables</td>
+<td style="text-align: left;">@DT2024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">knitr</td>
+<td style="text-align: left;">Dynamic report generation</td>
+<td style="text-align: left;">@knitr2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">kableExtra</td>
+<td style="text-align: left;">Enhanced tables</td>
+<td style="text-align: left;">@kableExtra2024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ggrepel</td>
+<td style="text-align: left;">Non-overlapping labels in ggplot2</td>
+<td style="text-align: left;">@ggrepel2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">openxlsx2</td>
+<td style="text-align: left;">Read/write Excel</td>
+<td style="text-align: left;">@openxlsx2_2024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">fpp3</td>
+<td style="text-align: left;">Forecasting and time series</td>
+<td style="text-align: left;">@fpp3_2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">feasts</td>
+<td style="text-align: left;">Time series feature extraction</td>
+<td style="text-align: left;">@feasts_2024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">tsibble</td>
+<td style="text-align: left;">Tidy temporal data frames</td>
+<td style="text-align: left;">@tsibble2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">magrittr</td>
+<td style="text-align: left;">Pipe operator</td>
+<td style="text-align: left;">@magrittr2024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">glue</td>
+<td style="text-align: left;">String interpolation</td>
+<td style="text-align: left;">@glue2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">tidyr</td>
+<td style="text-align: left;">Data tidying</td>
+<td style="text-align: left;">@tidyr2024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">tidyverse</td>
+<td style="text-align: left;">Unified data science tools</td>
+<td style="text-align: left;">@tidyverse2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">Functional programming</td>
+<td style="text-align: left;">@purrr2024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">Date-time manipulation</td>
+<td style="text-align: left;">@lubridate2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">Data visualization</td>
+<td style="text-align: left;">@ggplot2_2024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">data.table</td>
+<td style="text-align: left;">Fast data manipulation</td>
+<td style="text-align: left;">@data.table2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dplyr</td>
+<td style="text-align: left;">Data manipulation</td>
+<td style="text-align: left;">@dplyr2024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">fabletools</td>
+<td style="text-align: left;">Forecasting infrastructure</td>
+<td style="text-align: left;">@fabletools2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fable</td>
+<td style="text-align: left;">Forecasting models</td>
+<td style="text-align: left;">@fable2024</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 </figure>
+</div>
+<hr>
+</section>
+</section>
+<section id="sec-14-summary" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-summary">Summary and Lessons Learned</h3>
+<p>Summarize findings from the modelling phase and any key takeaways to inform the evaluation phase.</p>
+<hr>
+</section>
+<section id="model-selection" class="level3">
+<h3 class="anchored" data-anchor-id="model-selection">Model Selection</h3>
+<p>different models have different strengths and weaknesses and are suitable for different types of data and problems. achieve the best possible performance and maximize the impact</p>
+<p>avoid overfitting a trade-off between the simplicity and flexibility (robustness)</p>
+<p>model performance - only article hierarchy - article and customer hierarchy</p>
+<p>Cross-validation is a method for evaluating the performance of a model on a validation dataset. This involves dividing the data into k folds, training the model on k-1 folds, and evaluating the performance on the remaining fold. This process is repeated k times, with each fold serving as the validation set once, and the results are averaged to obtain a final performance score. This method provides a more reliable estimate of the model’s performance, as it uses all of the data for training and evaluation.</p>
+<p>algorithm - handle teh specific characteristics of teh data - balance performance and interpretability - memory and processing power</p>
+<ul>
+<li>validity -&gt; fa &amp; prediction intervals</li>
+<li>robustness -&gt;</li>
+<li>transparency -&gt;</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 33%">
+<col style="width: 19%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Capability</th>
+<th>Standard ARIMA</th>
+<th>SARIMA</th>
+<th>ARIMAX</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Handles Trend</td>
+<td>✅ (via differencing)</td>
+<td>✅ (with seasonal differencing)</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td>Damped Trend</td>
+<td>❌ (not explicit)</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr class="odd">
+<td>Seasonality</td>
+<td>❌ (needs SARIMA)</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td>Promotions / External Inputs</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr class="odd">
+<td>Best For</td>
+<td>Stationary or differenced series with autocorrelation</td>
+<td>Seasonal time series</td>
+<td>Time series influenced by external regressors</td>
+</tr>
+</tbody>
+</table>
+<!-- #### Modeling Technique -->
+<!-- #### Modeling Assumptions -->
+<!-- ### Generate Test Design -->
+<!-- #### Test Design -->
+<!-- #### Build Model -->
+<!-- ### Parameter Settings -->
+<!-- #### Models -->
+<!-- #### Model Description -->
+<!-- ### Assess Model -->
+<!-- #### Model Assessment -->
+<!-- #### Revised Parameter Settings -->
+</section>
+<section id="appendix" class="level1 unnumbered">
+<h1 class="unnumbered">Appendix</h1>
+<!-- {{< include 04_modelling_def.qmd >}} -->
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
@@ -1207,13 +1584,13 @@ Zhu, H. (2024). <em>kableExtra: Construct complex table with ’kable’ and pip
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./prophecy_to_prediction.html" class="pagination-link" aria-label="Prophecy to Prediction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Prophecy to Prediction</span>
+      <a href="../notebooks/13_data_preparation.html" class="pagination-link" aria-label="Data Preparation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Preparation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./notebooks/00_introduction.html" class="pagination-link" aria-label="Introduction">
-        <span class="nav-page-text">Introduction</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notebooks/15_evaluation.html" class="pagination-link" aria-label="Evaluation">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Evaluation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1225,7 +1602,7 @@ Zhu, H. (2024). <em>kableExtra: Construct complex table with ’kable’ and pip
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/setting_the_stage.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/14_modelling.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p><a href="https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai">EAISI</a></p>
 </div>
