@@ -761,7 +761,8 @@ in the upper left corner, Clipper hot again, demonstrating the expected seasonal
 <!-- Duplicated records -->
 <!-- Outliers: any anomalous spikes or drops? -->
 
-## Data Quality Assessment
+### Data Quality Assessment
+<!-- Assessment: What issues were found (missing values, outliers, etc.) -->
 
 <!-- Data Quality Assessment and Remediation -->
 <!-- Summarize actions taken: -->
@@ -770,6 +771,10 @@ in the upper left corner, Clipper hot again, demonstrating the expected seasonal
 
 all 0 
 duplicates, zero quantity, unexpected NAs
+
+### Actions taken: 
+<!-- Any exclusions or imputations -->
+<!-- Summarize actions taken: -->
 
 ## Summary of Data Understanding {#sec-02-summary}
 
