@@ -34,22 +34,6 @@ The literature review focuses on the intersection of three fields, according to 
 -   Introduction to SHAP with Python, [@osullivan_introduction_2023]
 -   Ensemble methods for machine learning, [@kunapuli_ensemble_2023]
 
-## Programming
-
-### Python
-
--   Python Crash Course, [@matthes2019]
--   Lightning fast forecasting with statistical and econometric models, [@nixtla/s2024]
--   Scalable Machine Learning for Time Series Forecasting, [@nixtla/m2024]
--   Probabilistic hierarchical forecasting with statistical and econometric methods, [@nixtla/h]
--   TS Features, calculates various features from time series data, [@nixtla/t2024]
-
-### R
-
--   R for Data Science, [@wickham]
--   R forecasting package, [@hyndmanaut2024]
--   R feasts package, [@ohara-wild2024a]
--   R fable package, [@ohara-wild2024]
 
 ::: landscape
 ## Forecast Use Cases {#sec-forecast-use-cases}
