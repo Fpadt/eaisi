@@ -1,8 +1,7 @@
 ---
 subtitle:     Trust is all you need 
 description: |
-  - EAISI: Pythia's Advice — A fictional case study 
-  - A journey from prophecy to prediction
+  - Pythia's Advice — A fictional case study, A journey from prophecy to prediction as final assingment for EAISI Academy.
 number-sections: false
 toc: true         # show page‐TOC (right‐sidebar) on _every_ page
 toc-depth: 3      # include ## and ### in the TOC
