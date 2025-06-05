@@ -1,9 +1,9 @@
 ---
 subtitle:     Trust is all you need 
 description: |
-  - Pythia's Advice — A fictional case study
-  - A journey from prophecy to prediction 
-  - final assignment  —  EAISI Academy
+  - Pythia's Advice — final project for EAISI Academy, a fictional case study  at *BioBalance*, a biodiversity-focused food company
+  - A CRISP-DM structured journey from intuitive prophecy to data-driven prediction 
+  — Unlocking forecast value by building TRUST in statistical forecasting  
 number-sections: false
 toc: true         # show page‐TOC (right‐sidebar) on _every_ page
 toc-depth: 3      # include ## and ### in the TOC
