@@ -1,4 +1,15 @@
-# Package: `padt` {#sec-99-padt}
+---
+subtitle: Pythia's Advice - Datascience Tooling
+description: |
+  - Data extraction from SAP/CSV to Parquet
+  - Pre-built data.table summaries
+  - DuckDB and Arrow integration 
+number-sections: false
+toc: true         # show page‐TOC (right‐sidebar) on _every_ page
+toc-depth: 3      # include ## and ### in the TOC
+---
+
+# Package: `padt` {#sec-package-padt}
 
 ::: {.callout-tip title="Online Package Documentation"}
 The `padt` package provides data science tooling for the *Pythia’s Advice* project, including:

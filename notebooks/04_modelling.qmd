@@ -201,6 +201,7 @@ Cross-validation is a method for evaluating the performance of a model on a vali
 ---
 
 ## Tools and Frameworks Used {#sec-04-tools}
+
 This project is implemented in R using an open-source, local-first setup. 
 Modeling and analysis are developed in RStudio and documented using Quarto.
 
@@ -208,7 +209,10 @@ Key components:
 - **Repositories** (hosted on GitHub):
   - [EAISI-PAPER](https://github.com/Fpadt/eaisi): Project documentation and analysis
   - [EAISI-PYTHIA](https://github.com/Fpadt/EAISI-Pythia): Core modeling workflows
-  - [EAISI-PADT](https://github.com/Fpadt/EAISI-Padt): **P**ythia's **A**dvice - **D**ata **T**ooling
+  - [EAISI-PADT](https://github.com/Fpadt/EAISI-Padt): **P**ythia's **A**dvice - **D**ata **T**ooling,
+    see Appendix @sec-package-padt, for details and documentation.
+
+
 
 - **R & Quarto Tooling**:  
   A full list of packages and technical configuration is provided in the Appendix (@sec-14-tools).
