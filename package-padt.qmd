@@ -20,7 +20,8 @@ The `padt` package provides data science tooling for the *Pythia’s Advice* pro
 
 Explore the full documentation and examples online:
 
-[Open **PADT** documentation site](https://Fpadt.github.io/EAISI-Padt){.btn .btn-primary}
+[Open **EAISI-Padt** Package Documentation in a *new page*](https://fpadt.github.io/EAISI-Padt){.btn .btn-primary target="_blank" rel="noopener noreferrer"}
+
 :::
 
 ## Preview {#sec-package-padt-preview}
