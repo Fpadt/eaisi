@@ -23,6 +23,7 @@ Explore the full documentation and examples online:
 [Open **PADT** documentation site](https://Fpadt.github.io/EAISI-Padt){.btn .btn-primary}
 :::
 
+## Preview {#sec-package-padt-preview}
 ::: {.content-visible when-format="html"}
 
 <iframe src="https://fpadt.github.io/EAISI-Padt/index.html" width="100%" height="800px"></iframe>
