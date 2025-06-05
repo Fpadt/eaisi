@@ -1,7 +1,7 @@
 ---
 subtitle:     Trust is all you need 
 description: |
-  - Final project for EAISI Academy — a fictional case study at *BioBalance*, a biodiversity-focused food company  
+  - EAISI Academy — a fictional case study at *BioBalance*, a biodiversity-focused food company  
   - A CRISP-DM–structured journey from intuitive prophecy to data-driven prediction  
   - Unlocking forecast value by building **TRUST** in statistical forecasting   
 number-sections: false
