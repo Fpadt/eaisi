@@ -1,9 +1,8 @@
 ---
 subtitle:     Trust is all you need 
 description: |
-  - Pythia's Advice: A fictional case study
+  - EAISI: Pythia's Advice — A fictional case study 
   - A journey from prophecy to prediction
-  - EAISI Academy final assignment
 number-sections: false
 toc: true         # show page‐TOC (right‐sidebar) on _every_ page
 toc-depth: 3      # include ## and ### in the TOC
@@ -27,20 +26,13 @@ engine: knitr
 source("_book_functions.R")
 ```
 
-
 ## Disclaimer {.appendix .unnumbered}
 
-This research presents a fictional case study of *BioBalance*, 
-a company operating in the food-for-biodiversity sector. 
-The associated brands, locations, and customers are entirely fictional and 
-generated using AI. 
-Although the time series analysis is based on real business data, every effort 
-has been made to anonymize and protect sensitive information. 
-Any resemblance to actual entities — past or present — is purely coincidental.
+This research presents a fictional case study of *BioBalance*, a company operating in the food-for-biodiversity sector. The associated brands, locations, and customers are entirely fictional and generated using AI. Although the time series analysis is based on real business data, every effort has been made to anonymize and protect sensitive information. Any resemblance to actual entities — past or present — is purely coincidental.
 
 ## Acknowledgments {.appendix .unnumbered}
 
-I am deeply grateful to [**{{<var mentor>}}** ](https://www.tue.nl/en/education/professional-education/current-programs/eaisi-academy/lecturers/dr-ieke-le-blanc) for his insightful feedback and valuable guidance throughout this research. His emphasis on the importance of Forecast Value Added (FVA), as opposed to merely evaluating Statistical Forecast Accuracy, profoundly shaped the direction and depth of this book.
+I am deeply grateful to [**{{**<var mentor>}}](https://www.tue.nl/en/education/professional-education/current-programs/eaisi-academy/lecturers/dr-ieke-le-blanc) for his insightful feedback and valuable guidance throughout this research. His emphasis on the importance of Forecast Value Added (FVA), as opposed to merely evaluating Statistical Forecast Accuracy, profoundly shaped the direction and depth of this book.
 
 Additionally, he introduced me to [Nicolas Vandeput](https://www.linkedin.com/in/vandeputnicolas/), whose concise yet inspiring YouTube videos sparked key ideas central to the development of the *Pythia’s Advice project*, as can be seen in the chapters [Setting the Stage](#sec-setting-the-stage) and [Insight to Impact](#sec-insight-to-impact).
 
@@ -67,12 +59,9 @@ This book includes several features to enhance your reading experience:
 
 #### Table of Contents
 
-- The *left sidebar* displays the full structure of the book. The top level shows 
-the main Parts, with each Chapter listed beneath. The current chapter is 
-highlighted. Click any chapter to navigate directly to it.
+-   The *left sidebar* displays the full structure of the book. The top level shows the main Parts, with each Chapter listed beneath. The current chapter is highlighted. Click any chapter to navigate directly to it.
 
-- The *right sidebar* shows the table of contents for the current chapter, allowing 
-you to quickly jump to specific sections within it.
+-   The *right sidebar* shows the table of contents for the current chapter, allowing you to quickly jump to specific sections within it.
 
 #### Search Function
 
@@ -112,20 +101,16 @@ This book contains cross-references — hover over them to get a sneak preview:
 Some sections contain interactive elements:
 
 -   Click on images to enlarge them\
-<!-- -   Interactive visualizations allow you to explore data\ -->
+    <!-- -   Interactive visualizations allow you to explore data\ -->
 -   Collapsible sections can be expanded for additional details
 
 ### Reading Pathways
-1. All chapters — with the exception of **The Heart of Pythia**
-— are optional. However, it is recommended to explore them first, as they provide essential background and context.
 
-1.  The central chapter: **The Heart of Pythia**, lies at the heart of this book. 
-Structured around the CRISP-DM methodology, it is designed to be read in a 
-linear sequence, guiding the reader through each phase step by step. To enhance readability, this chapter contains no code and functions as a true white paper — concise in text, and supported by clear visuals and informative tables.
+1.  All chapters — with the exception of **The Heart of Pythia** — are optional. However, it is recommended to explore them first, as they provide essential background and context.
 
-1.  The Appendix contains the corresponding code and detailed analysis for each 
-CRISP-DM phase, e.g. @sec-11-business-understanding in the appendix for the 
-related coding and details.
+2.  The central chapter: **The Heart of Pythia**, lies at the heart of this book. Structured around the CRISP-DM methodology, it is designed to be read in a linear sequence, guiding the reader through each phase step by step. To enhance readability, this chapter contains no code and functions as a true white paper — concise in text, and supported by clear visuals and informative tables.
+
+3.  The Appendix contains the corresponding code and detailed analysis for each CRISP-DM phase, e.g. @sec-11-business-understanding in the appendix for the related coding and details.
 
 ### Best Viewing Experience
 
