@@ -50,7 +50,7 @@ This structre of the book is shown in the sidebar on the left, which can be used
 -   **Preface**: disclaimer, acknowledgments and how-to read this book.
 -   **Prophecy to Prediction**: the story behind the name *Pythia’s Advice*.
 -   **Setting the Stage**: the inspiration behind the project.
--   **The Heart of Pythia**: the main research with a chapter per CRISP-DM phase.
+-   **The ❤️ of Pythia**: the main research with a chapter per CRISP-DM phase.
 -   **Insight to Impact**: how to use the Project's results to create impact.
 -   **Appendix**: coding, references, and supplementary materials on each CRISP-DM phase.
 
@@ -107,9 +107,9 @@ Some sections contain interactive elements:
 
 ### Reading Pathways
 
-1.  All chapters — with the exception of **The Heart of Pythia** — are optional. However, it is recommended to explore them first, as they provide essential background and context.
+1.  All chapters — with the exception of *The ❤️ of Pythia** — are optional. However, it is recommended to explore them first, as they provide essential background and context.
 
-2.  The central chapter: **The Heart of Pythia**, lies at the heart of this book. Structured around the CRISP-DM methodology, it is designed to be read in a linear sequence, guiding the reader through each phase step by step. To enhance readability, this chapter contains no code and functions as a true white paper — concise in text, and supported by clear visuals and informative tables.
+2.  The central chapter: **The ❤️ of Pythia**, lies at the heart of this book. Structured around the CRISP-DM methodology, it is designed to be read in a linear sequence, guiding the reader through each phase step by step. To enhance readability, this chapter contains no code and functions as a true white paper — concise in text, and supported by clear visuals and informative tables.
 
 3.  The Appendix contains the corresponding code and detailed analysis for each CRISP-DM phase, e.g. @sec-11-business-understanding in the appendix for the related coding and details.
 
