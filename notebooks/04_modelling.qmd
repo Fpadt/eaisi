@@ -73,6 +73,7 @@ Model selection involves a tradeoff between flexibility and interpretability.
 
 
 ::::: {#fig-04-black_glassbox}
+::: {.content-visible when-format="html"}
 <div style="max-width: 100%; width: 480px;"  style="text-align: left;">
   <video src="../video/glass_blackbox.mp4" controls autoplay muted loop style="width: 100%; height: auto;" playsinline>
   </video>
