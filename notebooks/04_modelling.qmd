@@ -84,7 +84,7 @@ Model selection involves a tradeoff between flexibility and interpretability.
 ![](../images/glass_blackbox.png){fig-align="left" fig-width="15cm"}
 :::
 
-Adapted from:  [[@james2023], figure 2.7].  
+Adapted from:  [[@james_introduction_2023], figure 2.7].  
 :::::
 
 ::: {#tbl-04-black_glassbox .table}
