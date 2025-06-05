@@ -107,7 +107,7 @@ Some sections contain interactive elements:
 
 ### Reading Pathways
 
-1.  All chapters — with the exception of *The ❤️ of Pythia** — are optional. However, it is recommended to explore them first, as they provide essential background and context.
+1.  All chapters — with the exception of *&The ❤️ of Pythia** — are optional. However, it is recommended to explore them first, as they provide essential background and context.
 
 2.  The central chapter: **The ❤️ of Pythia**, lies at the heart of this book. Structured around the CRISP-DM methodology, it is designed to be read in a linear sequence, guiding the reader through each phase step by step. To enhance readability, this chapter contains no code and functions as a true white paper — concise in text, and supported by clear visuals and informative tables.
 
