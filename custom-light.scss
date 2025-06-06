@@ -55,11 +55,13 @@ h1.title,
   background-color: transparent !important; // Remove any background
 }
 
-// Alternative: set page title to a specific color if needed
-// .quarto-title .title,
-// h1.title {
-//   color: #333 !important; // Dark gray instead of orange
-// }
+// Simple red heart styling
+.red-heart {
+  color: #dc3545 !important; // Bootstrap red
+  font-size: 1.1em !important; // Slightly larger than surrounding text
+  font-weight: bold !important; // Make it stand out
+}
+
 //* Body background and text color */
 //* ################################# */
 

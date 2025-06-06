@@ -1,27 +1,101 @@
 /*-- scss:defaults --*/
 // Base document colors
-$primary: #E2A348;
-$body-bg: #333333;
-$body-color: #ffffff;
-$link-color: #E2A348;
-$navbar-bg: #0f5e3c;
-$navbar-fg: #333333;
 
 /*-- scss:rules --*/
-// Add any custom CSS rules here
-.navbar-title {
-  color: #E2A348;
+// Hamburger menu icon only (no box around it)
+.quarto-btn-toggle {
+  // Remove any border/background styling
+  border: none !important;
+  background-color: transparent !important;
+  
+  // Target the Bootstrap icon inside
+  .bi-layout-text-sidebar-reverse,
+  i[class*="bi-"] {
+    color: #e2a348 !important;
+    font-size: 1.2em !important;
+  }
 }
 
+// More specific targeting for the button
+button[data-bs-target=".quarto-sidebar-collapse-item"] {
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  
+  .bi-layout-text-sidebar-reverse,
+  i[class*="bi-"] {
+    color: #ff6600 !important;
+    opacity: 1 !important;
+  }
+  
+  // Remove any focus/hover effects on the button
+  &:focus, &:hover {
+    border: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+}
 
-/* Highlight the current section in the index */
+// Target the navbar title (breadcrumb) - make this orange
+.breadcrumb-item a {
+  color: #e2a348 !important;
+}
+
+// More specific breadcrumb targeting
+.breadcrumb .breadcrumb-item a {
+  color: #e2a348 !important;
+  text-decoration: none !important;
+}
+
+// Reset page title to default (remove orange)
+.quarto-title .title,
+h1.title,
+.title-block-header .title {
+  color: inherit !important; // Use default color
+  background-color: transparent !important; // Remove any background
+}
+
+// Alternative: set page title to a specific color if needed
+// .quarto-title .title,
+// h1.title {
+//   color: #333 !important; // Dark gray instead of orange
+// }
+//* Body background and text color */
+//* ################################# */
+
+/* Active item in the index (left sidebar) */
 .sidebar .active,
 .sidebar .active a {
-  background-color: #333333;  /* Accent color */
-  color: #E2A348;              /* Text color */
+  background-color: #ffffff;   /* White background */
+  color: #e2a348 !important;   /* Orange text */
   font-weight: bold;
 }
 
 .sidebar .active a:hover {
-  background-color: #e2a348;  /* Slightly darker accent */
+  background-color: #f0f0f0;   /* Light gray */
+  color: #e2a348;
 }
+
+.responsive-video {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin-bottom: 1em;
+  border-radius: 8px;
+}
+
+.responsive-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Ensure link colors remain consistent */
+//body a,
+//body a:hover {
+//  color: #e2a348 !important;
+//}

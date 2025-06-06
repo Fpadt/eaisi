@@ -107,7 +107,7 @@ book:
     - setting_the_stage.qmd
         
     #  focus on analysis and findings.
-    - part: "The ♥ of Pythia"
+    - part: "The <span class='red-heart'>♥</span> of Pythia"
       chapters:
 
         # Introduction

@@ -52,7 +52,9 @@ This structre of the book is shown in the sidebar on the left, which can be used
 -   **Setting the Stage**: the inspiration behind the project.
 -   **The ❤️ of Pythia**: the main research with a chapter per CRISP-DM phase.
 -   **Insight to Impact**: how to use the Project's results to create impact.
--   **Appendix**: coding, references, and supplementary materials on each CRISP-DM phase.
+-   **Appendix**: For each CRISP-DM phase, a dedicated appendix chapter provides 
+    additional details, code examples, and visualizations. The appendix also 
+    includes chapters on references, resources, and the padt package.
 
 ### Navigation Features
 
