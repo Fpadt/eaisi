@@ -110,7 +110,7 @@ data.table(
 
 #### R-Packages
 
-::: {#tbl-14-packages .table}
+::: {#tbl-14-packages .table-wrapper style="text-align: left;"}
 | Package         | Purpose                              | Citation        |
 |:----------------|:-------------------------------------|:----------------|
 

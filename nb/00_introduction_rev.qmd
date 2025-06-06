@@ -33,9 +33,9 @@ description: |
   
   In this study, we aim to quantify the Forecast Value Added and assess 
   the forecast accuracy of various statistical approaches, including 
-  hierarchical methods. Given the wide variety of products (SKUs) and their 
-  differing levels of importance, we scope our analysis to focus on the 
-  top 20% of products, which account for 80% of total sales. 
+  hierarchical methods. Given the wide range of products (SKUs) and their varying levels of 
+  importance, we focus our analysis on the largest Marketing and Sales Organization (MSO), 
+  concentrating on the top 20% of products that generate 80% of total sales.
   This targeted approach enables us to concentrate on the most impactful items, 
   while still providing insights that can be generalized to the broader product 
   portfolio.
