@@ -10,21 +10,33 @@
 /*-- scss:rules --*/
 
 // Navbar title
-.navbar-brand {
-  color: #ff6600 !important;  /* Bright orange */
+.navbar-brand,
+.navbar-brand:link,
+.navbar-brand:visited {
+  color: #ff6600 !important;
 }
+
 .navbar-brand:hover,
 .navbar-brand:focus {
-  color: #ffaa00 !important; /* lighter orange or same as base */
+  color: #ffaa00 !important;
   text-decoration: none;
 }
 
 
-/* Change Hamburger Menu Color on Mobile */
-/* Bright orange hamburger icon */
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='%23ff6600' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>") !important;
+.navbar-toggler {
+  border-color: transparent !important;
+  background-color: transparent !important;
 }
+
+
+/* Change Hamburger Menu Color on Mobile */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;utf8,
+  <svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'>
+  <path stroke='%23ffffff' stroke-width='3' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/>
+  </svg>") !important;
+}
+
 
 
 /* Active item in the index (left sidebar) */
