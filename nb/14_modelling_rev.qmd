@@ -111,7 +111,7 @@ data.table(
 #### R-Packages
 
 ::: {#tbl-14-packages .table}
-| Package | Purpose | Citation |
+| Package         | Purpose                              | Citation        |
 |:----------------|:-------------------------------------|:----------------|
 
 | collapsibleTree | Collapsible trees                         | @collapsibleTree2024 |
