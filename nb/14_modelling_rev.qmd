@@ -110,10 +110,10 @@ data.table(
 
 #### R-Packages
 
-::: {#tbl-14-packages .table-wrapper style="text-align: left;"}
+::: {#tbl-14-packages .table style="text-align: left;"}
+
 | Package         | Purpose                              | Citation        |
 |:----------------|:-------------------------------------|:----------------|
-
 | collapsibleTree | Collapsible trees                         | @collapsibleTree2024 |
 | crayon          | Colored text output                       | @crayon2024          |
 | data.table      | Fast data manipulation                    | @data.table2024      |
