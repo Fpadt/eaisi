@@ -33,7 +33,7 @@ This research presents a fictional case study of *BioBalance*, a company operati
 
 ## Acknowledgments {.appendix .unnumbered}
 
-I am deeply grateful to [**{{<var mentor  >}}**][ILB] for his insightful feedback and valuable guidance throughout this research. His emphasis on the importance of Forecast Value Added (@def-FVA), as opposed to merely evaluating Statistical Forecast Accuracy, profoundly shaped the direction and depth of this book.
+I am deeply grateful to [**{{<var mentor  >}}**][ILB] for his insightful feedback and valuable guidance throughout this research. His emphasis on the importance of Forecast Value Added [@def-FVA], as opposed to merely evaluating Statistical Forecast Accuracy, profoundly shaped the direction and depth of this book.
 
 Additionally, he introduced me to [Nicolas Vandeput][NVDP], whose concise yet inspiring YouTube videos sparked key ideas central to the development of the *Pythia’s Advice project*, as can be seen in the chapters [Setting the Stage](#sec-setting-the-stage) and [Insight to Impact](#sec-insight-to-impact).
 
@@ -109,7 +109,7 @@ Some sections contain interactive elements:
 
 ### Reading Pathways
 
-1.  All chapters — with the exception of *&The ❤️ of Pythia** — are optional. However, it is recommended to explore them first, as they provide essential background and context.
+1.  All chapters — with the exception of **The ❤️ of Pythia** — are optional. However, it is recommended to explore them first, as they provide essential background and context.
 
 2.  The central chapter: **The ❤️ of Pythia**, lies at the heart of this book. Structured around the CRISP-DM methodology, it is designed to be read in a linear sequence, guiding the reader through each phase step by step. To enhance readability, this chapter contains no code and functions as a true white paper — concise in text, and supported by clear visuals and informative tables.
 
