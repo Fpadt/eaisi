@@ -39,6 +39,16 @@ I am deeply grateful to [**{{<var mentor  >}}**][ILB] for his insightful feedbac
 @thm-FVA
 @def-FVA
 
+::: {#thm-FVA}
+**FVA:** Forecast Value Added
+:::
+<!-- – Definitions of any jargon, acronyms, or metrics used above
+-->
+
+::: {#eq-mape}
+$$MAPE = \frac{100\%}{n} \sum_{t=1}^{n} \left|\frac{A_t - F_t}{A_t}\right|$$
+:::
+
 Additionally, he introduced me to [Nicolas Vandeput][NVDP], whose concise yet inspiring YouTube videos sparked key ideas central to the development of the *Pythia’s Advice project*, as can be seen in the chapters [Setting the Stage](#sec-setting-the-stage) and [Insight to Impact](#sec-insight-to-impact).
 
 The guidance provided by {{<var mentor >}} significantly enhanced this study, helping me avoid numerous pitfalls. Any remaining errors or oversights are, of course, entirely my own responsibility.
