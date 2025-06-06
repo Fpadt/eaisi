@@ -162,9 +162,6 @@ book:
         # Deployment: Implementation Strategies and Code Snippets
         - notebooks/16_deployment.qmd
         # - nb/16_deployment_rev.qmd
-        # Methodology & Framework: Technical Details and Coding
-        - notebooks/08_appendix.qmd
-        # - nb/08_appendix_rev.qmd
         # References – Academic references, data sources, and research citations.
         - notebooks/18_references.qmd
         # - nb/18_references_rev.qmd
