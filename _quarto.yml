@@ -76,6 +76,7 @@ knitr:
 book:
   title: "Pythia's Advice"
   reader-mode: true
+  appendices: true
   sidebar:
     style: "floating"
     collapse-level: 1

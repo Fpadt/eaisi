@@ -2,6 +2,7 @@
 title:           "CRISP-DM"
 author:          "F.J. Padt"
 unnumbered:      true
+numbered: false
 number-sections: false
 ---
 
