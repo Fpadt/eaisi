@@ -8,6 +8,10 @@ numbered: false
 <!-- – Definitions of any jargon, acronyms, or metrics used above
 -->
 
+::: {#eq-mape}
+$$MAPE = \frac{100\%}{n} \sum_{t=1}^{n} \left|\frac{A_t - F_t}{A_t}\right|$$
+:::
+
 What does this acronym mean??
   
 # Business {.unnumbered}
