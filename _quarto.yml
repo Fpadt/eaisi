@@ -49,7 +49,7 @@ authors:
 
 crossref:
   def-prefix: ''
-  def-title:  ID
+  def-title:  id
     
 execute:
   freeze:  auto
