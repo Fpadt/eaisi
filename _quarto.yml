@@ -162,14 +162,15 @@ book:
     # CRISP-DM: Detailed Process Flow – Deeper dive into each phase with coding snippets.
     - notebooks/17_crisp-dm.qmd
     # - nb/17_crisp-dm_rev.qmd        
-    # References – Academic references, data sources, and research citations.
-    - notebooks/18_references.qmd
-    # - nb/18_references_rev.qmd
+    # Padt Package from pkgdown – A custom package for data handling and analysis.
+    - package-padt.qmd
     # Resources – Tools, libraries, and datasets used, with links and explanations.
     - notebooks/19_resources.qmd
     # - nb/19_resources_rev.qmd
-    - package-padt.qmd
-
+    # References – Academic references, data sources, and research citations.
+    - notebooks/18_references.qmd
+    # - nb/18_references_rev.qmd    
+    
 resources:
   - notebooks/01_business_understanding.qmd  
   - notebooks/02_data_understanding.qmd

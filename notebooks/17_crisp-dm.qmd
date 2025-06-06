@@ -1,12 +1,12 @@
 ---
-title:           "CRISP-DM"
+title:           "CRISP-DM Overview"
 author:          "F.J. Padt"
 unnumbered:      true
 numbered: false
 number-sections: false
 ---
 
-## CRISP-DM {#sec-crisp-dm}
+## CRISP-DM Overview {#sec-crisp-dm}
 
 ![Project Plan](../images/crisp-dm.png){width="70%" fig-align="center"}
 <!-- ---  -->
