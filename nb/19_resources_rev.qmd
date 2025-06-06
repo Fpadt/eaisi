@@ -23,5 +23,3 @@ powershell.exe -NoProfile -Command "if (Test-Path notebooks.zip) { Remove-Item n
 
 
 
-## FVA {#fva}
-**Forecast Value Added** - A metric that measures the improvement in forecast accuracy compared to a naive forecast.

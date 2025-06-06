@@ -50,6 +50,8 @@ authors:
 crossref:
   def-prefix: ''
   def-title:  'name'
+  thm-prefix: ""
+  thm-title: "id"  
     
 execute:
   freeze:  auto

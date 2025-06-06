@@ -2,7 +2,9 @@
 numbered: false
 ---
 
-
+::: {#thm-FVA}
+**FVA:** Forecast Value Added
+:::
 <!-- – Definitions of any jargon, acronyms, or metrics used above
 -->
 
