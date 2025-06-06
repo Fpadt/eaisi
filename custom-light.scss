@@ -2,46 +2,64 @@
 // Base document colors
 
 /*-- scss:rules --*/
-// Target the correct hamburger menu button and icon
+// Hamburger menu icon only (no box around it)
 .quarto-btn-toggle {
-  // Style the button itself if needed
-  border-color: #ff6600 !important;
+  // Remove any border/background styling
+  border: none !important;
+  background-color: transparent !important;
   
   // Target the Bootstrap icon inside
-  .bi-layout-text-sidebar-reverse {
-    color: #ff6600 !important;
-    font-size: 1.2em !important; // Make it slightly larger for better visibility
-  }
-  
-  // Alternative - target any Bootstrap icon in the toggle button
+  .bi-layout-text-sidebar-reverse,
   i[class*="bi-"] {
     color: #ff6600 !important;
+    font-size: 1.2em !important;
   }
 }
 
-// More specific targeting
+// More specific targeting for the button
 button[data-bs-target=".quarto-sidebar-collapse-item"] {
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  
   .bi-layout-text-sidebar-reverse,
   i[class*="bi-"] {
     color: #ff6600 !important;
     opacity: 1 !important;
   }
-}
-
-// Ultra-specific targeting
-button.quarto-btn-toggle.btn[aria-label="Toggle sidebar navigation"] {
-  i {
-    color: #ff6600 !important;
-    font-weight: bold !important;
+  
+  // Remove any focus/hover effects on the button
+  &:focus, &:hover {
+    border: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
   }
 }
 
-// Title styling (this should work now too)
-.navbar-brand,
-.quarto-title .title,
-h1.title {
+// Target the navbar title (breadcrumb) - make this orange
+.breadcrumb-item a {
   color: #ff6600 !important;
 }
+
+// More specific breadcrumb targeting
+.breadcrumb .breadcrumb-item a {
+  color: #ff6600 !important;
+  text-decoration: none !important;
+}
+
+// Reset page title to default (remove orange)
+.quarto-title .title,
+h1.title,
+.title-block-header .title {
+  color: inherit !important; // Use default color
+  background-color: transparent !important; // Remove any background
+}
+
+// Alternative: set page title to a specific color if needed
+// .quarto-title .title,
+// h1.title {
+//   color: #333 !important; // Dark gray instead of orange
+// }
 //* Body background and text color */
 //* ################################# */
 
