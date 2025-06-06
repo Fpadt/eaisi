@@ -41,6 +41,12 @@
   z-index: 1000;
 }
 
+.navbar-toggler:hover {
+  background-color: rgba(255, 102, 0, 0.1); // subtle orange glow
+  border-radius: 4px;
+}
+
+
 /* Change Hamburger Menu Color on Mobile */
 .navbar-toggler-icon {
   background-color: transparent !important;
@@ -48,7 +54,7 @@
   background-position: center;
   background-size: 1.5em 1.5em;
 
-  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='%23ffffff' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>") !important;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='%23ff6600' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>") !important;
 }
 
 /* Active item in the index (left sidebar) */
