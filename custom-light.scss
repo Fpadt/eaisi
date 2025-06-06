@@ -11,7 +11,7 @@
   // Target the Bootstrap icon inside
   .bi-layout-text-sidebar-reverse,
   i[class*="bi-"] {
-    color: #e2a348 !important;
+    color: #ffffff !important;
     font-size: 1.2em !important;
   }
 }
@@ -24,7 +24,7 @@ button[data-bs-target=".quarto-sidebar-collapse-item"] {
   
   .bi-layout-text-sidebar-reverse,
   i[class*="bi-"] {
-    color: #ff6600 !important;
+    color: #ffffff !important;
     opacity: 1 !important;
   }
   
@@ -38,12 +38,12 @@ button[data-bs-target=".quarto-sidebar-collapse-item"] {
 
 // Target the navbar title (breadcrumb) - make this orange
 .breadcrumb-item a {
-  color: #e2a348 !important;
+  color: #ffffff !important;
 }
 
 // More specific breadcrumb targeting
 .breadcrumb .breadcrumb-item a {
-  color: #e2a348 !important;
+  color: #ffffff !important;
   text-decoration: none !important;
 }
 

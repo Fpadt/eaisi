@@ -245,7 +245,6 @@ format:
     link-citations:     true    
     colorlinks:         true
     highlight-style:    github
-    appendix-style:     roman 
     theme:
       light: [flatly, custom-light.scss]
       dark:  [darkly] #, custom-dark.scss]
