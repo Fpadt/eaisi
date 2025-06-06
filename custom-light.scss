@@ -24,14 +24,21 @@
 
 
 .navbar-toggler {
-  border-color: transparent !important;
+  color: #ff6600 !important;
   background-color: transparent !important;
+  border: none !important;
+  padding: 0.25rem 0.75rem !important;
+  z-index: 1000;
 }
-
 
 /* Change Hamburger Menu Color on Mobile */
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='%23ff6600' stroke-width='3' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/></svg>") !important;
+  background-color: transparent !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.5em 1.5em;
+
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='%23ff6600' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>") !important;
 }
 
 /* Active item in the index (left sidebar) */
