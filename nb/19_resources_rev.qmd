@@ -20,3 +20,8 @@ powershell.exe -NoProfile -Command "if (Test-Path notebooks.zip) { Remove-Item n
 -   [Download the Data Understanding notebook (QMD) 💾](../notebooks/02_data_understanding.qmd){.btn}
 -   [Download EAISI Graduation Presentation (PPTX) 💾](../pptx/PAF+s03.pptx){.btn}
 -   [Download all notebooks (ZIP) 💾](notebooks.zip){.btn}
+
+
+
+## FVA {#fva}
+**Forecast Value Added** - A metric that measures the improvement in forecast accuracy compared to a naive forecast.
