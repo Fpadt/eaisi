@@ -58,8 +58,10 @@ The planning process for *Blossam Balance Tea* illustrates the complexity of for
 
 :::: {#fig-01-bu-why .figure}
 ::: {.content-visible when-format="html"}
+<div class="responsive-video">
 <video src="../video/bu_why.mp4" controls autoplay muted loop width="640" playsinline>
 </video>
+</div>
 :::
 
 ::: {.content-visible when-format="pdf"}
