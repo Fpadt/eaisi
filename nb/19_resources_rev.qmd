@@ -1,12 +1,12 @@
 ---
-title:                 Resources
+title:                 Additional Resources
 author:                F.J. Padt
 numbered:              false
 engine:                knitr  
 editor:                source
 ---
 
-# Resources {#sec-19-resources}
+# Additional Resources {#sec-19-resources}
 
 ```{bash}
 #| eval: false

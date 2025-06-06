@@ -9,7 +9,7 @@ toc: true         # show page‐TOC (right‐sidebar) on _every_ page
 toc-depth: 3      # include ## and ### in the TOC
 ---
 
-# PADT - *the package* {#sec-package-padt}
+# PADT - *the R package* {#sec-package-padt}
 
 ::: {.callout-tip title="Online Package Documentation"}
 The `padt` package provides data science tooling for the *Pythia’s Advice* project, including:
