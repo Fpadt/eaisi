@@ -3,22 +3,52 @@
 
 /*-- scss:rules --*/
 
-// Target the actual hamburger lines (the three horizontal bars)
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ff6600' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+// Try multiple selectors - one of these should work
+.quarto-navbar .navbar-toggler-icon,
+.navbar .navbar-toggler-icon,
+button[data-bs-toggle="collapse"] .navbar-toggler-icon,
+.navbar-toggler .navbar-toggler-icon,
+[aria-label="Toggle navigation"] .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ff6600' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  opacity: 1 !important;
 }
 
-// Alternative approach using CSS filter to make it orange
-.navbar-toggler-icon {
-  filter: brightness(0) saturate(100%) invert(45%) sepia(98%) saturate(1352%) hue-rotate(12deg) brightness(101%) contrast(101%) !important;
+// Alternative: Use CSS filter (try this if SVG doesn't work)
+.quarto-navbar .navbar-toggler-icon,
+.navbar .navbar-toggler-icon {
+  filter: invert(45%) sepia(98%) saturate(1352%) hue-rotate(12deg) brightness(101%) contrast(101%) !important;
 }
 
-// Title color
-.navbar-brand {
+// Another approach: target by Bootstrap classes
+.navbar-light .navbar-toggler-icon,
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ff6600' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+// Brute force approach - target everything
+* .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ff6600' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+// For title
+.navbar-brand,
+.quarto-navbar .navbar-brand {
   color: #ff6600 !important;
 }
 
+// DEBUG: Temporary - this will make the hamburger area bright red so you can see if CSS is working
+.navbar-toggler {
+  background-color: red !important;
+  border: 3px solid blue !important;
+}
+
+// DEBUG: This should make any hamburger icon bright green
+.navbar-toggler-icon {
+  background-color: lime !important;
+}
+
 //* Body background and text color */
+//* ################################# */
 
 /* Active item in the index (left sidebar) */
 .sidebar .active,
