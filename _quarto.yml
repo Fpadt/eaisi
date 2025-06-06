@@ -76,7 +76,7 @@ knitr:
 book:
   title: "Pythia's Advice"
   reader-mode: true
-  appendices: true
+ 
   sidebar:
     style: "floating"
     collapse-level: 1
@@ -140,36 +140,35 @@ book:
     - insight_to_impact.qmd
 
       # Detailed Analysis and Supplementary Materials
-    - part: "Appendix"
-      chapters:
-        # Business Understanding: Analytical Frameworks
-        - notebooks/11_business_understanding.qmd
-        # - nb/11_business_understanding_rev.qmd
-        # Data Understanding: Data Dictionary and Descriptive Statistics        
-        - notebooks/12_data_understanding.qmd
-        # - nb/12_data_understanding_rev.qmd
-        # Data Preparation: Preprocessing Code and Examples
-        - notebooks/13_data_preparation.qmd
-        # - nb/13_data_preparation_rev.qmd
-        # Modelling: Detailed Implementation and Algorithms
-        - notebooks/14_modelling.qmd
-        # - nb/14_modelling_rev.qmd
-        # Evaluation: Performance Metrics and Additional Analysis
-        - notebooks/15_evaluation.qmd
-        # - nb/15_evaluation_rev.qmd
-        # Deployment: Implementation Strategies and Code Snippets
-        - notebooks/16_deployment.qmd
-        # - nb/16_deployment_rev.qmd
-        # CRISP-DM: Detailed Process Flow – Deeper dive into each phase with coding snippets.
-        - notebooks/17_crisp-dm.qmd
-        # - nb/17_crisp-dm_rev.qmd        
-        # References – Academic references, data sources, and research citations.
-        - notebooks/18_references.qmd
-        # - nb/18_references_rev.qmd
-        # Resources – Tools, libraries, and datasets used, with links and explanations.
-        - notebooks/19_resources.qmd
-        # - nb/19_resources_rev.qmd
-        - package-padt.qmd
+  appendices:
+    # Business Understanding: Analytical Frameworks
+    - notebooks/11_business_understanding.qmd
+    # - nb/11_business_understanding_rev.qmd
+    # Data Understanding: Data Dictionary and Descriptive Statistics        
+    - notebooks/12_data_understanding.qmd
+    # - nb/12_data_understanding_rev.qmd
+    # Data Preparation: Preprocessing Code and Examples
+    - notebooks/13_data_preparation.qmd
+    # - nb/13_data_preparation_rev.qmd
+    # Modelling: Detailed Implementation and Algorithms
+    - notebooks/14_modelling.qmd
+    # - nb/14_modelling_rev.qmd
+    # Evaluation: Performance Metrics and Additional Analysis
+    - notebooks/15_evaluation.qmd
+    # - nb/15_evaluation_rev.qmd
+    # Deployment: Implementation Strategies and Code Snippets
+    - notebooks/16_deployment.qmd
+    # - nb/16_deployment_rev.qmd
+    # CRISP-DM: Detailed Process Flow – Deeper dive into each phase with coding snippets.
+    - notebooks/17_crisp-dm.qmd
+    # - nb/17_crisp-dm_rev.qmd        
+    # References – Academic references, data sources, and research citations.
+    - notebooks/18_references.qmd
+    # - nb/18_references_rev.qmd
+    # Resources – Tools, libraries, and datasets used, with links and explanations.
+    - notebooks/19_resources.qmd
+    # - nb/19_resources_rev.qmd
+    - package-padt.qmd
 
 resources:
   - notebooks/01_business_understanding.qmd  
