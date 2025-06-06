@@ -141,9 +141,6 @@ book:
       # Detailed Analysis and Supplementary Materials
     - part: "Appendix"
       chapters:
-        # CRISP-DM: Detailed Process Flow – Deeper dive into each phase with coding snippets.
-        - notebooks/17_crisp-dm.qmd
-        # - nb/17_crisp-dm_rev.qmd
         # Business Understanding: Analytical Frameworks
         - notebooks/11_business_understanding.qmd
         # - nb/11_business_understanding_rev.qmd
@@ -162,6 +159,9 @@ book:
         # Deployment: Implementation Strategies and Code Snippets
         - notebooks/16_deployment.qmd
         # - nb/16_deployment_rev.qmd
+        # CRISP-DM: Detailed Process Flow – Deeper dive into each phase with coding snippets.
+        - notebooks/17_crisp-dm.qmd
+        # - nb/17_crisp-dm_rev.qmd        
         # References – Academic references, data sources, and research citations.
         - notebooks/18_references.qmd
         # - nb/18_references_rev.qmd

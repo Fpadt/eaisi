@@ -8,12 +8,12 @@ number-sections: false
 ## CRISP-DM {#sec-crisp-dm}
 
 ![Project Plan](../images/crisp-dm.png){width="70%" fig-align="center"}
---- 
+<!-- ---  -->
 
-::: landscape
-{{< pagebreak >}}
+<!-- ::: landscape -->
+<!-- {{< pagebreak >}} -->
 
-![Project Plan](../images/approach.png){width="80%" fig-align="center"}
+<!-- ![Project Plan](../images/approach.png){width="80%" fig-align="center"} -->
 
-{{< pagebreak >}}
-:::
+<!-- {{< pagebreak >}} -->
+<!-- ::: -->
