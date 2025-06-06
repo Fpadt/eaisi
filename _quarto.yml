@@ -52,7 +52,10 @@ crossref:
   def-title:  'name'
   thm-prefix: ""
   thm-title: "id"  
-    
+  
+appendix-delim: " - "  
+appendix-title: "Appendix"  
+
 execute:
   freeze:  auto
   cache:   false
@@ -242,6 +245,7 @@ format:
     link-citations:     true    
     colorlinks:         true
     highlight-style:    github
+    appendix-style:     roman 
     theme:
       light: [flatly, custom-light.scss]
       dark:  [darkly] #, custom-dark.scss]
