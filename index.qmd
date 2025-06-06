@@ -33,7 +33,7 @@ This research presents a fictional case study of *BioBalance*, a company operati
 
 ## Acknowledgments {.appendix .unnumbered}
 
-I am deeply grateful to [**{{**<var mentor>}}](https://www.tue.nl/en/education/professional-education/current-programs/eaisi-academy/lecturers/dr-ieke-le-blanc) for his insightful feedback and valuable guidance throughout this research. His emphasis on the importance of Forecast Value Added (FVA), as opposed to merely evaluating Statistical Forecast Accuracy, profoundly shaped the direction and depth of this book.
+I am deeply grateful to [{**<var mentor >**}](https://www.tue.nl/en/education/professional-education/current-programs/eaisi-academy/lecturers/dr-ieke-le-blanc) for his insightful feedback and valuable guidance throughout this research. His emphasis on the importance of Forecast Value Added (FVA), as opposed to merely evaluating Statistical Forecast Accuracy, profoundly shaped the direction and depth of this book.
 
 Additionally, he introduced me to [Nicolas Vandeput](https://www.linkedin.com/in/vandeputnicolas/), whose concise yet inspiring YouTube videos sparked key ideas central to the development of the *Pythia’s Advice project*, as can be seen in the chapters [Setting the Stage](#sec-setting-the-stage) and [Insight to Impact](#sec-insight-to-impact).
 
