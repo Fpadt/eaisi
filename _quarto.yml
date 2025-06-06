@@ -48,8 +48,8 @@ authors:
         url:          https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai 
 
 crossref:
-  def-prefix: def
-  def-title:  def
+  def-prefix: ''
+  def-title:  ID
     
 execute:
   freeze:  auto
