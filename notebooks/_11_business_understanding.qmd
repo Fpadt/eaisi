@@ -14,6 +14,7 @@ number-sections: false
 
 ::: {#fig-11-bu-why .figure}
 ::: {.content-visible when-format="html"} 
+<div class="responsive-video">
 <video
   src="../video/bu_why.mp4"
   controls
@@ -21,6 +22,7 @@ number-sections: false
   width="640"
   playsinline> 
 </video> 
+</div>
 ::: 
 ::: {.content-visible when-format="pdf"}
 <!-- this block only appears in PDF output -->
@@ -77,6 +79,7 @@ key use cases, details in [@sec-appendix-usecases]:
 
 ::: {#fig-11-bu-who .figure}
 ::: {.content-visible when-format="html"} 
+<div class="responsive-video">
 <video
   src="../video/bu_who.mp4"
   controls
@@ -84,6 +87,7 @@ key use cases, details in [@sec-appendix-usecases]:
   width="640"
   playsinline> 
 </video> 
+</div>
 ::: 
 ::: {.content-visible when-format="pdf"}
 <!-- this block only appears in PDF output -->

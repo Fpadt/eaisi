@@ -74,7 +74,7 @@ Model selection involves a tradeoff between flexibility and interpretability.
 
 ::::: {#fig-04-black_glassbox}
 ::: {.content-visible when-format="html"}
-<div style="max-width: 100%; width: 480px;"  style="text-align: left;">
+<div class="responsive-video">
   <video src="../video/glass_blackbox.mp4" controls autoplay muted loop style="width: 100%; height: auto;" playsinline>
   </video>
 </div>
@@ -167,9 +167,10 @@ The top-down approach, forecasts at aggregated levels, to be distributed however
 
 ::::: {#fig-04-mo-method .figure}
 ::: {.content-visible when-format="html"}
+<div class="responsive-video">
 <video src="../video/mo_method.mp4" controls autoplay muted loop width="640" playsinline>
-
 </video>
+</div>
 :::
 
 ::: {.content-visible when-format="pdf"}

@@ -91,9 +91,10 @@ The company's forecasting requirements vary significantly across several key use
 
 :::: {#fig-01-bu-who .figure}
 ::: {.content-visible when-format="html"}
+<div class="responsive-video">
 <video src="../video/bu_who.mp4" controls autoplay muted loop width="640" playsinline>
-
 </video>
+</div>
 :::
 
 ::: {.content-visible when-format="pdf"}
@@ -213,9 +214,10 @@ By working within these constraints, **Pythia’s Advice** enables experimentati
 
 :::: {#fig-01-bu-proc .figure}
 ::: {.content-visible when-format="html"}
+<div class="responsive-video">
 <video src="../video/bu_proc.mp4" controls autoplay muted loop width="640" playsinline>
-
 </video>
+</div>
 :::
 
 ::: {.content-visible when-format="pdf"}

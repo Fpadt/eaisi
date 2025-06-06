@@ -24,8 +24,10 @@ source("../_book_functions.R")
 
 ::::: {#fig-05-cv .figure}
 ::: {.content-visible when-format="html"}
+<div class="responsive-video">
 <video src="../video/ev_cv.mp4" controls autoplay muted loop width="640" playsinline>
 </video>
+</div>
 :::
 
 ::: {.content-visible when-format="pdf"}
@@ -55,8 +57,10 @@ forecast errors of our existing forecasting system.
 
 ::::: {#fig-01-bu-why .figure}
 ::: {.content-visible when-format="html"}
+<div class="responsive-video">
 <video src="../video/ev_compare.mp4" controls autoplay muted loop width="640" playsinline>
 </video>
+</div>
 :::
 
 ::: {.content-visible when-format="pdf"}
