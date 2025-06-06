@@ -3,94 +3,21 @@
 
 /*-- scss:rules --*/
 
-// Mobile hamburger menu styling
-.navbar-toggler {
-  border-color: #ff6600 !important; // Orange border
-  
-  .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ff6600' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-    opacity: 1 !important;
-  }
-  
-  // Ensure visibility on all backgrounds
-  &:focus, &:hover {
-    border-color: #ff6600 !important;
-    box-shadow: 0 0 0 0.2rem rgba(255, 102, 0, 0.25) !important;
-  }
-}
-
-// Alternative approach - using filter for the hamburger icon
+// Target the actual hamburger lines (the three horizontal bars)
 .navbar-toggler-icon {
-  filter: brightness(0) saturate(100%) invert(45%) sepia(100%) saturate(2000%) hue-rotate(25deg) brightness(120%) contrast(100%) !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ff6600' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
-// Title styling - targets various title elements
-.navbar-brand, 
-.title,
-h1.title,
-.quarto-title .title {
+// Alternative approach using CSS filter to make it orange
+.navbar-toggler-icon {
+  filter: brightness(0) saturate(100%) invert(45%) sepia(98%) saturate(1352%) hue-rotate(12deg) brightness(101%) contrast(101%) !important;
+}
+
+// Title color
+.navbar-brand {
   color: #ff6600 !important;
 }
 
-// Title block banner title
-.title-block-header .quarto-title .title {
-  color: #ff6600 !important;
-}
-
-// Sidebar title if applicable
-.sidebar-title {
-  color: #ff6600 !important;
-}
-
-// Mobile specific adjustments
-@media (max-width: 991.98px) {
-  .navbar-toggler {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 0.5rem;
-    margin: 0.25rem;
-    
-    .navbar-toggler-icon {
-      width: 1.5em;
-      height: 1.5em;
-      background-size: 100% 100%;
-    }
-  }
-  
-  // Ensure title is visible on mobile
-  .navbar-brand,
-  .title {
-    color: #ff6600 !important;
-    font-weight: bold;
-  }
-}
-
-// Additional contrast boost for very dim displays
-@media (max-width: 768px) {
-  .navbar-toggler {
-    border: 2px solid #ff6600 !important;
-    background-color: rgba(255, 102, 0, 0.1) !important;
-    
-    &:hover, &:focus {
-      background-color: rgba(255, 102, 0, 0.2) !important;
-    }
-  }
-}
-
-// Alternative selectors if the above don't work
-// Check your browser's developer tools to see the exact classes used
-.quarto-navbar .navbar-toggler,
-.navbar-light .navbar-toggler,
-button[data-bs-toggle="collapse"] {
-  .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ff6600' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-  }
-}
-
-// For book format specifically
-.quarto-title-block .quarto-title .title,
-.content .quarto-title .title {
-  color: #ff6600 !important;
-}
 //* Body background and text color */
 
 /* Active item in the index (left sidebar) */
