@@ -16,6 +16,30 @@ source("../_book_functions.R")
 
 ### Selection of Modelling Techniques {#sec-14-techniques}
 
+## Literature {#sec-literature_review}
+
+The literature review focuses on the intersection of three fields, according to the now-ubiquitous Data Science Venn Diagram of [Drew Conway](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram).
+
+## Business Process
+
+-   SCOR MODEL A COMPLETE GUIDE - 2020 EDITION, [@blokdyk_scor_2019]
+-   Inventory and production management in supply chains, [@silver_inventory_2021]
+
+## Math & Statistics
+
+-   Forecasting: Principles and Practice (3rd ed), [@hyndman_forecasting_2021]
+-   Demand forecasting best practices, [@vandeput_demand_2023]
+-   Data science for supply chain forecasting, [@vandeput_data_2021]
+-   Inventory optimization: models and simulations, [@vandeput_inventory_2020]
+-   Machine Learning With Boosting: A Beginner's Guide, [@hartshorn_machine_2017]
+-   Introduction to conformal prediction with Python, [@molnar_introduction_2023]
+-   Practical guide to applied conformal prediction in Python, [@manokhin_practical_2023]
+-   SHAP with Python, [@osullivan_shap_2024]
+-   Introduction to SHAP with Python, [@osullivan_introduction_2023]
+-   Ensemble methods for machine learning, [@kunapuli_ensemble_2023]
+
+
+
 <!-- Outline the statistical and machine learning techniques considered (e.g., ETS, ARIMA, Prophet, Hierarchical Time Series). -->
 
 > The selection of modelling techniques must balance interpretability, accuracy, data availability, and computational cost. Given *Pythia’s Advice* aims to build trust and provide transparent, value-added forecasts with minimal resources, **statistical models** were deliberately chosen for their clarity and theoretical grounding. While this choice limits the ability to model promotions and other exogenous factors — potentially reducing accuracy — it supports stakeholder confidence and facilitates adoption. In a future phase, once trust is established, **machine learning** techniques may be explored to further improve forecast performance.
