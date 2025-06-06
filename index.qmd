@@ -134,5 +134,5 @@ For the optimal experience:
 This is an example of a definition DEF = $\sqrt{mean(e^2_t)}$
 :::
 
-IBL:  https://www.tue.nl/en/education/professional-education/current-programs/eaisi-academy/lecturers/dr-ieke-le-blanc
-NVDP: https://www.linkedin.com/in/vandeputnicolas/
+[IBL]:  https://www.tue.nl/en/education/professional-education/current-programs/eaisi-academy/lecturers/dr-ieke-le-blanc
+[NVDP]: https://www.linkedin.com/in/vandeputnicolas/
