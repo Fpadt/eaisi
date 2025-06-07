@@ -1,5 +1,5 @@
 ---
-subtitle: Pythia's Advice - Datascience Tooling
+subtitle: "*Pythia's Advice* - Datascience Tooling"
 description: |
   - Data extraction from SAP/CSV to Parquet
   - Pre-built data.table summaries

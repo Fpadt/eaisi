@@ -257,7 +257,7 @@ The forecasting process: requiring human expertise.
   )
 ```
 
-Forecasting steps per forecast, Pythia's Advice to improve efficiency.
+Forecasting steps per forecast, *Pythia's Advice* to improve efficiency.
 :::
 
 ::: callout-important

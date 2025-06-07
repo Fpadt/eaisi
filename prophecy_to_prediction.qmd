@@ -1,5 +1,5 @@
 ---
-subtitle:        The Myth Inspiring Pythia's Advice
+subtitle:        "The Myth Inspiring *Pythia's Advice*"
 ---
 
 ```{=html}
