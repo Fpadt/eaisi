@@ -762,62 +762,69 @@ Summary: Customer Hierachy
 :::
 
 ### Time Series Patterns {#sec-02-data-exploration-time-series}
-let’s explore the time series patterns per category
 
-the hot drinks category exhibits strong seasonality, as tea consumption increases during winter. 
+::: {#fig-02-seasonal_trend_strength_facet_plot .figure}
+![](../images/seasonal_trend_strength_facet_plot.png){fig-align="left" width="15cm"}
 
-Seasonality or trend plot
-Using Time series features, categories can be automatically classified 
- 
-in the upper left corner, Clipper hot again, demonstrating the expected seasonality-strength.
+
+:::
+
+::: {#fig-02-examples_facet_plot .figure}
+![](../images/examples_facet_plot.png){fig-align="left" width="15cm"}
+
+
+:::
 
 ### Forecastability {#sec-02-data-exploration-forecastability}
 
 #### ABC-Classification {#sec-02-data-exploration-abc}
-ABC/XYZ Classification
-Purpose:
-To prioritize items and assess whether forecasting is worthwhile or feasible for each.
+
+The ABC/XYZ classification is a two-dimensional analysis that helps prioritize items based on their importance and predictability.  
 
 Key Questions Addressed:
 
-ABC: Is this item important enough to forecast or control tightly?
-(based on contribution to revenue, volume, or margin)
+- ABC: Is this item important enough to forecast or control tightly?
 
-XYZ: Is this item predictable enough to be reliably forecasted?
-(based on variability, usually via Coefficient of Variation)
+- XYZ: Is this item predictable enough to be reliably forecasted?
 
 Typical Outcome:
 
-High-priority & stable items (AX): Yes, forecast carefully.
+- High-priority & stable items (AX): Yes, forecast carefully.
 
-Low-priority & erratic items (CZ): Maybe don't forecast — use reorder rules or make-to-order.
+- Low-priority & erratic items (CZ): Maybe don't forecast — use reorder rules or make-to-order.
+
+::: {#fig-02-ABCXYZ .figure}
+![](../images/ABCXYZ.png){fig-align="left" width="15cm"}
+
+
+:::
 
 #### Syntetos-Boylan (SB) Classification {#sec-02-data-exploration-sb}
 
-Purpose:
-To guide model selection by identifying the nature of demand (e.g., intermittent, lumpy).
+The Syntetos-Boylan (SB) classification is a method to categorize demand patterns based on their statistical properties, particularly focusing on the Average Demand Interval (ADI) and Coefficient of Variation (CV).
 
 Key Questions Addressed:
 
-What kind of statistical method is appropriate for this demand profile?
+- What kind of statistical method is appropriate for this demand profile?
 
-Is this demand pattern intermittent (zero-heavy), erratic, or smooth?
+- Is this demand pattern intermittent (zero-heavy), erratic, or smooth?
+
+::: {#fig-02-plot_sbc_by_ts .figure}
+![](../images/plot_sbc_by_ts.png){fig-align="left" width="15cm"}
+
+
+:::
+
+::: {#fig-02-plot_sbm .figure}
+![](../images/plot_sbm.png){fig-align="left" width="15cm"}
+
+
+:::
+
+
 
 Model Implications:
 
-Demand Type	Suggested Model
-Smooth	Exponential smoothing (ETS)
-Erratic	Damped trend, possibly ETS with adjustments
-Intermittent	Croston (or variants: SBA, TSB, etc.)
-Lumpy	Advanced models (e.g., bootstrapped, hybrid, or judgmental overlays)
-
-Smooth: Low ADI and low CV. Highly predictable demand patterns.
- • Intermittent: High ADI, low CV. Forecastable with specialized methods such as
- Croston’s, ADIDA, or IMAPA.
- • Erratic: Low ADI, high CV. High uncertainty, often driven by price sensitivity or
- promotions.
- • Lumpy: High ADI and high CV. Extremely difficult to forecast, often related to slow
-moving or event-driven items.
 
 ```{r}
 
