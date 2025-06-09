@@ -875,6 +875,13 @@ Croston / SBA / TSB, Zero-heavy demand, Intermittency, 'Intermittent; Lumpy', De
 
 ```
 
+::: {#fig-02-SBCSIEL .figure}
+
+![](../images/SBCSIEL.png){fig-align="left" width="15cm"}
+
+SB-Classification for each aggregation level
+:::
+
 #### ABC/XYZ versus Syntetos-Boylan (SB) Classification {#sec-02-data-exploration-abc-sb}
 
 ```{r}
