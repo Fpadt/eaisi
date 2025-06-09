@@ -792,7 +792,8 @@ should be forecasted and how tightly they should be controlled.
 - XYZ: Is this item predictable enough to be reliably forecasted?
 
 ::: {#fig-02-abc-xyz .figure}
-![](../images/ABC-XYZ.png){fig-align="left" width="15cm"}
+
+![](../images/ABCXYZ.png){fig-align="left" width="15cm"}
 
 - AX: High-priority & stable items (AX), forecast carefully.
 
@@ -839,11 +840,11 @@ fread(text = "
 
 
 ::: {#fig-02-plot_sbc_by_ts .figure}
-![](../images/plot_sbc_by_ts.svg){fig-align="left" width="15cm"}
+![](../images/plot_sbc_by_ts.png){fig-align="left" width="15cm"}
 :::
 
 ::: {#fig-02-plot_sbm .figure}
-![](../images/plot_sbc_by_ts.svg){fig-align="left" width="15cm"}
+![](../images/plot_sbc_by_ts.png){fig-align="left" width="15cm"}
 :::
 
 
@@ -900,6 +901,7 @@ fread(text = "
 
 ```
 
+[details and coding on data_understanding](../coding/21_data_understanding.html)
 
 ## Data Quality Report {#sec-02-data-quality}
 
