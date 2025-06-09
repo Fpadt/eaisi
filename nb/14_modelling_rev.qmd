@@ -22,23 +22,19 @@ The literature review focuses on the intersection of three fields, according to 
 
 ## Business Process
 
--   SCOR MODEL A COMPLETE GUIDE - 2020 EDITION, [@blokdyk_scor_2019]
--   Inventory and production management in supply chains, [@silver_inventory_2021]
+-   SCOR MODEL A COMPLETE GUIDE - 2020 EDITION, [@blokdykSCORMODELCOMPLETE2019]
+-   Inventory and production management in supply chains, [@silverInventoryProductionManagement2021]
 
 ## Math & Statistics
 
--   Forecasting: Principles and Practice (3rd ed), [@hyndman_forecasting_2021]
--   Demand forecasting best practices, [@vandeput_demand_2023]
--   Data science for supply chain forecasting, [@vandeput_data_2021]
--   Inventory optimization: models and simulations, [@vandeput_inventory_2020]
--   Machine Learning With Boosting: A Beginner's Guide, [@hartshorn_machine_2017]
--   Introduction to conformal prediction with Python, [@molnar_introduction_2023]
--   Practical guide to applied conformal prediction in Python, [@manokhin_practical_2023]
--   SHAP with Python, [@osullivan_shap_2024]
--   Introduction to SHAP with Python, [@osullivan_introduction_2023]
--   Ensemble methods for machine learning, [@kunapuli_ensemble_2023]
-
-
+-   Forecasting: Principles and Practice (3rd ed), [@hyndmanForecastingPrinciplesPractice2021]
+-   Demand forecasting best practices, [@vandeputDemandForecastingBest2023]
+-   Data science for supply chain forecasting, [@vandeputDataScienceSupply2021]
+-   Inventory optimization: models and simulations, [@vandeputInventoryOptimizationModels2020]
+-   Machine Learning With Boosting: A Beginner's Guide, [@hartshornMachineLearningBoosting2017]
+-   Introduction to conformal prediction with Python, [@molnarIntroductionConformalPrediction2023]
+-   Practical guide to applied conformal prediction in Python, [@manokhinPracticalGuideApplied2023]
+-   Mastering Modern Time Series Forecasting : The Complete Guide to Statistical, Machine Learning & Deep Learning Models in Python [@valeriymanokhinMasteringModernTime2025]
 
 <!-- Outline the statistical and machine learning techniques considered (e.g., ETS, ARIMA, Prophet, Hierarchical Time Series). -->
 
@@ -90,7 +86,7 @@ Present the evaluation methodology, error metrics (e.g., RMSE, MAPE, bias), and 
 
 #### R & R-Studio tooling
 
-see [@r_core_team_r_2024]
+see [@rcoreteamLanguageEnvironmentStatistical2024] & [@Posit]
 
 ```{r}
 #| label: r-version
@@ -135,37 +131,36 @@ data.table(
 #### R-Packages
 
 ::: {#tbl-14-packages .table-wrapper style="text-align: left;"}
-
-| Package         | Purpose                              | Citation        |
-|:----------------|:-------------------------------------|:----------------|
-| collapsibleTree | Collapsible trees                         | @collapsibleTree2024 |
-| crayon          | Colored text output                       | @crayon2024          |
-| data.table      | Fast data manipulation                    | @data.table2024      |
-| dplyr           | Data manipulation                         | @dplyr2024           |
-| DT              | Interactive tables                        | @DT2024              |
-| duckDB          | DuckDB database and light transformations | @duckdb2024          |
-| fable           | Forecasting models                        | @fable2024           |
-| fabletools      | Forecasting infrastructure                | @fabletools2024      |
-| feasts          | Time series feature extraction            | @feasts_2024         |
-| fpp3            | Forecasting and time series               | @fpp3_2024           |
-| ggplot2         | Data visualization                        | @ggplot2_2024        |
-| ggrepel         | Non-overlapping labels in ggplot2         | @ggrepel2024         |
-| glue            | String interpolation                      | @glue2024            |
-| gt              | Creating tables                           | @gt2024              |
-| kableExtra      | Enhanced tables                           | @kableExtra2024      |
-| knitr           | Dynamic report generation                 | @knitr2024           |
-| lubridate       | Date-time manipulation                    | @lubridate2024       |
-| magrittr        | Pipe operator                             | @magrittr2024        |
-| openxlsx2       | Read/write Excel                          | @openxlsx2_2024      |
-| **padt**        | **Pythia’s Advice – Data Tooling**        | **@padt2024**        |
-| purrr           | Functional programming                    | @purrr2024           |
-| quarto          | Rendering the report                      | @quarto2024          |
-| scales          | Scaling and formatting                    | @scales2024          |
-| skimr           | Data summarization                        | @skimr2024           |
-| tidyr           | Data tidying                              | @tidyr2024           |
-| tidyverse       | Unified data science tools                | @tidyverse2024       |
-| treemapify      | Treemaps                                  | @treemapify2024      |
-| tsibble         | Tidy temporal data frames                 | @tsibble2024         |
+| Package | Purpose | Citation |
+|:-----------------|:-----------------------------------|:-----------------|
+| collapsibleTree | Collapsible trees | @liakhovitskiCollapsibleTreeInteractiveCollapsible2024 |
+| crayon | Colored text output | @csardiCrayonColoredTerminal2024 |
+| data.table | Fast data manipulation | @barrettDatatableExtensionDataframe2024 |
+| dplyr | Data manipulation | @wickhamDplyrGrammarData2024 |
+| DT | Interactive tables | @xieDTWrapperJavaScript2024 |
+| duckDB | DuckDB database and light transformations | @raasveldtDuckdbInProcessSQL2024 |
+| fable | Forecasting models | @ohara-wildFableForecastingModels2024 |
+| fabletools | Forecasting infrastructure | @ohara-wildFabletoolsCoreTools2024 |
+| feasts | Time series feature extraction | @ohara-wildFeastsFeatureExtraction2024 |
+| fpp3 | Forecasting and time series | @hyndmanFpp3ForecastingPrinciples2024 |
+| ggplot2 | Data visualization | @wickhamGgplot2CreateElegant2024 |
+| ggrepel | Non-overlapping labels in ggplot2 | @slowikowskiGgrepelAutomaticallyPosition2024 |
+| glue | String interpolation | @hesterGlueInterpretedString2024 |
+| gt | Creating tables | @iannoneGtEasilyCreate2024 |
+| kableExtra | Enhanced tables | @zhuKableExtraConstructComplex2024 |
+| knitr | Dynamic report generation | @xieKnitrGeneralPurposePackage2024 |
+| lubridate | Date-time manipulation | @spinuLubridateMakeDealing2024 |
+| magrittr | Pipe operator | @magrittrMagrittrForwardPipeOperator2022 |
+| openxlsx2 | Read/write Excel | @barboneOpenxlsx2ReadWrite2025 |
+| **padt** | **Pythia’s Advice – Data Tooling** | @EAISIPADT |
+| purrr | Functional programming | @wickhamPurrrFunctionalProgramming2025 |
+| quarto | Rendering the report | @allaireQuartoInterfaceQuarto2024 |
+| scales | Scaling and formatting | @wickhamScalesScaleFunctions2025 |
+| skimr | Data summarization | @waringSkimrCompactFlexible2022 |
+| tidyr | Data tidying | @wickhamTidyrTidyMessy2024 |
+| tidyverse | Unified data science tools | @wickhamTidyverseEasilyInstall2024 |
+| treemapify | Treemaps | @wilkinsTreemapifyDrawTreemaps2024 |
+| tsibble | Tidy temporal data frames | @wangTsibbleTidyTemporal2024 |
 :::
 
 ------------------------------------------------------------------------
@@ -193,7 +188,7 @@ algorithm - handle teh specific characteristics of teh data - balance performanc
 -   transparency -\>
 
 | Capability | Standard ARIMA | SARIMA | ARIMAX |
-|----------------|----------------------|----------------|-------------------|
+|------------------|-------------------|------------------|------------------|
 | Handles Trend | ✅ (via differencing) | ✅ (with seasonal differencing) | ✅ |
 | Damped Trend | ❌ (not explicit) | ❌ | ❌ |
 | Seasonality | ❌ (needs SARIMA) | ✅ | ✅ |

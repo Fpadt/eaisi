@@ -261,7 +261,7 @@ Success will be measured by the following criteria:
 
 By achieving these objectives, the company will see significant improvements in operational efficiency, cost-effectiveness, and most importantly, a higher level of customer satisfaction, which will ultimately drive long-term business success.
 
-see upper part of the flow-down graph, (@sec-flowdown).
+see upper part of the flow-down graph, (@fig-01-bu-daps).
 
 ### Data Mining Success Criteria
 
@@ -273,7 +273,7 @@ These metrics will help evaluate how well each approach performs against the uni
 
 Predictive Model based on Correlations: Forecast Future Sales + Promotion effects
 
-see lower part of the flow-down graph, (@sec-flowdown).
+see lower part of the flow-down graph, (fig-01-bu-daps).
 
 
 

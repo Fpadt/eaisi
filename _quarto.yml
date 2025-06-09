@@ -189,6 +189,15 @@ resources:
   - video/ev_cv.mp4
   - video/ev_compare.mp4  
   - pptx/PAF_s03.pptx
+  - coding/11_initialization.html
+  - coding/12_data_ingestion.html
+  - coding/15_data_access.html
+  - coding/20_data_understanding.html
+  - coding/21_data_understanding.html  
+  - coding/30_data_preparation.html
+  - coding/40_modeling.html
+  - coding/41_obsolete_func.html
+  - coding/50_evaluation.html
 
 funding: "The author(s) received no specific funding for this work."
 categories:
@@ -203,7 +212,11 @@ key-points:
   - A comparison has been made between the differnt forecasts engines in terms of forecast accuracy measures and has been visualized
   - rules of thumb have been developed indicating what to use when
 thanks: 'Mentor: {{<var mentor >}} - EAISI Academy, MASTERING DATA & AI, Technical University Eindhoven'
-bibliography:      EAISI-PYTHIA.bib
+bibliography:
+  - Books.bib
+  - Journals.bib  
+  - Software.bib
+  - Web.bib
 csl:               apa.csl # data-science-journal.csl #apa.csl
 # cite-method:       biblatex
 # biblio-style:      nature

@@ -1,0 +1,485 @@
+@misc{barrettDatatableExtensionDataframe2024,
+  title = {Data.Table: {{Extension}} of 'Data.Frame'},
+  shorttitle = {Data.Table},
+  author = {Barrett, Tyson and Dowle, Matt and Srinivasan, Arun and Gorecki, Jan and Chirico, Michael and Hocking, Toby and Schwendinger, Benjamin and Stetsenko, Pasha and Short, Tom and Lianoglou, Steve and Antonyan, Eduard and Bonsch, Markus and Parsonage, Hugh and Ritchie, Scott and Ren, Kun and Tan, Xianying and Saporta, Rick and Seiskari, Otto and Dong, Xianghui and Lang, Michel and Iwasaki, Watal and Wenchel, Seth and Broman, Karl and Schmidt, Tobias and Arenburg, David and Smith, Ethan and Cocquemas, Francois and Gomez, Matthieu and Chataignon, Philippe and Blaser, Nello and Selivanov, Dmitry and Riabushenko, Andrey and Lee, Cheng and Groves, Declan and Possenriede, Daniel and Parages, Felipe and Toth, Denes and {Yaramaz-David}, Mus and Perumal, Ayappan and Sams, James and Morgan, Martin and Quinn, Michael and @javrucebo and {@marc-outins} and Storey, Roy and Saraswat, Manish and Jacob, Morgan and Schubmehl, Michael and Vaughan, Davis and Silvestri, Leonardo and Hester, Jim and Damico, Anthony and Freundt, Sebastian and Simons, David and de Andrade, Elliott Sales and Miller, Cole and Meldgaard, Jens Peder and Tlapak, Vaclav and Ushey, Kevin and Eddelbuettel, Dirk and Fischetti, Tony and Shilon, Ofek and Khotilovich, Vadim and Wickham, Hadley and Becker, Bennet and Haynes, Kyle and Kamgang, Boniface Christian and Delmarcell, Olivier and O'Brien, Josh and de Mezquita, Dereck and Czekanski, Michael and Shemetov, Dmitry and Jha, Nitish and Wu, Joshua and {Gin{\'e}-V{\'a}zquez}, Iago and Chetia, Anirban and Amoakohene, Doris and Krylov, Ivan},
+  year = {2024},
+  month = oct,
+  urldate = {2024-10-13},
+  abstract = {Fast aggregation of large data (e.g. 100GB in RAM), fast ordered joins, fast add/modify/delete of columns by group using no copies at all, list columns, friendly and fast character-separated-value read/write. Offers a natural and flexible syntax, for faster development.},
+  copyright = {MPL-2.0 {\textbar} file LICENSE},
+  keywords = {ChemPhys,Finance,HighPerformanceComputing,TimeSeries,WebTechnologies}
+}
+
+@book{blokdykSCORMODELCOMPLETE2019,
+  title = {{{SCOR MODEL A COMPLETE GUIDE}} - 2020 {{EDITION}}},
+  author = {BLOKDYK, {\relax GERARDUS}},
+  year = {2019},
+  publisher = {5STARCOOKS},
+  address = {[S.l.]},
+  isbn = {978-0-6559-6649-4},
+  langid = {english},
+  annotation = {OCLC: 1412189016}
+}
+
+@book{costaCRISPMLMethodologyStepbyStep2022,
+  title = {The {{CRISP-ML Methodology}}: {{A Step-by-Step Approach}} to {{Real-World Machine Learning Projects}}},
+  shorttitle = {{{CRISP-DM}}},
+  author = {Costa, R},
+  year = {2022},
+  publisher = {Independently published},
+  isbn = {979-8-3716-4712-2},
+  langid = {english}
+}
+
+@misc{csardiCrayonColoredTerminal2024,
+  title = {Crayon: {{Colored Terminal Output}}},
+  author = {Cs{\'a}rdi, G{\'a}bor},
+  year = {2024}
+}
+
+@misc{debruineGlossaryGlossariesMarkdown2023,
+  title = {Glossary: {{Glossaries}} for {{Markdown}} and {{Quarto Documents}}},
+  shorttitle = {Glossary},
+  author = {DeBruine, Lisa},
+  year = {2023},
+  month = may,
+  urldate = {2024-10-13},
+  abstract = {Add glossaries to markdown and quarto documents by tagging individual words. Definitions can be provided inline or in a separate file.},
+  copyright = {CC BY 4.0}
+}
+
+@article{demastDAPSDiagramsDefining2024,
+  title = {{{DAPS}} Diagrams for Defining {{Data Science}} Projects},
+  author = {{de Mast}, Jeroen and Lokkerbol, Joran},
+  year = {2024},
+  month = apr,
+  journal = {Journal of Big Data},
+  volume = {11},
+  number = {1},
+  pages = {50},
+  issn = {2196-1115},
+  doi = {10.1186/s40537-024-00916-7},
+  abstract = {Models for structuring big-data and data-analytics projects typically start with a definition of the project's goals and the business value they are expected to create. The literature identifies proper project definition as crucial for a project's success, and also recognizes that the translation of business objectives into data-analytic problems is a difficult task. Unfortunately, common project structures, such as CRISP-DM, provide little guidance for this crucial stage when compared to subsequent project stages such as data preparation and modeling.}
+}
+
+@article{fildesGoodBadJudgment2007,
+  title = {Good and {{Bad Judgment}} in {{Forecasting}}: {{Lessons}} from {{Four Companies}}},
+  author = {Fildes, Robert and Goodwin, Paul},
+  year = {2007},
+  month = jan,
+  journal = {Foresight: The International Journal of Applied Forecasting},
+  volume = {8},
+  pages = {5--10},
+  urldate = {2025-02-04}
+}
+
+@misc{garzaStatsForecast2022,
+  title = {{{StatsForecast}}},
+  author = {Garza, Federico and Mergenthaler Canseco, Max and Chall{\'u}, Cristian and Olivares, Kin G.},
+  year = {2022},
+  month = jan,
+  address = {Salt Lake City, Utah, US 2022},
+  urldate = {2024-10-13},
+  abstract = {Lightning ⚡️ fast forecasting with statistical and econometric models.},
+  copyright = {Apache-2.0},
+  howpublished = {Nixtla},
+  keywords = {arima,automl,baselines,data-science,econometrics,ets,exponential-smoothing,fbprophet,forecasting,machine-learning,mstl,naive,neuralprophet,nixtla,predictions,prophet,python,seasonal-naive,statistics,statsforecast,theta,time-series},
+  file = {C:\Users\flori\Zotero\storage\L9K6TPHU\index.html}
+}
+
+@book{gujaGenerativeAIData2025,
+  title = {Generative {{AI}} for {{Data Analytics}}.},
+  author = {Guja, Artur and Siwiak, Marlena},
+  year = {2025},
+  publisher = {Manning Publications Co. LLC 2025.},
+  isbn = {978-1-63343-721-0},
+  langid = {english},
+  annotation = {OCLC: 1437291469}
+}
+
+@book{hartshornMachineLearningBoosting2017,
+  title = {Machine {{Learning With Boosting}}: {{A Beginner}}'s {{Guide}}},
+  shorttitle = {Machine {{Learning With Boosting}}},
+  author = {Hartshorn, Scott},
+  year = {2017},
+  month = aug,
+  abstract = {Machine Learning - Made Easy To UnderstandIf you are looking for a book to help you understand how the machine learning algorithm ``Gradient Boosted Trees'', also known as ``Boosting'', works behind the scenes, then this is a good book for you.~ Boosting is a widely used algorithm in a variety of applications, including big data analysis for industry and data analysis competitions like you would find on Kaggle.~ Boosting has, in fact, become one of the dominant winning algorithms on Kaggle.This book explains how Decision Trees work and how they can be used sequentially to reduce many of the common problems with decision trees, such as overfitting the training data.~ That method is known is Gradient Boosted Trees.Is This Book Any Good? Try A Free SampleIf you're reading this book description, you are probably already interested in Machine Learning, and know that Boosting is a useful topic. So the biggest question you have is, is the book good and will it be useful for you. Reviews are one way of determining that, but what was a good or bad read for someone else might be different for you. Fortunaltely Amazon makes a free sample available, and I also have a free sample available on my blog "Fairly Nerdy". Both of those samples are approximately 10\% of the book which is hopefully enough to help you decide if this is a good book for you. The sample on my blog is the first 10\% of the book, I think that Amazon sometimes sends the first 10\%, or sometimes sends other sections. You can get the Amazon sample by clicking "Send a free sample" on the right side of this page. You can get the free PDF sample by going to my blog "Fairly Nerdy" and clicking on the "Our Books" tab at the top of the page. (This book is about halfway down on that page) The nice thing about the sample is that it will be a fast read and give you a good high level understanding of Boosting even if you decide you don't want to dig into the details in the rest of the bookSeveral Dozen Visual ExamplesEquations are great for really understanding every last detail of an algorithm.~ But to get a basic idea of how something works, in a way that will stick with you 6 months later, nothing beats pictures.~ This book contains several dozen images which detail things such as how a decision tree picks what splits it will make and how they can be combined using boosted learning.Python \& Excel Files For The Examples It turns out that Boosting lends itself well to being done iteratively in Excel.~ And the nice thing about Excel is that it is easy to follow the equations. And if your spreadsheet can duplicate your code, then you know that you understand the process.~ All of the Boosting examples in this book were generated using Python, but then duplicated in Excel, both of which are available for free download.Topics CoveredThe topics covered in this book areHow do decision trees workWhat are some of the failings of decision trees, and where do they differ from how a human would solve the problemHow can multiple decision trees be stacked together into Gradient Boosted TreesHow to use the Boosting algorithm to make predictionsHow is the Boosting algorithm different for regression vs. classification with two categories vs. classification with multiple categoriesHow to use Cross Validation to check your modelHow to use Feature Engineering to improve the results from the machine learning algorithmAnd MoreIf you want to know more about how these machine learning algorithms work, but don't need to reinvent them, this is a good book for you},
+  langid = {english}
+}
+
+@misc{hesterGlueInterpretedString2024,
+  title = {Glue: {{Interpreted String Literals}}},
+  author = {Hester, Jim},
+  year = {2024}
+}
+
+@misc{hyndman[autForecastForecastingFunctions2024,
+  title = {Forecast: {{Forecasting Functions}} for {{Time Series}} and {{Linear Models}}},
+  shorttitle = {Forecast},
+  author = {Hyndman [aut, Rob and {cre} and {cph} and Athanasopoulos, George and Bergmeir, Christoph and Caceres, Gabriel and Chhay, Leanne and Kuroptev, Kirill and {O'Hara-Wild}, Mitchell and Petropoulos, Fotios and Razbash, Slava and Wang, Earo and Yasmeen, Farah and Garza, Federico and Girolimetto, Daniele and Ihaka, Ross and R Core Team and Reid, Daniel and Shaub, David and Tang, Yuan and Wang, Xiaoqian and Zhou, Zhenyu},
+  year = {2024},
+  month = jun,
+  urldate = {2024-10-13},
+  abstract = {Methods and tools for displaying and analysing univariate time series forecasts including exponential smoothing via state space models and automatic ARIMA modelling.},
+  copyright = {GPL-3},
+  keywords = {Econometrics,Environmetrics,Finance,MissingData,TimeSeries}
+}
+
+@misc{hyndman[autFpp3DataForecasting2024,
+  title = {Fpp3: {{Data}} for "{{Forecasting}}: {{Principles}} and {{Practice}}" (3rd {{Edition}})},
+  shorttitle = {Fpp3},
+  author = {Hyndman [aut, Rob and {cre} and {cph} and Athanasopoulos, George and {O'Hara-Wild}, Mitchell and Palihawadana, Nuwani and Wickramasuriya, Shanika and RStudio},
+  year = {2024},
+  month = sep,
+  urldate = {2024-10-13},
+  abstract = {All data sets required for the examples and exercises in the book "Forecasting: principles and practice" by Rob J Hyndman and George Athanasopoulos {$<$}https://OTexts.com/fpp3/{$>$}. All packages required to run the examples are also loaded. Additional data sets not used in the book are also included.},
+  copyright = {GPL-3},
+  keywords = {TimeSeries}
+}
+
+@book{hyndmanForecastingPrinciplesPractice2021,
+  title = {Forecasting: {{Principles}} and {{Practice}} (3rd Ed)},
+  shorttitle = {Forecasting},
+  author = {Hyndman, R.J. and Athanasopoulos, G},
+  year = {2021},
+  urldate = {2024-10-05},
+  abstract = {This textbook is intended to provide a comprehensive introduction to forecasting methods and to present enough information about each method for readers to be able to use them sensibly. We don't attempt to give a thorough discussion of the theoretical details behind each method, although the references at the end of each chapter will fill in many of those details. The book is written for three audiences: (1) people finding themselves doing forecasting in business when they may not have had any formal training in the area; (2) undergraduate students studying business; (3) MBA students doing a forecasting elective. We use it ourselves for masters students and third-year undergraduate students at Monash University, Australia.},
+  langid = {english},
+  annotation = {Melbourne, Australia}
+}
+
+@misc{hyndmanFpp3ForecastingPrinciples2024,
+  title = {Fpp3: {{Forecasting Principles}} and {{Practice}}},
+  author = {Hyndman, Rob J. and Athanasopoulos, George},
+  year = {2024}
+}
+
+@misc{iannoneGtEasilyCreate2024,
+  title = {Gt: {{Easily Create Presentation-Ready Display Tables}}},
+  author = {Iannone, Rich and {Contributors}},
+  year = {2024}
+}
+
+@book{jamesIntroductionStatisticalLearning2023,
+  title = {An Introduction to Statistical Learning: With Applications in {{Python}}},
+  shorttitle = {An Introduction to Statistical Learning},
+  author = {James, Gareth and Witten, Daniela and Hastie, Trevor and Tibshirani, Robert and Taylor, Jonathan E.},
+  year = {2023},
+  series = {Springer Texts in Statistics},
+  publisher = {Springer},
+  address = {New York, NY},
+  urldate = {2025-06-04},
+  isbn = {978-3-031-38746-3 978-3-031-38747-0},
+  langid = {english}
+}
+
+@book{kunapuliEnsembleMethodsMachine2023,
+  title = {Ensemble Methods for Machine Learning},
+  author = {Kunapuli, Gautam},
+  year = {2023},
+  publisher = {Manning},
+  address = {Shelter Island, NY},
+  isbn = {978-1-61729-713-7},
+  langid = {english}
+}
+
+@misc{liakhovitskiCollapsibleTreeInteractiveCollapsible2024,
+  title = {{{collapsibleTree}}: {{Interactive Collapsible Tree Diagrams}}},
+  author = {Liakhovitski, Dimitri},
+  year = {2024}
+}
+
+@book{manokhinPracticalGuideApplied2023,
+  title = {Practical Guide to Applied Conformal Prediction in {{Python}}: Learn and Apply the Best Uncertainty Frameworks to Your Industry Applications},
+  shorttitle = {Practical Guide to Applied Conformal Prediction in {{Python}}},
+  author = {Manokhin, Valery},
+  year = {2023},
+  publisher = {{$<$}packt{$>$}},
+  address = {Birmingham Mumbai},
+  abstract = {Discover the power of Conformal Prediction with the "Practical Guide to Applied Conformal Prediction in Python." Master the latest techniques to quantify uncertainty in machine learning and computer vision models, and seamlessly apply them to your industry applications},
+  isbn = {978-1-80512-276-0},
+  langid = {english}
+}
+
+@misc{MasteringModernTime,
+  title = {Mastering {{Modern Time Series Forecasting}} : {{The Complete Guide}} to {{Statistical}}, {{Machine Learning}} \& {{Deep Learning Models}} in {{Python}}},
+  shorttitle = {Mastering {{Modern Time Series Forecasting}}},
+  journal = {Gumroad},
+  urldate = {2025-06-06},
+  abstract = {📘 Mastering Modern Time Series Forecasting (early access)This book will rise to \$80+ as more chapters drop. Preorder now and lock in lifetime access.The Definitive Guide to Statistical, Machine Learning \&amp; Deep Learning Models in PythonLet's be honest --- most forecasting books are either outdated, too shallow, or written by folks who've never actually built a real forecasting system.If you've ever felt frustrated by books that skip the basics, toss in code without explaining it, or barely touch on what forecasting really involves --- you're not alone.This is different.Mastering Modern Time Series Forecasting is your all-in-one, no-shortcuts guide to building reliable, high-impact forecasting systems. Whether you're just getting started or looking to deepen your expertise, this book takes you from rock-solid foundations to the latest advances in forecasting --- including deep learning, transformers, and FTSM (Foundational Time Series Models).Written by a practitioner with over a decade of experience, who's built production-grade forecasting systems for multibillion-dollar companies, this book is grounded in reality --- not hype. The systems I've helped build have delivered multimillion-dollar business value, but I've also seen the other side: data science teams chasing shiny tools, only to ship systems that crash in production, fail silently, or burn through budgets without results.This book is a response to that --- combining practical Python examples, real-world case studies, and a clear path to building forecasting solutions that actually work, scale, and deliver value.🔍 What You'll Learn📘 Core Forecasting FoundationsGrasp what forecast accuracy really means, master model validation strategies, and sidestep common pitfalls that trip up even experienced practitioners.📈 Classical Models, Done RightIn-depth, modern takes on ARIMA, Exponential Smoothing, and other classical statistical and econometrics models --- with clarity, not complexity.🤖 Machine Learning for Time SeriesBuild feature-rich forecasts using state-of-the-art ML techniques that go far beyond black-box models.🧠 Deep Learning \&amp; TransformersExplore powerful deep learning architectures, including Transformer-based models --- all with clear, readable PyTorch code.📊 FTSMs -- Foundational Time Series ModelsExplore the rise of Foundational Time Series Models (FTSMs) --- large, pre-trained models designed to generalize across domains, tasks, and time horizons. Think GPT for time series.🎯 Probabilistic \&amp; Interpretable ForecastingMove beyond point forecasts with uncertainty quantification, conformal prediction, SHAP, attention mechanisms, and explainability tools.📊 Real-World Case StudiesApply what you've learned on practical datasets across domains like retail, energy, and finance.🚀 MLOps \&amp; DeploymentLearn how to deploy, monitor, and scale your forecasting pipelines in the real world --- without the headaches.👥 Who It's For Data Scientists \&amp; ML EngineersSolving real-world forecasting challenges and building production-ready systems. Analysts \&amp; DevelopersLooking for a practical, hands-on reference that covers both fundamentals and advanced techniques. Students, Educators \&amp; ResearchersIn need of a modern, curriculum-friendly resource grounded in both theory and application. Demand Planners \&amp; Business StrategistsFocused on delivering real value through accurate, actionable forecasts. 🧠 Why This Book Stands Out 🔍 Starts with what matters --- metrics and validationBefore jumping into models, you'll learn how to evaluate them properly so you're building on a solid foundation. 🧠 Focuses on understanding, not just codingLearn how methods work, why they work, and when to use them --- not just how to run the code. 💻 Fully documented, transparent codeNo black boxes. Every example is clearly explained so you can learn and adapt, not guess. 🔄 Updated continuously with reader feedbackBuy once, benefit forever --- you'll get lifetime updates as the field evolves. 📚 Everything in one placeFrom classical models to deep learning and FTSMs --- no need to juggle multiple resources ever again. 📦 What You Get Instant download of the full book All code examples, datasets, and notebooks Free lifetime updates (including new chapters, errata fixes, and bonus content) Exclusive early access to upcoming bonus chapters \&amp; Q\&amp;A sessions 💸 Pricing 🎉 Introductory Price Suggested: \$40 {\textbar} Minimum: \$35 This is the introductory price --- it will increase as more chapters, tools, and content are released. If you find value or want to support the project, feel free to pay what it's worth to you \ding{164}️ Ready to take your forecasting skills from stats to neural nets, and from theory to real-world deployment?👉 Hit ``Buy Now'' and start mastering forecasting like never before.},
+  howpublished = {https://valeman.gumroad.com/l/MasteringModernTimeSeriesForecasting},
+  langid = {english},
+  file = {C:\Users\flori\Zotero\storage\VQXT8IUS\MasteringModernTimeSeriesForecasting.html}
+}
+
+@book{matthesPythonCrashCourse2019,
+  title = {Python Crash Course: A Hands-on, Project-Based Introduction to Programming},
+  shorttitle = {Python Crash Course},
+  author = {Matthes, Eric},
+  year = {2019},
+  edition = {2nd edition},
+  publisher = {No Starch Press},
+  address = {San Francisco, CA},
+  isbn = {978-1-59327-928-8},
+  lccn = {QA76.73.P98 M38 2019},
+  keywords = {Object-oriented programming (Computer science),Python (Computer program language)}
+}
+
+@book{molnarIntroductionConformalPrediction2023,
+  title = {Introduction to Conformal Prediction with {{Python}}: A Short Guide for Quantifying Uncertainty of Machine Learning Models},
+  shorttitle = {Introduction to Conformal Prediction with {{Python}}},
+  author = {Molnar, Christoph},
+  year = {2023},
+  edition = {First edition},
+  publisher = {Chistoph Molnar c/o MUCBOOK, Heidi Seibold},
+  address = {M{\"u}nchen, Germany},
+  isbn = {979-8-3775-0935-6},
+  langid = {english}
+}
+
+@misc{NixtlaHierarchicalforecastProbabilistic,
+  title = {Nixtla/Hierarchicalforecast: {{Probabilistic Hierarchical}} Forecasting 👑 with Statistical and Econometric Methods.},
+  urldate = {2024-10-13},
+  howpublished = {https://github.com/Nixtla/hierarchicalforecast},
+  keywords = {HTS,nixtla},
+  file = {C:\Users\flori\Zotero\storage\7N3UFQDX\hierarchicalforecast.html}
+}
+
+@misc{NixtlaMlforecast2024,
+  title = {Nixtla/Mlforecast},
+  year = {2024},
+  month = oct,
+  urldate = {2024-10-13},
+  abstract = {Scalable machine 🤖 learning for time series forecasting.},
+  copyright = {Apache-2.0},
+  howpublished = {Nixtla},
+  keywords = {dask,forecast,forecasting,lightgbm,machine-learning,ML-forecast,nixtla,python,time-series,xgboost}
+}
+
+@misc{NixtlaTsfeatures2024,
+  title = {Nixtla/Tsfeatures},
+  year = {2024},
+  month = oct,
+  urldate = {2024-10-13},
+  abstract = {Calculates various features from time series data. Python implementation of the R package tsfeatures.},
+  copyright = {Apache-2.0},
+  howpublished = {Nixtla},
+  keywords = {errors,features,fforma,forecasting,m4,metrics,nixtla,python,time-series,tsfeatures}
+}
+
+@misc{ohara-wildFableForecastingModels2024,
+  title = {Fable: {{Forecasting Models}} for {{Tidy Time Series}}},
+  shorttitle = {Fable},
+  author = {{O'Hara-Wild}, Mitchell and Hyndman, Rob and Wang, Earo and {implementation)}, Gabriel Caceres (NNETAR and Bergmeir, Christoph and Hensel, Tim-Gunnar and Hyndman, Timothy},
+  year = {2024},
+  month = sep,
+  urldate = {2024-10-13},
+  abstract = {Provides a collection of commonly used univariate and multivariate time series forecasting models including automatically selected exponential smoothing (ETS) and autoregressive integrated moving average (ARIMA) models. These models work within the 'fable' framework provided by the 'fabletools' package, which provides the tools to evaluate, visualise, and combine models in a workflow consistent with the tidyverse.},
+  copyright = {GPL-3},
+  keywords = {TimeSeries}
+}
+
+@misc{ohara-wildFabletoolsCoreTools2024,
+  title = {Fabletools: {{Core Tools}} for {{Packages}} in the 'fable' {{Framework}}},
+  author = {{O'Hara-Wild}, Mitchell and Hyndman, Rob J.},
+  year = {2024}
+}
+
+@misc{ohara-wildFeastsFeatureExtraction2024,
+  title = {Feasts: {{Feature Extraction}} and {{Statistics}} for {{Time Series}}},
+  shorttitle = {Feasts},
+  author = {{O'Hara-Wild}, Mitchell and Hyndman, Rob and Wang, Earo and Cook, Di and {features)}, Thiyanga Talagala (Correlation and {method)}, Leanne Chhay (Guerrero's},
+  year = {2024},
+  month = sep,
+  urldate = {2024-10-13},
+  abstract = {Provides a collection of features, decomposition methods, statistical summaries and graphics functions for the analysing tidy time series data. The package name 'feasts' is an acronym comprising of its key features: Feature Extraction And Statistics for Time Series.},
+  copyright = {GPL-3},
+  keywords = {TimeSeries}
+}
+
+@misc{osullivanIntroductionSHAPPython2023,
+  title = {Introduction to {{SHAP}} with {{Python}}},
+  shorttitle = {{{SHAP}} with {{Python}}},
+  author = {O'Sullivan, Conor},
+  year = {2023},
+  month = mar,
+  journal = {Introduction to SHAP with Python}
+}
+
+@misc{osullivanSHAPPython2024,
+  type = {Course},
+  title = {{{SHAP}} with {{Python}}},
+  shorttitle = {{{SHAP}} with {{Python}}},
+  author = {O'Sullivan, Conor},
+  year = {2024},
+  month = sep,
+  journal = {SHAP with Python},
+  abstract = {Theory behind Shapley values Calculating SHAP values SHAP aggregations Custom SHAP plots Interactions values Categorical target variables and features SHAP for computer vision},
+  howpublished = {https://adataodyssey.com/course/},
+  langid = {english}
+}
+
+@book{porterLearnAIassistedPython2024,
+  title = {Learn {{AI-assisted Python}} Programming: With {{GitHub Copilot}} and {{ChatGPT}}},
+  shorttitle = {Learn {{AI-assisted Python}} Programming},
+  author = {Porter, Leo and Zingaro, Daniel},
+  year = {2024},
+  publisher = {Manning},
+  address = {Shelter Island, NY},
+  abstract = {Writing computer programs in Python just got a lot easier! Use AI-assisted coding tools like GitHub Copilot and ChatGPT to turn your ideas into applications faster than ever. AI has changed the way we write computer programs. With tools like Copilot and ChatGPT, you can describe what you want in plain English, and watch your AI assistant generate the code right before your eyes. It's perfect for beginners, or anyone who's struggled with the steep learning curve of traditional programming. Learn AI-Assisted Python Programming: With GitHub Copilot and ChatGPT is a hands-on beginner's guide that is written by two esteemed computer science university professors. It teaches you everything you need to start programming Python in an AI-first world. You'll hit the ground running, writing prompts that tell your AI-assistant exactly what you want your programs to do. Along the way, you'll pick up the essentials of Python programming and practice the higher-level thinking you'll need to create working apps for data analysis, automating tedious tasks, and even video games. The way people write computer programs has changed forever. Using GitHub Copilot, you describe in plain English what you want your program to do, and the AI generates it instantly. This book shows you how to create and improve Python programs using AI--even if you've never written a line of computer code before. Spend less time on the slow, low-level programming details and instead learn how an AI assistant can bring your ideas to life immediately. As you go, you'll even learn enough of the Python language to understand and improve what your AI assistant creates},
+  isbn = {978-1-63343-778-4},
+  langid = {english}
+}
+
+@misc{raasveldtDuckdbInProcessSQL2024,
+  title = {Duckdb: {{In-Process SQL OLAP Database Management System}}},
+  author = {Raasveldt, Mark and M{\"u}hleisen, Hannes},
+  year = {2024}
+}
+
+@misc{rcoreteamLanguageEnvironmentStatistical2024,
+  title = {R: {{A Language}} and {{Environment}} for {{Statistical Computing}}},
+  shorttitle = {R {{Stats}}},
+  author = {\{R Core Team\}},
+  year = {2024},
+  address = {Vienna, Austria},
+  howpublished = {R Foundation for Statistical Computing}
+}
+
+@book{silverInventoryProductionManagement2021,
+  title = {Inventory and Production Management in Supply Chains},
+  author = {Silver, Edward A. and Pyke, David F. and Thomas, Douglas J.},
+  year = {2021},
+  edition = {Fourth edition, first issued in paperback},
+  publisher = {CRC Press, Taylor \& Francis Group},
+  address = {Boca Raton, FL London New York, NY},
+  abstract = {Authored by a team of experts, the new edition of this bestseller presents practical techniques for managing inventory and production throughout supply chains. It covers the current context of inventory and production management, replenishment systems for managing individual inventories within a firm, managing inventory in multiple locations and firms, and production management. The book presents sophisticated concepts and solutions with an eye towards today's economy of global demand, cost-saving, and rapid cycles. It explains how to decrease working capital and how to deal with coordinating chains across boundaries},
+  isbn = {978-1-032-17932-2},
+  langid = {english}
+}
+
+@misc{slowikowskiGgrepelAutomaticallyPosition2024,
+  title = {Ggrepel: {{Automatically Position Non-Overlapping Text Labels}} with 'Ggplot2'},
+  author = {Slowikowski, Kamil},
+  year = {2024}
+}
+
+@book{valeriymanokhinMasteringModernTime2025,
+  title = {Mastering {{Modern Time Series Forecasting}} : {{The Complete Guide}} to {{Statistical}}, {{Machine Learning}} \& {{Deep Learning Models}} in {{Python}}},
+  shorttitle = {Mastering {{Modern Time Series Forecasting}}},
+  author = {Valeriy Manokhin, PhD, MBA, {\relax CQF}},
+  year = {2025},
+  publisher = {gumroad},
+  urldate = {2025-06-10},
+  langid = {english}
+}
+
+@book{vandeputDataScienceSupply2021,
+  title = {Data Science for Supply Chain Forecasting},
+  author = {Vandeput, Nicolas},
+  year = {2021},
+  edition = {Second edition},
+  publisher = {De Gruyter},
+  address = {Berlin ; Boston},
+  isbn = {978-3-11-067110-0},
+  lccn = {HD38.5 .V36 2021},
+  keywords = {Business logistics,Data processing,Forecasting},
+  annotation = {OCLC: on1246524462}
+}
+
+@book{vandeputDemandForecastingBest2023,
+  title = {Demand Forecasting Best Practices},
+  author = {Vandeput, Nicolas},
+  year = {2023},
+  publisher = {Manning Publications Co},
+  address = {Shelter Island, NY},
+  abstract = {"An expert demand forecaster can help an organization avoid overproduction, reduce waste, and optimize inventory levels for a real competitive advantage. Demand Forecasting Best Practices teaches you how to become that virtuoso demand forecaster. This one-of-a-kind guide reveals forecasting tools, metrics, models, and stakeholder management techniques for delivering more effective supply chains. Everything you learn has been proven and tested in a live business environment. Discover author Nicolas Vandeput's original five step framework for demand planning excellence and learn how to tailor it to your own company's needs. Illustrations and real-world examples make each concept easy to understand and easy to follow. You'll soon be delivering accurate predictions that are driving major business value. Demand Forecasting Best Practices reveals forecasting tools, metrics, models, and stakeholder management techniques for managing your demand planning process efficiently and effectively. Everything you learn has been proven and tested in a live business environment. Discover author Nicolas Vandeput's original five step framework for demand planning excellence and learn how to tailor it to your own company's needs. Illustrations and real-world examples make each concept easy to understand and easy to follow. You'll soon be delivering accurate predictions that are driving major business value"--},
+  isbn = {978-1-63343-809-5},
+  lccn = {HD38.5 .V3625 2023},
+  keywords = {Business forecasting,Business logistics,Demand (Economic theory),Demande (Theorie economique),Forecasting,Logistique (Organisation),Offre et demande,Prevision,Prevision commerciale,Supply and demand},
+  annotation = {OCLC: on1370328178}
+}
+
+@book{vandeputInventoryOptimizationModels2020,
+  title = {Inventory Optimization: Models and Simulations},
+  shorttitle = {Inventory Optimization},
+  author = {Vandeput, Nicolas},
+  year = {2020},
+  series = {Business \& Economics},
+  publisher = {De Gruyter},
+  address = {Berlin ; Boston},
+  isbn = {978-3-11-067391-3},
+  lccn = {MLCM 2022/42492 (T)},
+  keywords = {Business logistics,Inventory control}
+}
+
+@misc{wangTsibbleTidyTemporal2024,
+  title = {Tsibble: {{Tidy Temporal Data Frames}} and {{Tools}}},
+  author = {Wang, Earo and Hyndman, Rob J.},
+  year = {2024}
+}
+
+@misc{wickhamDataScience2e,
+  type = {Book},
+  title = {R for {{Data Science}} (2e)},
+  author = {Wickham, Hadley},
+  journal = {R for Data Science (2e)},
+  urldate = {2024-10-13},
+  howpublished = {https://r4ds.hadley.nz/},
+  keywords = {R4DS},
+  file = {C:\Users\flori\Zotero\storage\7EKE6CPF\r4ds.hadley.nz.html}
+}
+
+@misc{wickhamDplyrGrammarData2024,
+  title = {Dplyr: {{A Grammar}} of {{Data Manipulation}}},
+  author = {Wickham, Hadley and Fran{\c c}ois, Romain},
+  year = {2024}
+}
+
+@misc{wickhamGgplot2CreateElegant2024,
+  title = {Ggplot2: {{Create Elegant Data Visualisations Using}} the {{Grammar}} of {{Graphics}}},
+  shorttitle = {Ggplot2},
+  author = {Wickham, Hadley and Chang, Winston and Henry, Lionel and Pedersen, Thomas Lin and Takahashi, Kohske and Wilke, Claus and Woo, Kara and Yutani, Hiroaki and Dunnington, Dewey and van den Brand, Teun and Posit and PBC},
+  year = {2024},
+  month = apr,
+  urldate = {2024-10-13},
+  abstract = {A system for 'declaratively' creating graphics, based on "The Grammar of Graphics". You provide the data, tell 'ggplot2' how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details.},
+  copyright = {MIT + file LICENSE},
+  keywords = {Phylogenetics,Spatial,TeachingStatistics}
+}
+
+@misc{wickhamTidyrTidyMessy2024,
+  title = {Tidyr: {{Tidy Messy Data}}},
+  author = {Wickham, Hadley},
+  year = {2024}
+}
+
+@misc{wickhamTidyverseEasilyInstall2024,
+  title = {Tidyverse: {{Easily Install}} and {{Load}} the '{{Tidyverse}}'},
+  author = {Wickham, Hadley and {Contributors}},
+  year = {2024}
+}
+
+@misc{wilkinsTreemapifyDrawTreemaps2024,
+  title = {Treemapify: {{Draw Treemaps}} in 'Ggplot2'},
+  author = {Wilkins, David},
+  year = {2024}
+}
+
+@misc{xieDTWrapperJavaScript2024,
+  title = {{{DT}}: {{A Wrapper}} of the {{JavaScript Library}} '{{DataTables}}'},
+  author = {Xie, Yihui},
+  year = {2024}
+}
+
+@misc{xieKnitrGeneralPurposePackage2024,
+  title = {Knitr: {{A General-Purpose Package}} for {{Dynamic Report Generation}}},
+  author = {Xie, Yihui},
+  year = {2024}
+}
+
+@misc{zhuKableExtraConstructComplex2024,
+  title = {{{kableExtra}}: {{Construct Complex Table}} with 'kable' and {{Pipe Syntax}}},
+  author = {Zhu, Hao},
+  year = {2024}
+}

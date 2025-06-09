@@ -1,10 +1,16 @@
 ---
-title:                 Additional Resources
-author:                F.J. Padt
-numbered:              false
+subtitle: Additional Resources
+description: |
+  - resources for download.
+appendix: true
+number-sections: false
+toc: true         # show page‐TOC (right‐sidebar) on _every_ page
+toc-depth: 3      # include ## and ### in the TOC
 engine:                knitr  
 editor:                source
 ---
+
+
 
 # Additional Resources {#sec-19-resources}
 
@@ -22,4 +28,12 @@ powershell.exe -NoProfile -Command "if (Test-Path notebooks.zip) { Remove-Item n
 -   [Download all notebooks (ZIP) 💾](notebooks.zip){.btn}
 
 
-
+- [Initialization](../coding/11_initialization.html)
+- [data_ingestion](../coding/12_data_ingestion.html)
+- [data_access](../coding/15_data_access.html)
+- [data_understanding-I](../coding/20_data_understanding.html)
+- [data_understanding-II](../coding/21_data_understanding.html)
+- [data_preparation](../coding/30_data_preparation.html)
+- [40_modeling](../coding/40_modeling.html)
+- [41_obsolete_func](../coding/41_obsolete_func.html)
+- [50_evaluation](../coding/50_evaluation.html)

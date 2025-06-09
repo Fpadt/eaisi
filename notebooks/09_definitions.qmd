@@ -145,6 +145,26 @@ RMSE = $\sqrt{mean(e^2_t)}$
 A [Scale-dependent error](https://otexts.com/fpp3/accuracy.html#scale-dependent-errors), to compare forecast performances between data sets with the same unit.
 :::
 
+::: {#def-SBC}
+**SBC:**
+
+Syntetos–Boylan Classification scheme based on the (ADI, CV²) metrics.
+
+It refers to their intermittent demand classification framework, which uses two key metrics:
+
+ADI (Average Demand Interval)
+
+CV² (Squared Coefficient of Variation of demand size)
+
+This classification system segments time series into four categories:
+
+- Smooth
+- Erratic
+- Intermittent
+- Lumpy
+
+:::
+
 ::: {#def-TSCV}
 **TSCV:**
 

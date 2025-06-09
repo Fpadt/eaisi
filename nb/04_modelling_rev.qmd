@@ -26,11 +26,13 @@ source("../_book_functions.R")
 
 <!-- Briefly describe the modelling phase, its objectives, and how it fits into the broader CRISP-DM process. -->
 
----
+------------------------------------------------------------------------
 
 ## Selection of Modelling Techniques {#sec-04-techniques}
 
 <!-- Outline the statistical and machine learning techniques considered (e.g., ETS, ARIMA, Prophet, Hierarchical Time Series). -->
+
+<!--# Univariate -->
 
 In today’s data-rich environment, forecasters have access to a wide array of modelling approaches, ranging from traditional statistical techniques to advanced machine learning and deep learning methods.
 
@@ -60,32 +62,31 @@ fread(text = "
   )
 
 ```
+
 strengths and weaknesses of different modelling approaches
 :::
 
 ## Model Interpretability and Explainability {#sec-04-tradeoff}
 
-Model selection involves a tradeoff between flexibility and interpretability. 
-**Black-box models** like deep learning offer high flexibility and capture complex patterns, but are opaque.  
+Model selection involves a tradeoff between flexibility and interpretability. **Black-box models** like deep learning offer high flexibility and capture complex patterns, but are opaque.
 
-**Glass-box models**, such as statistical methods, are transparent, showing what is happening inside, and easier to interpret, though less suited to modeling complex effects.
-*In general, as model flexibility increases, interpretability decreases.*
+**Glass-box models**, such as statistical methods, are transparent, showing what is happening inside, and easier to interpret, though less suited to modeling complex effects. *In general, as model flexibility increases, interpretability decreases.*
 
+:::::: {#fig-04-black_glassbox}
+:::: {.content-visible when-format="html"}
+::: responsive-video
+<video src="../video/glass_blackbox.mp4" controls autoplay muted loop style="width: 100%; height: auto;" playsinline>
 
-::::: {#fig-04-black_glassbox}
-::: {.content-visible when-format="html"}
-<div class="responsive-video">
-  <video src="../video/glass_blackbox.mp4" controls autoplay muted loop style="width: 100%; height: auto;" playsinline>
-  </video>
-</div>
+</video>
 :::
+::::
 
 ::: {.content-visible when-format="pdf"}
 ![](../images/glass_blackbox.png){fig-align="left" fig-width="15cm"}
 :::
 
-Adapted from:  [[@james_introduction_2023], figure 2.7].  
-:::::
+Adapted from: \[[@jamesIntroductionStatisticalLearning2023], figure 2.7\].
+::::::
 
 ::: {#tbl-04-black_glassbox .table}
 ```{r}
@@ -113,37 +114,37 @@ Adapted from:  [[@james_introduction_2023], figure 2.7].
   )
 
 ```
+
 Flexibility and interpretability of different statistical learning methods.
 :::
 
-### Literature Review 
+### Literature Review
 
 Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)
 
 see Literature review (@sec-literature_review)
 
-
 > To build trust and ensure transparency, *Pythia’s Advice* adopts statistical models, prioritizing interpretability over maximum accuracy. While this limits the ability to capture effects like promotions, it supports confident decision-making. Once trust is established, more advanced machine learning techniques may be considered to enhance performance.
 
----
+------------------------------------------------------------------------
 
 ## Data Preparation for Modelling {#sec-04-data-prep}
 
 <!-- Describe how the data was structured for modelling, including train/test split,  and hierarchical structure. -->
 
----
+------------------------------------------------------------------------
 
 ## Modelling Assumptions {#sec-04-assumptions}
 
 <!-- List any modelling assumptions (e.g., forecast granularity, univariate/multivariate inputs, independence between nodes). -->
 
----
+------------------------------------------------------------------------
 
 ## Model Training and Calibration {#sec-04-training}
 
 <!-- Explain the training approach: cross-validation strategy. -->
 
----
+------------------------------------------------------------------------
 
 ## Forecast Generation {#sec-04-generation}
 
@@ -165,28 +166,28 @@ The Bottom-up approach, forecasts at detailed levels to be aggregated, however d
 
 The top-down approach, forecasts at aggregated levels, to be distributed however, Seasonal patterns may neutralize each other and disappear, resulting in poor accuracy.
 
-::::: {#fig-04-mo-method .figure}
-::: {.content-visible when-format="html"}
-<div class="responsive-video">
+:::::: {#fig-04-mo-method .figure}
+:::: {.content-visible when-format="html"}
+::: responsive-video
 <video src="../video/mo_method.mp4" controls autoplay muted loop width="640" playsinline>
+
 </video>
-</div>
 :::
+::::
 
 ::: {.content-visible when-format="pdf"}
 ![](../images/mo_method.png){fig-align="left" fig-width="15cm"}
 :::
 
 Select one of five predefined aggregation levels (L1-L5), HTS forecasts every level for each forecast.
-:::::
+::::::
 
 ::: {#fig-04-mo-method2 .figure}
 ![](../images/mo_hts.png){fig-align="left" fig-width="15cm"} Forecasts are aligned with Ordinary Least Squares (OLS),\
 the most detailed is the final output and is coherent with the aggregated forecasts.
 :::
 
-
----
+------------------------------------------------------------------------
 
 ## Model Validation and Performance Metrics {#sec-04-validation}
 
@@ -194,33 +195,22 @@ the most detailed is the final output and is coherent with the aggregated foreca
 
 Cross-validation is a method for evaluating the performance of a model on a validation dataset. This involves dividing the data into k folds, training the model on k-1 folds, and evaluating the performance on the remaining fold. This process is repeated k times, with each fold serving as the validation set once, and the results are averaged to obtain a final performance score. This method provides a more reliable estimate of the model's performance, as it uses all of the data for training and evaluation.
 
-
 <!-- --- -->
 
 <!-- ## Model Interpretability and Explainability {#sec-04-explainability} -->
 
 <!-- (Optional) Include techniques for interpreting the forecasts (e.g., SHAP values, residual analysis). -->
 
----
+------------------------------------------------------------------------
 
 ## Tools and Frameworks Used {#sec-04-tools}
 
-This project is implemented in R using an open-source, local-first setup. 
-Modeling and analysis are developed in RStudio and documented using Quarto.
+This project is implemented in R using an open-source, local-first setup. Modeling and analysis are developed in RStudio and documented using Quarto.
 
-Key components:
-- **Repositories** (hosted on GitHub):
-  - [EAISI-PAPER](https://github.com/Fpadt/eaisi): Project documentation and analysis
-  - [EAISI-PYTHIA](https://github.com/Fpadt/EAISI-Pythia): Core modeling workflows
-  - [EAISI-PADT](https://github.com/Fpadt/EAISI-Padt): **P**ythia's **A**dvice - **D**ata **T**ooling,
-    see Appendix @sec-package-padt, for details and documentation.
+Key components: - **Repositories** (hosted on GitHub): - [EAISI-PAPER](https://github.com/Fpadt/eaisi): Project documentation and analysis - [EAISI-PYTHIA](https://github.com/Fpadt/EAISI-Pythia): Core modeling workflows - [EAISI-PADT](https://github.com/Fpadt/EAISI-Padt): **P**ythia's **A**dvice - **D**ata **T**ooling, see Appendix @sec-package-padt, for details and documentation.
 
-
-
-- **R & Quarto Tooling**:  
-  A full list of packages and technical configuration is provided in the Appendix (@sec-14-tools).
-
-
+-   **R & Quarto Tooling**:\
+    A full list of packages and technical configuration is provided in the Appendix (@sec-14-tools).
 
 ## Summary and Lessons Learned {#sec-04-summary}
 

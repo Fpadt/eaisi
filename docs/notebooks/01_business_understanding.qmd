@@ -30,7 +30,7 @@ Finally, we outline the current forecasting process and establish criteria to me
 
 <!-- Contextualize the business problem and its forecasting relevance. -->
 
-Accurate forecasting is essential for managing *BioBalance’s* portfolio of over 2.500 products, each with specific shelf-life requirements, sourcing constraints, and production lead times. Forecasts guide decisions across the entire supply chain — from procurement and production to distribution and inventory management. 
+Accurate forecasting is essential for managing *BioBalance’s* portfolio of over 2.500 products, each with specific shelf-life requirements, sourcing constraints, and production lead times. Forecasts guide decisions across the entire supply chain — from procurement and production to distribution and inventory management.
 
 ### Geographic Footprint and Production Model {#sec-01-geographical}
 
@@ -40,7 +40,7 @@ Due to long production and transportation lead times, combined with short custom
 
 As a result, accurate forecasting is essential to:
 
--   Plan & schedule production volumes and resources at the  plants
+-   Plan & schedule production volumes and resources at the plants
 -   Balance inventory to avoid excess inventory or costly stockouts
 -   Strategic planning, create budgets and sales targets
 
@@ -56,20 +56,21 @@ Geographic footprint of *BioBalance*: production and distribution sites
 
 The planning process for *Blossam Balance Tea* illustrates the complexity of forecasting across stages, see @fig-01-bu-why:
 
-:::: {#fig-01-bu-why .figure}
-::: {.content-visible when-format="html"}
-<div class="responsive-video">
+:::::: {#fig-01-bu-why .figure}
+:::: {.content-visible when-format="html"}
+::: responsive-video
 <video src="../video/bu_why.mp4" controls autoplay muted loop width="640" playsinline>
+
 </video>
-</div>
 :::
+::::
 
 ::: {.content-visible when-format="pdf"}
 ![](../images/bu_why.png){caption="Why is forecasting important? It drives the business." fig-align="left" fig-width="15cm"}
 :::
 
 Why forecasting? The forecast drives the business!
-::::
+::::::
 
 **Make**: The tea must be produced at least 3 months in advance, requiring short-term accuracy for production scheduling.
 
@@ -85,17 +86,19 @@ Failure to meet shelf-life constraints can result in:
 These challenges are not unique to *Blossam*; they apply across the full product range.
 
 ## Stakeholder Use Cases {#sec-01-stakeholder}
+
 <!-- stakeholders. -->
 
 The company's forecasting requirements vary significantly across several key use cases.
 
-:::: {#fig-01-bu-who .figure}
-::: {.content-visible when-format="html"}
-<div class="responsive-video">
+:::::: {#fig-01-bu-who .figure}
+:::: {.content-visible when-format="html"}
+::: responsive-video
 <video src="../video/bu_who.mp4" controls autoplay muted loop width="640" playsinline>
+
 </video>
-</div>
 :::
+::::
 
 ::: {.content-visible when-format="pdf"}
 <!-- this block only appears in PDF output -->
@@ -104,7 +107,7 @@ The company's forecasting requirements vary significantly across several key use
 :::
 
 who uses the forecasts? varying requirements across several key use cases.
-::::
+::::::
 
 ```{r}
 #| label: tab-forecasting-use-cases
@@ -139,19 +142,15 @@ A detailed overview is available in (@sec-11-stakeholder).
 
 ## Scope of the Project {#sec-01-bu-scope}
 
-This research is limited to articles sold to customers (**Finished Goods**) 
-that are **MRP-relevant** and planned under a **Make-to-Stock** strategy. 
-Products with short shelf lives, requiring chilled storage and daily planning, 
-are excluded due to their distinct planning characteristics.
+This research is limited to articles sold to customers (**Finished Goods**) that are **MRP-relevant** and planned under a **Make-to-Stock** strategy. Products with short shelf lives, requiring chilled storage and daily planning, are excluded due to their distinct planning characteristics.
 
 The study further focuses on the most commercially significant part of *BioBalance’s* operations: the Market Sales Organization (MSO) with the highest sales volume in 2024. This selection is based on the exploratory analysis presented in @fig-02-eda-geography and ensures that the results are directly applicable to the area with the greatest business impact.
 
 Within this scope, we specifically target ambient products with a minimum shelf life of 60 days. These products are planned in weekly MRP cycles and forecasted using monthly time buckets. They represent the majority of *BioBalance’s* volume and align best with the strategic forecasting use cases addressed in this study.
 
-
 ## Problem Statement {#sec-01-problem-statement}
 
-While *BioBalance* uses a flexible forecasting platform, its reliance on manual adjustments and subjective decision-making introduces inconsistency. Forecasting methods and aggregation levels are often chosen based on intuition and experience. Research shows, see [@article], that small manual adjustments typically offer no benefit, whereas larger interventions—usually reductions—may significantly improve accuracy.
+While *BioBalance* uses a flexible forecasting platform, its reliance on manual adjustments and subjective decision-making introduces inconsistency. Forecasting methods and aggregation levels are often chosen based on intuition and experience. Research shows, see [@fildesGoodBadJudgment2007], that small manual adjustments typically offer no benefit, whereas larger interventions—usually reductions—may significantly improve accuracy.
 
 Without an objective benchmark, it is impossible to determine whether these manual interventions improve accuracy or merely increase resource costs.
 
@@ -177,7 +176,7 @@ These objectives align with *BioBalance’s* strategic priorities, which include
 
 4.  Increase customer satisfaction through consistent availability.
 
-And ultimately increase profitability, as illustrated in @fig-01-bu-daps, see [@demast2024].
+And ultimately increase profitability, as illustrated in @fig-01-bu-daps, see [@demastDAPSDiagramsDefining2024].
 
 ::: {#fig-01-bu-daps .figure}
 ![](../images/flowdown.png){fig-align="left" fig-width="15cm" fig-alt="DAPS"} Data-Analytic Problem Structure (DAPS)
@@ -189,7 +188,7 @@ To support these goals, we introduce **Pythia’s Advice** — a parallel foreca
 
 Pythia’s Advice provides:
 
--   A minimal-resource benchmark:  
+-   A minimal-resource benchmark:\
     low-cost, automated forecast based on statistical models (e.g., ETS, HTS).
 
 -   An internal reference for calculating Forecast Value Added (FVA).
@@ -200,8 +199,7 @@ This environment was deliberately designed to operate in parallel, with read-onl
 
 Additionally, the project was developed under the constraint of limited access to business resources — both in terms of time and geographical availability. Demand planners and analysts needed to prioritize operational continuity, requiring the research to be conducted independently while still aligning with business realities.
 
-By working within these constraints, **Pythia’s Advice** enables experimentation and benchmarking without disrupting operations — providing a safe and scalable way to measure the value of forecast improvements.
-**Pythia’s Advice** is represented by the lower part of the Data-Analytic Problem Structure (DAPS), (@fig-01-bu-daps).
+By working within these constraints, **Pythia’s Advice** enables experimentation and benchmarking without disrupting operations — providing a safe and scalable way to measure the value of forecast improvements. **Pythia’s Advice** is represented by the lower part of the Data-Analytic Problem Structure (DAPS), (@fig-01-bu-daps).
 
 ## Forecast Process {#sec-01-forecast-process}
 
@@ -211,14 +209,14 @@ By working within these constraints, **Pythia’s Advice** enables experimentati
 
 *Pythia’s Advice* seeks to eliminate those iterations, enhancing both efficiency and forecast accuracy.
 
-
-:::: {#fig-01-bu-proc .figure}
-::: {.content-visible when-format="html"}
-<div class="responsive-video">
+:::::: {#fig-01-bu-proc .figure}
+:::: {.content-visible when-format="html"}
+::: responsive-video
 <video src="../video/bu_proc.mp4" controls autoplay muted loop width="640" playsinline>
+
 </video>
-</div>
 :::
+::::
 
 ::: {.content-visible when-format="pdf"}
 <!-- this block only appears in PDF output -->
@@ -227,8 +225,7 @@ By working within these constraints, **Pythia’s Advice** enables experimentati
 :::
 
 The forecasting process: requiring human expertise.
-::::
-
+::::::
 
 ::: {#tbl-01-demand-planners-activities}
 ```{r}
@@ -263,11 +260,9 @@ Forecasting steps per forecast, *Pythia's Advice* to improve efficiency.
 ::: callout-important
 The initial scope of the project is to share the unadjusted forecast and its resulting accuracy with demand planners as a benchmark. This lets them see the impact of their manual adjustments and provides a foundation for continuous improvement.
 
-*Building trust must come first before moving on to subsequent steps.*  \
+*Building trust must come first before moving on to subsequent steps.*\
 **TRUST is all you need**
-
 :::
-
 
 ## Success Criteria {#sec-01-success-criteria}
 

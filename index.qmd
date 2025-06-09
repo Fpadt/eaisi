@@ -26,7 +26,6 @@ engine: knitr
 #| eval:    false
 source("_book_functions.R")
 ```
-
 ## Disclaimer {.appendix .unnumbered}
 
 This research presents a fictional case study of *BioBalance*, a company operating in the food-for-biodiversity sector. The associated brands, locations, and customers are entirely fictional and generated using AI. Although the time series analysis is based on real business data, every effort has been made to anonymize and protect sensitive information. Any resemblance to actual entities — past or present — is purely coincidental.
@@ -38,6 +37,8 @@ I am deeply grateful to [**{{<var mentor  >}}**][ILB] for his insightful feedbac
 Additionally, he introduced me to [Nicolas Vandeput][NVDP], whose concise yet inspiring YouTube videos sparked key ideas central to the development of the *Pythia’s Advice project*, as can be seen in the chapters [Setting the Stage](#sec-setting-the-stage) and [Insight to Impact](#sec-insight-to-impact).
 
 The guidance provided by {{<var mentor >}} significantly enhanced this study, helping me avoid numerous pitfalls. Any remaining errors or oversights are, of course, entirely my own responsibility.
+
+I would also like to thank Valeriy Manokhin for his insightful training sessions and his book Mastering Modern Time Series Forecasting: The Complete Guide to Statistical, Machine Learning & Deep Learning Models in Python [manokhin2025]. Both his teaching and written work provided essential guidance and inspiration throughout this project, especially in shaping the methodological backbone of my forecasting approach.
 
 ## How to Read This Book
 
@@ -136,11 +137,10 @@ For the optimal experience:
 This is an example of a definition DEF = $\sqrt{mean(e^2_t)}$
 :::
 
-::: {#def-FVA}
-**FVA:**
-
-Forecast Value Added
-:::
-
 [ILB]:  https://www.tue.nl/en/education/professional-education/current-programs/eaisi-academy/lecturers/dr-ieke-le-blanc
 [NVDP]: https://www.linkedin.com/in/vandeputnicolas/
+
+
+
+
+

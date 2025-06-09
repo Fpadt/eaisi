@@ -606,7 +606,7 @@ dtMAT <- wb_read(
 dtMAT_tab <- dtMAT[, .(
   SubCat_Count   = uniqueN(SubCat),
   Family_Count   = uniqueN(Family),
-  Article_Count = uniqueN(Article)
+  Article_Count  = uniqueN(Article)
 ), by = ProdCat][order(ProdCat)]
 
 dtCUST <- wb_read(
@@ -771,6 +771,125 @@ Using Time series features, categories can be automatically classified
  
 in the upper left corner, Clipper hot again, demonstrating the expected seasonality-strength.
 
+### Forecastability {#sec-02-data-exploration-forecastability}
+
+#### ABC-Classification {#sec-02-data-exploration-abc}
+ABC/XYZ Classification
+Purpose:
+To prioritize items and assess whether forecasting is worthwhile or feasible for each.
+
+Key Questions Addressed:
+
+ABC: Is this item important enough to forecast or control tightly?
+(based on contribution to revenue, volume, or margin)
+
+XYZ: Is this item predictable enough to be reliably forecasted?
+(based on variability, usually via Coefficient of Variation)
+
+Typical Outcome:
+
+High-priority & stable items (AX): Yes, forecast carefully.
+
+Low-priority & erratic items (CZ): Maybe don't forecast — use reorder rules or make-to-order.
+
+#### Syntetos-Boylan (SB) Classification {#sec-02-data-exploration-sb}
+
+Purpose:
+To guide model selection by identifying the nature of demand (e.g., intermittent, lumpy).
+
+Key Questions Addressed:
+
+What kind of statistical method is appropriate for this demand profile?
+
+Is this demand pattern intermittent (zero-heavy), erratic, or smooth?
+
+Model Implications:
+
+Demand Type	Suggested Model
+Smooth	Exponential smoothing (ETS)
+Erratic	Damped trend, possibly ETS with adjustments
+Intermittent	Croston (or variants: SBA, TSB, etc.)
+Lumpy	Advanced models (e.g., bootstrapped, hybrid, or judgmental overlays)
+
+Smooth: Low ADI and low CV. Highly predictable demand patterns.
+ • Intermittent: High ADI, low CV. Forecastable with specialized methods such as
+ Croston’s, ADIDA, or IMAPA.
+ • Erratic: Low ADI, high CV. High uncertainty, often driven by price sensitivity or
+ promotions.
+ • Lumpy: High ADI and high CV. Extremely difficult to forecast, often related to slow
+moving or event-driven items.
+
+```{r}
+
+fread(text = "
+SB_Type,Best_fit_Methods
+Smooth,SES; Holt’s; Holt-Winters (Triple Exp); ARIMA; Moving Average
+Erratic,Damped exponential; Holt-Winters (if seasonal); ARIMA with volatility modeling
+Intermittent,Croston; SBA; TSB; bootstrapped quantile models
+Lumpy,Croston variants + heuristics; simulation; judgmental overlays
+") %>%
+  kbl(
+    # caption   = "Forecast Use Cases by Department",
+    col.names = names(.),
+    align     = "l",
+    booktabs  = TRUE
+  ) %>%
+  kable_styling(
+    full_width = FALSE,
+    position   = "left",
+    bootstrap_options = c("striped", "hover", "condensed")
+  )
+
+```
+
+
+```{r}
+fread(text = "
+Method,Assumes,Handles,Fit_in_SB_Classification,Notes
+Moving Average,Stationarity; no trend or seasonality,Smooth to moderate variability,\"Smooth; maybe Erratic\",Simple; not suitable for intermittent or seasonal
+Simple Exponential Smoothing (SES),Stationary; no trend or seasonality,Random variation; no trend/season,\"Smooth\",Cannot handle trend or seasonality
+Double Exponential Smoothing,Linear trend,Trend,\"Smooth; Erratic\",Better than SES for trending series
+Triple Exponential Smoothing (Holt-Winters),Trend + seasonality,Seasonality,\"Smooth; some Erratic\",Not appropriate for intermittent/lumpy
+ARIMA / ARMA,Stationarity (or with differencing),Trend + autocorrelation,\"Smooth; Erratic\",Requires regular frequency and sufficient data
+Croston / SBA / TSB,Zero-heavy demand,Intermittency,\"Intermittent; Lumpy\",Designed specifically for intermittent demand
+")%>%
+  kbl(
+    # caption   = "Forecast Use Cases by Department",
+    col.names = names(.),
+    align     = "l",
+    booktabs  = TRUE
+  ) %>%
+  kable_styling(
+    full_width = FALSE,
+    position   = "left",
+    bootstrap_options = c("striped", "hover", "condensed")
+  )
+
+```
+
+```{r}
+library(data.table)
+
+fread(text = "
+Aspect,XYZ,ADI_CV2_Syntetos_Boylan
+Metric,Coefficient of Variation (CV),ADI + CV² (more granular)
+Forecastability,Measures volatility,Measures both volatility and intermittency
+Use case,Broad segmentation for policy setting,Model selection and demand type understanding
+Z class equivalent,Often aligns with 'Lumpy' or 'Erratic',Differentiates between those
+") %>%
+  kbl(
+    # caption   = "Forecast Use Cases by Department",
+    col.names = names(.),
+    align     = "l",
+    booktabs  = TRUE
+  ) %>%
+  kable_styling(
+    full_width = FALSE,
+    position   = "left",
+    bootstrap_options = c("striped", "hover", "condensed")
+  )
+
+```
 
 
 ## Data Quality Report {#sec-02-data-quality}

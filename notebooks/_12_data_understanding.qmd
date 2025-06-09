@@ -268,4 +268,183 @@ ggplot(
 ```
 
 
-<!-- {{< include 02_data_understanding_def.qmd >}} -->
+Great, I’ll look into best practices for assessing the forecastability of product demand time series—particularly using entropy-based methods with the R `feasts` package, alongside ADI/CV² classification. I’ll focus on generating insights and code examples in R that allow you to rank and categorize series (length: 1–48 months, monthly frequency), with outputs designed for visualizations and decision rules.
+
+I’ll let you know as soon as I have a structured summary and implementation guide ready.
+
+
+# Assessing Forecastability of FMCG Product Demand Time Series
+
+## Introduction
+
+Forecastability measures how predictable a time series is, helping an FMCG company decide whether to use statistical forecasting or simpler inventory heuristics for product demand planning. For monthly product demand series (up to 48 data points, i.e. 1–4 years), we can compute quantitative indicators of forecastability. This guide discusses **entropy-based metrics** (notably *Shannon spectral entropy*) and **intermittency classification (Syntetos–Boylan ADI/CV²)**. We explain how to compute these metrics in R using `tsibble`, `feasts`, and `data.table`, how to interpret them, and how to use them for ranking and classifying time series by forecastability. We also outline complementary methods and practical rules (e.g. deciding *when to forecast* vs *when to rely on safety stock*), along with limitations (such as very short series).
+
+## Entropy-Based Forecastability Metrics (Shannon Entropy)
+
+**Shannon entropy** (in the frequency domain, often called *spectral entropy*) quantifies the uncertainty or randomness in a time series. It is computed as the Shannon entropy of the spectral density of the series. In essence, spectral entropy measures how the power of a time series is distributed across frequencies. **Low entropy indicates a dominated structure (high signal-to-noise ratio), implying the series has strong predictable patterns; high entropy means the power is spread uniformly (like noise), indicating low forecastability**. For example, the classic AirPassengers monthly series (with clear trend/seasonality) has spectral entropy ≈0.296 – a low value denoting it is quite forecastable. In contrast, a pure random noise series yields entropy near 1.0 (maximum unpredictability). A perfectly regular cycle (e.g. a fixed sine wave) can have entropy close to 0. In practice, values typically range from \~0 (highly forecastable) to \~1 (nearly random).
+
+**Computing Shannon entropy in R (feasts):** The `feasts` package provides a built-in feature for spectral entropy. Assuming you have a data frame of product demand (with columns like `product_id`, `date`, `demand`), you can compute entropy as follows:
+
+```r
+library(tsibble)
+library(feasts)
+# Convert to a tsibble (time series tibble) indexed by date, keyed by product
+ts_data <- as_tsibble(df, key = product_id, index = date)
+
+# Compute spectral entropy per series
+entropy_features <- ts_data %>% features(demand, feat_spectral)
+print(entropy_features)
+#> # A tibble with one row per product, e.g.:
+#>   product_id   spectral_entropy
+#>   <chr>                 <dbl>
+#> 1 A001                 0.15
+#> 2 B002                 0.82
+#> 3 C003                 0.45
+```
+
+This uses `feat_spectral()` (which internally fits an AR model via `spec.ar` and computes Shannon entropy of the normalized spectrum). The result `spectral_entropy` is a number ≥0. **Lower values imply more predictable structure** – you could rank products by this metric to see which demands are easier vs. harder to forecast. For instance, a product with entropy 0.15 likely has a strong seasonal or trend signal (very forecastable), whereas one with 0.82 is much more irregular and might be considered “noise-like.” When using this metric:
+
+* *Thresholds:* While there is no universal cutoff, you might flag series with entropy above a certain value (e.g. >0.8) as **highly unpredictable**. Conversely, very low entropy (say <0.3) indicates strong predictable patterns. These thresholds can be adjusted based on the distribution of entropy in your dataset (e.g., you might examine the entropy histogram to choose a sensible cutoff).
+* *Interpretation:* A higher entropy series might only be forecastable at the naive level (e.g. mean or random walk forecasts), whereas low-entropy series merit applying time series models (ARIMA, Exponential Smoothing, etc.) since they contain structured signals.
+* *Limitations:* **Series length matters** – with very short series (only a few points), the entropy estimation is less reliable. The AR spectral method needs enough data to capture frequency content. If you have fewer than, say, 12 points, use caution: the entropy value may be unstable or not meaningful. Moreover, spectral entropy assumes a (weakly) stationary process; a series with a strong one-off change or a short-lived promotion spike may have a high entropy value even if overall it’s somewhat forecastable aside from the outlier. Always combine entropy insight with domain knowledge. It can help to **detrend** or **de-seasonalize** before computing entropy if trend/seasonality are known (since those contribute predictable structure). However, if you don’t remove them, the entropy will rightly be lower for trending/seasonal series, reflecting their predictability.
+
+## Intermittency and Variability: Syntetos–Boylan ADI/CV² Classification
+
+For item-demand series in FMCG, especially those with zeros (periods of no sales), an important complementary view of forecastability is provided by **intermittency metrics**. Syntetos & Boylan (2005) proposed using **ADI (Average Demand Interval)** and **CV² (Squared Coefficient of Variation of demand size)** to classify demand patterns. This classification, often called the **SBC matrix**, splits series into four categories – **“smooth”, “erratic”, “intermittent”,** and **“lumpy”** – which can guide forecasting vs. stock policy decisions.
+
+* **ADI (Average Demand Interval):** The average number of time periods between non-zero demands. Formally, ADI = *T*/*N*, where *T* is the total number of periods and *N* is the number of non-zero observations. For example, if over 24 months there were 6 months with sales (and 18 with zero), ADI = 24/6 = 4 – meaning on average one sale every 4 months.
+* **CV² of demand sizes:** This is the squared coefficient of variation for the demand **sizes** in periods where demand is non-zero. Essentially $CV^2 = (\sigma/\mu)^2$ computed on non-zero demand values. It captures how erratic the demand amounts are when they occur. Low CV² means demand size is relatively consistent; high CV² means the sizes fluctuate greatly. (For instance, if every time the product sold, it was roughly 100 units, CV² is low; if it sometimes sells 20, sometimes 500, CV² is high.)
+
+**Classification rules:** Using empirically derived cutoffs *ADI = 1.32* and *CV² = 0.49* (from Syntetos & Boylan’s paper), we classify time series as follows:
+
+* **Smooth demand:** ADI ≤ 1.32 and CV² ≤ 0.49. (Demand is nearly continuous and with low variability in size.)
+* **Erratic demand:** ADI ≤ 1.32 and CV² > 0.49. (Demand appears in most periods (continuous), but the size fluctuates a lot; high volatility.)
+* **Intermittent demand:** ADI > 1.32 and CV² ≤ 0.49. (Demand occurs infrequently, but when it does occur, the amounts are fairly consistent – not highly variable.)
+* **Lumpy demand:** ADI > 1.32 and CV² > 0.49. (Demand is infrequent **and** the amounts vary greatly – this is the hardest demand pattern to predict.)
+
+These threshold values (1.32 for ADI, 0.49 for CV²) were originally chosen based on forecasting performance of Croston’s method vs. SBA (Syntetos–Boylan Approximation) in experiments. *Interpretation:* “Smooth” and “erratic” categories imply demand each period (or almost each period), so traditional forecasting methods can be applied (though erratic series need to account for large variance). “Intermittent” and “lumpy” series have many zero periods, calling for specialized treatment or simpler stock rules.
+
+**Computing ADI and CV² in R:** We must ensure the time series includes zeros for missing demand periods (fill in 0 for months with no sales, which `tsibble` does automatically if data is a complete regular series). We can compute these metrics by grouping each product’s time series. For example, using `data.table` for efficiency:
+
+```r
+library(data.table)
+setDT(df)  # ensure df is a data.table
+# Compute ADI and CV^2 per product
+metrics <- df[ , {
+    N <- sum(demand > 0)              # number of non-zero periods
+    mu <- if (N > 0) mean(demand[demand > 0]) else NA_real_
+    sd_ <- if (N > 1) sd(demand[demand > 0]) else NA_real_
+    .( periods = .N,
+        demand_occurrences = N,
+        ADI = if (N > 0) .N / N else NA_real_,
+        CV2 = if (N > 1 && mu > 0) (sd_ / mu)^2 else NA_real_ )
+}, by = product_id ]
+head(metrics)
+#>   product_id periods demand_occurrences  ADI      CV2
+#>   A001       48      48                 1.00   0.10 
+#>   B002       48      12                 4.00   0.30 
+#>   C003       48      10                 4.80   0.75 
+```
+
+In the above example output (simulated data):
+
+* Product A001 had demand in all 48 months (ADI \~1.0) with low variability (CV² 0.10) → “Smooth”.
+* B002 had demand 12 of 48 months (ADI=4) and CV² 0.30 → “Intermittent” (infrequent but fairly consistent volumes).
+* C003 had demand 10 of 48 months (ADI≈4.8) and very erratic sizes (CV² 0.75 > 0.49) → “Lumpy”.
+
+We can assign the category labels using these metrics. Using dplyr for clarity:
+
+```r
+library(dplyr)
+metrics <- metrics %>%
+  mutate(category = case_when(
+    ADI > 1.32 & CV2 > 0.49  ~ "Lumpy",
+    ADI > 1.32 & CV2 <= 0.49 ~ "Intermittent",
+    ADI <= 1.32 & CV2 > 0.49 ~ "Erratic",
+    ADI <= 1.32 & CV2 <= 0.49 ~ "Smooth",
+    TRUE ~ "Undefined"
+  ))
+```
+
+Any series with no demand at all (`N=0`) or only one non-zero point will get `category = "Undefined"` in this scheme (since CV² or ADI might be NA or extreme). You might handle those as special cases (e.g., if a product never sold, it’s not forecastable in a conventional sense; if it sold only once, ADI is very high and essentially “intermittent” – you could categorize one-sale series as *lumpy* by convention, since it’s extremely intermittent with unpredictable size).
+
+**Using ADI/CV² classification:** This classification helps to decide forecasting approaches:
+
+* *Smooth demand:* Traditional forecasting models (e.g. ARIMA, exponential smoothing) work well. Demand is regular enough to forecast, and low variability means forecasts can be fairly accurate.
+* *Erratic demand:* Demand each period but volatile volumes. You can still forecast (since every period has demand, models apply), but expect large forecast errors. It’s wise to **supplement forecasts with safety stock** to buffer the high variability. Forecast models might capture the mean level but prediction intervals will be wide.
+* *Intermittent demand:* There are many zero periods. Specialized intermittent demand forecasting methods like **Croston’s method** or the **SBA (Syntetos–Boylan Approximation)** are recommended for forecasting, as they explicitly model the demand arrivals and sizes. Alternatively, if the intermittency is high, one might choose not to generate a period-by-period statistical forecast at all, and instead plan with a simple heuristic (e.g. “in months with no demand, forecast 0; in months with demand, forecast the average non-zero demand” or maintain a constant stock level).
+* *Lumpy demand:* This is the toughest case – irregular in both timing and size. Forecasts here are highly uncertain; even Croston/SBA methods may not perform well because of the erratic sizes. **Often, the best practice for lumpy items is to avoid relying on formal forecasts**, and instead use **safety stock or a “reorder point” policy** based on service levels. For example, an FMCG company might decide to keep a safety stock equal to one or two typical demand occurrences (or use a statistical quantile of demand) and otherwise react to actual orders, rather than forecasting each month’s demand which would mostly be zero or random spikes. Essentially, for lumpy items you ensure availability via inventory buffers rather than try to predict the unpredictable.
+
+**Note:** The ADI/CV² classification was originally devised to choose between Croston vs. SBA forecasting methods. Syntetos et al. found Croston’s method performed best for “Erratic” demand, while SBA performed better for the other three categories. This is a useful rule if you use those methods. If you use modern forecasting approaches (or ML models), you can still use these categories to flag series characteristics, but the exact 1.32/0.49 thresholds are specifically tied to Croston vs SBA performance. Treat them as guidelines rather than hard rules if your forecasting method differs.
+
+## Visualization and Decision Rules
+
+Visualizing these metrics can greatly aid decision-making. Two effective plots are:
+
+* **ADI vs. CV² Scatter Plot:** Plot each product’s ADI against CV², and draw reference lines at ADI = 1.32 and CV² = 0.49 to divide the four quadrants. Points in the bottom-left quadrant are smooth, bottom-right are intermittent, top-left are erratic, top-right are lumpy. This visualization immediately shows the nature of each product’s demand. You can color-code points by the assigned category or by spectral entropy value. For example, using `ggplot2`:
+
+  ```r
+  library(ggplot2)
+  ggplot(metrics, aes(x=ADI, y=CV2, color=category)) +
+    geom_point(alpha=0.7) +
+    geom_vline(xintercept=1.32, linetype="dashed") +
+    geom_hline(yintercept=0.49, linetype="dashed") +
+    scale_color_manual(values=c("Smooth"="green","Erratic"="orange","Intermittent"="blue","Lumpy"="red")) +
+    labs(title="ADI vs CV\u00b2 Classification of Demand Series",
+         x="Average Demand Interval (ADI)", y="Squared Coefficient of Variation (CV\u00b2)")
+  ```
+
+  This plot helps validate the classification and identify edge cases. For instance, if a point lies just on the border of “erratic” and “lumpy”, you know it’s borderline and might examine that series more closely.
+
+* **Spectral Entropy Distribution:** Plot a histogram or density of the `spectral_entropy` values for all series. This shows the spread of forecastability in your portfolio. Often, you’ll see a cluster of low-entropy series (which are your predictable items) and a tail of high-entropy series (hard-to-forecast items). You might decide a cutoff from this plot: e.g., if there’s a clear gap or elbow around 0.8 entropy, use that to flag the most unforecastable items. Additionally, you could create a bar chart of products sorted by entropy, or a scatter plot of entropy vs. another feature (like coefficient of variation) to see relationships.
+
+By combining these visualizations, you can implement **rule-based decisions**:
+
+* For example, **“If a product is Lumpy (ADI>1.32 & CV²>0.49) or has spectral entropy above 0.9, then do not generate a statistical forecast – instead manage via a safety stock/reorder point heuristic.”** This rule might be set because such products are too intermittent and random, so forecasting adds little value.
+* Conversely, **“If a product is Smooth or Erratic (frequent demand) and entropy is low (<0.5), use automatic forecasting models.”** These products have regular patterns or at least continuous demand, so forecasting algorithms (possibly with prediction intervals to account for variability) are suitable.
+* **Borderline cases:** Products that are Intermittent but with low CV (stable size) could be forecasted using Croston’s method to estimate the demand rate and interval. If a product is Erratic (regular but high variance), you might forecast its mean demand with a method like simple exponential smoothing but also hold more safety stock due to variability. The specific rules should be tuned to your company’s service level targets and cost considerations.
+
+These decisions can also be communicated and visualized. For instance, you could tag each product as “forecasted” vs “not forecasted” based on the rules and color the points in the ADI–CV² plot accordingly, or list out the top 10 highest entropy items as candidates for alternate treatment. The goal is to make the process transparent and explainable to planners: **why** you are not forecasting item X (because it’s too unpredictable or intermittent, by these metrics) and **what** you’ll do instead (e.g. maintain a constant stock or produce on demand).
+
+## Practical Considerations and Limitations
+
+When applying these methods, keep in mind a few limitations:
+
+* **Short Series Length:** With only 1–2 years of data (or less), any statistical metric is less reliable. For a series of length 1–3 months, you simply cannot compute meaningful entropy or CV². In such cases, you may default to treating the item as new (forecast using a growth assumption or analogous product, or just wait for more data). Even up to 12 months, be cautious: one year of data might not fully capture seasonality or variability. You might still compute the metrics, but consider the **confidence** in them. One approach is to require a minimum length (e.g. at least 12 or 18 months) for the entropy or classification to be used; otherwise flag the product as “insufficient history” and perhaps forecast it in a manual or qualitative way.
+* **Data Preprocessing:** Ensure that your time series data is **complete** (all months represented, inserting 0 for no demand). The ADI formula implicitly counts periods with zero demand, so missing data will throw it off. Using a `tsibble` (which has a regular index) or a complete `data.table` as shown will handle this. Outliers or one-time events (e.g. a pipeline fill order, or a stockout leading to unusual catch-up demand) can distort metrics like CV² or entropy. It may be wise to **flag extreme outliers** and consider treating them separately (e.g., remove or cap them when computing these features, if they truly aren’t expected to recur). Alternatively, track a “spike” indicator separately.
+* **Changing Demand Patterns:** The entropy and ADI/CV² assume a relatively stable demand pattern over the period analyzed. In practice, demand may **trend up or down, or switch regimes** (for example, a product that started intermittent but then picked up continuous demand after a re-launch). In such cases, a single set of metrics might misrepresent the future. Syntetos–Boylan classification was designed for *stationary* intermittent demand like spare parts. If a product’s demand is evolving (becoming more or less intermittent over time), you should combine these metrics with judgment or apply them on a recent window of data. Always ask: *Are these metrics computed on past data reflective of future behavior?* If not, your rules may need to be adjusted.
+* **Purpose of Classification:** Ensure the forecastability classification is tied to an action. The original Syntetos–Boylan categories were meant to choose between specific forecasting methods (Croston vs SBA). For an FMCG context, your actions might be choosing *to forecast or not*, or which forecasting algorithm to use, or how much safety stock to add. Be clear on what each category or metric range implies operationally. If you’re not actually going to handle “erratic” differently from “smooth” in your process, then distinguishing them may not be critical. Focus on the splits that drive decisions – for example, perhaps the key decision is *“forecast vs no-forecast”*, so you might collapse the scheme into “continuous (forecast) vs intermittent (no forecast)” using an ADI threshold, and use entropy as a secondary check for unpredictability. Tailor the use of these metrics to your decision needs.
+
+## Python Equivalents (if needed)
+
+While R provides a convenient toolkit (`tsibble`, `feasts`) for these analyses, similar computations can be done in Python if necessary:
+
+* **Spectral Entropy:** You can estimate spectral entropy by computing the power spectrum (e.g. via `numpy.fft` or `matplotlib.mlab.psd`) and then computing $-\sum p \log p$ over the normalized spectrum. There isn’t a one-liner in common Python libraries, but the approach can be implemented or one can use the R `feasts` via `rpy2` if needed. (The `tsfresh` or `Kats` libraries may also offer entropy features.)
+* **ADI/CV² Classification:** The Python library `sktime` actually includes an `ADICVTransformer` which computes ADI and CV² and classifies series. You could also compute these metrics manually using pandas groupby. The logic is the same: count non-zeros, compute mean and std of non-zero values, then apply thresholds. For example, in pandas:
+
+  ```python
+  import pandas as pd
+  metrics = df.groupby('product_id').agg(
+      periods=('demand','size'),
+      N=('demand', lambda x: (x>0).sum()),
+      mean_nonzero=('demand', lambda x: x[x>0].mean()),
+      sd_nonzero=('demand', lambda x: x[x>0].std())
+  )
+  metrics['ADI'] = metrics['periods'] / metrics['N']
+  metrics['CV2'] = (metrics['sd_nonzero'] / metrics['mean_nonzero'])**2
+  ```
+
+  Then apply the same conditions for categories. The default thresholds (1.32, 0.49) are noted in the `sktime` documentation.
+
+## Conclusion
+
+By combining **entropy-based metrics** and **ADI/CV² classification**, an FMCG company can quantitatively assess the forecastability of product demand series. These methods help rank series by predictability and flag which items are suitable for automated forecasting and which are so volatile or intermittent that they should be handled with heuristic stock control. In implementation, use R’s `feasts` to compute spectral entropy for a quick forecastability index (lower entropy = easier to forecast) and compute ADI/CV² to classify demand patterns (smooth/erratic vs intermittent/lumpy). Visualize the results to communicate the segmentation to stakeholders. Finally, define **business rules** based on these metrics – for example, only forecast items above a certain demand frequency or below a randomness threshold – and handle the rest via inventory buffers or on-demand strategies. This structured approach ensures you invest forecasting effort where it’s most likely to succeed, and manage the truly unpredictable demands in a robust, policy-driven way.
+
+**Sources:**
+
+* Hyndman et al., *feasts* package documentation – definition of spectral entropy as a forecastability measure.
+* Example uses of `feat_spectral` showing entropy for random vs structured series.
+* Syntetos & Boylan (2005) intermittent demand classification (ADI and CV²) as described in literature.
+* Open Forecasting blog discussing intermittent demand categories and their usage/limitations.
+* `sktime` Python library documentation of ADI/CV² thresholds and classes.
+
