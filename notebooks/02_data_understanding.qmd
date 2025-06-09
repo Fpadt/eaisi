@@ -775,65 +775,52 @@ Summary: Customer Hierachy
 
 :::
 
+
+
+
+
 ### Forecastability {#sec-02-data-exploration-forecastability}
 
-#### ABC-Classification {#sec-02-data-exploration-abc}
+#### ABC/XYZ Classification {#sec-02-data-exploration-abc}
 
-The ABC/XYZ classification is a two-dimensional analysis that helps prioritize items based on their importance and predictability.  
-
-Key Questions Addressed:
+The ABC/XYZ classification is a widely used method to prioritize items based 
+on their importance and predictability. It helps in determining which items 
+should be forecasted and how tightly they should be controlled.
 
 - ABC: Is this item important enough to forecast or control tightly?
 
 - XYZ: Is this item predictable enough to be reliably forecasted?
 
-Typical Outcome:
+::: {#fig-02-abc-xyz .figure}
+![](../images/ABC-XYZ.png){fig-align="left" width="15cm"}
 
-- High-priority & stable items (AX): Yes, forecast carefully.
+- AX: High-priority & stable items (AX), forecast carefully.
 
-- Low-priority & erratic items (CZ): Maybe don't forecast — use reorder rules or make-to-order.
+- AZ: High-priority & erratic items (AZ), forecast with caution.
 
-::: {#fig-02-ABCXYZ .figure}
-![](../images/ABCXYZ.png){fig-align="left" width="15cm"}
-
+- CZ: Low-priority & erratic items: Maybe don’t forecast.
 
 :::
 
 #### Syntetos-Boylan (SB) Classification {#sec-02-data-exploration-sb}
 
-The Syntetos-Boylan (SB) classification is a method to categorize demand patterns based on their statistical properties, particularly focusing on the Average Demand Interval (ADI) and Coefficient of Variation (CV).
+The Syntetos-Boylan (SB) classification is an extension of the ABC/XYZ classification,
+which combines the concepts of demand variability and forecastability. 
+It helps in identifying the nature of demand patterns and selecting 
+appropriate forecasting methods.
 
-Key Questions Addressed:
-
-- What kind of statistical method is appropriate for this demand profile?
-
-- Is this demand pattern intermittent (zero-heavy), erratic, or smooth?
-
-::: {#fig-02-plot_sbc_by_ts .figure}
-![](../images/plot_sbc_by_ts.png){fig-align="left" width="15cm"}
-
-
-:::
-
-::: {#fig-02-plot_sbm .figure}
-![](../images/plot_sbm.png){fig-align="left" width="15cm"}
-
-
-:::
-
-
-
-Model Implications:
+The time Series *BioBalance* are for a large part intermittent & smooth, depending
+on the level of aggregation.
 
 
 ```{r}
 
 fread(text = "
-SB_Type,Best_fit_Methods
-Smooth,SES; Holt’s; Holt-Winters (Triple Exp); ARIMA; Moving Average
-Erratic,Damped exponential; Holt-Winters (if seasonal); ARIMA with volatility modeling
-Intermittent,Croston; SBA; TSB; bootstrapped quantile models
-Lumpy,Croston variants + heuristics; simulation; judgmental overlays
+ SB_Type     , Best_fit_Methods
+ Smooth      , SES; Holt’s; Holt-Winters (Triple Exp); ARIMA; Moving Average
+ Erratic     , Damped exponential; Holt-Winters (if seasonal); ARIMA with volatility modeling
+ Intermittent, Croston; SBA; TSB; bootstrapped quantile models
+ Lumpy       , Croston variants + heuristics; simulation; judgmental overlays
 ") %>%
   kbl(
     # caption   = "Forecast Use Cases by Department",
@@ -850,15 +837,28 @@ Lumpy,Croston variants + heuristics; simulation; judgmental overlays
 ```
 
 
+
+::: {#fig-02-plot_sbc_by_ts .figure}
+![](../images/plot_sbc_by_ts.svg){fig-align="left" width="15cm"}
+:::
+
+::: {#fig-02-plot_sbm .figure}
+![](../images/plot_sbc_by_ts.svg){fig-align="left" width="15cm"}
+:::
+
+
+**Model Implications:**
+
+
 ```{r}
 fread(text = "
-Method,Assumes,Handles,Fit_in_SB_Classification,Notes
-Moving Average,Stationarity; no trend or seasonality,Smooth to moderate variability,\"Smooth; maybe Erratic\",Simple; not suitable for intermittent or seasonal
-Simple Exponential Smoothing (SES),Stationary; no trend or seasonality,Random variation; no trend/season,\"Smooth\",Cannot handle trend or seasonality
-Double Exponential Smoothing,Linear trend,Trend,\"Smooth; Erratic\",Better than SES for trending series
-Triple Exponential Smoothing (Holt-Winters),Trend + seasonality,Seasonality,\"Smooth; some Erratic\",Not appropriate for intermittent/lumpy
-ARIMA / ARMA,Stationarity (or with differencing),Trend + autocorrelation,\"Smooth; Erratic\",Requires regular frequency and sufficient data
-Croston / SBA / TSB,Zero-heavy demand,Intermittency,\"Intermittent; Lumpy\",Designed specifically for intermittent demand
+Method                            , Assumes                              , Handles                       , Fit_in_SB_Classification, Notes
+Moving Average, Stationarity; no trend or seasonality, Smooth to moderate variability, 'Smooth; maybe Erratic' , Simple; not suitable for intermittent or seasonal
+Simple Exponential Smoothing (SES), Stationary; no trend or seasonality  , Random variation; no trend/season , 'Smooth', Cannot handle trend or seasonality
+Double Exponential Smoothing, Linear trend,Trend, 'Smooth; Erratic', Better than SES for trending series
+Triple Exponential Smoothing (Holt-Winters), Trend + seasonality, Seasonality, 'Smooth; some Erratic', Not appropriate for intermittent/lumpy
+ARIMA / ARMA, Stationarity (or with differencing), Trend + autocorrelation, 'Smooth; Erratic', Requires regular frequency and sufficient data
+Croston / SBA / TSB, Zero-heavy demand, Intermittency, 'Intermittent; Lumpy', Designed specifically for intermittent demand
 ")%>%
   kbl(
     # caption   = "Forecast Use Cases by Department",
@@ -874,15 +874,17 @@ Croston / SBA / TSB,Zero-heavy demand,Intermittency,\"Intermittent; Lumpy\",Desi
 
 ```
 
+#### ABC/XYZ versus Syntetos-Boylan (SB) Classification {#sec-02-data-exploration-abc-sb}
+
 ```{r}
 library(data.table)
 
 fread(text = "
-Aspect,XYZ,ADI_CV2_Syntetos_Boylan
-Metric,Coefficient of Variation (CV),ADI + CV² (more granular)
-Forecastability,Measures volatility,Measures both volatility and intermittency
-Use case,Broad segmentation for policy setting,Model selection and demand type understanding
-Z class equivalent,Often aligns with 'Lumpy' or 'Erratic',Differentiates between those
+ Aspect            , XYZ                                   , ADI_CV2_Syntetos_Boylan
+ Metric            , Coefficient of Variation (CV)         , ADI + CV² (more granular)
+ Forecastability   , Measures volatility                   , Measures both volatility and intermittency
+ Use case          , Broad segmentation for policy setting , Model selection and demand type understanding
+ Z class equivalent, Often aligns with 'Lumpy' or 'Erratic', Differentiates between those
 ") %>%
   kbl(
     # caption   = "Forecast Use Cases by Department",
