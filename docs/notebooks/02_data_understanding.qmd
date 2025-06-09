@@ -844,7 +844,7 @@ fread(text = "
 :::
 
 ::: {#fig-02-plot_sbm .figure}
-![](../images/plot_sbc_by_ts.png){fig-align="left" width="15cm"}
+![](../images/plot_sbm.png){fig-align="left" width="15cm"}
 :::
 
 
