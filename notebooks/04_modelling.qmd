@@ -154,8 +154,8 @@ see Literature review (@sec-literature_review)
 
 model performance - only article hierarchy - article and customer hierarchy
 
--   validity -\> fa & prediction intervals
--   robustness -\>
+-   validity -\>    Forecast Accuracy & Prediction intervals
+-   robustness -\>  
 -   transparency -\>
 
 ### Bottom-Up/Top-down versus Hierachical
@@ -207,14 +207,21 @@ Cross-validation is a method for evaluating the performance of a model on a vali
 
 This project is implemented in R using an open-source, local-first setup. Modeling and analysis are developed in RStudio and documented using Quarto.
 
-Key components: - **Repositories** (hosted on GitHub): - [EAISI-PAPER](https://github.com/Fpadt/eaisi): Project documentation and analysis - [EAISI-PYTHIA](https://github.com/Fpadt/EAISI-Pythia): Core modeling workflows - [EAISI-PADT](https://github.com/Fpadt/EAISI-Padt): **P**ythia's **A**dvice - **D**ata **T**ooling, see Appendix @sec-package-padt, for details and documentation.
+Key components: 
 
--   **R & Quarto Tooling**:\
+- **Repositories** (hosted on GitHub): 
+  - [EAISI-PAPER](https://github.com/Fpadt/eaisi): Project documentation and analysis
+  
+  - [EAISI-PYTHIA](https://github.com/Fpadt/EAISI-Pythia): Core modeling workflows 
+  
+  - [EAISI-PADT](https://github.com/Fpadt/EAISI-Padt): **P**ythia's **A**dvice - **D**ata **T**ooling, see Appendix @sec-package-padt, for details and documentation.
+
+-   **R & Quarto Tooling**:
     A full list of packages and technical configuration is provided in the Appendix (@sec-14-tools).
 
-## Summary and Lessons Learned {#sec-04-summary}
+<!-- ## Summary and Lessons Learned {#sec-04-summary} -->
 
-Summarize findings from the modelling phase and any key takeaways to inform the evaluation phase.
+<!-- Summarize findings from the modelling phase and any key takeaways to inform the evaluation phase. -->
 
 <!-- #### Modeling Technique -->
 
@@ -238,6 +245,5 @@ Summarize findings from the modelling phase and any key takeaways to inform the 
 
 <!-- #### Revised Parameter Settings -->
 
-# Appendix {.unnumbered}
 
 <!-- {{< include 04_modelling_def.qmd >}} -->
