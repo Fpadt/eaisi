@@ -45,6 +45,8 @@ By turning forecasting into a friendly competition, this approach builds both tr
 
 ::: {#fig-06-deployment-gamification}
 ![](../images/gamification.png){width="100%"}
+
+'Beat the Nerd in the Corner' gamification to build trust & encourages by competing against *Pythia’s Advice*.
 :::
 
 :::::: {#fig-06-gamification .figure}
@@ -60,7 +62,7 @@ By turning forecasting into a friendly competition, this approach builds both tr
 ![](../images/bu_why.png){caption="Why is forecasting important? It drives the business." fig-align="left" fig-width="15cm"}
 :::
 
-'Beat the Nerd in the Corner' gamification to build trust & encourages by competing against *Pythia’s Advice*.
+*Pythia's Advice* Forecast Accuracy (orange) against business Forecast.
 ::::::
 
 ## Prediction Intervals {#sec-06-deployment-prediction-intervals}
