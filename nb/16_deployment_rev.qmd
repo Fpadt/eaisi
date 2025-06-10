@@ -1,5 +1,5 @@
 ---
-subtitle:    Deployment subtitle
+subtitle:    Beat the Nerd! Forecast smart-R with Augmented Insights at Scale
 description: |
   - *Pythia’s Advice* is live and integrated with SAP BW and SAC.
   - Monthly refreshes provide updated forecasts and model insights.
@@ -14,6 +14,31 @@ toc-depth: 3      # include ## and ### in the TOC
 
 # Deployment {#sec-06-deployment}
 
+<!-- ## Overview {#sec-16-deployment-overview} -->
+
+<!-- ## Operationalized Proof-of-Concepts {#sec-16-deployment-proof-of-concepts} -->
+
+<!-- ## Gamification {#sec-16-deployment-gamification} -->
 
 
-<!-- {{< include 06_deployment_def.qmd >}} -->
+<!-- ## Prediction Intervals {#sec-16-deployment-prediction-intervals} -->
+
+
+
+<!-- ## Model Management {#sec-16-deployment-model-management} -->
+
+<!-- ### Scalability {#sec-16-deployment-scalability} -->
+
+
+<!-- ### Model Versioning {#sec-16-deployment-versioning} -->
+
+
+<!-- ### Maintenance & Updating the model {#sec-16-deployment-maintenance} -->
+
+<!-- ### Monitoring the Model {#sec-16-deployment-monitoring} -->
+
+
+<!-- ## Summary {#sec-16-deployment-summary} -->
+
+
+<!-- {{< include 16_deployment_def.qmd >}} -->

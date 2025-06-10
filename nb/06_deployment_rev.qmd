@@ -1,5 +1,5 @@
 ---
-subtitle:    Deployment subtitle
+subtitle:    Beat the Nerd! Forecast smart-R with Augmented Insights at Scale
 description: |
   - *Pythia’s Advice* is live and integrated with SAP BW and SAC.
   - Monthly refreshes provide updated forecasts and model insights.
@@ -46,7 +46,7 @@ By turning forecasting into a friendly competition, this approach builds both tr
 ::: {#fig-06-deployment-gamification}
 ![](../images/gamification.png){width="100%"}
 
-'Beat the Nerd in the Corner' gamification to build trust & encourages by competing against *Pythia’s Advice*.
+'Beat the Nerd in the Corner' gamification to build **TRUST** by competing against *Pythia’s Advice*.
 :::
 
 :::::: {#fig-06-gamification .figure}
@@ -87,9 +87,9 @@ Achieving this outcome represents the core objective of the *Pythia’s Advice* 
 ETS - Prediction intervals will guide safety stock calculations, preventing stock-outs and reducing waste.
 ::::::
 
-## Model Management
+## Model Management {#sec-06-deployment-model-management}
 
-### Scalability
+### Scalability {#sec-06-deployment-scalability}
 
 To ensure the *Pythia’s Advice* system can scale effectively across business units and regions, a robust and modular architecture is essential. The following technologies and practices will support scalable deployment, integration, and maintenance:
 
@@ -111,7 +111,7 @@ The source code and related resources are hosted in the following GitHub reposit
 
 This setup supports reproducible research and fosters open collaboration, both within the development team and across stakeholders.
 
-### maintenance & updating the model
+### Maintenance & Updating the model {#sec-06-deployment-maintenance}
 
 *Pythia’s Advice* can be maintained and updated through a structured process that includes: 
 
@@ -119,7 +119,7 @@ This setup supports reproducible research and fosters open collaboration, both w
 
 -   [ ] **Continuous Integration/Continuous Deployment (CI/CD)** – Using CI/CD pipelines to automate the deployment of updates, ensuring that new features and improvements are delivered quickly and reliably.
 
-### Monitoring the Model
+### Monitoring the Model {#sec-06-deployment-monitoring}
 
 To ensure the continued effectiveness and relevance of *Pythia’s Advice*, we implement a structured model monitoring strategy:
 
