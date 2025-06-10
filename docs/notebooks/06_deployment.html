@@ -115,6 +115,10 @@ div.csl-indent {
         color: #FFFFFF;
       }
 </style>
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -607,8 +611,16 @@ window.Quarto = {
    
   <ul>
   <li><a href="#sec-06-deployment-overview" id="toc-sec-06-deployment-overview" class="nav-link active" data-scroll-target="#sec-06-deployment-overview">Overview</a></li>
-  <li><a href="#sec-06-deployment-proof-of-concepts" id="toc-sec-06-deployment-proof-of-concepts" class="nav-link" data-scroll-target="#sec-06-deployment-proof-of-concepts">Operationalized Proof-of-Concepts</a></li>
-  <li><a href="#sec-06-deployment-gamification" id="toc-sec-06-deployment-gamification" class="nav-link" data-scroll-target="#sec-06-deployment-gamification">Gamification</a></li>
+  <li><a href="#sec-06-deployment-proof-of-concepts" id="toc-sec-06-deployment-proof-of-concepts" class="nav-link" data-scroll-target="#sec-06-deployment-proof-of-concepts">Operationalized Proof-of-Concepts</a>
+  <ul class="collapse">
+  <li><a href="#sec-06-deployment-statistical-indicators" id="toc-sec-06-deployment-statistical-indicators" class="nav-link" data-scroll-target="#sec-06-deployment-statistical-indicators">Statistical Indicators</a></li>
+  <li><a href="#sec-06-deployment-classifications" id="toc-sec-06-deployment-classifications" class="nav-link" data-scroll-target="#sec-06-deployment-classifications">Classifications</a></li>
+  <li><a href="#sec-06-deployment-seasonal-trend" id="toc-sec-06-deployment-seasonal-trend" class="nav-link" data-scroll-target="#sec-06-deployment-seasonal-trend">Seasonal &amp; Trend Indicators</a></li>
+  </ul></li>
+  <li><a href="#sec-06-deployment-gamification" id="toc-sec-06-deployment-gamification" class="nav-link" data-scroll-target="#sec-06-deployment-gamification">Gamification</a>
+  <ul class="collapse">
+  <li><a href="#sec-06-deployment-comparison" id="toc-sec-06-deployment-comparison" class="nav-link" data-scroll-target="#sec-06-deployment-comparison">Comparion of Forecasts</a></li>
+  </ul></li>
   <li><a href="#sec-06-deployment-prediction-intervals" id="toc-sec-06-deployment-prediction-intervals" class="nav-link" data-scroll-target="#sec-06-deployment-prediction-intervals">Prediction Intervals</a></li>
   <li><a href="#sec-06-deployment-model-management" id="toc-sec-06-deployment-model-management" class="nav-link" data-scroll-target="#sec-06-deployment-model-management">Model Management</a>
   <ul class="collapse">
@@ -640,6 +652,296 @@ window.Quarto = {
 <section id="sec-06-deployment-proof-of-concepts" class="level2">
 <h2 class="anchored" data-anchor-id="sec-06-deployment-proof-of-concepts">Operationalized Proof-of-Concepts</h2>
 <p><em>Pythia’s Advice</em> has been fully operationalized with a robust data pipeline that supports monthly data refreshes and integrates seamlessly with existing enterprise systems such as SAP. This setup enables the automated distribution of updated forecasts, time series features, and model parameters across all aggregation levels. By embedding these insights within established workflows, <em>Pythia’s Advice</em> enhances the current forecasting system—improving both the efficiency and effectiveness of demand planners in their decision-making.</p>
+<section id="sec-06-deployment-statistical-indicators" class="level3">
+<h3 class="anchored" data-anchor-id="sec-06-deployment-statistical-indicators">Statistical Indicators</h3>
+<p>The <em>Pythia’s Advice</em> system generates key statistical indicators for each time series, including:</p>
+<ul>
+<li><strong>SLEN</strong>: Represents the length of the time series, indicating how many historical data points are available for forecasting. This helps planners assess the reliability of the forecast.</li>
+<li><strong>minCM</strong>: Indicates the first Month of the time series, providing context for the historical data and its relevance to current demand patterns.</li>
+<li><strong>maxCM</strong>: Represents the last Month of the time series, helping planners understand the recency of the data and its implications for forecasting.</li>
+<li><strong>N</strong>: The number of observations in the time series, which is crucial for determining the Average Demand Interval (ADI).</li>
+<li><strong>Q</strong>: Total Quantity, which is the sum of all historical demand values. This metric helps planners understand the overall demand volume for the time series.</li>
+<li><strong>MU</strong>: The Mean of the time series, providing a central tendency measure that helps planners gauge typical demand levels.</li>
+<li><strong>SIGMA</strong>: The Standard Deviation, which measures the variability of demand. This helps planners assess the stability of the time series.</li>
+</ul>
+<div id="tbl-06-deployment-statistical-indicators" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-06-deployment-statistical-indicators-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6.1: Statistical indicators (SLEN, minCM, maxCM, …) per Aggregation Level,<br>
+see <a href="16_deployment.html#tbl-16-deployment-statistical-indicators" class="quarto-xref">Table&nbsp;<span>F.1</span></a> for interactive table.
+</figcaption>
+<div aria-describedby="tbl-06-deployment-statistical-indicators-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Agg. Lvl</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">M</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">C</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">minCM</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">maxCM</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">SLEN</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">N</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Q</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">MU</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">SIGMA</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">ADI</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">CV</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">CV2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">MATERIAL - CHANNEL</td>
+<td style="text-align: left;">433</td>
+<td style="text-align: left;">30936</td>
+<td style="text-align: left;">2021-01-01</td>
+<td style="text-align: left;">2025-01-01</td>
+<td style="text-align: left;">48</td>
+<td style="text-align: left;">49</td>
+<td style="text-align: left;">2467680</td>
+<td style="text-align: left;">50360.82</td>
+<td style="text-align: left;">12867.83</td>
+<td style="text-align: left;">0.98</td>
+<td style="text-align: left;">0.26</td>
+<td style="text-align: left;">0.07</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MATERIAL - CHANNEL</td>
+<td style="text-align: left;">433</td>
+<td style="text-align: left;">30938</td>
+<td style="text-align: left;">2021-01-01</td>
+<td style="text-align: left;">2025-01-01</td>
+<td style="text-align: left;">48</td>
+<td style="text-align: left;">49</td>
+<td style="text-align: left;">17168</td>
+<td style="text-align: left;">350.37</td>
+<td style="text-align: left;">220.56</td>
+<td style="text-align: left;">0.98</td>
+<td style="text-align: left;">0.63</td>
+<td style="text-align: left;">0.40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MATERIAL - CHANNEL</td>
+<td style="text-align: left;">434</td>
+<td style="text-align: left;">30934</td>
+<td style="text-align: left;">2021-01-01</td>
+<td style="text-align: left;">2024-12-01</td>
+<td style="text-align: left;">47</td>
+<td style="text-align: left;">48</td>
+<td style="text-align: left;">99804</td>
+<td style="text-align: left;">2079.25</td>
+<td style="text-align: left;">1036.35</td>
+<td style="text-align: left;">0.98</td>
+<td style="text-align: left;">0.50</td>
+<td style="text-align: left;">0.25</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MATERIAL - CHANNEL</td>
+<td style="text-align: left;">434</td>
+<td style="text-align: left;">30936</td>
+<td style="text-align: left;">2021-01-01</td>
+<td style="text-align: left;">2025-01-01</td>
+<td style="text-align: left;">48</td>
+<td style="text-align: left;">49</td>
+<td style="text-align: left;">1354992</td>
+<td style="text-align: left;">27652.90</td>
+<td style="text-align: left;">9198.15</td>
+<td style="text-align: left;">0.98</td>
+<td style="text-align: left;">0.33</td>
+<td style="text-align: left;">0.11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MATERIAL - CHANNEL</td>
+<td style="text-align: left;">566</td>
+<td style="text-align: left;">32658</td>
+<td style="text-align: left;">2021-01-01</td>
+<td style="text-align: left;">2025-01-01</td>
+<td style="text-align: left;">48</td>
+<td style="text-align: left;">48</td>
+<td style="text-align: left;">199169</td>
+<td style="text-align: left;">4149.35</td>
+<td style="text-align: left;">1062.47</td>
+<td style="text-align: left;">1.00</td>
+<td style="text-align: left;">0.26</td>
+<td style="text-align: left;">0.07</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-06-deployment-classifications" class="level3">
+<h3 class="anchored" data-anchor-id="sec-06-deployment-classifications">Classifications</h3>
+<p>The <em>Pythia’s Advice</em> system generates comprehensive time series classifications, including:</p>
+<ul>
+<li><p><strong>ABC Classification</strong>: Prioritizes time series based on their contribution to overall demand, allowing planners to focus on the most impactful items.</p></li>
+<li><p><strong>XYZ Classification</strong>: Assesses the variability of demand patterns, helping planners identify stable versus erratic time series.</p></li>
+<li><p><strong>SBC Classification</strong>: Evaluates the seasonality of time series, enabling planners to adjust forecasts based on seasonal trends.</p></li>
+</ul>
+<div id="tbl-06-deployment-classification" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-06-deployment-classification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6.2: Classifications (ABC, XYZ, SB) per Aggregation Level,<br>
+see <a href="16_deployment.html#tbl-16-deployment-classification" class="quarto-xref">Table&nbsp;<span>F.2</span></a> for interactive table.
+</figcaption>
+<div aria-describedby="tbl-06-deployment-classification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Agg. Lvl</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">M</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">C</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">ABC</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">XYZ</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">SBC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">MATERIAL - CHANNEL</td>
+<td style="text-align: left;">433</td>
+<td style="text-align: left;">30936</td>
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MATERIAL - CHANNEL</td>
+<td style="text-align: left;">433</td>
+<td style="text-align: left;">30938</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MATERIAL - CHANNEL</td>
+<td style="text-align: left;">434</td>
+<td style="text-align: left;">30934</td>
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MATERIAL - CHANNEL</td>
+<td style="text-align: left;">434</td>
+<td style="text-align: left;">30936</td>
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MATERIAL - CHANNEL</td>
+<td style="text-align: left;">566</td>
+<td style="text-align: left;">32658</td>
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">S</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-06-deployment-seasonal-trend" class="level3">
+<h3 class="anchored" data-anchor-id="sec-06-deployment-seasonal-trend">Seasonal &amp; Trend Indicators</h3>
+<p>The <em>Pythia’s Advice</em> system also provides insights into seasonal and trend components of the time series: - <strong>Seasonal</strong>: These metrics help planners understand the seasonal patterns in demand, enabling them to adjust forecasts based on expected seasonal fluctuations. - <strong>Trend</strong>: These metrics capture the underlying trends in demand over time, allowing planners to identify long-term shifts in demand patterns. - <strong>Spikiness</strong>: Measures the degree of irregular spikes in demand, helping planners identify potential anomalies or outliers. - <strong>Linearity</strong>: Assesses the linearity of the demand pattern, indicating how consistent the demand is over time.</p>
+<div id="tbl-06-deployment-seasonal-trend" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-06-deployment-seasonal-trend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6.3: Seasonal and Trend Indicators per Aggregation Level,<br>
+see <a href="16_deployment.html#tbl-16-deployment-seasonal-trend" class="quarto-xref">Table&nbsp;<span>F.3</span></a> for interactive table.
+</figcaption>
+<div aria-describedby="tbl-06-deployment-seasonal-trend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Agg. Lvl</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">M</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">C</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Trend</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Seasonal</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Peak</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Trough</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Spikiness</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Linearity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">MATERIAL - CHANNEL</td>
+<td style="text-align: left;">433</td>
+<td style="text-align: left;">30936</td>
+<td style="text-align: left;">0.6166307</td>
+<td style="text-align: left;">0.4691706</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1.675058e+12</td>
+<td style="text-align: left;">-55370.9990</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MATERIAL - CHANNEL</td>
+<td style="text-align: left;">433</td>
+<td style="text-align: left;">30938</td>
+<td style="text-align: left;">0.2449300</td>
+<td style="text-align: left;">0.3608909</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">3.347608e+05</td>
+<td style="text-align: left;">-534.5877</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MATERIAL - CHANNEL</td>
+<td style="text-align: left;">434</td>
+<td style="text-align: left;">30934</td>
+<td style="text-align: left;">0.2747223</td>
+<td style="text-align: left;">0.3845701</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">2.195104e+08</td>
+<td style="text-align: left;">-2933.6536</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MATERIAL - CHANNEL</td>
+<td style="text-align: left;">434</td>
+<td style="text-align: left;">30936</td>
+<td style="text-align: left;">0.8446616</td>
+<td style="text-align: left;">0.7717444</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">6.729566e+10</td>
+<td style="text-align: left;">-47484.0264</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MATERIAL - CHANNEL</td>
+<td style="text-align: left;">566</td>
+<td style="text-align: left;">32658</td>
+<td style="text-align: left;">0.4558851</td>
+<td style="text-align: left;">0.3280514</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">7.392111e+08</td>
+<td style="text-align: left;">-4557.3247</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</section>
 </section>
 <section id="sec-06-deployment-gamification" class="level2">
 <h2 class="anchored" data-anchor-id="sec-06-deployment-gamification">Gamification</h2>
@@ -656,6 +958,8 @@ Figure&nbsp;6.1: ‘Beat the Nerd in the Corner’ gamification to build <strong
 </figcaption>
 </figure>
 </div>
+<section id="sec-06-deployment-comparison" class="level3">
+<h3 class="anchored" data-anchor-id="sec-06-deployment-comparison">Comparion of Forecasts</h3>
 <div id="fig-06-gamification" class="figure quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-06-gamification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -669,6 +973,7 @@ Figure&nbsp;6.2: <em>Pythia’s Advice</em> Forecast Accuracy (orange) against b
 </figcaption>
 </figure>
 </div>
+</section>
 </section>
 <section id="sec-06-deployment-prediction-intervals" class="level2">
 <h2 class="anchored" data-anchor-id="sec-06-deployment-prediction-intervals">Prediction Intervals</h2>

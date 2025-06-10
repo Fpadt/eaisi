@@ -19,6 +19,22 @@ toc-depth: 3      # include ## and ### in the TOC
 source("../_book_functions.R")
 ```
 
+```{r}
+#| label: Features * Classifaction data data
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| results: hide
+#| eval: true
+
+dtAUG <- readRDS(file.path(PDATA, "dtAUG.rds")) %>%
+  .[, `:=`(
+    M_value = RL0(M_value),
+    C_value = RL0(C_value)
+  )    ]
+
+```
 <!--  Deployment – Implications for practical application. -->
 
 <!-- – Practical steps for integration (tools, APIs, monitoring)   -->
@@ -35,6 +51,112 @@ Deployment encompasses both technical enablement—via containerization, automat
 
 *Pythia’s Advice* has been fully operationalized with a robust data pipeline that supports monthly data refreshes and integrates seamlessly with existing enterprise systems such as SAP. This setup enables the automated distribution of updated forecasts, time series features, and model parameters across all aggregation levels. By embedding these insights within established workflows, *Pythia’s Advice* enhances the current forecasting system—improving both the efficiency and effectiveness of demand planners in their decision-making.
 
+### Statistical Indicators {#sec-06-deployment-statistical-indicators}
+
+The *Pythia’s Advice* system generates key statistical indicators for each time series, including:
+
+-   **SLEN**: Represents the length of the time series, indicating how many historical data points are available for forecasting. This helps planners assess the reliability of the forecast.
+-   **minCM**: Indicates the first Month of the time series, providing context for the historical data and its relevance to current demand patterns.
+-   **maxCM**: Represents the last Month of the time series, helping planners understand the recency of the data and its implications for forecasting.
+-   **N**: The number of observations in the time series, which is crucial for determining the Average Demand Interval (ADI).
+-   **Q**: Total Quantity, which is the sum of all historical demand values. This metric helps planners understand the overall demand volume for the time series.
+-   **MU**: The Mean of the time series, providing a central tendency measure that helps planners gauge typical demand levels.
+-   **SIGMA**: The Standard Deviation, which measures the variability of demand. This helps planners assess the stability of the time series.
+
+
+::: {#tbl-06-deployment-statistical-indicators} 
+```{r}
+dtAUG[1:5, .(combination, M_value, C_value, 
+             minCM      , maxCM  , SLEN   , 
+             N          , Q      ,
+             MU    = round(MU    , 2)   , 
+             SIGMA = round(SIGMA , 2)   , 
+             ADI   = round(ADI   , 2)   ,
+             CV    =  round(CV   , 2)   ,
+             CV2   = round(CV2   , 2))] %>%
+  kbl(
+    col.names           = c("Agg. Lvl", "M", "C", "minCM", "maxCM", "SLEN", 
+                            "N", "Q", "MU", "SIGMA", "ADI", "CV", "CV2"),
+    align               = "l",
+    booktabs            = TRUE
+  ) %>% 
+  kable_styling(
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
+  )  
+```
+
+Statistical indicators (SLEN, minCM, maxCM, ...) per Aggregation Level,  
+see @tbl-16-deployment-statistical-indicators for interactive table.
+:::
+
+
+### Classifications {#sec-06-deployment-classifications}
+
+The *Pythia’s Advice* system generates comprehensive time series classifications, including:  
+
+-   **ABC Classification**: Prioritizes time series based on their contribution to overall demand, allowing planners to focus on the most impactful items.
+
+-   **XYZ Classification**: Assesses the variability of demand patterns, helping planners identify stable versus erratic time series.
+
+-   **SBC Classification**: Evaluates the seasonality of time series, enabling planners to adjust forecasts based on seasonal trends.
+
+::: {#tbl-06-deployment-classification} 
+```{r}
+dtAUG[1:5, .(combination, M_value, C_value, ABC, XYZ, SBC)] %>%
+  kbl(
+    col.names           = c("Agg. Lvl", "M", "C", "ABC", "XYZ", "SBC"),
+    align               = "l",
+    booktabs            = TRUE
+  ) %>% 
+  kable_styling(
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
+  )  
+```
+
+Classifications (ABC, XYZ, SB) per Aggregation Level,  
+see @tbl-16-deployment-classification for interactive table.
+:::
+
+
+### Seasonal & Trend Indicators {#sec-06-deployment-seasonal-trend}
+
+The *Pythia’s Advice* system also provides insights into seasonal and trend components of the time series:
+-   **Seasonal**: These metrics help planners understand the seasonal patterns in demand, enabling them to adjust forecasts based on expected seasonal fluctuations.
+-   **Trend**: These metrics capture the underlying trends in demand over time, allowing planners to identify long-term shifts in demand patterns.
+-   **Spikiness**: Measures the degree of irregular spikes in demand, helping planners identify potential anomalies or outliers.
+-   **Linearity**: Assesses the linearity of the demand pattern, indicating how consistent the demand is over time.
+
+::: {#tbl-06-deployment-seasonal-trend}
+```{r}
+dtAUG[1:5, .(combination     , M_value, C_value, 
+             trend_strength  , seasonal_strength_12,
+             seasonal_peak_12, seasonal_trough_12,
+             spikiness       , linearity)] %>%
+  kbl(
+    col.names           = c("Agg. Lvl" , "M", "C", 
+                            "Trend"    , "Seasonal", 
+                            "Peak"     , "Trough", 
+                            "Spikiness", "Linearity"),
+    align               = "l",
+    booktabs            = TRUE
+  ) %>% 
+  kable_styling(
+    full_width          = FALSE,
+    position            = "left",
+    bootstrap_options   = c("striped", "hover", "condensed")
+  )  
+
+```
+
+Seasonal and Trend Indicators per Aggregation Level,  
+see @tbl-16-deployment-seasonal-trend for interactive table.
+:::
+
+
 ## Gamification {#sec-06-deployment-gamification}
 
 The true Forecast Value Added (FVA) is reflected in the improvement demand planners achieve over the low-cost statistical benchmark generated by *Pythia’s Advice*.
@@ -48,6 +170,8 @@ By turning forecasting into a friendly competition, this approach builds both tr
 
 'Beat the Nerd in the Corner' gamification to build **TRUST** by competing against *Pythia’s Advice*.
 :::
+
+### Comparion of Forecasts {#sec-06-deployment-comparison}
 
 :::::: {#fig-06-gamification .figure}
 :::: {.content-visible when-format="html"}

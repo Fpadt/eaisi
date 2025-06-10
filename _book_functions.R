@@ -130,3 +130,9 @@ build_summary_matrix_pretty <- function(dt, metrics) {
   return(res_wide)
 }
 
+RL0 <- function(x) {
+  is_num <- grepl("^[0-9]+$", x)
+  ifelse(is_num, 
+         sub("^0*", "", x, perl = TRUE),
+         x)
+}

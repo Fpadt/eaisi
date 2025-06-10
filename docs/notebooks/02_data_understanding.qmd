@@ -773,9 +773,9 @@ Methods like **exponential smoothing (ETS)** are particularly suited to capture 
 
 When such temporal patterns are present, these models can generate meaningful forecasts by systematically exploiting the underlying structure. In contrast, when a series lacks trend, seasonality, or autocorrelation—essentially behaving like random noise—forecasting yields little more than projecting the mean or last known value. Thus, effective forecasting depends on the assumption that past behavior offers useful insight into future outcomes.
 
-Figure @seasonal_trend_strength_facet_plot displays the strength of seasonality (y-axis) and trend (x-axis) for each combination of material and customer hierarchy levels. Notably, all levels exhibit clear seasonality (values > 0.64) and a meaningful trend component (values > 0.5), indicating a strong temporal structure—an encouraging sign for effective forecasting.
+Figure @fig-02-seasonal_trend_strength_facet_plot displays the strength of seasonality (y-axis) and trend (x-axis) for each combination of material and customer hierarchy levels. Notably, all levels exhibit clear seasonality (values > 0.64) and a meaningful trend component (values > 0.5), indicating a strong temporal structure—an encouraging sign for effective forecasting.
 
-::: {#fig-02-seasonal_trend_strength_facet_plot.figure}
+::: {#fig-02-seasonal_trend_strength_facet_plot .figure}
 ![](../images/seasonal_trend_strength_facet_plot.png){fig-align="left" width="15cm"}
 
 igure @fig-02-examples_facet_plot presents examples from various hierarchy levels that exhibit strong seasonality along with noticeable trend components.

@@ -14,9 +14,236 @@ toc-depth: 3      # include ## and ### in the TOC
 
 # Deployment {#sec-06-deployment}
 
+```{r}
+#| label: setup
+#| echo: false
+#| include: false
+source("../_book_functions.R")
+```
+
+```{r}
+#| label: Features * Classifaction data data
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| results: hide
+#| eval: true
+
+dtAUG <- readRDS(file.path(PDATA, "dtAUG.rds")) %>%
+  .[, `:=`(
+    M_value = RL0(M_value),
+    C_value = RL0(C_value)
+  )    ]
+
+```
+
 <!-- ## Overview {#sec-16-deployment-overview} -->
 
-<!-- ## Operationalized Proof-of-Concepts {#sec-16-deployment-proof-of-concepts} -->
+
+## Operationalized Proof-of-Concepts {#sec-16-deployment-proof-of-concepts}
+
+
+### Statistical Indicators {#sec-06-deployment-statistical-indicators}
+
+The *Pythia’s Advice* system generates key statistical indicators for each time series, including:
+
+-   **SLEN**: Represents the length of the time series, indicating how many historical data points are available for forecasting. This helps planners assess the reliability of the forecast.
+-   **minCM**: Indicates the first Month of the time series, providing context for the historical data and its relevance to current demand patterns.
+-   **maxCM**: Represents the last Month of the time series, helping planners understand the recency of the data and its implications for forecasting.
+-   **N**: The number of observations in the time series, which is crucial for determining the Average Demand Interval (ADI).
+-   **Q**: Total Quantity, which is the sum of all historical demand values. This metric helps planners understand the overall demand volume for the time series.
+-   **MU**: The Mean of the time series, providing a central tendency measure that helps planners gauge typical demand levels.
+-   **SIGMA**: The Standard Deviation, which measures the variability of demand. This helps planners assess the stability of the time series.
+
+
+::: {#tbl-16-deployment-statistical-indicators} 
+
+```{r}
+
+datatable(
+  dtAUG[sample(1:.N, 100),
+        .(combination, M = M_value, C = C_value, 
+          minCM      , maxCM  , SLEN   , 
+          N          , Q      ,
+          MU    = round(MU    , 2)   , 
+          SIGMA = round(SIGMA , 2)   , 
+          ADI   = round(ADI   , 2)   ,
+          CV    =  round(CV   , 2)   ,
+          CV2   = round(CV2   , 2))],
+  options = list(
+    paging     = TRUE,        #  pagination
+    searching  = TRUE,        # disable search bar
+    info       = TRUE,        # hide “Showing X of Y” info
+    ordering   = TRUE,         # keep column sorting enabled (default = TRUE)    
+    pageLength = 10,
+    lengthMenu = c(5, 10, 25, 50, 100, 2000),
+    autoWidth  = TRUE,
+    scrollX    = TRUE,
+    columnDefs   = list(
+      list(className = 'dt-left', targets = 0)
+    )
+    # , 
+    # searchCols = list(
+    #   NULL,               # No filter on column OHDEST
+    #   NULL,               # No filter on column DATATYPE
+    #   NULL,               # No filter on column FLDNM_IN
+    #   NULL,               # No filter on column FIELDTP      
+    #   NULL,               # No filter on column TRNSFRM
+    #   NULL,               # No filter on column FLDNM_OUT      
+    #   list(search = "C")  # Filter column SRC on value "C"
+    #   # Add more elements for other columns if needed
+    # )
+  ),
+  filter     = "top",  # or "bottom",  
+  rownames     = FALSE,
+  class        = 'stripe hover compact'
+) %>%
+  formatStyle(
+    columns    = "combination",  # Target just the first column
+    fontWeight = "bold"          # Make it bold
+  ) %>%
+  formatStyle(
+    columns  = c("combination",
+      "M"      , "C"      , "minCM", "maxCM", "SLEN"   , 
+      "N"      , "Q"      , "MU"   , 
+      "SIGMA"  , "ADI"    ,
+      "CV"     ,  "CV2"  
+      ),
+    fontSize = '0.8em'          # reduce font size for other columns if needed
+  )
+
+
+          
+```
+
+**Interactive Table**: Statistical indicators per Aggregation Level.
+:::
+
+
+### Classifications {#sec-16-deployment-classifications}
+
+The *Pythia’s Advice* system generates comprehensive time series classifications, including:  
+
+-   **ABC Classification**: Prioritizes time series based on their contribution to overall demand, allowing planners to focus on the most impactful items.
+
+-   **XYZ Classification**: Assesses the variability of demand patterns, helping planners identify stable versus erratic time series.
+
+-   **SBC Classification**: Evaluates the seasonality of time series, enabling planners to adjust forecasts based on seasonal trends.
+
+
+::: {#tbl-16-deployment-classification}  
+```{r}
+
+datatable(
+  dtAUG[sample(1:.N, 100), 
+        .(combination, M = M_value, C = C_value, ABC, XYZ, SBC)],
+  options = list(
+    paging     = TRUE,        #  pagination
+    searching  = TRUE,        # disable search bar
+    info       = TRUE,        # hide “Showing X of Y” info
+    ordering   = TRUE,         # keep column sorting enabled (default = TRUE)    
+    pageLength = 10,
+    lengthMenu = c(5, 10, 25, 50, 100, 2000),
+    autoWidth  = TRUE,
+    scrollX    = TRUE,
+    columnDefs   = list(
+      list(className = 'dt-left', targets = 0)
+    )
+    # , 
+    # searchCols = list(
+    #   NULL,               # No filter on column OHDEST
+    #   NULL,               # No filter on column DATATYPE
+    #   NULL,               # No filter on column FLDNM_IN
+    #   NULL,               # No filter on column FIELDTP      
+    #   NULL,               # No filter on column TRNSFRM
+    #   NULL,               # No filter on column FLDNM_OUT      
+    #   list(search = "C")  # Filter column SRC on value "C"
+    #   # Add more elements for other columns if needed
+    # )
+  ),
+  filter     = "top",  # or "bottom",  
+  rownames     = FALSE,
+  class        = 'stripe hover compact'
+) %>%
+  formatStyle(
+    columns    = "combination",  # Target just the first column
+    fontWeight = "bold"          # Make it bold
+  ) %>%
+  formatStyle(
+    columns  = c("combination", "M", "C", "ABC", "XYZ", "SBC"),
+    fontSize = '0.8em'          # reduce font size for other columns if needed
+  )
+
+```
+
+**Interactive Table**: Classifications per Aggregation Level
+:::
+
+### Seasonal & Trend Indicators {#sec-06-deployment-seasonal-trend}
+
+The *Pythia’s Advice* system also provides insights into seasonal and trend components of the time series:
+-   **Seasonal**: These metrics help planners understand the seasonal patterns in demand, enabling them to adjust forecasts based on expected seasonal fluctuations.
+-   **Trend**: These metrics capture the underlying trends in demand over time, allowing planners to identify long-term shifts in demand patterns.
+-   **Spikiness**: Measures the degree of irregular spikes in demand, helping planners identify potential anomalies or outliers.
+-   **Linearity**: Assesses the linearity of the demand pattern, indicating how consistent the demand is over time.
+
+::: {#tbl-16-deployment-seasonal-trend}
+```{r}
+datatable(
+dtAUG[sample(1:.N, 100), 
+      .(combination, M = M_value, C = C_value, 
+        trend      = round(trend_strength      , 2), 
+        Season     = round(seasonal_strength_12, 2),
+        Peak       = round(seasonal_peak_12    , 2), 
+        Through    = round(seasonal_trough_12  , 2),
+        Spikeiness = round(spikiness           , 2), 
+        Linearity  = round(linearity           , 2)
+        )],
+  options = list(
+    paging     = TRUE,        #  pagination
+    searching  = TRUE,        # disable search bar
+    info       = TRUE,        # hide “Showing X of Y” info
+    ordering   = TRUE,         # keep column sorting enabled (default = TRUE)    
+    pageLength = 10,
+    lengthMenu = c(5, 10, 25, 50, 100, 2000),
+    autoWidth  = TRUE,
+    scrollX    = TRUE,
+    columnDefs   = list(
+      list(className = 'dt-left', targets = 0)
+    )
+    # , 
+    # searchCols = list(
+    #   NULL,               # No filter on column OHDEST
+    #   NULL,               # No filter on column DATATYPE
+    #   NULL,               # No filter on column FLDNM_IN
+    #   NULL,               # No filter on column FIELDTP      
+    #   NULL,               # No filter on column TRNSFRM
+    #   NULL,               # No filter on column FLDNM_OUT      
+    #   list(search = "C")  # Filter column SRC on value "C"
+    #   # Add more elements for other columns if needed
+    # )
+  ),
+  filter     = "top",  # or "bottom",  
+  rownames     = FALSE,
+  class        = 'stripe hover compact'
+) %>%
+  formatStyle(
+    columns    = "combination",  # Target just the first column
+    fontWeight = "bold"          # Make it bold
+  ) %>%
+  formatStyle(
+    columns  = c("combination", 
+      "M", "C", "trend", "Season", "Peak", 
+      "Through", "Spikeiness", "Linearity"),
+    fontSize = '0.8em'          # reduce font size for other columns if needed
+  )
+
+```
+
+**Interactive Table**: Seasonal and Trend Indicators per Aggregation Level
+
+:::
 
 <!-- ## Gamification {#sec-16-deployment-gamification} -->
 
