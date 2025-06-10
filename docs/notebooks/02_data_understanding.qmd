@@ -841,10 +841,14 @@ fread(text = "
 Sufficient Historical Data and Pattern Stability Reliable demand classification and effective forecasting require an adequate historical record—ideally covering multiple seasonal cycles and enough observations to separate meaningful patterns from random noise. For instance, capturing annual seasonality in monthly data typically requires at least 2–3 years of history.
 
 ```{r}
+#| label: Load necessary libraries
+#| eval: false
+
+
 library(ggplot2)
 library(patchwork)
 
-dtFTS
+
 
 # Create individual plots
 p1 <- ggplot(smooth_data, aes(x = time, y = value)) +

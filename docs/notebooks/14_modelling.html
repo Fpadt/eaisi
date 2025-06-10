@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2025-06-07">
-<meta name="description" content="Effective business planning depends on accurate and consistent forecasts across different levels of aggregation, granularity, and time horizons. Producing such forecasts is inherently complex, requiring a diverse set of resources — including commercial forecasting engines, high-quality data, hardware, software, and human expertise.A key challenge lies in balancing the benefits of improved forecast accuracy against the costs of deploying these additional resources. To evaluate this trade-off, it is essential to first establish the level of accuracy that can be achieved with minimal input. The Forecast Value Added (FVA) is defined as the difference between the accuracy achieved by the business and that obtained using a minimal-resource benchmark. Ideally, the costs invested in enhancing forecast accuracy should be justified by a proportional gain in FVA.To assess this cost-benefit relationship without disrupting day-to-day operations, we developed a parallel forecasting environment — a system of innovation — that operates alongside the production forecasting system. This environment uses state-of-the-art, open-source forecasting tools that are freely available, enabling us to establish an internal benchmark for evaluating both performance and efficiency.This system of innovation allows us to explore a wide range of forecasting methods, from simple statistical models to more advanced hierarchical techniques. Hierarchical forecasting is particularly valuable for generating consistent forecasts across different levels of aggregation, tailored to specific business use cases.In this study, we aim to quantify the Forecast Value Added and assess the forecast accuracy of various statistical approaches, including hierarchical methods. Given the wide range of products (SKUs) and their varying levels of importance, we focus our analysis on the largest Marketing and Sales Organization (MSO), concentrating on the top 20% of products that generate 80% of total sales. This targeted approach enables us to concentrate on the most impactful items, while still providing insights that can be generalized to the broader product portfolio.">
+<meta name="description" content="model selection">
 
-<title>Introduction – Pythia's Advice</title>
+<title>Appendix D — Modelling – Pythia's Advice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -52,8 +52,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../notebooks/01_business_understanding.html" rel="next">
-<link href="../setting_the_stage.html" rel="prev">
+<link href="../notebooks/15_evaluation.html" rel="next">
+<link href="../notebooks/13_data_preparation.html" rel="prev">
 <link href="../images/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -112,6 +112,10 @@ div.csl-indent {
         color: #FFFFFF;
       }
 </style>
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -314,7 +318,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The <span class="red-heart">♥</span> of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">Introduction</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/11_business_understanding.html">Appendices</a></li><li class="breadcrumb-item"><a href="../notebooks/14_modelling.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Modelling</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -326,16 +330,14 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The <span class="red-heart">♥</span> of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">Introduction</a></li></ol></nav>
-      <h1 class="title"><span id="sec-00-introduction" class="quarto-section-identifier">Introduction</span></h1>
-            <p class="subtitle lead">TRUST - is all you need!</p>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/11_business_understanding.html">Appendices</a></li><li class="breadcrumb-item"><a href="../notebooks/14_modelling.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Modelling</span></a></li></ol></nav>
+      <h1 class="title"><span id="sec-14-modelling" class="quarto-section-identifier">Appendix D — Modelling</span></h1>
+            <p class="subtitle lead">Modelling subtitle</p>
                   <div>
         <div class="description">
-          <p>Effective business planning depends on accurate and consistent forecasts across different levels of aggregation, granularity, and time horizons. Producing such forecasts is inherently complex, requiring a diverse set of resources — including commercial forecasting engines, high-quality data, hardware, software, and human expertise.</p>
-          <p>A key challenge lies in balancing the benefits of improved forecast accuracy against the costs of deploying these additional resources. To evaluate this trade-off, it is essential to first establish the level of accuracy that can be achieved with minimal input. The Forecast Value Added (FVA) is defined as the difference between the accuracy achieved by the business and that obtained using a minimal-resource benchmark. Ideally, the costs invested in enhancing forecast accuracy should be justified by a proportional gain in FVA.</p>
-          <p>To assess this cost-benefit relationship without disrupting day-to-day operations, we developed a parallel forecasting environment — a system of innovation — that operates alongside the production forecasting system. This environment uses state-of-the-art, open-source forecasting tools that are freely available, enabling us to establish an internal benchmark for evaluating both performance and efficiency.</p>
-          <p>This system of innovation allows us to explore a wide range of forecasting methods, from simple statistical models to more advanced hierarchical techniques. Hierarchical forecasting is particularly valuable for generating consistent forecasts across different levels of aggregation, tailored to specific business use cases.</p>
-          <p>In this study, we aim to quantify the Forecast Value Added and assess the forecast accuracy of various statistical approaches, including hierarchical methods. Given the wide range of products (SKUs) and their varying levels of importance, we focus our analysis on the largest Marketing and Sales Organization (MSO), concentrating on the top 20% of products that generate 80% of total sales. This targeted approach enables us to concentrate on the most impactful items, while still providing insights that can be generalized to the broader product portfolio.</p>
+          <ul>
+          <li>model selection</li>
+          </ul>
         </div>
       </div>
                           <div class="quarto-categories">
@@ -456,16 +458,16 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">The <span class="red-heart">♥</span> of Pythia</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/00_introduction.html" class="sidebar-item-text sidebar-link active">
+  <a href="../notebooks/00_introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -521,13 +523,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/11_business_understanding.html" class="sidebar-item-text sidebar-link">
@@ -548,7 +550,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/14_modelling.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/14_modelling.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Modelling</span></span></a>
   </div>
 </li>
@@ -595,8 +597,29 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-14-techniques" id="toc-sec-14-techniques" class="nav-link active" data-scroll-target="#sec-14-techniques">Selection of Modelling Techniques</a></li>
+  <li><a href="#sec-literature_review" id="toc-sec-literature_review" class="nav-link" data-scroll-target="#sec-literature_review">Literature</a></li>
+  <li><a href="#business-process" id="toc-business-process" class="nav-link" data-scroll-target="#business-process">Business Process</a></li>
+  <li><a href="#math-statistics" id="toc-math-statistics" class="nav-link" data-scroll-target="#math-statistics">Math &amp; Statistics</a>
+  <ul class="collapse">
+  <li><a href="#sec-14-data-prep" id="toc-sec-14-data-prep" class="nav-link" data-scroll-target="#sec-14-data-prep">Data Preparation for Modelling</a></li>
+  <li><a href="#sec-14-assumptions" id="toc-sec-14-assumptions" class="nav-link" data-scroll-target="#sec-14-assumptions">Modelling Assumptions</a></li>
+  <li><a href="#sec-14-training" id="toc-sec-14-training" class="nav-link" data-scroll-target="#sec-14-training">Model Training and Calibration</a></li>
+  <li><a href="#sec-14-generation" id="toc-sec-14-generation" class="nav-link" data-scroll-target="#sec-14-generation">Forecast Generation</a></li>
+  <li><a href="#sec-14-validation" id="toc-sec-14-validation" class="nav-link" data-scroll-target="#sec-14-validation">Model Validation and Performance Metrics</a></li>
+  <li><a href="#sec-14-explainability" id="toc-sec-14-explainability" class="nav-link" data-scroll-target="#sec-14-explainability">Model Interpretability and Explainability</a></li>
+  <li><a href="#sec-14-tools" id="toc-sec-14-tools" class="nav-link" data-scroll-target="#sec-14-tools">Tools and Frameworks Used</a></li>
+  <li><a href="#sec-14-summary" id="toc-sec-14-summary" class="nav-link" data-scroll-target="#sec-14-summary">Summary and Lessons Learned</a></li>
+  <li><a href="#model-selection" id="toc-model-selection" class="nav-link" data-scroll-target="#model-selection">Model Selection</a></li>
+  </ul></li>
+  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/14_modelling.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -606,75 +629,474 @@ window.Quarto = {
 
 
 
-<section id="business-context" class="level2">
-<h2 class="anchored" data-anchor-id="business-context">Business Context</h2>
-<p>In today’s increasingly complex market environment, accurate demand forecasting is essential for maintaining operational efficiency in supply chains—especially within the Fast-Moving Consumer Goods (FMCG) industry, where perishable food products have short shelf lives and demand is highly sensitive to seasonal trends and promotional activities.</p>
-<section id="biobalance" class="level3">
-<h3 class="anchored" data-anchor-id="biobalance"><em>BioBalance</em></h3>
-<p>This study focuses on <em>BioBalance</em>, a multi-channel FMCG food company that both manufactures its own products and sources finished goods from external suppliers. <em>BioBalance</em> distributes products through multiple channels, including Retail (RET), Out-of-Home (OOH), Health &amp; Food Stores (HFS), Discounters (DISC), and e-Commerce (eCOM). Effective sales forecasting at various levels of aggregation and granularity is critical to supporting key business decisions related to production planning, procurement, and negotiations with suppliers and customers.</p>
-<p>The forecasting challenges faced by <em>BioBalance</em> are intensified by the perishable nature of its product portfolio, significant fluctuations in seasonal demand, and frequent promotional activities. Accurate forecasts thus directly influence inventory management, cost-efficiency, customer satisfaction, and overall operational performance.</p>
+<section id="sec-14-techniques" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-techniques">Selection of Modelling Techniques</h3>
 </section>
-<section id="stakeholders" class="level3">
-<h3 class="anchored" data-anchor-id="stakeholders">Stakeholders</h3>
-<p><em>BioBalance</em>’s forecasts serve both internal and external stakeholders. Internally, demand forecasts support functions such as production planning, inventory management, and procurement. Externally, these forecasts are shared with suppliers and customers to enable collaborative planning, reinforcing the need for high accuracy and consistency across multiple aggregation levels, granularities, and forecasting horizons.</p>
+<section id="sec-literature_review" class="level2">
+<h2 class="anchored" data-anchor-id="sec-literature_review">Literature</h2>
+<p>The literature review focuses on the intersection of three fields, according to the now-ubiquitous Data Science Venn Diagram of <a href="http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram">Drew Conway</a>.</p>
 </section>
-<section id="forecasting-challenges" class="level3">
-<h3 class="anchored" data-anchor-id="forecasting-challenges">Forecasting Challenges</h3>
-<p><em>BioBalance</em> currently uses a third-party forecasting platform that relies on traditional statistical methods. While demand planners can improve forecast accuracy through manual adjustments and simulations, these efforts require significant time and expertise.</p>
-<p>However, research shows <span class="citation" data-cites="fildesGoodBadJudgment2007">(<a href="18_references.html#ref-fildesGoodBadJudgment2007" role="doc-biblioref">Fildes &amp; Goodwin, 2007</a>)</span> that many small adjustments do not lead to improvements and can even reduce accuracy. In contrast, larger adjustments—especially downward revisions—tend to yield more substantial gains. This raises concerns about the effectiveness of manual interventions and highlights the need for a more objective way to assess their impact.</p>
+<section id="business-process" class="level2">
+<h2 class="anchored" data-anchor-id="business-process">Business Process</h2>
+<ul>
+<li>SCOR MODEL A COMPLETE GUIDE - 2020 EDITION, <span class="citation" data-cites="blokdykSCORMODELCOMPLETE2019">(<a href="18_references.html#ref-blokdykSCORMODELCOMPLETE2019" role="doc-biblioref">BLOKDYK, 2019</a>)</span></li>
+<li>Inventory and production management in supply chains, <span class="citation" data-cites="silverInventoryProductionManagement2021">(<a href="18_references.html#ref-silverInventoryProductionManagement2021" role="doc-biblioref">Silver et al., 2021</a>)</span></li>
+</ul>
 </section>
+<section id="math-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="math-statistics">Math &amp; Statistics</h2>
+<ul>
+<li>Forecasting: Principles and Practice (3rd ed), <span class="citation" data-cites="hyndmanForecastingPrinciplesPractice2021">(<a href="18_references.html#ref-hyndmanForecastingPrinciplesPractice2021" role="doc-biblioref">R. J. Hyndman &amp; Athanasopoulos, 2021</a>)</span></li>
+<li>Demand forecasting best practices, <span class="citation" data-cites="vandeputDemandForecastingBest2023">(<a href="18_references.html#ref-vandeputDemandForecastingBest2023" role="doc-biblioref">Vandeput, 2023</a>)</span></li>
+<li>Data science for supply chain forecasting, <span class="citation" data-cites="vandeputDataScienceSupply2021">(<a href="18_references.html#ref-vandeputDataScienceSupply2021" role="doc-biblioref">Vandeput, 2021</a>)</span></li>
+<li>Inventory optimization: models and simulations, <span class="citation" data-cites="vandeputInventoryOptimizationModels2020">(<a href="18_references.html#ref-vandeputInventoryOptimizationModels2020" role="doc-biblioref">Vandeput, 2020</a>)</span></li>
+<li>Machine Learning With Boosting: A Beginner’s Guide, <span class="citation" data-cites="hartshornMachineLearningBoosting2017">(<a href="18_references.html#ref-hartshornMachineLearningBoosting2017" role="doc-biblioref">Hartshorn, 2017</a>)</span></li>
+<li>Introduction to conformal prediction with Python, <span class="citation" data-cites="molnarIntroductionConformalPrediction2023">(<a href="18_references.html#ref-molnarIntroductionConformalPrediction2023" role="doc-biblioref">Molnar, 2023</a>)</span></li>
+<li>Practical guide to applied conformal prediction in Python, <span class="citation" data-cites="manokhinPracticalGuideApplied2023">(<a href="18_references.html#ref-manokhinPracticalGuideApplied2023" role="doc-biblioref">Manokhin, 2023</a>)</span></li>
+<li>Mastering Modern Time Series Forecasting : The Complete Guide to Statistical, Machine Learning &amp; Deep Learning Models in Python <span class="citation" data-cites="valeriymanokhinMasteringModernTime2025">(<a href="18_references.html#ref-valeriymanokhinMasteringModernTime2025" role="doc-biblioref">Valeriy Manokhin, 2025</a>)</span></li>
+</ul>
+<!-- Outline the statistical and machine learning techniques considered (e.g., ETS, ARIMA, Prophet, Hierarchical Time Series). -->
+<blockquote class="blockquote">
+<p>The selection of modelling techniques must balance interpretability, accuracy, data availability, and computational cost. Given <em>Pythia’s Advice</em> aims to build trust and provide transparent, value-added forecasts with minimal resources, <strong>statistical models</strong> were deliberately chosen for their clarity and theoretical grounding. While this choice limits the ability to model promotions and other exogenous factors — potentially reducing accuracy — it supports stakeholder confidence and facilitates adoption. In a future phase, once trust is established, <strong>machine learning</strong> techniques may be explored to further improve forecast performance.</p>
+</blockquote>
+<p>6.1. Literature Review / Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)</p>
+<hr>
+<section id="sec-14-data-prep" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-data-prep">Data Preparation for Modelling</h3>
+<p>Describe how the data was structured for modelling, including train/test split, resampling, lag features, and hierarchical structure.</p>
+<hr>
 </section>
-<section id="research-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="research-objectives">Research Objectives</h2>
-<p>While the current forecasting process requires and permits manual intervention and method customization, it remains unclear whether these efforts consistently deliver value. To address this, the study proposes an objective, low-cost statistical benchmark that can serve as a reference point for evaluating the effectiveness of manual adjustments and the overall forecasting process.</p>
-<section id="primary-objective-forecast-value-added-fva" class="level3">
-<h3 class="anchored" data-anchor-id="primary-objective-forecast-value-added-fva">Primary Objective: Forecast Value Added (FVA)</h3>
-<p>The primary objective of this research is to quantify the Forecast Value Added (FVA) by establishing a minimal-resource benchmark for forecast accuracy. FVA represents the improvement achieved by the business’s current forecasting process compared to a baseline generated using a simple, robust, and low-effort statistical approach.</p>
-<p>This benchmark will be developed at minimal cost by automating or eliminating manual forecasting tasks, using open-source forecasting tools, and deploying them on low-cost hardware. Clearly defining this benchmark provides <em>BioBalance</em> with a reliable and transparent reference point to evaluate current forecasting performance.</p>
-<p>By quantifying FVA, the company can set objective accuracy targets for the demand planning team. These targets combine the performance of the minimal-resource benchmark with the expected incremental improvements justified by additional effort, cost, or expertise.</p>
+<section id="sec-14-assumptions" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-assumptions">Modelling Assumptions</h3>
+<p>List any modelling assumptions (e.g., forecast granularity, univariate/multivariate inputs, independence between nodes).</p>
+<hr>
 </section>
-<section id="secondary-objective-hierarchical-forecasting-accuracy" class="level3">
-<h3 class="anchored" data-anchor-id="secondary-objective-hierarchical-forecasting-accuracy">Secondary Objective: Hierarchical Forecasting Accuracy</h3>
-<p>As a secondary objective, this research evaluates the performance of hierarchical forecasting methods, which produce consistent forecasts across multiple levels of aggregation. Ensuring forecast consistency is crucial for effective cross-functional decision-making, aligning internal operations, and supporting collaborative planning with external stakeholders.</p>
+<section id="sec-14-training" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-training">Model Training and Calibration</h3>
+<p>Explain the training approach: cross-validation strategy, hyperparameter tuning, recursive vs.&nbsp;direct forecasting.</p>
+<hr>
 </section>
+<section id="sec-14-generation" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-generation">Forecast Generation</h3>
+<p>Describe how forecasts are generated for each technique, including aggregation levels and forecast horizons.</p>
+<hr>
 </section>
-<section id="purpose-of-the-research" class="level2">
-<h2 class="anchored" data-anchor-id="purpose-of-the-research">Purpose of the Research</h2>
-<p>The purpose of this research is to provide clear insight into the cost-benefit trade-off involved in improving forecast accuracy. By establishing a minimal-resource benchmark, the study defines a baseline level of accuracy that can be achieved with minimal effort and cost. This benchmark serves as both a reference point for evaluating current performance and a foundation for setting future accuracy targets.</p>
-<p>Any additional improvements in forecast accuracy—measured as Forecast Value Added (FVA) above this benchmark—should be justified by the resources required to achieve them. In doing so, the research supports more informed decisions on where and how to invest in forecasting capabilities.</p>
+<section id="sec-14-validation" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-validation">Model Validation and Performance Metrics</h3>
+<p>Present the evaluation methodology, error metrics (e.g., RMSE, MAPE, bias), and visualizations.</p>
+<hr>
 </section>
-<section id="scope-of-the-research" class="level2">
-<h2 class="anchored" data-anchor-id="scope-of-the-research">Scope of the Research</h2>
-<p><em>BioBalance</em> offers a diverse product portfolio (SKUs) across multiple geographical markets, with products varying in sales importance. To ensure a focused and meaningful analysis, this study concentrates on the top 20% of products, which together account for 80% of total sales.</p>
-<p>While a small portion of the company’s sales (less than 10%) comes from chilled products — which have short shelf lives and are forecasted weekly — the majority comes from ambient products with a shelf life of <span class="math inline">\(1/2\)</span> to <span class="math inline">\(1\)</span> year. These are forecasted in monthly buckets and form the primary focus of this research.</p>
-<p>By narrowing the scope to high-impact ambient products, the study enables a practical and scalable analysis, while still yielding insights that are applicable across the broader product range.</p>
+<section id="sec-14-explainability" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-explainability">Model Interpretability and Explainability</h3>
+<p>(Optional) Include techniques for interpreting the forecasts (e.g., SHAP values, residual analysis).</p>
+<hr>
 </section>
-<section id="structure-of-the-document" class="level2">
-<h2 class="anchored" data-anchor-id="structure-of-the-document">Structure of the Document</h2>
-<!-- Structure of the Document, why we chose CRISP-DM, roadmap of the sections to follow -->
-<p>This research adopts the <strong>CRISP-ML methodology</strong> <span class="citation" data-cites="costaCRISPMLMethodologyStepbyStep2022">(<a href="18_references.html#ref-costaCRISPMLMethodologyStepbyStep2022" role="doc-biblioref">Costa, 2022</a>)</span> as its guiding framework.</p>
-<p>CRISP-ML (Cross-Industry Standard Process for Machine Learning) is a structured approach for designing, implementing, and communicating data science and machine learning projects. It consists of six core phases:</p>
-<ol type="1">
-<li>Business Understanding</li>
-<li>Data Understanding</li>
-<li>Data Preparation</li>
-<li>Modelling</li>
-<li>Evaluation</li>
-<li>Deployment</li>
-</ol>
-<p>The main body of this document includes a dedicated section for each phase. These chapters are concise, free of code, and supported by visuals and tables to enhance readability and accessibility — particularly for business stakeholders and decision-makers.</p>
-<p>For technical readers, the Appendix provides a corresponding chapter for each phase, offering additional context, detailed analysis, and code implementations.</p>
-<div class="html">
-<!-- {{< include 00_pythias_advice_def.qmd >}} -->
+<section id="sec-14-tools" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-tools">Tools and Frameworks Used</h3>
+<!-- List packages, libraries, or software used for modelling (e.g., `fable`, `forecast`, `lightgbm`, DuckDB). -->
+<section id="r-r-studio-tooling" class="level4">
+<h4 class="anchored" data-anchor-id="r-r-studio-tooling">R &amp; R-Studio tooling</h4>
+<p>see <span class="citation" data-cites="rcoreteamLanguageEnvironmentStatistical2024">(<a href="18_references.html#ref-rcoreteamLanguageEnvironmentStatistical2024" role="doc-biblioref">Core Team}, 2024</a>)</span> &amp; <span class="citation" data-cites="Posit">(<a href="18_references.html#ref-Posit" role="doc-biblioref"><em>Posit</em>, n.d.</a>)</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Component</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">R Version</td>
+<td style="text-align: left;">R version 4.5.0 (2025-04-11 ucrt)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Platform</td>
+<td style="text-align: left;">x86_64-w64-mingw32</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Running OS</td>
+<td style="text-align: left;">Windows 11 x64 (build 26100)</td>
+</tr>
+</tbody>
+</table>
 </div>
+</div>
+</section>
+<section id="r-packages" class="level4">
+<h4 class="anchored" data-anchor-id="r-packages">R-Packages</h4>
+<div id="tbl-14-packages" class="table-wrapper quarto-float quarto-figure quarto-figure-center anchored" style="text-align: left;">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-14-packages-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;D.1
+</figcaption>
+<div aria-describedby="tbl-14-packages-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 50%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Package</th>
+<th style="text-align: left;">Purpose</th>
+<th style="text-align: left;">Citation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">collapsibleTree</td>
+<td style="text-align: left;">Collapsible trees</td>
+<td style="text-align: left;"><span class="citation" data-cites="liakhovitskiCollapsibleTreeInteractiveCollapsible2024">Liakhovitski (<a href="18_references.html#ref-liakhovitskiCollapsibleTreeInteractiveCollapsible2024" role="doc-biblioref">2024</a>)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">crayon</td>
+<td style="text-align: left;">Colored text output</td>
+<td style="text-align: left;"><span class="citation" data-cites="csardiCrayonColoredTerminal2024">Csárdi (<a href="18_references.html#ref-csardiCrayonColoredTerminal2024" role="doc-biblioref">2024</a>)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">data.table</td>
+<td style="text-align: left;">Fast data manipulation</td>
+<td style="text-align: left;"><span class="citation" data-cites="barrettDatatableExtensionDataframe2024">Barrett et al. (<a href="18_references.html#ref-barrettDatatableExtensionDataframe2024" role="doc-biblioref">2024</a>)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dplyr</td>
+<td style="text-align: left;">Data manipulation</td>
+<td style="text-align: left;"><span class="citation" data-cites="wickhamDplyrGrammarData2024">Wickham &amp; François (<a href="18_references.html#ref-wickhamDplyrGrammarData2024" role="doc-biblioref">2024</a>)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DT</td>
+<td style="text-align: left;">Interactive tables</td>
+<td style="text-align: left;"><span class="citation" data-cites="xieDTWrapperJavaScript2024">Xie (<a href="18_references.html#ref-xieDTWrapperJavaScript2024" role="doc-biblioref">2024a</a>)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">duckDB</td>
+<td style="text-align: left;">DuckDB database and light transformations</td>
+<td style="text-align: left;"><span class="citation" data-cites="raasveldtDuckdbInProcessSQL2024">Raasveldt &amp; Mühleisen (<a href="18_references.html#ref-raasveldtDuckdbInProcessSQL2024" role="doc-biblioref">2024</a>)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">fable</td>
+<td style="text-align: left;">Forecasting models</td>
+<td style="text-align: left;"><span class="citation" data-cites="ohara-wildFableForecastingModels2024">O’Hara-Wild, Hyndman, Wang, implementation), et al. (<a href="18_references.html#ref-ohara-wildFableForecastingModels2024" role="doc-biblioref">2024</a>)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fabletools</td>
+<td style="text-align: left;">Forecasting infrastructure</td>
+<td style="text-align: left;"><span class="citation" data-cites="ohara-wildFabletoolsCoreTools2024">O’Hara-Wild &amp; Hyndman (<a href="18_references.html#ref-ohara-wildFabletoolsCoreTools2024" role="doc-biblioref">2024</a>)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">feasts</td>
+<td style="text-align: left;">Time series feature extraction</td>
+<td style="text-align: left;"><span class="citation" data-cites="ohara-wildFeastsFeatureExtraction2024">O’Hara-Wild, Hyndman, Wang, Cook, et al. (<a href="18_references.html#ref-ohara-wildFeastsFeatureExtraction2024" role="doc-biblioref">2024</a>)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fpp3</td>
+<td style="text-align: left;">Forecasting and time series</td>
+<td style="text-align: left;"><span class="citation" data-cites="hyndmanFpp3ForecastingPrinciples2024">Rob J. Hyndman &amp; Athanasopoulos (<a href="18_references.html#ref-hyndmanFpp3ForecastingPrinciples2024" role="doc-biblioref">2024</a>)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ggplot2</td>
+<td style="text-align: left;">Data visualization</td>
+<td style="text-align: left;"><span class="citation" data-cites="wickhamGgplot2CreateElegant2024">Wickham et al. (<a href="18_references.html#ref-wickhamGgplot2CreateElegant2024" role="doc-biblioref">2024</a>)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ggrepel</td>
+<td style="text-align: left;">Non-overlapping labels in ggplot2</td>
+<td style="text-align: left;"><span class="citation" data-cites="slowikowskiGgrepelAutomaticallyPosition2024">Slowikowski (<a href="18_references.html#ref-slowikowskiGgrepelAutomaticallyPosition2024" role="doc-biblioref">2024</a>)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">glue</td>
+<td style="text-align: left;">String interpolation</td>
+<td style="text-align: left;"><span class="citation" data-cites="hesterGlueInterpretedString2024">Hester (<a href="18_references.html#ref-hesterGlueInterpretedString2024" role="doc-biblioref">2024</a>)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">gt</td>
+<td style="text-align: left;">Creating tables</td>
+<td style="text-align: left;"><span class="citation" data-cites="iannoneGtEasilyCreate2024">Iannone &amp; Contributors (<a href="18_references.html#ref-iannoneGtEasilyCreate2024" role="doc-biblioref">2024</a>)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">kableExtra</td>
+<td style="text-align: left;">Enhanced tables</td>
+<td style="text-align: left;"><span class="citation" data-cites="zhuKableExtraConstructComplex2024">Zhu (<a href="18_references.html#ref-zhuKableExtraConstructComplex2024" role="doc-biblioref">2024</a>)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">knitr</td>
+<td style="text-align: left;">Dynamic report generation</td>
+<td style="text-align: left;"><span class="citation" data-cites="xieKnitrGeneralPurposePackage2024">Xie (<a href="18_references.html#ref-xieKnitrGeneralPurposePackage2024" role="doc-biblioref">2024b</a>)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">lubridate</td>
+<td style="text-align: left;">Date-time manipulation</td>
+<td style="text-align: left;"><span class="citation" data-cites="spinuLubridateMakeDealing2024">Spinu et al. (<a href="18_references.html#ref-spinuLubridateMakeDealing2024" role="doc-biblioref">2024</a>)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">magrittr</td>
+<td style="text-align: left;">Pipe operator</td>
+<td style="text-align: left;"><span class="citation" data-cites="magrittrMagrittrForwardPipeOperator2022">and creator of magrittr) et al. (<a href="18_references.html#ref-magrittrMagrittrForwardPipeOperator2022" role="doc-biblioref">2022</a>)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">openxlsx2</td>
+<td style="text-align: left;">Read/write Excel</td>
+<td style="text-align: left;"><span class="citation" data-cites="barboneOpenxlsx2ReadWrite2025">Barbone et al. (<a href="18_references.html#ref-barboneOpenxlsx2ReadWrite2025" role="doc-biblioref">2025</a>)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>padt</strong></td>
+<td style="text-align: left;"><strong>Pythia’s Advice – Data Tooling</strong></td>
+<td style="text-align: left;"><span class="citation" data-cites="EAISIPADT"><em><span>EAISI-PADT</span></em> (<a href="18_references.html#ref-EAISIPADT" role="doc-biblioref">n.d.</a>)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">purrr</td>
+<td style="text-align: left;">Functional programming</td>
+<td style="text-align: left;"><span class="citation" data-cites="wickhamPurrrFunctionalProgramming2025">Wickham, Henry, et al. (<a href="18_references.html#ref-wickhamPurrrFunctionalProgramming2025" role="doc-biblioref">2025</a>)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">quarto</td>
+<td style="text-align: left;">Rendering the report</td>
+<td style="text-align: left;"><span class="citation" data-cites="allaireQuartoInterfaceQuarto2024">Allaire et al. (<a href="18_references.html#ref-allaireQuartoInterfaceQuarto2024" role="doc-biblioref">2024</a>)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">scales</td>
+<td style="text-align: left;">Scaling and formatting</td>
+<td style="text-align: left;"><span class="citation" data-cites="wickhamScalesScaleFunctions2025">Wickham, Pedersen, et al. (<a href="18_references.html#ref-wickhamScalesScaleFunctions2025" role="doc-biblioref">2025</a>)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">skimr</td>
+<td style="text-align: left;">Data summarization</td>
+<td style="text-align: left;"><span class="citation" data-cites="waringSkimrCompactFlexible2022">Waring et al. (<a href="18_references.html#ref-waringSkimrCompactFlexible2022" role="doc-biblioref">2022</a>)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">tidyr</td>
+<td style="text-align: left;">Data tidying</td>
+<td style="text-align: left;"><span class="citation" data-cites="wickhamTidyrTidyMessy2024">Wickham (<a href="18_references.html#ref-wickhamTidyrTidyMessy2024" role="doc-biblioref">2024</a>)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">tidyverse</td>
+<td style="text-align: left;">Unified data science tools</td>
+<td style="text-align: left;"><span class="citation" data-cites="wickhamTidyverseEasilyInstall2024">Wickham &amp; Contributors (<a href="18_references.html#ref-wickhamTidyverseEasilyInstall2024" role="doc-biblioref">2024</a>)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">treemapify</td>
+<td style="text-align: left;">Treemaps</td>
+<td style="text-align: left;"><span class="citation" data-cites="wilkinsTreemapifyDrawTreemaps2024">Wilkins (<a href="18_references.html#ref-wilkinsTreemapifyDrawTreemaps2024" role="doc-biblioref">2024</a>)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">tsibble</td>
+<td style="text-align: left;">Tidy temporal data frames</td>
+<td style="text-align: left;"><span class="citation" data-cites="wangTsibbleTidyTemporal2024">Wang &amp; Hyndman (<a href="18_references.html#ref-wangTsibbleTidyTemporal2024" role="doc-biblioref">2024</a>)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<hr>
+</section>
+</section>
+<section id="sec-14-summary" class="level3">
+<h3 class="anchored" data-anchor-id="sec-14-summary">Summary and Lessons Learned</h3>
+<p>Summarize findings from the modelling phase and any key takeaways to inform the evaluation phase.</p>
+<hr>
+</section>
+<section id="model-selection" class="level3">
+<h3 class="anchored" data-anchor-id="model-selection">Model Selection</h3>
+<p>different models have different strengths and weaknesses and are suitable for different types of data and problems. achieve the best possible performance and maximize the impact</p>
+<p>avoid overfitting a trade-off between the simplicity and flexibility (robustness)</p>
+<p>model performance - only article hierarchy - article and customer hierarchy</p>
+<p>Cross-validation is a method for evaluating the performance of a model on a validation dataset. This involves dividing the data into k folds, training the model on k-1 folds, and evaluating the performance on the remaining fold. This process is repeated k times, with each fold serving as the validation set once, and the results are averaged to obtain a final performance score. This method provides a more reliable estimate of the model’s performance, as it uses all of the data for training and evaluation.</p>
+<p>algorithm - handle teh specific characteristics of teh data - balance performance and interpretability - memory and processing power</p>
+<ul>
+<li>validity -&gt; fa &amp; prediction intervals</li>
+<li>robustness -&gt;</li>
+<li>transparency -&gt;</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 26%">
+<col style="width: 24%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Capability</th>
+<th>Standard ARIMA</th>
+<th>SARIMA</th>
+<th>ARIMAX</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Handles Trend</td>
+<td>✅ (via differencing)</td>
+<td>✅ (with seasonal differencing)</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td>Damped Trend</td>
+<td>❌ (not explicit)</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr class="odd">
+<td>Seasonality</td>
+<td>❌ (needs SARIMA)</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td>Promotions / External Inputs</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr class="odd">
+<td>Best For</td>
+<td>Stationary or differenced series with autocorrelation</td>
+<td>Seasonal time series</td>
+<td>Time series influenced by external regressors</td>
+</tr>
+</tbody>
+</table>
+<!-- #### Modeling Technique -->
+<!-- #### Modeling Assumptions -->
+<!-- ### Generate Test Design -->
+<!-- #### Test Design -->
+<!-- #### Build Model -->
+<!-- ### Parameter Settings -->
+<!-- #### Models -->
+<!-- #### Model Description -->
+<!-- ### Assess Model -->
+<!-- #### Model Assessment -->
+<!-- #### Revised Parameter Settings -->
+</section>
+</section>
+<section id="appendix" class="level1 unnumbered">
+<h1 class="unnumbered">Appendix</h1>
+<!-- {{< include 04_modelling_def.qmd >}} -->
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
-<div id="ref-costaCRISPMLMethodologyStepbyStep2022" class="csl-entry" role="listitem">
-Costa, R. (2022). <em>The <span>CRISP-ML Methodology</span>: <span class="nocase">A Step-by-Step Approach</span> to <span>Real-World Machine Learning Projects</span></em>. Independently published.
+<div id="ref-allaireQuartoInterfaceQuarto2024" class="csl-entry" role="listitem">
+Allaire, J. J., Dervieux, C., Software, P., &amp; PBC. (2024). <em>Quarto: <span>R Interface</span> to ’<span>Quarto</span>’ <span>Markdown Publishing System</span></em>. <a href="https://cran.r-project.org/web/packages/quarto/index.html">https://cran.r-project.org/web/packages/quarto/index.html</a>
 </div>
-<div id="ref-fildesGoodBadJudgment2007" class="csl-entry" role="listitem">
-Fildes, R., &amp; Goodwin, P. (2007). Good and <span>Bad Judgment</span> in <span>Forecasting</span>: <span>Lessons</span> from <span>Four Companies</span>. <em>Foresight: The International Journal of Applied Forecasting</em>, <em>8</em>, 5–10. <a href="https://forecasters.org/wp-content/uploads/Good-and-Bad-Judgment-in-Forecasting\_Issue8.pdf">https://forecasters.org/wp-content/uploads/Good-and-Bad-Judgment-in-Forecasting\_Issue8.pdf</a>
+<div id="ref-magrittrMagrittrForwardPipeOperator2022" class="csl-entry" role="listitem">
+and creator of magrittr), S. M. B. (Original. author, Wickham, H., Henry, L., &amp; RStudio. (2022). <em>Magrittr: <span>A Forward-Pipe Operator</span> for <span>R</span></em>. <a href="https://cran.r-project.org/web/packages/magrittr/index.html">https://cran.r-project.org/web/packages/magrittr/index.html</a>
+</div>
+<div id="ref-barboneOpenxlsx2ReadWrite2025" class="csl-entry" role="listitem">
+Barbone, J. M., Garbuszus, J. M., Roy, O., package), openxlsx authors (openxlsx., &amp; details, A. K. (Author. of included pugixml code) openxlsx2 author. (2025). <em>Openxlsx2: <span>Read</span>, <span>Write</span> and <span>Edit</span> ’xlsx’ <span>Files</span></em>. <a href="https://cran.r-project.org/web/packages/openxlsx2/index.html">https://cran.r-project.org/web/packages/openxlsx2/index.html</a>
+</div>
+<div id="ref-barrettDatatableExtensionDataframe2024" class="csl-entry" role="listitem">
+Barrett, T., Dowle, M., Srinivasan, A., Gorecki, J., Chirico, M., Hocking, T., Schwendinger, B., Stetsenko, P., Short, T., Lianoglou, S., Antonyan, E., Bonsch, M., Parsonage, H., Ritchie, S., Ren, K., Tan, X., Saporta, R., Seiskari, O., Dong, X., … Krylov, I. (2024). <em>Data.table: <span>Extension</span> of ’data.frame’</em>. <a href="https://cran.r-project.org/web/packages/data.table/index.html">https://cran.r-project.org/web/packages/data.table/index.html</a>
+</div>
+<div id="ref-blokdykSCORMODELCOMPLETE2019" class="csl-entry" role="listitem">
+BLOKDYK, G. (2019). <em><span>SCOR MODEL A COMPLETE GUIDE</span> - 2020 <span>EDITION</span></em>. 5STARCOOKS.
+</div>
+<div id="ref-rcoreteamLanguageEnvironmentStatistical2024" class="csl-entry" role="listitem">
+Core Team}, {R. (2024). <em>R: <span>A Language</span> and <span>Environment</span> for <span>Statistical Computing</span></em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>
+</div>
+<div id="ref-csardiCrayonColoredTerminal2024" class="csl-entry" role="listitem">
+Csárdi, G. (2024). <em>Crayon: <span>Colored Terminal Output</span></em>. <a href="https://cran.r-project.org/package=crayon">https://cran.r-project.org/package=crayon</a>
+</div>
+<div id="ref-EAISIPADT" class="csl-entry" role="listitem">
+<em><span>EAISI-PADT</span></em>. (n.d.). Retrieved June 7, 2025, from <a href="https://fpadt.github.io/EAISI-Padt/">https://fpadt.github.io/EAISI-Padt/</a>
+</div>
+<div id="ref-hartshornMachineLearningBoosting2017" class="csl-entry" role="listitem">
+Hartshorn, S. (2017). <em>Machine <span>Learning With Boosting</span>: <span>A Beginner</span>’s <span>Guide</span></em>.
+</div>
+<div id="ref-hesterGlueInterpretedString2024" class="csl-entry" role="listitem">
+Hester, J. (2024). <em>Glue: <span>Interpreted String Literals</span></em>. <a href="https://cran.r-project.org/package=glue">https://cran.r-project.org/package=glue</a>
+</div>
+<div id="ref-hyndmanForecastingPrinciplesPractice2021" class="csl-entry" role="listitem">
+Hyndman, R. J., &amp; Athanasopoulos, G. (2021). <em>Forecasting: <span>Principles</span> and <span>Practice</span> (3rd ed)</em>. <a href="https://otexts.com/fpp3/">https://otexts.com/fpp3/</a>
+</div>
+<div id="ref-hyndmanFpp3ForecastingPrinciples2024" class="csl-entry" role="listitem">
+Hyndman, Rob J., &amp; Athanasopoulos, G. (2024). <em>Fpp3: <span>Forecasting Principles</span> and <span>Practice</span></em>. <a href="https://cran.r-project.org/package=fpp3">https://cran.r-project.org/package=fpp3</a>
+</div>
+<div id="ref-iannoneGtEasilyCreate2024" class="csl-entry" role="listitem">
+Iannone, R., &amp; Contributors. (2024). <em>Gt: <span>Easily Create Presentation-Ready Display Tables</span></em>. <a href="https://cran.r-project.org/package=gt">https://cran.r-project.org/package=gt</a>
+</div>
+<div id="ref-liakhovitskiCollapsibleTreeInteractiveCollapsible2024" class="csl-entry" role="listitem">
+Liakhovitski, D. (2024). <em><span class="nocase">collapsibleTree</span>: <span>Interactive Collapsible Tree Diagrams</span></em>. <a href="https://cran.r-project.org/package=collapsibleTree">https://cran.r-project.org/package=collapsibleTree</a>
+</div>
+<div id="ref-manokhinPracticalGuideApplied2023" class="csl-entry" role="listitem">
+Manokhin, V. (2023). <em>Practical guide to applied conformal prediction in <span>Python</span>: Learn and apply the best uncertainty frameworks to your industry applications</em>. <span><span class="math inline">\(&lt;\)</span></span>packt<span><span class="math inline">\(&gt;\)</span></span>.
+</div>
+<div id="ref-molnarIntroductionConformalPrediction2023" class="csl-entry" role="listitem">
+Molnar, C. (2023). <em>Introduction to conformal prediction with <span>Python</span>: A short guide for quantifying uncertainty of machine learning models</em> (First edition). Chistoph Molnar c/o MUCBOOK, Heidi Seibold. <a href="https://christophmolnar.com/books/conformal-prediction/">https://christophmolnar.com/books/conformal-prediction/</a>
+</div>
+<div id="ref-ohara-wildFabletoolsCoreTools2024" class="csl-entry" role="listitem">
+O’Hara-Wild, M., &amp; Hyndman, R. J. (2024). <em>Fabletools: <span>Core Tools</span> for <span>Packages</span> in the ’fable’ <span>Framework</span></em>. <a href="https://cran.r-project.org/package=fabletools">https://cran.r-project.org/package=fabletools</a>
+</div>
+<div id="ref-ohara-wildFeastsFeatureExtraction2024" class="csl-entry" role="listitem">
+O’Hara-Wild, M., Hyndman, R., Wang, E., Cook, D., features), T. T. (Correlation., &amp; method), L. C. (Guerrero’s. (2024). <em>Feasts: <span>Feature Extraction</span> and <span>Statistics</span> for <span>Time Series</span></em>. <a href="https://cran.r-project.org/web/packages/feasts/index.html">https://cran.r-project.org/web/packages/feasts/index.html</a>
+</div>
+<div id="ref-ohara-wildFableForecastingModels2024" class="csl-entry" role="listitem">
+O’Hara-Wild, M., Hyndman, R., Wang, E., implementation), G. C. (NNETAR., Bergmeir, C., Hensel, T.-G., &amp; Hyndman, T. (2024). <em>Fable: <span>Forecasting Models</span> for <span>Tidy Time Series</span></em>. <a href="https://cran.r-project.org/web/packages/fable/index.html">https://cran.r-project.org/web/packages/fable/index.html</a>
+</div>
+<div id="ref-Posit" class="csl-entry" role="listitem">
+<em>Posit</em>. (n.d.). Retrieved June 7, 2025, from <a href="https://www.posit.co/">https://www.posit.co/</a>
+</div>
+<div id="ref-raasveldtDuckdbInProcessSQL2024" class="csl-entry" role="listitem">
+Raasveldt, M., &amp; Mühleisen, H. (2024). <em>Duckdb: <span>In-Process SQL OLAP Database Management System</span></em>. <a href="https://cran.r-project.org/package=duckdb">https://cran.r-project.org/package=duckdb</a>
+</div>
+<div id="ref-silverInventoryProductionManagement2021" class="csl-entry" role="listitem">
+Silver, E. A., Pyke, D. F., &amp; Thomas, D. J. (2021). <em>Inventory and production management in supply chains</em> (Fourth edition, first issued in paperback). CRC Press, Taylor &amp; Francis Group.
+</div>
+<div id="ref-slowikowskiGgrepelAutomaticallyPosition2024" class="csl-entry" role="listitem">
+Slowikowski, K. (2024). <em>Ggrepel: <span>Automatically Position Non-Overlapping Text Labels</span> with ’Ggplot2’</em>. <a href="https://cran.r-project.org/package=ggrepel">https://cran.r-project.org/package=ggrepel</a>
+</div>
+<div id="ref-spinuLubridateMakeDealing2024" class="csl-entry" role="listitem">
+Spinu, V., Grolemund, G., Wickham, H., Vaughan, D., Lyttle, I., Costigan, I., Law, J., Mitarotonda, D., Larmarange, J., Boiser, J., &amp; Lee, C. H. (2024). <em>Lubridate: <span>Make Dealing</span> with <span>Dates</span> a <span>Little Easier</span></em>. <a href="https://cran.r-project.org/web/packages/lubridate/index.html">https://cran.r-project.org/web/packages/lubridate/index.html</a>
+</div>
+<div id="ref-valeriymanokhinMasteringModernTime2025" class="csl-entry" role="listitem">
+Valeriy Manokhin, M., PhD. (2025). <em>Mastering <span>Modern Time Series Forecasting</span> : <span>The Complete Guide</span> to <span>Statistical</span>, <span>Machine Learning</span> &amp; <span>Deep Learning Models</span> in <span>Python</span></em>. gumroad. <a href="https://valeman.gumroad.com/l/MasteringModernTimeSeriesForecasting">https://valeman.gumroad.com/l/MasteringModernTimeSeriesForecasting</a>
+</div>
+<div id="ref-vandeputInventoryOptimizationModels2020" class="csl-entry" role="listitem">
+Vandeput, N. (2020). <em>Inventory optimization: Models and simulations</em>. De Gruyter.
+</div>
+<div id="ref-vandeputDataScienceSupply2021" class="csl-entry" role="listitem">
+Vandeput, N. (2021). <em>Data science for supply chain forecasting</em> (Second edition). De Gruyter.
+</div>
+<div id="ref-vandeputDemandForecastingBest2023" class="csl-entry" role="listitem">
+Vandeput, N. (2023). <em>Demand forecasting best practices</em>. Manning Publications Co.
+</div>
+<div id="ref-wangTsibbleTidyTemporal2024" class="csl-entry" role="listitem">
+Wang, E., &amp; Hyndman, R. J. (2024). <em>Tsibble: <span>Tidy Temporal Data Frames</span> and <span>Tools</span></em>. <a href="https://cran.r-project.org/package=tsibble">https://cran.r-project.org/package=tsibble</a>
+</div>
+<div id="ref-waringSkimrCompactFlexible2022" class="csl-entry" role="listitem">
+Waring, E., Quinn, M., McNamara, A., Rubia, E. A. de la, Zhu, H., Lowndes, J., Ellis, S., McLeod, H., Wickham, H., Müller, K., RStudio, functions), I. (Spark., Kirkpatrick, C., Brenstuhl, S., Schratz, P., lbusett, Korpela, M., Thompson, J., McGehee, H., … Stewart, H. M. (2022). <em>Skimr: <span>Compact</span> and <span>Flexible Summaries</span> of <span>Data</span></em>. <a href="https://cran.r-project.org/web/packages/skimr/index.html">https://cran.r-project.org/web/packages/skimr/index.html</a>
+</div>
+<div id="ref-wickhamTidyrTidyMessy2024" class="csl-entry" role="listitem">
+Wickham, H. (2024). <em>Tidyr: <span>Tidy Messy Data</span></em>. <a href="https://cran.r-project.org/package=tidyr">https://cran.r-project.org/package=tidyr</a>
+</div>
+<div id="ref-wickhamGgplot2CreateElegant2024" class="csl-entry" role="listitem">
+Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Woo, K., Yutani, H., Dunnington, D., Brand, T. van den, Posit, &amp; PBC. (2024). <em>Ggplot2: <span>Create Elegant Data Visualisations Using</span> the <span>Grammar</span> of <span>Graphics</span></em>. <a href="https://cran.r-project.org/web/packages/ggplot2/index.html">https://cran.r-project.org/web/packages/ggplot2/index.html</a>
+</div>
+<div id="ref-wickhamTidyverseEasilyInstall2024" class="csl-entry" role="listitem">
+Wickham, H., &amp; Contributors. (2024). <em>Tidyverse: <span>Easily Install</span> and <span>Load</span> the ’<span>Tidyverse</span>’</em>. <a href="https://cran.r-project.org/package=tidyverse">https://cran.r-project.org/package=tidyverse</a>
+</div>
+<div id="ref-wickhamDplyrGrammarData2024" class="csl-entry" role="listitem">
+Wickham, H., &amp; François, R. (2024). <em>Dplyr: <span>A Grammar</span> of <span>Data Manipulation</span></em>. <a href="https://cran.r-project.org/package=dplyr">https://cran.r-project.org/package=dplyr</a>
+</div>
+<div id="ref-wickhamPurrrFunctionalProgramming2025" class="csl-entry" role="listitem">
+Wickham, H., Henry, L., Software, P., [cph, P., &amp; fnd. (2025). <em>Purrr: <span>Functional Programming Tools</span></em>. <a href="https://cran.r-project.org/web/packages/purrr/index.html">https://cran.r-project.org/web/packages/purrr/index.html</a>
+</div>
+<div id="ref-wickhamScalesScaleFunctions2025" class="csl-entry" role="listitem">
+Wickham, H., Pedersen, T. L., Seidel, D., Software, P., [cph, P., &amp; fnd. (2025). <em>Scales: <span>Scale Functions</span> for <span>Visualization</span></em>. <a href="https://cran.r-project.org/web/packages/scales/index.html">https://cran.r-project.org/web/packages/scales/index.html</a>
+</div>
+<div id="ref-wilkinsTreemapifyDrawTreemaps2024" class="csl-entry" role="listitem">
+Wilkins, D. (2024). <em>Treemapify: <span>Draw Treemaps</span> in ’Ggplot2’</em>. <a href="https://cran.r-project.org/package=treemapify">https://cran.r-project.org/package=treemapify</a>
+</div>
+<div id="ref-xieDTWrapperJavaScript2024" class="csl-entry" role="listitem">
+Xie, Y. (2024a). <em><span>DT</span>: <span>A Wrapper</span> of the <span>JavaScript Library</span> ’<span>DataTables</span>’</em>. <a href="https://cran.r-project.org/package=DT">https://cran.r-project.org/package=DT</a>
+</div>
+<div id="ref-xieKnitrGeneralPurposePackage2024" class="csl-entry" role="listitem">
+Xie, Y. (2024b). <em>Knitr: <span>A General-Purpose Package</span> for <span>Dynamic Report Generation</span></em>. <a href="https://cran.r-project.org/package=knitr">https://cran.r-project.org/package=knitr</a>
+</div>
+<div id="ref-zhuKableExtraConstructComplex2024" class="csl-entry" role="listitem">
+Zhu, H. (2024). <em><span class="nocase">kableExtra</span>: <span>Construct Complex Table</span> with ’kable’ and <span>Pipe Syntax</span></em>. <a href="https://cran.r-project.org/package=kableExtra">https://cran.r-project.org/package=kableExtra</a>
 </div>
 </div>
 </section>
@@ -1094,13 +1516,13 @@ Fildes, R., &amp; Goodwin, P. (2007). Good and <span>Bad Judgment</span> in <spa
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../setting_the_stage.html" class="pagination-link" aria-label="Setting the Stage">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Setting the Stage</span>
+      <a href="../notebooks/13_data_preparation.html" class="pagination-link" aria-label="Data Preparation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Data Preparation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notebooks/01_business_understanding.html" class="pagination-link" aria-label="Business Understanding">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Business Understanding</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notebooks/15_evaluation.html" class="pagination-link" aria-label="Evaluation">
+        <span class="nav-page-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Evaluation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1112,7 +1534,7 @@ Fildes, R., &amp; Goodwin, P. (2007). Good and <span>Bad Judgment</span> in <spa
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/00_introduction.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/14_modelling.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p><a href="https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai">EAISI Academy, <br> MASTERING DATA &amp; AI</a></p>
 </div>
