@@ -763,9 +763,22 @@ Summary: Customer Hierachy
 
 ### Time Series Patterns {#sec-02-data-exploration-time-series}
 
+
+Certainly! Here's a rephrased version with a clearer emphasis on seasonal and trend patterns that exponential smoothing (ETS) and Box-Jenkins (ARMA/ARIMA) methods can exploit:
+
+**Exploiting Temporal Structure for Forecasting**
+Time series forecasting is most effective when the data exhibits temporal structure—patterns over time that models can learn and project forward. Two key components of this structure are **trend** (long-term directional movement) and **seasonality** (recurring cycles, such as weekly demand spikes or annual holiday effects).
+
+Methods like **exponential smoothing (ETS)** are particularly suited to capture and extrapolate trend and seasonal components through adaptive smoothing techniques. Similarly, **Box-Jenkins models**—including **ARMA** and **ARIMA**—leverage autocorrelation structures in the data, modeling dependencies between past and future values to make informed predictions.
+
+When such temporal patterns are present, these models can generate meaningful forecasts by systematically exploiting the underlying structure. In contrast, when a series lacks trend, seasonality, or autocorrelation—essentially behaving like random noise—forecasting yields little more than projecting the mean or last known value. Thus, effective forecasting depends on the assumption that past behavior offers useful insight into future outcomes.
+
+Figure @seasonal_trend_strength_facet_plot displays the strength of seasonality (y-axis) and trend (x-axis) for each combination of material and customer hierarchy levels. Notably, all levels exhibit clear seasonality (values > 0.64) and a meaningful trend component (values > 0.5), indicating a strong temporal structure—an encouraging sign for effective forecasting.
+
 ::: {#fig-02-seasonal_trend_strength_facet_plot .figure}
 ![](../images/seasonal_trend_strength_facet_plot.png){fig-align="left" width="15cm"}
 
+igure @fig-02-examples_facet_plot presents examples from various hierarchy levels that exhibit strong seasonality along with noticeable trend components.
 
 :::
 
@@ -783,21 +796,19 @@ Summary: Customer Hierachy
 
 #### ABC/XYZ Classification {#sec-02-data-exploration-abc}
 
-The ABC/XYZ classification is a widely used method to prioritize items based 
-on their importance and predictability. It helps in determining which items 
-should be forecasted and how tightly they should be controlled.
+The ABC/XYZ classification is a commonly used framework for prioritizing items based on their business impact and forecastability. It supports decision-making on which items warrant detailed forecasting and tighter control.
 
-- ABC: Is this item important enough to forecast or control tightly?
+- ABC: Does the item have sufficient importance to justify close monitoring or forecasting?
 
-- XYZ: Is this item predictable enough to be reliably forecasted?
+- XYZ: Is the item predictable enough to produce reliable forecasts?
 
 ::: {#fig-02-abc-xyz .figure}
 
 ![](../images/ABCXYZ.png){fig-align="left" width="15cm"}
 
-- AX: High-priority & stable items (AX), forecast carefully.
+- AX: High-priority & stable items, forecast carefully.
 
-- AZ: High-priority & erratic items (AZ), forecast with caution.
+- AZ: High-priority & erratic items, forecast with caution.
 
 - CZ: Low-priority & erratic items: Maybe don’t forecast.
 
@@ -805,13 +816,9 @@ should be forecasted and how tightly they should be controlled.
 
 #### Syntetos-Boylan (SB) Classification {#sec-02-data-exploration-sb}
 
-The Syntetos-Boylan (SB) classification is an extension of the ABC/XYZ classification,
-which combines the concepts of demand variability and forecastability. 
-It helps in identifying the nature of demand patterns and selecting 
-appropriate forecasting methods.
+The Syntetos–Boylan (SB) classification extends the ABC/XYZ framework by integrating demand variability and forecastability. It provides a more nuanced understanding of demand patterns and supports the selection of suitable forecasting methods.
 
-The time Series *BioBalance* are for a large part intermittent & smooth, depending
-on the level of aggregation.
+For BioBalance, the time series data is predominantly a mix of intermittent and smooth demand, with the specific pattern varying by the level of aggregation.
 
 
 ```{r}
@@ -837,11 +844,19 @@ fread(text = "
 
 ```
 
+Sufficient Historical Data and Pattern Stability
+Reliable demand classification and effective forecasting require an adequate historical record—ideally covering multiple seasonal cycles and enough observations to separate meaningful patterns from random noise. For instance, capturing annual seasonality in monthly data typically requires at least 2–3 years of history.
 
+In our analysis, SB-class distributions appear stable over time, aside from fluctuations near the lower boundary—particularly in the first few months, where the classification is less reliable due to insufficient data. As such, early observations (less than 6 months) are omitted from interpretation.
+
+Encouragingly, as time series length increases, the proportion of smooth demand series rises. This shift is favorable for forecast accuracy, as smooth series are more predictable and well-suited to traditional forecasting methods, see figure @fig-02-plot_sbc_by_ts
 
 ::: {#fig-02-plot_sbc_by_ts .figure}
 ![](../images/plot_sbc_by_ts.png){fig-align="left" width="15cm"}
 :::
+
+
+Figure @fig-02-plot_sbm illustrates the distribution of SB-class types across different aggregation levels, highlighting the prevalence of smooth and intermittent demand patterns. The chart shows that as the aggregation level increases, the proportion of smooth demand series also increases, while intermittent demand remains significant. THis plot is made at the aggregation level ProdCat-Channel. The complete analysis for all aggregation levels is available in @fig-02-SBCSIEL.
 
 ::: {#fig-02-plot_sbm .figure}
 ![](../images/plot_sbm.png){fig-align="left" width="15cm"}
@@ -875,11 +890,13 @@ Croston / SBA / TSB, Zero-heavy demand, Intermittency, 'Intermittent; Lumpy', De
 
 ```
 
+The distribution of SB-class types across different aggregation levels is shown in figure @fig-02-SBCSIEL. Note the high level of smooth time series, especially for the weighted percentage which takes the sales volume into account. This indicates that the majority of sales are driven by smooth demand patterns, which are more predictable and suitable for traditional forecasting methods.
+
 ::: {#fig-02-SBCSIEL .figure}
 
 ![](../images/SBCSIEL.png){fig-align="left" width="15cm"}
 
-SB-Classification for each aggregation level
+Weighted SB-Classification (S, I, E, L) for each aggregation level
 :::
 
 #### ABC/XYZ versus Syntetos-Boylan (SB) Classification {#sec-02-data-exploration-abc-sb}
