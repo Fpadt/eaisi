@@ -1,0 +1,17 @@
+{
+  "hash": "453844b11347b09062d3950a33fb3b5d",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\nsubtitle:    Deployment subtitle\ndescription: |\n  - scalability - distributed techniques \n  - maintenance & updating the model \n  - monitoring the model \n  - debugging the model\n  - model versioning GIT\n  -   continuous integration/continuous deployment \n  (CI/CD) pipelines.\nnumber-sections: false\n---\n\n# Deployment {#sec-06-deployment}\n\n\n::: {.cell}\n\n:::\n\n\n<!--  Deployment – Implications for practical application. -->\n<!-- – Practical steps for integration (tools, APIs, monitoring)   -->\n<!-- – Change-management considerations -->\n\nscalability - distributed techniques - maintenance & updating the model - monitoring the model - debugging the model\n\n*Pythia’s Advice* will serve as a benchmark in our existing accuracy monitoring system.\nTo truly derive value from our forecasts, we will start using prediction intervals from E-T-S to determine safety stock levels. \nThis method ensures Pythia's Advice will boost sales by preventing stock-outs and minimizing waste. \n\n\nThis was the ultimate Goal of the *Pythia's Advice* research project!\n\n\n## model management\n\n-   model versioning GIT\n-   continuous integration/continuous deployment (CI/CD) pipelines.\n\n\n::: callout-note\nNote that there are five types of callouts, including: `note`, `warning`, `important`, `tip`, and `caution`.\n:::\n\n::: callout-warning\nNote that there are five types of callouts, including: `note`, `warning`, `important`, `tip`, and `caution`.\n:::\n\n::: callout-important\nNote that there are five types of callouts, including: `note`, `warning`, `important`, `tip`, and `caution`.\n:::\n\n::: callout-tip\n### Tip with Title\n\nThis is an example of a callout with a title.\n:::\n\n::: {.callout-caution collapse=\"true\"}\n### Expand To Learn About Collapse\n\nThis is an example of a 'folded' caution callout that can be expanded by the user. You can use `collapse=\"true\"` to collapse it by default or `collapse=\"false\"` to make a collapsible callout that is expanded by default.\n:::\n\n\n<!-- {{< include 06_deployment_def.qmd >}} -->\n",
+    "supporting": [
+      "06_deployment_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -676,7 +676,7 @@ window.Quarto = {
 <section id="sec-02-identification" class="level2">
 <h2 class="anchored" data-anchor-id="sec-02-identification">Identification of Data Sources</h2>
 <!-- Describe what data is available and where it comes from. -->
-<p>Table <a href="#tbl-02-data-sources" class="quarto-xref">Table&nbsp;<span>2.1</span></a> summarizes the data sources used in this project, detailing their type, time span, granularity, system of record (SoR), and content. All data is sourced from SAP BI, which extracts it from the underlying systems of record. The table also lists the specific SAP tables used for each data source.</p>
+<p>Table <a href="#tbl-02-data-sources" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-02-data-sources</span></a> summarizes the data sources used in this project, detailing their type, time span, granularity, system of record (SoR), and content. All data is sourced from SAP BI, which extracts it from the underlying systems of record. The table also lists the specific SAP tables used for each data source.</p>
 <div id="tbl-02-data-sources" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-sources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -753,12 +753,12 @@ MD = Master Data, TD = Transaction Data
 <!-- Subsections: -->
 <section id="sec-02-articles" class="level3">
 <h3 class="anchored" data-anchor-id="sec-02-articles">Articles</h3>
-<p>The Article Master Data is extracted from <code>MARC</code> which contains Plant specific data, this is enhanced with sales organization specific data from <code>MVKE</code> and global article data from <code>MARA</code>, applied filters are shown in Table <a href="#tbl-02-data-sources-article-filters" class="quarto-xref">Table&nbsp;<span>2.2</span></a>.</p>
+<p>The Article Master Data is extracted from <code>MARC</code> which contains Plant specific data, this is enhanced with sales organization specific data from <code>MVKE</code> and global article data from <code>MARA</code>, applied filters are shown in Table <a href="#tbl-02-data-sources-article-filters" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-02-data-sources-article-filters</span></a>.</p>
 <div id="tbl-02-data-sources-article-filters" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-sources-article-filters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;2.2: Article Master Data Filters<br>
-see <a href="01_business_understanding.html#sec-01-bu-scope" class="quarto-xref"><span>Scope of the Project</span></a> for reasons for article-filters.
+see <a href="#sec-01-bu-scope" class="quarto-xref"><span class="quarto-unresolved-ref">sec-01-bu-scope</span></a> for reasons for article-filters.
 </figcaption>
 <div aria-describedby="tbl-02-data-sources-article-filters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
@@ -810,7 +810,7 @@ see <a href="01_business_understanding.html#sec-01-bu-scope" class="quarto-xref"
 <!-- Data filters applied (Doctype's, Item category, ...) -->
 <!-- exclude Promotion articles -->
 <p>Sales data is extracted from <code>LIPS</code>, which contains delivery records. Only completed deliveries which are goods-issued are taken into account.</p>
-<p>Table <a href="#tbl-02-data-sources-sales-filters" class="quarto-xref">Table&nbsp;<span>2.3</span></a> shows the applied filters to select standard sales orders and free-of-charge orders.</p>
+<p>Table <a href="#tbl-02-data-sources-sales-filters" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-02-data-sources-sales-filters</span></a> shows the applied filters to select standard sales orders and free-of-charge orders.</p>
 <div id="tbl-02-data-sources-sales-filters" class="table quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-sources-sales-filters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -872,14 +872,14 @@ Fixed Planned Promotions are excluded
 </section>
 <section id="sec-02-forecasts" class="level3">
 <h3 class="anchored" data-anchor-id="sec-02-forecasts">Forecasts</h3>
-<p>Forecasts are generated monthly for each article–plant–customer combination, with a planning horizon of up to three years. For this research, the focus is on the year 2024, using a forecast horizon of up to 12 months. Consequently, only forecasts generated from 2023 onward are considered, see <a href="05_evaluation.html#fig-05-cv" class="quarto-xref">Figure&nbsp;<span>5.1</span></a> for visual illustration.</p>
+<p>Forecasts are generated monthly for each article–plant–customer combination, with a planning horizon of up to three years. For this research, the focus is on the year 2024, using a forecast horizon of up to 12 months. Consequently, only forecasts generated from 2023 onward are considered, see <a href="#fig-05-cv" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-05-cv</span></a> for visual illustration.</p>
 <p>Since forecasts are created both before and after the Demand Review, the dataset is split into two versions: <em>pre-Demand Review</em> and <em>post-Demand Review</em>. The pre-Demand Review forecasts are used for the initial analysis, while the post-Demand Review forecasts serve as the basis for final validation.</p>
 </section>
 </section>
 <section id="sec-02-data-collection" class="level2">
 <h2 class="anchored" data-anchor-id="sec-02-data-collection">Data Collection Report</h2>
 <!-- Summarize how data was obtained and any issues during acquisition: -->
-<p>Table <a href="#tbl-02-data-collection" class="quarto-xref">Table&nbsp;<span>2.4</span></a> summarizes the data collection process, including the data sources, types, extraction dates, record counts, file sizes, and keys used for each data set. The data is collected from the SAP system and stored in a structured format for further processing.</p>
+<p>Table <a href="#tbl-02-data-collection" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-02-data-collection</span></a> summarizes the data collection process, including the data sources, types, extraction dates, record counts, file sizes, and keys used for each data set. The data is collected from the SAP system and stored in a structured format for further processing.</p>
 <p>Pre- and post-Demand Review forecasts are stored as separate files, one for each month in which they were created. Each file is named to reflect the extraction date.The key is essential for linking the data sets during analysis.</p>
 <div id="tbl-02-data-collection" class="table quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -954,7 +954,7 @@ Table&nbsp;2.4: Data Collection
 <!-- Target variable (e.g., sales units, net revenue) -->
 <section id="sec-02-data-description-metadata" class="level3">
 <h3 class="anchored" data-anchor-id="sec-02-data-description-metadata">Metadata</h3>
-<p>Table <a href="#tbl-02-data-description-meta" class="quarto-xref">Table&nbsp;<span>2.5</span></a> gives a sample of the datasets file name, extension, type of data and date of extraction. A detailed overview of all fields is provided in the appendix, <a href="12_data_understanding.html#tbl-12-data-description-meta" class="quarto-xref">Table&nbsp;<span>B.1</span></a>.</p>
+<p>Table <a href="#tbl-02-data-description-meta" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-02-data-description-meta</span></a> gives a sample of the datasets file name, extension, type of data and date of extraction. A detailed overview of all fields is provided in the appendix, <a href="#tbl-12-data-description-meta" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-12-data-description-meta</span></a>.</p>
 <div id="tbl-02-data-description-meta" class="table quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-description-meta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -994,7 +994,7 @@ Table&nbsp;2.5: meta data on data extraction
 </section>
 <section id="sec-02-data-description-fields" class="level3">
 <h3 class="anchored" data-anchor-id="sec-02-data-description-fields">Data fields</h3>
-<p>Table <a href="#tbl-02-data-description" class="quarto-xref">Table&nbsp;<span>2.6</span></a> gives a sample of the dataset fields, including names, data types, key flags, conversion routines, and hierarchy levels. A detailed overview of all fields is provided in the appendix, <a href="12_data_understanding.html#tbl-12-data-description" class="quarto-xref">Table&nbsp;<span>B.2</span></a>.</p>
+<p>Table <a href="#tbl-02-data-description" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-02-data-description</span></a> gives a sample of the dataset fields, including names, data types, key flags, conversion routines, and hierarchy levels. A detailed overview of all fields is provided in the appendix, <a href="#tbl-12-data-description" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-12-data-description</span></a>.</p>
 <div id="tbl-02-data-description" class="table quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-description-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1290,7 +1290,7 @@ Figure&nbsp;2.1: Scoping the analysis to Valbio et Compagnie, which accounts for
 </div>
 <div class="callout-body-container">
 <p>For modeling purposes, the data was scoped to A-class articles based on ABC classification.<br>
-See <a href="03_data_preparation.html#sec-03-abc">ABC Analysis and Scope Definition</a> for details.</p>
+See <a href="#sec-03-abc">ABC Analysis and Scope Definition</a> for details.</p>
 </div>
 </div>
 </div>
@@ -1299,7 +1299,7 @@ See <a href="03_data_preparation.html#sec-03-abc">ABC Analysis and Scope Definit
 <h3 class="anchored" data-anchor-id="sec-02-data-profiling">Data Profiling</h3>
 <section id="sec-02-data-profiling-ca" class="level4">
 <h4 class="anchored" data-anchor-id="sec-02-data-profiling-ca">Character Variables</h4>
-<p>Table <a href="#tbl-02-data-profiling-ca" class="quarto-xref">Table&nbsp;<span>2.7</span></a> shows the data profiling results for the dataset, including the number of missing values, completeness rate, minimum and maximum length for character variables. The profiling helps identify data quality issues and provides insights into the structure of the dataset.</p>
+<p>Table <a href="#tbl-02-data-profiling-ca" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-02-data-profiling-ca</span></a> shows the data profiling results for the dataset, including the number of missing values, completeness rate, minimum and maximum length for character variables. The profiling helps identify data quality issues and provides insights into the structure of the dataset.</p>
 <div id="tbl-02-data-profiling-ca" class="table quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-profiling-ca-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1412,7 +1412,7 @@ Table&nbsp;2.7: Data Profiling: Character Variables
 </section>
 <section id="sec-02-data-profiling-nu" class="level4">
 <h4 class="anchored" data-anchor-id="sec-02-data-profiling-nu">Numeric Variables</h4>
-<p>Table <a href="#tbl-02-data-profiling-nu" class="quarto-xref">Table&nbsp;<span>2.8</span></a> shows the data profiling results for the numeric variables in the dataset, including mean, standard deviation, and percentiles. The histogram column provides a visual representation of the distribution of each numeric variable.</p>
+<p>Table <a href="#tbl-02-data-profiling-nu" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-02-data-profiling-nu</span></a> shows the data profiling results for the numeric variables in the dataset, including mean, standard deviation, and percentiles. The histogram column provides a visual representation of the distribution of each numeric variable.</p>
 <div id="tbl-02-data-profiling-nu" class="table quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-profiling-nu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1493,7 +1493,7 @@ Table&nbsp;2.8: Data Profiling: Numeric Variables
 </section>
 <section id="sec-02-data-description-hierarchy" class="level3">
 <h3 class="anchored" data-anchor-id="sec-02-data-description-hierarchy">Article Hierachy</h3>
-<p>Table <a href="#tbl-02-data-description-hierarchy-article" class="quarto-xref">Table&nbsp;<span>2.9</span></a> summarizes the 4-levels of the article hierarchy by a unique count per level. Roughly,</p>
+<p>Table <a href="#tbl-02-data-description-hierarchy-article" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-02-data-description-hierarchy-article</span></a> summarizes the 4-levels of the article hierarchy by a unique count per level. Roughly,</p>
 <ul>
 <li>each Family contains roughly 18 articles.</li>
 <li>each Sub Category contains roughly 4 families.</li>
@@ -1533,7 +1533,7 @@ Figure&nbsp;2.2
 </section>
 <section id="sec-02-data-description-hierarchy-customer" class="level3">
 <h3 class="anchored" data-anchor-id="sec-02-data-description-hierarchy-customer">Customer Hierarchy</h3>
-<p>Table <a href="#tbl-02-data-description-hierarchy-customer" class="quarto-xref">Table&nbsp;<span>2.10</span></a> summarizes the 4-levels of the customer hierarchy by a unique count per level. Roughly:</p>
+<p>Table <a href="#tbl-02-data-description-hierarchy-customer" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-02-data-description-hierarchy-customer</span></a> summarizes the 4-levels of the customer hierarchy by a unique count per level. Roughly:</p>
 <ul>
 <li>each Family contains roughly 5 customers</li>
 <li>each Account contains roughly 2 sold-to parties</li>
@@ -1561,14 +1561,14 @@ Table&nbsp;2.10: Summary: Customer Hierachy
 <p><strong>Exploiting Temporal Structure for Forecasting</strong> Time series forecasting is most effective when the data exhibits temporal structure—patterns over time that models can learn and project forward. Two key components of this structure are <strong>trend</strong> (long-term directional movement) and <strong>seasonality</strong> (recurring cycles, such as weekly demand spikes or annual holiday effects).</p>
 <p>Methods like <strong>exponential smoothing (ETS)</strong> are particularly suited to capture and extrapolate trend and seasonal components through adaptive smoothing techniques. Similarly, <strong>Box-Jenkins models</strong>—including <strong>ARMA</strong> and <strong>ARIMA</strong>—leverage autocorrelation structures in the data, modeling dependencies between past and future values to make informed predictions.</p>
 <p>When such temporal patterns are present, these models can generate meaningful forecasts by systematically exploiting the underlying structure. In contrast, when a series lacks trend, seasonality, or autocorrelation—essentially behaving like random noise—forecasting yields little more than projecting the mean or last known value. Thus, effective forecasting depends on the assumption that past behavior offers useful insight into future outcomes.</p>
-<p>Figure <span class="citation" data-cites="seasonal_trend_strength_facet_plot">(<a href="18_references.html#ref-seasonal_trend_strength_facet_plot" role="doc-biblioref"><strong>seasonal_trend_strength_facet_plot?</strong></a>)</span> displays the strength of seasonality (y-axis) and trend (x-axis) for each combination of material and customer hierarchy levels. Notably, all levels exhibit clear seasonality (values &gt; 0.64) and a meaningful trend component (values &gt; 0.5), indicating a strong temporal structure—an encouraging sign for effective forecasting.</p>
+<p>Figure <span class="citation" data-cites="seasonal_trend_strength_facet_plot">(<a href="#ref-seasonal_trend_strength_facet_plot" role="doc-biblioref"><strong>seasonal_trend_strength_facet_plot?</strong></a>)</span> displays the strength of seasonality (y-axis) and trend (x-axis) for each combination of material and customer hierarchy levels. Notably, all levels exhibit clear seasonality (values &gt; 0.64) and a meaningful trend component (values &gt; 0.5), indicating a strong temporal structure—an encouraging sign for effective forecasting.</p>
 <div id="fig-02-seasonal_trend_strength_facet_plot" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-02-seasonal_trend_strength_facet_plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="../images/seasonal_trend_strength_facet_plot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;2.3: igure Figure&nbsp;fig-02-examples_facet_plot presents examples from various hierarchy levels that exhibit strong seasonality along with noticeable trend components."><img src="../images/seasonal_trend_strength_facet_plot.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:15cm"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-02-seasonal_trend_strength_facet_plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.3: igure <a href="#fig-02-examples_facet_plot" class="quarto-xref">Figure&nbsp;<span>2.4</span></a> presents examples from various hierarchy levels that exhibit strong seasonality along with noticeable trend components.
+Figure&nbsp;2.3: igure <a href="#fig-02-examples_facet_plot" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-02-examples_facet_plot</span></a> presents examples from various hierarchy levels that exhibit strong seasonality along with noticeable trend components.
 </figcaption>
 </figure>
 </div>
@@ -1648,7 +1648,7 @@ Figure&nbsp;2.5
 </div>
 <p>Sufficient Historical Data and Pattern Stability Reliable demand classification and effective forecasting require an adequate historical record—ideally covering multiple seasonal cycles and enough observations to separate meaningful patterns from random noise. For instance, capturing annual seasonality in monthly data typically requires at least 2–3 years of history.</p>
 <p>In our analysis, SB-class distributions appear stable over time, aside from fluctuations near the lower boundary—particularly in the first few months, where the classification is less reliable due to insufficient data. As such, early observations (less than 6 months) are omitted from interpretation.</p>
-<p>Encouragingly, as time series length increases, the proportion of smooth demand series rises. This shift is favorable for forecast accuracy, as smooth series are more predictable and well-suited to traditional forecasting methods, see figure <a href="#fig-02-plot_sbc_by_ts" class="quarto-xref">Figure&nbsp;<span>2.6</span></a></p>
+<p>Encouragingly, as time series length increases, the proportion of smooth demand series rises. This shift is favorable for forecast accuracy, as smooth series are more predictable and well-suited to traditional forecasting methods, see figure <a href="#fig-02-plot_sbc_by_ts" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-02-plot_sbc_by_ts</span></a></p>
 <div id="fig-02-plot_sbc_by_ts" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-02-plot_sbc_by_ts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1659,7 +1659,7 @@ Figure&nbsp;2.6
 </figcaption>
 </figure>
 </div>
-<p>Figure <a href="#fig-02-plot_sbm" class="quarto-xref">Figure&nbsp;<span>2.7</span></a> illustrates the distribution of SB-class types across different aggregation levels, highlighting the prevalence of smooth and intermittent demand patterns. The chart shows that as the aggregation level increases, the proportion of smooth demand series also increases, while intermittent demand remains significant. THis plot is made at the aggregation level ProdCat-Channel. The complete analysis for all aggregation levels is available in <a href="#fig-02-SBCSIEL" class="quarto-xref">Figure&nbsp;<span>2.8</span></a>.</p>
+<p>Figure <a href="#fig-02-plot_sbm" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-02-plot_sbm</span></a> illustrates the distribution of SB-class types across different aggregation levels, highlighting the prevalence of smooth and intermittent demand patterns. The chart shows that as the aggregation level increases, the proportion of smooth demand series also increases, while intermittent demand remains significant. THis plot is made at the aggregation level ProdCat-Channel. The complete analysis for all aggregation levels is available in <a href="#fig-02-SBCSIEL" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-02-SBCSIEL</span></a>.</p>
 <div id="fig-02-plot_sbm" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-02-plot_sbm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1730,7 +1730,7 @@ Figure&nbsp;2.7
 </table>
 </div>
 </div>
-<p>The distribution of SB-class types across different aggregation levels is shown in figure <a href="#fig-02-SBCSIEL" class="quarto-xref">Figure&nbsp;<span>2.8</span></a>. Note the high level of smooth time series, especially for the weighted percentage which takes the sales volume into account. This indicates that the majority of sales are driven by smooth demand patterns, which are more predictable and suitable for traditional forecasting methods.</p>
+<p>The distribution of SB-class types across different aggregation levels is shown in figure <a href="#fig-02-SBCSIEL" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-02-SBCSIEL</span></a>. Note the high level of smooth time series, especially for the weighted percentage which takes the sales volume into account. This indicates that the majority of sales are driven by smooth demand patterns, which are more predictable and suitable for traditional forecasting methods.</p>
 <div id="fig-02-SBCSIEL" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-02-SBCSIEL-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1814,7 +1814,7 @@ Figure&nbsp;2.8: Weighted SB-Classification (S, I, E, L) for each aggregation le
 <!-- {{< include 02_data_understanding_def.qmd >}} -->
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-allaireQuartoInterfaceQuarto2024" class="csl-entry" role="listitem">
 Allaire, J. J., Dervieux, C., Software, P., &amp; PBC. (2024). <em>Quarto: <span>R Interface</span> to ’<span>Quarto</span>’ <span>Markdown Publishing System</span></em>. <a href="https://cran.r-project.org/web/packages/quarto/index.html">https://cran.r-project.org/web/packages/quarto/index.html</a>
 </div>

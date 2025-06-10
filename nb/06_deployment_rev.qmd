@@ -137,4 +137,4 @@ Engagement is reinforced through gamification strategies that promote trust and 
 
 This chapter demonstrates that *Pythia’s Advice* is not just an academic prototype—it is a functioning system that supports business goals through scalable forecasting intelligence.
 
-{{< include 06_deployment_def.qmd >}}
+<!-- {{< include 06_deployment_def.qmd >}} -->
