@@ -446,39 +446,6 @@
     ]
   },
   {
-    "objectID": "notebooks/04_modelling.html#sec-04-data-prep",
-    "href": "notebooks/04_modelling.html#sec-04-data-prep",
-    "title": "Modelling",
-    "section": "Data Preparation for Modelling",
-    "text": "Data Preparation for Modelling",
-    "crumbs": [
-      "The <span class='red-heart'>♥</span> of Pythia",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modelling</span>"
-    ]
-  },
-  {
-    "objectID": "notebooks/04_modelling.html#sec-04-assumptions",
-    "href": "notebooks/04_modelling.html#sec-04-assumptions",
-    "title": "Modelling",
-    "section": "Modelling Assumptions",
-    "text": "Modelling Assumptions",
-    "crumbs": [
-      "The <span class='red-heart'>♥</span> of Pythia",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modelling</span>"
-    ]
-  },
-  {
-    "objectID": "notebooks/04_modelling.html#sec-04-training",
-    "href": "notebooks/04_modelling.html#sec-04-training",
-    "title": "Modelling",
-    "section": "Model Training and Calibration",
-    "text": "Model Training and Calibration",
-    "crumbs": [
-      "The <span class='red-heart'>♥</span> of Pythia",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modelling</span>"
-    ]
-  },
-  {
     "objectID": "notebooks/04_modelling.html#sec-04-generation",
     "href": "notebooks/04_modelling.html#sec-04-generation",
     "title": "Modelling",

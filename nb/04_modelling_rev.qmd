@@ -128,19 +128,19 @@ see Literature review (@sec-literature_review)
 
 ------------------------------------------------------------------------
 
-## Data Preparation for Modelling {#sec-04-data-prep}
+<!-- ## Data Preparation for Modelling {#sec-04-data-prep} -->
 
 <!-- Describe how the data was structured for modelling, including train/test split,  and hierarchical structure. -->
 
 ------------------------------------------------------------------------
 
-## Modelling Assumptions {#sec-04-assumptions}
+<!-- ## Modelling Assumptions {#sec-04-assumptions} -->
 
 <!-- List any modelling assumptions (e.g., forecast granularity, univariate/multivariate inputs, independence between nodes). -->
 
 ------------------------------------------------------------------------
 
-## Model Training and Calibration {#sec-04-training}
+<!-- ## Model Training and Calibration {#sec-04-training} -->
 
 <!-- Explain the training approach: cross-validation strategy. -->
 
