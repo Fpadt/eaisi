@@ -187,7 +187,9 @@ resources:
   - video/bu_proc.mp4
   - video/mo_method.mp4
   - video/ev_cv.mp4
-  - video/ev_compare.mp4  
+  - video/ev_compare.mp4
+  - video/prediction_intervals.mp4
+  - video/gamification.mp4  
   - pptx/PAF_s03.pptx
   - coding/11_initialization.html
   - coding/12_data_ingestion.html
