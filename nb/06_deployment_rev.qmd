@@ -125,6 +125,7 @@ see @tbl-16-deployment-classification for interactive table.
 ### Seasonal & Trend Indicators {#sec-06-deployment-seasonal-trend}
 
 The *Pythia’s Advice* system also provides insights into seasonal and trend components of the time series:
+
 -   **Seasonal**: These metrics help planners understand the seasonal patterns in demand, enabling them to adjust forecasts based on expected seasonal fluctuations.
 -   **Trend**: These metrics capture the underlying trends in demand over time, allowing planners to identify long-term shifts in demand patterns.
 -   **Spikiness**: Measures the degree of irregular spikes in demand, helping planners identify potential anomalies or outliers.
@@ -171,7 +172,9 @@ By turning forecasting into a friendly competition, this approach builds both tr
 'Beat the Nerd in the Corner' gamification to build **TRUST** by competing against *Pythia’s Advice*.
 :::
 
-### Comparion of Forecasts {#sec-06-deployment-comparison}
+### Comparison of Forecasts {#sec-06-deployment-comparison}
+
+Comparing the forecast accuracy of *Pythia’s Advice* against the business forecast is crucial for demonstrating the value of the system. This comparison will be visualized in SAP Analytics Cloud (SAC) dashboards, allowing demand planners to see how *Pythia’s Advice* performs relative to their own forecasts.
 
 :::::: {#fig-06-gamification .figure}
 :::: {.content-visible when-format="html"}
