@@ -89,7 +89,7 @@ book:
   page-footer:
     left: "© 2025 Floris Padt: Pythia's Advice"
     # center: ""
-    right: "[EAISI](https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai)"
+    right: "[EAISI Academy, MASTERING DATA & AI](https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai)"
 
   favicon: images/favicon.ico  
   site-url: https://fpadt.github.io/eaisi/
