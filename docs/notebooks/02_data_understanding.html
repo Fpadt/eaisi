@@ -146,35 +146,6 @@ div.csl-indent {
 <script src="../site_libs/collapsibleTree-binding-0.1.8/collapsibleTree.js"></script>
 
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -1506,8 +1477,8 @@ Table&nbsp;2.9: Summary: Article Hierachy
 <div aria-describedby="tbl-02-data-description-hierarchy-article-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-5f8457ba74563435aa00" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-5f8457ba74563435aa00">{"x":{"filter":"none","vertical":false,"data":[["Animal based product","Bread and Bakery","Bread and Biscuit Al","Breakfast Cereals","Dairy Alternatives","Functional Foods","Hot Drinks","Juices and Cold Drin","Meals and Meal compo","Non category specifi","Others","Sweet Spreads, Puree","Sweets in Between"],[4,2,3,1,5,2,3,2,9,4,3,6,4],[22,5,9,6,24,12,14,6,44,4,9,13,16],[145,34,106,152,633,30,821,121,840,25,73,264,448]],"container":"<table class=\"stripe hover compact\">\n  <thead>\n    <tr>\n      <th>ProdCat<\/th>\n      <th>SubCat_Count<\/th>\n      <th>Family_Count<\/th>\n      <th>Article_Count<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"searching":false,"info":false,"ordering":true,"lengthChange":false,"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[1,2,3]},{"name":"ProdCat","targets":0},{"name":"SubCat_Count","targets":1},{"name":"Family_Count","targets":2},{"name":"Article_Count","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-06ba2cb2e2b13a76aecb" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-06ba2cb2e2b13a76aecb">{"x":{"filter":"none","vertical":false,"data":[["Animal based product","Bread and Bakery","Bread and Biscuit Al","Breakfast Cereals","Dairy Alternatives","Functional Foods","Hot Drinks","Juices and Cold Drin","Meals and Meal compo","Non category specifi","Others","Sweet Spreads, Puree","Sweets in Between"],[4,2,3,1,5,2,3,2,9,4,3,6,4],[22,5,9,6,24,12,14,6,44,4,9,13,16],[145,34,106,152,633,30,821,121,840,25,73,264,448]],"container":"<table class=\"stripe hover compact\">\n  <thead>\n    <tr>\n      <th>ProdCat<\/th>\n      <th>SubCat_Count<\/th>\n      <th>Family_Count<\/th>\n      <th>Article_Count<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"searching":false,"info":false,"ordering":true,"lengthChange":false,"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[1,2,3]},{"name":"ProdCat","targets":0},{"name":"SubCat_Count","targets":1},{"name":"Family_Count","targets":2},{"name":"Article_Count","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -1519,8 +1490,8 @@ Table&nbsp;2.9: Summary: Article Hierachy
 <div aria-describedby="fig-inter_active_article_hier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-4334a9968e163cf1dd8c" style="width:100%;height:600px;" class="collapsibleTree html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4334a9968e163cf1dd8c">{"x":{"data":{"name":"Articles","children":[{"name":"Sweets in Between","children":[{"name":"Biscuits","children":[{"name":"Biscuits (Plain)"},{"name":"Biscuits with fruits"},{"name":"Biscuits others"},{"name":"Biscuits with chocol"},{"name":"Pastry"},{"name":"Viennoiserie"},{"name":"Sandwich biscuits"}]},{"name":"Bars","children":[{"name":"Cereal bars"},{"name":"Fruit bars"},{"name":"Seed Bars"},{"name":"Nut bars"},{"name":"Functional bars"}]},{"name":"Chocolate","children":[{"name":"Chocolate bars"}]},{"name":"Cakes","children":[{"name":"Macaroons"},{"name":"Individual Cakes"},{"name":"Sharing Cakes"}]}]},{"name":"Hot Drinks","children":[{"name":"Tea","children":[{"name":"Green tea"},{"name":"Infusion Tea"},{"name":"Other Tea"},{"name":"Loose tea"},{"name":"Black Tea"},{"name":"White Tea"},{"name":"Instant Tea"}]},{"name":"Coffee","children":[{"name":"Instant coffee"},{"name":"Roast and Ground Cof"},{"name":"Coffee beans"},{"name":"Coffee pods"}]},{"name":"Other Hot drinks","children":[{"name":"Powdered milk"},{"name":"Hot Chocolate"},{"name":"Coffee substitutes"}]}]},{"name":"Dairy Alternatives","children":[{"name":"Dairy Alternative Dr","children":[{"name":"Soy drinks"},{"name":"Rice drinks"},{"name":"Oat drinks"},{"name":"Almond drinks"},{"name":"Other dairy alternat"},{"name":"Spelt drinks"},{"name":"Coconut drinks"},{"name":"Millet drinks"},{"name":"Hazelnut drinks"},{"name":"Cashew drinks"}]},{"name":"Dairy Alternative Cu","children":[{"name":"Other culinary aids"},{"name":"Oat culinary aids"},{"name":"Almond culinary aids"},{"name":"Coconut culinary aid"},{"name":"Soy culinary aids"},{"name":"Rice culinary aids"}]},{"name":"Dairy Alternatives D","children":[{"name":"Non dairy desserts"},{"name":"Non dairy ice cream"}]},{"name":"Dairy Alternatives o","children":[{"name":"Vegetable margarine"},{"name":"Non dairy cheese"}]},{"name":"Dairy Alternatives Y","children":[{"name":"Coconut  DA yoghurts"},{"name":"Oat DA yoghurts"},{"name":"Almond DA yoghurts"},{"name":"Other  DA yoghurts"}]}]},{"name":"Breakfast Cereals","children":[{"name":"Breakfast Cereals","children":[{"name":"Crunchy"},{"name":"Muesli"},{"name":"Extruded/puffed cere"},{"name":"Porridge"},{"name":"Flakes"},{"name":"Other breakfast cere"}]}]},{"name":"Bread and Biscuit Al","children":[{"name":"Cereal Cakes","children":[{"name":"Other Cereal Cakes P"},{"name":"Rice Cakes Plain"},{"name":"Rice Cakes Coated"},{"name":"Other Cereal Cakes C"},{"name":"Rice Cakes Flavoured"},{"name":"Other Cereal Cakes F"}]},{"name":"Crispy Breads","children":[{"name":"Toasted bread"}]},{"name":"Other Bread replacer","children":[{"name":"Crackers"},{"name":"Other Bread replacer"}]}]},{"name":"Meals and Meal compo","children":[{"name":"Savoury Spreads","children":[{"name":"Vegetarian pates(yea"},{"name":"Other savoury spread"},{"name":"Vegetarian Lard"},{"name":"Creamy Spreads"},{"name":"Vegetable spreads"},{"name":"Lentil/Protein sprea"},{"name":"Meat alternative spr"},{"name":"Cheese alternative s"},{"name":"Deli salads spreads"}]},{"name":"Soups and bouillons","children":[{"name":"Soups"},{"name":"Instant soup"}]},{"name":"Delicacies","children":[{"name":"Sauces"},{"name":"Chilled dips and spr"},{"name":"Chilled pasta"},{"name":"Chilled Quenelles"},{"name":"Dough (chilled)"},{"name":"Pancakes"},{"name":"Other delicacies"}]},{"name":"Ready Meals","children":[{"name":"Cereal meals"},{"name":"Other Ready meals"}]},{"name":"Pasta, rice and cere","children":[{"name":"Rice"},{"name":"Other cooking cereal"},{"name":"Pasta"},{"name":"Potato flakes"}]},{"name":"Meat analogues","children":[{"name":"Meat like meat subst"},{"name":"Non meat like meat s"}]},{"name":"Cooking sauces","children":[{"name":"Warm cooking sauces"},{"name":"Pasta sauces"},{"name":"Sauce concentrates"}]},{"name":"Canned and Frozen Ve","children":[{"name":"Prepared vegetables"},{"name":"Vegetable (frozen)"}]},{"name":"Cooking aids and mea","children":[{"name":"Other meal component"},{"name":"Stocks"},{"name":"Salt"},{"name":"Cold condiment sauce"},{"name":"Oil"},{"name":"Other cooking aids"},{"name":"Vinegar"},{"name":"Pickles"},{"name":"Mustard"},{"name":"Mayonnaise"},{"name":"Gravies"},{"name":"Seasonings and taste"},{"name":"Specialty cooking ai"}]}]},{"name":"Sweet Spreads, Puree","children":[{"name":"Fruit spreads","children":[{"name":"Fruit spreads"},{"name":"Other sweet spreads"}]},{"name":"Honey","children":[{"name":"Pure Honey"}]},{"name":"Nut spreads","children":[{"name":"Nut spreads"}]},{"name":"Sweeteners","children":[{"name":"Agave syrup"},{"name":"Sugar"},{"name":"Fructose"},{"name":"Other sweeteners"}]},{"name":"Chocolate Spreads","children":[{"name":"Chocolate spreads"}]},{"name":"Compote, Pureees, Sa","children":[{"name":"Purees"},{"name":"Compote"},{"name":"Fruit sauces"},{"name":"Other Prepared fruit"}]}]},{"name":"Functional Foods","children":[{"name":"Food supplements","children":[{"name":"Functional oils"},{"name":"Beer yeast"},{"name":"Other food supplemen"},{"name":"Digestion and transi"},{"name":"Slimming Food Supple"},{"name":"Vitamins and Mineral"},{"name":"Wheat germ"},{"name":"Cardio system care a"},{"name":"Vitality Food Supple"}]},{"name":"Slimming Foods","children":[{"name":"Meal substitutes oth"},{"name":"Hi protein salted po"},{"name":"Slimming Aids others"}]}]},{"name":"Non category specifi","children":[{"name":"Packaging-, producti","children":[{"name":"Packaging-, producti"}]},{"name":"Promotion materials","children":[{"name":"Other promotion mate"}]},{"name":"Byproducts","children":[{"name":"By products"}]},{"name":"Raw materials","children":[{"name":"Raw materials"}]}]},{"name":"Juices and Cold Drin","children":[{"name":"Juices","children":[{"name":"Fruit juice"},{"name":"Vegetable juice"},{"name":"Other juices"},{"name":"Fruit and vegetable"},{"name":"Fruit syrup"}]},{"name":"Cold Drinks","children":[{"name":"Soft drinks"}]}]},{"name":"Bread and Bakery","children":[{"name":"Bread products","children":[{"name":"Specialty Bread"},{"name":"Bread"}]},{"name":"Bakery and dessert p","children":[{"name":"Flour"},{"name":"Cake mix"},{"name":"Cooking Aids for Pas"}]}]},{"name":"Others","children":[{"name":"Savoury In Between","children":[{"name":"Other Savoury In Bet"},{"name":"Salted Snacks"},{"name":"Crisps"},{"name":"Savoury biscuits"}]},{"name":"Alcoholic drinks","children":[{"name":"Other alcoholic drin"}]},{"name":"Dried fruits and see","children":[{"name":"Seeds bags"},{"name":"Dried fruits bags"},{"name":"Nuts bags"},{"name":"Other dried fruits a"}]}]},{"name":"Animal based product","children":[{"name":"Meat products","children":[{"name":"Chicken"},{"name":"Canned meat"},{"name":"Cured meat"},{"name":"Foreign Cured meat"},{"name":"Sausages"}]},{"name":"Dairy products","children":[{"name":"Cream"},{"name":"Butter"},{"name":"Other Cheese"},{"name":"Cow milk"},{"name":"Cheese with cow milk"},{"name":"Cheese with ewe milk"},{"name":"Cheese with goat mil"},{"name":"Yogurt with cow milk"},{"name":"Yogurt with ewe milk"},{"name":"Dairy dessert with c"},{"name":"Dairy dessert with e"}]},{"name":"Seafood","children":[{"name":"Salmon"},{"name":"Canned fish"},{"name":"Other seafood"},{"name":"Smoked fish"}]},{"name":"Eggs","children":[{"name":"Eggs medium (53-63g)"},{"name":"Eggs large (63-73g)"}]}]}]},"options":{"hierarchy":["ProdCat","SubCat","Family"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":true,"zoomable":true,"margin":{"top":20,"bottom":20,"left":65,"right":125},"fill":"#38e56d"}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-bc7a2c74ec020c1c108b" style="width:100%;height:600px;" class="collapsibleTree html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bc7a2c74ec020c1c108b">{"x":{"data":{"name":"Articles","children":[{"name":"Sweets in Between","children":[{"name":"Biscuits","children":[{"name":"Biscuits (Plain)"},{"name":"Biscuits with fruits"},{"name":"Biscuits others"},{"name":"Biscuits with chocol"},{"name":"Pastry"},{"name":"Viennoiserie"},{"name":"Sandwich biscuits"}]},{"name":"Bars","children":[{"name":"Cereal bars"},{"name":"Fruit bars"},{"name":"Seed Bars"},{"name":"Nut bars"},{"name":"Functional bars"}]},{"name":"Chocolate","children":[{"name":"Chocolate bars"}]},{"name":"Cakes","children":[{"name":"Macaroons"},{"name":"Individual Cakes"},{"name":"Sharing Cakes"}]}]},{"name":"Hot Drinks","children":[{"name":"Tea","children":[{"name":"Green tea"},{"name":"Infusion Tea"},{"name":"Other Tea"},{"name":"Loose tea"},{"name":"Black Tea"},{"name":"White Tea"},{"name":"Instant Tea"}]},{"name":"Coffee","children":[{"name":"Instant coffee"},{"name":"Roast and Ground Cof"},{"name":"Coffee beans"},{"name":"Coffee pods"}]},{"name":"Other Hot drinks","children":[{"name":"Powdered milk"},{"name":"Hot Chocolate"},{"name":"Coffee substitutes"}]}]},{"name":"Dairy Alternatives","children":[{"name":"Dairy Alternative Dr","children":[{"name":"Soy drinks"},{"name":"Rice drinks"},{"name":"Oat drinks"},{"name":"Almond drinks"},{"name":"Other dairy alternat"},{"name":"Spelt drinks"},{"name":"Coconut drinks"},{"name":"Millet drinks"},{"name":"Hazelnut drinks"},{"name":"Cashew drinks"}]},{"name":"Dairy Alternative Cu","children":[{"name":"Other culinary aids"},{"name":"Oat culinary aids"},{"name":"Almond culinary aids"},{"name":"Coconut culinary aid"},{"name":"Soy culinary aids"},{"name":"Rice culinary aids"}]},{"name":"Dairy Alternatives D","children":[{"name":"Non dairy desserts"},{"name":"Non dairy ice cream"}]},{"name":"Dairy Alternatives o","children":[{"name":"Vegetable margarine"},{"name":"Non dairy cheese"}]},{"name":"Dairy Alternatives Y","children":[{"name":"Coconut  DA yoghurts"},{"name":"Oat DA yoghurts"},{"name":"Almond DA yoghurts"},{"name":"Other  DA yoghurts"}]}]},{"name":"Breakfast Cereals","children":[{"name":"Breakfast Cereals","children":[{"name":"Crunchy"},{"name":"Muesli"},{"name":"Extruded/puffed cere"},{"name":"Porridge"},{"name":"Flakes"},{"name":"Other breakfast cere"}]}]},{"name":"Bread and Biscuit Al","children":[{"name":"Cereal Cakes","children":[{"name":"Other Cereal Cakes P"},{"name":"Rice Cakes Plain"},{"name":"Rice Cakes Coated"},{"name":"Other Cereal Cakes C"},{"name":"Rice Cakes Flavoured"},{"name":"Other Cereal Cakes F"}]},{"name":"Crispy Breads","children":[{"name":"Toasted bread"}]},{"name":"Other Bread replacer","children":[{"name":"Crackers"},{"name":"Other Bread replacer"}]}]},{"name":"Meals and Meal compo","children":[{"name":"Savoury Spreads","children":[{"name":"Vegetarian pates(yea"},{"name":"Other savoury spread"},{"name":"Vegetarian Lard"},{"name":"Creamy Spreads"},{"name":"Vegetable spreads"},{"name":"Lentil/Protein sprea"},{"name":"Meat alternative spr"},{"name":"Cheese alternative s"},{"name":"Deli salads spreads"}]},{"name":"Soups and bouillons","children":[{"name":"Soups"},{"name":"Instant soup"}]},{"name":"Delicacies","children":[{"name":"Sauces"},{"name":"Chilled dips and spr"},{"name":"Chilled pasta"},{"name":"Chilled Quenelles"},{"name":"Dough (chilled)"},{"name":"Pancakes"},{"name":"Other delicacies"}]},{"name":"Ready Meals","children":[{"name":"Cereal meals"},{"name":"Other Ready meals"}]},{"name":"Pasta, rice and cere","children":[{"name":"Rice"},{"name":"Other cooking cereal"},{"name":"Pasta"},{"name":"Potato flakes"}]},{"name":"Meat analogues","children":[{"name":"Meat like meat subst"},{"name":"Non meat like meat s"}]},{"name":"Cooking sauces","children":[{"name":"Warm cooking sauces"},{"name":"Pasta sauces"},{"name":"Sauce concentrates"}]},{"name":"Canned and Frozen Ve","children":[{"name":"Prepared vegetables"},{"name":"Vegetable (frozen)"}]},{"name":"Cooking aids and mea","children":[{"name":"Other meal component"},{"name":"Stocks"},{"name":"Salt"},{"name":"Cold condiment sauce"},{"name":"Oil"},{"name":"Other cooking aids"},{"name":"Vinegar"},{"name":"Pickles"},{"name":"Mustard"},{"name":"Mayonnaise"},{"name":"Gravies"},{"name":"Seasonings and taste"},{"name":"Specialty cooking ai"}]}]},{"name":"Sweet Spreads, Puree","children":[{"name":"Fruit spreads","children":[{"name":"Fruit spreads"},{"name":"Other sweet spreads"}]},{"name":"Honey","children":[{"name":"Pure Honey"}]},{"name":"Nut spreads","children":[{"name":"Nut spreads"}]},{"name":"Sweeteners","children":[{"name":"Agave syrup"},{"name":"Sugar"},{"name":"Fructose"},{"name":"Other sweeteners"}]},{"name":"Chocolate Spreads","children":[{"name":"Chocolate spreads"}]},{"name":"Compote, Pureees, Sa","children":[{"name":"Purees"},{"name":"Compote"},{"name":"Fruit sauces"},{"name":"Other Prepared fruit"}]}]},{"name":"Functional Foods","children":[{"name":"Food supplements","children":[{"name":"Functional oils"},{"name":"Beer yeast"},{"name":"Other food supplemen"},{"name":"Digestion and transi"},{"name":"Slimming Food Supple"},{"name":"Vitamins and Mineral"},{"name":"Wheat germ"},{"name":"Cardio system care a"},{"name":"Vitality Food Supple"}]},{"name":"Slimming Foods","children":[{"name":"Meal substitutes oth"},{"name":"Hi protein salted po"},{"name":"Slimming Aids others"}]}]},{"name":"Non category specifi","children":[{"name":"Packaging-, producti","children":[{"name":"Packaging-, producti"}]},{"name":"Promotion materials","children":[{"name":"Other promotion mate"}]},{"name":"Byproducts","children":[{"name":"By products"}]},{"name":"Raw materials","children":[{"name":"Raw materials"}]}]},{"name":"Juices and Cold Drin","children":[{"name":"Juices","children":[{"name":"Fruit juice"},{"name":"Vegetable juice"},{"name":"Other juices"},{"name":"Fruit and vegetable"},{"name":"Fruit syrup"}]},{"name":"Cold Drinks","children":[{"name":"Soft drinks"}]}]},{"name":"Bread and Bakery","children":[{"name":"Bread products","children":[{"name":"Specialty Bread"},{"name":"Bread"}]},{"name":"Bakery and dessert p","children":[{"name":"Flour"},{"name":"Cake mix"},{"name":"Cooking Aids for Pas"}]}]},{"name":"Others","children":[{"name":"Savoury In Between","children":[{"name":"Other Savoury In Bet"},{"name":"Salted Snacks"},{"name":"Crisps"},{"name":"Savoury biscuits"}]},{"name":"Alcoholic drinks","children":[{"name":"Other alcoholic drin"}]},{"name":"Dried fruits and see","children":[{"name":"Seeds bags"},{"name":"Dried fruits bags"},{"name":"Nuts bags"},{"name":"Other dried fruits a"}]}]},{"name":"Animal based product","children":[{"name":"Meat products","children":[{"name":"Chicken"},{"name":"Canned meat"},{"name":"Cured meat"},{"name":"Foreign Cured meat"},{"name":"Sausages"}]},{"name":"Dairy products","children":[{"name":"Cream"},{"name":"Butter"},{"name":"Other Cheese"},{"name":"Cow milk"},{"name":"Cheese with cow milk"},{"name":"Cheese with ewe milk"},{"name":"Cheese with goat mil"},{"name":"Yogurt with cow milk"},{"name":"Yogurt with ewe milk"},{"name":"Dairy dessert with c"},{"name":"Dairy dessert with e"}]},{"name":"Seafood","children":[{"name":"Salmon"},{"name":"Canned fish"},{"name":"Other seafood"},{"name":"Smoked fish"}]},{"name":"Eggs","children":[{"name":"Eggs medium (53-63g)"},{"name":"Eggs large (63-73g)"}]}]}]},"options":{"hierarchy":["ProdCat","SubCat","Family"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":true,"zoomable":true,"margin":{"top":20,"bottom":20,"left":65,"right":125},"fill":"#38e56d"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Interactive Article Hierarchy, click on the nodes to expand or collapse them.</p>
@@ -1547,8 +1518,8 @@ Table&nbsp;2.10: Summary: Customer Hierachy
 <div aria-describedby="tbl-02-data-description-hierarchy-customer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-182519c76c1c0360b3e4" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-182519c76c1c0360b3e4">{"x":{"filter":"none","vertical":false,"data":[["Discounter","Divers","Export","Grocery","Health &amp; Food Stores","Intercompany","Other","Out Of Home","Retail","Wholesale","e-Commerce"],[11,4,12,53,31,19,28,18,6,4,2],[12,4,60,99,76,25,72,48,35,17,15],[22,4,60,107,142,20,139,79,79,50,15],[76,70,167,171,1723,33,231,172,666,52,21]],"container":"<table class=\"stripe hover compact\">\n  <thead>\n    <tr>\n      <th>Channel<\/th>\n      <th>KAM_count<\/th>\n      <th>ACC_Count<\/th>\n      <th>SoldTo_Count<\/th>\n      <th>Customer_Count<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"searching":false,"info":false,"ordering":true,"lengthChange":false,"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[1,2,3,4]},{"name":"Channel","targets":0},{"name":"KAM_count","targets":1},{"name":"ACC_Count","targets":2},{"name":"SoldTo_Count","targets":3},{"name":"Customer_Count","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-494a0161a5e15e0b0db1" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-494a0161a5e15e0b0db1">{"x":{"filter":"none","vertical":false,"data":[["Discounter","Divers","Export","Grocery","Health &amp; Food Stores","Intercompany","Other","Out Of Home","Retail","Wholesale","e-Commerce"],[11,4,12,53,31,19,28,18,6,4,2],[12,4,60,99,76,25,72,48,35,17,15],[22,4,60,107,142,20,139,79,79,50,15],[76,70,167,171,1723,33,231,172,666,52,21]],"container":"<table class=\"stripe hover compact\">\n  <thead>\n    <tr>\n      <th>Channel<\/th>\n      <th>KAM_count<\/th>\n      <th>ACC_Count<\/th>\n      <th>SoldTo_Count<\/th>\n      <th>Customer_Count<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"searching":false,"info":false,"ordering":true,"lengthChange":false,"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[1,2,3,4]},{"name":"Channel","targets":0},{"name":"KAM_count","targets":1},{"name":"ACC_Count","targets":2},{"name":"SoldTo_Count","targets":3},{"name":"Customer_Count","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -1614,7 +1585,7 @@ Figure&nbsp;2.5
 </section>
 <section id="sec-02-data-exploration-sb" class="level4">
 <h4 class="anchored" data-anchor-id="sec-02-data-exploration-sb">Syntetos-Boylan (SB) Classification</h4>
-<p>The Syntetos–Boylan (SB) classification extends the ABC/XYZ framework by integrating demand variability and forecastability. It provides a more nuanced understanding of demand patterns and supports the selection of suitable forecasting methods, see <span class="citation" data-cites="syntetos2005categorization">(<a href="18_references.html#ref-syntetos2005categorization" role="doc-biblioref">Syntetos et al., 2005</a>)</span></p>
+<p>The Syntetos–Boylan (SB) classification extends the ABC/XYZ framework by integrating demand variability and forecastability. It provides a more nuanced understanding of demand patterns and supports the selection of suitable forecasting methods, see <span class="citation" data-cites="syntetos2005categorization">(<a href="18_references.html#ref-syntetos2005categorization" role="doc-biblioref">Syntetos et al., 2005</a>)</span>.</p>
 <p>For BioBalance, the time series data is predominantly a mix of intermittent and smooth demand, with the specific pattern varying by the level of aggregation.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -1815,182 +1786,8 @@ Figure&nbsp;2.8: Weighted SB-Classification (S, I, E, L) for each aggregation le
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
-<div id="ref-allaireQuartoInterfaceQuarto2024" class="csl-entry" role="listitem">
-Allaire, J. J., Dervieux, C., Software, P., &amp; PBC. (2024). <em>Quarto: <span>R Interface</span> to ’<span>Quarto</span>’ <span>Markdown Publishing System</span></em>. <a href="https://cran.r-project.org/web/packages/quarto/index.html">https://cran.r-project.org/web/packages/quarto/index.html</a>
-</div>
-<div id="ref-magrittrMagrittrForwardPipeOperator2022" class="csl-entry" role="listitem">
-and creator of magrittr), S. M. B. (Original. author, Wickham, H., Henry, L., &amp; RStudio. (2022). <em>Magrittr: <span>A Forward-Pipe Operator</span> for <span>R</span></em>. <a href="https://cran.r-project.org/web/packages/magrittr/index.html">https://cran.r-project.org/web/packages/magrittr/index.html</a>
-</div>
-<div id="ref-barboneOpenxlsx2ReadWrite2025" class="csl-entry" role="listitem">
-Barbone, J. M., Garbuszus, J. M., Roy, O., package), openxlsx authors (openxlsx., &amp; details, A. K. (Author. of included pugixml code) openxlsx2 author. (2025). <em>Openxlsx2: <span>Read</span>, <span>Write</span> and <span>Edit</span> ’xlsx’ <span>Files</span></em>. <a href="https://cran.r-project.org/web/packages/openxlsx2/index.html">https://cran.r-project.org/web/packages/openxlsx2/index.html</a>
-</div>
-<div id="ref-barrettDatatableExtensionDataframe2024" class="csl-entry" role="listitem">
-Barrett, T., Dowle, M., Srinivasan, A., Gorecki, J., Chirico, M., Hocking, T., Schwendinger, B., Stetsenko, P., Short, T., Lianoglou, S., Antonyan, E., Bonsch, M., Parsonage, H., Ritchie, S., Ren, K., Tan, X., Saporta, R., Seiskari, O., Dong, X., … Krylov, I. (2024). <em>Data.table: <span>Extension</span> of ’data.frame’</em>. <a href="https://cran.r-project.org/web/packages/data.table/index.html">https://cran.r-project.org/web/packages/data.table/index.html</a>
-</div>
-<div id="ref-blokdykSCORMODELCOMPLETE2019" class="csl-entry" role="listitem">
-BLOKDYK, G. (2019). <em><span>SCOR MODEL A COMPLETE GUIDE</span> - 2020 <span>EDITION</span></em>. 5STARCOOKS.
-</div>
-<div id="ref-rcoreteamLanguageEnvironmentStatistical2024" class="csl-entry" role="listitem">
-Core Team}, {R. (2024). <em>R: <span>A Language</span> and <span>Environment</span> for <span>Statistical Computing</span></em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>
-</div>
-<div id="ref-costaCRISPMLMethodologyStepbyStep2022" class="csl-entry" role="listitem">
-Costa, R. (2022). <em>The <span>CRISP-ML Methodology</span>: <span class="nocase">A Step-by-Step Approach</span> to <span>Real-World Machine Learning Projects</span></em>. Independently published.
-</div>
-<div id="ref-csardiCrayonColoredTerminal2024" class="csl-entry" role="listitem">
-Csárdi, G. (2024). <em>Crayon: <span>Colored Terminal Output</span></em>. <a href="https://cran.r-project.org/package=crayon">https://cran.r-project.org/package=crayon</a>
-</div>
-<div id="ref-demastDAPSDiagramsDefining2024" class="csl-entry" role="listitem">
-de Mast, J., &amp; Lokkerbol, J. (2024). <span>DAPS</span> diagrams for defining <span>Data Science</span> projects. <em>Journal of Big Data</em>, <em>11</em>(1), 50. <a href="https://doi.org/10.1186/s40537-024-00916-7">https://doi.org/10.1186/s40537-024-00916-7</a>
-</div>
-<div id="ref-EAISIPADT" class="csl-entry" role="listitem">
-<em><span>EAISI-PADT</span></em>. (n.d.). Retrieved June 7, 2025, from <a href="https://fpadt.github.io/EAISI-Padt/">https://fpadt.github.io/EAISI-Padt/</a>
-</div>
-<div id="ref-fildesGoodBadJudgment2007" class="csl-entry" role="listitem">
-Fildes, R., &amp; Goodwin, P. (2007). Good and <span>Bad Judgment</span> in <span>Forecasting</span>: <span>Lessons</span> from <span>Four Companies</span>. <em>Foresight: The International Journal of Applied Forecasting</em>, <em>8</em>, 5–10. <a href="https://forecasters.org/wp-content/uploads/Good-and-Bad-Judgment-in-Forecasting\_Issue8.pdf">https://forecasters.org/wp-content/uploads/Good-and-Bad-Judgment-in-Forecasting\_Issue8.pdf</a>
-</div>
-<div id="ref-garzaStatsForecast2022" class="csl-entry" role="listitem">
-Garza, F., Mergenthaler Canseco, M., Challú, C., &amp; Olivares, K. G. (2022). <em><span>StatsForecast</span></em>. Nixtla. <a href="https://github.com/Nixtla/statsforecast">https://github.com/Nixtla/statsforecast</a>
-</div>
-<div id="ref-gujaGenerativeAIData2025" class="csl-entry" role="listitem">
-Guja, A., &amp; Siwiak, M. (2025). <em>Generative <span>AI</span> for <span>Data Analytics</span>.</em> Manning Publications Co. LLC 2025.
-</div>
-<div id="ref-hartshornMachineLearningBoosting2017" class="csl-entry" role="listitem">
-Hartshorn, S. (2017). <em>Machine <span>Learning With Boosting</span>: <span>A Beginner</span>’s <span>Guide</span></em>.
-</div>
-<div id="ref-hesterGlueInterpretedString2024" class="csl-entry" role="listitem">
-Hester, J. (2024). <em>Glue: <span>Interpreted String Literals</span></em>. <a href="https://cran.r-project.org/package=glue">https://cran.r-project.org/package=glue</a>
-</div>
-<div id="ref-hyndman[autForecastForecastingFunctions2024" class="csl-entry" role="listitem">
-Hyndman [aut, R., cre, cph, Athanasopoulos, G., Bergmeir, C., Caceres, G., Chhay, L., Kuroptev, K., O’Hara-Wild, M., Petropoulos, F., Razbash, S., Wang, E., Yasmeen, F., Garza, F., Girolimetto, D., Ihaka, R., Team, R. C., Reid, D., Shaub, D., … Zhou, Z. (2024). <em>Forecast: <span>Forecasting Functions</span> for <span>Time Series</span> and <span>Linear Models</span></em>. <a href="https://cran.r-project.org/web/packages/forecast/index.html">https://cran.r-project.org/web/packages/forecast/index.html</a>
-</div>
-<div id="ref-hyndman[autFpp3DataForecasting2024" class="csl-entry" role="listitem">
-Hyndman [aut, R., cre, cph, Athanasopoulos, G., O’Hara-Wild, M., Palihawadana, N., Wickramasuriya, S., &amp; RStudio. (2024). <em>Fpp3: <span>Data</span> for "<span>Forecasting</span>: <span>Principles</span> and <span>Practice</span>" (3rd <span>Edition</span>)</em>. <a href="https://cran.r-project.org/web/packages/fpp3/index.html">https://cran.r-project.org/web/packages/fpp3/index.html</a>
-</div>
-<div id="ref-hyndmanForecastingPrinciplesPractice2021" class="csl-entry" role="listitem">
-Hyndman, R. J., &amp; Athanasopoulos, G. (2021). <em>Forecasting: <span>Principles</span> and <span>Practice</span> (3rd ed)</em>. <a href="https://otexts.com/fpp3/">https://otexts.com/fpp3/</a>
-</div>
-<div id="ref-hyndmanFpp3ForecastingPrinciples2024" class="csl-entry" role="listitem">
-Hyndman, Rob J., &amp; Athanasopoulos, G. (2024). <em>Fpp3: <span>Forecasting Principles</span> and <span>Practice</span></em>. <a href="https://cran.r-project.org/package=fpp3">https://cran.r-project.org/package=fpp3</a>
-</div>
-<div id="ref-iannoneGtEasilyCreate2024" class="csl-entry" role="listitem">
-Iannone, R., &amp; Contributors. (2024). <em>Gt: <span>Easily Create Presentation-Ready Display Tables</span></em>. <a href="https://cran.r-project.org/package=gt">https://cran.r-project.org/package=gt</a>
-</div>
-<div id="ref-jamesIntroductionStatisticalLearning2023" class="csl-entry" role="listitem">
-James, G., Witten, D., Hastie, T., Tibshirani, R., &amp; Taylor, J. E. (2023). <em>An introduction to statistical learning: With applications in <span>Python</span></em>. Springer. <a href="https://www.statlearning.com/">https://www.statlearning.com/</a>
-</div>
-<div id="ref-kunapuliEnsembleMethodsMachine2023" class="csl-entry" role="listitem">
-Kunapuli, G. (2023). <em>Ensemble methods for machine learning</em>. Manning.
-</div>
-<div id="ref-liakhovitskiCollapsibleTreeInteractiveCollapsible2024" class="csl-entry" role="listitem">
-Liakhovitski, D. (2024). <em><span class="nocase">collapsibleTree</span>: <span>Interactive Collapsible Tree Diagrams</span></em>. <a href="https://cran.r-project.org/package=collapsibleTree">https://cran.r-project.org/package=collapsibleTree</a>
-</div>
-<div id="ref-manokhinPracticalGuideApplied2023" class="csl-entry" role="listitem">
-Manokhin, V. (2023). <em>Practical guide to applied conformal prediction in <span>Python</span>: Learn and apply the best uncertainty frameworks to your industry applications</em>. <span><span class="math inline">\(&lt;\)</span></span>packt<span><span class="math inline">\(&gt;\)</span></span>.
-</div>
-<div id="ref-matthesPythonCrashCourse2019" class="csl-entry" role="listitem">
-Matthes, E. (2019). <em>Python crash course: A hands-on, project-based introduction to programming</em> (2nd edition). No Starch Press.
-</div>
-<div id="ref-molnarIntroductionConformalPrediction2023" class="csl-entry" role="listitem">
-Molnar, C. (2023). <em>Introduction to conformal prediction with <span>Python</span>: A short guide for quantifying uncertainty of machine learning models</em> (First edition). Chistoph Molnar c/o MUCBOOK, Heidi Seibold. <a href="https://christophmolnar.com/books/conformal-prediction/">https://christophmolnar.com/books/conformal-prediction/</a>
-</div>
-<div id="ref-NixtlaHierarchicalforecastProbabilistic" class="csl-entry" role="listitem">
-<em>Nixtla/hierarchicalforecast: <span>Probabilistic Hierarchical</span> forecasting 👑 with statistical and econometric methods.</em> (n.d.). Retrieved October 13, 2024, from <a href="https://github.com/Nixtla/hierarchicalforecast">https://github.com/Nixtla/hierarchicalforecast</a>
-</div>
-<div id="ref-NixtlaMlforecast2024" class="csl-entry" role="listitem">
-<em>Nixtla/mlforecast</em>. (2024). Nixtla. <a href="https://github.com/Nixtla/mlforecast">https://github.com/Nixtla/mlforecast</a>
-</div>
-<div id="ref-NixtlaTsfeatures2024" class="csl-entry" role="listitem">
-<em>Nixtla/tsfeatures</em>. (2024). Nixtla. <a href="https://github.com/Nixtla/tsfeatures">https://github.com/Nixtla/tsfeatures</a>
-</div>
-<div id="ref-ohara-wildFabletoolsCoreTools2024" class="csl-entry" role="listitem">
-O’Hara-Wild, M., &amp; Hyndman, R. J. (2024). <em>Fabletools: <span>Core Tools</span> for <span>Packages</span> in the ’fable’ <span>Framework</span></em>. <a href="https://cran.r-project.org/package=fabletools">https://cran.r-project.org/package=fabletools</a>
-</div>
-<div id="ref-ohara-wildFeastsFeatureExtraction2024" class="csl-entry" role="listitem">
-O’Hara-Wild, M., Hyndman, R., Wang, E., Cook, D., features), T. T. (Correlation., &amp; method), L. C. (Guerrero’s. (2024). <em>Feasts: <span>Feature Extraction</span> and <span>Statistics</span> for <span>Time Series</span></em>. <a href="https://cran.r-project.org/web/packages/feasts/index.html">https://cran.r-project.org/web/packages/feasts/index.html</a>
-</div>
-<div id="ref-ohara-wildFableForecastingModels2024" class="csl-entry" role="listitem">
-O’Hara-Wild, M., Hyndman, R., Wang, E., implementation), G. C. (NNETAR., Bergmeir, C., Hensel, T.-G., &amp; Hyndman, T. (2024). <em>Fable: <span>Forecasting Models</span> for <span>Tidy Time Series</span></em>. <a href="https://cran.r-project.org/web/packages/fable/index.html">https://cran.r-project.org/web/packages/fable/index.html</a>
-</div>
-<div id="ref-osullivanIntroductionSHAPPython2023" class="csl-entry" role="listitem">
-O’Sullivan, C. (2023). Introduction to <span>SHAP</span> with <span>Python</span>. In <em>Introduction to SHAP with Python</em>. <a href="https://towardsdatascience.com/introduction-to-shap-with-python-d27edc23c454">https://towardsdatascience.com/introduction-to-shap-with-python-d27edc23c454</a>
-</div>
-<div id="ref-osullivanSHAPPython2024" class="csl-entry" role="listitem">
-O’Sullivan, C. (2024). <span>SHAP</span> with <span>Python</span> [Course]. In <em>SHAP with Python</em>. <a href="https://adataodyssey.com/course/">https://adataodyssey.com/course/</a>
-</div>
-<div id="ref-porterLearnAIassistedPython2024" class="csl-entry" role="listitem">
-Porter, L., &amp; Zingaro, D. (2024). <em>Learn <span class="nocase">AI-assisted Python</span> programming: With <span>GitHub Copilot</span> and <span>ChatGPT</span></em>. Manning.
-</div>
-<div id="ref-Posit" class="csl-entry" role="listitem">
-<em>Posit</em>. (n.d.). Retrieved June 7, 2025, from <a href="https://www.posit.co/">https://www.posit.co/</a>
-</div>
-<div id="ref-rcoreteamLanguageEnvironmentStatistical2025" class="csl-entry" role="listitem">
-R Core Team. (2025). <em>R: A language and environment for statistical computing</em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>
-</div>
-<div id="ref-raasveldtDuckdbInProcessSQL2024" class="csl-entry" role="listitem">
-Raasveldt, M., &amp; Mühleisen, H. (2024). <em>Duckdb: <span>In-Process SQL OLAP Database Management System</span></em>. <a href="https://cran.r-project.org/package=duckdb">https://cran.r-project.org/package=duckdb</a>
-</div>
-<div id="ref-silverInventoryProductionManagement2021" class="csl-entry" role="listitem">
-Silver, E. A., Pyke, D. F., &amp; Thomas, D. J. (2021). <em>Inventory and production management in supply chains</em> (Fourth edition, first issued in paperback). CRC Press, Taylor &amp; Francis Group.
-</div>
-<div id="ref-slowikowskiGgrepelAutomaticallyPosition2024" class="csl-entry" role="listitem">
-Slowikowski, K. (2024). <em>Ggrepel: <span>Automatically Position Non-Overlapping Text Labels</span> with ’Ggplot2’</em>. <a href="https://cran.r-project.org/package=ggrepel">https://cran.r-project.org/package=ggrepel</a>
-</div>
-<div id="ref-spinuLubridateMakeDealing2024" class="csl-entry" role="listitem">
-Spinu, V., Grolemund, G., Wickham, H., Vaughan, D., Lyttle, I., Costigan, I., Law, J., Mitarotonda, D., Larmarange, J., Boiser, J., &amp; Lee, C. H. (2024). <em>Lubridate: <span>Make Dealing</span> with <span>Dates</span> a <span>Little Easier</span></em>. <a href="https://cran.r-project.org/web/packages/lubridate/index.html">https://cran.r-project.org/web/packages/lubridate/index.html</a>
-</div>
 <div id="ref-syntetos2005categorization" class="csl-entry" role="listitem">
 Syntetos, A. A., Boylan, J. E., &amp; Croston, J. (2005). On the categorization of demand patterns. <em>Journal of the Operational Research Society</em>, <em>56</em>(5), 495–503.
-</div>
-<div id="ref-valeriymanokhinMasteringModernTime2025" class="csl-entry" role="listitem">
-Valeriy Manokhin, M., PhD. (2025). <em>Mastering <span>Modern Time Series Forecasting</span> : <span>The Complete Guide</span> to <span>Statistical</span>, <span>Machine Learning</span> &amp; <span>Deep Learning Models</span> in <span>Python</span></em>. gumroad. <a href="https://valeman.gumroad.com/l/MasteringModernTimeSeriesForecasting">https://valeman.gumroad.com/l/MasteringModernTimeSeriesForecasting</a>
-</div>
-<div id="ref-vandeputInventoryOptimizationModels2020" class="csl-entry" role="listitem">
-Vandeput, N. (2020). <em>Inventory optimization: Models and simulations</em>. De Gruyter.
-</div>
-<div id="ref-vandeputDataScienceSupply2021" class="csl-entry" role="listitem">
-Vandeput, N. (2021). <em>Data science for supply chain forecasting</em> (Second edition). De Gruyter.
-</div>
-<div id="ref-vandeputDemandForecastingBest2023" class="csl-entry" role="listitem">
-Vandeput, N. (2023). <em>Demand forecasting best practices</em>. Manning Publications Co.
-</div>
-<div id="ref-wangTsibbleTidyTemporal2024" class="csl-entry" role="listitem">
-Wang, E., &amp; Hyndman, R. J. (2024). <em>Tsibble: <span>Tidy Temporal Data Frames</span> and <span>Tools</span></em>. <a href="https://cran.r-project.org/package=tsibble">https://cran.r-project.org/package=tsibble</a>
-</div>
-<div id="ref-waringSkimrCompactFlexible2022" class="csl-entry" role="listitem">
-Waring, E., Quinn, M., McNamara, A., Rubia, E. A. de la, Zhu, H., Lowndes, J., Ellis, S., McLeod, H., Wickham, H., Müller, K., RStudio, functions), I. (Spark., Kirkpatrick, C., Brenstuhl, S., Schratz, P., lbusett, Korpela, M., Thompson, J., McGehee, H., … Stewart, H. M. (2022). <em>Skimr: <span>Compact</span> and <span>Flexible Summaries</span> of <span>Data</span></em>. <a href="https://cran.r-project.org/web/packages/skimr/index.html">https://cran.r-project.org/web/packages/skimr/index.html</a>
-</div>
-<div id="ref-wickhamDataScience2e" class="csl-entry" role="listitem">
-Wickham, H. (n.d.). R for <span>Data Science</span> (2e) [Book]. In <em>R for Data Science (2e)</em>. Retrieved October 13, 2024, from <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>
-</div>
-<div id="ref-wickhamTidyrTidyMessy2024" class="csl-entry" role="listitem">
-Wickham, H. (2024). <em>Tidyr: <span>Tidy Messy Data</span></em>. <a href="https://cran.r-project.org/package=tidyr">https://cran.r-project.org/package=tidyr</a>
-</div>
-<div id="ref-wickhamGgplot2CreateElegant2024" class="csl-entry" role="listitem">
-Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Woo, K., Yutani, H., Dunnington, D., Brand, T. van den, Posit, &amp; PBC. (2024). <em>Ggplot2: <span>Create Elegant Data Visualisations Using</span> the <span>Grammar</span> of <span>Graphics</span></em>. <a href="https://cran.r-project.org/web/packages/ggplot2/index.html">https://cran.r-project.org/web/packages/ggplot2/index.html</a>
-</div>
-<div id="ref-wickhamTidyverseEasilyInstall2024" class="csl-entry" role="listitem">
-Wickham, H., &amp; Contributors. (2024). <em>Tidyverse: <span>Easily Install</span> and <span>Load</span> the ’<span>Tidyverse</span>’</em>. <a href="https://cran.r-project.org/package=tidyverse">https://cran.r-project.org/package=tidyverse</a>
-</div>
-<div id="ref-wickhamDplyrGrammarData2024" class="csl-entry" role="listitem">
-Wickham, H., &amp; François, R. (2024). <em>Dplyr: <span>A Grammar</span> of <span>Data Manipulation</span></em>. <a href="https://cran.r-project.org/package=dplyr">https://cran.r-project.org/package=dplyr</a>
-</div>
-<div id="ref-wickhamPurrrFunctionalProgramming2025" class="csl-entry" role="listitem">
-Wickham, H., Henry, L., Software, P., [cph, P., &amp; fnd. (2025). <em>Purrr: <span>Functional Programming Tools</span></em>. <a href="https://cran.r-project.org/web/packages/purrr/index.html">https://cran.r-project.org/web/packages/purrr/index.html</a>
-</div>
-<div id="ref-wickhamScalesScaleFunctions2025" class="csl-entry" role="listitem">
-Wickham, H., Pedersen, T. L., Seidel, D., Software, P., [cph, P., &amp; fnd. (2025). <em>Scales: <span>Scale Functions</span> for <span>Visualization</span></em>. <a href="https://cran.r-project.org/web/packages/scales/index.html">https://cran.r-project.org/web/packages/scales/index.html</a>
-</div>
-<div id="ref-wilkinsTreemapifyDrawTreemaps2024" class="csl-entry" role="listitem">
-Wilkins, D. (2024). <em>Treemapify: <span>Draw Treemaps</span> in ’Ggplot2’</em>. <a href="https://cran.r-project.org/package=treemapify">https://cran.r-project.org/package=treemapify</a>
-</div>
-<div id="ref-xieDTWrapperJavaScript2024" class="csl-entry" role="listitem">
-Xie, Y. (2024a). <em><span>DT</span>: <span>A Wrapper</span> of the <span>JavaScript Library</span> ’<span>DataTables</span>’</em>. <a href="https://cran.r-project.org/package=DT">https://cran.r-project.org/package=DT</a>
-</div>
-<div id="ref-xieKnitrGeneralPurposePackage2024" class="csl-entry" role="listitem">
-Xie, Y. (2024b). <em>Knitr: <span>A General-Purpose Package</span> for <span>Dynamic Report Generation</span></em>. <a href="https://cran.r-project.org/package=knitr">https://cran.r-project.org/package=knitr</a>
-</div>
-<div id="ref-zhuKableExtraConstructComplex2024" class="csl-entry" role="listitem">
-Zhu, H. (2024). <em><span class="nocase">kableExtra</span>: <span>Construct Complex Table</span> with ’kable’ and <span>Pipe Syntax</span></em>. <a href="https://cran.r-project.org/package=kableExtra">https://cran.r-project.org/package=kableExtra</a>
 </div>
 </div>
 </section>

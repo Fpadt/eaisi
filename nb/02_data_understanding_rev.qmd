@@ -804,7 +804,7 @@ The ABC/XYZ classification is a commonly used framework for prioritizing items b
 
 #### Syntetos-Boylan (SB) Classification {#sec-02-data-exploration-sb}
 
-The Syntetos–Boylan (SB) classification extends the ABC/XYZ framework by integrating demand variability and forecastability. It provides a more nuanced understanding of demand patterns and supports the selection of suitable forecasting methods, see [@syntetos2005categorization]
+The Syntetos–Boylan (SB) classification extends the ABC/XYZ framework by integrating demand variability and forecastability. It provides a more nuanced understanding of demand patterns and supports the selection of suitable forecasting methods, see [@syntetos2005categorization].
 
 For BioBalance, the time series data is predominantly a mix of intermittent and smooth demand, with the specific pattern varying by the level of aggregation.
 

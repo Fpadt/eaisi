@@ -230,8 +230,8 @@ copyright:
   holder:          Smart-R
   year:            2025
 lang: en-us
-nocite: |
-  @*
+# nocite: |
+#   @*
 
 format:
   html:
