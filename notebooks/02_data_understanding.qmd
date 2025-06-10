@@ -775,7 +775,7 @@ When such temporal patterns are present, these models can generate meaningful fo
 
 Figure @seasonal_trend_strength_facet_plot displays the strength of seasonality (y-axis) and trend (x-axis) for each combination of material and customer hierarchy levels. Notably, all levels exhibit clear seasonality (values > 0.64) and a meaningful trend component (values > 0.5), indicating a strong temporal structure—an encouraging sign for effective forecasting.
 
-::: {#fig-02-seasonal_trend_strength_facet_plot .figure}
+::: {#fig-02-seasonal_trend_strength_facet_plot.figure}
 ![](../images/seasonal_trend_strength_facet_plot.png){fig-align="left" width="15cm"}
 
 igure @fig-02-examples_facet_plot presents examples from various hierarchy levels that exhibit strong seasonality along with noticeable trend components.
