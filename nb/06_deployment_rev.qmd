@@ -7,8 +7,9 @@ description: |
   - Docker, Kubernetes, and Git enable scalable, maintainable deployment.
   - ETS prediction intervals support safety stock and reduce waste.
   - Monitoring and feedback loops keep the system aligned with needs.
-
 number-sections: false
+toc: true         # show page‐TOC (right‐sidebar) on _every_ page
+toc-depth: 3      # include ## and ### in the TOC
 ---
 
 # Deployment {#sec-06-deployment}

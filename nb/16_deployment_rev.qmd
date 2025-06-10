@@ -1,50 +1,19 @@
 ---
-title:       Deployment
 subtitle:    Deployment subtitle
 description: |
-  - scalability - distributed techniques 
-  - maintenance & updating the model 
-  - monitoring the model 
-  - debugging the model
-  - model versioning GIT
-  -   continuous integration/continuous deployment 
-  (CI/CD) pipelines.
-unnumbered:      true
+  - *Pythia’s Advice* is live and integrated with SAP BW and SAC.
+  - Monthly refreshes provide updated forecasts and model insights.
+  - "Beat the Nerd" gamification builds trust and boosts accuracy.
+  - Docker, Kubernetes, and Git enable scalable, maintainable deployment.
+  - ETS prediction intervals support safety stock and reduce waste.
+  - Monitoring and feedback loops keep the system aligned with needs.
 number-sections: false
-editor: source
+toc: true         # show page‐TOC (right‐sidebar) on _every_ page
+toc-depth: 3      # include ## and ### in the TOC
 ---
 
-scalability - distributed techniques - maintenance & updating the model - monitoring the model - debugging the model
+# Deployment {#sec-06-deployment}
 
-# model management
 
--   model versioning GIT
--   continuous integration/continuous deployment (CI/CD) pipelines.
-
-# Appendix {.unnumbered}
-
-::: callout-note
-Note that there are five types of callouts, including: `note`, `warning`, `important`, `tip`, and `caution`.
-:::
-
-::: callout-warning
-Note that there are five types of callouts, including: `note`, `warning`, `important`, `tip`, and `caution`.
-:::
-
-::: callout-important
-Note that there are five types of callouts, including: `note`, `warning`, `important`, `tip`, and `caution`.
-:::
-
-::: callout-tip
-### Tip with Title
-
-This is an example of a callout with a title.
-:::
-
-::: {.callout-caution collapse="true"}
-### Expand To Learn About Collapse
-
-This is an example of a 'folded' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
-:::
 
 <!-- {{< include 06_deployment_def.qmd >}} -->

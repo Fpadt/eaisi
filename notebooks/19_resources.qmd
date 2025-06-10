@@ -22,18 +22,34 @@ powershell.exe -NoProfile -Command "if (Test-Path notebooks.zip) { Remove-Item n
 
 ```
 
+## Links to notebooks
+
+::: {.callout-caution collapse="true"}
+### Expand To see links
+
+The following links provide acces to notebooks with coding for each CRISP-DM phase. These notebooks are essential for understanding the coding and implementation details of the project.
+
+- [Initialization](../coding/11_initialization.html)
+- [data_ingestion](../coding/12_data_ingestion.html)
+- [data_access](../coding/15_data_access.html)
+- [data_understanding-I](../coding/20_data_understanding.html)
+- [data_understanding-II](../coding/21_data_understanding.html) **RECOMMENDED**
+- [data_preparation](../coding/30_data_preparation.html)
+- [40_modeling](../coding/40_modeling.html)
+- [41_obsolete_func](../coding/41_obsolete_func.html)
+- [50_evaluation](../coding/50_evaluation.html)
+
+:::
+
+
+## Downloadable Resources
+
 -   [Download the Business Understanding notebook (QMD) 💾](../notebooks/01_business_understanding.qmd){.btn}
 -   [Download the Data Understanding notebook (QMD) 💾](../notebooks/02_data_understanding.qmd){.btn}
 -   [Download EAISI Graduation Presentation (PPTX) 💾](../pptx/PAF+s03.pptx){.btn}
 -   [Download all notebooks (ZIP) 💾](notebooks.zip){.btn}
 
 
-- [Initialization](../coding/11_initialization.html)
-- [data_ingestion](../coding/12_data_ingestion.html)
-- [data_access](../coding/15_data_access.html)
-- [data_understanding-I](../coding/20_data_understanding.html)
-- [data_understanding-II](../coding/21_data_understanding.html)
-- [data_preparation](../coding/30_data_preparation.html)
-- [40_modeling](../coding/40_modeling.html)
-- [41_obsolete_func](../coding/41_obsolete_func.html)
-- [50_evaluation](../coding/50_evaluation.html)
+
+
+
