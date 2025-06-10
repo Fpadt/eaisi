@@ -214,7 +214,8 @@ Key components:
   
   - [EAISI-PYTHIA](https://github.com/Fpadt/EAISI-Pythia): Core modeling workflows 
   
-  - [EAISI-PADT](https://github.com/Fpadt/EAISI-Padt): **P**ythia's **A**dvice - **D**ata **T**ooling, see Appendix @sec-package-padt, for details and documentation.
+  - [EAISI-PADT](https://github.com/Fpadt/EAISI-Padt): **P**ythia's **A**dvice - **D**ata **T**ooling,  
+    see Appendix @sec-package-padt, for details and documentation.
 
 -   **R & Quarto Tooling**:
     A full list of packages and technical configuration is provided in the Appendix (@sec-14-tools).
