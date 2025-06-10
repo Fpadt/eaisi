@@ -120,12 +120,11 @@ Flexibility and interpretability of different statistical learning methods.
 
 ### Literature Review
 
-Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.)
-
-see Literature review (@sec-literature_review)
+<!-- Similar Models - comprehensive overview of the state of the art in machine learning, including the latest algorithms, - insight into the performance of different algorithms and techniques on similar types of data. (avoid wasting time on models that are unlikely to perform well.) -->
 
 > To build trust and ensure transparency, *Pythia’s Advice* adopts statistical models, prioritizing interpretability over maximum accuracy. While this limits the ability to capture effects like promotions, it supports confident decision-making. Once trust is established, more advanced machine learning techniques may be considered to enhance performance.
 
+see Literature review (@sec-literature_review)
 ------------------------------------------------------------------------
 
 <!-- ## Data Preparation for Modelling {#sec-04-data-prep} -->

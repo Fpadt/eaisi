@@ -21,14 +21,10 @@ source("../_book_functions.R")
 ## Identification of Data Sources {#sec-02-identification}
 
 <!-- Describe what data is available and where it comes from. -->
-Table @tbl-02-data-sources summarizes the data sources used in this project, 
-detailing their type, time span, granularity, system of record (SoR), and content. 
-All data is sourced from SAP BI, which extracts it from the underlying 
-systems of record. 
-The table also lists the specific SAP tables used for each data source.  
+
+Table @tbl-02-data-sources summarizes the data sources used in this project, detailing their type, time span, granularity, system of record (SoR), and content. All data is sourced from SAP BI, which extracts it from the underlying systems of record. The table also lists the specific SAP tables used for each data source.
 
 ::: {#tbl-02-data-sources}
-
 ```{r}
 
 # Read the data into a data.table 
@@ -54,26 +50,32 @@ dtDS %>%
     bootstrap_options   = c("striped", "hover", "condensed")
   )  
 ```
-Overview of data sources used in the project  
+
+Overview of data sources used in the project\
 MD = Master Data, TD = Transaction Data
 :::
 
 <!-- PDF -->
+
 <!-- %>% -->
+
 <!--   footnote( -->
+
 <!--     general           = "MD = Master data, TD = Transaction Data", -->
+
 <!--     footnote_as_chunk = TRUE, -->
+
 <!--     threeparttable    = FALSE, -->
+
 <!--     escape            = FALSE -->
+
 <!--   ) -->
 
 <!-- Subsections: -->
 
 ### Articles {#sec-02-articles}
 
-The Article Master Data is extracted from `MARC` which contains Plant specific 
-data, this is enhanced with sales organization specific data from `MVKE` and 
-global article data from `MARA`, applied filters are shown in Table @tbl-02-data-sources-article-filters.
+The Article Master Data is extracted from `MARC` which contains Plant specific data, this is enhanced with sales organization specific data from `MVKE` and global article data from `MARA`, applied filters are shown in Table @tbl-02-data-sources-article-filters.
 
 ::: {#tbl-02-data-sources-article-filters}
 ```{r}
@@ -102,7 +104,7 @@ dtAF %>%
   )
 ```
 
-Article Master Data Filters  
+Article Master Data Filters\
 see @sec-01-bu-scope for reasons for article-filters.
 :::
 
@@ -111,14 +113,14 @@ see @sec-01-bu-scope for reasons for article-filters.
 Customer Master Data is sourced from `KNVV`, which contains sales-organization-specific information, and is enriched with global attributes from `KNA1`. This includes customer classification fields such as type (e.g., internal, external, one-time customer, or employee). Customers flagged as employees are excluded from the analysis.
 
 ### Sales {#sec-02-sales}
+
 <!-- Data filters applied (Doctype's, Item category, ...) -->
-<!-- exclude Promotion articles --> 
 
-Sales data is extracted from `LIPS`, which contains delivery records. 
-Only completed deliveries which are goods-issued are taken into account. 
+<!-- exclude Promotion articles -->
 
-Table @tbl-02-data-sources-sales-filters shows the applied filters to select
-standard sales orders and free-of-charge orders. 
+Sales data is extracted from `LIPS`, which contains delivery records. Only completed deliveries which are goods-issued are taken into account.
+
+Table @tbl-02-data-sources-sales-filters shows the applied filters to select standard sales orders and free-of-charge orders.
 
 ::: {#tbl-02-data-sources-sales-filters .table}
 ```{r}
@@ -146,6 +148,7 @@ dtSF %>%
     latex_options       = c("striped", "hold_position")    
   )
 ```
+
 Sales data filters
 :::
 
@@ -160,11 +163,12 @@ Forecasts are generated monthly for each article–plant–customer combination,
 Since forecasts are created both before and after the Demand Review, the dataset is split into two versions: *pre-Demand Review* and *post-Demand Review*. The pre-Demand Review forecasts are used for the initial analysis, while the post-Demand Review forecasts serve as the basis for final validation.
 
 ## Data Collection Report {#sec-02-data-collection}
+
 <!-- Summarize how data was obtained and any issues during acquisition: -->
 
 Table @tbl-02-data-collection summarizes the data collection process, including the data sources, types, extraction dates, record counts, file sizes, and keys used for each data set. The data is collected from the SAP system and stored in a structured format for further processing.
 
-Pre- and post-Demand Review forecasts are stored as separate files, one for each month in which they were created. Each file is named to reflect the extraction date.The key is  essential for linking the data sets during analysis.
+Pre- and post-Demand Review forecasts are stored as separate files, one for each month in which they were created. Each file is named to reflect the extraction date.The key is essential for linking the data sets during analysis.
 
 ::: {#tbl-02-data-collection .table}
 ```{r}
@@ -192,21 +196,23 @@ dtDC %>%
     bootstrap_options   = c("striped", "hover", "condensed")
   )
 ```
+
 Data Collection
 :::
-
 
 ## Data Description Report {#sec-02-data-description}
 
 <!-- Descriptive overview of structure and metadata: Open Hub definition -->
+
 <!-- Variable types (date, categorical, numeric) -->
+
 <!-- Dimensions (rows × columns) -->
+
 <!-- Target variable (e.g., sales units, net revenue) -->
 
 ### Metadata {#sec-02-data-description-metadata}
 
-Table @tbl-02-data-description-meta gives a sample of the datasets file name, extension, 
-type of data and date of extraction. A detailed overview of all fields is provided in the appendix, @tbl-12-data-description-meta.
+Table @tbl-02-data-description-meta gives a sample of the datasets file name, extension, type of data and date of extraction. A detailed overview of all fields is provided in the appendix, @tbl-12-data-description-meta.
 
 ::: {#tbl-02-data-description-meta .table}
 ```{r}
@@ -238,6 +244,7 @@ type of data and date of extraction. A detailed overview of all fields is provid
     bootstrap_options   = c("striped", "hover", "condensed")
   )
 ```
+
 meta data on data extraction
 :::
 
@@ -271,9 +278,9 @@ Table @tbl-02-data-description gives a sample of the dataset fields, including n
     bootstrap_options   = c("striped", "hover", "condensed")
   )
 ```
+
 sample of overview of all data set fields.
 :::
-
 
 ```{r}
 #| label: tab-02-data-description
@@ -371,19 +378,26 @@ ACC <-                              #
 ## Data Exploration Report {#sec-02-data-exploration}
 
 <!-- Exploratory analyses & sanity checks   -->
+
 <!-- statistical properties and metadata. -->
+
 <!-- Initial exploration to spot trends, seasonality, outliers, and segmentation patterns. -->
+
 <!-- Subsections (as needed): -->
+
 <!-- Sales coverage: distribution over time -->
+
 <!-- ABC/XYZ, CV, zero-counts, sales length -->
+
 <!-- Temporal patterns (weekly/monthly seasonality, trend, events) -->
+
 <!-- Cross-sectional: contribution per customer/product/channel -->
+
 <!-- exclude units pak and DS   -->
 
 ### Geographic Distribution of Sales {#sec-02-eda-geography}
 
 ::: {#fig-02-eda-geography .figure}
-
 ```{r}
 #| fig-height: 4
 #| fig-width: 6
@@ -453,12 +467,11 @@ ggplot(dtMSO, aes(x = Percent, y = reorder(MSO, Percent))) +
   )
 ```
 
-Scoping the analysis to `r dtMSO[1, MSO]`, which accounts for 
-`r paste(round( 100 * dtMSO[1, Percent], 2), '%')` of total sales in 2024.
+Scoping the analysis to `r dtMSO[1, MSO]`, which accounts for `r paste(round( 100 * dtMSO[1, Percent], 2), '%')` of total sales in 2024.
 :::
 
-::: {.callout-note}
-For modeling purposes, the data was scoped to A-class articles based on ABC classification.  
+::: callout-note
+For modeling purposes, the data was scoped to A-class articles based on ABC classification.\
 See [ABC Analysis and Scope Definition](#sec-03-abc) for details.
 :::
 
@@ -481,10 +494,7 @@ dtACC_sk <- ACC %>%
 
 #### Character Variables {#sec-02-data-profiling-ca}
 
-Table @tbl-02-data-profiling-ca shows the data profiling results for the dataset,
-including the number of missing values, completeness rate, minimum and maximum length 
-for character variables. The profiling helps identify data quality issues and 
-provides insights into the structure of the dataset.
+Table @tbl-02-data-profiling-ca shows the data profiling results for the dataset, including the number of missing values, completeness rate, minimum and maximum length for character variables. The profiling helps identify data quality issues and provides insights into the structure of the dataset.
 
 ::: {#tbl-02-data-profiling-ca .table}
 ```{r}
@@ -506,21 +516,17 @@ dtACC_sk[
     bootstrap_options   = c("striped", "hover", "condensed")
   )
 ```
+
 Data Profiling: Character Variables
 :::
 
 ::: callout-note
-This data set is of high quality and doesn't need any further analysis on 
-the character variables.
+This data set is of high quality and doesn't need any further analysis on the character variables.
 :::
-
 
 #### Numeric Variables {#sec-02-data-profiling-nu}
 
-Table @tbl-02-data-profiling-nu shows the data profiling results for the 
-numeric variables in the dataset, including mean, standard deviation, and 
-percentiles. The histogram column provides a visual representation of 
-the distribution of each numeric variable.
+Table @tbl-02-data-profiling-nu shows the data profiling results for the numeric variables in the dataset, including mean, standard deviation, and percentiles. The histogram column provides a visual representation of the distribution of each numeric variable.
 
 ::: {#tbl-02-data-profiling-nu .table}
 ```{r}
@@ -541,13 +547,13 @@ dtACC_sk[
     bootstrap_options   = c("striped", "hover", "condensed")
   )
 ```
+
 Data Profiling: Numeric Variables
 :::
 
 ::: callout-important
 We see that the Quantity (Q) needs some further analysis due to outliers.
 :::
-
 
 ```{r}
 
@@ -574,11 +580,14 @@ ggplot(dt, aes(x = Q)) +
   theme_minimal()
 ```
 
-
 <!-- } else { -->
+
 <!--   dtMATL_sk %>% -->
+
 <!--     kable("latex", booktabs = TRUE, caption = "Variable Description Report") %>% -->
+
 <!--     kable_styling(latex_options = c("striped", "hold_position"), full_width = FALSE) -->
+
 <!-- } -->
 
 ### Article Hierachy {#sec-02-data-description-hierarchy}
@@ -650,10 +659,10 @@ dtCST_tab <- dtCST[, .(
 
 Table @tbl-02-data-description-hierarchy-article summarizes the 4-levels of the article hierarchy by a unique count per level. Roughly,
 
-- each Family contains roughly `r mean(dtMAT_tab$Article_Count/dtMAT_tab$Family_Count) %>% round(0)` articles.
-- each Sub Category contains roughly `r mean(dtMAT_tab$Family_Count/dtMAT_tab$SubCat_Count) %>% round(0)` families.
+-   each Family contains roughly `r mean(dtMAT_tab$Article_Count/dtMAT_tab$Family_Count) %>% round(0)` articles.
+-   each Sub Category contains roughly `r mean(dtMAT_tab$Family_Count/dtMAT_tab$SubCat_Count) %>% round(0)` families.
 
-::: {#tbl-02-data-description-hierarchy-article .table}  
+::: {#tbl-02-data-description-hierarchy-article .table}
 ```{r}
 
 datatable(
@@ -681,15 +690,11 @@ Summary: Article Hierachy
 :::
 
 ::: {.content-visible when-format="html"}
-
-The following interactive chart allows to explore the hierarchy by 
-clicking on the nodes to expand or collapse them. 
+The following interactive chart allows to explore the hierarchy by clicking on the nodes to expand or collapse them.
 :::
 
 :::: {#fig-inter_active_article_hier .figure width="15cm"}
-
 ::: {.content-visible when-format="html"}
-
 ```{r}
 #| label: tab-02-data-description-hierarchy-plot
 
@@ -704,24 +709,18 @@ collapsibleTree(
   fill        = "#38e56d"
 )
 ```
+
 Interactive Article Hierarchy, click on the nodes to expand or collapse them.
 :::
-
 ::::
-
-
 
 ### Customer Hierarchy {#sec-02-data-description-hierarchy-customer}
 
-Table @tbl-02-data-description-hierarchy-customer summarizes the 4-levels of the 
-customer hierarchy by a unique count per level. Roughly:
+Table @tbl-02-data-description-hierarchy-customer summarizes the 4-levels of the customer hierarchy by a unique count per level. Roughly:
 
-- each Family contains roughly 
-`r mean(dtCST_tab$Customer_Count/dtCST_tab$SoldTo_Count, na.rm =TRUE) %>% round(0)` customers
-- each Account contains roughly
-`r mean(dtCST_tab$SoldTo_Count/dtCST_tab$ACC_Count, na.rm =TRUE) %>% round(0)` sold-to parties
-- each Key Account contains roughly 
-`r mean(dtCST_tab$ACC_Count/dtCST_tab$KAM_count, na.rm =TRUE) %>% round(0)` accounts,
+-   each Family contains roughly `r mean(dtCST_tab$Customer_Count/dtCST_tab$SoldTo_Count, na.rm =TRUE) %>% round(0)` customers
+-   each Account contains roughly `r mean(dtCST_tab$SoldTo_Count/dtCST_tab$ACC_Count, na.rm =TRUE) %>% round(0)` sold-to parties
+-   each Key Account contains roughly `r mean(dtCST_tab$ACC_Count/dtCST_tab$KAM_count, na.rm =TRUE) %>% round(0)` accounts,
 
 ::: {#tbl-02-data-description-hierarchy-customer .table}
 ```{r}
@@ -763,34 +762,25 @@ Summary: Customer Hierachy
 
 ### Time Series Patterns {#sec-02-data-exploration-time-series}
 
-
 Certainly! Here's a rephrased version with a clearer emphasis on seasonal and trend patterns that exponential smoothing (ETS) and Box-Jenkins (ARMA/ARIMA) methods can exploit:
 
-**Exploiting Temporal Structure for Forecasting**
-Time series forecasting is most effective when the data exhibits temporal structure—patterns over time that models can learn and project forward. Two key components of this structure are **trend** (long-term directional movement) and **seasonality** (recurring cycles, such as weekly demand spikes or annual holiday effects).
+**Exploiting Temporal Structure for Forecasting** Time series forecasting is most effective when the data exhibits temporal structure—patterns over time that models can learn and project forward. Two key components of this structure are **trend** (long-term directional movement) and **seasonality** (recurring cycles, such as weekly demand spikes or annual holiday effects).
 
 Methods like **exponential smoothing (ETS)** are particularly suited to capture and extrapolate trend and seasonal components through adaptive smoothing techniques. Similarly, **Box-Jenkins models**—including **ARMA** and **ARIMA**—leverage autocorrelation structures in the data, modeling dependencies between past and future values to make informed predictions.
 
 When such temporal patterns are present, these models can generate meaningful forecasts by systematically exploiting the underlying structure. In contrast, when a series lacks trend, seasonality, or autocorrelation—essentially behaving like random noise—forecasting yields little more than projecting the mean or last known value. Thus, effective forecasting depends on the assumption that past behavior offers useful insight into future outcomes.
 
-Figure @fig-02-seasonal_trend_strength_facet_plot displays the strength of seasonality (y-axis) and trend (x-axis) for each combination of material and customer hierarchy levels. Notably, all levels exhibit clear seasonality (values > 0.64) and a meaningful trend component (values > 0.5), indicating a strong temporal structure—an encouraging sign for effective forecasting.
+Figure @fig-02-seasonal_trend_strength_facet_plot displays the strength of seasonality (y-axis) and trend (x-axis) for each combination of material and customer hierarchy levels. Notably, all levels exhibit clear seasonality (values \> 0.64) and a meaningful trend component (values \> 0.5), indicating a strong temporal structure—an encouraging sign for effective forecasting.
 
 ::: {#fig-02-seasonal_trend_strength_facet_plot .figure}
 ![](../images/seasonal_trend_strength_facet_plot.png){fig-align="left" width="15cm"}
 
 igure @fig-02-examples_facet_plot presents examples from various hierarchy levels that exhibit strong seasonality along with noticeable trend components.
-
 :::
 
 ::: {#fig-02-examples_facet_plot .figure}
 ![](../images/examples_facet_plot.png){fig-align="left" width="15cm"}
-
-
 :::
-
-
-
-
 
 ### Forecastability {#sec-02-data-exploration-forecastability}
 
@@ -798,28 +788,25 @@ igure @fig-02-examples_facet_plot presents examples from various hierarchy level
 
 The ABC/XYZ classification is a commonly used framework for prioritizing items based on their business impact and forecastability. It supports decision-making on which items warrant detailed forecasting and tighter control.
 
-- ABC: Does the item have sufficient importance to justify close monitoring or forecasting?
+-   ABC: Does the item have sufficient importance to justify close monitoring or forecasting?
 
-- XYZ: Is the item predictable enough to produce reliable forecasts?
+-   XYZ: Is the item predictable enough to produce reliable forecasts?
 
 ::: {#fig-02-abc-xyz .figure}
-
 ![](../images/ABCXYZ.png){fig-align="left" width="15cm"}
 
-- AX: High-priority & stable items, forecast carefully.
+-   AX: High-priority & stable items, forecast carefully.
 
-- AZ: High-priority & erratic items, forecast with caution.
+-   AZ: High-priority & erratic items, forecast with caution.
 
-- CZ: Low-priority & erratic items: Maybe don’t forecast.
-
+-   CZ: Low-priority & erratic items: Maybe don’t forecast.
 :::
 
 #### Syntetos-Boylan (SB) Classification {#sec-02-data-exploration-sb}
 
-The Syntetos–Boylan (SB) classification extends the ABC/XYZ framework by integrating demand variability and forecastability. It provides a more nuanced understanding of demand patterns and supports the selection of suitable forecasting methods.
+The Syntetos–Boylan (SB) classification extends the ABC/XYZ framework by integrating demand variability and forecastability. It provides a more nuanced understanding of demand patterns and supports the selection of suitable forecasting methods, see [@syntetos2005categorization]
 
 For BioBalance, the time series data is predominantly a mix of intermittent and smooth demand, with the specific pattern varying by the level of aggregation.
-
 
 ```{r}
 
@@ -844,8 +831,7 @@ fread(text = "
 
 ```
 
-Sufficient Historical Data and Pattern Stability
-Reliable demand classification and effective forecasting require an adequate historical record—ideally covering multiple seasonal cycles and enough observations to separate meaningful patterns from random noise. For instance, capturing annual seasonality in monthly data typically requires at least 2–3 years of history.
+Sufficient Historical Data and Pattern Stability Reliable demand classification and effective forecasting require an adequate historical record—ideally covering multiple seasonal cycles and enough observations to separate meaningful patterns from random noise. For instance, capturing annual seasonality in monthly data typically requires at least 2–3 years of history.
 
 In our analysis, SB-class distributions appear stable over time, aside from fluctuations near the lower boundary—particularly in the first few months, where the classification is less reliable due to insufficient data. As such, early observations (less than 6 months) are omitted from interpretation.
 
@@ -855,16 +841,13 @@ Encouragingly, as time series length increases, the proportion of smooth demand 
 ![](../images/plot_sbc_by_ts.png){fig-align="left" width="15cm"}
 :::
 
-
 Figure @fig-02-plot_sbm illustrates the distribution of SB-class types across different aggregation levels, highlighting the prevalence of smooth and intermittent demand patterns. The chart shows that as the aggregation level increases, the proportion of smooth demand series also increases, while intermittent demand remains significant. THis plot is made at the aggregation level ProdCat-Channel. The complete analysis for all aggregation levels is available in @fig-02-SBCSIEL.
 
 ::: {#fig-02-plot_sbm .figure}
 ![](../images/plot_sbm.png){fig-align="left" width="15cm"}
 :::
 
-
 **Model Implications:**
-
 
 ```{r}
 fread(text = "
@@ -893,7 +876,6 @@ Croston / SBA / TSB, Zero-heavy demand, Intermittency, 'Intermittent; Lumpy', De
 The distribution of SB-class types across different aggregation levels is shown in figure @fig-02-SBCSIEL. Note the high level of smooth time series, especially for the weighted percentage which takes the sales volume into account. This indicates that the majority of sales are driven by smooth demand patterns, which are more predictable and suitable for traditional forecasting methods.
 
 ::: {#fig-02-SBCSIEL .figure}
-
 ![](../images/SBCSIEL.png){fig-align="left" width="15cm"}
 
 Weighted SB-Classification (S, I, E, L) for each aggregation level
@@ -930,34 +912,39 @@ fread(text = "
 ## Data Quality Report {#sec-02-data-quality}
 
 <!-- Assess data integrity and readiness for modeling. -->
+
 <!-- Subsections: -->
+
 <!-- Missing values (which variables, how much, patterns) -->
+
 <!-- Consistency checks (e.g., units vs revenue) -->
+
 <!-- Duplicated records -->
+
 <!-- Outliers: any anomalous spikes or drops? -->
 
 ### Data Quality Assessment {#sec-02-data-quality-assessment}
+
 <!-- Assessment: What issues were found (missing values, outliers, etc.) -->
 
 <!-- Data Quality Assessment and Remediation -->
+
 <!-- Summarize actions taken: -->
+
 <!-- Imputation strategies -->
+
 <!-- Exclusions (e.g., rare SKUs or obsolete accounts) -->
 
-all 0 
-duplicates, zero quantity, unexpected NAs
+all 0 duplicates, zero quantity, unexpected NAs
 
-**Actions taken:** 
-<!-- Any exclusions or imputations -->
-<!-- Summarize actions taken: -->
+**Actions taken:** <!-- Any exclusions or imputations --> <!-- Summarize actions taken: -->
 
 ## Summary of Data Understanding {#sec-02-summary}
 
-- The dataset combines master and transactional data from SAP BI and QAD systems.
-- Sales and forecasts are scoped to a single MSO and A-class finished goods.
-- Product and customer hierarchies follow a consistent four-level structure.
-- Exploratory analysis confirms sufficient data volume, patterns, and quality.
-- The data is now ready for scoping, transformation, and modeling.
-
+-   The dataset combines master and transactional data from SAP BI and QAD systems.
+-   Sales and forecasts are scoped to a single MSO and A-class finished goods.
+-   Product and customer hierarchies follow a consistent four-level structure.
+-   Exploratory analysis confirms sufficient data volume, patterns, and quality.
+-   The data is now ready for scoping, transformation, and modeling.
 
 <!-- {{< include 02_data_understanding_def.qmd >}} -->
