@@ -60,7 +60,7 @@ By turning forecasting into a friendly competition, this approach builds both tr
 ![](../images/bu_why.png){caption="Why is forecasting important? It drives the business." fig-align="left" fig-width="15cm"}
 :::
 
-'Beat the Nerd in the Corner' gamification encourages demand planners to improve forecast accuracy by competing against *Pythia’s Advice*.
+'Beat the Nerd in the Corner' gamification to build trust & encourages by competing against *Pythia’s Advice*.
 ::::::
 
 ## Prediction Intervals {#sec-06-deployment-prediction-intervals}
@@ -82,7 +82,7 @@ Achieving this outcome represents the core objective of the *Pythia’s Advice* 
 ![](../images/bu_why.png){caption="Why is forecasting important? It drives the business." fig-align="left" fig-width="15cm"}
 :::
 
-Prediction intervals from the ETS model will guide safety stock calculations, preventing stock-outs and reducing waste.
+ETS - Prediction intervals will guide safety stock calculations, preventing stock-outs and reducing waste.
 ::::::
 
 ## Model Management
