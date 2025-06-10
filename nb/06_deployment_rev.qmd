@@ -24,13 +24,6 @@ source("../_book_functions.R")
 
 <!-- – Change-management considerations -->
 
-# Deployement
-
-```{r}
-#| label: setup
-source("../_book_functions.R")
-```
-
 ## Overview {#sec-06-deployment-overview}
 
 The Deployment phase ensures that the insights and models developed through *Pythia’s Advice* are not only technically sound but also embedded in daily decision-making. This chapter outlines how the forecasting system has been operationalized within existing business infrastructure, emphasizing sustainability, scalability, and user engagement.

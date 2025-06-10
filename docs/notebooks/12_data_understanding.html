@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-06-10">
+<meta name="dcterms.date" content="2025-06-04">
 <meta name="description" content="SAP BI extracts serve as the foundation: article, customer, sales &amp; forecast dataData was scoped to finished goods under Make-to-Stock with ambient storageThe modeling dataset is based on the top-performing MSO and A-class articlesExploratory analysis confirmed temporal seasonality and product hierarchy depthData quality is high overall, with minimal missing values and no major outliers">
 
-<title>Data Understanding – Pythia's Advice</title>
+<title>Appendix B — Data Understanding – Pythia's Advice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -52,8 +52,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../notebooks/03_data_preparation.html" rel="next">
-<link href="../notebooks/01_business_understanding.html" rel="prev">
+<link href="../notebooks/13_data_preparation.html" rel="next">
+<link href="../notebooks/11_business_understanding.html" rel="prev">
 <link href="../images/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -347,7 +347,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The <span class="red-heart">♥</span> of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/02_data_understanding.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Understanding</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/11_business_understanding.html">Appendices</a></li><li class="breadcrumb-item"><a href="../notebooks/12_data_understanding.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Data Understanding</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -359,8 +359,8 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_introduction.html">The <span class="red-heart">♥</span> of Pythia</a></li><li class="breadcrumb-item"><a href="../notebooks/02_data_understanding.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Understanding</span></a></li></ol></nav>
-      <h1 class="title"><span id="sec-02-data-understanding" class="quarto-section-identifier"><span class="chapter-title">Data Understanding</span></span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/11_business_understanding.html">Appendices</a></li><li class="breadcrumb-item"><a href="../notebooks/12_data_understanding.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Data Understanding</span></a></li></ol></nav>
+      <h1 class="title"><span id="sec-12-data-understanding" class="quarto-section-identifier">Appendix B — Data Understanding</span></h1>
             <p class="subtitle lead">what data is available and where it comes from</p>
                   <div>
         <div class="description">
@@ -415,7 +415,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">June 10, 2025</p>
+        <p class="date">June 4, 2025</p>
       </div>
     </div>
     
@@ -491,13 +491,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">The <span class="red-heart">♥</span> of Pythia</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/00_introduction.html" class="sidebar-item-text sidebar-link">
@@ -512,7 +512,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/02_data_understanding.html" class="sidebar-item-text sidebar-link active">
+  <a href="../notebooks/02_data_understanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Understanding</span></span></a>
   </div>
 </li>
@@ -556,13 +556,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/11_business_understanding.html" class="sidebar-item-text sidebar-link">
@@ -571,7 +571,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/12_data_understanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/12_data_understanding.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Data Understanding</span></span></a>
   </div>
 </li>
@@ -635,35 +635,19 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-02-identification" id="toc-sec-02-identification" class="nav-link active" data-scroll-target="#sec-02-identification">Identification of Data Sources</a>
+  <li><a href="#sec-12-data-description" id="toc-sec-12-data-description" class="nav-link active" data-scroll-target="#sec-12-data-description">Data Description Report</a>
   <ul class="collapse">
-  <li><a href="#sec-02-articles" id="toc-sec-02-articles" class="nav-link" data-scroll-target="#sec-02-articles">Articles</a></li>
-  <li><a href="#sec-02-customers" id="toc-sec-02-customers" class="nav-link" data-scroll-target="#sec-02-customers">Customers</a></li>
-  <li><a href="#sec-02-sales" id="toc-sec-02-sales" class="nav-link" data-scroll-target="#sec-02-sales">Sales</a></li>
-  <li><a href="#sec-02-forecasts" id="toc-sec-02-forecasts" class="nav-link" data-scroll-target="#sec-02-forecasts">Forecasts</a></li>
+  <li><a href="#sec-12-data-description-metadata" id="toc-sec-12-data-description-metadata" class="nav-link" data-scroll-target="#sec-12-data-description-metadata">Metadata Overview</a></li>
+  <li><a href="#sec-12-data-description-fields" id="toc-sec-12-data-description-fields" class="nav-link" data-scroll-target="#sec-12-data-description-fields">Data fields</a></li>
+  <li><a href="#data-profiling" id="toc-data-profiling" class="nav-link" data-scroll-target="#data-profiling">Data Profiling</a></li>
+  <li><a href="#article-hierachy" id="toc-article-hierachy" class="nav-link" data-scroll-target="#article-hierachy">Article Hierachy</a></li>
+  <li><a href="#customer-hierarchy" id="toc-customer-hierarchy" class="nav-link" data-scroll-target="#customer-hierarchy">Customer Hierarchy</a></li>
   </ul></li>
-  <li><a href="#sec-02-data-collection" id="toc-sec-02-data-collection" class="nav-link" data-scroll-target="#sec-02-data-collection">Data Collection Report</a></li>
-  <li><a href="#sec-02-data-description" id="toc-sec-02-data-description" class="nav-link" data-scroll-target="#sec-02-data-description">Data Description Report</a>
-  <ul class="collapse">
-  <li><a href="#sec-02-data-description-metadata" id="toc-sec-02-data-description-metadata" class="nav-link" data-scroll-target="#sec-02-data-description-metadata">Metadata</a></li>
-  <li><a href="#sec-02-data-description-fields" id="toc-sec-02-data-description-fields" class="nav-link" data-scroll-target="#sec-02-data-description-fields">Data fields</a></li>
-  </ul></li>
-  <li><a href="#sec-02-data-exploration" id="toc-sec-02-data-exploration" class="nav-link" data-scroll-target="#sec-02-data-exploration">Data Exploration Report</a>
-  <ul class="collapse">
-  <li><a href="#sec-02-eda-geography" id="toc-sec-02-eda-geography" class="nav-link" data-scroll-target="#sec-02-eda-geography">Geographic Distribution of Sales</a></li>
-  <li><a href="#sec-02-data-profiling" id="toc-sec-02-data-profiling" class="nav-link" data-scroll-target="#sec-02-data-profiling">Data Profiling</a></li>
-  <li><a href="#sec-02-data-description-hierarchy" id="toc-sec-02-data-description-hierarchy" class="nav-link" data-scroll-target="#sec-02-data-description-hierarchy">Article Hierachy</a></li>
-  <li><a href="#sec-02-data-description-hierarchy-customer" id="toc-sec-02-data-description-hierarchy-customer" class="nav-link" data-scroll-target="#sec-02-data-description-hierarchy-customer">Customer Hierarchy</a></li>
-  <li><a href="#sec-02-data-exploration-time-series" id="toc-sec-02-data-exploration-time-series" class="nav-link" data-scroll-target="#sec-02-data-exploration-time-series">Time Series Patterns</a></li>
-  <li><a href="#sec-02-data-exploration-forecastability" id="toc-sec-02-data-exploration-forecastability" class="nav-link" data-scroll-target="#sec-02-data-exploration-forecastability">Forecastability</a></li>
-  </ul></li>
-  <li><a href="#sec-02-data-quality" id="toc-sec-02-data-quality" class="nav-link" data-scroll-target="#sec-02-data-quality">Data Quality Report</a>
-  <ul class="collapse">
-  <li><a href="#sec-02-data-quality-assessment" id="toc-sec-02-data-quality-assessment" class="nav-link" data-scroll-target="#sec-02-data-quality-assessment">Data Quality Assessment</a></li>
-  </ul></li>
-  <li><a href="#sec-02-summary" id="toc-sec-02-summary" class="nav-link" data-scroll-target="#sec-02-summary">Summary of Data Understanding</a></li>
+  <li><a href="#data-quality-report" id="toc-data-quality-report" class="nav-link" data-scroll-target="#data-quality-report">Data Quality Report</a></li>
+  <li><a href="#data-quality-assessment" id="toc-data-quality-assessment" class="nav-link" data-scroll-target="#data-quality-assessment">Data Quality Assessment</a></li>
+  <li><a href="#sec-12-summary" id="toc-sec-12-summary" class="nav-link" data-scroll-target="#sec-12-summary">Summary of Data Understanding</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/02_data_understanding.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/12_data_understanding.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -673,316 +657,216 @@ window.Quarto = {
 
 
 
-<section id="sec-02-identification" class="level2">
-<h2 class="anchored" data-anchor-id="sec-02-identification">Identification of Data Sources</h2>
-<!-- Describe what data is available and where it comes from. -->
-<p>Table <a href="#tbl-02-data-sources" class="quarto-xref">Table&nbsp;<span>2.1</span></a> summarizes the data sources used in this project, detailing their type, time span, granularity, system of record (SoR), and content. All data is sourced from SAP BI, which extracts it from the underlying systems of record. The table also lists the specific SAP tables used for each data source.</p>
-<div id="tbl-02-data-sources" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-sources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2.1: Overview of data sources used in the project<br>
-MD = Master Data, TD = Transaction Data
-</figcaption>
-<div aria-describedby="tbl-02-data-sources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Data Source</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Type</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Time-Span</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Granularity</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">SoR</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Table</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Content</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">article</td>
-<td style="text-align: left;">MD</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">SAP S4</td>
-<td style="text-align: left;">MARC</td>
-<td style="text-align: left;">article attr. &amp; hierachy</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">customer</td>
-<td style="text-align: left;">MD</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">SAP S4</td>
-<td style="text-align: left;">KNVV</td>
-<td style="text-align: left;">customer attr. hierachy</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">sales</td>
-<td style="text-align: left;">TD</td>
-<td style="text-align: left;">&gt; 2020</td>
-<td style="text-align: left;">daily</td>
-<td style="text-align: left;">SAP S4</td>
-<td style="text-align: left;">LIPS</td>
-<td style="text-align: left;">customer orders + free-of-charge</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">forecasts</td>
-<td style="text-align: left;">TD</td>
-<td style="text-align: left;">&gt; 2023</td>
-<td style="text-align: left;">monhtly</td>
-<td style="text-align: left;">QAD</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">monthly pre- &amp; post Demand review forecasts</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</figure>
-</div>
-<!-- PDF -->
-<!-- %>% -->
-<!--   footnote( -->
-<!--     general           = "MD = Master data, TD = Transaction Data", -->
-<!--     footnote_as_chunk = TRUE, -->
-<!--     threeparttable    = FALSE, -->
-<!--     escape            = FALSE -->
-<!--   ) -->
-<!-- Subsections: -->
-<section id="sec-02-articles" class="level3">
-<h3 class="anchored" data-anchor-id="sec-02-articles">Articles</h3>
-<p>The Article Master Data is extracted from <code>MARC</code> which contains Plant specific data, this is enhanced with sales organization specific data from <code>MVKE</code> and global article data from <code>MARA</code>, applied filters are shown in Table <a href="#tbl-02-data-sources-article-filters" class="quarto-xref">Table&nbsp;<span>2.2</span></a>.</p>
-<div id="tbl-02-data-sources-article-filters" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-sources-article-filters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2.2: Article Master Data Filters<br>
-see <a href="01_business_understanding.html#sec-01-bu-scope" class="quarto-xref"><span>Scope of the Project</span></a> for reasons for article-filters.
-</figcaption>
-<div aria-describedby="tbl-02-data-sources-article-filters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
-<caption>Article Master Data Filters</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">FIELD</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Filter</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Reason</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">MARA-MTART</td>
-<td style="text-align: left;">HAWA; FERT; VOLL</td>
-<td style="text-align: left;">only finished goods</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">MARA-STRGRP</td>
-<td style="text-align: left;">Z1</td>
-<td style="text-align: left;">only Make-to-Stock</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">MARC-DISMM</td>
-<td style="text-align: left;">ZC; ZD; ZG; ZH; ZI; ZJ; ZN; ZP</td>
-<td style="text-align: left;">only MRP relevant</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">MARC-PERKZ</td>
-<td style="text-align: left;">W</td>
-<td style="text-align: left;">only Ambient</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</figure>
-</div>
-</section>
-<section id="sec-02-customers" class="level3">
-<h3 class="anchored" data-anchor-id="sec-02-customers">Customers</h3>
-<p>Customer Master Data is sourced from <code>KNVV</code>, which contains sales-organization-specific information, and is enriched with global attributes from <code>KNA1</code>. This includes customer classification fields such as type (e.g., internal, external, one-time customer, or employee). Customers flagged as employees are excluded from the analysis.</p>
-</section>
-<section id="sec-02-sales" class="level3">
-<h3 class="anchored" data-anchor-id="sec-02-sales">Sales</h3>
+<!-- ## Identification of Data Sources -->
+<!-- ### Articles -->
+<!-- ### Customers -->
+<!-- ### Sales -->
 <!-- Data filters applied (Doctype's, Item category, ...) -->
 <!-- exclude Promotion articles -->
-<p>Sales data is extracted from <code>LIPS</code>, which contains delivery records. Only completed deliveries which are goods-issued are taken into account.</p>
-<p>Table <a href="#tbl-02-data-sources-sales-filters" class="quarto-xref">Table&nbsp;<span>2.3</span></a> shows the applied filters to select standard sales orders and free-of-charge orders.</p>
-<div id="tbl-02-data-sources-sales-filters" class="table quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-sources-sales-filters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2.3: Sales data filters
-</figcaption>
-<div aria-describedby="tbl-02-data-sources-sales-filters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
-<caption>Sales Data Filters</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Document Type</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Item Category</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Reason</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">TA</td>
-<td style="text-align: left;">TAN; ZTAQ; YGF1</td>
-<td style="text-align: left;">standard sales orders</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">KB; ZDR</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">standard sales orders</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">TA</td>
-<td style="text-align: left;">TANN; ZTNG</td>
-<td style="text-align: left;">free-of-charge orders</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">KL; ZFD</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">free-of-charge orders</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</figure>
-</div>
-<div class="callout callout-style-simple callout-important callout-titled" title="Fixed Planned Promotions are excluded">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Fixed Planned Promotions are excluded
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Articles flagged in the Article Master data as Fixed Planned Promotions are excluded because they aren’t forecasted—instead, they’re delivered by contract and thus always achieve 100 % forecast accuracy.</p>
-</div>
-</div>
-</section>
-<section id="sec-02-forecasts" class="level3">
-<h3 class="anchored" data-anchor-id="sec-02-forecasts">Forecasts</h3>
-<p>Forecasts are generated monthly for each article–plant–customer combination, with a planning horizon of up to three years. For this research, the focus is on the year 2024, using a forecast horizon of up to 12 months. Consequently, only forecasts generated from 2023 onward are considered, see <a href="05_evaluation.html#fig-05-cv" class="quarto-xref">Figure&nbsp;<span>5.1</span></a> for visual illustration.</p>
-<p>Since forecasts are created both before and after the Demand Review, the dataset is split into two versions: <em>pre-Demand Review</em> and <em>post-Demand Review</em>. The pre-Demand Review forecasts are used for the initial analysis, while the post-Demand Review forecasts serve as the basis for final validation.</p>
-</section>
-</section>
-<section id="sec-02-data-collection" class="level2">
-<h2 class="anchored" data-anchor-id="sec-02-data-collection">Data Collection Report</h2>
+<!-- ### Forecasts -->
+<!-- ## Data Collection Report -->
 <!-- Summarize how data was obtained and any issues during acquisition: -->
-<p>Table <a href="#tbl-02-data-collection" class="quarto-xref">Table&nbsp;<span>2.4</span></a> summarizes the data collection process, including the data sources, types, extraction dates, record counts, file sizes, and keys used for each data set. The data is collected from the SAP system and stored in a structured format for further processing.</p>
-<p>Pre- and post-Demand Review forecasts are stored as separate files, one for each month in which they were created. Each file is named to reflect the extraction date.The key is essential for linking the data sets during analysis.</p>
-<div id="tbl-02-data-collection" class="table quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-collection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2.4: Data Collection
-</figcaption>
-<div aria-describedby="tbl-02-data-collection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Data Source</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Type</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Extract Date</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Records</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Size</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Files</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Key</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">article</td>
-<td style="text-align: left;">MD</td>
-<td style="text-align: left;">21-01-2025</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">1.691 KB</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">Article</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">customer</td>
-<td style="text-align: left;">MD</td>
-<td style="text-align: left;">21-01-2025</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">1.345 KB</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">Customer</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">sales</td>
-<td style="text-align: left;">TD</td>
-<td style="text-align: left;">21-01-2025</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">1.7 GB</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">Date; Article; Plant; Customer</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">forecasts</td>
-<td style="text-align: left;">TD</td>
-<td style="text-align: left;">21-01-2025</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">8.99 GB</td>
-<td style="text-align: left;">48</td>
-<td style="text-align: left;">Date; Article; Plant; CustHier3</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</figure>
-</div>
-</section>
-<section id="sec-02-data-description" class="level2">
-<h2 class="anchored" data-anchor-id="sec-02-data-description">Data Description Report</h2>
+<section id="sec-12-data-description" class="level2">
+<h2 class="anchored" data-anchor-id="sec-12-data-description">Data Description Report</h2>
 <!-- Descriptive overview of structure and metadata: Open Hub definition -->
 <!-- Variable types (date, categorical, numeric) -->
 <!-- Dimensions (rows × columns) -->
 <!-- Target variable (e.g., sales units, net revenue) -->
-<section id="sec-02-data-description-metadata" class="level3">
-<h3 class="anchored" data-anchor-id="sec-02-data-description-metadata">Metadata</h3>
-<p>Table <a href="#tbl-02-data-description-meta" class="quarto-xref">Table&nbsp;<span>2.5</span></a> gives a sample of the datasets file name, extension, type of data and date of extraction. A detailed overview of all fields is provided in the appendix, <a href="12_data_understanding.html#tbl-12-data-description-meta" class="quarto-xref">Table&nbsp;<span>B.1</span></a>.</p>
-<div id="tbl-02-data-description-meta" class="table quarto-float quarto-figure quarto-figure-center anchored">
+<section id="sec-12-data-description-metadata" class="level3">
+<h3 class="anchored" data-anchor-id="sec-12-data-description-metadata">Metadata Overview</h3>
+<p>Table <a href="#tbl-12-data-description-meta" class="quarto-xref">Table&nbsp;<span>B.1</span></a> gives all details of the datasets, back sec-02-data-description-metadata</p>
+<div id="tbl-12-data-description-meta" class="table quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-description-meta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2.5: meta data on data extraction
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-12-data-description-meta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;B.1: meta data on data extraction
 </figcaption>
-<div aria-describedby="tbl-02-data-description-meta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-12-data-description-meta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
 <caption>Data Loads</caption>
 <thead>
 <tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">OHDEST</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">SYSTID</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">CLIENT</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">FILEINTERN</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">FILEEXTERN</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">FILEFORMAT</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">APPLI_TR01</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">PATHINTERN</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">DTP</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">OHDEST</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">INFOAREA</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">TYPE</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">TARGET_FILENAME</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">DATE</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">S1B -&gt; S2S</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Column1</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">REPEAT</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">SQL</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Procedure</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">WPB</td>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">Z_DSCP_MATERIAL</td>
 <td style="text-align: left;">MD_MATERIAL.CSV</td>
+<td style="text-align: left;">ASC</td>
+<td style="text-align: left;">BW</td>
+<td style="text-align: left;">Z_DSCP</td>
+<td style="text-align: left;">DTP_006EICO68TUM23UIAL63HHR85</td>
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">RW_DSCP</td>
+<td style="text-align: left;">MD</td>
+<td style="text-align: left;">MD_MATERIAL</td>
+<td style="text-align: left;">2024-01-10</td>
+<td style="text-align: left;">OK</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">DSCP_CUST</td>
-<td style="text-align: left;">MD_SOLD_TO_CUSTOMER.CSV</td>
+<td style="text-align: left;">WPB</td>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">Z_DSCP_MATERIAL_PLANT</td>
+<td style="text-align: left;">MD_MATERIAL_PLANT.CSV</td>
+<td style="text-align: left;">ASC</td>
+<td style="text-align: left;">BW</td>
+<td style="text-align: left;">Z_DSCP</td>
+<td style="text-align: left;">DTP_006EICO68TUM23UIJTLI6X0YD</td>
+<td style="text-align: left;">DSCP_MATP</td>
+<td style="text-align: left;">RW_DSCP</td>
+<td style="text-align: left;">MD</td>
+<td style="text-align: left;">MD_MATERIAL_PLANT</td>
+<td style="text-align: left;">2024-01-10</td>
+<td style="text-align: left;">OK</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">WPB</td>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">Z_DSCP_MATERIAL_SALES_ORG</td>
+<td style="text-align: left;">MD_MATERIAL_SALES_ORG.CSV</td>
+<td style="text-align: left;">ASC</td>
+<td style="text-align: left;">BW</td>
+<td style="text-align: left;">Z_DSCP</td>
+<td style="text-align: left;">DTP_006EICO68TUM23UJ62AQO3OYD</td>
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">RW_DSCP</td>
+<td style="text-align: left;">MD</td>
+<td style="text-align: left;">MD_MATERIAL_SALES_ORG</td>
+<td style="text-align: left;">2024-01-10</td>
+<td style="text-align: left;">OK</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WPB</td>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">Z_DSCP_CUST_SALES</td>
+<td style="text-align: left;">MD_SOLD_TO_CUSTOMER.CSV</td>
+<td style="text-align: left;">ASC</td>
+<td style="text-align: left;">BW</td>
+<td style="text-align: left;">Z_DSCP</td>
+<td style="text-align: left;">DTP_006EICO68TUM23WSW0MNFNNDH</td>
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">RW_DSCP</td>
+<td style="text-align: left;">MD</td>
+<td style="text-align: left;">MD_SOLD_TO_CUSTOMER</td>
+<td style="text-align: left;">2024-01-10</td>
+<td style="text-align: left;">OK</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WPB</td>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">Z_PYTHIA_SDSFRPR1</td>
 <td style="text-align: left;">SDSFRPR1.csv</td>
+<td style="text-align: left;">ASC</td>
+<td style="text-align: left;">BW</td>
+<td style="text-align: left;">Z_DSCP</td>
+<td style="text-align: left;">DTP_006EIZGR39XAWVU69IZ8Z9K4B</td>
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">RW_PYTHIA</td>
+<td style="text-align: left;">ACT</td>
+<td style="text-align: left;">SDSFRLV1_202412_2021</td>
+<td style="text-align: left;">2025-01-20</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Last Version</td>
+<td style="text-align: left;">NO</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WPB</td>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">Z_PYTHIA_SDSFRPR2</td>
+<td style="text-align: left;">SDSFRPR2.csv</td>
+<td style="text-align: left;">ASC</td>
+<td style="text-align: left;">BW</td>
+<td style="text-align: left;">Z_DSCP</td>
+<td style="text-align: left;">DTP_006EICO68TUM23V5NXLG5RMS5</td>
+<td style="text-align: left;">OH_FRPR2</td>
+<td style="text-align: left;">RW_PYTHIA</td>
+<td style="text-align: left;">FCT</td>
+<td style="text-align: left;">SDSFRPR2</td>
+<td style="text-align: left;">2025-02-10</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">✔202502</td>
+<td style="text-align: left;">YES</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">1. DTP select current Month for VERSMON, e.g. 2025xx 2. extract 3. AL11 SDSFRPR2.csv 4. Move to folder C:\PW\OneDrive\ET\pythia\data\production\Bronze\sales\SDSFRPR2_20250X.csv</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WPB</td>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">Z_PYTHIA_SDSFRPR1</td>
+<td style="text-align: left;">SDSFRPR1.csv</td>
+<td style="text-align: left;">ASC</td>
+<td style="text-align: left;">BW</td>
+<td style="text-align: left;">Z_DSCP</td>
+<td style="text-align: left;">DTP_006EIZGR39XAWV6JIR8LR989N</td>
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">RW_PYTHIA</td>
+<td style="text-align: left;">ACT</td>
+<td style="text-align: left;">SDSFRPR1_2024XX</td>
+<td style="text-align: left;">2025-01-19</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Init 2024</td>
+<td style="text-align: left;">NO</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WPB</td>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">Z_PYTHIA_SDSFRPR4</td>
+<td style="text-align: left;">SDSFRPR4.csv</td>
+<td style="text-align: left;">ASC</td>
+<td style="text-align: left;">BW</td>
+<td style="text-align: left;">Z_DSCP</td>
+<td style="text-align: left;">DTP_006EIZGR39XAWU1GG1ZXR5JIY</td>
+<td style="text-align: left;">OH_FRPR4</td>
+<td style="text-align: left;">RW_PYTHIA</td>
+<td style="text-align: left;">FCT</td>
+<td style="text-align: left;">SDSFRPR4</td>
+<td style="text-align: left;">2025-02-10</td>
+<td style="text-align: left;">OK</td>
+<td style="text-align: left;">✔202502</td>
+<td style="text-align: left;">YES</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">0. POSTDR FORECAST MADE THIS MONTH (end of the month) 1. DTP select current Month for VERSMON, e.g. 2025xx 2. extract 3. AL11 SDSFRPR4.csv 4. Move to folder C:\PW\OneDrive\ET\pythia\data\production\Bronze\sales\SDSFRPR4_20250X.csv</td>
 </tr>
 </tbody>
 </table>
@@ -992,15 +876,15 @@ Table&nbsp;2.5: meta data on data extraction
 </figure>
 </div>
 </section>
-<section id="sec-02-data-description-fields" class="level3">
-<h3 class="anchored" data-anchor-id="sec-02-data-description-fields">Data fields</h3>
-<p>Table <a href="#tbl-02-data-description" class="quarto-xref">Table&nbsp;<span>2.6</span></a> gives a sample of the dataset fields, including names, data types, key flags, conversion routines, and hierarchy levels. A detailed overview of all fields is provided in the appendix, <a href="12_data_understanding.html#tbl-12-data-description" class="quarto-xref">Table&nbsp;<span>B.2</span></a>.</p>
-<div id="tbl-02-data-description" class="table quarto-float quarto-figure quarto-figure-center anchored">
+<section id="sec-12-data-description-fields" class="level3">
+<h3 class="anchored" data-anchor-id="sec-12-data-description-fields">Data fields</h3>
+<p>A detailed overview of all dataset fields, including names, data types, key flags, conversion routines, and hierarchy levels, back to <a href="02_data_understanding.html#sec-02-data-description" class="quarto-xref"><span>Data Description Report</span></a></p>
+<div id="tbl-12-data-description" class="table quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-description-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2.6: sample of overview of all data set fields.
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-12-data-description-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;B.2: A detailed overview of all dataset fields.
 </figcaption>
-<div aria-describedby="tbl-02-data-description-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-12-data-description-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
@@ -1031,6 +915,116 @@ Table&nbsp;2.6: sample of overview of all data set fields.
 <td style="text-align: left;">000000</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0002</td>
+<td style="text-align: left;">CUSTOMER_TMD</td>
+<td style="text-align: left;">Customer Text medium</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0003</td>
+<td style="text-align: left;">SALESORG</td>
+<td style="text-align: left;">Sales Organization</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000004</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0004</td>
+<td style="text-align: left;">/BIC/CUSTHIE04</td>
+<td style="text-align: left;">Customer hierarchy level 4</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000010</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0005</td>
+<td style="text-align: left;">CUST_HIE04_TMD</td>
+<td style="text-align: left;">Customer Hierarchy Level 4 Text medium</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0006</td>
+<td style="text-align: left;">CUST_HIE03</td>
+<td style="text-align: left;">Customer Hierarchy Level 3</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000010</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0007</td>
+<td style="text-align: left;">CUST_HIE03_TMD</td>
+<td style="text-align: left;">Customer Hierarchy Level 3 Text medium</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0008</td>
+<td style="text-align: left;">CUST_HIE02</td>
+<td style="text-align: left;">Customer Hierarchy Level 2</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000010</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0009</td>
+<td style="text-align: left;">CUST_HIE02_TMD</td>
+<td style="text-align: left;">Customer Hierarchy Level 2 Text medium</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0010</td>
+<td style="text-align: left;">CUST_HIE01</td>
+<td style="text-align: left;">Customer Hierarchy Level 1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000010</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_CUST</td>
+<td style="text-align: left;">0011</td>
+<td style="text-align: left;">CUST_HIE01_TMD</td>
+<td style="text-align: left;">Customer Hierarchy Level 1 Text medium</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">DSCP_MATE</td>
 <td style="text-align: left;">0001</td>
 <td style="text-align: left;">MATERIAL</td>
@@ -1039,6 +1033,226 @@ Table&nbsp;2.6: sample of overview of all data set fields.
 <td style="text-align: left;">CHAR</td>
 <td style="text-align: left;">000018</td>
 <td style="text-align: left;">MATN1</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0002</td>
+<td style="text-align: left;">MATERIAL_TMD</td>
+<td style="text-align: left;">Material Text</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0003</td>
+<td style="text-align: left;">MATL_TYPE</td>
+<td style="text-align: left;">Material type</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000004</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0004</td>
+<td style="text-align: left;">MATL_TYPE_TMD</td>
+<td style="text-align: left;">Material type</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0007</td>
+<td style="text-align: left;">BASE_UOM</td>
+<td style="text-align: left;">Base Unit of Measure</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">UNIT</td>
+<td style="text-align: left;">000003</td>
+<td style="text-align: left;">BUNIT</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0008</td>
+<td style="text-align: left;">BASE_UOM_TSH</td>
+<td style="text-align: left;">Base Unit of Measure</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000004</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0019</td>
+<td style="text-align: left;">/BIC/PRDH4</td>
+<td style="text-align: left;">Product Family ID</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000008</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0020</td>
+<td style="text-align: left;">PRDH4_TMD</td>
+<td style="text-align: left;">Product Family TXT</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0021</td>
+<td style="text-align: left;">/BIC/PRDH3</td>
+<td style="text-align: left;">Product Sub Category ID</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000004</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0022</td>
+<td style="text-align: left;">PRDH3_TMD</td>
+<td style="text-align: left;">Product Sub Category TXT</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0023</td>
+<td style="text-align: left;">/BIC/PRDH2</td>
+<td style="text-align: left;">Main Category ID</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000004</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0024</td>
+<td style="text-align: left;">PRDH2_TMD</td>
+<td style="text-align: left;">Main Category TXT</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0025</td>
+<td style="text-align: left;">/BIC/PRDH1</td>
+<td style="text-align: left;">Name of the Brand ID</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000002</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATE</td>
+<td style="text-align: left;">0026</td>
+<td style="text-align: left;">PRDH1_TMD</td>
+<td style="text-align: left;">Name of the Brand TXT</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000040</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATP</td>
+<td style="text-align: left;">0001</td>
+<td style="text-align: left;">MAT_PLANT</td>
+<td style="text-align: left;">Material Plant</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000018</td>
+<td style="text-align: left;">MATN1</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATP</td>
+<td style="text-align: left;">0002</td>
+<td style="text-align: left;">PLANT</td>
+<td style="text-align: left;">Plant</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000004</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATP</td>
+<td style="text-align: left;">0009</td>
+<td style="text-align: left;">DISMM</td>
+<td style="text-align: left;">MRP Type</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000002</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATP</td>
+<td style="text-align: left;">0010</td>
+<td style="text-align: left;">/BIC/STGY_GRP</td>
+<td style="text-align: left;">Strategy Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000002</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0001</td>
+<td style="text-align: left;">MATERIAL</td>
+<td style="text-align: left;">Material</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000018</td>
+<td style="text-align: left;">MATN1</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0002</td>
+<td style="text-align: left;">SALESORG</td>
+<td style="text-align: left;">Sales Organization</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000004</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0003</td>
+<td style="text-align: left;">ACCNT_ASGN</td>
+<td style="text-align: left;">Customer Account Assignment Group</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000002</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">000000</td>
 </tr>
 <tr class="odd">
@@ -1052,6 +1266,226 @@ Table&nbsp;2.6: sample of overview of all data set fields.
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">000000</td>
 </tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0005</td>
+<td style="text-align: left;">/BIC/ZDMND_PLN</td>
+<td style="text-align: left;">Demand Planner</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000003</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0006</td>
+<td style="text-align: left;">ZDMND_PLN_TSH</td>
+<td style="text-align: left;">Demand Planner Text short</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000020</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0011</td>
+<td style="text-align: left;">/BIC/PRAT1</td>
+<td style="text-align: left;">Innovative Indicator</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000001</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0012</td>
+<td style="text-align: left;">LOWERDATE</td>
+<td style="text-align: left;">First time ordered</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000010</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0013</td>
+<td style="text-align: left;">ENDDATE</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000010</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0014</td>
+<td style="text-align: left;">SALES_UNIT</td>
+<td style="text-align: left;">Sales unit</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">UNIT</td>
+<td style="text-align: left;">000003</td>
+<td style="text-align: left;">BUNIT</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSCP_MATS</td>
+<td style="text-align: left;">0017</td>
+<td style="text-align: left;">/BIC/PRAT7</td>
+<td style="text-align: left;">Material trend</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000001</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0001</td>
+<td style="text-align: left;">COMP_CODE</td>
+<td style="text-align: left;">Company code</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000004</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0002</td>
+<td style="text-align: left;">SALESORG</td>
+<td style="text-align: left;">Sales Organization</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000004</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0003</td>
+<td style="text-align: left;">PLANT</td>
+<td style="text-align: left;">Plant</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000004</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0004</td>
+<td style="text-align: left;">MATERIAL</td>
+<td style="text-align: left;">Material</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000018</td>
+<td style="text-align: left;">MATN1</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0005</td>
+<td style="text-align: left;">CUST_HIE03</td>
+<td style="text-align: left;">Customer Hierarchy Level 3</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000010</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0006</td>
+<td style="text-align: left;">CALMONTH</td>
+<td style="text-align: left;">Calendar year/month</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">NUMC</td>
+<td style="text-align: left;">000006</td>
+<td style="text-align: left;">PERI6</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0007</td>
+<td style="text-align: left;">VTYPE</td>
+<td style="text-align: left;">Value Type for Reporting</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">NUMC</td>
+<td style="text-align: left;">000003</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0008</td>
+<td style="text-align: left;">FTYPE</td>
+<td style="text-align: left;">Forecast Type</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000001</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0009</td>
+<td style="text-align: left;">VERSMON</td>
+<td style="text-align: left;">Version Calendar year/month</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000006</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0012</td>
+<td style="text-align: left;">CUST_HIE02</td>
+<td style="text-align: left;">Customer Hierarchy Level 2</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000010</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0013</td>
+<td style="text-align: left;">CUST_HIE01</td>
+<td style="text-align: left;">Customer Hierarchy Level 1</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000010</td>
+<td style="text-align: left;">ALPHA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0014</td>
+<td style="text-align: left;">DEMND_QTY</td>
+<td style="text-align: left;">Demand qty</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">CHAR</td>
+<td style="text-align: left;">000017</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OH_FRPR1</td>
+<td style="text-align: left;">0019</td>
+<td style="text-align: left;">BASE_UOM</td>
+<td style="text-align: left;">Base Unit of Measure</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">UNIT</td>
+<td style="text-align: left;">000003</td>
+<td style="text-align: left;">BUNIT</td>
+<td style="text-align: left;">000000</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -1059,201 +1493,7 @@ Table&nbsp;2.6: sample of overview of all data set fields.
 </div>
 </figure>
 </div>
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
-<caption>Data Description</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Data Source</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Date</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Categorical</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Numeric</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">article</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">12</td>
-<td style="text-align: left;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">customer</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">sales</td>
-<td style="text-align: left;">Day</td>
-<td style="text-align: left;">7</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">forecasts</td>
-<td style="text-align: left;">Month</td>
-<td style="text-align: left;">7</td>
-<td style="text-align: left;">2</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
-<caption>Sales &amp; Forecast metadata</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">FIELD</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">TYPE</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">KEY</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">MEANING</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">SALESORG</td>
-<td style="text-align: left;">CHAR</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Marketing &amp; Sales Organization</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PLANT</td>
-<td style="text-align: left;">CHAR</td>
-<td style="text-align: left;">X</td>
-<td style="text-align: left;">Distribution Center</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">MATERIAL</td>
-<td style="text-align: left;">CHAR</td>
-<td style="text-align: left;">X</td>
-<td style="text-align: left;">Article Number</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">STEP</td>
-<td style="text-align: left;">NUM</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Months between VERSMON and CALMONTH</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">CALMONTH</td>
-<td style="text-align: left;">CHAR</td>
-<td style="text-align: left;">X</td>
-<td style="text-align: left;">Month ofActuals or Forecast</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">VERSMON</td>
-<td style="text-align: left;">CHAR</td>
-<td style="text-align: left;">X</td>
-<td style="text-align: left;">Forecast creation Month</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">FTYPE</td>
-<td style="text-align: left;">CHAR</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Pre- [1] or Post- [2] Demand Review</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">VTYPE</td>
-<td style="text-align: left;">CHAR</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Indicator Sales [010] or Forecast [060]</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Q</td>
-<td style="text-align: left;">NUM</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Quanity Sold in Base Units</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="cell-output-display">
-<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
-<caption>Sales &amp; Forecast Fields, Unique Count and Example</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">FLDNM</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">UCOUNT</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">RATIO</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">EXAMP</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">Q</td>
-<td style="text-align: left;">255181</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">0/0.00499999988824129/0.00800000037997961/0.0120000001043081/0.0140000004321337/0.0209999997168779/0.0219999998807907/0.0240000002086163/0.0280000008642673/0.031000001472421</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">MATERIAL</td>
-<td style="text-align: left;">960</td>
-<td style="text-align: left;">351</td>
-<td style="text-align: left;">000000000000000433/000000000000000434/000000000000001302/000000000000001919/000000000000001920/000000000000002100/000000000000002102/000000000000002108/000000000000010023/000000000000010526</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">VERSMON</td>
-<td style="text-align: left;">25</td>
-<td style="text-align: left;">13482</td>
-<td style="text-align: left;">202301/202302/202303/202304/202305/202306/202307/202308/202309/202310</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">CALMONTH</td>
-<td style="text-align: left;">23</td>
-<td style="text-align: left;">14654</td>
-<td style="text-align: left;">202302/202303/202304/202305/202306/202307/202308/202309/202310/202311</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">STEP</td>
-<td style="text-align: left;">19</td>
-<td style="text-align: left;">17740</td>
-<td style="text-align: left;">-1/1/2/3/4/5/6/7/8/9</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">7</td>
-<td style="text-align: left;">FTYPE</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">168526</td>
-<td style="text-align: left;">1/2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">VTYPE</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">168526</td>
-<td style="text-align: left;">010/060</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">PLANT</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">337051</td>
-<td style="text-align: left;">FR30</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">SALESORG</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">337051</td>
-<td style="text-align: left;">FR30</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-</section>
-<section id="sec-02-data-exploration" class="level2">
-<h2 class="anchored" data-anchor-id="sec-02-data-exploration">Data Exploration Report</h2>
+<!-- ## Data Exploration Report -->
 <!-- Exploratory analyses & sanity checks   -->
 <!-- statistical properties and metadata. -->
 <!-- Initial exploration to spot trends, seasonality, outliers, and segmentation patterns. -->
@@ -1263,49 +1503,19 @@ Table&nbsp;2.6: sample of overview of all data set fields.
 <!-- Temporal patterns (weekly/monthly seasonality, trend, events) -->
 <!-- Cross-sectional: contribution per customer/product/channel -->
 <!-- exclude units pak and DS   -->
-<section id="sec-02-eda-geography" class="level3">
-<h3 class="anchored" data-anchor-id="sec-02-eda-geography">Geographic Distribution of Sales</h3>
-<div id="fig-02-eda-geography" class="figure quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-02-eda-geography-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="02_data_understanding_files/figure-html/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;2.1: Scoping the analysis to Valbio et Compagnie, which accounts for 49.36 % of total sales in 2024."><img src="02_data_understanding_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="576"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-02-eda-geography-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.1: Scoping the analysis to Valbio et Compagnie, which accounts for 49.36 % of total sales in 2024.
-</figcaption>
-</figure>
-</div>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>For modeling purposes, the data was scoped to A-class articles based on ABC classification.<br>
-See <a href="03_data_preparation.html#sec-03-abc">ABC Analysis and Scope Definition</a> for details.</p>
-</div>
-</div>
-</div>
+<!-- ### Geographic Distribution of Sales -->
 </section>
-<section id="sec-02-data-profiling" class="level3">
-<h3 class="anchored" data-anchor-id="sec-02-data-profiling">Data Profiling</h3>
-<section id="sec-02-data-profiling-ca" class="level4">
-<h4 class="anchored" data-anchor-id="sec-02-data-profiling-ca">Character Variables</h4>
-<p>Table <a href="#tbl-02-data-profiling-ca" class="quarto-xref">Table&nbsp;<span>2.7</span></a> shows the data profiling results for the dataset, including the number of missing values, completeness rate, minimum and maximum length for character variables. The profiling helps identify data quality issues and provides insights into the structure of the dataset.</p>
-<div id="tbl-02-data-profiling-ca" class="table quarto-float quarto-figure quarto-figure-center anchored">
+<section id="data-profiling" class="level3">
+<h3 class="anchored" data-anchor-id="data-profiling">Data Profiling</h3>
+<section id="character-variables" class="level4">
+<h4 class="anchored" data-anchor-id="character-variables">Character Variables</h4>
+<p>Table <a href="#tbl-12-data-profiling-ca" class="quarto-xref">Table&nbsp;<span>B.3</span></a> shows the data profiling results for the dataset, including the number of missing values, completeness rate, minimum and maximum length for character variables. The profiling helps identify data quality issues and provides insights into the structure of the dataset.</p>
+<div id="tbl-12-data-profiling-ca" class="table quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-profiling-ca-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2.7: Data Profiling: Character Variables
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-12-data-profiling-ca-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;B.3: Data Profiling: Character Variables
 </figcaption>
-<div aria-describedby="tbl-02-data-profiling-ca-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-12-data-profiling-ca-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
@@ -1410,15 +1620,15 @@ Table&nbsp;2.7: Data Profiling: Character Variables
 </div>
 </div>
 </section>
-<section id="sec-02-data-profiling-nu" class="level4">
-<h4 class="anchored" data-anchor-id="sec-02-data-profiling-nu">Numeric Variables</h4>
-<p>Table <a href="#tbl-02-data-profiling-nu" class="quarto-xref">Table&nbsp;<span>2.8</span></a> shows the data profiling results for the numeric variables in the dataset, including mean, standard deviation, and percentiles. The histogram column provides a visual representation of the distribution of each numeric variable.</p>
-<div id="tbl-02-data-profiling-nu" class="table quarto-float quarto-figure quarto-figure-center anchored">
+<section id="numeric-variables" class="level4">
+<h4 class="anchored" data-anchor-id="numeric-variables">Numeric Variables</h4>
+<p>Table <a href="#tbl-12-data-profiling-nu" class="quarto-xref">Table&nbsp;<span>B.4</span></a> shows the data profiling results for the numeric variables in the dataset, including mean, standard deviation, and percentiles. The histogram column provides a visual representation of the distribution of each numeric variable.</p>
+<div id="tbl-12-data-profiling-nu" class="table quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-profiling-nu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2.8: Data Profiling: Numeric Variables
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-12-data-profiling-nu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;B.4: Data Profiling: Numeric Variables
 </figcaption>
-<div aria-describedby="tbl-02-data-profiling-nu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-12-data-profiling-nu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
@@ -1479,7 +1689,7 @@ Table&nbsp;2.8: Data Profiling: Numeric Variables
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="02_data_understanding_files/figure-html/unnamed-chunk-11-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="02_data_understanding_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="12_data_understanding_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="12_data_understanding_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1491,23 +1701,23 @@ Table&nbsp;2.8: Data Profiling: Numeric Variables
 <!-- } -->
 </section>
 </section>
-<section id="sec-02-data-description-hierarchy" class="level3">
-<h3 class="anchored" data-anchor-id="sec-02-data-description-hierarchy">Article Hierachy</h3>
-<p>Table <a href="#tbl-02-data-description-hierarchy-article" class="quarto-xref">Table&nbsp;<span>2.9</span></a> summarizes the 4-levels of the article hierarchy by a unique count per level. Roughly,</p>
+<section id="article-hierachy" class="level3">
+<h3 class="anchored" data-anchor-id="article-hierachy">Article Hierachy</h3>
+<p>Table <a href="#tbl-12-data-description-hierarchy-article" class="quarto-xref">Table&nbsp;<span>B.5</span></a> summarizes the 4-levels of the article hierarchy by a unique count per level. Roughly,</p>
 <ul>
 <li>each Family contains roughly 18 articles.</li>
 <li>each Sub Category contains roughly 4 families.</li>
 </ul>
-<div id="tbl-02-data-description-hierarchy-article" class="table quarto-float quarto-figure quarto-figure-center anchored">
+<div id="tbl-12-data-description-hierarchy-article" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-description-hierarchy-article-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2.9: Summary: Article Hierachy
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-12-data-description-hierarchy-article-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;B.5: Summary: Article Hierachy
 </figcaption>
-<div aria-describedby="tbl-02-data-description-hierarchy-article-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-12-data-description-hierarchy-article-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-97141ee4203b70cece10" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-97141ee4203b70cece10">{"x":{"filter":"none","vertical":false,"data":[["Animal based product","Bread and Bakery","Bread and Biscuit Al","Breakfast Cereals","Dairy Alternatives","Functional Foods","Hot Drinks","Juices and Cold Drin","Meals and Meal compo","Non category specifi","Others","Sweet Spreads, Puree","Sweets in Between"],[4,2,3,1,5,2,3,2,9,4,3,6,4],[22,5,9,6,24,12,14,6,44,4,9,13,16],[145,34,106,152,633,30,821,121,840,25,73,264,448]],"container":"<table class=\"stripe hover compact\">\n  <thead>\n    <tr>\n      <th>ProdCat<\/th>\n      <th>SubCat_Count<\/th>\n      <th>Family_Count<\/th>\n      <th>Article_Count<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"searching":false,"info":false,"ordering":true,"lengthChange":false,"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[1,2,3]},{"name":"ProdCat","targets":0},{"name":"SubCat_Count","targets":1},{"name":"Family_Count","targets":2},{"name":"Article_Count","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-de3605a7e4aa06c2c630" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-de3605a7e4aa06c2c630">{"x":{"filter":"none","vertical":false,"data":[["Animal based product","Bread and Bakery","Bread and Biscuit Al","Breakfast Cereals","Dairy Alternatives","Functional Foods","Hot Drinks","Juices and Cold Drin","Meals and Meal compo","Non category specifi","Others","Sweet Spreads, Puree","Sweets in Between"],[4,2,3,1,5,2,3,2,9,4,3,6,4],[22,5,9,6,24,12,14,6,44,4,9,13,16],[145,34,106,152,633,30,821,121,840,25,73,264,448]],"container":"<table class=\"stripe hover compact\">\n  <thead>\n    <tr>\n      <th>ProdCat<\/th>\n      <th>SubCat_Count<\/th>\n      <th>Family_Count<\/th>\n      <th>Article_Count<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"searching":false,"info":false,"ordering":true,"lengthChange":false,"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[1,2,3]},{"name":"ProdCat","targets":0},{"name":"SubCat_Count","targets":1},{"name":"Family_Count","targets":2},{"name":"Article_Count","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -1519,291 +1729,63 @@ Table&nbsp;2.9: Summary: Article Hierachy
 <div aria-describedby="fig-inter_active_article_hier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-8f267572e83ddf914e4d" style="width:100%;height:600px;" class="collapsibleTree html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8f267572e83ddf914e4d">{"x":{"data":{"name":"Articles","children":[{"name":"Sweets in Between","children":[{"name":"Biscuits","children":[{"name":"Biscuits (Plain)"},{"name":"Biscuits with fruits"},{"name":"Biscuits others"},{"name":"Biscuits with chocol"},{"name":"Pastry"},{"name":"Viennoiserie"},{"name":"Sandwich biscuits"}]},{"name":"Bars","children":[{"name":"Cereal bars"},{"name":"Fruit bars"},{"name":"Seed Bars"},{"name":"Nut bars"},{"name":"Functional bars"}]},{"name":"Chocolate","children":[{"name":"Chocolate bars"}]},{"name":"Cakes","children":[{"name":"Macaroons"},{"name":"Individual Cakes"},{"name":"Sharing Cakes"}]}]},{"name":"Hot Drinks","children":[{"name":"Tea","children":[{"name":"Green tea"},{"name":"Infusion Tea"},{"name":"Other Tea"},{"name":"Loose tea"},{"name":"Black Tea"},{"name":"White Tea"},{"name":"Instant Tea"}]},{"name":"Coffee","children":[{"name":"Instant coffee"},{"name":"Roast and Ground Cof"},{"name":"Coffee beans"},{"name":"Coffee pods"}]},{"name":"Other Hot drinks","children":[{"name":"Powdered milk"},{"name":"Hot Chocolate"},{"name":"Coffee substitutes"}]}]},{"name":"Dairy Alternatives","children":[{"name":"Dairy Alternative Dr","children":[{"name":"Soy drinks"},{"name":"Rice drinks"},{"name":"Oat drinks"},{"name":"Almond drinks"},{"name":"Other dairy alternat"},{"name":"Spelt drinks"},{"name":"Coconut drinks"},{"name":"Millet drinks"},{"name":"Hazelnut drinks"},{"name":"Cashew drinks"}]},{"name":"Dairy Alternative Cu","children":[{"name":"Other culinary aids"},{"name":"Oat culinary aids"},{"name":"Almond culinary aids"},{"name":"Coconut culinary aid"},{"name":"Soy culinary aids"},{"name":"Rice culinary aids"}]},{"name":"Dairy Alternatives D","children":[{"name":"Non dairy desserts"},{"name":"Non dairy ice cream"}]},{"name":"Dairy Alternatives o","children":[{"name":"Vegetable margarine"},{"name":"Non dairy cheese"}]},{"name":"Dairy Alternatives Y","children":[{"name":"Coconut  DA yoghurts"},{"name":"Oat DA yoghurts"},{"name":"Almond DA yoghurts"},{"name":"Other  DA yoghurts"}]}]},{"name":"Breakfast Cereals","children":[{"name":"Breakfast Cereals","children":[{"name":"Crunchy"},{"name":"Muesli"},{"name":"Extruded/puffed cere"},{"name":"Porridge"},{"name":"Flakes"},{"name":"Other breakfast cere"}]}]},{"name":"Bread and Biscuit Al","children":[{"name":"Cereal Cakes","children":[{"name":"Other Cereal Cakes P"},{"name":"Rice Cakes Plain"},{"name":"Rice Cakes Coated"},{"name":"Other Cereal Cakes C"},{"name":"Rice Cakes Flavoured"},{"name":"Other Cereal Cakes F"}]},{"name":"Crispy Breads","children":[{"name":"Toasted bread"}]},{"name":"Other Bread replacer","children":[{"name":"Crackers"},{"name":"Other Bread replacer"}]}]},{"name":"Meals and Meal compo","children":[{"name":"Savoury Spreads","children":[{"name":"Vegetarian pates(yea"},{"name":"Other savoury spread"},{"name":"Vegetarian Lard"},{"name":"Creamy Spreads"},{"name":"Vegetable spreads"},{"name":"Lentil/Protein sprea"},{"name":"Meat alternative spr"},{"name":"Cheese alternative s"},{"name":"Deli salads spreads"}]},{"name":"Soups and bouillons","children":[{"name":"Soups"},{"name":"Instant soup"}]},{"name":"Delicacies","children":[{"name":"Sauces"},{"name":"Chilled dips and spr"},{"name":"Chilled pasta"},{"name":"Chilled Quenelles"},{"name":"Dough (chilled)"},{"name":"Pancakes"},{"name":"Other delicacies"}]},{"name":"Ready Meals","children":[{"name":"Cereal meals"},{"name":"Other Ready meals"}]},{"name":"Pasta, rice and cere","children":[{"name":"Rice"},{"name":"Other cooking cereal"},{"name":"Pasta"},{"name":"Potato flakes"}]},{"name":"Meat analogues","children":[{"name":"Meat like meat subst"},{"name":"Non meat like meat s"}]},{"name":"Cooking sauces","children":[{"name":"Warm cooking sauces"},{"name":"Pasta sauces"},{"name":"Sauce concentrates"}]},{"name":"Canned and Frozen Ve","children":[{"name":"Prepared vegetables"},{"name":"Vegetable (frozen)"}]},{"name":"Cooking aids and mea","children":[{"name":"Other meal component"},{"name":"Stocks"},{"name":"Salt"},{"name":"Cold condiment sauce"},{"name":"Oil"},{"name":"Other cooking aids"},{"name":"Vinegar"},{"name":"Pickles"},{"name":"Mustard"},{"name":"Mayonnaise"},{"name":"Gravies"},{"name":"Seasonings and taste"},{"name":"Specialty cooking ai"}]}]},{"name":"Sweet Spreads, Puree","children":[{"name":"Fruit spreads","children":[{"name":"Fruit spreads"},{"name":"Other sweet spreads"}]},{"name":"Honey","children":[{"name":"Pure Honey"}]},{"name":"Nut spreads","children":[{"name":"Nut spreads"}]},{"name":"Sweeteners","children":[{"name":"Agave syrup"},{"name":"Sugar"},{"name":"Fructose"},{"name":"Other sweeteners"}]},{"name":"Chocolate Spreads","children":[{"name":"Chocolate spreads"}]},{"name":"Compote, Pureees, Sa","children":[{"name":"Purees"},{"name":"Compote"},{"name":"Fruit sauces"},{"name":"Other Prepared fruit"}]}]},{"name":"Functional Foods","children":[{"name":"Food supplements","children":[{"name":"Functional oils"},{"name":"Beer yeast"},{"name":"Other food supplemen"},{"name":"Digestion and transi"},{"name":"Slimming Food Supple"},{"name":"Vitamins and Mineral"},{"name":"Wheat germ"},{"name":"Cardio system care a"},{"name":"Vitality Food Supple"}]},{"name":"Slimming Foods","children":[{"name":"Meal substitutes oth"},{"name":"Hi protein salted po"},{"name":"Slimming Aids others"}]}]},{"name":"Non category specifi","children":[{"name":"Packaging-, producti","children":[{"name":"Packaging-, producti"}]},{"name":"Promotion materials","children":[{"name":"Other promotion mate"}]},{"name":"Byproducts","children":[{"name":"By products"}]},{"name":"Raw materials","children":[{"name":"Raw materials"}]}]},{"name":"Juices and Cold Drin","children":[{"name":"Juices","children":[{"name":"Fruit juice"},{"name":"Vegetable juice"},{"name":"Other juices"},{"name":"Fruit and vegetable"},{"name":"Fruit syrup"}]},{"name":"Cold Drinks","children":[{"name":"Soft drinks"}]}]},{"name":"Bread and Bakery","children":[{"name":"Bread products","children":[{"name":"Specialty Bread"},{"name":"Bread"}]},{"name":"Bakery and dessert p","children":[{"name":"Flour"},{"name":"Cake mix"},{"name":"Cooking Aids for Pas"}]}]},{"name":"Others","children":[{"name":"Savoury In Between","children":[{"name":"Other Savoury In Bet"},{"name":"Salted Snacks"},{"name":"Crisps"},{"name":"Savoury biscuits"}]},{"name":"Alcoholic drinks","children":[{"name":"Other alcoholic drin"}]},{"name":"Dried fruits and see","children":[{"name":"Seeds bags"},{"name":"Dried fruits bags"},{"name":"Nuts bags"},{"name":"Other dried fruits a"}]}]},{"name":"Animal based product","children":[{"name":"Meat products","children":[{"name":"Chicken"},{"name":"Canned meat"},{"name":"Cured meat"},{"name":"Foreign Cured meat"},{"name":"Sausages"}]},{"name":"Dairy products","children":[{"name":"Cream"},{"name":"Butter"},{"name":"Other Cheese"},{"name":"Cow milk"},{"name":"Cheese with cow milk"},{"name":"Cheese with ewe milk"},{"name":"Cheese with goat mil"},{"name":"Yogurt with cow milk"},{"name":"Yogurt with ewe milk"},{"name":"Dairy dessert with c"},{"name":"Dairy dessert with e"}]},{"name":"Seafood","children":[{"name":"Salmon"},{"name":"Canned fish"},{"name":"Other seafood"},{"name":"Smoked fish"}]},{"name":"Eggs","children":[{"name":"Eggs medium (53-63g)"},{"name":"Eggs large (63-73g)"}]}]}]},"options":{"hierarchy":["ProdCat","SubCat","Family"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":true,"zoomable":true,"margin":{"top":20,"bottom":20,"left":65,"right":125},"fill":"#38e56d"}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8b663bcebd1faa9a7931" style="width:100%;height:600px;" class="collapsibleTree html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8b663bcebd1faa9a7931">{"x":{"data":{"name":"Articles","children":[{"name":"Sweets in Between","children":[{"name":"Biscuits","children":[{"name":"Biscuits (Plain)"},{"name":"Biscuits with fruits"},{"name":"Biscuits others"},{"name":"Biscuits with chocol"},{"name":"Pastry"},{"name":"Viennoiserie"},{"name":"Sandwich biscuits"}]},{"name":"Bars","children":[{"name":"Cereal bars"},{"name":"Fruit bars"},{"name":"Seed Bars"},{"name":"Nut bars"},{"name":"Functional bars"}]},{"name":"Chocolate","children":[{"name":"Chocolate bars"}]},{"name":"Cakes","children":[{"name":"Macaroons"},{"name":"Individual Cakes"},{"name":"Sharing Cakes"}]}]},{"name":"Hot Drinks","children":[{"name":"Tea","children":[{"name":"Green tea"},{"name":"Infusion Tea"},{"name":"Other Tea"},{"name":"Loose tea"},{"name":"Black Tea"},{"name":"White Tea"},{"name":"Instant Tea"}]},{"name":"Coffee","children":[{"name":"Instant coffee"},{"name":"Roast and Ground Cof"},{"name":"Coffee beans"},{"name":"Coffee pods"}]},{"name":"Other Hot drinks","children":[{"name":"Powdered milk"},{"name":"Hot Chocolate"},{"name":"Coffee substitutes"}]}]},{"name":"Dairy Alternatives","children":[{"name":"Dairy Alternative Dr","children":[{"name":"Soy drinks"},{"name":"Rice drinks"},{"name":"Oat drinks"},{"name":"Almond drinks"},{"name":"Other dairy alternat"},{"name":"Spelt drinks"},{"name":"Coconut drinks"},{"name":"Millet drinks"},{"name":"Hazelnut drinks"},{"name":"Cashew drinks"}]},{"name":"Dairy Alternative Cu","children":[{"name":"Other culinary aids"},{"name":"Oat culinary aids"},{"name":"Almond culinary aids"},{"name":"Coconut culinary aid"},{"name":"Soy culinary aids"},{"name":"Rice culinary aids"}]},{"name":"Dairy Alternatives D","children":[{"name":"Non dairy desserts"},{"name":"Non dairy ice cream"}]},{"name":"Dairy Alternatives o","children":[{"name":"Vegetable margarine"},{"name":"Non dairy cheese"}]},{"name":"Dairy Alternatives Y","children":[{"name":"Coconut  DA yoghurts"},{"name":"Oat DA yoghurts"},{"name":"Almond DA yoghurts"},{"name":"Other  DA yoghurts"}]}]},{"name":"Breakfast Cereals","children":[{"name":"Breakfast Cereals","children":[{"name":"Crunchy"},{"name":"Muesli"},{"name":"Extruded/puffed cere"},{"name":"Porridge"},{"name":"Flakes"},{"name":"Other breakfast cere"}]}]},{"name":"Bread and Biscuit Al","children":[{"name":"Cereal Cakes","children":[{"name":"Other Cereal Cakes P"},{"name":"Rice Cakes Plain"},{"name":"Rice Cakes Coated"},{"name":"Other Cereal Cakes C"},{"name":"Rice Cakes Flavoured"},{"name":"Other Cereal Cakes F"}]},{"name":"Crispy Breads","children":[{"name":"Toasted bread"}]},{"name":"Other Bread replacer","children":[{"name":"Crackers"},{"name":"Other Bread replacer"}]}]},{"name":"Meals and Meal compo","children":[{"name":"Savoury Spreads","children":[{"name":"Vegetarian pates(yea"},{"name":"Other savoury spread"},{"name":"Vegetarian Lard"},{"name":"Creamy Spreads"},{"name":"Vegetable spreads"},{"name":"Lentil/Protein sprea"},{"name":"Meat alternative spr"},{"name":"Cheese alternative s"},{"name":"Deli salads spreads"}]},{"name":"Soups and bouillons","children":[{"name":"Soups"},{"name":"Instant soup"}]},{"name":"Delicacies","children":[{"name":"Sauces"},{"name":"Chilled dips and spr"},{"name":"Chilled pasta"},{"name":"Chilled Quenelles"},{"name":"Dough (chilled)"},{"name":"Pancakes"},{"name":"Other delicacies"}]},{"name":"Ready Meals","children":[{"name":"Cereal meals"},{"name":"Other Ready meals"}]},{"name":"Pasta, rice and cere","children":[{"name":"Rice"},{"name":"Other cooking cereal"},{"name":"Pasta"},{"name":"Potato flakes"}]},{"name":"Meat analogues","children":[{"name":"Meat like meat subst"},{"name":"Non meat like meat s"}]},{"name":"Cooking sauces","children":[{"name":"Warm cooking sauces"},{"name":"Pasta sauces"},{"name":"Sauce concentrates"}]},{"name":"Canned and Frozen Ve","children":[{"name":"Prepared vegetables"},{"name":"Vegetable (frozen)"}]},{"name":"Cooking aids and mea","children":[{"name":"Other meal component"},{"name":"Stocks"},{"name":"Salt"},{"name":"Cold condiment sauce"},{"name":"Oil"},{"name":"Other cooking aids"},{"name":"Vinegar"},{"name":"Pickles"},{"name":"Mustard"},{"name":"Mayonnaise"},{"name":"Gravies"},{"name":"Seasonings and taste"},{"name":"Specialty cooking ai"}]}]},{"name":"Sweet Spreads, Puree","children":[{"name":"Fruit spreads","children":[{"name":"Fruit spreads"},{"name":"Other sweet spreads"}]},{"name":"Honey","children":[{"name":"Pure Honey"}]},{"name":"Nut spreads","children":[{"name":"Nut spreads"}]},{"name":"Sweeteners","children":[{"name":"Agave syrup"},{"name":"Sugar"},{"name":"Fructose"},{"name":"Other sweeteners"}]},{"name":"Chocolate Spreads","children":[{"name":"Chocolate spreads"}]},{"name":"Compote, Pureees, Sa","children":[{"name":"Purees"},{"name":"Compote"},{"name":"Fruit sauces"},{"name":"Other Prepared fruit"}]}]},{"name":"Functional Foods","children":[{"name":"Food supplements","children":[{"name":"Functional oils"},{"name":"Beer yeast"},{"name":"Other food supplemen"},{"name":"Digestion and transi"},{"name":"Slimming Food Supple"},{"name":"Vitamins and Mineral"},{"name":"Wheat germ"},{"name":"Cardio system care a"},{"name":"Vitality Food Supple"}]},{"name":"Slimming Foods","children":[{"name":"Meal substitutes oth"},{"name":"Hi protein salted po"},{"name":"Slimming Aids others"}]}]},{"name":"Non category specifi","children":[{"name":"Packaging-, producti","children":[{"name":"Packaging-, producti"}]},{"name":"Promotion materials","children":[{"name":"Other promotion mate"}]},{"name":"Byproducts","children":[{"name":"By products"}]},{"name":"Raw materials","children":[{"name":"Raw materials"}]}]},{"name":"Juices and Cold Drin","children":[{"name":"Juices","children":[{"name":"Fruit juice"},{"name":"Vegetable juice"},{"name":"Other juices"},{"name":"Fruit and vegetable"},{"name":"Fruit syrup"}]},{"name":"Cold Drinks","children":[{"name":"Soft drinks"}]}]},{"name":"Bread and Bakery","children":[{"name":"Bread products","children":[{"name":"Specialty Bread"},{"name":"Bread"}]},{"name":"Bakery and dessert p","children":[{"name":"Flour"},{"name":"Cake mix"},{"name":"Cooking Aids for Pas"}]}]},{"name":"Others","children":[{"name":"Savoury In Between","children":[{"name":"Other Savoury In Bet"},{"name":"Salted Snacks"},{"name":"Crisps"},{"name":"Savoury biscuits"}]},{"name":"Alcoholic drinks","children":[{"name":"Other alcoholic drin"}]},{"name":"Dried fruits and see","children":[{"name":"Seeds bags"},{"name":"Dried fruits bags"},{"name":"Nuts bags"},{"name":"Other dried fruits a"}]}]},{"name":"Animal based product","children":[{"name":"Meat products","children":[{"name":"Chicken"},{"name":"Canned meat"},{"name":"Cured meat"},{"name":"Foreign Cured meat"},{"name":"Sausages"}]},{"name":"Dairy products","children":[{"name":"Cream"},{"name":"Butter"},{"name":"Other Cheese"},{"name":"Cow milk"},{"name":"Cheese with cow milk"},{"name":"Cheese with ewe milk"},{"name":"Cheese with goat mil"},{"name":"Yogurt with cow milk"},{"name":"Yogurt with ewe milk"},{"name":"Dairy dessert with c"},{"name":"Dairy dessert with e"}]},{"name":"Seafood","children":[{"name":"Salmon"},{"name":"Canned fish"},{"name":"Other seafood"},{"name":"Smoked fish"}]},{"name":"Eggs","children":[{"name":"Eggs medium (53-63g)"},{"name":"Eggs large (63-73g)"}]}]}]},"options":{"hierarchy":["ProdCat","SubCat","Family"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":true,"zoomable":true,"margin":{"top":20,"bottom":20,"left":65,"right":125},"fill":"#38e56d"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Interactive Article Hierarchy, click on the nodes to expand or collapse them.</p>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-inter_active_article_hier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.2
+Figure&nbsp;B.1
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="sec-02-data-description-hierarchy-customer" class="level3">
-<h3 class="anchored" data-anchor-id="sec-02-data-description-hierarchy-customer">Customer Hierarchy</h3>
-<p>Table <a href="#tbl-02-data-description-hierarchy-customer" class="quarto-xref">Table&nbsp;<span>2.10</span></a> summarizes the 4-levels of the customer hierarchy by a unique count per level. Roughly:</p>
+<section id="customer-hierarchy" class="level3">
+<h3 class="anchored" data-anchor-id="customer-hierarchy">Customer Hierarchy</h3>
+<p>Table <a href="#tbl-12-data-description-hierarchy-customer" class="quarto-xref">Table&nbsp;<span>B.6</span></a> summarizes the 4-levels of the customer hierarchy by a unique count per level. Roughly:</p>
 <ul>
 <li>each Family contains roughly 5 customers</li>
 <li>each Account contains roughly 2 sold-to parties</li>
 <li>each Key Account contains roughly 3 accounts,</li>
 </ul>
-<div id="tbl-02-data-description-hierarchy-customer" class="table quarto-float quarto-figure quarto-figure-center anchored">
+<div id="tbl-12-data-description-hierarchy-customer" class="table quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-02-data-description-hierarchy-customer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2.10: Summary: Customer Hierachy
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-12-data-description-hierarchy-customer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;B.6: Summary: Customer Hierachy
 </figcaption>
-<div aria-describedby="tbl-02-data-description-hierarchy-customer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-12-data-description-hierarchy-customer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-52e4c07d1368d4d46523" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-52e4c07d1368d4d46523">{"x":{"filter":"none","vertical":false,"data":[["Discounter","Divers","Export","Grocery","Health &amp; Food Stores","Intercompany","Other","Out Of Home","Retail","Wholesale","e-Commerce"],[11,4,12,53,31,19,28,18,6,4,2],[12,4,60,99,76,25,72,48,35,17,15],[22,4,60,107,142,20,139,79,79,50,15],[76,70,167,171,1723,33,231,172,666,52,21]],"container":"<table class=\"stripe hover compact\">\n  <thead>\n    <tr>\n      <th>Channel<\/th>\n      <th>KAM_count<\/th>\n      <th>ACC_Count<\/th>\n      <th>SoldTo_Count<\/th>\n      <th>Customer_Count<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"searching":false,"info":false,"ordering":true,"lengthChange":false,"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[1,2,3,4]},{"name":"Channel","targets":0},{"name":"KAM_count","targets":1},{"name":"ACC_Count","targets":2},{"name":"SoldTo_Count","targets":3},{"name":"Customer_Count","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-6d8003574047df830470" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-6d8003574047df830470">{"x":{"filter":"none","vertical":false,"data":[["Discounter","Divers","Export","Grocery","Health &amp; Food Stores","Intercompany","Other","Out Of Home","Retail","Wholesale","e-Commerce"],[11,4,12,53,31,19,28,18,6,4,2],[12,4,60,99,76,25,72,48,35,17,15],[22,4,60,107,142,20,139,79,79,50,15],[76,70,167,171,1723,33,231,172,666,52,21]],"container":"<table class=\"stripe hover compact\">\n  <thead>\n    <tr>\n      <th>Channel<\/th>\n      <th>KAM_count<\/th>\n      <th>ACC_Count<\/th>\n      <th>SoldTo_Count<\/th>\n      <th>Customer_Count<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"searching":false,"info":false,"ordering":true,"lengthChange":false,"columnDefs":[{"className":"dt-left","targets":0},{"className":"dt-right","targets":[1,2,3,4]},{"name":"Channel","targets":0},{"name":"KAM_count","targets":1},{"name":"ACC_Count","targets":2},{"name":"SoldTo_Count","targets":3},{"name":"Customer_Count","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
 </figure>
 </div>
-</section>
-<section id="sec-02-data-exploration-time-series" class="level3">
-<h3 class="anchored" data-anchor-id="sec-02-data-exploration-time-series">Time Series Patterns</h3>
-<p>Certainly! Here’s a rephrased version with a clearer emphasis on seasonal and trend patterns that exponential smoothing (ETS) and Box-Jenkins (ARMA/ARIMA) methods can exploit:</p>
-<p><strong>Exploiting Temporal Structure for Forecasting</strong> Time series forecasting is most effective when the data exhibits temporal structure—patterns over time that models can learn and project forward. Two key components of this structure are <strong>trend</strong> (long-term directional movement) and <strong>seasonality</strong> (recurring cycles, such as weekly demand spikes or annual holiday effects).</p>
-<p>Methods like <strong>exponential smoothing (ETS)</strong> are particularly suited to capture and extrapolate trend and seasonal components through adaptive smoothing techniques. Similarly, <strong>Box-Jenkins models</strong>—including <strong>ARMA</strong> and <strong>ARIMA</strong>—leverage autocorrelation structures in the data, modeling dependencies between past and future values to make informed predictions.</p>
-<p>When such temporal patterns are present, these models can generate meaningful forecasts by systematically exploiting the underlying structure. In contrast, when a series lacks trend, seasonality, or autocorrelation—essentially behaving like random noise—forecasting yields little more than projecting the mean or last known value. Thus, effective forecasting depends on the assumption that past behavior offers useful insight into future outcomes.</p>
-<p>Figure <span class="citation" data-cites="seasonal_trend_strength_facet_plot">(<a href="18_references.html#ref-seasonal_trend_strength_facet_plot" role="doc-biblioref"><strong>seasonal_trend_strength_facet_plot?</strong></a>)</span> displays the strength of seasonality (y-axis) and trend (x-axis) for each combination of material and customer hierarchy levels. Notably, all levels exhibit clear seasonality (values &gt; 0.64) and a meaningful trend component (values &gt; 0.5), indicating a strong temporal structure—an encouraging sign for effective forecasting.</p>
-<div id="fig-02-seasonal_trend_strength_facet_plot" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-02-seasonal_trend_strength_facet_plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/seasonal_trend_strength_facet_plot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;2.3: igure Figure&nbsp;fig-02-examples_facet_plot presents examples from various hierarchy levels that exhibit strong seasonality along with noticeable trend components."><img src="../images/seasonal_trend_strength_facet_plot.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:15cm"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-02-seasonal_trend_strength_facet_plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.3: igure <a href="#fig-02-examples_facet_plot" class="quarto-xref">Figure&nbsp;<span>2.4</span></a> presents examples from various hierarchy levels that exhibit strong seasonality along with noticeable trend components.
-</figcaption>
-</figure>
-</div>
-<div id="fig-02-examples_facet_plot" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-02-examples_facet_plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/examples_facet_plot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;2.4: "><img src="../images/examples_facet_plot.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:15cm"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-02-examples_facet_plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.4
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="sec-02-data-exploration-forecastability" class="level3">
-<h3 class="anchored" data-anchor-id="sec-02-data-exploration-forecastability">Forecastability</h3>
-<section id="sec-02-data-exploration-abc" class="level4">
-<h4 class="anchored" data-anchor-id="sec-02-data-exploration-abc">ABC/XYZ Classification</h4>
-<p>The ABC/XYZ classification is a commonly used framework for prioritizing items based on their business impact and forecastability. It supports decision-making on which items warrant detailed forecasting and tighter control.</p>
-<ul>
-<li><p>ABC: Does the item have sufficient importance to justify close monitoring or forecasting?</p></li>
-<li><p>XYZ: Is the item predictable enough to produce reliable forecasts?</p></li>
-</ul>
-<div id="fig-02-abc-xyz" class="figure quarto-float quarto-figure quarto-figure-left anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-02-abc-xyz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><a href="../images/ABCXYZ.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;2.5: "><img src="../images/ABCXYZ.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:15cm"></a></p>
-</figure>
-</div>
-<ul>
-<li><p>AX: High-priority &amp; stable items, forecast carefully.</p></li>
-<li><p>AZ: High-priority &amp; erratic items, forecast with caution.</p></li>
-<li><p>CZ: Low-priority &amp; erratic items: Maybe don’t forecast.</p></li>
-</ul>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-02-abc-xyz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.5
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="sec-02-data-exploration-sb" class="level4">
-<h4 class="anchored" data-anchor-id="sec-02-data-exploration-sb">Syntetos-Boylan (SB) Classification</h4>
-<p>The Syntetos–Boylan (SB) classification extends the ABC/XYZ framework by integrating demand variability and forecastability. It provides a more nuanced understanding of demand patterns and supports the selection of suitable forecasting methods.</p>
-<p>For BioBalance, the time series data is predominantly a mix of intermittent and smooth demand, with the specific pattern varying by the level of aggregation.</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">SB_Type</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Best_fit_Methods</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Smooth</td>
-<td style="text-align: left;">SES; Holt’s; Holt-Winters (Triple Exp); ARIMA; Moving Average</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Erratic</td>
-<td style="text-align: left;">Damped exponential; Holt-Winters (if seasonal); ARIMA with volatility modeling</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Intermittent</td>
-<td style="text-align: left;">Croston; SBA; TSB; bootstrapped quantile models</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Lumpy</td>
-<td style="text-align: left;">Croston variants + heuristics; simulation; judgmental overlays</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>Sufficient Historical Data and Pattern Stability Reliable demand classification and effective forecasting require an adequate historical record—ideally covering multiple seasonal cycles and enough observations to separate meaningful patterns from random noise. For instance, capturing annual seasonality in monthly data typically requires at least 2–3 years of history.</p>
-<p>In our analysis, SB-class distributions appear stable over time, aside from fluctuations near the lower boundary—particularly in the first few months, where the classification is less reliable due to insufficient data. As such, early observations (less than 6 months) are omitted from interpretation.</p>
-<p>Encouragingly, as time series length increases, the proportion of smooth demand series rises. This shift is favorable for forecast accuracy, as smooth series are more predictable and well-suited to traditional forecasting methods, see figure <a href="#fig-02-plot_sbc_by_ts" class="quarto-xref">Figure&nbsp;<span>2.6</span></a></p>
-<div id="fig-02-plot_sbc_by_ts" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-02-plot_sbc_by_ts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/plot_sbc_by_ts.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;2.6: "><img src="../images/plot_sbc_by_ts.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:15cm"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-02-plot_sbc_by_ts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.6
-</figcaption>
-</figure>
-</div>
-<p>Figure <a href="#fig-02-plot_sbm" class="quarto-xref">Figure&nbsp;<span>2.7</span></a> illustrates the distribution of SB-class types across different aggregation levels, highlighting the prevalence of smooth and intermittent demand patterns. The chart shows that as the aggregation level increases, the proportion of smooth demand series also increases, while intermittent demand remains significant. THis plot is made at the aggregation level ProdCat-Channel. The complete analysis for all aggregation levels is available in <a href="#fig-02-SBCSIEL" class="quarto-xref">Figure&nbsp;<span>2.8</span></a>.</p>
-<div id="fig-02-plot_sbm" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-02-plot_sbm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/plot_sbm.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;2.7: "><img src="../images/plot_sbm.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:15cm"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-02-plot_sbm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.7
-</figcaption>
-</figure>
-</div>
-<p><strong>Model Implications:</strong></p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Method</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Assumes</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Handles</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Fit_in_SB_Classification</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Moving Average</td>
-<td style="text-align: left;">Stationarity; no trend or seasonality</td>
-<td style="text-align: left;">Smooth to moderate variability</td>
-<td style="text-align: left;">'Smooth; maybe Erratic'</td>
-<td style="text-align: left;">Simple; not suitable for intermittent or seasonal</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Simple Exponential Smoothing (SES)</td>
-<td style="text-align: left;">Stationary; no trend or seasonality</td>
-<td style="text-align: left;">Random variation; no trend/season</td>
-<td style="text-align: left;">'Smooth'</td>
-<td style="text-align: left;">Cannot handle trend or seasonality</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Double Exponential Smoothing</td>
-<td style="text-align: left;">Linear trend</td>
-<td style="text-align: left;">Trend</td>
-<td style="text-align: left;">'Smooth; Erratic'</td>
-<td style="text-align: left;">Better than SES for trending series</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Triple Exponential Smoothing (Holt-Winters)</td>
-<td style="text-align: left;">Trend + seasonality</td>
-<td style="text-align: left;">Seasonality</td>
-<td style="text-align: left;">'Smooth; some Erratic'</td>
-<td style="text-align: left;">Not appropriate for intermittent/lumpy</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">ARIMA / ARMA</td>
-<td style="text-align: left;">Stationarity (or with differencing)</td>
-<td style="text-align: left;">Trend + autocorrelation</td>
-<td style="text-align: left;">'Smooth; Erratic'</td>
-<td style="text-align: left;">Requires regular frequency and sufficient data</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Croston / SBA / TSB</td>
-<td style="text-align: left;">Zero-heavy demand</td>
-<td style="text-align: left;">Intermittency</td>
-<td style="text-align: left;">'Intermittent; Lumpy'</td>
-<td style="text-align: left;">Designed specifically for intermittent demand</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>The distribution of SB-class types across different aggregation levels is shown in figure <a href="#fig-02-SBCSIEL" class="quarto-xref">Figure&nbsp;<span>2.8</span></a>. Note the high level of smooth time series, especially for the weighted percentage which takes the sales volume into account. This indicates that the majority of sales are driven by smooth demand patterns, which are more predictable and suitable for traditional forecasting methods.</p>
-<div id="fig-02-SBCSIEL" class="figure quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-02-SBCSIEL-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/SBCSIEL.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;2.8: Weighted SB-Classification (S, I, E, L) for each aggregation level"><img src="../images/SBCSIEL.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:15cm"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-02-SBCSIEL-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.8: Weighted SB-Classification (S, I, E, L) for each aggregation level
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="sec-02-data-exploration-abc-sb" class="level4">
-<h4 class="anchored" data-anchor-id="sec-02-data-exploration-abc-sb">ABC/XYZ versus Syntetos-Boylan (SB) Classification</h4>
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Aspect</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">XYZ</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">ADI_CV2_Syntetos_Boylan</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Metric</td>
-<td style="text-align: left;">Coefficient of Variation (CV)</td>
-<td style="text-align: left;">ADI + CV² (more granular)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Forecastability</td>
-<td style="text-align: left;">Measures volatility</td>
-<td style="text-align: left;">Measures both volatility and intermittency</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Use case</td>
-<td style="text-align: left;">Broad segmentation for policy setting</td>
-<td style="text-align: left;">Model selection and demand type understanding</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Z class equivalent</td>
-<td style="text-align: left;">Often aligns with 'Lumpy' or 'Erratic'</td>
-<td style="text-align: left;">Differentiates between those</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><a href="../coding/21_data_understanding.html">details and coding on data_understanding</a></p>
+<!-- ### Time Series Patterns -->
 </section>
 </section>
-</section>
-<section id="sec-02-data-quality" class="level2">
-<h2 class="anchored" data-anchor-id="sec-02-data-quality">Data Quality Report</h2>
+<section id="data-quality-report" class="level2">
+<h2 class="anchored" data-anchor-id="data-quality-report">Data Quality Report</h2>
 <!-- Assess data integrity and readiness for modeling. -->
 <!-- Subsections: -->
 <!-- Missing values (which variables, how much, patterns) -->
 <!-- Consistency checks (e.g., units vs revenue) -->
 <!-- Duplicated records -->
 <!-- Outliers: any anomalous spikes or drops? -->
-<section id="sec-02-data-quality-assessment" class="level3">
-<h3 class="anchored" data-anchor-id="sec-02-data-quality-assessment">Data Quality Assessment</h3>
-<!-- Assessment: What issues were found (missing values, outliers, etc.) -->
+</section>
+<section id="data-quality-assessment" class="level2">
+<h2 class="anchored" data-anchor-id="data-quality-assessment">Data Quality Assessment</h2>
 <!-- Data Quality Assessment and Remediation -->
 <!-- Summarize actions taken: -->
 <!-- Imputation strategies -->
 <!-- Exclusions (e.g., rare SKUs or obsolete accounts) -->
 <p>all 0 duplicates, zero quantity, unexpected NAs</p>
-<p><strong>Actions taken:</strong> <!-- Any exclusions or imputations --> <!-- Summarize actions taken: --></p>
 </section>
-</section>
-<section id="sec-02-summary" class="level2">
-<h2 class="anchored" data-anchor-id="sec-02-summary">Summary of Data Understanding</h2>
+<section id="sec-12-summary" class="level2">
+<h2 class="anchored" data-anchor-id="sec-12-summary">Summary of Data Understanding</h2>
 <ul>
 <li>The dataset combines master and transactional data from SAP BI and QAD systems.</li>
 <li>Sales and forecasts are scoped to a single MSO and A-class finished goods.</li>
@@ -2407,13 +2389,13 @@ Zhu, H. (2024). <em><span class="nocase">kableExtra</span>: <span>Construct Comp
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notebooks/01_business_understanding.html" class="pagination-link" aria-label="Business Understanding">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Business Understanding</span></span>
+      <a href="../notebooks/11_business_understanding.html" class="pagination-link" aria-label="Business Understanding">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Business Understanding</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notebooks/03_data_preparation.html" class="pagination-link" aria-label="Data Preparation">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Preparation</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notebooks/13_data_preparation.html" class="pagination-link" aria-label="Data Preparation">
+        <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Data Preparation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -2425,7 +2407,7 @@ Zhu, H. (2024). <em><span class="nocase">kableExtra</span>: <span>Construct Comp
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/02_data_understanding.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Fpadt/eaisi/blob/main/notebooks/12_data_understanding.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Fpadt/eaisi/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p><a href="https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/programs-voor-professionals/mastering-data-ai-mdai">EAISI</a></p>
 </div>
