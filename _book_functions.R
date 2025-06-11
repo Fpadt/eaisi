@@ -10,6 +10,8 @@ library(gt)
 library(DT)               # for datatables 
 library(kableExtra)
 # library(ggrepel)         # for ggrepel
+
+library(patchwork)
 library(openxlsx2)
 library(magrittr)
 library(ggplot2)

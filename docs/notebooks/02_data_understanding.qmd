@@ -813,7 +813,18 @@ The ABC/XYZ classification is a commonly used framework for prioritizing items b
 
 The Syntetos–Boylan (SB) classification extends the ABC/XYZ framework by integrating demand variability and forecastability. It provides a more nuanced understanding of demand patterns and supports the selection of suitable forecasting methods, see [@syntetos2005categorization].
 
-For BioBalance, the time series data is predominantly a mix of intermittent and smooth demand, with the specific pattern varying by the level of aggregation.
+They classify demand patterns in four categories:
+-   **Smooth**: Stable, predictable demand with low variability. 
+-   **Erratic**: Unpredictable demand with high variability.
+-   **Intermittent**: Demand with frequent zero values
+-   **Lumpy**: Demand with occasional large spikes.
+
+::: {#fig-02-plot_sbm .figure}
+![](../images/demand_patterns.png){fig-align="left" width="15cm"}
+The four SB classifications types based on *BioBalance* time series.
+:::
+
+The SB classification is particularly useful for identifying the most appropriate forecasting methods based on the demand pattern. 
 
 ```{r}
 
@@ -821,7 +832,7 @@ fread(text = "
  SB_Type     , Best_fit_Methods
  Smooth      , SES; Holt’s; Holt-Winters (Triple Exp); ARIMA; Moving Average
  Erratic     , Damped exponential; Holt-Winters (if seasonal); ARIMA with volatility modeling
- Intermittent, Croston; SBA; TSB; bootstrapped quantile models
+ Intermittent, Croston; SBA; TSB; ADIDA
  Lumpy       , Croston variants + heuristics; simulation; judgmental overlays
 ") %>%
   kbl(
@@ -840,53 +851,6 @@ fread(text = "
 
 Sufficient Historical Data and Pattern Stability Reliable demand classification and effective forecasting require an adequate historical record—ideally covering multiple seasonal cycles and enough observations to separate meaningful patterns from random noise. For instance, capturing annual seasonality in monthly data typically requires at least 2–3 years of history.
 
-```{r}
-#| label: Load necessary libraries
-#| eval: false
-
-
-library(ggplot2)
-library(patchwork)
-
-
-
-# Create individual plots
-p1 <- ggplot(smooth_data, aes(x = time, y = value)) +
-  geom_line() + 
-  labs(title = "Smooth") +
-  theme_minimal()
-
-p2 <- ggplot(intermittent_data, aes(x = time, y = value)) +
-  geom_line() + 
-  labs(title = "Intermittent") +
-  theme_minimal()
-
-p3 <- ggplot(erratic_data, aes(x = time, y = value)) +
-  geom_line() + 
-  labs(title = "Erratic") +
-  theme_minimal()
-
-p4 <- ggplot(lumpy_data, aes(x = time, y = value)) +
-  geom_line() + 
-  labs(title = "Lumpy") +
-  theme_minimal()
-
-# Combine in 2x2 matrix
-combined_plot <- (p1 + p2) / (p3 + p4)
-
-# Add overall title
-final_plot <- combined_plot + 
-  plot_annotation(title = "Demand Pattern Classification",
-                  theme = theme(plot.title = element_text(hjust = 0.5, size = 16)))
-
-# Save as PNG
-ggsave("demand_patterns.png", final_plot, width = 12, height = 8, dpi = 300)
-
-# Display
-final_plot
-```
-
-
 In our analysis, SB-class distributions appear stable over time, aside from fluctuations near the lower boundary—particularly in the first few months, where the classification is less reliable due to insufficient data. As such, early observations (less than 6 months) are omitted from interpretation.
 
 Encouragingly, as time series length increases, the proportion of smooth demand series rises. This shift is favorable for forecast accuracy, as smooth series are more predictable and well-suited to traditional forecasting methods, see figure @fig-02-plot_sbc_by_ts
@@ -896,6 +860,8 @@ Encouragingly, as time series length increases, the proportion of smooth demand 
 :::
 
 Figure @fig-02-plot_sbm illustrates the distribution of SB-class types across different aggregation levels, highlighting the prevalence of smooth and intermittent demand patterns. The chart shows that as the aggregation level increases, the proportion of smooth demand series also increases, while intermittent demand remains significant. THis plot is made at the aggregation level ProdCat-Channel. The complete analysis for all aggregation levels is available in @fig-02-SBCSIEL.
+
+For BioBalance, the time series data is predominantly a mix of intermittent and smooth demand, with the specific pattern varying by the level of aggregation.
 
 ::: {#fig-02-plot_sbm .figure}
 ![](../images/plot_sbm.png){fig-align="left" width="15cm"}
